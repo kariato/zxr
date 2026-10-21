@@ -53,11 +53,11 @@ We keep ZIL's authoring model almost intact and replace the machine underneath i
 | Lisp-like `<ROUTINE ...>` syntax | Replaced by JSON (decided). Same concepts and names, so ZIL authors still recognise everything |
 | `<ROOM>` and `<OBJECT>` with properties and flags | Kept, plus a `SCENE` property and spatial properties (`POSE`, `BOUNDS`, `ANCHOR`) |
 | Object tree (`LOC`, `MOVE`, `IN?`) | Kept as the single source of truth; the scene graph mirrors it |
-| Parser: verbs, syntax lines, prepositions, `PRSO`/`PRSI` | Kept, and fed by voice, text, gaze and gesture alike |
-| Action routines and `M-BEG`/`M-END` room hooks | Kept, plus `M-ENTER-VIEW` and `M-ANIM-DONE` events |
-| Turn-based clock (`QUEUE`, interrupts) | Kept for game logic; a separate real-time clock drives animation |
+| Parser: verbs, syntax lines, prepositions, `PRSO`/`PRSI` | The `PARSER` routine is replaced by option picks, which fill in the same globals it would have set (`PRSA`, `PRSO`, `PRSI`, `WINNER`, `P-WALK-DIR`, `P-LEXV`) |
+| Action routines and `M-BEG`/`M-END` room hooks | Kept unchanged. No new game hooks: anything that happens in 3D reaches the game only as an ordinary option |
+| Main loop, `PERFORM` and the turn clock (`QUEUE`, `CLOCKER`, interrupts) | Translated unchanged, including which verbs cost a turn; a separate real-time clock drives animation only |
 | `TELL` text output | Kept; text can render as captions, a journal, or narration audio |
-| Z-machine bytecode, 64-256 KB memory, versions 3-8 | Replaced by the ZXR VM with no fixed memory ceiling |
+| Z-machine bytecode, 64-256 KB memory, versions 3-8 | Bytecode is replaced by a headless engine that interprets JSON. Tables, property tables and header reads keep Z-machine memory semantics through a byte-addressed memory image (see [compat-semantics.md](compat-semantics.md)) |
 | Fixed-width screen windows | Replaced by spatial UI panels and captions |
 
 What is new: assets, scenes, timelines, spatial anchors, real-time events and multimodal input. Each is described below.
@@ -92,7 +92,7 @@ A room gains a `SCENE` property. The scene is the 3D environment the player stan
     "scene": "WHITE-HOUSE-INTERIOR",
     "exits": {
       "west": "KITCHEN",
-      "down": { "to": "CELLAR", "if": { "is": "TRAP-DOOR.open" } }
+      "down": { "to": "CELLAR", "if": { "op": "is", "flag": "TRAP-DOOR.open" } }
     },
     "flags": ["land", "lit"],
     "action": "LIVING-ROOM-F"
@@ -127,53 +127,53 @@ Routines stay turn-based, with new opcodes that request presentation without blo
 ```json
 "routines": {
   "LAMP-F": [
-    { "when": { "verb": "LAMP-ON" }, "do": [
-      { "set": "LAMP.on" },
-      { "play": "LAMP", "clip": "FLICKER" },
-      { "cue": "LIGHT-UP-ROOM" },
-      { "tell": "The lamp is now on." }
+    { "op": "if", "cond": { "op": "verb?", "verbs": ["LAMP-ON"] }, "then": [
+      { "op": "set", "flag": "LAMP.on" },
+      { "op": "play", "object": "LAMP", "clip": "FLICKER" },
+      { "op": "cue", "name": "LIGHT-UP-ROOM" },
+      { "op": "tell", "text": "The lamp is now on." }
     ]},
-    { "when": { "verb": "LAMP-OFF" }, "do": [
-      { "clear": "LAMP.on" },
-      { "play": "LAMP", "clip": "IDLE", "blend": 0.3 },
-      { "tell": "The lamp is now off." }
+    { "op": "if", "cond": { "op": "verb?", "verbs": ["LAMP-OFF"] }, "then": [
+      { "op": "clear", "flag": "LAMP.on" },
+      { "op": "play", "object": "LAMP", "clip": "IDLE", "blend": 0.3 },
+      { "op": "tell", "text": "The lamp is now off." }
     ]}
   ]
 }
 ```
 
-`{"set": "LAMP.on"}` is the fact; `play` and `cue` are how the fact looks. Removing the presentation commands leaves a correct text game.
+`{"op": "set", "flag": "LAMP.on"}` is the fact; `play` and `cue` are how the fact looks. Removing the presentation commands leaves a correct text game.
 
-Every command is a JSON object whose first key is the command name; the other keys are its arguments. Flags are written `OBJECT.flag`. The core set maps one-to-one onto ZIL:
+Every command and every expression is a JSON object with an `op` key naming what it is; the other keys are its arguments. JSON objects have no member order, so meaning never depends on which key comes first, and reformatting a file cannot change a game. The schema rejects objects without an `op` or with unknown keys for that `op`. Commands and expressions have separate schemas. Flags are written `OBJECT.flag`. The core set maps one-to-one onto ZIL:
 
 | JSON command | ZIL equivalent | Meaning |
 |---|---|---|
-| `{"set": "LAMP.on"}` | `<FSET ,LAMP ,ONBIT>` | Set a flag |
-| `{"clear": "LAMP.on"}` | `<FCLEAR ,LAMP ,ONBIT>` | Clear a flag |
-| `{"move": "LAMP", "to": "PLAYER"}` | `<MOVE ,LAMP ,PLAYER>` | Move in the object tree |
-| `{"tell": "..."}` | `<TELL "..." CR>` | Show text |
-| `{"if": cond, "then": [...], "else": [...]}` | `<COND ...>` | Branch |
-| `{"call": "CELLAR-STAIRS-F"}` | `<CELLAR-STAIRS-F>` | Call a routine |
-| `{"perform": "OPEN", "object": "TRAP-DOOR"}` | `<PERFORM ,V?OPEN ,TRAP-DOOR>` | Run a parser action |
-| `{"is": "TRAP-DOOR.open"}` | `<FSET? ,TRAP-DOOR ,OPENBIT>` | Condition: test a flag |
-| `{"all": [...]}`, `{"any": [...]}`, `{"not": ...}` | `<AND>`, `<OR>`, `<NOT>` | Combine conditions |
+| `{"op": "set", "flag": "LAMP.on"}` | `<FSET ,LAMP ,ONBIT>` | Set a flag |
+| `{"op": "clear", "flag": "LAMP.on"}` | `<FCLEAR ,LAMP ,ONBIT>` | Clear a flag |
+| `{"op": "move", "object": "LAMP", "to": "PLAYER"}` | `<MOVE ,LAMP ,PLAYER>` | Move in the object tree |
+| `{"op": "tell", "text": "..."}` | `<TELL "..." CR>` | Show text |
+| `{"op": "if", "cond": ..., "then": [...], "else": [...]}` | `<COND ...>` | Branch |
+| `{"op": "call", "routine": "LAMP-F"}` | `<LAMP-F>` | Call a routine |
+| `{"op": "perform", "verb": "OPEN", "prso": "TRAP-DOOR"}` | `<PERFORM ,V?OPEN ,TRAP-DOOR>` | Run an action through normal dispatch |
+| `{"op": "is", "flag": "TRAP-DOOR.open"}` | `<FSET? ,TRAP-DOOR ,OPENBIT>` | Condition: test a flag |
+| `{"op": "and", "args": [...]}`, `{"op": "or", "args": [...]}`, `{"op": "not", "arg": ...}` | `<AND>`, `<OR>`, `<NOT>` | Combine conditions |
 
-Presentation commands (`play`, `cue`, `move-to`, `look-at`, `say`, `wait-anim`) follow the same shape.
+Presentation commands (`play`, `cue`, `move-to`, `look-at`, `say`, `wait-anim`) use the same `op` shape. They only emit presentation events and never change the world model.
 
 ### Timelines
 
-A timeline is a named, sequenced cutscene or effect. It can run while the parser stays live (ambient) or take control (cinematic).
+A timeline is a named, sequenced cutscene or effect. It can run while options stay live (ambient) or take control (cinematic). Timelines are presentation only: the engine has already resolved the turn before a timeline starts, so skipping or speeding one up never changes the game.
 
 ```json
 "timelines": {
   "TROLL-ENTRANCE": {
     "mode": "cinematic",
     "steps": [
-      { "at": 0.0, "do": { "play": "TROLL", "clip": "ROAR" } },
-      { "at": 0.4, "do": { "camera-shake": 0.2 } },
-      { "at": 1.5, "do": { "move-to": "TROLL", "anchor": "DOORWAY-MARK", "speed": 1.2 } },
-      { "at": 3.0, "do": { "say": "TROLL", "text": "The troll blocks your way." } },
-      { "at": "end", "do": { "return-control": true } }
+      { "at": 0.0, "do": { "op": "play", "object": "TROLL", "clip": "ROAR" } },
+      { "at": 0.4, "do": { "op": "camera-shake", "amount": 0.2 } },
+      { "at": 1.5, "do": { "op": "move-to", "object": "TROLL", "anchor": "DOORWAY-MARK", "speed": 1.2 } },
+      { "at": 3.0, "do": { "op": "say", "object": "TROLL", "text": "The troll blocks your way." } },
+      { "at": "end", "do": { "op": "return-control" } }
     ]
   }
 }
@@ -227,7 +227,9 @@ The compiler checks at build time that every named anchor, clip and light rig ex
 
 ### Hotspots and triggers
 
-A hotspot is a named region inside the GLB that fires a game event when the player enters it, looks at it, points at it or touches it. Artists place hotspots in Blender; authors decide in ZXR what they do.
+A hotspot is a named region inside the GLB that reacts when the player enters it, looks at it, points at it or touches it. Artists place hotspots in Blender; authors decide in ZXR what they do.
+
+**The rule:** a hotspot can do one of two things. It can **submit an option**, exactly as if the player had picked that option's chip, so the action goes through normal dispatch, the clock and the revision check. Or it can play **presentation effects** (clips, sounds, hints) that never touch the world model. A hotspot never runs game code or changes state directly. This keeps a headless replay of option ids identical to a 3D playthrough, whatever the frame rate or presenter.
 
 **In Blender:** add an Empty (box or sphere) or a hidden mesh where the hotspot should be, name it, and give it a custom property such as `zxr_hotspot = true`. Blender exports custom properties into the GLB as glTF "extras", so the hotspot travels inside the same file as the room.
 
@@ -239,54 +241,38 @@ A hotspot is a named region inside the GLB that fires a game event when the play
     "scene": "WHITE-HOUSE-INTERIOR",
     "node": "hs_cellar_stairs",
     "on": {
-      "enter": [
-        { "play": "CELLAR-DOOR", "clip": "CREAK" },
-        { "tell": "The stairs groan under you." }
-      ],
-      "gaze": { "seconds": 1.0, "do": [{ "cue": "SHOW-HINT", "text": "Something glints below." }] },
-      "touch": [{ "perform": "OPEN", "object": "TRAP-DOOR" }]
+      "near": { "metres": 1.5, "effects": [{ "op": "play", "object": "CELLAR-DOOR", "clip": "CREAK" }] },
+      "gaze": { "seconds": 1.0, "effects": [{ "op": "cue", "name": "SHOW-HINT" }] },
+      "touch": { "option": "WALK:PLAYER:DOWN" }
     },
-    "once": ["enter"],
-    "enabled-if": { "is": "TRAP-DOOR.open" }
+    "once": ["near"]
   }
 }
 ```
 
+Touching the stairs submits the same `WALK:PLAYER:DOWN` option as the exit marker, so `V-WALK`, the room's hooks, the clock and any hazards all run as usual. If the option is not on offer right now (the trap door is closed), the touch does nothing in the game; the presenter may show a hint.
+
 | Trigger | Fires when | Typical use |
 |---|---|---|
-| `ENTER` / `EXIT` | The player's head or body enters or leaves the volume | Ambush, ambient line, room-within-a-room |
-| `GAZE n` | The player looks at it for n seconds | Hints, examine prompts, a character noticing you |
-| `POINT` | The player aims a hand ray at it and pinches | Exits, distant switches |
-| `TOUCH` | A hand or held object overlaps it | Buttons, levers, putting a key in a lock |
-| `NEAR d` | The player is within d metres | Characters greet you, music swells |
+| `ENTER` / `EXIT` | The player's head or body enters or leaves the volume | Ambient line, music, lighting change (effects only) |
+| `GAZE n` | The player looks at it for n seconds | Hints, highlighting an object's chips |
+| `POINT` | The player aims a hand ray at it and pinches | Submit an exit or a distant switch's option |
+| `TOUCH` | A hand or held object overlaps it | Submit an option: a button, a lever, a door |
+| `NEAR d` | The player is within d metres | Characters turn to look at you, music swells (effects only) |
 
-**What a handler can do:** run any ZXR code, set flags, play clips on any object or character in the GLB, start a timeline, or call `PERFORM` to turn the trigger into a normal parser action (`OPEN TRAP-DOOR`) so the usual action routines and rules apply.
+Only deliberate triggers (`POINT`, `TOUCH`) may submit an option, so walking around a room can never take a game turn. Ambient triggers (`ENTER`, `EXIT`, `GAZE`, `NEAR`) play effects only.
 
-**Calling a named action in the ZXR file:** a handler does not have to be written inline. It can name a routine that lives in the ZXR source, and that routine is compiled into the story bundle like any other.
-
-```json
-"routines": {
-  "CELLAR-STAIRS-F": [
-    { "play": "CELLAR-DOOR", "clip": "CREAK" },
-    { "move": "PLAYER", "to": "CELLAR" },
-    { "run-timeline": "DESCEND-STAIRS" }
-  ]
-},
-"hotspots": {
-  "CELLAR-STAIRS": { "node": "hs_cellar_stairs", "on": { "touch": [{ "call": "CELLAR-STAIRS-F" }] } }
-}
-```
-
-The artist can also wire it from Blender alone: a custom property `zxr_action = "CELLAR-STAIRS-F"` on the hotspot node needs no `HOTSPOT` form at all. `zxr build` checks that every action named in the GLB exists in the ZXR source, so a renamed routine is caught at compile time.
+The artist can also wire a hotspot from Blender alone: a custom property `zxr_option = "OPEN:PLAYER:TRAP-DOOR"` on the node needs no `HOTSPOT` form at all. `zxr build` checks that every option id named in a GLB can be produced by the game's options, so a renamed object is caught at compile time.
 
 **Rules that keep it safe:**
 
-- Hotspot handlers run between turns as a queued event, never in the middle of a routine, so the world model stays consistent and saves stay deterministic.
-- `ONCE` and `ENABLED-IF` stop a hotspot firing repeatedly or before the story is ready for it.
+- A submitted option goes through `execute()` with the current `expectedRevision`, exactly like a chip. A stale or unavailable option is rejected and changes nothing.
+- `ONCE` stops an effect replaying; whether an option is available is decided only by the engine.
 - `zxr build` checks that every `NODE` named in a `HOTSPOT` exists in the GLB.
 - A debug view draws all hotspot volumes in the headset so authors can see and tune them.
+- If a future game truly needs real-time story events, they will be specified separately, with a text-mode equivalent and a place in the input log, saves and replays. Zork II does not need them.
 
-**Clip events:** the same idea works on time instead of space. A baked clip can carry named markers (for example `FOOTSTEP` or `SWORD-HITS` at a given frame), and `"clip-events": { "TROLL.SWORD-HITS": [ ... ] }` runs code at that moment. glTF has no native marker field, so markers travel in the clip's extras or in the ZXR asset form.
+**Clip events:** the same idea works on time instead of space. A baked clip can carry named markers (for example `FOOTSTEP` or `SWORD-HITS` at a given frame), and `"clip-events": { "TROLL.SWORD-HITS": [ ... ] }` plays effects at that moment: sounds, particles, camera shake. Clip events never change game state, because frame timing differs between devices. glTF has no native marker field, so markers travel in the clip's extras or in the ZXR asset form.
 
 ### Three kinds of animation
 
@@ -331,7 +317,7 @@ Characters are rigged people or creatures modelled and animated in Blender, expo
 }
 ```
 
-`CHARACTER` is an `OBJECT` with a body and a state map. The runtime picks the clip from the character's current state, so `{"move-to": "TROLL", "anchor": "DOORWAY-MARK"}` plays `WALK` on its own and returns to `IDLE` on arrival.
+`CHARACTER` is an `OBJECT` with a body and a state map. The runtime picks the clip from the character's current state, so `{"op": "move-to", "object": "TROLL", "anchor": "DOORWAY-MARK"}` plays `WALK` on its own and returns to `IDLE` on arrival.
 
 **How baked clips are played:**
 
@@ -347,7 +333,7 @@ Game logic advances in turns, as in ZIL. Presentation runs on a real-time clock 
 
 ## Runtime architecture
 
-The compiler turns source and glTF assets into one story bundle; on the headset, the VM owns all game state and a separate scene director turns state changes into animation.
+The compiler turns source and glTF assets into one story bundle; on the headset, the engine owns all game state and a separate scene director turns state changes into animation.
 
 ```mermaid
 flowchart LR
@@ -355,7 +341,7 @@ flowchart LR
   GLTF["glTF assets<br/>meshes, rigs, clips, named anchors"] --> C
   C --> B["Story bundle<br/>checked JSON, manifest, packed GLB files"]
   subgraph RT["Runtime on the device"]
-    IN["Input mapper<br/>option picks, grabs, voice: game actions"] --> VM["ZXR engine<br/>world model, parser, turn clock, saves"]
+    IN["Input mapper<br/>option picks, grabs, voice: game actions"] --> VM["ZXR engine<br/>world model, options, turn clock, saves"]
     VM --> SD["Scene director<br/>BIND rules, clips, timelines, real time"]
     SD --> R["Renderer adapter<br/>WebXR + three.js; later Unity, Godot"]
     R -- the player acts in the scene --> IN
@@ -364,21 +350,21 @@ flowchart LR
 ```
 *The engine owns the world; the scene director only draws it.*
 
-- **zxrc compiler:** parses ZXR source, resolves objects and syntax lines, and checks every asset, clip and anchor name against the GLB files. Output is a `.zxb` bundle: bytecode, a scene manifest and packed assets.
-- **ZXR VM:** a headless TypeScript engine, following rougeXR's engine contract, that interprets the validated JSON directly and runs the world model, actions and turn clock. It has no rendering code and runs the same in a terminal, a browser or a headset.
-- **Scene director:** listens to VM events (object moved, flag set, `PLAY`, `CUE`, room changed), applies `BIND` rules and runs timelines on the real-time clock.
+- **zxrc compiler:** parses ZXR source, resolves objects and syntax lines, and checks every asset, clip and anchor name against the GLB files. Output is a `.zxb` bundle: checked JSON, a scene manifest and packed assets.
+- **ZXR engine:** a headless TypeScript engine, following rougeXR's engine contract, that interprets the validated JSON directly and runs the world model, actions and turn clock. It has no rendering code and runs the same in a terminal, a browser or a headset.
+- **Scene director:** listens to engine events (object moved, flag set, `PLAY`, `CUE`, room changed), applies `BIND` rules and runs timelines on the real-time clock.
 - **Renderer adapter:** a thin interface (`load-scene`, `spawn`, `play-clip`, `move`, `caption`) so the same bundle can drive more than one engine. First target: WebXR with three.js, which runs on Quest, Vision Pro and desktop browsers with no app store step.
-- **Input mapper:** turns speech, gaze, grabs and gestures into parser input and sends it to the VM, closing the loop.
+- **Input mapper:** turns speech, pointing, grabs and gestures into option picks and sends them to the engine, closing the loop. It never sends anything else.
 
 ## Interaction: options instead of a parser
 
-Players never type. Each turn the runtime offers options built from the game's own verbs and objects, shown on things in the 3D room. Picking one sends the exact action the ZIL code expects (`PRSA`, `PRSO`, `PRSI`), so the translated routines run unchanged.
+Players never type. Each turn the runtime offers options built from the game's own verbs and objects, shown on things in the 3D room. Picking one fills in exactly what ZIL's parser would have produced, so the translated routines run unchanged: the actor (`WINNER`), the verb (`PRSA`), the objects (`PRSO`, `PRSI`), the direction for movement (`P-WALK-DIR`), and for spoken answers the words themselves in `P-LEXV`. Each of these is part of the option's stable id, for example `WALK:PLAYER:NORTH`, `TAKE:ROBOT:CAGE` or `ANSWER:PLAYER:@WELL`.
 
 **How options are built:**
 
-1. **Compile time, no LLM:** the front end pairs every `SYNTAX` line with the objects it can apply to, and keeps only pairs where some routine gives a real response. "Open trap door" and "light lamp" survive; "eat trophy case" does not.
+1. **Compile time, no LLM:** the front end lists every `SYNTAX` line with the kinds of object each slot accepts. Nothing is pruned for lacking a "real response": `PERFORM` asks the actor, the room, the pre-action, the indirect object, the container and the direct object in turn, so a response can come from many places, and guessing wrong would hide a puzzle. Static analysis of those handlers is used only to rank options.
 2. **Compile time, LLM:** writes a natural label for each ("Light the brass lantern") and ranks them per object.
-3. **Run time:** each turn the VM filters candidates by what is in scope and by flags (visible, reachable, lit, open), then shows the survivors.
+3. **Run time:** each turn the engine pairs syntax lines with the objects in scope (visible and reachable from the actor's point of view, light permitting) and shows the highest-ranked first. Computing options never changes the game: it is a pure query with no effect on state, the RNG or the save hash.
 
 | Option type | Shown as |
 |---|---|
@@ -386,15 +372,18 @@ Players never type. Each turn the runtime offers options built from the game's o
 | Use one object on another | Pick up the first, then chips appear on valid targets ("Put lamp in trophy case") |
 | Move | A marker in each doorway or path; pick it to walk there |
 | Talk to a character | Speech options beside the character |
-| Always available | Look, wait, inventory and save on a wrist menu |
+| Always available | Look, wait, inventory, score and save on a wrist menu. As in the original, look, wait and inventory cost a turn; score and save do not |
+| More actions | Every other legal action for an object, one page further down, so nothing is ever unreachable |
+| Say a word | A word picker built from the game's own vocabulary (about 690 words), for answers and spells |
 
 Players pick with gaze and pinch, a controller trigger, or by saying the label aloud. Because the possible phrases are known in advance, speech recognition only has to match a short list. Hotspots from the GLB feed the same actions, so touching the trap door and picking "Open the trap door" do the same thing.
 
-**The puzzle problem:** many ZIL puzzles depend on the player thinking of an action, such as saying a magic word or tying a rope to a railing. A full option list gives those answers away. Proposed rules:
+**The puzzle problem:** many ZIL puzzles depend on the player thinking of an action, such as saying a magic word or tying a rope to a railing. A full option list gives those answers away. Rules:
 
-- **Knowledge gating:** an option appears only once the player has a reason to know it, for example the magic word after reading the scroll. The LLM proposes the gate flag for each such option, and the author approves it.
+- **Words are picked, not offered.** Where the game reads a typed word (the riddle's answer, the wand's spells), the player chooses it from the full vocabulary list, so they still have to think of it. No option ever spells out the answer.
+- **Knowledge gating, used sparingly:** an option may be ranked lower or held back until the player has a reason to know it, for example a magic word after reading the scroll. Gates must never make a legal action permanently unreachable: every gated action is still reachable through "more actions" or the word picker. Gate state is part of the save, survives restore, and is reset by restart. Changing a gate is a rule change and reruns the conformance and reachability tests.
 - **Plausible extras:** each object also shows a few reasonable actions that do not solve anything, so the list is not just a list of solutions.
-- **A cap:** at most 6 to 8 options per object at once, ranked by the LLM.
+- **Ranking, not a cap:** the top 6 to 8 options per object show first, and the rest are one tap away under "more actions".
 
 ## Platforms: one build for headset, tablet and desktop
 
@@ -406,7 +395,7 @@ Players pick with gaze and pinch, a controller trigger, or by saying the label a
 | Tablet (touch browser) | First-person view; drag to look around | Tap an object, then tap a chip | Tap an exit marker |
 | Desktop (mouse and keyboard) | First-person view; mouse to look, WASD to step | Click an object, then click a chip; number keys for the list | Click an exit marker |
 
-- **Same game, same saves:** the VM and world model are identical in every mode; only the input mapper and camera change. A save made on a tablet loads in a headset.
+- **Same game, same saves:** the engine and world model are identical in every mode; only the input mapper and camera change. A save made on a tablet loads in a headset.
 - **Options suit every screen:** because play is option-based, no mode needs a keyboard for commands, which is what makes tablets work.
 - **Scale assets per device:** the build can emit lighter GLB variants (fewer polygons, smaller textures) that tablets load instead of the headset versions.
 - **AR is optional:** where a browser supports WebXR AR (for example Chrome on Android), a room can also be placed on a real table.
@@ -419,7 +408,7 @@ ZXR should reuse the architecture of Mark's [rougeXR](https://github.com/kariato
 |---|---|---|
 | Stack | TypeScript, Vite, three.js, Vitest, Playwright | Same |
 | Headless engine | Imports no DOM, three.js, WebXR or clock; `execute(action)` returns an `ActionResolution` with events | Same contract, but the engine interprets ZXR JSON instead of Rogue rules |
-| Actions | Typed `GameAction` union with `expectedRevision` checks | Each option is a `GameAction` such as `{ type: 'perform', verb: 'OPEN', object: 'TRAP-DOOR' }` |
+| Actions | Typed `GameAction` union with `expectedRevision` checks | Each option is a `GameAction` such as `{ type: 'perform', actor: 'PLAYER', verb: 'OPEN', prso: 'TRAP-DOOR' }` |
 | What the renderer sees | `PlayerObservation`: only disclosed cells and entities | Only what ZIL says the player can perceive, so a dark room really is dark |
 | Determinism | Seeded RNG, replay bundles, divergence hashes | Same; replays double as transcript tests against the original ZIL |
 | Saves | Named JSON checkpoints and IndexedDB autosave | Same format and stores |
@@ -439,8 +428,8 @@ ZXR should reuse the architecture of Mark's [rougeXR](https://github.com/kariato
 
 Because the world model is the only authority, a save file is just the model's state, and the game is fully testable without a headset.
 
-- **Saves:** object tree, flags, properties, globals, queued interrupts and the turn count. Animation state is not saved; on load, `BIND` rules and the room's scene rebuild the visuals from state. Saves stay small, like Quetzal saves for the Z-machine.
-- **Determinism:** logic uses a seeded RNG and turn order only, never frame timing. The same inputs give the same game, which enables replays and regression tests.
+- **Saves:** object tree, flags, properties, globals, the memory image (tables, including the queued interrupts), knowledge gates, the RNG state and the turn count. Saving is not allowed while the game is waiting for a yes/no answer. Animation state is not saved; on load, `BIND` rules and the room's scene rebuild the visuals from state. Saves stay small, like Quetzal saves for the Z-machine.
+- **Determinism:** logic uses a seeded RNG and turn order only, never frame timing. The same option ids give the same game, which enables replays and regression tests. Conformance tests against the original replay the original interpreter's recorded random draws, so random events can be compared exactly too.
 - **Headless mode:** `zxr run --text game.zxb` plays the game in a terminal. Transcript tests (a list of commands and expected output) run in CI, as Infocom's testers did with scripts.
 - **Asset check:** `zxr build` validates every `ASSET`, `SCENE`, clip and anchor reference against the GLB files.
 - **Hot reload:** in the editor preview, recompiling a routine or swapping a GLB updates the running scene without losing game state.
@@ -452,7 +441,7 @@ Build the text core first, then add scenes, then motion and input, so every phas
 
 ```mermaid
 flowchart LR
-  P1["Phase 1: Text core<br/>ZIL front end + engine; rooms, objects, flags;<br/>parser, saves; options in a terminal; transcript tests"]
+  P1["Phase 1: Text core<br/>ZIL front end + engine; rooms, objects, flags;<br/>saves; options in a terminal; transcript tests"]
   P2["Phase 2: Scenes<br/>LLM scene planner; asset builder, GLB;<br/>WebXR + three.js; BIND rules; rooms load as scenes"]
   P3["Phase 3: Motion<br/>PLAY, clips, blends; timelines, cutscenes;<br/>character states; voice, gaze, gesture mapped to verbs"]
   P4["Phase 4: Tooling<br/>language server; hot reload; scene inspector;<br/>second renderer; USDZ import"]
@@ -474,7 +463,7 @@ The test game is a real ZIL game. Phase 1 passes when it plays start to finish w
 - [ ] **Legacy games:** decided: cross-compiling existing ZIL games is the main goal.
 - [ ] **First game:** Mark's test: cross-compile an open-source ZIL game and publish it on itch.io. Decided: Zork II, whose source Microsoft released under the MIT license in Nov 2025, starting with a three-room slice. To check: the MIT license covers the code, not the Zork name, and itch.io's embedded player may not allow WebXR's immersive mode, so the VR build may need its own page linked from itch.
 - [ ] **Asset source:** kit library plus Blender scripts (consistent look, more upfront work), text-to-3D generation (fast, uneven quality), or artists working from LLM briefs?
-- [ ] **Puzzle hints:** are knowledge-gated options the right way to keep puzzles from being given away?
+- [ ] **Puzzle hints:** the 2026-10-21 design review settled on a vocabulary word picker for typed answers and gates that never hide an action permanently. Is that enough, or should puzzle answers stay typed on desktop?
 - [ ] **Language name:** ZXR is a working name.
 - [ ] **Next step:** once you are happy with the direction, should I create a repository and start Phase 1?
 

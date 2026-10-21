@@ -30,17 +30,19 @@ Measured from the vendored source.
 
 ## Hard spots for an options interface
 
-- **The riddle** reads the raw parser buffer (`P-LEXV`) for the word "WELL". Options cannot hand the player the answer, so it needs a typed or spoken answer, or a knowledge-gated option that only appears once the player has seen the clue.
-- **The robot** takes commands through `WINNER` ("robot, push the button"). Options must be able to address another actor.
-- **Random events** (the wizard's spells, the dragon, combat rolls) mean transcripts can only be compared exactly where no randomness is involved; elsewhere we compare state.
+- **The riddle** reads the raw parser buffer (`P-LEXV`) for the word "WELL", and **the wand** stores the spoken spell word from `P-LEXV` (`V-INCANT`). Options cannot hand the player these answers, so both use a word picker over the game's own vocabulary (about 690 words), which writes the chosen word into a synthetic `P-LEXV`.
+- **The robot** takes commands through `WINNER` ("robot, push the button"). Options carry an actor, so `TAKE:ROBOT:CAGE` is a different option from `TAKE:PLAYER:CAGE`.
+- **Random events** (the wizard's spells, the dragon, combat rolls) are compared exactly by replaying the reference interpreter's recorded random draws in the engine.
+- **Quit, restart and the end of the game** ask yes/no or restart/restore/quit questions inside a routine. These become pending decisions in the engine.
 - **The maze and darkness** need a presentation that does not reveal more than the text does.
 
 ## How we test against the original
 
-1. Record golden transcripts by playing `COMPILED/zork2.z3` in a scripted Z-machine interpreter (dfrotz or ifvms) with a fixed seed. Store them in `reference/transcripts/`.
-2. Run the same commands through the ZXR engine and compare at two levels: exact text for steps with no random element, and world-state checks (location, inventory, flags, score) where randomness is involved.
-3. A walkthrough coverage test proves the full game can be finished by picking options only.
-4. Every intentional difference from the original is written down in `games/zork2/ledger.md`.
+1. Establish that the vendored source matches the story file (build plan step 0.8). The evidence is good: the build log `zork2.chart` ends at release 63, 92,524 bytes, which is exactly `COMPILED/zork2.z3` (release 63, serial 860811, SHA-256 `3ae7d5558943e9721f3e4b273c8a7faec1a03a604e1ae4ee1cde472c21cb24ac`), and `zork2.zip` in the source folder is byte-identical to it. The compiler's `.zap` assembly output is also vendored and is checked against a disassembly of the story file.
+2. Record golden transcripts by playing `COMPILED/zork2.z3` in a pinned, instrumented JavaScript Z-machine interpreter that also logs every random draw and a state snapshot after each input. Store them in `reference/transcripts/`.
+3. Run the same commands through the ZXR engine with the recorded random draws, and compare text and state exactly after every input.
+4. Coverage tests prove the full game can be finished by picking options only, in more than one solve order, after restoring a save, and after a death.
+5. Every intentional difference from the original is written down in `games/zork2/ledger.md`.
 
 ## Release plan on itch.io
 
