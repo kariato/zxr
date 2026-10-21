@@ -1,0 +1,26 @@
+[Setup: replay the first 207 walkthrough commands, seed 2.]
+
+>wait
+Time passes...
+You may recall that recent explosion. Probably as a result of it, you hear an ominous rumbling, as if a nearby room had collapsed.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+The force of the recent explosion has caused the ledge to collapse.
+ 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see only darkness.
+
+>

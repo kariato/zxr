@@ -1,0 +1,23 @@
+[
+ {"macro":"TELL","input":"<TELL \"You see \" D ,LAMP CR>","expected":"<PROG () <PRINTI \"You see \"> <PRINTD ,LAMP> <CRLF>>"},
+ {"macro":"TELL","input":"<TELL N 3 C !\\x AN ,LAMP P?TEXT ,NOTE .TEXT <GET .TBL 1>>","expected":"<PROG () <PRINTN 3> <PRINTC !\\x> <PRINTA ,LAMP> <PRINT <GETP ,NOTE P?TEXT>> <PRINT .TEXT> <PRINT <GET .TBL 1>>>"},
+ {"macro":"VERB?","input":"<VERB? OPEN TAKE DROP THROW>","expected":"<OR <EQUAL? ,PRSA ,V?DROP ,V?TAKE ,V?OPEN> <EQUAL? ,PRSA ,V?THROW>>"},
+ {"macro":"PRSO?","input":"<PRSO? LAMP SWORD>","expected":"<EQUAL? ,PRSO ,SWORD ,LAMP>"},
+ {"macro":"PRSI?","input":"<PRSI? LAMP>","expected":"<EQUAL? ,PRSI ,LAMP>"},
+ {"macro":"ROOM?","input":"<ROOM? VAULT <GET .ROOMS 1>>","expected":"<EQUAL? ,HERE <GET .ROOMS 1> ,VAULT>"},
+ {"macro":"BSET","input":"<BSET .O OPENBIT TOUCHBIT>","expected":"<PROG () <FSET .O ,TOUCHBIT> <FSET .O ,OPENBIT>>"},
+ {"macro":"BCLEAR","input":"<BCLEAR .O OPENBIT>","expected":"<FCLEAR .O ,OPENBIT>"},
+ {"macro":"BSET?","input":"<BSET? .O OPENBIT TOUCHBIT>","expected":"<OR <FSET? .O ,TOUCHBIT> <FSET? .O ,OPENBIT>>"},
+ {"macro":"RFATAL","input":"<RFATAL>","expected":"<PROG () <PUSH 2> <RSTACK>>"},
+ {"macro":"PROB","input":"<PROB 25>","expected":"<G? 25 <RANDOM 100>>"},
+ {"macro":"PROB","input":"<PROB 25 <>>","expected":"<ZPROB 25>"},
+ {"macro":"ENABLE","input":"<ENABLE <QUEUE I-SWORD -1>>","expected":"<PUT <QUEUE I-SWORD -1> 0 1>"},
+ {"macro":"DISABLE","input":"<DISABLE <INT I-SWORD>>","expected":"<PUT <INT I-SWORD> 0 0>"},
+ {"macro":"FLAMING?","input":"<FLAMING? ,MATCH>","expected":"<AND <FSET? ,MATCH ,FLAMEBIT> <FSET? ,MATCH ,ONBIT>>"},
+ {"macro":"OPENABLE?","input":"<OPENABLE? .OBJ>","expected":"<OR <FSET? .OBJ ,DOORBIT> <FSET? .OBJ ,CONTBIT>>"},
+ {"macro":"ABS","input":"<ABS .N>","expected":"<COND (<L? .N 0> <- 0 .N>) (T .N)>"},
+ {"macro":"MULTIFROB","input":"<MULTIFROB HERE (VAULT GARDEN)>","expected":"<EQUAL? ,HERE ,GARDEN ,VAULT>"},
+ {"macro":"MULTIBITS","input":"<MULTIBITS FSET? .O (OPENBIT TOUCHBIT)>","expected":"<OR <FSET? .O ,TOUCHBIT> <FSET? .O ,OPENBIT>>"},
+ {"macro":"BSET","input":"<BSET .O>","expected":"<PROG ()>"},
+ {"macro":"BSET?","input":"<BSET? .O>","expected":"<OR>"}
+]

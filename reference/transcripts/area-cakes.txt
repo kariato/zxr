@@ -1,0 +1,45 @@
+[Setup: replay the first 29 walkthrough commands, seed 2.]
+
+>take all
+cake frosted with red letters: Taken.
+cake frosted with orange letters: Taken.
+cake frosted with blue letters: Taken.
+cake frosted with green letters: Taken.
+
+>eat green cake
+Suddenly, the room appears to have become very large (although everything you are carrying seems to be its normal size).
+
+Posts Room
+This is an enormous room, in the center of which are four wooden posts delineating a rectangular area, above which is what appears to be a wooden roof. In fact, all objects in this room appear to be abnormally large. To the east is a passageway. There are large gaping chasms to the west and northwest.
+
+>east
+Pool Room
+This is a large room, one half of which is depressed. Salty water flows from a large leak in the ceiling. The only exit is to the west.
+The leak has submerged the depressed area in a pool of tears. There is a hazy something at the deepest part of the pool.
+A stoppered glass flask with a skull-and-crossbones marking is here. The flask is filled with some clear liquid.
+
+>drop orange cake
+Dropped.
+
+>throw red cake in pool
+Most of the pool evaporates, revealing a (slightly damp but still valuable) package of rare candies. The red cake must be pretty strong stuff, since it remains intact!
+
+>take candies
+Taken.
+
+>west
+Posts Room
+
+>eat blue cake
+The room around you seems to be getting smaller.
+
+Tea Room
+There is a large oblong table here.
+
+>nw
+Low Room
+You are in a circular room with a low ceiling. There are exits to the east and southeast.
+There is a robot here.
+There is a green piece of paper here.
+
+>

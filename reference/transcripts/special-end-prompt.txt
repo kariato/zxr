@@ -1,0 +1,22 @@
+[Setup: replay the first 386 walkthrough commands, seed 2.]
+
+>nonsense
+
+Would you like to restart the game from the beginning, restore a saved game position, or end this session of the game?
+(Type RESTART, RESTORE, or QUIT):
+>restart
+ZORK II: The Wizard of Frobozz
+Infocom interactive fiction - a fantasy story
+Copyright (c) 1981, 1982, 1983, 1986 Infocom, Inc. All rights reserved.
+ZORK is a registered trademark of Infocom, Inc.
+Release 63 / Serial number 860811
+
+Inside the Barrow
+You are inside an ancient barrow hidden deep within a dark forest. The barrow opens into a narrow tunnel at its southern end. You can see a faint glow at the far end.
+A sword of Elvish workmanship is on the ground.
+A strangely familiar brass lantern is lying on the ground.
+
+>inventory
+You are empty-handed.
+
+>

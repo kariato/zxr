@@ -1,0 +1,49 @@
+[Setup: replay the first 87 walkthrough commands, seed 2.]
+
+>up
+Tiny Room
+This is a tiny room carved out of the wall of the ravine. There is an exit down a precarious climb. On the north side of the room is a massive wooden door, which has a small window barred with iron. A formidable bolt lock is set within the door frame. A keyhole covered by a thin metal lid lies within the lock.
+
+>put mat under door
+The place mat fits easily under the door.
+
+>open lid
+The lid is now open.
+
+>put opener in keyhole
+There is a faint noise from behind the door and a small cloud of dust rises from beneath it.
+Done.
+
+>take opener
+Taken.
+
+>drop opener
+Dropped.
+
+>take mat
+As the place mat is moved, a rusty iron key falls from it and onto the floor.
+
+>take key
+Taken.
+
+>unlock door with key. open door. north
+The door is now unlocked.
+
+The door is now open.
+
+Dreary Room
+This is a small and rather dreary room, eerily illuminated by a red glow emanating from a crack in one wall. The light falls upon a dusty wooden table in the center of the room. On the south side of the room is a massive wooden door, which has a small window barred with iron. A formidable bolt lock is set within the door frame. A keyhole lies within the lock.
+In the center of the table sits a blue crystal sphere.
+
+>take blue sphere
+Taken.
+
+>look in blue sphere
+You see only darkness.
+
+>south
+Tiny Room
+There is a place mat here.
+There is a letter opener here.
+
+>

@@ -1,0 +1,16 @@
+[Setup: replay the first 32 walkthrough commands, seed 2.]
+
+>break flask with sword
+The flask breaks into pieces.
+As you pass out, you realize that the vapors from the flask's contents are fatal.
+ 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see a small room with a sign on the wall, but it is too blurry to read.
+
+>

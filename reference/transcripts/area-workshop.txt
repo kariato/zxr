@@ -1,0 +1,53 @@
+[Setup: replay the first 153 walkthrough commands, seed 2.]
+
+>unlock door with gold key. open door. south
+The key turns and the bolt clicks. The door is unlocked.
+
+The door creaks open.
+
+Wizard's Workshop
+You are standing in the entry hall of the Wizard's Workshop. Dark corridors lead west and south from here. The corridor to the west smells slightly of incense or candle smoke. The workshop door is open.
+
+>west
+Wizard's Workroom
+This room is the Wizard's workroom. A hall continues east and west, and a larger room lies to the south. There are many shelves and racks on the walls, but the Wizard's workbench dominates the room. It is made of dark, heavy wood bound with iron. The workbench is stained from many years of use, and is deeply gouged as though some huge clawed animal was imprisoned on it. There are burn marks and even notes written in a crabbed hand. Many arcane items are scattered about the bench; alembics, mortar and pestle, small knives of various sizes, odd scraps of vellum, wax candles, and much more. In the center of a relatively clear area of the bench are affixed three stands - ruby, sapphire, and diamond - which form a triangle.
+
+>west
+Aquarium Room
+Here a dark hallway turns a corner. To the south is a dark room, to the east is fitful light.
+Filling the northern half of the room is a huge aquarium.
+The aquarium contains:
+  A baby sea serpent
+
+>throw sword at aquarium
+The elvish sword shatters the glass wall of the aquarium, spilling out an impressive amount of salt water and wet sand. It also spills out an extremely annoyed sea serpent who bites angrily at the elvish sword, and then at you. He is having difficulty breathing, and he seems to hold you responsible for his current problem. He tries to slither across the stone floor towards you. Fortunately, he expires mere inches away from biting off your foot. A clear crystal sphere sits amid the sand and broken glass on the bottom of the aquarium.
+
+>take clear sphere
+Taken.
+
+>take sword
+You're holding too many things already!
+
+>east
+Wizard's Workroom
+
+>put clear sphere on diamond stand
+Done.
+
+>put red sphere on ruby stand
+Done.
+
+>put blue sphere on sapphire stand
+Done.
+As you place the blue crystal sphere in the sapphire stand, a low humming noise begins, and you can feel the hairs on the back of your neck begin to stand up. The three spheres begin to vibrate, faster and faster, as the noise becomes higher and higher pitched. Three puffs of smoke, one red, one blue, one white, rise up from empty stands. The spheres are gone! But in the center of the triangle formed by the stands is now a black stand of obsidian in which rests a strange black sphere.
+
+>take black sphere
+Taken.
+
+>look in black sphere
+As you peer into the sphere, a strange vision takes shape...a huge and fearful face with yellow eyes. The face peers out at you expectantly.
+
+>east
+Wizard's Workshop
+
+>

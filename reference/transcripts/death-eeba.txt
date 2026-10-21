@@ -1,0 +1,97 @@
+[Setup: replay the first 9 walkthrough commands, seed 2.]
+
+>south
+Formal Garden
+This is the middle part of a formal garden. Hedges hide the cavern walls and a dim illumination comes from mosses far above. The path is of small crushed white stones. It winds among bushes and flower beds from south to north. To the north a small structure can be seen. To the south are peculiarly shaped bushes. There is a small gap in the hedges to the west.
+A unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.
+Your sword is glowing with a faint blue glow.
+
+>south
+Topiary
+This is the southern end of a formal garden. Hedges hide the cavern walls and mosses provide dim illumination. Fantastically shaped hedges and bushes are arrayed with geometric precision. They have not recently been clipped, but you can discern creatures in the shapes of the bushes: There is a dragon, a unicorn, a great serpent, a huge misshapen dog, and several human figures. On the west side of the garden the path leads through a rose arbor into a tunnel.
+Your sword is no longer glowing.
+
+>#random 1
+
+>wait
+Time passes...
+You look around, and strangely, the topiary animals seem to have changed position slightly.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+The topiary animals seem to close in on you. You turn and they are very close. They seem to be leering at you.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+A strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.
+The Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.
+The Wizard, in a deep and resonant voice, speaks the word "Fantasize!" He then vanishes, cackling gleefully.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+The topiary animals attack! You are crushed by their branches and clawed by their thorns.
+ 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see a small room with a sign on the wall, but it is too blurry to read.
+
+>

@@ -1,0 +1,6 @@
+[Setup: replay the first 6 walkthrough commands, seed 2.]
+
+>examine stalagmite
+There's nothing special about the stalag.
+
+>

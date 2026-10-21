@@ -1,0 +1,56 @@
+[Setup: replay the first 178 walkthrough commands, seed 2.]
+
+>wait
+Time passes...
+The balloon rises slowly from the ground.
+
+Volcano Core, in the basket
+You are about one hundred feet above the bottom of the volcano. The top of the volcano is clearly visible here.
+The cloth bag is inflated and there is a newspaper burning in the receptacle. A braided wire is dangling over the side of the basket.
+The basket contains:
+  A blue label
+
+>wait
+Time passes...
+The balloon ascends.
+
+Volcano Near Small Ledge, in the basket
+You are about two hundred feet above the volcano floor. Looming above is the rim of the volcano. There is a small ledge on the west side.
+The cloth bag is inflated and there is a newspaper burning in the receptacle. A braided wire is dangling over the side of the basket.
+The basket contains:
+  A blue label
+
+>wait
+Time passes...
+The balloon ascends.
+
+Volcano by Viewing Ledge, in the basket
+You are high above the floor of the volcano. The rim of the volcano looks very narrow and you are very near it. To the east is what appears to be a viewing ledge, too thin to land on.
+The cloth bag is inflated and there is a newspaper burning in the receptacle. A braided wire is dangling over the side of the basket.
+The basket contains:
+  A blue label
+
+>wait
+Time passes...
+The balloon ascends.
+
+Volcano Near Wide Ledge, in the basket
+You are near the rim of the volcano. Above you it is open to the sky. To the west, there is a place to land on a wide ledge.
+The cloth bag is inflated and there is a newspaper burning in the receptacle. A braided wire is dangling over the side of the basket.
+The basket contains:
+  A blue label
+
+>wait
+Time passes...
+The balloon floats majestically out of the volcano, revealing a breathtaking view of a wooded river valley surrounded by impassable mountains. In a clearing stands a white house. You drift into high winds, which carry you towards the snow-capped peaks. Oh, no! You crash into the jagged cliffs of the Flathead Mountains!
+ 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see only darkness.
+
+>

@@ -1,0 +1,43 @@
+[Setup: replay the first 179 walkthrough commands, seed 2.]
+
+>#random 113
+The balloon rises slowly from the ground.
+
+Volcano Core, in the basket
+You are about one hundred feet above the bottom of the volcano. The top of the volcano is clearly visible here.
+The cloth bag is inflated and there is a newspaper burning in the receptacle. A braided wire is dangling over the side of the basket.
+
+>drop black sphere
+Dropped.
+The Wizard appears, floating nonchalantly in the air beside you. He grins sideways at you.
+The Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.
+There is a loud crackling noise. Blue smoke rises from out of the Wizard's sleeve. He sighs and disappears.
+
+>wait
+Time passes...
+The balloon ascends.
+
+Volcano Near Small Ledge, in the basket
+You are about two hundred feet above the volcano floor. Looming above is the rim of the volcano. There is a small ledge on the west side.
+The cloth bag is inflated and there is a newspaper burning in the receptacle. A braided wire is dangling over the side of the basket.
+The basket contains:
+  A black crystal sphere
+
+>wait
+Time passes...
+The Wizard appears, floating nonchalantly in the air beside you. He grins sideways at you.
+The Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.
+The Wizard, in a deep and resonant voice, speaks the word "Fall!" He then vanishes, cackling gleefully.
+You suddenly fall headlong out of the basket as though someone had flipped it over.
+You make a rather messy swan dive to the bottom of the volcano.
+ 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see only darkness.
+
+>

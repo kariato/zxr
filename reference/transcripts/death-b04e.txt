@@ -1,0 +1,15 @@
+[Setup: replay the first 382 walkthrough commands, seed 2.]
+
+>take heads
+Although the Flatheads are dead, they foresaw that some cretin might tamper with their remains. Therefore, they took steps to punish such actions.
+ 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see only darkness.
+
+>

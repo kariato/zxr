@@ -1,0 +1,39 @@
+ZORK II: The Wizard of Frobozz
+Infocom interactive fiction - a fantasy story
+Copyright (c) 1981, 1982, 1983, 1986 Infocom, Inc. All rights reserved.
+ZORK is a registered trademark of Infocom, Inc.
+Release 63 / Serial number 860811
+
+Inside the Barrow
+You are inside an ancient barrow hidden deep within a dark forest. The barrow opens into a narrow tunnel at its southern end. You can see a faint glow at the far end.
+A sword of Elvish workmanship is on the ground.
+A strangely familiar brass lantern is lying on the ground.
+
+>take lamp
+Taken.
+
+>restart
+Your score would be 0 (total of 400 points), in 1 move.
+This score gives you the rank of Beginner.
+Do you wish to restart? (Y is affirmative): >no
+
+>restart
+Your score would be 0 (total of 400 points), in 1 move.
+This score gives you the rank of Beginner.
+Do you wish to restart? (Y is affirmative): >yes
+Restarting.
+ZORK II: The Wizard of Frobozz
+Infocom interactive fiction - a fantasy story
+Copyright (c) 1981, 1982, 1983, 1986 Infocom, Inc. All rights reserved.
+ZORK is a registered trademark of Infocom, Inc.
+Release 63 / Serial number 860811
+
+Inside the Barrow
+You are inside an ancient barrow hidden deep within a dark forest. The barrow opens into a narrow tunnel at its southern end. You can see a faint glow at the far end.
+A sword of Elvish workmanship is on the ground.
+A strangely familiar brass lantern is lying on the ground.
+
+>inventory
+You are empty-handed.
+
+>

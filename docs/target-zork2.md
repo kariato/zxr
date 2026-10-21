@@ -20,10 +20,10 @@ Measured from the vendored source.
 | ZIL source | 11,978 lines in 11 files | `2dungeon.zil`, `2actions.zil`, shared `g*.zil` library |
 | Rooms | 86 | `2dungeon.zil` (about 29 lit) |
 | Objects | 165 | 147 in `2dungeon.zil`, 18 global objects in `gglobals.zil` |
-| Routines | 441 | 176 in `2actions.zil`, 189 in `gverbs.zil`, 42 in `gparser.zil`, the rest library |
-| Syntax lines | 267 | `gsyntax.zil`, plus 74 `SYNONYM` lines |
+| Routines | 439 active | The phase 1 manifest replaces the earlier line-based count of 441 and lists inactive/commented forms |
+| Syntax entries | 269 active | `gsyntax.zil`, plus 75 active `SYNONYM` forms; verified against assembly data |
 | Constants and globals | 91 and 164 | across the source |
-| Timed events (interrupts) | 24 | `I-WIZARD`, `I-DRAGON`, `I-BALLOON`, `I-PRINCESS` and others |
+| Timed events (interrupts) | 23 active | Raw source also has an unused duplicate I-LANTERN in `crufty.zil`; see [the audit](reference-audit.md) |
 | Macros | 15 `DEFMAC`, 3 `DEFINE` | `gmacros.zil` (`TELL`, `VERB?`, `PROB`, `ENABLE`...) |
 | Actors | 10 | Cerberus, dragon, genie, gnome, Gnome of Zurich, princess, robot, serpent, unicorn, wizard |
 | Reference story file | `COMPILED/zork2.z3` | Runs in any Z-machine interpreter; our ground truth |

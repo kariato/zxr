@@ -1,0 +1,38 @@
+{
+  "name": "zxr",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "^22.18.0 || ^24.0.0 || >=26.0.0"
+  },
+  "bin": {
+    "zxr": "bin/zxr.ts"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "typecheck": "tsc -p tsconfig.headless.json && tsc -p tsconfig.json && node tools/check-boundaries.ts",
+    "build": "npm run typecheck && vite build && node tools/build-notices.ts",
+    "test": "vitest run",
+    "test:browser": "playwright test",
+    "reference:record": "node tools/reference/cli.ts record",
+    "reference:check": "node tools/reference/cli.ts check",
+    "reference:audit": "node tools/reference/cli.ts audit",
+    "zil:check": "node tools/zil/cli.ts check",
+    "zil:record": "node tools/zil/cli.ts record"
+  },
+  "dependencies": {
+    "three": "0.186.0"
+  },
+  "devDependencies": {
+    "@babel/parser": "7.28.5",
+    "@playwright/test": "1.56.1",
+    "@types/node": "24.10.0",
+    "@types/three": "0.186.0",
+    "ifvms": "1.1.6",
+    "typescript": "7.0.2",
+    "vite": "8.3.5",
+    "vitest": "5.0.0"
+  }
+}

@@ -1,0 +1,91 @@
+[Setup: replay the first 102 walkthrough commands, seed 2.]
+
+>#random 10
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+A strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.
+The Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.
+The Wizard incants "Filch!" but nothing happens. He shakes the wand. Nothing happens. With a slightly embarrassed glance in your direction, he vanishes.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+A strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.
+The Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.
+There is a loud crackling noise. Blue smoke rises from out of the Wizard's sleeve. He sighs and disappears.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+A strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.
+The Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.
+The Wizard, in a deep and resonant voice, speaks the word "Fireproof!" He then vanishes, cackling gleefully.
+
+>attack dragon with sword
+You've made him rather angry. You had better be very careful now.
+The dragon continues to watch you carefully.
+
+>south
+Stone Bridge
+This is the middle of a ruined but still impressive stone bridge spanning a deep chasm. Water flows far beneath. A paved path leads north into a large open space. To the south, the path leads into a misty tunnel.
+The dragon follows you, out of mingled curiosity and anger.
+
+>north
+Dragon Room
+The dragon doubles back and charges into the room, maddened by your attempt to sneak past him. His eyes glow with a white heat of anger.
+A huge ball of flame envelops you, but you don't even feel the heat. The dragon is puzzled, but not too puzzled to crush you in his jaws.
+ 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see only darkness.
+
+>

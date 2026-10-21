@@ -1,0 +1,27 @@
+[Setup: replay the first 251 walkthrough commands, seed 2.]
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+A strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.
+The Wizard notices that you carry the Black Crystal, and with an unseemly haste, he disappears.
+
+>wait
+Time passes...
+A metallic voice says "Hello, Intruder! Your unauthorized presence in the vault of the Bank of Zork has set off all sorts of nasty surprises, most of which are fatal. This message brought to you by the Frobozz Magic Vault Company."
+ 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see only darkness.
+
+>

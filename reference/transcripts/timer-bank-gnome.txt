@@ -1,0 +1,46 @@
+[Setup: replay the first 249 walkthrough commands, seed 2.]
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+You hear a faint voice say "Curtain Door Closed."
+A strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.
+The Wizard notices that you carry the Black Crystal, and with an unseemly haste, he disappears.
+
+>wait
+Time passes...
+An epicene gnome of Zurich wearing a three-piece suit and carrying a safety deposit box materializes in the room. "You seem to have forgotten to deposit your valuables," he says, tapping the lid of the box impatiently. "We don't usually allow customers to use the boxes here, but we can make this ONE exception, I suppose..." He looks askance at you over his wire-rimmed bifocals.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+A strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.
+The Wizard notices that you carry the Black Crystal, and with an unseemly haste, he disappears.
+
+>wait
+Time passes...
+The gnome looks impatient: "I may have another customer waiting; you'll just have to fend for yourself, I'm afraid." He disappears, leaving you alone.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>

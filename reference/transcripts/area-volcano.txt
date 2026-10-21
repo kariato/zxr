@@ -1,0 +1,248 @@
+[Setup: replay the first 173 walkthrough commands, seed 2.]
+
+>enter basket
+You are now in the basket.
+
+>open receptacle
+Opened.
+
+>put newspaper in receptacle
+Done.
+
+>light match
+One of the matches starts to burn.
+
+>burn newspaper with match
+The newspaper burns inside the receptacle.
+The cloth bag inflates as it fills with hot air.
+A small label drops from the bag into the basket.
+The match has gone out.
+
+>read label
+(Taken)
+ !! FROBOZZ MAGIC BALLOON COMPANY !!
+
+Hello, Aviator!
+
+To land your balloon, say LAND
+Otherwise, you're on your own!
+
+No warranty expressed or implied.
+
+>drop label
+Dropped.
+The balloon rises slowly from the ground.
+
+Volcano Core, in the basket
+You are about one hundred feet above the bottom of the volcano. The top of the volcano is clearly visible here.
+The cloth bag is inflated and there is a newspaper burning in the receptacle. A braided wire is dangling over the side of the basket.
+The basket contains:
+  A blue label
+
+>wait
+Time passes...
+The balloon ascends.
+
+Volcano Near Small Ledge, in the basket
+You are about two hundred feet above the volcano floor. Looming above is the rim of the volcano. There is a small ledge on the west side.
+The cloth bag is inflated and there is a newspaper burning in the receptacle. A braided wire is dangling over the side of the basket.
+The basket contains:
+  A blue label
+
+>land
+The balloon lands.
+Narrow Ledge, in the basket
+You are on a narrow ledge within an old dormant volcano. This ledge is about halfway between the floor below and the rim above. There is an exit to the south.
+The cloth bag is inflated and there is a newspaper burning in the receptacle. A braided wire is dangling over the side of the basket.
+On the floor is a priceless gold zorkmid (a valuable collector's item).
+There is a small hook attached to the rock here. (outside the basket)
+  The basket contains:
+    A blue label
+
+>tie wire to hook
+The balloon is fastened to the hook.
+
+>stand
+You are on your own feet again.
+
+>take coin
+Taken.
+
+>south
+Library
+This must have been a large library, probably for the royal family. All of the shelves have been gnawed to pieces by unfriendly gnomes. To the north is an exit.
+Right beside the purple book sits a white one.
+Worn and battered in one corner of the room is a blue book.
+A handsome book, bound in green leather, sits in the center of the room.
+Lying in the dust, and covered with mold, is a purple book.
+
+>open purple book
+Opening the purple book reveals a Flathead stamp.
+
+>take stamp
+Taken.
+
+>north
+Narrow Ledge
+There is a large and extremely heavy wicker basket here. An enormous cloth bag attached to the basket is inflated. A metal receptacle is fastened to the center of the basket. In it is a burning newspaper. A piece of wire tied to a hook holds the balloon in place.
+
+>enter basket
+You are now in the basket.
+
+>untie wire
+The wire falls off of the hook.
+
+>wait
+Time passes...
+The balloon leaves the ledge.
+
+Volcano Near Small Ledge, in the basket
+The cloth bag is inflated and there is a newspaper burning in the receptacle. A braided wire is dangling over the side of the basket.
+The basket contains:
+  A blue label
+
+>wait
+Time passes...
+The balloon ascends.
+
+Volcano by Viewing Ledge, in the basket
+You are high above the floor of the volcano. The rim of the volcano looks very narrow and you are very near it. To the east is what appears to be a viewing ledge, too thin to land on.
+The cloth bag is inflated and there is a newspaper burning in the receptacle. A braided wire is dangling over the side of the basket.
+The basket contains:
+  A blue label
+
+>wait
+Time passes...
+The balloon ascends.
+
+Volcano Near Wide Ledge, in the basket
+You are near the rim of the volcano. Above you it is open to the sky. To the west, there is a place to land on a wide ledge.
+The cloth bag is inflated and there is a newspaper burning in the receptacle. A braided wire is dangling over the side of the basket.
+The basket contains:
+  A blue label
+
+>land
+The balloon lands.
+Wide Ledge, in the basket
+You are on a wide ledge high in the volcano. The rim of the volcano is about 200 feet above and there is a precipitous drop to the bottom. There is a small door to the south.
+There is a small hook attached to the rock here. (outside the basket)
+  The basket contains:
+    A blue label
+
+>tie wire to hook
+The balloon is fastened to the hook.
+
+>stand
+You are on your own feet again.
+
+>south
+Dusty Room
+You are in a dusty old room which is featureless, except for an exit on the north side.
+Imbedded in the far wall is a rusty box. It appears to be somewhat damaged, since an oblong hole has been chipped out of the front of it.
+
+>put brick in hole
+Done.
+
+>put string in brick
+Done.
+
+>light match
+One of the matches starts to burn.
+
+>burn string with match
+The string starts to burn.
+The match has gone out.
+
+>north
+Wide Ledge
+There is a large and extremely heavy wicker basket here. An enormous cloth bag attached to the basket is inflated. A metal receptacle is fastened to the center of the basket. In it is a burning newspaper. A piece of wire tied to a hook holds the balloon in place.
+There is an explosion nearby.
+
+>south
+Dusty Room
+You are in a dusty old room which is featureless, except for an exit on the north side.
+On the far wall is a rusty box, whose door has been blown off.
+The room is cluttered with debris from an explosion. The walls seem ready to collapse.
+The excessively gaudy crown of Lord Dimwit Flathead sits in the safe.
+  The box contains:
+    A card
+
+>take crown
+You are now wearing the gaudy crown.
+
+>read card
+(Taken)
+ Warning:
+    This room was constructed over very weak rock strata. Detonation of explosives in this room is strictly prohibited!
+         Frobozz Magic Cave Company
+         per M. Agrippa, foreman
+
+
+>north
+Wide Ledge
+There is a large and extremely heavy wicker basket here. An enormous cloth bag attached to the basket is inflated. A metal receptacle is fastened to the center of the basket. In it is a burning newspaper. A piece of wire tied to a hook holds the balloon in place.
+
+>enter basket
+You are now in the basket.
+You may recall that recent explosion. Probably as a result of it, you hear an ominous rumbling, as if a nearby room had collapsed.
+
+>untie wire
+The wire falls off of the hook.
+
+>close receptacle
+Closed.
+
+>wait
+Time passes...
+The balloon leaves the ledge.
+
+Volcano Near Wide Ledge, in the basket
+The cloth bag is inflated and some smoke is leaking out of the closed receptacle. A braided wire is dangling over the side of the basket.
+The basket contains:
+  A blue label
+
+>wait
+Time passes...
+The balloon descends.
+
+Volcano by Viewing Ledge, in the basket
+The cloth bag is inflated and some smoke is leaking out of the closed receptacle. A braided wire is dangling over the side of the basket.
+The basket contains:
+  A blue label
+
+>wait
+Time passes...
+The ledge collapses. (That was a narrow escape!)
+
+>wait
+Time passes...
+The balloon descends.
+
+Volcano Near Small Ledge, in the basket
+The cloth bag is inflated and some smoke is leaking out of the closed receptacle. A braided wire is dangling over the side of the basket.
+The basket contains:
+  A blue label
+
+>wait
+Time passes...
+The balloon descends.
+
+Volcano Core, in the basket
+The cloth bag is inflated and some smoke is leaking out of the closed receptacle. A braided wire is dangling over the side of the basket.
+The basket contains:
+  A blue label
+
+>wait
+Time passes...
+The balloon has landed.
+
+The balloon lands.
+Volcano Bottom, in the basket
+The cloth bag is inflated and some smoke is leaking out of the closed receptacle. A braided wire is dangling over the side of the basket.
+The basket contains:
+  A blue label
+
+>drop card
+Dropped.
+
+>

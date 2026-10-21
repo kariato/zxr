@@ -13,9 +13,9 @@ This plan builds the ZXR engine in 12 phases (0 to 11), using Zork II as the tes
 | ZIL source | 11,978 lines in 11 files | `2dungeon.zil`, `2actions.zil`, shared `g*.zil` library |
 | Rooms | 86 | `2dungeon.zil` |
 | Objects | 165 | 147 in `2dungeon.zil`, 18 global objects in `gglobals.zil` |
-| Routines | 441 | 176 game actions, 189 verbs, 42 parser, the rest library |
-| Syntax lines | 267 | `gsyntax.zil` |
-| Timed events (interrupts) | 24 | `I-WIZARD`, `I-DRAGON`, `I-BALLOON`, `I-PRINCESS` and others |
+| Routines | 439 active | Earlier line-based count was 441; the phase 1 manifest explains inactive/commented declarations |
+| Syntax entries | 269 active | `gsyntax.zil`; matched against every row of the assembly's syntax tables |
+| Timed events (interrupts) | 23 active | The raw count of 24 includes an unused duplicate I-LANTERN in `crufty.zil`; see the phase 0 audit |
 | Macros | 15 | `gmacros.zil` (`TELL`, `VERB?`, `PROB`, `ENABLE`...) |
 | Reference story file | `COMPILED/zork2.z3` | Runs in any Z-machine interpreter; our ground truth |
 
@@ -170,14 +170,14 @@ zxr/
 | 0.7 | CI workflow (tests on every push) and a GitHub Pages workflow copied from rougeXR. | Green CI; Pages serves the blank shell. |
 | 0.8 | Source-to-binary audit. Record hashes of the vendored `.zil` files and `zork2.z3`; check the evidence that they match (`zork2.chart` ends at release 63, 92,524 bytes; `zork2.zip` in the source folder is byte-identical to `COMPILED/zork2.z3`); disassemble `zork2.z3` and diff it against the compiler's `.zap` output; spot-check `.zap` against `.zil` for 20 routines; note which compile-time branches were built (`PREDGEN`, `ZORK-NUMBER`). Decide what to follow where source and release disagree. | Audit note committed; any difference is in the ledger, classed as a source-version difference rather than a port bug. |
 
-- [ ] 0.1
-- [ ] 0.2
-- [ ] 0.3
-- [ ] 0.4
-- [ ] 0.5
-- [ ] 0.6
-- [ ] 0.7
-- [ ] 0.8
+- [x] 0.1 — Vite security-patch exception to the rougeXR pin is recorded in [phase 0](phase-0.md).
+- [x] 0.2
+- [x] 0.3
+- [x] 0.4
+- [x] 0.5 — 75 fixtures cover 50 compiled death sites and 23 active interrupt routines.
+- [x] 0.6
+- [ ] 0.7 — workflows implemented and locally validated; hosted CI/Pages verification awaits a push.
+- [x] 0.8 — evidence and remaining audit limits are in [the audit](reference-audit.md).
 
 **Gate:** golden transcripts, random logs and state snapshots exist and are reproducible, and the source-to-binary audit is done. No game code yet.
 
@@ -194,16 +194,18 @@ ZIL is MDL syntax. The reader must handle forms `<...>`, lists `(...)`, vectors 
 | 1.1 | Lexer for all token kinds above, with file, line and column on every token. | Unit tests per token kind; lexes all 11 files with no unknown characters. |
 | 1.2 | Reader that builds the tree, including `;` object comments and `!` segments. | Reads all files; node counts stable across runs. |
 | 1.3 | Printer, so a tree can be written back as ZIL. | Read, print, read again gives an identical tree for every file. |
-| 1.4 | Loader that follows `zork2.zil`: `INSERT-FILE` order, top-level `SETG`, `PROPDEF`, `REDEFINE`, and the read-time conditionals (`GASSIGNED? PREDGEN`, `ZORK-NUMBER`). The branch taken must match the built game: for example `gmain.zap` shows the first (`PREDGEN`) version of `PERFORM` was compiled. | Loaded program matches an audited active-program manifest: every routine, object, global and syntax line that the selected compile-time branches include, checked against the `.FUNCT` names and data in the `.zap` files. Differences from the raw source counts (for example 441 `ROUTINE` forms in the source versus 439 `.FUNCT` names in the `.zap` files) are each explained in the manifest. |
+| 1.4 | Loader that follows `zork2.zil`: `INSERT-FILE` order, top-level `SETG`, `PROPDEF`, `REDEFINE`, and the read-time conditionals (`GASSIGNED? PREDGEN`, `ZORK-NUMBER`). The branch taken must match the built game: for example `gmain.zap` shows the first (`PREDGEN`) version of `PERFORM` was compiled. | Loaded program matches an audited active-program manifest: every routine, object, global and syntax line that the selected compile-time branches include, checked against the `.FUNCT` names and data in the `.zap` files. Differences from earlier line-based counts are explained; the reader finds 456 routine forms including comments/inactive code, of which 439 are active. |
 | 1.5 | Macro expander. Zork II's 15 `DEFMAC`s and 3 `DEFINE`s are real MDL programs (the `TELL` macro uses `MAPF` and `SPNAME`). For this game, port each one to a TypeScript expander instead of writing a full MDL interpreter. Expansion keeps semantic metadata (for example that a test came from `VERB? OPEN TAKE`) so option ranking can still see it. | Golden expansion tests for every macro, such as `<TELL "You see " D ,LAMP CR>` to `PRINTI`, `PRINTD`, `CRLF`; expanded routines agree with the `.zap` output for 20 sample routines. No macro call survives expansion. |
 | 1.6 | Error reporting with source spans and a `zxr check` command that prints them. | A broken test file reports the exact line and column. |
 
-- [ ] 1.1
-- [ ] 1.2
-- [ ] 1.3
-- [ ] 1.4
-- [ ] 1.5
-- [ ] 1.6
+- [x] 1.1
+- [x] 1.2
+- [x] 1.3
+- [x] 1.4
+- [x] 1.5
+- [x] 1.6
+
+Implementation, evidence and scope limits: [phase 1](phase-1.md). `npm run zil:check` verifies the active manifest and twenty expanded routine samples.
 
 **Gate:** all of Zork II reads and expands with zero errors. A general MDL macro interpreter is deferred until a second ZIL game needs it; record that decision in the ledger.
 
@@ -217,7 +219,7 @@ ZIL is MDL syntax. The reader must handle forms `<...>`, lists `(...)`, vectors 
 | 2.1 | Symbol table for constants, globals, objects, rooms, property names (`PROPDEF`) and flag names; duplicate and undefined names reported. Objects, routines, globals and words get the fixed numbers compat-semantics.md defines, matching the original where they are observable. | Every name used in a routine resolves, or appears in the report. |
 | 2.2 | Rooms and objects to `world.zxr.json`: initial location, `DESC`, `LDESC`, `FDESC`, `SYNONYM`, `ADJECTIVE`, `FLAGS`, `ACTION`, `SIZE`, `CAPACITY`, `VALUE`, `TVALUE`, local `GLOBAL` lists, `PSEUDO` objects. | 86 rooms and 165 objects emitted; spot checks against the source for 10 of each. |
 | 2.3 | Exits: plain (`TO`), conditional (`IF ... IS OPEN`, `IF flag ELSE "text"`), routine (`PER`) and blocked (string) exits, encoded as property bytes with the original lengths (`UEXIT`, `NEXIT`, `FEXIT`, `CEXIT`, `DEXIT`) because `V-WALK` tells them apart by `PTSIZE` and reads a global's number for `VALUE`. A readable JSON view of the exit graph is derived from those bytes for tools and the scene planner; translated code never reads the view. | Every exit of every room appears; a test walks the exit graph and finds no dangling room names; the encoded exit bytes for every room match the property data in the `.zap` files. (`V-WALK`'s behaviour on each exit kind is tested in step 3.4, once the interpreter exists.) |
-| 2.4 | Vocabulary: 267 `SYNTAX` lines with verb, prepositions, object slot rules (`FIND`, `HAVE`, `TAKE`, `MANY`, `HELD`, `CARRIED`, `ON-GROUND`, `IN-ROOM`), action and pre-action routines; 74 `SYNONYM`s, `BUZZ` words, `DIRECTIONS`. | Vocabulary file validates; every syntax line names an existing routine. |
+| 2.4 | Vocabulary: 269 active `SYNTAX` entries with verb, prepositions, object slot rules (`FIND`, `HAVE`, `TAKE`, `MANY`, `HELD`, `CARRIED`, `ON-GROUND`, `IN-ROOM`), action and pre-action routines; 75 active `SYNONYM`s, `BUZZ` words, `DIRECTIONS`. | Vocabulary file validates; every syntax line names an existing routine. |
 | 2.5 | Routine translator, part 1: locals, optional and `AUX` arguments, control flow (`COND`, `REPEAT`, `PROG`, `RETURN`, `RTRUE`, `RFALSE`, `AGAIN`), arithmetic and comparisons, calls and `APPLY`. | Unit tests per form; a handful of small routines match hand-written JSON. |
 | 2.6 | Routine translator, part 2: object tree (`MOVE`, `REMOVE`, `LOC`, `IN?`, `FIRST?`, `NEXT?`), flags (`FSET`, `FCLEAR`, `FSET?`), properties (`GETP`, `PUTP`, `GETPT`, `PTSIZE`), output (`PRINT`, `PRINTI`, `PRINTB`, `PRINTC`, `PRINTD`, `PRINTN`, `CRLF`) with string literals interned in the string pool, `RANDOM`, `PERFORM`, and `READ`, `SAVE`, `RESTORE`, `RESTART`, `QUIT` as suspension operations. | All 189 verb routines and 176 game routines translate; every operation used appears in the primitive inventory. |
 | 2.7 | Tables: `TABLE`, `LTABLE`, `ITABLE`, `GET`, `PUT`, `GETB`, `PUTB`, `REST`. ZIL code treats tables as raw memory (the clock queue is edited with `PUT`, walked with `REST` pointers and compared with `==?`), so all tables, property tables and a header live in one big-endian memory image, as compat-semantics.md defines. Pointers are byte addresses, so `REST` results compare equal and bytes and words alias. | The clock routines in `gclock.zil` translate unchanged; the memory image's layout validates. The behaviour tests (a clock queue test, aliasing of `PUT`/`GETB`, pointer equality after `REST`, missing-property defaults, routine references and strings stored in tables, and `V-VERSION`'s header output) run in step 3.2 once the interpreter exists. |
@@ -250,7 +252,7 @@ ZIL is MDL syntax. The reader must handle forms `<...>`, lists `(...)`, vectors 
 | 3.2 | Interpreter: an explicit call stack (so `READ` and host operations can suspend and resume), locals, argument defaults, return values including ZIL's three-way result (true, false, fatal), loop and jump semantics, a depth limit and a per-action step budget, and copy-on-write transactions so a failed action rolls back. | Per-command unit tests; the memory and string tests from steps 2.3 and 2.7; infinite recursion, an infinite loop and division by zero each return `status: 'error'` with the state hash unchanged. |
 | 3.3 | Output buffer for `PRINTI`, `PRINTD`, `PRINTN`, `CRLF`; each turn's text returned in the `ActionResolution`. | Text of `V-LOOK` in five rooms matches the golden transcript exactly. |
 | 3.4 | Turn loop: the translated `MAIN-LOOP-1` and `PERFORM`, with `PARSER` replaced by the parser adapter (see "Applying an action" above). `PERFORM`'s order is kept exactly: the not-here object, then the actor (`WINNER`'s action), the room's `M-BEG`, the pre-action, the indirect object, the direct object's container `CONTFCN`, the direct object, and finally the verb's default routine; the first non-false result stops the chain, and `PRSA`, `PRSO`, `PRSI` are restored afterwards so nested `PERFORM`s do not corrupt the outer action. `MAIN-LOOP-1` then runs `M-END` unless the result was `M-FATAL`, and runs `CLOCKER` unless the verb is on its exemption list. | Adapter fixtures, from a fresh game and one after another: `TAKE LAMP`, `DROP LAMP`, a two-object action, `LOOK`, `SAY`, a directional walk, an implicit take, `TAKE ALL` with one failure, a robot command (two passes, robot inventory, `HERE` and `LIT` restored afterwards), the robot's cage rescue, an action with the player in the bucket, and a pseudo-object as direct and indirect object (the Tea Room hole). Each asserts the match tables, `P-SYNTAX` and parser globals at the parser-return checkpoint against the reference snapshot, then the text, moves and clock ticks. A trace fixture with a handler at every dispatch layer, plus a nested `PERFORM`, shows the exact order, where it stops, and restored globals; `V-WALK` takes the right branch for each of the five exit kinds. |
-| 3.5 | Clock: the translated `gclock.zil` (`QUEUE`, `INT`, `CLOCKER`), called only where `MAIN-LOOP-1` and `V-WAIT` call it; all 24 interrupts reachable. | Lantern burn-down and one timed event match the original turn for turn; move count, lantern life and the clock table match after look, inventory, score, save, wait, a failed action and a death. |
+| 3.5 | Clock: the translated `gclock.zil` (`QUEUE`, `INT`, `CLOCKER`), called only where `MAIN-LOOP-1` and `V-WAIT` call it; all 23 active interrupts reachable. | Lantern burn-down and one timed event match the original turn for turn; move count, lantern life and the clock table match after look, inventory, score, save, wait, a failed action and a death. |
 | 3.6 | Seeded RNG for `RANDOM` and `PROB`, with a draw counter for diagnostics. | Same seed and actions give the same state hash. |
 | 3.7 | Game lifecycle: start-up routine and opening text, death (`JIGS-UP`) and resurrection rules, score, the move counter and victory (`WON-FLAG`), and the meta verbs. Pending decisions, host operations, epochs, `exportSave` and `importSave` as compat-semantics.md defines them; their time cost follows `MAIN-LOOP-1`'s exemption list. | Opening text and a death sequence match golden transcripts. Declining quit, declining and accepting restart, `FINISH` with restore succeeding and failing, a wrong or stale decision id, an ordinary option while a decision is pending, a failed save, and a request from before a restore are all handled as specified, with no double clock tick and no engine left suspended. |
 | 3.8 | Debug API: state dump, turn trace with ZIL file and line for each executed command, reveal-all mode for tests only. | Trace of one turn points at the right lines in `2actions.zil`. |
@@ -499,4 +501,3 @@ Zork II needs 10 characters (the Wizard of Frobozz, the dragon, the princess, th
 - [rougeXR](https://github.com/kariato/rougeXR): implementation plan format, engine contract, asset pipeline, XR checklist.
 - [ZXR design doc](design.md)
 - [itch.io forum: add support for WebXR (2020)](https://itch.io/t/788273/add-support-for-webxr)
-

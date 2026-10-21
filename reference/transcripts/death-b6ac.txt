@@ -1,0 +1,19 @@
+[Setup: replay the first 385 walkthrough commands, seed 2.]
+
+>drop wand
+Dropped.
+
+>south
+Landing
+Beyond the door is a roughly hewn staircase leading down into darkness. The landing on which you stand is covered with carefully drawn magical runes like those sketched upon the workbench of the Wizard of Frobozz. These have been overlaid with sweeping green lines of enormous power, which undulate back and forth across the landing. The green curves begin to vibrate toward you, as if searching for something. One by one your possessions glow bright green. Finally, you are attacked by these magical wardens, and destroyed!
+ 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see only darkness.
+
+>

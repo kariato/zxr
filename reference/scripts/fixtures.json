@@ -1,0 +1,1227 @@
+{
+  "format": "zxr-scripts-v1",
+  "seed": 2,
+  "fixtures": [
+    {
+      "id": "walkthrough",
+      "kind": "walkthrough",
+      "prefix": 0,
+      "commandFile": "walkthrough.txt",
+      "expect": {
+        "score": 400,
+        "won": true,
+        "deaths": 0,
+        "room": "ZORK3"
+      },
+      "routines": [
+        "PARSER",
+        "CLOCKER",
+        "FINISH"
+      ]
+    },
+    {
+      "id": "area-barrow",
+      "kind": "area",
+      "prefix": 0,
+      "commands": [
+        "take lamp",
+        "take sword",
+        "turn on lamp",
+        "south",
+        "south",
+        "south"
+      ]
+    },
+    {
+      "id": "area-garden",
+      "kind": "area",
+      "prefix": 8,
+      "commands": [
+        "se",
+        "enter gazebo",
+        "take teapot",
+        "exit",
+        "north",
+        "ne",
+        "fill teapot",
+        "south"
+      ]
+    },
+    {
+      "id": "area-riddle",
+      "kind": "area",
+      "prefix": 21,
+      "commands": [
+        "answer \"well\"",
+        "east",
+        "take necklace",
+        "east"
+      ]
+    },
+    {
+      "id": "area-well",
+      "kind": "area",
+      "prefix": 25,
+      "commands": [
+        "enter bucket",
+        "pour water in bucket",
+        "stand",
+        "east"
+      ]
+    },
+    {
+      "id": "area-cakes",
+      "kind": "area",
+      "prefix": 29,
+      "commands": [
+        "take all",
+        "eat green cake",
+        "east",
+        "drop orange cake",
+        "throw red cake in pool",
+        "take candies",
+        "west",
+        "eat blue cake",
+        "nw"
+      ]
+    },
+    {
+      "id": "area-robot",
+      "kind": "area",
+      "prefix": 38,
+      "commands": [
+        "read paper",
+        "drop paper",
+        "robot, go east",
+        "east",
+        "robot, go south",
+        "south",
+        "take red sphere",
+        "robot, lift cage",
+        "take red sphere",
+        "look in red sphere",
+        "robot, go north",
+        "north",
+        "robot, push triangular button",
+        "west",
+        "southeast"
+      ]
+    },
+    {
+      "id": "area-tiny-room",
+      "kind": "area",
+      "prefix": 87,
+      "commands": [
+        "up",
+        "put mat under door",
+        "open lid",
+        "put opener in keyhole",
+        "take opener",
+        "drop opener",
+        "take mat",
+        "take key",
+        "unlock door with key. open door. north",
+        "take blue sphere",
+        "look in blue sphere",
+        "south"
+      ]
+    },
+    {
+      "id": "area-dragon",
+      "kind": "area",
+      "prefix": 101,
+      "commands": [
+        "north",
+        "attack dragon with sword",
+        "south",
+        "attack dragon with sword",
+        "south",
+        "attack dragon with sword",
+        "west",
+        "east",
+        "north",
+        "north",
+        "north",
+        "kiss princess"
+      ]
+    },
+    {
+      "id": "area-princess",
+      "kind": "area",
+      "prefix": 112,
+      "commands": [
+        "kiss princess",
+        "south",
+        "east",
+        "east",
+        "down",
+        "south",
+        "east",
+        "wait",
+        "east",
+        "wait",
+        "east",
+        "east",
+        "north",
+        "in",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "exit",
+        "take key",
+        "drop rose"
+      ]
+    },
+    {
+      "id": "area-workshop",
+      "kind": "area",
+      "prefix": 153,
+      "commands": [
+        "unlock door with gold key. open door. south",
+        "west",
+        "west",
+        "throw sword at aquarium",
+        "take clear sphere",
+        "take sword",
+        "east",
+        "put clear sphere on diamond stand",
+        "put red sphere on ruby stand",
+        "put blue sphere on sapphire stand",
+        "take black sphere",
+        "look in black sphere",
+        "east"
+      ]
+    },
+    {
+      "id": "area-volcano",
+      "kind": "area",
+      "prefix": 173,
+      "commands": [
+        "enter basket",
+        "open receptacle",
+        "put newspaper in receptacle",
+        "light match",
+        "burn newspaper with match",
+        "read label",
+        "drop label",
+        "wait",
+        "land",
+        "tie wire to hook",
+        "stand",
+        "take coin",
+        "south",
+        "open purple book",
+        "take stamp",
+        "north",
+        "enter basket",
+        "untie wire",
+        "wait",
+        "wait",
+        "wait",
+        "land",
+        "tie wire to hook",
+        "stand",
+        "south",
+        "put brick in hole",
+        "put string in brick",
+        "light match",
+        "burn string with match",
+        "north",
+        "south",
+        "take crown",
+        "read card",
+        "north",
+        "enter basket",
+        "untie wire",
+        "close receptacle",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "drop card"
+      ]
+    },
+    {
+      "id": "area-bank",
+      "kind": "area",
+      "prefix": 244,
+      "commands": [
+        "west",
+        "south",
+        "take portrait",
+        "north",
+        "walk through north wall",
+        "walk through south wall",
+        "walk through north wall",
+        "take bills",
+        "walk through north wall",
+        "drop bills",
+        "drop portrait",
+        "east",
+        "east",
+        "take bills",
+        "take portrait",
+        "walk through north wall",
+        "south"
+      ]
+    },
+    {
+      "id": "death-5496",
+      "kind": "death",
+      "description": "CRETIN-FCN death at 0x5496",
+      "prefix": 3,
+      "commands": [
+        "attack me with sword"
+      ],
+      "deathPc": 21654
+    },
+    {
+      "id": "death-7a2b",
+      "kind": "death",
+      "description": "V-BURN death at 0x7a2b",
+      "prefix": 176,
+      "commands": [
+        "take newspaper",
+        "light match",
+        "burn newspaper with match"
+      ],
+      "deathPc": 31275
+    },
+    {
+      "id": "death-87a8",
+      "kind": "death",
+      "description": "V-LEAP death at 0x87a8",
+      "prefix": 4,
+      "commands": [
+        "jump"
+      ],
+      "deathPc": 34728
+    },
+    {
+      "id": "death-8b33",
+      "kind": "death",
+      "description": "V-PLAY death at 0x8b33",
+      "prefix": 38,
+      "commands": [
+        "play robot"
+      ],
+      "deathPc": 35635
+    },
+    {
+      "id": "death-937c",
+      "kind": "death",
+      "description": "V-THROW death at 0x937c",
+      "prefix": 3,
+      "commands": [
+        "throw sword at me"
+      ],
+      "deathPc": 37756
+    },
+    {
+      "id": "death-95c8",
+      "kind": "death",
+      "description": "V-WALK death at 0x95c8",
+      "prefix": 85,
+      "commands": [
+        "turn off lamp",
+        "east",
+        "west"
+      ],
+      "deathPc": 38344
+    },
+    {
+      "id": "death-9e2d",
+      "kind": "death",
+      "description": "GOTO death at 0x9e2d",
+      "prefix": 87,
+      "commands": [
+        "turn off lamp",
+        "west"
+      ],
+      "deathPc": 40493
+    },
+    {
+      "id": "death-a62a",
+      "kind": "death",
+      "description": "RISE-AND-SHINE death at 0xa62a",
+      "prefix": 178,
+      "commands": [
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait"
+      ],
+      "deathPc": 42538
+    },
+    {
+      "id": "death-aa85",
+      "kind": "death",
+      "description": "BRICK-FCN death at 0xaa85",
+      "prefix": 201,
+      "commands": [
+        "burn brick with match"
+      ],
+      "deathPc": 43653
+    },
+    {
+      "id": "death-aaed",
+      "kind": "death",
+      "description": "I-FUSE death at 0xaaed",
+      "prefix": 202,
+      "commands": [
+        "wait"
+      ],
+      "deathPc": 43757
+    },
+    {
+      "id": "death-ab95",
+      "kind": "death",
+      "description": "I-SAFE death at 0xab95",
+      "prefix": 205,
+      "commands": [
+        "wait"
+      ],
+      "deathPc": 43925
+    },
+    {
+      "id": "death-ac46",
+      "kind": "death",
+      "description": "I-LEDGE death at 0xac46",
+      "prefix": 208,
+      "commands": [
+        "wait",
+        "wait",
+        "wait"
+      ],
+      "deathPc": 44102
+    },
+    {
+      "id": "death-ac73",
+      "kind": "death",
+      "description": "I-LEDGE death at 0xac73",
+      "prefix": 207,
+      "commands": [
+        "wait",
+        "wait",
+        "wait",
+        "wait"
+      ],
+      "deathPc": 44147
+    },
+    {
+      "id": "death-b04e",
+      "kind": "death",
+      "description": "HEAD-FCN death at 0xb04e",
+      "prefix": 382,
+      "commands": [
+        "take heads"
+      ],
+      "deathPc": 45134
+    },
+    {
+      "id": "death-b6ac",
+      "kind": "death",
+      "description": "ZORK3-FCN death at 0xb6ac",
+      "prefix": 385,
+      "commands": [
+        "drop wand",
+        "south"
+      ],
+      "deathPc": 46764
+    },
+    {
+      "id": "death-b909",
+      "kind": "death",
+      "description": "BUCKET-FCN death at 0xb909",
+      "prefix": 26,
+      "commands": [
+        "kick bucket"
+      ],
+      "deathPc": 47369
+    },
+    {
+      "id": "death-bba3",
+      "kind": "death",
+      "description": "CAKE-FCN death at 0xbba3",
+      "prefix": 30,
+      "commands": [
+        "eat red cake"
+      ],
+      "deathPc": 48035
+    },
+    {
+      "id": "death-bc03",
+      "kind": "death",
+      "description": "CAKE-FCN death at 0xbc03",
+      "prefix": 30,
+      "commands": [
+        "eat blue cake"
+      ],
+      "deathPc": 48131
+    },
+    {
+      "id": "death-bf25",
+      "kind": "death",
+      "description": "POOL-FCN death at 0xbf25",
+      "prefix": 32,
+      "commands": [
+        "enter pool"
+      ],
+      "deathPc": 48933
+    },
+    {
+      "id": "death-bfbd",
+      "kind": "death",
+      "description": "FLASK-FCN death at 0xbfbd",
+      "prefix": 32,
+      "commands": [
+        "open flask"
+      ],
+      "deathPc": 49085
+    },
+    {
+      "id": "death-bfe0",
+      "kind": "death",
+      "description": "FLASK-FCN death at 0xbfe0",
+      "prefix": 32,
+      "commands": [
+        "break flask with sword"
+      ],
+      "deathPc": 49120
+    },
+    {
+      "id": "death-c01b",
+      "kind": "death",
+      "description": "ICEBOOM death at 0xc01b",
+      "prefix": 30,
+      "commands": [
+        "eat orange cake"
+      ],
+      "deathPc": 49179
+    },
+    {
+      "id": "death-c073",
+      "kind": "death",
+      "description": "MAGNET-ROOM-FCN death at 0xc073",
+      "prefix": 50,
+      "commands": [
+        "robot, push square button",
+        "robot, push triangular button",
+        "west"
+      ],
+      "deathPc": 49267
+    },
+    {
+      "id": "death-c12d",
+      "kind": "death",
+      "description": "BUTTONS death at 0xc12d",
+      "prefix": 42,
+      "commands": [
+        "push square button"
+      ],
+      "deathPc": 49453
+    },
+    {
+      "id": "death-c290",
+      "kind": "death",
+      "description": "SPHERE-FCN death at 0xc290",
+      "prefix": 44,
+      "commands": [
+        "robot, take red sphere"
+      ],
+      "deathPc": 49808
+    },
+    {
+      "id": "death-c2b6",
+      "kind": "death",
+      "description": "I-SPHERE death at 0xc2b6",
+      "prefix": 45,
+      "commands": [
+        "wait",
+        "wait"
+      ],
+      "deathPc": 49846
+    },
+    {
+      "id": "death-c83c",
+      "kind": "death",
+      "description": "I-CURTAIN death at 0xc83c",
+      "prefix": 251,
+      "commands": [
+        "wait",
+        "wait",
+        "wait",
+        "wait"
+      ],
+      "deathPc": 51260
+    },
+    {
+      "id": "death-dce5",
+      "kind": "death",
+      "description": "MAGIC-ACTOR death at 0xdce5",
+      "prefix": 5,
+      "commands": [
+        "#random 69",
+        "cross bridge",
+        "cross bridge",
+        "cross bridge",
+        "cross bridge",
+        "cross bridge",
+        "cross bridge",
+        "cross bridge",
+        "cross bridge",
+        "cross bridge",
+        "cross bridge",
+        "cross bridge",
+        "cross bridge",
+        "cross bridge",
+        "cross bridge",
+        "cross bridge"
+      ],
+      "deathPc": 56549
+    },
+    {
+      "id": "death-dcf5",
+      "kind": "death",
+      "description": "MAGIC-ACTOR death at 0xdcf5",
+      "prefix": 28,
+      "commands": [
+        "#random 113",
+        "wait",
+        "wait",
+        "wait",
+        "down"
+      ],
+      "deathPc": 56565
+    },
+    {
+      "id": "death-e399",
+      "kind": "death",
+      "description": "CERBERUS-FCN death at 0xe399",
+      "prefix": 378,
+      "commands": [
+        "attack cerberus"
+      ],
+      "deathPc": 58265
+    },
+    {
+      "id": "death-e4e5",
+      "kind": "death",
+      "description": "CERBERUS-FCN death at 0xe4e5",
+      "prefix": 378,
+      "commands": [
+        "wave wand at cerberus",
+        "say \"fierce\""
+      ],
+      "deathPc": 58597
+    },
+    {
+      "id": "death-e594",
+      "kind": "death",
+      "description": "COLLAR-FCN death at 0xe594",
+      "prefix": 379,
+      "commands": [
+        "take collar"
+      ],
+      "deathPc": 58772
+    },
+    {
+      "id": "death-e95f",
+      "kind": "death",
+      "description": "I-DRAGON death at 0xe95f",
+      "prefix": 103,
+      "commands": [
+        "attack dragon with sword",
+        "attack dragon with sword"
+      ],
+      "deathPc": 59743
+    },
+    {
+      "id": "death-e9c8",
+      "kind": "death",
+      "description": "I-DRAGON death at 0xe9c8",
+      "prefix": 102,
+      "commands": [
+        "#random 10",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "attack dragon with sword",
+        "south",
+        "north"
+      ],
+      "deathPc": 59848
+    },
+    {
+      "id": "death-e9d2",
+      "kind": "death",
+      "description": "I-DRAGON death at 0xe9d2",
+      "prefix": 105,
+      "commands": [
+        "north"
+      ],
+      "deathPc": 59858
+    },
+    {
+      "id": "death-eeba",
+      "kind": "death",
+      "description": "I-GARDEN death at 0xeeba",
+      "prefix": 9,
+      "commands": [
+        "south",
+        "south",
+        "#random 1",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait"
+      ],
+      "deathPc": 61114
+    },
+    {
+      "id": "death-f2bf",
+      "kind": "death",
+      "description": "PRINCESS-FCN death at 0xf2bf",
+      "prefix": 112,
+      "commands": [
+        "attack princess with sword"
+      ],
+      "deathPc": 62143
+    },
+    {
+      "id": "death-10360",
+      "kind": "death",
+      "description": "IN-AQUARIUM-FCN death at 0x10360",
+      "prefix": 156,
+      "commands": [
+        "enter aquarium"
+      ],
+      "deathPc": 66400
+    },
+    {
+      "id": "death-10368",
+      "kind": "death",
+      "description": "IN-AQUARIUM-FCN death at 0x10368",
+      "prefix": 157,
+      "commands": [
+        "enter aquarium"
+      ],
+      "deathPc": 66408
+    },
+    {
+      "id": "death-1040b",
+      "kind": "death",
+      "description": "AQUARIUM-FCN death at 0x1040b",
+      "prefix": 34,
+      "commands": [
+        "take candies and flask",
+        "west",
+        "eat blue cake",
+        "nw",
+        "read paper",
+        "drop paper",
+        "robot, go east",
+        "east",
+        "robot, go south",
+        "south",
+        "take red sphere",
+        "robot, lift cage",
+        "take red sphere",
+        "look in red sphere",
+        "robot, go north",
+        "north",
+        "robot, push triangular button",
+        "west",
+        "southeast",
+        "west",
+        "southeast",
+        "west",
+        "enter bucket",
+        "fill teapot",
+        "stand",
+        "drop teapot",
+        "west",
+        "west",
+        "nw",
+        "open steel box",
+        "take violin",
+        "sw",
+        "take string",
+        "sw",
+        "give candies to lizard",
+        "drop necklace",
+        "drop violin",
+        "drop red sphere",
+        "north",
+        "ne",
+        "east",
+        "north",
+        "north",
+        "enter gazebo",
+        "take all",
+        "exit",
+        "south",
+        "west",
+        "sw",
+        "north",
+        "take brick",
+        "north",
+        "north",
+        "up",
+        "put mat under door",
+        "open lid",
+        "put opener in keyhole",
+        "take opener",
+        "drop opener",
+        "take mat",
+        "take key",
+        "unlock door with key. open door. north",
+        "take blue sphere",
+        "look in blue sphere",
+        "south",
+        "down",
+        "west",
+        "north",
+        "attack dragon with sword",
+        "south",
+        "attack dragon with sword",
+        "south",
+        "attack dragon with sword",
+        "west",
+        "east",
+        "north",
+        "north",
+        "north",
+        "kiss princess",
+        "south",
+        "east",
+        "east",
+        "down",
+        "south",
+        "east",
+        "wait",
+        "east",
+        "wait",
+        "east",
+        "east",
+        "north",
+        "in",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "exit",
+        "take key",
+        "drop rose",
+        "drop orange cake",
+        "drop rusty key",
+        "inventory",
+        "south",
+        "south",
+        "west",
+        "sw",
+        "sw",
+        "take red sphere",
+        "unlock door with gold key. open door. south",
+        "west",
+        "west",
+        "throw flask at aquarium"
+      ],
+      "deathPc": 66571
+    },
+    {
+      "id": "death-1052c",
+      "kind": "death",
+      "description": "AQUARIUM-FCN death at 0x1052c",
+      "prefix": 156,
+      "commands": [
+        "break aquarium with sword"
+      ],
+      "deathPc": 66860
+    },
+    {
+      "id": "death-10687",
+      "kind": "death",
+      "description": "SERPENT-FCN death at 0x10687",
+      "prefix": 156,
+      "commands": [
+        "take serpent"
+      ],
+      "deathPc": 67207
+    },
+    {
+      "id": "death-10c7f",
+      "kind": "death",
+      "description": "GENIE-FCN death at 0x10c7f",
+      "prefix": 351,
+      "commands": [
+        "demon, kill me"
+      ],
+      "deathPc": 68735
+    },
+    {
+      "id": "death-1149c",
+      "kind": "death",
+      "description": "I-WIZARD death at 0x1149c",
+      "prefix": 27,
+      "commands": [
+        "#random 19",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait"
+      ],
+      "deathPc": 70812
+    },
+    {
+      "id": "death-114ae",
+      "kind": "death",
+      "description": "I-WIZARD death at 0x114ae",
+      "prefix": 179,
+      "commands": [
+        "#random 19",
+        "drop black sphere",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait"
+      ],
+      "deathPc": 70830
+    },
+    {
+      "id": "death-11a35",
+      "kind": "death",
+      "description": "I-WIZARD death at 0x11a35",
+      "prefix": 27,
+      "commands": [
+        "#random 5",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait"
+      ],
+      "deathPc": 72245
+    },
+    {
+      "id": "death-11a47",
+      "kind": "death",
+      "description": "I-WIZARD death at 0x11a47",
+      "prefix": 179,
+      "commands": [
+        "#random 113",
+        "drop black sphere",
+        "wait",
+        "wait"
+      ],
+      "deathPc": 72263
+    },
+    {
+      "id": "death-11dbb",
+      "kind": "death",
+      "description": "WAND-FCN death at 0x11dbb",
+      "prefix": 38,
+      "commands": [
+        "#random 26",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "robot, take wand"
+      ],
+      "deathPc": 73147
+    },
+    {
+      "id": "death-11e24",
+      "kind": "death",
+      "description": "WAND-FCN death at 0x11e24",
+      "prefix": 353,
+      "commands": [
+        "wave wand at lamp",
+        "say \"float\"",
+        "wave wand at lamp",
+        "wave wand at lamp",
+        "wave wand at lamp",
+        "wave wand at lamp",
+        "wave wand at lamp",
+        "wave wand at lamp",
+        "wave wand at lamp"
+      ],
+      "deathPc": 73252
+    },
+    {
+      "id": "death-11fea",
+      "kind": "death",
+      "description": "BRIDGE-FCN death at 0x11fea",
+      "prefix": 5,
+      "commands": [
+        "jump off bridge"
+      ],
+      "deathPc": 73706
+    },
+    {
+      "id": "timer-volcano-gnome",
+      "kind": "timer",
+      "prefix": 184,
+      "commands": [
+        "untie wire",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "gnome, hello",
+        "wait",
+        "wait",
+        "wait",
+        "wait"
+      ],
+      "routines": [
+        "I-GNOME",
+        "I-NERVOUS"
+      ]
+    },
+    {
+      "id": "timer-bank-gnome",
+      "kind": "timer",
+      "prefix": 249,
+      "commands": [
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait"
+      ],
+      "routines": [
+        "I-ZGNOME",
+        "I-ZGNOME-OUT"
+      ]
+    },
+    {
+      "id": "timer-spray",
+      "kind": "timer",
+      "prefix": 268,
+      "commands": [
+        "apply repellent to me",
+        "wait",
+        "wait",
+        "wait",
+        "wait",
+        "wait"
+      ],
+      "routines": [
+        "I-SPRAY"
+      ]
+    },
+    {
+      "id": "special-implicit-take",
+      "kind": "special",
+      "prefix": 29,
+      "commands": [
+        "eat green cake"
+      ],
+      "contains": "Taken"
+    },
+    {
+      "id": "special-pseudo-object",
+      "kind": "special",
+      "prefix": 6,
+      "commands": [
+        "examine stalagmite"
+      ],
+      "routines": [
+        "STALA-PSEUDO"
+      ]
+    },
+    {
+      "id": "special-take-all",
+      "kind": "special",
+      "prefix": 0,
+      "commands": [
+        "take all",
+        "inventory"
+      ]
+    },
+    {
+      "id": "special-quit",
+      "kind": "special",
+      "prefix": 0,
+      "commands": [
+        "quit",
+        "no",
+        "quit",
+        "yes"
+      ],
+      "routines": [
+        "V-QUIT"
+      ]
+    },
+    {
+      "id": "special-restart",
+      "kind": "special",
+      "prefix": 0,
+      "commands": [
+        "take lamp",
+        "restart",
+        "no",
+        "restart",
+        "yes",
+        "inventory"
+      ],
+      "expect": {
+        "moves": 1,
+        "room": "INSIDE-BARROW"
+      }
+    },
+    {
+      "id": "special-save-restore",
+      "kind": "special",
+      "prefix": 0,
+      "commands": [
+        "take lamp",
+        "save",
+        "south",
+        "restore",
+        "inventory"
+      ],
+      "expect": {
+        "room": "INSIDE-BARROW",
+        "moves": 2
+      }
+    },
+    {
+      "id": "special-restore-failure",
+      "kind": "special",
+      "prefix": 0,
+      "commands": [
+        "restore",
+        "look"
+      ],
+      "contains": "Failed"
+    },
+    {
+      "id": "special-reseed",
+      "kind": "special",
+      "prefix": 0,
+      "commands": [
+        "#random 19",
+        "wait",
+        "look"
+      ]
+    },
+    {
+      "id": "special-end-prompt",
+      "kind": "special",
+      "prefix": 386,
+      "commands": [
+        "nonsense",
+        "restart",
+        "inventory"
+      ],
+      "expect": {
+        "room": "INSIDE-BARROW",
+        "score": 0,
+        "won": false
+      }
+    }
+  ]
+}

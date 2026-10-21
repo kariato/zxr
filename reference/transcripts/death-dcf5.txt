@@ -1,0 +1,32 @@
+[Setup: replay the first 28 walkthrough commands, seed 2.]
+
+>#random 113
+
+>wait
+Time passes...
+The Wizard appears, floating nonchalantly in the air beside you. He grins sideways at you.
+The Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.
+There is a loud crackling noise. Blue smoke rises from out of the Wizard's sleeve. He sighs and disappears.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+The Wizard appears, floating nonchalantly in the air beside you. He grins sideways at you.
+The Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.
+The Wizard, in a deep and resonant voice, speaks the word "Fall!" He then vanishes, cackling gleefully.
+
+>down
+For some odd reason you have tripped on your own feet, or perhaps an invisible cord stretched across the path. The resulting fall seems to have done you in.
+ 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see a small room with a sign on the wall, but it is too blurry to read.
+
+>

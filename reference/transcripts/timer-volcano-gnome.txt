@@ -1,0 +1,63 @@
+[Setup: replay the first 184 walkthrough commands, seed 2.]
+
+>untie wire
+The wire falls off of the hook.
+
+>wait
+Time passes...
+You watch as the balloon slowly floats away. It seems to be ascending, due to its light load.
+
+>wait
+Time passes...
+You watch as the balloon slowly ascends.
+
+>wait
+Time passes...
+You watch as the balloon slowly ascends.
+
+>wait
+Time passes...
+You watch the balloon drift out over the rim and away on the wind.
+
+>wait
+Time passes...
+A volcano gnome seems to walk straight out of the wall and says "I have a busy appointment schedule and little time to waste on trespassers, but for a small fee I'll show you the way out." You notice the gnome nervously glancing at his watch.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>gnome, hello
+The gnome appears increasingly nervous.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+The gnome glances at his watch. "Oops. I'm late for an appointment!" He disappears, leaving you alone on the ledge.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>

@@ -1,0 +1,19 @@
+[Setup: replay the first 21 walkthrough commands, seed 2.]
+
+>answer "well"
+There is a deafening clap of thunder and the stone door quietly swings open to reveal a passageway beyond.
+
+>east
+Pearl Room
+This is a former broom closet. The exits are to the east and west.
+There is a pearl necklace here with hundreds of large pearls.
+
+>take necklace
+Taken.
+
+>east
+Circular Room
+This is a damp circular room, whose walls are made of brick and mortar. The roof of this room is not visible, but there appear to be some etchings on the walls. There is a passageway to the west.
+There is a wooden bucket here, 3 feet in diameter and 3 feet high.
+
+>

@@ -1,0 +1,1070 @@
+{
+  "format": "zxr-reference-coverage-v1",
+  "fixtures": 75,
+  "timers": [
+    {
+      "routine": "I-SWORD",
+      "fixtures": [
+        "walkthrough",
+        "area-barrow",
+        "area-garden",
+        "area-riddle",
+        "area-well",
+        "area-cakes",
+        "area-robot",
+        "area-tiny-room",
+        "area-dragon",
+        "area-princess",
+        "area-workshop",
+        "area-volcano",
+        "area-bank",
+        "death-5496",
+        "death-7a2b",
+        "death-87a8",
+        "death-8b33",
+        "death-937c",
+        "death-95c8",
+        "death-9e2d",
+        "death-a62a",
+        "death-aa85",
+        "death-aaed",
+        "death-ab95",
+        "death-ac46",
+        "death-ac73",
+        "death-b04e",
+        "death-b6ac",
+        "death-b909",
+        "death-bba3",
+        "death-bc03",
+        "death-bf25",
+        "death-bfbd",
+        "death-bfe0",
+        "death-c01b",
+        "death-c073",
+        "death-c12d",
+        "death-c290",
+        "death-c2b6",
+        "death-c83c",
+        "death-dce5",
+        "death-dcf5",
+        "death-e399",
+        "death-e4e5",
+        "death-e594",
+        "death-e95f",
+        "death-e9c8",
+        "death-e9d2",
+        "death-eeba",
+        "death-f2bf",
+        "death-10360",
+        "death-10368",
+        "death-1040b",
+        "death-1052c",
+        "death-10687",
+        "death-10c7f",
+        "death-1149c",
+        "death-114ae",
+        "death-11a35",
+        "death-11a47",
+        "death-11dbb",
+        "death-11e24",
+        "death-11fea",
+        "timer-volcano-gnome",
+        "timer-bank-gnome",
+        "timer-spray",
+        "special-implicit-take",
+        "special-pseudo-object",
+        "special-take-all",
+        "special-end-prompt"
+      ]
+    },
+    {
+      "routine": "I-BALLOON",
+      "fixtures": [
+        "walkthrough",
+        "area-volcano",
+        "area-bank",
+        "death-a62a",
+        "death-aa85",
+        "death-aaed",
+        "death-ab95",
+        "death-ac46",
+        "death-ac73",
+        "death-b04e",
+        "death-b6ac",
+        "death-c83c",
+        "death-e399",
+        "death-e4e5",
+        "death-e594",
+        "death-10c7f",
+        "death-114ae",
+        "death-11a47",
+        "death-11e24",
+        "timer-volcano-gnome",
+        "timer-bank-gnome",
+        "timer-spray",
+        "special-end-prompt"
+      ]
+    },
+    {
+      "routine": "I-BURNUP",
+      "fixtures": [
+        "walkthrough",
+        "death-b04e",
+        "death-b6ac",
+        "death-e399",
+        "death-e4e5",
+        "death-e594",
+        "death-10c7f",
+        "death-11e24",
+        "timer-bank-gnome",
+        "timer-spray",
+        "special-end-prompt"
+      ]
+    },
+    {
+      "routine": "I-FUSE",
+      "fixtures": [
+        "walkthrough",
+        "area-volcano",
+        "area-bank",
+        "death-aaed",
+        "death-ab95",
+        "death-ac46",
+        "death-ac73",
+        "death-b04e",
+        "death-b6ac",
+        "death-c83c",
+        "death-e399",
+        "death-e4e5",
+        "death-e594",
+        "death-10c7f",
+        "death-11e24",
+        "timer-bank-gnome",
+        "timer-spray",
+        "special-end-prompt"
+      ]
+    },
+    {
+      "routine": "I-SAFE",
+      "fixtures": [
+        "walkthrough",
+        "area-volcano",
+        "area-bank",
+        "death-ab95",
+        "death-ac46",
+        "death-ac73",
+        "death-b04e",
+        "death-b6ac",
+        "death-c83c",
+        "death-e399",
+        "death-e4e5",
+        "death-e594",
+        "death-10c7f",
+        "death-11e24",
+        "timer-bank-gnome",
+        "timer-spray",
+        "special-end-prompt"
+      ]
+    },
+    {
+      "routine": "I-LEDGE",
+      "fixtures": [
+        "walkthrough",
+        "area-volcano",
+        "area-bank",
+        "death-ac46",
+        "death-ac73",
+        "death-b04e",
+        "death-b6ac",
+        "death-c83c",
+        "death-e399",
+        "death-e4e5",
+        "death-e594",
+        "death-10c7f",
+        "death-11e24",
+        "timer-bank-gnome",
+        "timer-spray",
+        "special-end-prompt"
+      ]
+    },
+    {
+      "routine": "I-GNOME",
+      "fixtures": [
+        "timer-volcano-gnome"
+      ]
+    },
+    {
+      "routine": "I-NERVOUS",
+      "fixtures": [
+        "timer-volcano-gnome"
+      ]
+    },
+    {
+      "routine": "I-SPRAY",
+      "fixtures": [
+        "timer-spray"
+      ]
+    },
+    {
+      "routine": "I-BUCKET",
+      "fixtures": [
+        "walkthrough",
+        "area-princess",
+        "area-workshop",
+        "area-volcano",
+        "area-bank",
+        "death-7a2b",
+        "death-a62a",
+        "death-aa85",
+        "death-aaed",
+        "death-ab95",
+        "death-ac46",
+        "death-ac73",
+        "death-b04e",
+        "death-b6ac",
+        "death-c83c",
+        "death-e399",
+        "death-e4e5",
+        "death-e594",
+        "death-e9c8",
+        "death-10360",
+        "death-10368",
+        "death-1040b",
+        "death-1052c",
+        "death-10687",
+        "death-10c7f",
+        "death-114ae",
+        "death-11a47",
+        "death-11e24",
+        "timer-volcano-gnome",
+        "timer-bank-gnome",
+        "timer-spray",
+        "special-end-prompt"
+      ]
+    },
+    {
+      "routine": "I-SPHERE",
+      "fixtures": [
+        "death-c2b6"
+      ]
+    },
+    {
+      "routine": "I-CURTAIN",
+      "fixtures": [
+        "walkthrough",
+        "death-b04e",
+        "death-b6ac",
+        "death-c83c",
+        "death-e399",
+        "death-e4e5",
+        "death-e594",
+        "death-10c7f",
+        "death-11e24",
+        "timer-bank-gnome",
+        "timer-spray",
+        "special-end-prompt"
+      ]
+    },
+    {
+      "routine": "I-ZGNOME",
+      "fixtures": [
+        "timer-bank-gnome"
+      ]
+    },
+    {
+      "routine": "I-ZGNOME-OUT",
+      "fixtures": [
+        "timer-bank-gnome"
+      ]
+    },
+    {
+      "routine": "I-MATCH",
+      "fixtures": [
+        "walkthrough",
+        "area-volcano",
+        "area-bank",
+        "death-a62a",
+        "death-aa85",
+        "death-aaed",
+        "death-ab95",
+        "death-ac46",
+        "death-ac73",
+        "death-b04e",
+        "death-b6ac",
+        "death-c83c",
+        "death-e399",
+        "death-e4e5",
+        "death-e594",
+        "death-10c7f",
+        "death-114ae",
+        "death-11a47",
+        "death-11e24",
+        "timer-volcano-gnome",
+        "timer-bank-gnome",
+        "timer-spray",
+        "special-end-prompt"
+      ]
+    },
+    {
+      "routine": "I-LANTERN",
+      "fixtures": [
+        "walkthrough",
+        "area-volcano",
+        "area-bank",
+        "death-7a2b",
+        "death-a62a",
+        "death-aa85",
+        "death-aaed",
+        "death-ab95",
+        "death-ac46",
+        "death-ac73",
+        "death-b04e",
+        "death-b6ac",
+        "death-c83c",
+        "death-e399",
+        "death-e4e5",
+        "death-e594",
+        "death-10c7f",
+        "death-114ae",
+        "death-11a47",
+        "death-11e24",
+        "timer-volcano-gnome",
+        "timer-bank-gnome",
+        "timer-spray",
+        "special-end-prompt"
+      ]
+    },
+    {
+      "routine": "I-DRAGON",
+      "fixtures": [
+        "walkthrough",
+        "area-dragon",
+        "area-princess",
+        "area-workshop",
+        "area-volcano",
+        "area-bank",
+        "death-7a2b",
+        "death-a62a",
+        "death-aa85",
+        "death-aaed",
+        "death-ab95",
+        "death-ac46",
+        "death-ac73",
+        "death-b04e",
+        "death-b6ac",
+        "death-c83c",
+        "death-e399",
+        "death-e4e5",
+        "death-e594",
+        "death-e95f",
+        "death-e9c8",
+        "death-e9d2",
+        "death-f2bf",
+        "death-10360",
+        "death-10368",
+        "death-1040b",
+        "death-1052c",
+        "death-10687",
+        "death-10c7f",
+        "death-114ae",
+        "death-11a47",
+        "death-11e24",
+        "timer-volcano-gnome",
+        "timer-bank-gnome",
+        "timer-spray",
+        "special-end-prompt"
+      ]
+    },
+    {
+      "routine": "I-GARDEN",
+      "fixtures": [
+        "walkthrough",
+        "area-garden",
+        "area-riddle",
+        "area-well",
+        "area-cakes",
+        "area-robot",
+        "area-tiny-room",
+        "area-dragon",
+        "area-princess",
+        "area-workshop",
+        "area-volcano",
+        "area-bank",
+        "death-7a2b",
+        "death-8b33",
+        "death-95c8",
+        "death-9e2d",
+        "death-a62a",
+        "death-aa85",
+        "death-aaed",
+        "death-ab95",
+        "death-ac46",
+        "death-ac73",
+        "death-b04e",
+        "death-b6ac",
+        "death-b909",
+        "death-bba3",
+        "death-bc03",
+        "death-bf25",
+        "death-bfbd",
+        "death-bfe0",
+        "death-c01b",
+        "death-c073",
+        "death-c12d",
+        "death-c290",
+        "death-c2b6",
+        "death-c83c",
+        "death-dcf5",
+        "death-e399",
+        "death-e4e5",
+        "death-e594",
+        "death-e95f",
+        "death-e9c8",
+        "death-e9d2",
+        "death-eeba",
+        "death-f2bf",
+        "death-10360",
+        "death-10368",
+        "death-1040b",
+        "death-1052c",
+        "death-10687",
+        "death-10c7f",
+        "death-1149c",
+        "death-114ae",
+        "death-11a35",
+        "death-11a47",
+        "death-11dbb",
+        "death-11e24",
+        "timer-volcano-gnome",
+        "timer-bank-gnome",
+        "timer-spray",
+        "special-implicit-take",
+        "special-end-prompt"
+      ]
+    },
+    {
+      "routine": "I-PRINCESS",
+      "fixtures": [
+        "walkthrough",
+        "area-princess",
+        "area-workshop",
+        "area-volcano",
+        "area-bank",
+        "death-7a2b",
+        "death-a62a",
+        "death-aa85",
+        "death-aaed",
+        "death-ab95",
+        "death-ac46",
+        "death-ac73",
+        "death-b04e",
+        "death-b6ac",
+        "death-c83c",
+        "death-e399",
+        "death-e4e5",
+        "death-e594",
+        "death-10360",
+        "death-10368",
+        "death-1040b",
+        "death-1052c",
+        "death-10687",
+        "death-10c7f",
+        "death-114ae",
+        "death-11a47",
+        "death-11e24",
+        "timer-volcano-gnome",
+        "timer-bank-gnome",
+        "timer-spray",
+        "special-end-prompt"
+      ]
+    },
+    {
+      "routine": "I-UNICORN",
+      "fixtures": [
+        "walkthrough",
+        "area-princess",
+        "area-workshop",
+        "area-volcano",
+        "area-bank",
+        "death-7a2b",
+        "death-a62a",
+        "death-aa85",
+        "death-aaed",
+        "death-ab95",
+        "death-ac46",
+        "death-ac73",
+        "death-b04e",
+        "death-b6ac",
+        "death-c83c",
+        "death-e399",
+        "death-e4e5",
+        "death-e594",
+        "death-10360",
+        "death-10368",
+        "death-1040b",
+        "death-1052c",
+        "death-10687",
+        "death-10c7f",
+        "death-114ae",
+        "death-11a47",
+        "death-11e24",
+        "timer-volcano-gnome",
+        "timer-bank-gnome",
+        "timer-spray",
+        "special-end-prompt"
+      ]
+    },
+    {
+      "routine": "I-WIZARD",
+      "fixtures": [
+        "walkthrough",
+        "area-barrow",
+        "area-garden",
+        "area-riddle",
+        "area-well",
+        "area-cakes",
+        "area-robot",
+        "area-tiny-room",
+        "area-dragon",
+        "area-princess",
+        "area-workshop",
+        "area-volcano",
+        "area-bank",
+        "death-5496",
+        "death-7a2b",
+        "death-87a8",
+        "death-8b33",
+        "death-937c",
+        "death-95c8",
+        "death-9e2d",
+        "death-a62a",
+        "death-aa85",
+        "death-aaed",
+        "death-ab95",
+        "death-ac46",
+        "death-ac73",
+        "death-b04e",
+        "death-b6ac",
+        "death-b909",
+        "death-bba3",
+        "death-bc03",
+        "death-bf25",
+        "death-bfbd",
+        "death-bfe0",
+        "death-c01b",
+        "death-c073",
+        "death-c12d",
+        "death-c290",
+        "death-c2b6",
+        "death-c83c",
+        "death-dce5",
+        "death-dcf5",
+        "death-e399",
+        "death-e4e5",
+        "death-e594",
+        "death-e95f",
+        "death-e9c8",
+        "death-e9d2",
+        "death-eeba",
+        "death-f2bf",
+        "death-10360",
+        "death-10368",
+        "death-1040b",
+        "death-1052c",
+        "death-10687",
+        "death-10c7f",
+        "death-1149c",
+        "death-114ae",
+        "death-11a35",
+        "death-11a47",
+        "death-11dbb",
+        "death-11e24",
+        "death-11fea",
+        "timer-volcano-gnome",
+        "timer-bank-gnome",
+        "timer-spray",
+        "special-implicit-take",
+        "special-pseudo-object",
+        "special-reseed",
+        "special-end-prompt"
+      ]
+    },
+    {
+      "routine": "I-WAND",
+      "fixtures": [
+        "walkthrough",
+        "death-b04e",
+        "death-b6ac",
+        "death-e399",
+        "death-e4e5",
+        "death-e594",
+        "death-11e24",
+        "special-end-prompt"
+      ]
+    },
+    {
+      "routine": "I-SPELL",
+      "fixtures": [
+        "walkthrough",
+        "death-b04e",
+        "death-b6ac",
+        "death-e399",
+        "death-e4e5",
+        "death-e594",
+        "special-end-prompt"
+      ]
+    }
+  ],
+  "deaths": [
+    {
+      "routine": "CRETIN-FCN",
+      "pc": 21654,
+      "file": "reference/zork2/gglobals.zap",
+      "line": 108,
+      "fixtures": [
+        "death-5496"
+      ]
+    },
+    {
+      "routine": "V-BURN",
+      "pc": 31275,
+      "file": "reference/zork2/gverbs.zap",
+      "line": 297,
+      "fixtures": [
+        "death-7a2b"
+      ]
+    },
+    {
+      "routine": "V-LEAP",
+      "pc": 34728,
+      "file": "reference/zork2/gverbs.zap",
+      "line": 940,
+      "fixtures": [
+        "death-87a8"
+      ]
+    },
+    {
+      "routine": "V-PLAY",
+      "pc": 35635,
+      "file": "reference/zork2/gverbs.zap",
+      "line": 1154,
+      "fixtures": [
+        "death-8b33"
+      ]
+    },
+    {
+      "routine": "V-THROW",
+      "pc": 37756,
+      "file": "reference/zork2/gverbs.zap",
+      "line": 1630,
+      "fixtures": [
+        "death-937c"
+      ]
+    },
+    {
+      "routine": "V-WALK",
+      "pc": 38344,
+      "file": "reference/zork2/gverbs.zap",
+      "line": 1766,
+      "fixtures": [
+        "death-95c8"
+      ]
+    },
+    {
+      "routine": "GOTO",
+      "pc": 40493,
+      "file": "reference/zork2/gverbs.zap",
+      "line": 2308,
+      "fixtures": [
+        "death-9e2d"
+      ]
+    },
+    {
+      "routine": "RISE-AND-SHINE",
+      "pc": 42538,
+      "file": "reference/zork2/2actions.zap",
+      "line": 269,
+      "fixtures": [
+        "death-a62a"
+      ]
+    },
+    {
+      "routine": "BRICK-FCN",
+      "pc": 43653,
+      "file": "reference/zork2/2actions.zap",
+      "line": 441,
+      "fixtures": [
+        "death-aa85"
+      ]
+    },
+    {
+      "routine": "I-FUSE",
+      "pc": 43757,
+      "file": "reference/zork2/2actions.zap",
+      "line": 469,
+      "fixtures": [
+        "death-aaed"
+      ]
+    },
+    {
+      "routine": "I-SAFE",
+      "pc": 43925,
+      "file": "reference/zork2/2actions.zap",
+      "line": 504,
+      "fixtures": [
+        "death-ab95"
+      ]
+    },
+    {
+      "routine": "I-LEDGE",
+      "pc": 44102,
+      "file": "reference/zork2/2actions.zap",
+      "line": 529,
+      "fixtures": [
+        "death-ac46"
+      ]
+    },
+    {
+      "routine": "I-LEDGE",
+      "pc": 44147,
+      "file": "reference/zork2/2actions.zap",
+      "line": 534,
+      "fixtures": [
+        "death-ac73"
+      ]
+    },
+    {
+      "routine": "HEAD-FCN",
+      "pc": 45134,
+      "file": "reference/zork2/2actions.zap",
+      "line": 643,
+      "fixtures": [
+        "death-b04e"
+      ]
+    },
+    {
+      "routine": "ZORK3-FCN",
+      "pc": 46764,
+      "file": "reference/zork2/2actions.zap",
+      "line": 765,
+      "fixtures": [
+        "death-b6ac"
+      ]
+    },
+    {
+      "routine": "BUCKET-FCN",
+      "pc": 47369,
+      "file": "reference/zork2/2actions.zap",
+      "line": 891,
+      "fixtures": [
+        "death-b909"
+      ]
+    },
+    {
+      "routine": "CAKE-FCN",
+      "pc": 48035,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1009,
+      "fixtures": [
+        "death-bba3"
+      ]
+    },
+    {
+      "routine": "CAKE-FCN",
+      "pc": 48131,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1034,
+      "fixtures": [
+        "death-bc03"
+      ]
+    },
+    {
+      "routine": "POOL-FCN",
+      "pc": 48933,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1136,
+      "fixtures": [
+        "death-bf25"
+      ]
+    },
+    {
+      "routine": "FLASK-FCN",
+      "pc": 49085,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1152,
+      "fixtures": [
+        "death-bfbd"
+      ]
+    },
+    {
+      "routine": "FLASK-FCN",
+      "pc": 49120,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1158,
+      "fixtures": [
+        "death-bfe0"
+      ]
+    },
+    {
+      "routine": "ICEBOOM",
+      "pc": 49179,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1174,
+      "fixtures": [
+        "death-c01b"
+      ]
+    },
+    {
+      "routine": "MAGNET-ROOM-FCN",
+      "pc": 49267,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1188,
+      "fixtures": [
+        "death-c073"
+      ]
+    },
+    {
+      "routine": "BUTTONS",
+      "pc": 49453,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1223,
+      "fixtures": [
+        "death-c12d"
+      ]
+    },
+    {
+      "routine": "SPHERE-FCN",
+      "pc": 49808,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1281,
+      "fixtures": [
+        "death-c290"
+      ]
+    },
+    {
+      "routine": "I-SPHERE",
+      "pc": 49846,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1292,
+      "fixtures": [
+        "death-c2b6"
+      ]
+    },
+    {
+      "routine": "I-CURTAIN",
+      "pc": 51260,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1499,
+      "fixtures": [
+        "death-c83c"
+      ]
+    },
+    {
+      "routine": "MAGIC-ACTOR",
+      "pc": 56549,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2168,
+      "fixtures": [
+        "death-dce5"
+      ]
+    },
+    {
+      "routine": "MAGIC-ACTOR",
+      "pc": 56565,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2172,
+      "fixtures": [
+        "death-dcf5"
+      ]
+    },
+    {
+      "routine": "CERBERUS-FCN",
+      "pc": 58265,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2396,
+      "fixtures": [
+        "death-e399"
+      ]
+    },
+    {
+      "routine": "CERBERUS-FCN",
+      "pc": 58597,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2413,
+      "fixtures": [
+        "death-e4e5"
+      ]
+    },
+    {
+      "routine": "COLLAR-FCN",
+      "pc": 58772,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2427,
+      "fixtures": [
+        "death-e594"
+      ]
+    },
+    {
+      "routine": "I-DRAGON",
+      "pc": 59743,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2529,
+      "fixtures": [
+        "death-e95f"
+      ]
+    },
+    {
+      "routine": "I-DRAGON",
+      "pc": 59848,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2537,
+      "fixtures": [
+        "death-e9c8"
+      ]
+    },
+    {
+      "routine": "I-DRAGON",
+      "pc": 59858,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2539,
+      "fixtures": [
+        "death-e9d2"
+      ]
+    },
+    {
+      "routine": "I-GARDEN",
+      "pc": 61114,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2659,
+      "fixtures": [
+        "death-eeba"
+      ]
+    },
+    {
+      "routine": "PRINCESS-FCN",
+      "pc": 62143,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2757,
+      "fixtures": [
+        "death-f2bf"
+      ]
+    },
+    {
+      "routine": "IN-AQUARIUM-FCN",
+      "pc": 66400,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3089,
+      "fixtures": [
+        "death-10360"
+      ]
+    },
+    {
+      "routine": "IN-AQUARIUM-FCN",
+      "pc": 66408,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3091,
+      "fixtures": [
+        "death-10368"
+      ]
+    },
+    {
+      "routine": "AQUARIUM-FCN",
+      "pc": 66571,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3115,
+      "fixtures": [
+        "death-1040b"
+      ]
+    },
+    {
+      "routine": "AQUARIUM-FCN",
+      "pc": 66860,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3138,
+      "fixtures": [
+        "death-1052c"
+      ]
+    },
+    {
+      "routine": "SERPENT-FCN",
+      "pc": 67207,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3155,
+      "fixtures": [
+        "death-10687"
+      ]
+    },
+    {
+      "routine": "GENIE-FCN",
+      "pc": 68735,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3250,
+      "fixtures": [
+        "death-10c7f"
+      ]
+    },
+    {
+      "routine": "I-WIZARD",
+      "pc": 70812,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3392,
+      "fixtures": [
+        "death-1149c"
+      ]
+    },
+    {
+      "routine": "I-WIZARD",
+      "pc": 70830,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3396,
+      "fixtures": [
+        "death-114ae"
+      ]
+    },
+    {
+      "routine": "I-WIZARD",
+      "pc": 72245,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3523,
+      "fixtures": [
+        "death-11a35"
+      ]
+    },
+    {
+      "routine": "I-WIZARD",
+      "pc": 72263,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3527,
+      "fixtures": [
+        "death-11a47"
+      ]
+    },
+    {
+      "routine": "WAND-FCN",
+      "pc": 73147,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3637,
+      "fixtures": [
+        "death-11dbb"
+      ]
+    },
+    {
+      "routine": "WAND-FCN",
+      "pc": 73252,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3651,
+      "fixtures": [
+        "death-11e24"
+      ]
+    },
+    {
+      "routine": "BRIDGE-FCN",
+      "pc": 73706,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3722,
+      "fixtures": [
+        "death-11fea"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[Setup: replay the first 29 walkthrough commands, seed 2.]
+
+>eat green cake
+(Taken)
+Suddenly, the room appears to have become very large (although everything you are carrying seems to be its normal size).
+
+Posts Room
+This is an enormous room, in the center of which are four wooden posts delineating a rectangular area, above which is what appears to be a wooden roof. In fact, all objects in this room appear to be abnormally large. To the east is a passageway. There are large gaping chasms to the west and northwest.
+
+>

@@ -1,0 +1,23 @@
+[Setup: replay the first 50 walkthrough commands, seed 2.]
+
+>robot, push square button
+"Whirr, buzz, click!"
+The whirring increases in intensity.
+
+>robot, push triangular button
+"Whirr, buzz, click!"
+A dull thump is heard in the distance.
+
+>west
+According to Prof. TAA of GUE Tech, the rapidly changing magnetic fields in the room are intense enough to electrocute you. I really don't know, but in any event, something just killed you.
+ 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see only darkness.
+
+>

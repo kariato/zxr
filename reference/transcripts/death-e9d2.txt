@@ -1,0 +1,17 @@
+[Setup: replay the first 105 walkthrough commands, seed 2.]
+
+>north
+Dragon Room
+The dragon doubles back and charges into the room, maddened by your attempt to sneak past him. His eyes glow with a white heat of anger.
+Worse for you, his mouth opens and a great gout of flame puffs out and consumes you on the spot.
+ 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see only darkness.
+
+>

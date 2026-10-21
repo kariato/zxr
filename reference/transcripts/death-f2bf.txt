@@ -1,0 +1,14 @@
+[Setup: replay the first 112 walkthrough commands, seed 2.]
+
+>attack princess with sword
+The princess screams as you approach. "Won't someone deliver me from this awful fate?" she cries. Just in time, the Wizard of Frobozz appears, seeming to unroll himself out of nothing like a window shade. "Fry!" he intones, and a massive bolt of lightning reduces you to a pile of smoking ashes. (Serves you right, too, if you ask me.) 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see only darkness.
+
+>

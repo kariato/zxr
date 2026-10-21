@@ -1,0 +1,61 @@
+[Setup: replay the first 101 walkthrough commands, seed 2.]
+
+>north
+Dragon Room
+The room is a large cavern full of broken stone. The walls are scorched and there are deep scratches on the floor. A sooty dry smell is very strong here. A paved path winds from a large passage to the west, through the room, and across a huge stone bridge to the south. To the east a small crack is visible. A dark and smokey tunnel leads north.
+A huge red dragon is lying here, blocking the entrance to a tunnel leading north. Smoke curls from his nostrils and out between his teeth.
+Your sword has begun to glow very brightly.
+
+>attack dragon with sword
+That did no damage, but he turns his smoky yellow eyes in your direction and sighs.
+The dragon continues to watch you carefully.
+
+>south
+Stone Bridge
+This is the middle of a ruined but still impressive stone bridge spanning a deep chasm. Water flows far beneath. A paved path leads north into a large open space. To the south, the path leads into a misty tunnel.
+The dragon follows you, out of mingled curiosity and anger.
+
+>attack dragon with sword
+The dragon is surprised and interested (for the moment).
+The dragon continues to watch you carefully.
+
+>south
+Cool Room
+The room is cool and damp. The air is misty. A twisty path from the southeast splits here toward a wide northerly stone bridge, and a narrow westerly tunnel. It is from the latter that the mist and chill seem to originate.
+The dragon follows you, out of mingled curiosity and anger.
+
+>attack dragon with sword
+The dragon is surprised and interested (for the moment).
+The dragon continues to watch you carefully.
+
+>west
+Ice Room
+This is a large hall of ancient lava, since worn smooth by the movement of a glacier. A large passage exits to the east and an upward lava tube is at the top of a jumble of fallen rocks.
+A mass of ice fills the western half of the room.
+
+As the dragon enters, he sees his reflection on the icy surface of the glacier at its western end. He becomes enraged: There is another dragon here, behind that glass, he thinks! Dragons are smart, but sometimes naive, and this one has never seen ice before. He rears up to his full height to challenge this intruder into his territory. He roars a challenge! The intruder responds! The dragon takes a deep breath, and out of his mouth pours a massive gout of flame. It washes over the ice, which melts rapidly, sending out torrents of water and a huge cloud of steam! You manage to clamber up to a small shelf, but the dragon is terrified! A huge splash goes down his throat! There is a muffled explosion and the dragon, a puzzled expression on his face, dies. He is carried away by the water.
+
+When the flood recedes you climb gingerly down. While no trace of the dragon can be found, the melting of the ice has revealed a passage leading west.
+Your sword is no longer glowing.
+
+>east
+Cool Room
+
+>north
+Stone Bridge
+
+>north
+Dragon Room
+Your sword is glowing with a faint blue glow.
+
+>north
+Dragon's Lair
+You are in the dragon's lair, where the rock walls are scarred by flame. A blackened doorway leads to the south.
+A rotten old wooden chest is in one corner among the debris.
+A beautiful young woman, wearing a dirty and bedraggled gown, sits on a rock in the corner. Her hair is unkempt and she is oblivious to your presence, almost in a trance.
+Your sword has begun to glow very brightly.
+
+>kiss princess
+The princess (for she is obviously one) shakes herself awake, then notices you for the first time. She smiles. "Thank you for rescuing me from that horrid worm," she says. "I must depart. My parents will be worried about me." With that, she arises, looking purposefully out of the lair.
+
+>

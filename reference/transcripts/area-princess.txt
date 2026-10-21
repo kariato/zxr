@@ -1,0 +1,113 @@
+[Setup: replay the first 112 walkthrough commands, seed 2.]
+
+>kiss princess
+The princess (for she is obviously one) shakes herself awake, then notices you for the first time. She smiles. "Thank you for rescuing me from that horrid worm," she says. "I must depart. My parents will be worried about me." With that, she arises, looking purposefully out of the lair.
+
+>south
+Dragon Room
+The princess enters from the north. She seems surprised to see you.
+
+>east
+End of Ledge
+The princess enters from the west. She seems surprised to see you.
+
+>east
+Ledge in Ravine
+Your sword is glowing with a faint blue glow.
+
+>down
+Deep Ford
+A huge dead dragon is lying half blocking the stream.
+
+>south
+Marble Hall
+
+>east
+That's a wall there.
+
+>wait
+Time passes...
+The princess enters from the north. She seems surprised to see you.
+Your sword has begun to glow very brightly.
+
+>east
+That's a wall there.
+The princess presses a loose piece of marble in the wall and a large section of the wall slides away, revealing a passage to the east. She enters it.
+Your sword is glowing with a faint blue glow.
+
+>wait
+Time passes...
+Your sword is no longer glowing.
+
+>east
+Path Near Stream
+
+>east
+Formal Garden
+
+>north
+North End of Garden
+Your sword is glowing with a faint blue glow.
+
+>in
+Gazebo
+There is a dishevelled and slightly unkempt princess here.
+Your sword has begun to glow very brightly.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+Shyly, a unicorn peeks out of the hedges. It notices the princess and seems captivated. It approaches her and bows its head as though curtseying to her. Around its neck is a red satin ribbon on which is strung a delicate gold key. The princess takes the ribbon and uses it to tie up her hair. She looks at you and then, smiling, hands you the key and a fresh rose which she plucks from the arbor. "You may have use of such a thing," she says. "It is the least I can do for one who rescued me from a fate I dare not contemplate." With that, she mounts the unicorn (side-saddle, of course) and rides off into the gloom.
+Your sword is no longer glowing.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>exit
+North End of Garden
+
+>take key
+Which key do you mean, the delicate gold key or the rusty iron key?
+
+>drop rose
+Dropped.
+
+>

@@ -1,0 +1,3313 @@
+{
+  "format": "zxr-audit-v1",
+  "story": {
+    "sha256": "3ae7d5558943e9721f3e4b273c8a7faec1a03a604e1ae4ee1cde472c21cb24ac",
+    "version": 3,
+    "release": 63,
+    "serial": "860811",
+    "bytes": 92524,
+    "checksum": 17554
+  },
+  "zipIdentical": true,
+  "chartMatches": true,
+  "hashes": {
+    "2actions.zap": "b1b751f5b45c713bc4bec65265c9e03268975956b35497a04fb1cad10a4ba788",
+    "2actions.zil": "fef6f717e3c336edd39178ba35f09617a9d7347068022efc6233ab56cb2dacbe",
+    "2dungeon.zap": "e8215ffe15489d333b3d5a81a14efbac96ba062d884a29125e34e248212ac291",
+    "2dungeon.zil": "4507f69561d914e63ab4289d9599e202c56fa1a86212e9b7c6b4402ac171d0f1",
+    "crufty.zil": "35a55984b374687b7a19d32a3700454be88d3e6ac006729ab00205c2bb8e8211",
+    "gclock.zap": "5e517ae6acdba37705762cfda344bcee65ea32eb408d5379071e27cb650548be",
+    "gclock.zil": "92c4d66f18eeba8de1497215a0e17ade6c2cf1e5e050f016cf99160e41b154c6",
+    "gglobals.zap": "7b53432c63f19c13d7a9bc701fc52e5d064bca085fa56856f467ba89badd5acb",
+    "gglobals.zil": "4551033ab2e72f38d5768ace09ad884d19582f16c93df0d3970a7e2a7df30935",
+    "gmacros.zap": "525ee692a365a6b6444fcf1f51d058d663c69738e803138c8c222e06f2433bf8",
+    "gmacros.zil": "1382243535d75a676d6cd6246895ac74aef77c226c29b4eb27bce3f595a1c282",
+    "gmain.zap": "050fe103d8b639a3649e02369d0a64e9b638beb94239e435f48e4cc4ab783e43",
+    "gmain.zil": "712e27ab29d36f3d36c7994ec6d41011cb869990d8780a03bb2ee8148d3f1740",
+    "gparser.zap": "199b9876da9b4ed118f26ca0b4eb783922f621bd206f33d133b36d1ab41af6d1",
+    "gparser.zil": "42e36335e310e86bba07ebf75971020c8903cdd679c9863d3b62f69bb11fd9f5",
+    "gsyntax.zap": "0f0c41d7e260d436b8e4090b129e5b896dd2b85bc0a00e40df3e7a0d85e3c7ab",
+    "gsyntax.zil": "c62cf25aa09ca40b48a2714cd74607f1b28f96bd064d12cd24a4962e0f889435",
+    "gverbs.zap": "b685ef6df841f4ced05470a39d7f73f9175578f83c78efec0f7f2a4a50fb5709",
+    "gverbs.zil": "d957259fccfb26fc2457b29117e6a2e0d23f3b74bcb151e903d4f593898675eb",
+    "zork2.zap": "81cb2c5430476376f1c7e49db67d7a53ec930c08d7073932d0df7a1f32b7a07e",
+    "zork2.zil": "d887ed2e0162dd555c08330eb3ab40a03790734ccfc426f4e354dd846205ed21",
+    "zork2dat.zap": "1cd162f03de3f036a47e17a630868b3fd661b9735ef64b0478e6c4a0d464101f",
+    "zork2str.zap": "cf0d37b72e67bf5f9c448fab231413e3d0e28cbb135e0309cfdd8a93b364304a"
+  },
+  "disassembly": {
+    "file": "reference/disassembly/zork2.txd.txt",
+    "sha256": "1de132b45f7ed578078d9b0bcb0f67cba3811fd2edddef5bf8278d80b0f35ca6",
+    "tool": "ecliptik/ztools txd",
+    "commit": "73eb4bdc8d711f92728bfd4aa295fd76774cadc0",
+    "arguments": [
+      "-a",
+      "-n",
+      "-w",
+      "200"
+    ],
+    "comparison": "439 routine headers and complete opcode sequences; binary instruction offsets independently decoded with ifvms. Operands are spot-checked, not exhaustively compared."
+  },
+  "assemblyFiles": [
+    "gmacros",
+    "2dungeon",
+    "gglobals",
+    "gclock",
+    "gmain",
+    "gparser",
+    "gverbs",
+    "2actions"
+  ],
+  "objects": 251,
+  "globals": 168,
+  "interrupts": [
+    "I-SWORD",
+    "I-BALLOON",
+    "I-BURNUP",
+    "I-FUSE",
+    "I-SAFE",
+    "I-LEDGE",
+    "I-GNOME",
+    "I-NERVOUS",
+    "I-SPRAY",
+    "I-BUCKET",
+    "I-SPHERE",
+    "I-CURTAIN",
+    "I-ZGNOME",
+    "I-ZGNOME-OUT",
+    "I-MATCH",
+    "I-LANTERN",
+    "I-DRAGON",
+    "I-GARDEN",
+    "I-PRINCESS",
+    "I-UNICORN",
+    "I-WIZARD",
+    "I-WAND",
+    "I-SPELL"
+  ],
+  "routines": [
+    {
+      "name": "ZPROB",
+      "address": 19820,
+      "locals": 1,
+      "instructions": 7
+    },
+    {
+      "name": "RANDOM-ELEMENT",
+      "address": 19846,
+      "locals": 1,
+      "instructions": 4
+    },
+    {
+      "name": "PICK-ONE",
+      "address": 19862,
+      "locals": 6,
+      "instructions": 17
+    },
+    {
+      "name": "GO",
+      "address": 19940,
+      "locals": 0,
+      "instructions": 22
+    },
+    {
+      "name": "HEDGES-F",
+      "address": 20038,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "LT-CRACK-PSEUDO",
+      "address": 20118,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "CC-CRACK-PSEUDO",
+      "address": 20138,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "GLOBAL-MENHIR-F",
+      "address": 20188,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "GLOBAL-CERBERUS-F",
+      "address": 20200,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "CRACK-PSEUDO",
+      "address": 20212,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "ALICE-HOLE",
+      "address": 20254,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "SLOT-F",
+      "address": 20338,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "TEAPOT-F",
+      "address": 20452,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "ROSE-F",
+      "address": 20472,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "FOOTPAD-F",
+      "address": 20538,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "COMPASS-F",
+      "address": 20558,
+      "locals": 0,
+      "instructions": 9
+    },
+    {
+      "name": "NOT-HERE-OBJECT-F",
+      "address": 20798,
+      "locals": 3,
+      "instructions": 19
+    },
+    {
+      "name": "NOT-HERE-PRINT",
+      "address": 20916,
+      "locals": 2,
+      "instructions": 15
+    },
+    {
+      "name": "NULL-F",
+      "address": 20972,
+      "locals": 2,
+      "instructions": 1
+    },
+    {
+      "name": "STAIRS-F",
+      "address": 20978,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "SAILOR-FCN",
+      "address": 21014,
+      "locals": 0,
+      "instructions": 15
+    },
+    {
+      "name": "GROUND-FUNCTION",
+      "address": 21148,
+      "locals": 0,
+      "instructions": 8
+    },
+    {
+      "name": "GRUE-FUNCTION",
+      "address": 21204,
+      "locals": 0,
+      "instructions": 6
+    },
+    {
+      "name": "CRETIN-FCN",
+      "address": 21500,
+      "locals": 0,
+      "instructions": 29
+    },
+    {
+      "name": "PATH-OBJECT",
+      "address": 21772,
+      "locals": 0,
+      "instructions": 6
+    },
+    {
+      "name": "ZORKMID-FUNCTION",
+      "address": 21838,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "QUEUE",
+      "address": 21926,
+      "locals": 3,
+      "instructions": 3
+    },
+    {
+      "name": "INT",
+      "address": 21946,
+      "locals": 5,
+      "instructions": 14
+    },
+    {
+      "name": "CLOCKER",
+      "address": 22008,
+      "locals": 4,
+      "instructions": 26
+    },
+    {
+      "name": "MAIN-LOOP",
+      "address": 22104,
+      "locals": 1,
+      "instructions": 2
+    },
+    {
+      "name": "MAIN-LOOP-1",
+      "address": 22116,
+      "locals": 12,
+      "instructions": 158
+    },
+    {
+      "name": "PERFORM",
+      "address": 22782,
+      "locals": 7,
+      "instructions": 66
+    },
+    {
+      "name": "PARSER",
+      "address": 23042,
+      "locals": 14,
+      "instructions": 323
+    },
+    {
+      "name": "STUFF",
+      "address": 24592,
+      "locals": 6,
+      "instructions": 17
+    },
+    {
+      "name": "INBUF-STUFF",
+      "address": 24676,
+      "locals": 3,
+      "instructions": 6
+    },
+    {
+      "name": "INBUF-ADD",
+      "address": 24706,
+      "locals": 7,
+      "instructions": 21
+    },
+    {
+      "name": "WT?",
+      "address": 24802,
+      "locals": 5,
+      "instructions": 8
+    },
+    {
+      "name": "CLAUSE",
+      "address": 24840,
+      "locals": 10,
+      "instructions": 111
+    },
+    {
+      "name": "NUMBER?",
+      "address": 25328,
+      "locals": 7,
+      "instructions": 32
+    },
+    {
+      "name": "ORPHAN-MERGE",
+      "address": 25466,
+      "locals": 8,
+      "instructions": 121
+    },
+    {
+      "name": "ACLAUSE-WIN",
+      "address": 25966,
+      "locals": 1,
+      "instructions": 14
+    },
+    {
+      "name": "NCLAUSE-WIN",
+      "address": 26028,
+      "locals": 0,
+      "instructions": 11
+    },
+    {
+      "name": "WORD-PRINT",
+      "address": 26074,
+      "locals": 2,
+      "instructions": 5
+    },
+    {
+      "name": "UNKNOWN-WORD",
+      "address": 26096,
+      "locals": 3,
+      "instructions": 17
+    },
+    {
+      "name": "CANT-USE",
+      "address": 26178,
+      "locals": 3,
+      "instructions": 16
+    },
+    {
+      "name": "SYNTAX-CHECK",
+      "address": 26270,
+      "locals": 11,
+      "instructions": 96
+    },
+    {
+      "name": "CANT-ORPHAN",
+      "address": 26706,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "ORPHAN",
+      "address": 26740,
+      "locals": 3,
+      "instructions": 35
+    },
+    {
+      "name": "THING-PRINT",
+      "address": 26900,
+      "locals": 4,
+      "instructions": 8
+    },
+    {
+      "name": "BUFFER-PRINT",
+      "address": 26940,
+      "locals": 9,
+      "instructions": 39
+    },
+    {
+      "name": "PREP-PRINT",
+      "address": 27102,
+      "locals": 2,
+      "instructions": 5
+    },
+    {
+      "name": "CLAUSE-COPY",
+      "address": 27122,
+      "locals": 6,
+      "instructions": 26
+    },
+    {
+      "name": "CLAUSE-ADD",
+      "address": 27240,
+      "locals": 2,
+      "instructions": 7
+    },
+    {
+      "name": "PREP-FIND",
+      "address": 27274,
+      "locals": 3,
+      "instructions": 8
+    },
+    {
+      "name": "SYNTAX-FOUND",
+      "address": 27312,
+      "locals": 1,
+      "instructions": 3
+    },
+    {
+      "name": "GWIM",
+      "address": 27324,
+      "locals": 4,
+      "instructions": 33
+    },
+    {
+      "name": "SNARF-OBJECTS",
+      "address": 27442,
+      "locals": 3,
+      "instructions": 24
+    },
+    {
+      "name": "BUT-MERGE",
+      "address": 27548,
+      "locals": 7,
+      "instructions": 17
+    },
+    {
+      "name": "SNARFEM",
+      "address": 27626,
+      "locals": 9,
+      "instructions": 83
+    },
+    {
+      "name": "GET-OBJECT",
+      "address": 27972,
+      "locals": 9,
+      "instructions": 109
+    },
+    {
+      "name": "WHICH-PRINT",
+      "address": 28438,
+      "locals": 5,
+      "instructions": 33
+    },
+    {
+      "name": "GLOBAL-CHECK",
+      "address": 28568,
+      "locals": 8,
+      "instructions": 44
+    },
+    {
+      "name": "DO-SL",
+      "address": 28774,
+      "locals": 4,
+      "instructions": 10
+    },
+    {
+      "name": "SEARCH-LIST",
+      "address": 28826,
+      "locals": 5,
+      "instructions": 23
+    },
+    {
+      "name": "OBJ-FOUND",
+      "address": 28930,
+      "locals": 3,
+      "instructions": 6
+    },
+    {
+      "name": "TAKE-CHECK",
+      "address": 28960,
+      "locals": 0,
+      "instructions": 6
+    },
+    {
+      "name": "ITAKE-CHECK",
+      "address": 28988,
+      "locals": 5,
+      "instructions": 47
+    },
+    {
+      "name": "MANY-CHECK",
+      "address": 29194,
+      "locals": 3,
+      "instructions": 31
+    },
+    {
+      "name": "ZMEMQ",
+      "address": 29332,
+      "locals": 4,
+      "instructions": 12
+    },
+    {
+      "name": "ZMEMQB",
+      "address": 29382,
+      "locals": 4,
+      "instructions": 4
+    },
+    {
+      "name": "LIT?",
+      "address": 29406,
+      "locals": 4,
+      "instructions": 24
+    },
+    {
+      "name": "THIS-IT?",
+      "address": 29512,
+      "locals": 4,
+      "instructions": 18
+    },
+    {
+      "name": "ACCESSIBLE?",
+      "address": 29590,
+      "locals": 3,
+      "instructions": 16
+    },
+    {
+      "name": "META-LOC",
+      "address": 29664,
+      "locals": 1,
+      "instructions": 7
+    },
+    {
+      "name": "V-VERBOSE",
+      "address": 29688,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "V-BRIEF",
+      "address": 29710,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "V-SUPER-BRIEF",
+      "address": 29732,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-INVENTORY",
+      "address": 29756,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "FINISH",
+      "address": 29784,
+      "locals": 1,
+      "instructions": 21
+    },
+    {
+      "name": "V-QUIT",
+      "address": 29972,
+      "locals": 1,
+      "instructions": 7
+    },
+    {
+      "name": "V-RESTART",
+      "address": 30030,
+      "locals": 0,
+      "instructions": 8
+    },
+    {
+      "name": "V-RESTORE",
+      "address": 30098,
+      "locals": 0,
+      "instructions": 6
+    },
+    {
+      "name": "V-SAVE",
+      "address": 30120,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "V-SCRIPT",
+      "address": 30136,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "V-UNSCRIPT",
+      "address": 30188,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "V-VERSION",
+      "address": 30240,
+      "locals": 1,
+      "instructions": 15
+    },
+    {
+      "name": "V-VERIFY",
+      "address": 30452,
+      "locals": 0,
+      "instructions": 6
+    },
+    {
+      "name": "V-COMMAND-FILE",
+      "address": 30508,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-RANDOM",
+      "address": 30514,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "V-RECORD",
+      "address": 30548,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-UNRECORD",
+      "address": 30554,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-ADVENT",
+      "address": 30560,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-ALARM",
+      "address": 30584,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "V-ANSWER",
+      "address": 30648,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "V-ATTACK",
+      "address": 30680,
+      "locals": 0,
+      "instructions": 20
+    },
+    {
+      "name": "V-BACK",
+      "address": 30838,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-BLAST",
+      "address": 30876,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "PRE-BOARD",
+      "address": 30902,
+      "locals": 1,
+      "instructions": 24
+    },
+    {
+      "name": "V-BOARD",
+      "address": 31026,
+      "locals": 1,
+      "instructions": 8
+    },
+    {
+      "name": "V-BREATHE",
+      "address": 31058,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-BRUSH",
+      "address": 31068,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-BUG",
+      "address": 31096,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "TELL-NO-PRSI",
+      "address": 31140,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "PRE-BURN",
+      "address": 31158,
+      "locals": 0,
+      "instructions": 8
+    },
+    {
+      "name": "V-BURN",
+      "address": 31192,
+      "locals": 0,
+      "instructions": 24
+    },
+    {
+      "name": "V-CHOMP",
+      "address": 31330,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-CLIMB-DOWN",
+      "address": 31342,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-CLIMB-FOO",
+      "address": 31352,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-CLIMB-ON",
+      "address": 31362,
+      "locals": 0,
+      "instructions": 6
+    },
+    {
+      "name": "V-CLIMB-UP",
+      "address": 31394,
+      "locals": 5,
+      "instructions": 37
+    },
+    {
+      "name": "V-CLOSE",
+      "address": 31604,
+      "locals": 0,
+      "instructions": 25
+    },
+    {
+      "name": "V-COMMAND",
+      "address": 31754,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "V-COUNT",
+      "address": 31790,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "V-CROSS",
+      "address": 31836,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-CURSES",
+      "address": 31848,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "V-CUT",
+      "address": 31932,
+      "locals": 0,
+      "instructions": 20
+    },
+    {
+      "name": "V-DEFLATE",
+      "address": 32120,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-DIG",
+      "address": 32132,
+      "locals": 0,
+      "instructions": 9
+    },
+    {
+      "name": "V-DISEMBARK",
+      "address": 32194,
+      "locals": 0,
+      "instructions": 19
+    },
+    {
+      "name": "V-DISENCHANT",
+      "address": 32294,
+      "locals": 0,
+      "instructions": 35
+    },
+    {
+      "name": "V-DRINK",
+      "address": 32532,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-DRINK-FROM",
+      "address": 32540,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "PRE-DROP",
+      "address": 32552,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "V-DROP",
+      "address": 32568,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "V-EAT",
+      "address": 32586,
+      "locals": 3,
+      "instructions": 48
+    },
+    {
+      "name": "HIT-SPOT",
+      "address": 32864,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "V-ECHO",
+      "address": 32932,
+      "locals": 4,
+      "instructions": 1
+    },
+    {
+      "name": "V-ENCHANT",
+      "address": 32954,
+      "locals": 0,
+      "instructions": 50
+    },
+    {
+      "name": "REMOVE-CAREFULLY",
+      "address": 33350,
+      "locals": 2,
+      "instructions": 8
+    },
+    {
+      "name": "V-ENTER",
+      "address": 33398,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-EXAMINE",
+      "address": 33406,
+      "locals": 0,
+      "instructions": 13
+    },
+    {
+      "name": "V-EXIT",
+      "address": 33458,
+      "locals": 0,
+      "instructions": 12
+    },
+    {
+      "name": "V-EXORCISE",
+      "address": 33506,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "PRE-FILL",
+      "address": 33524,
+      "locals": 1,
+      "instructions": 18
+    },
+    {
+      "name": "V-FILL",
+      "address": 33614,
+      "locals": 0,
+      "instructions": 11
+    },
+    {
+      "name": "V-FIND",
+      "address": 33698,
+      "locals": 1,
+      "instructions": 27
+    },
+    {
+      "name": "V-FOLLOW",
+      "address": 33892,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-FROBOZZ",
+      "address": 33904,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "PRE-GIVE",
+      "address": 33950,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "V-GIVE",
+      "address": 33996,
+      "locals": 0,
+      "instructions": 9
+    },
+    {
+      "name": "V-HATCH",
+      "address": 34042,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-HELLO",
+      "address": 34052,
+      "locals": 0,
+      "instructions": 12
+    },
+    {
+      "name": "V-INCANT",
+      "address": 34148,
+      "locals": 0,
+      "instructions": 21
+    },
+    {
+      "name": "V-INFLATE",
+      "address": 34282,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-KICK",
+      "address": 34298,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-KISS",
+      "address": 34308,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-KNOCK",
+      "address": 34328,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "V-LAMP-OFF",
+      "address": 34362,
+      "locals": 0,
+      "instructions": 15
+    },
+    {
+      "name": "V-LAMP-ON",
+      "address": 34442,
+      "locals": 0,
+      "instructions": 18
+    },
+    {
+      "name": "V-LAUNCH",
+      "address": 34542,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "V-LEAN-ON",
+      "address": 34590,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-LEAP",
+      "address": 34604,
+      "locals": 2,
+      "instructions": 28
+    },
+    {
+      "name": "V-LEAVE",
+      "address": 34756,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-LISTEN",
+      "address": 34764,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "V-LOCK",
+      "address": 34784,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-LOOK",
+      "address": 34798,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "V-LOOK-BEHIND",
+      "address": 34816,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "V-LOOK-INSIDE",
+      "address": 34834,
+      "locals": 0,
+      "instructions": 30
+    },
+    {
+      "name": "V-LOOK-ON",
+      "address": 34996,
+      "locals": 0,
+      "instructions": 6
+    },
+    {
+      "name": "V-LOOK-UNDER",
+      "address": 35026,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-LOWER",
+      "address": 35040,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-MAKE",
+      "address": 35050,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-MELT",
+      "address": 35060,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "PRE-MOVE",
+      "address": 35090,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "V-MOVE",
+      "address": 35130,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "V-MUMBLE",
+      "address": 35174,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "PRE-MUNG",
+      "address": 35210,
+      "locals": 0,
+      "instructions": 13
+    },
+    {
+      "name": "V-MUNG",
+      "address": 35276,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "V-ODYSSEUS",
+      "address": 35298,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "V-OIL",
+      "address": 35324,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-OPEN",
+      "address": 35350,
+      "locals": 2,
+      "instructions": 39
+    },
+    {
+      "name": "V-OVERBOARD",
+      "address": 35526,
+      "locals": 1,
+      "instructions": 7
+    },
+    {
+      "name": "V-PICK",
+      "address": 35558,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-PLAY",
+      "address": 35570,
+      "locals": 0,
+      "instructions": 8
+    },
+    {
+      "name": "V-PLUG",
+      "address": 35656,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-POUR-ON",
+      "address": 35668,
+      "locals": 0,
+      "instructions": 19
+    },
+    {
+      "name": "V-PRAY",
+      "address": 35778,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "V-PUMP",
+      "address": 35818,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "V-PUSH",
+      "address": 35854,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-PUSH-TO",
+      "address": 35864,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "PRE-PUT",
+      "address": 35882,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "V-PUT",
+      "address": 35898,
+      "locals": 1,
+      "instructions": 43
+    },
+    {
+      "name": "V-PUT-BEHIND",
+      "address": 36100,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-PUT-ON",
+      "address": 36124,
+      "locals": 0,
+      "instructions": 9
+    },
+    {
+      "name": "V-PUT-UNDER",
+      "address": 36174,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-RAISE",
+      "address": 36184,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-RAPE",
+      "address": 36192,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "PRE-READ",
+      "address": 36216,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "V-READ",
+      "address": 36272,
+      "locals": 0,
+      "instructions": 8
+    },
+    {
+      "name": "V-READ-PAGE",
+      "address": 36306,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-REPENT",
+      "address": 36316,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-REPLY",
+      "address": 36336,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "V-RING",
+      "address": 36376,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-RUB",
+      "address": 36398,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-SAY",
+      "address": 36408,
+      "locals": 1,
+      "instructions": 20
+    },
+    {
+      "name": "V-SEARCH",
+      "address": 36528,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-SEND",
+      "address": 36542,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "PRE-SGIVE",
+      "address": 36580,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-SGIVE",
+      "address": 36590,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-SHAKE",
+      "address": 36596,
+      "locals": 0,
+      "instructions": 25
+    },
+    {
+      "name": "SHAKE-LOOP",
+      "address": 36766,
+      "locals": 1,
+      "instructions": 11
+    },
+    {
+      "name": "V-SKIP",
+      "address": 36806,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "V-SMELL",
+      "address": 36818,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "V-SPIN",
+      "address": 36836,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-SPRAY",
+      "address": 36846,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-SQUEEZE",
+      "address": 36854,
+      "locals": 0,
+      "instructions": 8
+    },
+    {
+      "name": "V-SSPRAY",
+      "address": 36906,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-STAB",
+      "address": 36916,
+      "locals": 1,
+      "instructions": 7
+    },
+    {
+      "name": "V-STAND",
+      "address": 36970,
+      "locals": 0,
+      "instructions": 6
+    },
+    {
+      "name": "V-STAY",
+      "address": 37008,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-STRIKE",
+      "address": 37026,
+      "locals": 0,
+      "instructions": 6
+    },
+    {
+      "name": "V-SWIM",
+      "address": 37102,
+      "locals": 0,
+      "instructions": 13
+    },
+    {
+      "name": "V-SWING",
+      "address": 37186,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "PRE-TAKE",
+      "address": 37206,
+      "locals": 0,
+      "instructions": 28
+    },
+    {
+      "name": "V-TAKE",
+      "address": 37356,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "V-TELL",
+      "address": 37396,
+      "locals": 0,
+      "instructions": 15
+    },
+    {
+      "name": "V-THROUGH",
+      "address": 37488,
+      "locals": 2,
+      "instructions": 43
+    },
+    {
+      "name": "V-THROW",
+      "address": 37722,
+      "locals": 0,
+      "instructions": 17
+    },
+    {
+      "name": "V-THROW-OFF",
+      "address": 37822,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-TIE",
+      "address": 37844,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "V-TIE-UP",
+      "address": 37888,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-TREASURE",
+      "address": 37914,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "PRE-TURN",
+      "address": 37940,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "V-TURN",
+      "address": 37986,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-UNLOCK",
+      "address": 37998,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-UNTIE",
+      "address": 38006,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-WAIT",
+      "address": 38028,
+      "locals": 1,
+      "instructions": 8
+    },
+    {
+      "name": "V-WALK",
+      "address": 38066,
+      "locals": 5,
+      "instructions": 72
+    },
+    {
+      "name": "V-WALK-AROUND",
+      "address": 38366,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-WALK-TO",
+      "address": 38392,
+      "locals": 0,
+      "instructions": 6
+    },
+    {
+      "name": "V-WAVE",
+      "address": 38440,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-WEAR",
+      "address": 38450,
+      "locals": 0,
+      "instructions": 6
+    },
+    {
+      "name": "V-WIN",
+      "address": 38478,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-WIND",
+      "address": 38488,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "V-WISH",
+      "address": 38506,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "V-YELL",
+      "address": 38516,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-ZORK",
+      "address": 38532,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "V-FIRST-LOOK",
+      "address": 38544,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "DESCRIBE-ROOM",
+      "address": 38562,
+      "locals": 4,
+      "instructions": 44
+    },
+    {
+      "name": "DESCRIBE-OBJECTS",
+      "address": 38742,
+      "locals": 1,
+      "instructions": 10
+    },
+    {
+      "name": "DESCRIBE-OBJECT",
+      "address": 38810,
+      "locals": 5,
+      "instructions": 47
+    },
+    {
+      "name": "PRINT-CONTENTS",
+      "address": 39034,
+      "locals": 6,
+      "instructions": 22
+    },
+    {
+      "name": "PRINT-CONT",
+      "address": 39116,
+      "locals": 10,
+      "instructions": 86
+    },
+    {
+      "name": "FIRSTER",
+      "address": 39460,
+      "locals": 2,
+      "instructions": 19
+    },
+    {
+      "name": "SEE-INSIDE?",
+      "address": 39558,
+      "locals": 1,
+      "instructions": 4
+    },
+    {
+      "name": "SCORE-UPD",
+      "address": 39574,
+      "locals": 1,
+      "instructions": 4
+    },
+    {
+      "name": "SCORE-OBJ",
+      "address": 39592,
+      "locals": 2,
+      "instructions": 5
+    },
+    {
+      "name": "YES?",
+      "address": 39618,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "ITAKE",
+      "address": 39642,
+      "locals": 4,
+      "instructions": 57
+    },
+    {
+      "name": "IDROP",
+      "address": 39956,
+      "locals": 0,
+      "instructions": 19
+    },
+    {
+      "name": "CCOUNT",
+      "address": 40026,
+      "locals": 3,
+      "instructions": 5
+    },
+    {
+      "name": "WEIGHT",
+      "address": 40050,
+      "locals": 3,
+      "instructions": 11
+    },
+    {
+      "name": "HACK-HACK",
+      "address": 40098,
+      "locals": 1,
+      "instructions": 11
+    },
+    {
+      "name": "NO-GO-TELL",
+      "address": 40140,
+      "locals": 2,
+      "instructions": 8
+    },
+    {
+      "name": "GOTO",
+      "address": 40188,
+      "locals": 7,
+      "instructions": 89
+    },
+    {
+      "name": "LKP",
+      "address": 40596,
+      "locals": 4,
+      "instructions": 8
+    },
+    {
+      "name": "DO-WALK",
+      "address": 40636,
+      "locals": 1,
+      "instructions": 3
+    },
+    {
+      "name": "GLOBAL-IN?",
+      "address": 40650,
+      "locals": 3,
+      "instructions": 6
+    },
+    {
+      "name": "FIND-IN",
+      "address": 40680,
+      "locals": 3,
+      "instructions": 7
+    },
+    {
+      "name": "HELD?",
+      "address": 40710,
+      "locals": 1,
+      "instructions": 4
+    },
+    {
+      "name": "OTHER-SIDE",
+      "address": 40726,
+      "locals": 3,
+      "instructions": 8
+    },
+    {
+      "name": "MUNG-ROOM",
+      "address": 40764,
+      "locals": 2,
+      "instructions": 4
+    },
+    {
+      "name": "THIS-IS-IT",
+      "address": 40782,
+      "locals": 1,
+      "instructions": 2
+    },
+    {
+      "name": "SWORD-FCN",
+      "address": 40790,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "I-SWORD",
+      "address": 40814,
+      "locals": 6,
+      "instructions": 35
+    },
+    {
+      "name": "INFESTED?",
+      "address": 41014,
+      "locals": 2,
+      "instructions": 8
+    },
+    {
+      "name": "CAROUSEL-ROOM-FCN",
+      "address": 41046,
+      "locals": 1,
+      "instructions": 26
+    },
+    {
+      "name": "VIOLIN-FCN",
+      "address": 41310,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "OPEN-CLOSE",
+      "address": 41354,
+      "locals": 3,
+      "instructions": 19
+    },
+    {
+      "name": "BALLOON-FCN",
+      "address": 41414,
+      "locals": 4,
+      "instructions": 84
+    },
+    {
+      "name": "I-BALLOON",
+      "address": 42254,
+      "locals": 0,
+      "instructions": 9
+    },
+    {
+      "name": "BALLOON-BURN",
+      "address": 42286,
+      "locals": 0,
+      "instructions": 24
+    },
+    {
+      "name": "PUT-BALLOON",
+      "address": 42432,
+      "locals": 2,
+      "instructions": 7
+    },
+    {
+      "name": "RISE-AND-SHINE",
+      "address": 42470,
+      "locals": 2,
+      "instructions": 55
+    },
+    {
+      "name": "DECLINE-AND-FALL",
+      "address": 42750,
+      "locals": 2,
+      "instructions": 39
+    },
+    {
+      "name": "BCONTENTS",
+      "address": 42926,
+      "locals": 0,
+      "instructions": 23
+    },
+    {
+      "name": "WIRE-FCN",
+      "address": 43180,
+      "locals": 0,
+      "instructions": 20
+    },
+    {
+      "name": "I-BURNUP",
+      "address": 43316,
+      "locals": 1,
+      "instructions": 9
+    },
+    {
+      "name": "SAFE-ROOM-FCN",
+      "address": 43374,
+      "locals": 1,
+      "instructions": 6
+    },
+    {
+      "name": "SAFE-FCN",
+      "address": 43542,
+      "locals": 0,
+      "instructions": 11
+    },
+    {
+      "name": "BRICK-FCN",
+      "address": 43646,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "FUSE-FCN",
+      "address": 43660,
+      "locals": 0,
+      "instructions": 9
+    },
+    {
+      "name": "I-FUSE",
+      "address": 43710,
+      "locals": 2,
+      "instructions": 42
+    },
+    {
+      "name": "I-SAFE",
+      "address": 43920,
+      "locals": 0,
+      "instructions": 11
+    },
+    {
+      "name": "I-LEDGE",
+      "address": 44048,
+      "locals": 1,
+      "instructions": 24
+    },
+    {
+      "name": "LEDGE-FCN",
+      "address": 44198,
+      "locals": 1,
+      "instructions": 5
+    },
+    {
+      "name": "I-GNOME",
+      "address": 44316,
+      "locals": 0,
+      "instructions": 11
+    },
+    {
+      "name": "GNOME-FCN",
+      "address": 44510,
+      "locals": 0,
+      "instructions": 40
+    },
+    {
+      "name": "I-NERVOUS",
+      "address": 44944,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "PURPLE-BOOK-FCN",
+      "address": 45024,
+      "locals": 0,
+      "instructions": 10
+    },
+    {
+      "name": "RANDOM-BOOK",
+      "address": 45058,
+      "locals": 0,
+      "instructions": 6
+    },
+    {
+      "name": "HEAD-FCN",
+      "address": 45080,
+      "locals": 0,
+      "instructions": 6
+    },
+    {
+      "name": "CRYPT-ANTEROOM-FCN",
+      "address": 45142,
+      "locals": 1,
+      "instructions": 8
+    },
+    {
+      "name": "CRYPT-ROOM-FCN",
+      "address": 45330,
+      "locals": 2,
+      "instructions": 26
+    },
+    {
+      "name": "DIM-DOOR-APPEARS",
+      "address": 45706,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "CRYPT-OBJECT",
+      "address": 45826,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "CRYPT-DOOR-FCN",
+      "address": 45870,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "TOMB-PSEUDO",
+      "address": 45888,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "DIM-DOOR-FCN",
+      "address": 45900,
+      "locals": 0,
+      "instructions": 9
+    },
+    {
+      "name": "REPELLENT-FCN",
+      "address": 45952,
+      "locals": 0,
+      "instructions": 17
+    },
+    {
+      "name": "I-SPRAY",
+      "address": 46162,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "ZORK3-FCN",
+      "address": 46198,
+      "locals": 1,
+      "instructions": 10
+    },
+    {
+      "name": "I-BUCKET",
+      "address": 46772,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "WATER-FCN",
+      "address": 46784,
+      "locals": 3,
+      "instructions": 84
+    },
+    {
+      "name": "PUDDLE",
+      "address": 47210,
+      "locals": 1,
+      "instructions": 6
+    },
+    {
+      "name": "BUCKET-FCN",
+      "address": 47246,
+      "locals": 1,
+      "instructions": 48
+    },
+    {
+      "name": "PASS-THE-BUCKET",
+      "address": 47540,
+      "locals": 1,
+      "instructions": 4
+    },
+    {
+      "name": "POSTS-ROOM-FCN",
+      "address": 47558,
+      "locals": 1,
+      "instructions": 6
+    },
+    {
+      "name": "EATME-FCN",
+      "address": 47618,
+      "locals": 2,
+      "instructions": 24
+    },
+    {
+      "name": "CAKE-CRUMBLE",
+      "address": 47762,
+      "locals": 1,
+      "instructions": 11
+    },
+    {
+      "name": "CAKE-FCN",
+      "address": 47820,
+      "locals": 2,
+      "instructions": 75
+    },
+    {
+      "name": "CANDY-FCN",
+      "address": 48342,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "TOP-ETCHINGS-F",
+      "address": 48544,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "BOTTOM-ETCHINGS-F",
+      "address": 48648,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "CUBE-F",
+      "address": 48716,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "FIXED-FONT-ON",
+      "address": 48826,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "FIXED-FONT-OFF",
+      "address": 48842,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "POOL-FCN",
+      "address": 48860,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "FLASK-FCN",
+      "address": 48942,
+      "locals": 0,
+      "instructions": 19
+    },
+    {
+      "name": "PLEAK",
+      "address": 49128,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "ICEBOOM",
+      "address": 49170,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "MAGNET-ROOM-FCN",
+      "address": 49188,
+      "locals": 1,
+      "instructions": 19
+    },
+    {
+      "name": "MAGNET-ROOM-EXIT",
+      "address": 49376,
+      "locals": 0,
+      "instructions": 17
+    },
+    {
+      "name": "BUTTONS",
+      "address": 49444,
+      "locals": 0,
+      "instructions": 31
+    },
+    {
+      "name": "SPHERE-FCN",
+      "address": 49630,
+      "locals": 1,
+      "instructions": 31
+    },
+    {
+      "name": "I-SPHERE",
+      "address": 49828,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "IN-CAGE-FCN",
+      "address": 49854,
+      "locals": 1,
+      "instructions": 3
+    },
+    {
+      "name": "ROBOT-FCN",
+      "address": 49866,
+      "locals": 1,
+      "instructions": 75
+    },
+    {
+      "name": "BILLS-OBJECT",
+      "address": 50590,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "BKLEAVEE",
+      "address": 50642,
+      "locals": 1,
+      "instructions": 8
+    },
+    {
+      "name": "BKLEAVEW",
+      "address": 50708,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "DEPOSITORY-FCN",
+      "address": 50716,
+      "locals": 1,
+      "instructions": 3
+    },
+    {
+      "name": "TELLER-ROOM",
+      "address": 50732,
+      "locals": 1,
+      "instructions": 7
+    },
+    {
+      "name": "SCOL-OBJECT",
+      "address": 50926,
+      "locals": 1,
+      "instructions": 14
+    },
+    {
+      "name": "GET-WALL",
+      "address": 51014,
+      "locals": 2,
+      "instructions": 6
+    },
+    {
+      "name": "SCOLWALL",
+      "address": 51040,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "SCOL-GO",
+      "address": 51074,
+      "locals": 1,
+      "instructions": 6
+    },
+    {
+      "name": "SCOL-OBJ",
+      "address": 51100,
+      "locals": 3,
+      "instructions": 13
+    },
+    {
+      "name": "SCOL-THROUGH",
+      "address": 51190,
+      "locals": 2,
+      "instructions": 7
+    },
+    {
+      "name": "I-CURTAIN",
+      "address": 51252,
+      "locals": 0,
+      "instructions": 13
+    },
+    {
+      "name": "I-ZGNOME",
+      "address": 51338,
+      "locals": 0,
+      "instructions": 10
+    },
+    {
+      "name": "BOX-F",
+      "address": 51630,
+      "locals": 0,
+      "instructions": 1
+    },
+    {
+      "name": "ZGNOME-FCN",
+      "address": 51654,
+      "locals": 0,
+      "instructions": 39
+    },
+    {
+      "name": "I-ZGNOME-OUT",
+      "address": 52188,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "BOMB?",
+      "address": 52286,
+      "locals": 1,
+      "instructions": 6
+    },
+    {
+      "name": "GO&LOOK",
+      "address": 52312,
+      "locals": 4,
+      "instructions": 12
+    },
+    {
+      "name": "TINY-ROOM-FCN",
+      "address": 52362,
+      "locals": 1,
+      "instructions": 7
+    },
+    {
+      "name": "DREARY-ROOM-FCN",
+      "address": 52444,
+      "locals": 2,
+      "instructions": 6
+    },
+    {
+      "name": "PCHECK",
+      "address": 52564,
+      "locals": 1,
+      "instructions": 16
+    },
+    {
+      "name": "P-DOOR",
+      "address": 52618,
+      "locals": 4,
+      "instructions": 21
+    },
+    {
+      "name": "PLID",
+      "address": 52854,
+      "locals": 2,
+      "instructions": 3
+    },
+    {
+      "name": "PKH",
+      "address": 52868,
+      "locals": 2,
+      "instructions": 7
+    },
+    {
+      "name": "PKH-FCN",
+      "address": 52894,
+      "locals": 2,
+      "instructions": 33
+    },
+    {
+      "name": "PLID-FCN",
+      "address": 53134,
+      "locals": 0,
+      "instructions": 23
+    },
+    {
+      "name": "ROOM?",
+      "address": 53266,
+      "locals": 2,
+      "instructions": 7
+    },
+    {
+      "name": "PALANTIR",
+      "address": 53294,
+      "locals": 0,
+      "instructions": 19
+    },
+    {
+      "name": "DEAD-PALANTIR",
+      "address": 53396,
+      "locals": 2,
+      "instructions": 60
+    },
+    {
+      "name": "GLOBAL-PALANTIRS",
+      "address": 54322,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "PALANTIR-LOOK",
+      "address": 54356,
+      "locals": 4,
+      "instructions": 33
+    },
+    {
+      "name": "PWINDOW-FCN",
+      "address": 54740,
+      "locals": 0,
+      "instructions": 11
+    },
+    {
+      "name": "PDOOR-FCN",
+      "address": 54812,
+      "locals": 1,
+      "instructions": 42
+    },
+    {
+      "name": "PKEY-FCN",
+      "address": 55110,
+      "locals": 0,
+      "instructions": 6
+    },
+    {
+      "name": "PLACE-MAT-FCN",
+      "address": 55136,
+      "locals": 0,
+      "instructions": 19
+    },
+    {
+      "name": "WISH-FCN",
+      "address": 55272,
+      "locals": 0,
+      "instructions": 8
+    },
+    {
+      "name": "WELL-FCN",
+      "address": 55380,
+      "locals": 0,
+      "instructions": 10
+    },
+    {
+      "name": "MATCH-FCN",
+      "address": 55448,
+      "locals": 1,
+      "instructions": 37
+    },
+    {
+      "name": "I-MATCH",
+      "address": 55656,
+      "locals": 0,
+      "instructions": 5
+    },
+    {
+      "name": "LANTERN",
+      "address": 55680,
+      "locals": 0,
+      "instructions": 31
+    },
+    {
+      "name": "I-LANTERN",
+      "address": 55884,
+      "locals": 2,
+      "instructions": 8
+    },
+    {
+      "name": "LIGHT-INT",
+      "address": 55926,
+      "locals": 3,
+      "instructions": 14
+    },
+    {
+      "name": "RIDDLE-ROOM-FCN",
+      "address": 55994,
+      "locals": 1,
+      "instructions": 26
+    },
+    {
+      "name": "RIDDLE-DOOR-FCN",
+      "address": 56382,
+      "locals": 0,
+      "instructions": 8
+    },
+    {
+      "name": "RIDDLE-PSEUDO",
+      "address": 56476,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "MAGIC-ACTOR",
+      "address": 56500,
+      "locals": 1,
+      "instructions": 67
+    },
+    {
+      "name": "RANDOM-WALK",
+      "address": 57186,
+      "locals": 5,
+      "instructions": 28
+    },
+    {
+      "name": "FORCE-FIGHT",
+      "address": 57296,
+      "locals": 2,
+      "instructions": 9
+    },
+    {
+      "name": "DWINDOW-DESC",
+      "address": 57372,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "DWINDOW-FCN",
+      "address": 57430,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "DIAMOND-MOTION",
+      "address": 57506,
+      "locals": 4,
+      "instructions": 69
+    },
+    {
+      "name": "DIAMOND-LOSS",
+      "address": 57948,
+      "locals": 0,
+      "instructions": 12
+    },
+    {
+      "name": "CERBERUS-FCN",
+      "address": 58060,
+      "locals": 0,
+      "instructions": 44
+    },
+    {
+      "name": "COLLAR-FCN",
+      "address": 58764,
+      "locals": 0,
+      "instructions": 8
+    },
+    {
+      "name": "GLACIER-FCN",
+      "address": 58798,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "GLACIER-ROOM-FCN",
+      "address": 58838,
+      "locals": 1,
+      "instructions": 5
+    },
+    {
+      "name": "DRAGON-FCN",
+      "address": 59002,
+      "locals": 0,
+      "instructions": 44
+    },
+    {
+      "name": "HELLO?",
+      "address": 59538,
+      "locals": 1,
+      "instructions": 8
+    },
+    {
+      "name": "FIND-TARGET",
+      "address": 59580,
+      "locals": 5,
+      "instructions": 12
+    },
+    {
+      "name": "I-DRAGON",
+      "address": 59638,
+      "locals": 1,
+      "instructions": 81
+    },
+    {
+      "name": "DRAGON-LEAVES",
+      "address": 60758,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "I-GARDEN",
+      "address": 60784,
+      "locals": 0,
+      "instructions": 46
+    },
+    {
+      "name": "GARDEN-ROOM-FCN",
+      "address": 61138,
+      "locals": 1,
+      "instructions": 4
+    },
+    {
+      "name": "GLOBAL-UNICORN-FCN",
+      "address": 61160,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "UNICORN-FCN",
+      "address": 61254,
+      "locals": 0,
+      "instructions": 15
+    },
+    {
+      "name": "GAZEBO-FCN",
+      "address": 61554,
+      "locals": 0,
+      "instructions": 11
+    },
+    {
+      "name": "CHEST-FCN",
+      "address": 61608,
+      "locals": 0,
+      "instructions": 19
+    },
+    {
+      "name": "PRINCESS-FCN",
+      "address": 61808,
+      "locals": 1,
+      "instructions": 48
+    },
+    {
+      "name": "I-PRINCESS",
+      "address": 62488,
+      "locals": 3,
+      "instructions": 71
+    },
+    {
+      "name": "I-UNICORN",
+      "address": 63028,
+      "locals": 0,
+      "instructions": 13
+    },
+    {
+      "name": "MENHIR-ROOM-FCN",
+      "address": 63410,
+      "locals": 1,
+      "instructions": 10
+    },
+    {
+      "name": "DESCRIBE-MENHIR",
+      "address": 63642,
+      "locals": 0,
+      "instructions": 22
+    },
+    {
+      "name": "MENHIR-FCN",
+      "address": 64006,
+      "locals": 0,
+      "instructions": 21
+    },
+    {
+      "name": "DOOR-KEEPER-FCN",
+      "address": 64382,
+      "locals": 0,
+      "instructions": 28
+    },
+    {
+      "name": "WIZ-DOOR-FCN",
+      "address": 64974,
+      "locals": 0,
+      "instructions": 39
+    },
+    {
+      "name": "GUARDIAN-ROOM-FCN",
+      "address": 65332,
+      "locals": 1,
+      "instructions": 12
+    },
+    {
+      "name": "WORKSHOP-FCN",
+      "address": 65614,
+      "locals": 1,
+      "instructions": 6
+    },
+    {
+      "name": "ARCANA-PSEUDO",
+      "address": 65742,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "TROPHY-PSEUDO",
+      "address": 65806,
+      "locals": 0,
+      "instructions": 3
+    },
+    {
+      "name": "STAND-FCN",
+      "address": 65870,
+      "locals": 0,
+      "instructions": 22
+    },
+    {
+      "name": "IN-AQUARIUM-FCN",
+      "address": 66212,
+      "locals": 1,
+      "instructions": 18
+    },
+    {
+      "name": "AQUARIUM-FCN",
+      "address": 66416,
+      "locals": 1,
+      "instructions": 48
+    },
+    {
+      "name": "SERPENT-FCN",
+      "address": 67018,
+      "locals": 0,
+      "instructions": 10
+    },
+    {
+      "name": "DEAD-SERPENT-FCN",
+      "address": 67216,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "GENIE-FCN",
+      "address": 67262,
+      "locals": 3,
+      "instructions": 140
+    },
+    {
+      "name": "GENIE-LEAVES",
+      "address": 69468,
+      "locals": 1,
+      "instructions": 6
+    },
+    {
+      "name": "CASE-WORTH",
+      "address": 69512,
+      "locals": 2,
+      "instructions": 8
+    },
+    {
+      "name": "PENTAGRAM-FCN",
+      "address": 69542,
+      "locals": 1,
+      "instructions": 9
+    },
+    {
+      "name": "WIZARD-FCN",
+      "address": 70146,
+      "locals": 2,
+      "instructions": 41
+    },
+    {
+      "name": "I-WIZARD",
+      "address": 70772,
+      "locals": 4,
+      "instructions": 201
+    },
+    {
+      "name": "ROB",
+      "address": 72860,
+      "locals": 5,
+      "instructions": 9
+    },
+    {
+      "name": "RIPOFF",
+      "address": 72904,
+      "locals": 2,
+      "instructions": 11
+    },
+    {
+      "name": "WIZARD-CASE-FCN",
+      "address": 72948,
+      "locals": 0,
+      "instructions": 13
+    },
+    {
+      "name": "WAND-FCN",
+      "address": 73112,
+      "locals": 0,
+      "instructions": 52
+    },
+    {
+      "name": "I-WAND",
+      "address": 73566,
+      "locals": 0,
+      "instructions": 11
+    },
+    {
+      "name": "WIZARD-QUARTERS-FCN",
+      "address": 73622,
+      "locals": 3,
+      "instructions": 14
+    },
+    {
+      "name": "BRIDGE-FCN",
+      "address": 73690,
+      "locals": 0,
+      "instructions": 6
+    },
+    {
+      "name": "STREAM-FCN",
+      "address": 73714,
+      "locals": 0,
+      "instructions": 4
+    },
+    {
+      "name": "CHASM-FCN",
+      "address": 73768,
+      "locals": 0,
+      "instructions": 14
+    },
+    {
+      "name": "TUNNEL-OBJECT",
+      "address": 73892,
+      "locals": 0,
+      "instructions": 7
+    },
+    {
+      "name": "STALA-PSEUDO",
+      "address": 73918,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "MOSS-FCN",
+      "address": 73964,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "ROSE-BUSH-FCN",
+      "address": 74034,
+      "locals": 0,
+      "instructions": 2
+    },
+    {
+      "name": "I-SPELL",
+      "address": 74110,
+      "locals": 0,
+      "instructions": 8
+    },
+    {
+      "name": "V-DIAGNOSE",
+      "address": 74138,
+      "locals": 0,
+      "instructions": 28
+    },
+    {
+      "name": "V-SCORE",
+      "address": 74316,
+      "locals": 1,
+      "instructions": 41
+    },
+    {
+      "name": "JIGS-UP",
+      "address": 74582,
+      "locals": 2,
+      "instructions": 29
+    },
+    {
+      "name": "RANDOMIZE-OBJECTS",
+      "address": 74824,
+      "locals": 4,
+      "instructions": 23
+    },
+    {
+      "name": "KILL-INTERRUPTS",
+      "address": 74920,
+      "locals": 0,
+      "instructions": 14
+    },
+    {
+      "name": "FIND-WEAPON",
+      "address": 75000,
+      "locals": 2,
+      "instructions": 6
+    },
+    {
+      "name": "BUCKET-CONT",
+      "address": 75024,
+      "locals": 0,
+      "instructions": 3
+    }
+  ],
+  "deathSites": [
+    {
+      "routine": "CRETIN-FCN",
+      "pc": 21654,
+      "file": "reference/zork2/gglobals.zap",
+      "line": 108
+    },
+    {
+      "routine": "V-BURN",
+      "pc": 31275,
+      "file": "reference/zork2/gverbs.zap",
+      "line": 297
+    },
+    {
+      "routine": "V-LEAP",
+      "pc": 34728,
+      "file": "reference/zork2/gverbs.zap",
+      "line": 940
+    },
+    {
+      "routine": "V-PLAY",
+      "pc": 35635,
+      "file": "reference/zork2/gverbs.zap",
+      "line": 1154
+    },
+    {
+      "routine": "V-THROW",
+      "pc": 37756,
+      "file": "reference/zork2/gverbs.zap",
+      "line": 1630
+    },
+    {
+      "routine": "V-WALK",
+      "pc": 38344,
+      "file": "reference/zork2/gverbs.zap",
+      "line": 1766
+    },
+    {
+      "routine": "GOTO",
+      "pc": 40493,
+      "file": "reference/zork2/gverbs.zap",
+      "line": 2308
+    },
+    {
+      "routine": "RISE-AND-SHINE",
+      "pc": 42538,
+      "file": "reference/zork2/2actions.zap",
+      "line": 269
+    },
+    {
+      "routine": "BRICK-FCN",
+      "pc": 43653,
+      "file": "reference/zork2/2actions.zap",
+      "line": 441
+    },
+    {
+      "routine": "I-FUSE",
+      "pc": 43757,
+      "file": "reference/zork2/2actions.zap",
+      "line": 469
+    },
+    {
+      "routine": "I-SAFE",
+      "pc": 43925,
+      "file": "reference/zork2/2actions.zap",
+      "line": 504
+    },
+    {
+      "routine": "I-LEDGE",
+      "pc": 44102,
+      "file": "reference/zork2/2actions.zap",
+      "line": 529
+    },
+    {
+      "routine": "I-LEDGE",
+      "pc": 44147,
+      "file": "reference/zork2/2actions.zap",
+      "line": 534
+    },
+    {
+      "routine": "HEAD-FCN",
+      "pc": 45134,
+      "file": "reference/zork2/2actions.zap",
+      "line": 643
+    },
+    {
+      "routine": "ZORK3-FCN",
+      "pc": 46764,
+      "file": "reference/zork2/2actions.zap",
+      "line": 765
+    },
+    {
+      "routine": "BUCKET-FCN",
+      "pc": 47369,
+      "file": "reference/zork2/2actions.zap",
+      "line": 891
+    },
+    {
+      "routine": "CAKE-FCN",
+      "pc": 48035,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1009
+    },
+    {
+      "routine": "CAKE-FCN",
+      "pc": 48131,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1034
+    },
+    {
+      "routine": "POOL-FCN",
+      "pc": 48933,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1136
+    },
+    {
+      "routine": "FLASK-FCN",
+      "pc": 49085,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1152
+    },
+    {
+      "routine": "FLASK-FCN",
+      "pc": 49120,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1158
+    },
+    {
+      "routine": "ICEBOOM",
+      "pc": 49179,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1174
+    },
+    {
+      "routine": "MAGNET-ROOM-FCN",
+      "pc": 49267,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1188
+    },
+    {
+      "routine": "BUTTONS",
+      "pc": 49453,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1223
+    },
+    {
+      "routine": "SPHERE-FCN",
+      "pc": 49808,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1281
+    },
+    {
+      "routine": "I-SPHERE",
+      "pc": 49846,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1292
+    },
+    {
+      "routine": "I-CURTAIN",
+      "pc": 51260,
+      "file": "reference/zork2/2actions.zap",
+      "line": 1499
+    },
+    {
+      "routine": "MAGIC-ACTOR",
+      "pc": 56549,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2168
+    },
+    {
+      "routine": "MAGIC-ACTOR",
+      "pc": 56565,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2172
+    },
+    {
+      "routine": "CERBERUS-FCN",
+      "pc": 58265,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2396
+    },
+    {
+      "routine": "CERBERUS-FCN",
+      "pc": 58597,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2413
+    },
+    {
+      "routine": "COLLAR-FCN",
+      "pc": 58772,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2427
+    },
+    {
+      "routine": "I-DRAGON",
+      "pc": 59743,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2529
+    },
+    {
+      "routine": "I-DRAGON",
+      "pc": 59848,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2537
+    },
+    {
+      "routine": "I-DRAGON",
+      "pc": 59858,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2539
+    },
+    {
+      "routine": "I-GARDEN",
+      "pc": 61114,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2659
+    },
+    {
+      "routine": "PRINCESS-FCN",
+      "pc": 62143,
+      "file": "reference/zork2/2actions.zap",
+      "line": 2757
+    },
+    {
+      "routine": "IN-AQUARIUM-FCN",
+      "pc": 66400,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3089
+    },
+    {
+      "routine": "IN-AQUARIUM-FCN",
+      "pc": 66408,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3091
+    },
+    {
+      "routine": "AQUARIUM-FCN",
+      "pc": 66571,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3115
+    },
+    {
+      "routine": "AQUARIUM-FCN",
+      "pc": 66860,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3138
+    },
+    {
+      "routine": "SERPENT-FCN",
+      "pc": 67207,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3155
+    },
+    {
+      "routine": "GENIE-FCN",
+      "pc": 68735,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3250
+    },
+    {
+      "routine": "I-WIZARD",
+      "pc": 70812,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3392
+    },
+    {
+      "routine": "I-WIZARD",
+      "pc": 70830,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3396
+    },
+    {
+      "routine": "I-WIZARD",
+      "pc": 72245,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3523
+    },
+    {
+      "routine": "I-WIZARD",
+      "pc": 72263,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3527
+    },
+    {
+      "routine": "WAND-FCN",
+      "pc": 73147,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3637
+    },
+    {
+      "routine": "WAND-FCN",
+      "pc": 73252,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3651
+    },
+    {
+      "routine": "BRIDGE-FCN",
+      "pc": 73706,
+      "file": "reference/zork2/2actions.zap",
+      "line": 3722
+    }
+  ],
+  "spotChecks": [
+    {
+      "routine": "ZPROB",
+      "file": "gmacros",
+      "zil": [
+        "<RANDOM 100>",
+        "<RANDOM 300>"
+      ],
+      "zap": [
+        "RANDOM\t100",
+        "RANDOM\t300"
+      ],
+      "review": "LUCKY selects 100 versus 300; strict greater-than is preserved."
+    },
+    {
+      "routine": "RANDOM-ELEMENT",
+      "file": "gmacros",
+      "zil": [
+        "<GET .FROB <RANDOM <GET .FROB 0>>>"
+      ],
+      "zap": [
+        "GET\tFROB,0",
+        "RANDOM\tSTACK",
+        "GET\tFROB,STACK"
+      ],
+      "review": "Table length feeds RANDOM and its result indexes the same table."
+    },
+    {
+      "routine": "PICK-ONE",
+      "file": "gmacros",
+      "zil": [
+        "<SET RND <RANDOM <- .L .CNT>>>",
+        "<PUT .RFROB .RND <GET .RFROB 1>>"
+      ],
+      "zap": [
+        "SUB\tL,CNT",
+        "PUT\tRFROB,RND,STACK",
+        "PUT\tFROB,0,CNT"
+      ],
+      "review": "Selection swaps entries and advances the stored cursor; it is stateful."
+    },
+    {
+      "routine": "QUEUE",
+      "file": "gclock",
+      "zil": [
+        "<INT .RTN>",
+        "<PUT <SET CINT"
+      ],
+      "zap": [
+        "CALL\tINT,RTN >CINT",
+        "PUT\tCINT,C-TICK,TICK"
+      ],
+      "review": "INT finds or allocates the slot before QUEUE changes its ticks."
+    },
+    {
+      "routine": "INT",
+      "file": "gclock",
+      "zil": [
+        "<SETG C-INTS <- ,C-INTS ,C-INTLEN>>",
+        "<PUT .INT ,C-RTN .RTN>"
+      ],
+      "zap": [
+        "SUB\tC-INTS,C-INTLEN >C-INTS",
+        "PUT\tINT,C-RTN,RTN"
+      ],
+      "review": "Allocation descends through fixed six-byte slots and preserves existing slots."
+    },
+    {
+      "routine": "CLOCKER",
+      "file": "gclock",
+      "zil": [
+        "<COND (,P-WON ,C-INTS) (T ,C-DEMONS)>",
+        "<APPLY <GET .C ,C-RTN>>",
+        "<SETG MOVES <+ ,MOVES 1>>"
+      ],
+      "zap": [
+        "GET\tC,C-RTN",
+        "CALL\tSTACK",
+        "INC\t'MOVES"
+      ],
+      "review": "Ordered slots are decremented before invocation; negative demon ticks continue; moves increment after the scan."
+    },
+    {
+      "routine": "MAIN-LOOP",
+      "file": "gmain",
+      "zil": [
+        "<SET TRASH <MAIN-LOOP-1>>"
+      ],
+      "zap": [
+        "CALL\tMAIN-LOOP-1 >TRASH",
+        "JUMP\t?PRG1"
+      ],
+      "review": "The outer loop repeats complete actions rather than handling individual object actions."
+    },
+    {
+      "routine": "MAIN-LOOP-1",
+      "file": "gmain",
+      "zil": [
+        "<SETG P-WON <PARSER>>",
+        "<SET V <PERFORM ,PRSA ,PRSO ,PRSI>>",
+        "<SET V <CLOCKER>>"
+      ],
+      "zap": [
+        "CALL\tPARSER >P-WON",
+        "CALL\tPERFORM,PRSA,PRSO,PRSI >V",
+        "CALL\tCLOCKER >V"
+      ],
+      "review": "Match-table iteration precedes room M-END and CLOCKER; SAVE/QUIT/RESTART and other listed meta verbs skip CLOCKER. Zork III cleft code is absent."
+    },
+    {
+      "routine": "PARSER",
+      "file": "gparser",
+      "zil": [
+        "<PUT ,P-PRSO ,P-MATCHLEN 0>",
+        "<READ ,P-INBUF ,P-LEXV>"
+      ],
+      "zap": [
+        "PUT\tP-PRSO,P-MATCHLEN,0",
+        "READ\tP-INBUF,P-LEXV"
+      ],
+      "review": "Both match tables reset, actor/HERE/LIT are maintained, continuation paths bypass READ, and fresh input suspends at READ."
+    },
+    {
+      "routine": "YES?",
+      "file": "gverbs",
+      "zil": [
+        "<READ ,P-INBUF ,P-LEXV>",
+        ",W?YES ,W?Y"
+      ],
+      "zap": [
+        "READ\tP-INBUF,P-LEXV",
+        "EQUAL?\tSTACK,W?YES,W?Y"
+      ],
+      "review": "Prompt input is a nested READ; it does not return through PARSER."
+    },
+    {
+      "routine": "V-QUIT",
+      "file": "gverbs",
+      "zil": [
+        "<YES?>",
+        "<QUIT>"
+      ],
+      "zap": [
+        "CALL\tYES?",
+        "QUIT"
+      ],
+      "review": "QUIT happens only after the affirmative nested prompt."
+    },
+    {
+      "routine": "V-RESTART",
+      "file": "gverbs",
+      "zil": [
+        "<V-SCORE T>",
+        "<YES?>",
+        "<RESTART>"
+      ],
+      "zap": [
+        "CALL\tV-SCORE,TRUE-VALUE",
+        "CALL\tYES?",
+        "RESTART"
+      ],
+      "review": "Score display and confirmation precede the interpreter restart; failure text is after it."
+    },
+    {
+      "routine": "I-SPHERE",
+      "file": "2actions",
+      "zil": [
+        "<EQUAL? ,HERE ,CAGE-ROOM ,IN-CAGE>",
+        "<MUNG-ROOM ,CAGE-ROOM"
+      ],
+      "zap": [
+        "EQUAL?\tHERE,CAGE-ROOM,IN-CAGE",
+        "CALL\tMUNG-ROOM,CAGE-ROOM",
+        "CALL\tJIGS-UP"
+      ],
+      "review": "The poison interrupt is lethal in either cage location and blocks the room."
+    },
+    {
+      "routine": "I-SAFE",
+      "file": "2actions",
+      "zil": [
+        "<EQUAL? ,HERE ,MUNGED-ROOM>",
+        "<ENABLE <QUEUE I-LEDGE 8>>"
+      ],
+      "zap": [
+        "EQUAL?\tHERE,MUNGED-ROOM",
+        "CALL\tQUEUE,I-LEDGE,8",
+        "CALL\tMUNG-ROOM,MUNGED-ROOM"
+      ],
+      "review": "Collapse kills the occupant; outside it schedules the ledge collapse and marks the room destroyed."
+    },
+    {
+      "routine": "I-LEDGE",
+      "file": "2actions",
+      "zil": [
+        "<IN? ,WINNER ,BALLOON>",
+        "<DISABLE <INT I-BALLOON>>",
+        "<MUNG-ROOM .RM"
+      ],
+      "zap": [
+        "IN?\tWINNER,BALLOON",
+        "CALL\tINT,I-BALLOON",
+        "CALL\tMUNG-ROOM,RM"
+      ],
+      "review": "Tied balloon and on-foot deaths differ; an untied balloon survives; the ledge is destroyed afterward."
+    },
+    {
+      "routine": "BUCKET-FCN",
+      "file": "2actions",
+      "zil": [
+        "<QUEUE I-BUCKET 100>",
+        "<PASS-THE-BUCKET ,WELL-TOP>",
+        "<VERB? KICK>"
+      ],
+      "zap": [
+        "CALL\tQUEUE,I-BUCKET,100",
+        "CALL\tPASS-THE-BUCKET,WELL-TOP",
+        "CALL\tJIGS-UP"
+      ],
+      "review": "Water drives ascent and a 100-tick evaporation timer; M-END moves occupants; kicking the bucket is lethal."
+    },
+    {
+      "routine": "CAKE-FCN",
+      "file": "2actions",
+      "zil": [
+        "<EQUAL? ,PRSO ,RED-ICING>",
+        "<EQUAL? ,PRSO ,BLUE-ICING>",
+        "<ICEBOOM>"
+      ],
+      "zap": [
+        "EQUAL?\tPRSO,RED-ICING",
+        "EQUAL?\tPRSO,BLUE-ICING",
+        "CALL\tICEBOOM"
+      ],
+      "review": "Red dehydrates, orange explodes, and blue expands the player; wrong-room expansion kills rather than returning to Tea Room."
+    },
+    {
+      "routine": "SPHERE-FCN",
+      "file": "2actions",
+      "zil": [
+        "<QUEUE I-SPHERE 6>",
+        "<MOVE ,ROBOT ,IN-CAGE>",
+        "<REMOVE ,ROBOT>"
+      ],
+      "zap": [
+        "CALL\tQUEUE,I-SPHERE,6",
+        "MOVE\tROBOT,IN-CAGE",
+        "REMOVE\tROBOT"
+      ],
+      "review": "Player and robot attempts take different paths: player starts poison countdown; robot attempt removes the robot and invokes actor death."
+    },
+    {
+      "routine": "ZORK3-FCN",
+      "file": "2actions",
+      "zil": [
+        "<IN? ,WAND ,WINNER>",
+        "<SETG WON-FLAG T>",
+        "<FINISH>"
+      ],
+      "zap": [
+        "IN?\tWAND,WINNER",
+        "SET\t'WON-FLAG,TRUE-VALUE",
+        "CALL\tFINISH",
+        "CALL\tJIGS-UP"
+      ],
+      "review": "Carrying the wand selects victory and FINISH; entering without it selects wardens death."
+    },
+    {
+      "routine": "JIGS-UP",
+      "file": "2actions",
+      "zil": [
+        "<SCORE-UPD -10>",
+        "<SETG DEATHS <+ ,DEATHS 1>>",
+        "<GOTO ,DEAD-PALANTIR-1>"
+      ],
+      "zap": [
+        "CALL\tSCORE-UPD,-10",
+        "INC\t'DEATHS",
+        "CALL\tGOTO,DEAD-PALANTIR-1"
+      ],
+      "review": "Actor deaths remove only the actor; player deaths subtract ten points, redistribute possessions and enter red mist. This release does not end after three deaths."
+    }
+  ],
+  "branches": {
+    "ZORK-NUMBER": 2,
+    "PREDGEN": "PERFORM uses the PREDGEN variant, including its PRSI=IT guard. The source ID 0 directive and binary release 63 remain a build-metadata discrepancy; the original build driver is unavailable."
+  }
+}

@@ -1,0 +1,90 @@
+[Setup: replay the first 38 walkthrough commands, seed 2.]
+
+>read paper
+(Taken)
+!!  FROBOZZ MAGIC ROBOT COMPANY  !!
+
+ Hello, Master!
+
+   I am a late-model robot, trained at GUE Tech to perform various simple household functions.
+
+   To activate me, say the following:
+
+        >ROBOT, <things to do>
+
+At your service!
+
+>drop paper
+Dropped.
+
+>robot, go east
+"Whirr, buzz, click!"
+The robot leaves the room.
+
+>east
+Machine Room
+This is a large room full of assorted heavy machinery, whirring noisily. The room smells of burned resistors. Along one wall are three buttons which are, respectively, round, triangular, and square. Naturally, above these buttons are instructions written in EBCDIC. A large sign in English above all the buttons says
+       "DANGER -- HIGH VOLTAGE"
+There are exits to the west and the south.
+There is a robot here.
+
+>robot, go south
+"Whirr, buzz, click!"
+The robot leaves the room.
+
+>south
+Dingy Closet
+This is a dingy closet adjacent to a larger room to the north. Chiselled into a wall are these words:
+
+     Protected by
+       FROBOZZ
+ Magic Alarm Company
+  (Hello, footpad!)
+
+There doesn't seem to be any footpad here, however.
+There is a robot here.
+There is a beautiful red crystal sphere here.
+
+>take red sphere
+As you reach for the sphere, a solid steel cage falls from the ceiling to entrap you. To make matters worse, poisonous gas starts coming into the room.
+
+Cage
+You are trapped inside a solid steel cage.
+
+>robot, lift cage
+The cage shakes and is hurled across the room. It's hard to say, but the robot appears to be smiling.
+
+Dingy Closet
+There is a beautiful red crystal sphere here.
+
+>take red sphere
+Taken.
+
+>look in red sphere
+You see only darkness.
+
+>robot, go north
+"Whirr, buzz, click!"
+The robot leaves the room.
+
+>north
+Machine Room
+There is a robot here.
+
+>robot, push triangular button
+"Whirr, buzz, click!"
+A dull thump is heard in the distance.
+
+>west
+As you enter, your compass starts spinning wildly.
+What compass, you ask? The one which allows you to specify compass directions for movement.
+Low Room
+There is a green piece of paper here.
+
+>southeast
+You cannot get your bearings...
+
+Machine Room
+There is a robot here.
+
+>

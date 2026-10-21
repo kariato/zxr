@@ -1,0 +1,15 @@
+[Setup: replay the first 201 walkthrough commands, seed 2.]
+
+>burn brick with match
+Now you've done it. It seems that the brick has other properties than weight, namely the ability to blow you to smithereens.
+ 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see only darkness.
+
+>

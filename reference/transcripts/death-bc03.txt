@@ -1,0 +1,17 @@
+[Setup: replay the first 30 walkthrough commands, seed 2.]
+
+>eat blue cake
+The room around you seems to be getting smaller.
+
+The room seems to have become too small to hold you. The walls are not as compressible as your body, which is demolished.
+ 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see a small room with a sign on the wall, but it is too blurry to read.
+
+>

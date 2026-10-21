@@ -1,0 +1,16 @@
+[Setup: replay the first 156 walkthrough commands, seed 2.]
+
+>break aquarium with sword
+The elvish sword shatters the glass wall of the aquarium, spilling out an impressive amount of salt water and wet sand. It also spills out an extremely annoyed sea serpent who bites angrily at the elvish sword, and then at you. He is having difficulty breathing, and he seems to hold you responsible for his current problem. He manages to rend you limb from limb before he drowns in the air.
+I guess you were too careless.
+ 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see only darkness.
+
+>

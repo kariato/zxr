@@ -1,0 +1,24 @@
+[Setup: replay the first 268 walkthrough commands, seed 2.]
+
+>apply repellent to me
+The spray smells like a mixture of old socks and burning rubber. If I were a grue I'd sure stay clear!
+
+>wait
+Time passes...
+A strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.
+The Wizard notices that you carry the Black Crystal, and with an unseemly haste, he disappears.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+That horrible smell is much less pungent now.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>

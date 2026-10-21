@@ -1,0 +1,20 @@
+[Setup: replay the first 378 walkthrough commands, seed 2.]
+
+>wave wand at cerberus
+The dog looks puzzled.
+The wand grows warm, the three-headed dog seems to glow dimly with magical essences, and you feel suffused with power.
+
+>say "fierce"
+The wand glows very brightly for a moment.
+Cerberus tears you limb from limb! What ferocity!
+ 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see only darkness.
+
+>

@@ -1,0 +1,66 @@
+[Setup: replay the first 38 walkthrough commands, seed 2.]
+
+>#random 26
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+A strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.
+He mutters something (muffled by his beard) and disappears as suddenly as he came.
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+
+>wait
+Time passes...
+A strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.
+The Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.
+The Wizard seems about to say something, but thinks better of it, and peers at you from under his bushy eyebrows.
+
+>robot, take wand
+"Buzz, click, whirr!"
+The Wizard snatches the wand away, muttering the word "Float" at the robot. Unfortunately he has no floating-point processor and dies in a vain attempt to divide 4.85 by 3.62.
+ 
+    ****  The robot has died  **** 
+
+Your sword has begun to glow very brightly.
+
+>

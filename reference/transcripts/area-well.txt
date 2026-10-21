@@ -1,0 +1,28 @@
+[Setup: replay the first 25 walkthrough commands, seed 2.]
+
+>enter bucket
+You are now in the wooden bucket.
+
+>pour water in bucket
+There is now a puddle in the bottom of the wooden bucket.
+The bucket rises and comes to a stop.
+
+Top of Well, in the wooden bucket
+You are at the top of the well. Well done. There are etchings on the side of the well. There is a small crack across the floor at the entrance to a room on the east, but it can be crossed easily.
+The wooden bucket contains:
+  A quantity of water
+
+>stand
+You are on your own feet again.
+
+>east
+Tea Room
+This is a small room containing a large oblong table, no doubt set for afternoon tea. It is clear from the objects on the table that the users were indeed mad. In the eastern corner of the room is a small hole (no more than four inches high). There are passageways leading away to the west and the northwest.
+There is a large oblong table here.
+Sitting on the large oblong table is: 
+  A cake frosted with red letters
+  A cake frosted with orange letters
+  A cake frosted with blue letters
+  A cake frosted with green letters
+
+>

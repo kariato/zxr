@@ -1,0 +1,88 @@
+[Setup: replay the first 244 walkthrough commands, seed 2.]
+
+>west
+Safety Depository
+This is a large rectangular room. The east and west walls were used for storing safety deposit boxes, but all have been carefully removed by evil persons. To the east, west, and south of the room are large doorways. The northern "wall" of the room is a shimmering curtain of light. In the center of the room is a large stone cube, about 10 feet on a side. Engraved on the side of the cube is some lettering.
+On the ground is a small, worn piece of paper.
+
+>south
+Chairman's Office
+This room was the office of the Chairman of the Bank of Zork. Like the other rooms here, it has been extensively vandalized. The lone exit is to the north.
+A portrait of J. Pierpont Flathead hangs on the wall.
+
+>take portrait
+Taken.
+
+>north
+Safety Depository
+On the ground is a small, worn piece of paper.
+
+>walk through north wall
+You feel somewhat disoriented as you pass through...
+
+Small Room
+This is a small, bare room with no distinguishing features. There are no exits from this room.
+
+>walk through south wall
+You feel somewhat disoriented as you pass through...
+
+Safety Depository
+On the ground is a small, worn piece of paper.
+
+>walk through north wall
+You feel somewhat disoriented as you pass through...
+
+Vault
+This is the Vault of the Bank of Zork, in which there are no doors.
+On the floor sit 200 neatly stacked zorkmid bills.
+
+>take bills
+Taken.
+
+>walk through north wall
+You feel somewhat disoriented as you pass through...
+
+Safety Depository
+On the ground is a small, worn piece of paper.
+
+>drop bills
+Dropped.
+
+>drop portrait
+Dropped.
+
+>east
+East Teller's Room
+You are in a small room, which was used by a bank officer who retrieved safety deposit boxes for the customer. On the north side of the room is a sign which reads  "Viewing Room". On the east side of the room, above an open door, is a sign reading:
+
+          BANK PERSONNEL ONLY
+
+
+>east
+Safety Depository
+On the ground is a small, worn piece of paper.
+The portrait of J. Pierpont Flathead is here.
+200 neatly stacked zorkmid bills are here.
+
+>take bills
+Taken.
+
+>take portrait
+Taken.
+
+>walk through north wall
+You feel somewhat disoriented as you pass through...
+
+East Viewing Room
+This room was used by holders of safety deposit boxes to view their contents. On the north side of the room is a sign which says
+
+"Remain here while the teller retrieves your safety deposit box. When you are finished, leave the box, and exit to the south. Safety deposit boxes cannot be removed from this room!
+
+Thank You for Banking at the Zork!" 
+A strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.
+The Wizard notices that you carry the Black Crystal, and with an unseemly haste, he disappears.
+
+>south
+Bank Entrance
+
+>

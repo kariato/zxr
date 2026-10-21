@@ -1,0 +1,40 @@
+[Setup: replay the first 8 walkthrough commands, seed 2.]
+
+>se
+North End of Garden
+This is the northern end of a formal garden. Hedges hide the cavern walls, and if you don't look up, the illusion is of a cloudy day outside. The light comes from a large growth of glowing mosses on the roof of the cave. A break in the hedge is almost overgrown to the north. A carefully manicured path leads south. In the center of a rosebed is a small open structure, painted white. It appears to be a gazebo.
+
+>enter gazebo
+Gazebo
+This is a gazebo in the midst of a formal garden. It is cool and restful here. A tea table adorns the center of the gazebo.
+Sitting on the table is: 
+  A china teapot
+  A place mat
+  A newspaper
+  A letter opener
+  A matchbook
+A unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.
+Your sword is glowing with a faint blue glow.
+
+>take teapot
+Taken.
+
+>exit
+North End of Garden
+There is a beautiful unicorn here cropping grass.
+Your sword has begun to glow very brightly.
+
+>north
+Dark Tunnel
+Your sword is no longer glowing.
+
+>ne
+Shallow Ford
+
+>fill teapot
+The teapot is now full of water.
+
+>south
+Dark Tunnel
+
+>

@@ -1,0 +1,10 @@
+[Setup: replay the first 44 walkthrough commands, seed 2.]
+
+>robot, take red sphere
+"Whirr, buzz, click!"
+As the robot reaches for the sphere, a solid steel cage falls from the ceiling, trapping him. You can faintly hear his last words: "Whirr, buzz, click!" A cloud of smoke rising from beneath the cage confirms your fears about the fate of your brave mechanical friend.
+ 
+    ****  The robot has died  **** 
+
+
+>

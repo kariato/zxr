@@ -1,0 +1,20 @@
+[Setup: replay the first 103 walkthrough commands, seed 2.]
+
+>attack dragon with sword
+The dragon is surprised and interested (for the moment).
+The dragon continues to watch you carefully.
+
+>attack dragon with sword
+That did no damage, but he turns his smoky yellow eyes in your direction and sighs.
+The dragon tires of this game. With an almost bored yawn, he opens his mouth and incinerates you in a blast of white-hot dragon fire.
+ 
+    ****  You have died  **** 
+
+Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.
+
+Room of Red Mist
+You are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.
+You strain to look out through the mist... 
+You see only darkness.
+
+>

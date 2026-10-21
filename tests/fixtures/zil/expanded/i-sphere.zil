@@ -1,0 +1,1 @@
+<ROUTINE I-SPHERE () <COND (<EQUAL? ,HERE ,CAGE-ROOM ,IN-CAGE> <FSET ,PALANTIR-1 ,INVISIBLE> <MUNG-ROOM ,CAGE-ROOM "You are stopped by a cloud of poisonous gas."> <JIGS-UP "Time passes...and you die from some obscure poisoning.">)>>

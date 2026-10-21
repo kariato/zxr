@@ -1,0 +1,29 @@
+ZORK II: The Wizard of Frobozz
+Infocom interactive fiction - a fantasy story
+Copyright (c) 1981, 1982, 1983, 1986 Infocom, Inc. All rights reserved.
+ZORK is a registered trademark of Infocom, Inc.
+Release 63 / Serial number 860811
+
+Inside the Barrow
+You are inside an ancient barrow hidden deep within a dark forest. The barrow opens into a narrow tunnel at its southern end. You can see a faint glow at the far end.
+A sword of Elvish workmanship is on the ground.
+A strangely familiar brass lantern is lying on the ground.
+
+>take lamp
+Taken.
+
+>save
+Ok.
+
+>south
+Narrow Tunnel
+You are standing at the southern end of a narrow tunnel where it opens into a wide cavern. The cavern is dimly illuminated by phosphorescent mosses clinging to its high ceiling. A deep ravine winds through the cavern, with a small stream at the bottom. The walls of the ravine are steep and crumbly. A foot bridge crosses the ravine to the south.
+
+>restore
+Ok.
+
+>inventory
+You are carrying:
+  A lamp
+
+>
