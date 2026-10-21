@@ -30,8 +30,9 @@ Measured from the vendored source.
 
 ## Hard spots for an options interface
 
-- **The riddle** reads the raw parser buffer (`P-LEXV`) for the word "WELL", and **the wand** stores the spoken spell word from `P-LEXV` (`V-INCANT`). Options cannot hand the player these answers, so both use a word picker over the game's own vocabulary (about 690 words), which writes the chosen word into a synthetic `P-LEXV`.
-- **The robot** takes commands through `WINNER` ("robot, push the button"). Options carry an actor, so `TAKE:ROBOT:CAGE` is a different option from `TAKE:PLAYER:CAGE`.
+- **The riddle** reads the raw parser buffer (`P-LEXV`) for the word "WELL", and **the wand** stores the spoken spell word from `P-LEXV` (`V-INCANT`). Options cannot hand the player these answers. The current proposal (not yet accepted, to be playtested) is a word picker over the game's own vocabulary (about 690 words), which writes the chosen word into `P-LEXV`.
+- **The robot** takes commands through `WINNER` ("robot, push the button"). Options carry an actor, so `TAKE/1:ROBOT:CAGE` is a different option from `TAKE/1:PLAYER:CAGE`, and a robot command runs as the original's two passes (`TELL ROBOT`, then the command).
+- **Implicit taking and pseudo-objects.** Using an object you are not holding takes it first ("(Taken)") in the same turn, and room features such as the Tea Room's hole share one `PSEUDO-OBJECT`. The parser adapter keeps both behaviours (see [compat-semantics.md](compat-semantics.md#the-parser-adapter)).
 - **Random events** (the wizard's spells, the dragon, combat rolls) are compared exactly by replaying the reference interpreter's recorded random draws in the engine.
 - **Quit, restart and the end of the game** ask yes/no or restart/restore/quit questions inside a routine. These become pending decisions in the engine.
 - **The maze and darkness** need a presentation that does not reveal more than the text does.
@@ -40,7 +41,7 @@ Measured from the vendored source.
 
 1. Establish that the vendored source matches the story file (build plan step 0.8). The evidence is good: the build log `zork2.chart` ends at release 63, 92,524 bytes, which is exactly `COMPILED/zork2.z3` (release 63, serial 860811, SHA-256 `3ae7d5558943e9721f3e4b273c8a7faec1a03a604e1ae4ee1cde472c21cb24ac`), and `zork2.zip` in the source folder is byte-identical to it. The compiler's `.zap` assembly output is also vendored and is checked against a disassembly of the story file.
 2. Record golden transcripts by playing `COMPILED/zork2.z3` in a pinned, instrumented JavaScript Z-machine interpreter that also logs every random draw and a state snapshot after each input. Store them in `reference/transcripts/`.
-3. Run the same commands through the ZXR engine with the recorded random draws, and compare text and state exactly after every input.
+3. Run the same commands through the ZXR engine with the recorded random draws (draws the original parser made while guessing objects are marked and skipped), and compare text and a semantic state projection at four checkpoints: parser return, completed action, a prompt inside a routine, and game end. The projection and its reviewed exclusions are defined in [compat-semantics.md](compat-semantics.md#conformance-projection).
 4. Coverage tests prove the full game can be finished by picking options only, in more than one solve order, after restoring a save, and after a death.
 5. Every intentional difference from the original is written down in `games/zork2/ledger.md`.
 
