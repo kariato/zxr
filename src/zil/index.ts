@@ -5,3 +5,7 @@ export * from './reader.ts';
 export * from './printer.ts';
 export * from './loader.ts';
 export * from './macros.ts';
+export * from './symbols.ts';
+export * from './operations.ts';
+export * from './world.ts';
+export * from './text.ts';

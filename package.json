@@ -20,7 +20,13 @@
     "reference:check": "node tools/reference/cli.ts check",
     "reference:audit": "node tools/reference/cli.ts audit",
     "zil:check": "node tools/zil/cli.ts check",
-    "zil:record": "node tools/zil/cli.ts record"
+    "zil:record": "node tools/zil/cli.ts record",
+    "semantics:check": "node tools/zil/semantics-cli.ts check",
+    "semantics:record": "node tools/zil/semantics-cli.ts record",
+    "symbols:check": "node tools/zil/symbols-cli.ts check",
+    "symbols:record": "node tools/zil/symbols-cli.ts record",
+    "world:check": "node tools/zil/world-cli.ts check",
+    "world:record": "node tools/zil/world-cli.ts record"
   },
   "dependencies": {
     "three": "0.186.0"

@@ -426,10 +426,10 @@ ZXR should reuse the architecture of Mark's [rougeXR](https://github.com/kariato
 
 ## Save, determinism and tooling
 
-Because the world model is the only authority, a save file is just the model's state, and the game is fully testable without a headset.
+The headless engine owns both world state and execution state, and the game is fully testable without a headset. The detailed [compatibility review candidate](compat-semantics.md) specifies continuation checkpoints, host completions and transaction boundaries.
 
-- **Saves:** a versioned envelope holding the build hash, the memory image (object tree, flags, properties, globals, tables and the queued interrupts), knowledge gates and the RNG state. A save only loads into the build that made it. Saving is not allowed while the game is waiting for a yes/no answer. Animation state is not saved; on load, `BIND` rules and the room's scene rebuild the visuals from state. Saves stay small, like Quetzal saves for the Z-machine.
-- **Determinism:** logic uses a seeded RNG and turn order only, never frame timing. The same option ids give the same game, which enables replays and regression tests. Conformance tests against the original replay the original interpreter's recorded random draws, so random events can be compared exactly too.
+- **Saves:** a versioned envelope holding the semantic build hash, memory image, full interpreter continuation, checkpoint kind, knowledge gates and RNG state. Successful primitive RESTORE reinstates the saved SAVE continuation. A save only loads into its semantic build. External export is allowed only at an ordinary input boundary. Animation state is not saved; on load, `BIND` rules and the room's scene rebuild the visuals from state.
+- **Determinism:** logic uses a seeded RNG and turn order only, never frame timing. The same build, initial seed/checkpoint and complete accepted input log (options, decisions and host results with immutable restore data) give the same semantic state. Conformance tests replay the original interpreter's recorded random draws, so random events can be compared exactly too.
 - **Headless mode:** `zxr run --text game.zxb` plays the game in a terminal. Transcript tests (a list of commands and expected output) run in CI, as Infocom's testers did with scripts.
 - **Asset check:** `zxr build` validates every `ASSET`, `SCENE`, clip and anchor reference against the GLB files.
 - **Hot reload:** in the editor preview, recompiling a routine or swapping a GLB updates the running scene without losing game state.
@@ -466,4 +466,3 @@ The test game is a real ZIL game. Phase 1 passes when it plays start to finish w
 - [ ] **Puzzle answers:** Claude proposed, in its assessment of the first design review, a vocabulary word picker for typed answers and gates that never hide an action permanently. Mark has not yet accepted this as a decision, and it needs a playtest. Is it the right approach, or should puzzle answers stay typed on desktop?
 - [ ] **Language name:** ZXR is a working name.
 - [x] **Repository:** created as `kariato/zxr` (2026-10-21). Starting phase 0 of the build plan waits for Mark's go.
-

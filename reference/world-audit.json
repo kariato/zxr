@@ -1,0 +1,189 @@
+{
+  "format": "zxr-world-audit-v1",
+  "stage": "metadata",
+  "storySha256": "3ae7d5558943e9721f3e4b273c8a7faec1a03a604e1ae4ee1cde472c21cb24ac",
+  "worldSha256": "bea6206c7ec34cac51c58f5cad48c39fd77b5a68529cedf533512b72032722e6",
+  "sourceHashes": [
+    {
+      "file": "2actions.zil",
+      "sha256": "fef6f717e3c336edd39178ba35f09617a9d7347068022efc6233ab56cb2dacbe"
+    },
+    {
+      "file": "2dungeon.zil",
+      "sha256": "4507f69561d914e63ab4289d9599e202c56fa1a86212e9b7c6b4402ac171d0f1"
+    },
+    {
+      "file": "crufty.zil",
+      "sha256": "35a55984b374687b7a19d32a3700454be88d3e6ac006729ab00205c2bb8e8211"
+    },
+    {
+      "file": "gclock.zil",
+      "sha256": "92c4d66f18eeba8de1497215a0e17ade6c2cf1e5e050f016cf99160e41b154c6"
+    },
+    {
+      "file": "gglobals.zil",
+      "sha256": "4551033ab2e72f38d5768ace09ad884d19582f16c93df0d3970a7e2a7df30935"
+    },
+    {
+      "file": "gmacros.zil",
+      "sha256": "1382243535d75a676d6cd6246895ac74aef77c226c29b4eb27bce3f595a1c282"
+    },
+    {
+      "file": "gmain.zil",
+      "sha256": "712e27ab29d36f3d36c7994ec6d41011cb869990d8780a03bb2ee8148d3f1740"
+    },
+    {
+      "file": "gparser.zil",
+      "sha256": "42e36335e310e86bba07ebf75971020c8903cdd679c9863d3b62f69bb11fd9f5"
+    },
+    {
+      "file": "gsyntax.zil",
+      "sha256": "c62cf25aa09ca40b48a2714cd74607f1b28f96bd064d12cd24a4962e0f889435"
+    },
+    {
+      "file": "gverbs.zil",
+      "sha256": "d957259fccfb26fc2457b29117e6a2e0d23f3b74bcb151e903d4f593898675eb"
+    },
+    {
+      "file": "zork2.zil",
+      "sha256": "d887ed2e0162dd555c08330eb3ab40a03790734ccfc426f4e354dd846205ed21"
+    }
+  ],
+  "checked": {
+    "entities": 251,
+    "rooms": 86,
+    "objects": 165,
+    "shortNames": 251,
+    "metadataProperties": 795,
+    "textProperties": 175,
+    "propertyDefaults": 31,
+    "pendingExitDeclarations": 220
+  },
+  "sourceSpotChecks": [
+    {
+      "name": "INSIDE-BARROW",
+      "kind": "room",
+      "file": "2dungeon.zil",
+      "line": 178
+    },
+    {
+      "name": "NARROW-TUNNEL",
+      "kind": "room",
+      "file": "2dungeon.zil",
+      "line": 191
+    },
+    {
+      "name": "GREAT-CAVERN",
+      "kind": "room",
+      "file": "2dungeon.zil",
+      "line": 221
+    },
+    {
+      "name": "MENHIR-ROOM",
+      "kind": "room",
+      "file": "2dungeon.zil",
+      "line": 641
+    },
+    {
+      "name": "WELL-TOP",
+      "kind": "room",
+      "file": "2dungeon.zil",
+      "line": 1474
+    },
+    {
+      "name": "TEA-ROOM",
+      "kind": "room",
+      "file": "2dungeon.zil",
+      "line": 1505
+    },
+    {
+      "name": "MACHINE-ROOM",
+      "kind": "room",
+      "file": "2dungeon.zil",
+      "line": 1436
+    },
+    {
+      "name": "CRYPT-ROOM",
+      "kind": "room",
+      "file": "2dungeon.zil",
+      "line": 901
+    },
+    {
+      "name": "LIBRARY",
+      "kind": "room",
+      "file": "2dungeon.zil",
+      "line": 1361
+    },
+    {
+      "name": "WIZARDS-WORKSHOP",
+      "kind": "room",
+      "file": "2dungeon.zil",
+      "line": 978
+    },
+    {
+      "name": "LAMP",
+      "kind": "object",
+      "file": "2dungeon.zil",
+      "line": 1965
+    },
+    {
+      "name": "ADVENTURER",
+      "kind": "object",
+      "file": "gglobals.zil",
+      "line": 300
+    },
+    {
+      "name": "CERBERUS",
+      "kind": "object",
+      "file": "2dungeon.zil",
+      "line": 877
+    },
+    {
+      "name": "BUCKET",
+      "kind": "object",
+      "file": "2dungeon.zil",
+      "line": 2268
+    },
+    {
+      "name": "ROBOT",
+      "kind": "object",
+      "file": "2dungeon.zil",
+      "line": 2197
+    },
+    {
+      "name": "PSEUDO-OBJECT",
+      "kind": "object",
+      "file": "gglobals.zil",
+      "line": 37
+    },
+    {
+      "name": "LOCAL-GLOBALS",
+      "kind": "object",
+      "file": "gglobals.zil",
+      "line": 12
+    },
+    {
+      "name": "SEWL",
+      "kind": "object",
+      "file": "2dungeon.zil",
+      "line": 138
+    },
+    {
+      "name": "CANDY",
+      "kind": "object",
+      "file": "2dungeon.zil",
+      "line": 2233
+    },
+    {
+      "name": "BRICK",
+      "kind": "object",
+      "file": "2dungeon.zil",
+      "line": 1782
+    }
+  ],
+  "limits": [
+    "Exit encodings are pending step 2.3; only declaration presence is checked here.",
+    "The image is initial story data before GO; startup mutations are not pre-applied.",
+    "This is world metadata, not a runtime memory image, sibling ordering or a complete game bundle."
+  ]
+}

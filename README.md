@@ -6,7 +6,7 @@ Games are written entirely in JSON, logic included, and run on a headless TypeSc
 
 The first target is **Zork II**, whose source Microsoft released under the MIT license in 2025. The goal is a full Zork II playable in XR and published on itch.io.
 
-> Status: phase 1 implemented. The complete Zork II source reads, loads and expands, with an assembly-checked active-program manifest. The browser shell and reproducible original-story corpus are in place. There is no ZXR game engine yet.
+> Status: phase 2 in progress through step 2.2. Zork II reads, expands, resolves symbols and generates metadata for all 86 rooms and 165 objects. The browser shell and reproducible original-story corpus are in place. Full logic/bundle compilation and the game engine are not implemented yet.
 
 ## Development
 
@@ -17,11 +17,13 @@ npm ci
 npm run dev
 ```
 
-Verify with `npm run typecheck`, `npm test`, `npm run zil:check`, `npm run reference:check`, `npm run reference:audit -- --check`, and `npm run build`. For browser checks, run `npx playwright install chromium firefox` once, then `npm run test:browser`.
+Verify with `npm run typecheck`, `npm test`, `npm run zil:check`, `npm run semantics:check`, `npm run symbols:check`, `npm run world:check`, `npm run reference:check`, `npm run reference:audit -- --check`, and `npm run build`. For browser checks, run `npx playwright install chromium firefox` once, then `npm run test:browser`.
 
-Run `npx --package=. zxr check reference/zork2` to read, load and expand the game. `zxr check entry.zil` checks another entry file and reports source locations for reader or macro errors. This checks reader/macro correctness; symbol resolution and compilation belong to phase 2. The `compile` and `play` commands still print “not implemented” and exit with status 1.
+Run `npx --package=. zxr check reference/zork2` to read, load, expand and resolve the game's symbols. `zxr check entry.zil` checks another entry file and reports source locations for reader or macro errors. The vendored Zork II entry also checks 11,901 symbol references using the pinned numbering layout and validates room/object metadata. Use `zxr check --symbols path/to/zork2-copy` to apply those checks to a source copy. Other entries retain reader/macro checks; source-only numbering is deferred. The `compile` and `play` commands still print “not implemented” and exit with status 1.
 
 The [phase 1 implementation note](docs/phase-1.md) explains the reader, finite compile-time evaluator, pinned macro ports and audit limits. The [phase 0 note](docs/phase-0.md) records dependency pins and the remaining hosted CI/Pages check. The [reference corpus guide](reference/README.md) explains the 75 fixtures: a 400-point victory and coverage of all 50 compiled death sites and 23 interrupts.
+
+[Phase 2 progress](docs/phase-2.md) records the accepted compatibility contract, symbol table, diagnostics and source/compiler findings. Generated [world metadata](games/zork2/world.zxr.json) and its [provenance](games/zork2/PROVENANCE.md) are checked against the original assembly and binary. Use `npm run world:check` to verify it or `npm run world:record` to intentionally regenerate it. Exit byte encoding is next.
 
 ## Documents
 
@@ -30,7 +32,7 @@ The [phase 1 implementation note](docs/phase-1.md) explains the reader, finite c
 | [Design](docs/design.md) | The language, the cross-compiler, scenes and hotspots, the runtime, options instead of a parser, platforms |
 | [Build plan](docs/build-plan.md) | Twelve phases (0 to 11) with small steps, completion checks and gates |
 | [Target: Zork II](docs/target-zork2.md) | What is being ported, the hard spots, how it is tested, the itch.io release |
-| [Compatibility semantics](docs/compat-semantics.md) | Draft: what translated ZIL code sees (values, memory image, properties, numbering, how options become parser globals) |
+| [Compatibility semantics](docs/compat-semantics.md) | Values, memory, parser/continuation fields, saves, host boundaries and conformance |
 | [Reference audit](docs/reference-audit.md) | Source/binary correspondence, twenty source checks, compile-time branches and limits |
 | [Rules ledger](games/zork2/ledger.md) | Source/build differences and reference-host settings |
 
@@ -63,4 +65,4 @@ The layout the code will grow into is in the [build plan](docs/build-plan.md#rep
 
 ## License
 
-ZXR is licensed under the Apache License 2.0; see [LICENSE](LICENSE). The Zork II source, canonical macro definitions and expanded ZIL samples retain the game's MIT notice; see [ZIL fixture provenance](tests/fixtures/zil/README.md). The reference walkthrough and derived command fixtures retain GPL-3.0 notices separately; see [reference provenance](reference/README.md#provenance-and-licenses). Reference tools and fixtures are not bundled in the browser build. Zork is a trademark of its owner and is not covered by these licenses.
+ZXR is licensed under the Apache License 2.0; see [LICENSE](LICENSE). The Zork II source, generated world metadata, canonical macro definitions and expanded ZIL samples retain the game's MIT notice; see [ZIL fixture provenance](tests/fixtures/zil/README.md). The reference walkthrough and derived command fixtures retain GPL-3.0 notices separately; see [reference provenance](reference/README.md#provenance-and-licenses). Reference tools and fixtures are not bundled in the browser build. Zork is a trademark of its owner and is not covered by these licenses.

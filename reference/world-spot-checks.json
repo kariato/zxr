@@ -1,0 +1,26 @@
+{
+  "format": "zxr-world-spot-checks-v1",
+  "basis": "Twenty declarations checked directly in 2dungeon.zil and gglobals.zil; independent expected values, not generated from world.zxr.json.",
+  "cases": [
+    {"name":"INSIDE-BARROW","kind":"room","parent":"ROOMS","shortName":"Inside the Barrow","flags":["RLANDBIT","ONBIT"],"properties":{"LDESC":"You are inside an ancient barrow hidden deep within a dark forest. The barrow opens into a narrow tunnel at its southern end. You can see a faint glow at the far end."},"absent":["ACTION","SIZE"]},
+    {"name":"NARROW-TUNNEL","kind":"room","parent":"ROOMS","shortName":"Narrow Tunnel","flags":["RLANDBIT","ONBIT"],"properties":{"GLOBAL":["BRIDGE","CHASM","STREAM","MOSS"]}},
+    {"name":"GREAT-CAVERN","kind":"room","parent":"ROOMS","shortName":"Great Cavern","flags":["RLANDBIT","ONBIT"],"properties":{"GLOBAL":["MOSS"],"PSEUDO":[["STALAGMITE","STALA-PSEUDO"],["STALACTITE","STALA-PSEUDO"]]}},
+    {"name":"MENHIR-ROOM","kind":"room","parent":"ROOMS","shortName":"Menhir Room","flags":["RLANDBIT"],"properties":{"LDESC":" ","ACTION":"MENHIR-ROOM-FCN","GLOBAL":["MENHIR"]}},
+    {"name":"WELL-TOP","kind":"room","parent":"ROOMS","shortName":"Top of Well","flags":["RLANDBIT","NONLANDBIT"],"properties":{"VALUE":10,"GLOBAL":["WELL"],"PSEUDO":[["CRACK","CRACK-PSEUDO"]]}},
+    {"name":"TEA-ROOM","kind":"room","parent":"ROOMS","shortName":"Tea Room","flags":["RLANDBIT","ONBIT"],"properties":{"PSEUDO":[["HOLE","ALICE-HOLE"]]}},
+    {"name":"MACHINE-ROOM","kind":"room","parent":"ROOMS","shortName":"Machine Room","flags":["RLANDBIT","ONBIT"],"contains":{"LDESC":"says\n       \"DANGER -- HIGH VOLTAGE\"\nThere are exits"}},
+    {"name":"CRYPT-ROOM","kind":"room","parent":"ROOMS","shortName":"Crypt","flags":["RLANDBIT"],"properties":{"LDESC":" ","ACTION":"CRYPT-ROOM-FCN","VALUE":2,"GLOBAL":["CRYPT-DOOR","DIM-DOOR"]}},
+    {"name":"LIBRARY","kind":"room","parent":"ROOMS","shortName":"Library","flags":["RLANDBIT"],"contains":{"LDESC":"gnawed to pieces by unfriendly gnomes."},"absent":["ACTION"]},
+    {"name":"WIZARDS-WORKSHOP","kind":"room","parent":"ROOMS","shortName":"Wizard's Workshop","flags":["RLANDBIT"],"properties":{"LDESC":"This is the workshop of the Wizard of Frobozz.","ACTION":"WORKSHOP-FCN","VALUE":10,"GLOBAL":["WIZ-DOOR"]}},
+    {"name":"LAMP","kind":"object","parent":"INSIDE-BARROW","shortName":"lamp","flags":["TAKEBIT","LIGHTBIT"],"properties":{"SYNONYM":["LAMP","LANTERN","LIGHT"],"ADJECTIVE":["BRASS"],"ACTION":"LANTERN","SIZE":15,"FDESC":"A strangely familiar brass lantern is lying on the ground."},"absent":["LDESC"]},
+    {"name":"ADVENTURER","kind":"object","parent":null,"shortName":"cretin","flags":["NDESCBIT","INVISIBLE","SACREDBIT","ACTORBIT"],"properties":{"ACTION":null,"STRENGTH":0,"SYNONYM":["ADVENTURER"]}},
+    {"name":"CERBERUS","kind":"object","parent":"CERBERUS-ROOM","shortName":"three-headed dog","flags":["ACTORBIT","OPENBIT","CONTBIT"],"properties":{"ACTION":"CERBERUS-FCN","ADJECTIVE":["HUGE","GIANT","THREE","HEADED"],"SYNONYM":["CERBERUS","DOG","HOUND","MONSTER"]}},
+    {"name":"BUCKET","kind":"object","parent":"WELL-BOTTOM","shortName":"wooden bucket","flags":["VEHBIT","OPENBIT","CONTBIT"],"properties":{"ACTION":"BUCKET-FCN","CONTFCN":"BUCKET-CONT","CAPACITY":100,"SIZE":100,"VTYPE":0}},
+    {"name":"ROBOT","kind":"object","parent":"MAGNET-ROOM","shortName":"robot","flags":["ACTORBIT","CONTBIT","OPENBIT"],"properties":{"SYNONYM":["ROBOT","R2D2","C3PO","ROBBY"],"ACTION":"ROBOT-FCN","LDESC":"There is a robot here."}},
+    {"name":"PSEUDO-OBJECT","kind":"object","parent":"LOCAL-GLOBALS","shortName":"pseudo","flags":[],"properties":{"ACTION":"CRETIN-FCN"}},
+    {"name":"LOCAL-GLOBALS","kind":"object","parent":"GLOBAL-OBJECTS","shortName":"","flags":[],"properties":{"SYNONYM":["ZZMGCK"],"DESCFCN":"PATH-OBJECT","GLOBAL":["GLOBAL-OBJECTS"],"ADVFCN":null,"CONTFCN":null,"FDESC":"F","LDESC":"F","PSEUDO":[["FOOBAR","V-WALK"]],"VTYPE":1,"SIZE":0,"CAPACITY":0}},
+    {"name":"SEWL","kind":"object","parent":"LOCAL-GLOBALS","shortName":"east wall","flags":["NDESCBIT"],"properties":{"SIZE":0,"ACTION":"SCOLWALL","SYNONYM":["WALL"],"ADJECTIVE":["EAST","EASTERN"]}},
+    {"name":"CANDY","kind":"object","parent":"POOL-ROOM","shortName":"package of candy","flags":["STAGGERED","FOODBIT","TAKEBIT","INVISIBLE","READBIT"],"properties":{"SIZE":8,"VALUE":15,"ACTION":"CANDY-FCN","ADJECTIVE":["CANDIED","RARE"]}},
+    {"name":"BRICK","kind":"object","parent":"MARBLE-HALL","shortName":"brick","flags":["TAKEBIT","BURNBIT","OPENBIT","SEARCHBIT"],"properties":{"ACTION":"BRICK-FCN","CAPACITY":2,"SIZE":9,"LDESC":"There is a square brick here which feels like clay."}}
+  ]
+}

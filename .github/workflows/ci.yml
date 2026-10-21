@@ -15,6 +15,9 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run zil:check
+      - run: npm run semantics:check
+      - run: npm run symbols:check
+      - run: npm run world:check
       - run: npx --yes --package=. zxr check reference/zork2
       - run: npm run reference:check
       - run: npm run reference:audit -- --check
