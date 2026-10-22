@@ -86,10 +86,10 @@ describe('reference-assisted ZIL symbol resolution',()=>{
     expect(messages('<OBJECT O (IN O) (IN TO O)> <ROUTINE F ()>',{objects:['O'],constants:{'P?IN':21,'LOW-DIRECTION':18}})).not.toContain('Duplicate object property');
     expect(messages('<ROUTINE F () #DECL ((X) UNKNOWN-TYPE) <>>')).toBe('');
   });
-  it('records one guarded fallback normalization and rejects changed source before applying it',()=>{
+  it('records guarded normalizations and rejects changed source before applying it',()=>{
     const p=loadProgram(sourceFiles()),e=expandMacros(p.forms,p.definitions,p.globals);
     expect(analyzeSymbols(p,e.forms,referenceSymbolLayout()).diagnostics.map(d=>d.message)).toContain('Unexpected list in expression');
-    const n=normalizeReferenceProgram(e.forms);expect(n.normalizations).toHaveLength(1);
+    const n=normalizeReferenceProgram(e.forms);expect(n.normalizations).toHaveLength(2);
     const routine=n.forms.find(f=>head(f)==='ROUTINE'&&'items' in f&&f.items[1]?.kind==='atom'&&f.items[1].value==='DREARY-ROOM-FCN');
     expect(routine&&'items' in routine?head(routine.items.at(-1)!):undefined).toBe('PROG');
     const files=sourceFiles();files.set('2actions.zil',files.get('2actions.zil')!.replace('(T <PCHECK> <RFALSE>)>','(T <OTHER> <RFALSE>)>'));

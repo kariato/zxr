@@ -24,7 +24,7 @@ function compile(source:string,extra:Partial<SymbolLayout>={}) {
 
 describe('Zork II world metadata generation',()=>{
   it('emits all rooms/objects deterministically without claiming a runtime bundle',()=>{
-    expect(world.counts).toEqual({rooms:86,objects:165,properties:795,pendingExits:220});
+    expect(world.counts).toEqual({rooms:86,objects:165,properties:795,exits:220});
     expect(world.stage).toBe('metadata');expect(world.entities.map(e=>e.id)).toEqual(Array.from({length:251},(_,i)=>i+1));
     expect(world).toEqual(buildWorldMetadata());
     expect(world).toEqual(JSON.parse(readFileSync('games/zork2/world.zxr.json','utf8')));
@@ -33,18 +33,18 @@ describe('Zork II world metadata generation',()=>{
   });
   it('matches every metadata property, parent, flag and short name to assembly and binary',()=>{
     const audit=auditWorldMetadata(world);
-    expect(audit.checked).toEqual({entities:251,rooms:86,objects:165,shortNames:251,metadataProperties:795,textProperties:175,propertyDefaults:31,pendingExitDeclarations:220});
+    expect(audit.checked).toEqual({entities:251,rooms:86,objects:165,shortNames:251,metadataProperties:795,textProperties:175,propertyDefaults:31,exitProperties:220,exitKinds:{UEXIT:163,NEXIT:21,FEXIT:11,CEXIT:13,DEXIT:12}});
     expect(audit).toEqual(JSON.parse(readFileSync('reference/world-audit.json','utf8')));
     const spots=auditWorldSpotChecks(world);expect(spots).toHaveLength(20);expect(spots.filter(s=>s.kind==='room')).toHaveLength(10);expect(spots.filter(s=>s.kind==='object')).toHaveLength(10);
   });
   it('distinguishes containment, local globals, pseudo features and the ROOMS direction property',()=>{
-    expect(entity('ROOMS').parent).toBeNull();expect(entity('ROOMS').pendingExits).toHaveLength(1);
-    expect(entity('ROOMS').pendingExits[0]).toMatchObject({property:{name:'IN',number:21},declaration:'(IN TO ROOMS)'});
+    expect(entity('ROOMS').parent).toBeNull();expect(entity('ROOMS').exits).toHaveLength(1);
+    expect(entity('ROOMS').exits[0]).toMatchObject({property:{name:'IN',number:21},declaration:'(IN TO ROOMS)'});
     expect(scalar(entity('NARROW-TUNNEL'),'GLOBAL')).toEqual(['BRIDGE','CHASM','STREAM','MOSS']);
     expect(entity('MOSS').parent?.name).toBe('LOCAL-GLOBALS');
     expect(scalar(entity('GREAT-CAVERN'),'PSEUDO')).toEqual([['STALAGMITE','STALA-PSEUDO'],['STALACTITE','STALA-PSEUDO']]);
     expect(world.entities.filter(e=>e.name==='PSEUDO-OBJECT')).toHaveLength(1);
-    expect(entity('TEA-ROOM').pendingExits.find(e=>e.property.name==='EAST')?.declaration).toContain('Only a mouse could get in there.');
+    expect(entity('TEA-ROOM').exits.find(e=>e.property.name==='EAST')?.declaration).toContain('Only a mouse could get in there.');
   });
   it('keeps explicit zero properties separate from missing defaults and startup changes',()=>{
     expect(world.propertyDefaults.find(p=>p.name==='SIZE')).toMatchObject({number:14,value:5});

@@ -6,7 +6,7 @@ Games are written entirely in JSON, logic included, and run on a headless TypeSc
 
 The first target is **Zork II**, whose source Microsoft released under the MIT license in 2025. The goal is a full Zork II playable in XR and published on itch.io.
 
-> Status: phase 2 in progress through step 2.2. Zork II reads, expands, resolves symbols and generates metadata for all 86 rooms and 165 objects. The browser shell and reproducible original-story corpus are in place. Full logic/bundle compilation and the game engine are not implemented yet.
+> Status: phase 2 in progress through step 2.7. Zork II reads, expands, resolves symbols and generates metadata for all 86 rooms and 165 objects, 220 encoded exits and 269 syntax rows. All 439 routines now lower and link against a shared string pool and a 19,882-byte memory image, including 689 packed dictionary entries. The browser shell and reproducible original-story corpus are in place. Bundle compilation and the game engine are not implemented yet.
 
 ## Development
 

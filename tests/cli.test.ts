@@ -17,7 +17,10 @@ it('checks the whole Zork II source project through the CLI',()=>{
   const text=execFileSync(process.execPath,['bin/zxr.ts','check','reference/zork2'],{encoding:'utf8'});
   expect(text).toContain('439 routines');expect(text).toContain('269 syntax entries');expect(text).toContain('compilation is not implemented');
   expect(text).toContain('Resolved 11901 symbol references');
-  expect(text).toContain('World metadata: 86 rooms, 165 objects');
+  expect(text).toContain('World metadata: 86 rooms, 165 objects, 220 encoded exits');
+  expect(text).toContain('Vocabulary: 269 syntax rows, 689 words');
+  expect(text).toContain('Memory: 19882 bytes, 45 source tables');
+  expect(text).toContain('Logic operations: 439 routines, 0 deferred memory/address sites, 1342 strings');
 });
 it('reports symbol errors in a source copy without changing the vendored game',()=>{
   const directory=mkdtempSync(join(tmpdir(),'zxr-symbols-'));
@@ -31,6 +34,32 @@ it('reports symbol errors in a source copy without changing the vendored game',(
     writeFileSync(join(directory,'2dungeon.zil'),sources.get('2dungeon.zil')!.replace('(DESC "lamp")','(DESC "lamp" "extra")'));
     const world=spawnSync(process.execPath,['bin/zxr.ts','check','--symbols',directory],{encoding:'utf8'});
     expect(world.status).toBe(1);expect(world.stderr).toContain(join(directory,'2dungeon.zil')+':');expect(world.stderr).toContain('ZIL006: DESC requires 1 value');expect(world.stderr).toContain('^');
+    const exitSource=sources.get('2dungeon.zil')!.replace('(EAST TO TEA-ROOM)','(EAST TO LAMP)');
+    expect(exitSource).not.toBe(sources.get('2dungeon.zil'));
+    writeFileSync(join(directory,'2dungeon.zil'),exitSource);
+    const exit=spawnSync(process.execPath,['bin/zxr.ts','check','--symbols',directory],{encoding:'utf8'});
+    expect(exit.status).toBe(1);expect(exit.stderr).toContain(join(directory,'2dungeon.zil')+':');expect(exit.stderr).toContain('ZIL007: Exit destination must be a room');expect(exit.stderr).toContain('^');
+    writeFileSync(join(directory,'2dungeon.zil'),sources.get('2dungeon.zil')!);
+    const syntaxSource=sources.get('gsyntax.zil')!.replace('<SYNTAX VERBOSE = V-VERBOSE>','<SYNTAX VERBOSE TO = V-VERBOSE>');
+    expect(syntaxSource).not.toBe(sources.get('gsyntax.zil'));
+    writeFileSync(join(directory,'gsyntax.zil'),syntaxSource);
+    const syntax=spawnSync(process.execPath,['bin/zxr.ts','check','--symbols',directory],{encoding:'utf8'});
+    expect(syntax.status).toBe(1);expect(syntax.stderr).toContain(join(directory,'gsyntax.zil')+':');expect(syntax.stderr).toContain('ZIL008: Preposition requires an object slot');expect(syntax.stderr).toContain('^');
+    writeFileSync(join(directory,'gsyntax.zil'),sources.get('gsyntax.zil')!);
+    const logicSource=sources.get('2dungeon.zil')!.replace('<SETG LIT T>','<SETG LIT>');expect(logicSource).not.toBe(sources.get('2dungeon.zil'));
+    writeFileSync(join(directory,'2dungeon.zil'),logicSource);
+    const logic=spawnSync(process.execPath,['bin/zxr.ts','check','--symbols',directory],{encoding:'utf8'});
+    expect(logic.status).toBe(1);expect(logic.stderr).toContain(join(directory,'2dungeon.zil')+':');expect(logic.stderr).toContain('ZIL009: SETG expects 2 argument(s), got 1');expect(logic.stderr).toContain('^');
+    writeFileSync(join(directory,'2dungeon.zil'),sources.get('2dungeon.zil')!);
+    const outputSource=sources.get('gverbs.zil')!.replace('<CRLF>','<CRLF 1>');expect(outputSource).not.toBe(sources.get('gverbs.zil'));
+    writeFileSync(join(directory,'gverbs.zil'),outputSource);
+    const output=spawnSync(process.execPath,['bin/zxr.ts','check','--symbols',directory],{encoding:'utf8'});
+    expect(output.status).toBe(1);expect(output.stderr).toContain(join(directory,'gverbs.zil')+':');expect(output.stderr).toContain('ZIL009: CRLF expects 0 argument(s), got 1');expect(output.stderr).toContain('^');
+    writeFileSync(join(directory,'gverbs.zil'),sources.get('gverbs.zil')!);
+    const memorySource=sources.get('gparser.zil')!.replace('<REST .SYN>','<REST>');expect(memorySource).not.toBe(sources.get('gparser.zil'));
+    writeFileSync(join(directory,'gparser.zil'),memorySource);
+    const memory=spawnSync(process.execPath,['bin/zxr.ts','check','--symbols',directory],{encoding:'utf8'});
+    expect(memory.status).toBe(1);expect(memory.stderr).toContain(join(directory,'gparser.zil')+':');expect(memory.stderr).toContain('ZIL011: REST expects 1..2 argument(s), got 0');expect(memory.stderr).toContain('^');
   } finally {rmSync(directory,{recursive:true,force:true});}
 });
 it('rejects unknown or repeated check flags',()=>{

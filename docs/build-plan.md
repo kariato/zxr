@@ -230,11 +230,11 @@ Implementation, evidence and scope limits: [phase 1](phase-1.md). `npm run zil:c
 - [x] 2.0 — candidate presented, then Mark authorized proceeding with “next”; evidence and the subsequent ITABLE correction are in [phase 2](phase-2.md).
 - [x] 2.1 — 11,901 references resolve; fixed-number namespaces, local scopes, diagnostics and the guarded SRC-006 normalization are verified.
 - [x] 2.2 — 86 rooms and 165 objects emitted; 795 metadata properties, 251 short names and 31 defaults checked against assembly/binary, plus twenty source spots.
-- [ ] 2.3
-- [ ] 2.4
-- [ ] 2.5
-- [ ] 2.6
-- [ ] 2.7
+- [x] 2.3 — all 220 exit payloads match assembly/binary after reference relocation; the byte-derived graph has no dangling destinations.
+- [x] 2.4 — all 269 ordered syntax rows, 689 word roles, 148 dispatch pairs and 18 prepositions match assembly/binary; 75 synonyms, 38 buzz words and 14 directions validated.
+- [x] 2.5 — all 439 routines lower to partial core IR; four hand-authored trees and scope/control-flow/operator tests pass. Remaining 2.6/2.7 constructs are explicitly reported.
+- [x] 2.6 — all 189 verb-library and 176 game-action routines lower alongside the remaining 74 routines; 1,342 shared strings verified, all 70 operation names classified. Only 656 memory/address sites remain for 2.7.
+- [x] 2.7 — 19,882-byte initial memory image, 45 source tables, all 689 packed dictionary entries and 1,488 relocations verified; all 439 routines fully linked. Runtime aliasing/clock/header behavior remains step 3.2.
 - [ ] 2.8
 - [ ] 2.9
 - [ ] 2.10

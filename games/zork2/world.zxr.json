@@ -6,7 +6,7 @@
     "rooms": 86,
     "objects": 165,
     "properties": 795,
-    "pendingExits": 220
+    "exits": 220
   },
   "propertyDefaults": [
     {
@@ -383,7 +383,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "VAULT",
@@ -517,7 +517,7 @@
           "byteLength": 4
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "STATUETTE",
@@ -700,7 +700,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "TRIANGULAR-BUTTON",
@@ -852,7 +852,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "GLOBAL-WATER",
@@ -981,7 +981,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "WELL",
@@ -1133,7 +1133,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "RIDDLE-DOOR",
@@ -1297,7 +1297,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "WELL-TOP",
@@ -1478,12 +1478,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            190
+          ],
+          "relocations": [],
           "declaration": "(EAST TO TEA-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -1497,6 +1502,10 @@
               "line": 1481,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "TEA-ROOM"
           }
         },
         {
@@ -1504,6 +1513,18 @@
             "name": "DOWN",
             "number": 22
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "It's a long way down!"
+            }
+          ],
           "declaration": "(DOWN \"It's a long way down!\")",
           "source": {
             "file": "2dungeon.zil",
@@ -1517,6 +1538,10 @@
               "line": 1482,
               "column": 38
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "It's a long way down!"
           }
         }
       ]
@@ -1652,7 +1677,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "TROPHY-SWORD",
@@ -1816,7 +1841,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "CAGE",
@@ -1969,7 +1994,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "HANDS",
@@ -2108,7 +2133,7 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "LEDGE-1",
@@ -2207,12 +2232,20 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 4,
+          "bytes": [
+            176,
+            88,
+            0,
+            0
+          ],
+          "relocations": [],
           "declaration": "(WEST TO VOLCANO-BOTTOM IF GNOME-DOOR-FLAG)",
           "source": {
             "file": "2dungeon.zil",
@@ -2226,6 +2259,12 @@
               "line": 1357,
               "column": 51
             }
+          },
+          "view": {
+            "kind": "CEXIT",
+            "to": "VOLCANO-BOTTOM",
+            "global": "GNOME-DOOR-FLAG",
+            "message": null
           }
         },
         {
@@ -2233,6 +2272,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            136
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO LIBRARY)",
           "source": {
             "file": "2dungeon.zil",
@@ -2246,6 +2290,10 @@
               "line": 1358,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "LIBRARY"
           }
         },
         {
@@ -2253,6 +2301,18 @@
             "name": "DOWN",
             "number": 22
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "I wouldn't jump from here."
+            }
+          ],
           "declaration": "(DOWN \"I wouldn't jump from here.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -2266,6 +2326,10 @@
               "line": 1356,
               "column": 43
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "I wouldn't jump from here."
           }
         }
       ]
@@ -2458,7 +2522,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "LAVA-ROOM",
@@ -2553,12 +2617,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            161
+          ],
+          "relocations": [],
           "declaration": "(EAST TO GLACIER-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -2572,6 +2641,10 @@
               "line": 1411,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "GLACIER-ROOM"
           }
         },
         {
@@ -2579,6 +2652,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            176
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO VOLCANO-BOTTOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -2592,6 +2670,10 @@
               "line": 1410,
               "column": 33
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "VOLCANO-BOTTOM"
           }
         }
       ]
@@ -2724,12 +2806,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "OUT",
             "number": 20
           },
+          "byteLength": 1,
+          "bytes": [
+            234
+          ],
+          "relocations": [],
           "declaration": "(OUT TO GARDEN-NORTH)",
           "source": {
             "file": "2dungeon.zil",
@@ -2743,6 +2830,10 @@
               "line": 305,
               "column": 28
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "GARDEN-NORTH"
           }
         }
       ]
@@ -2938,7 +3029,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "WIZARD",
@@ -3129,7 +3220,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DIAMOND-5",
@@ -3280,12 +3371,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            121
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO DIAMOND-2)",
           "source": {
             "file": "2dungeon.zil",
@@ -3299,6 +3395,10 @@
               "line": 783,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-2"
           }
         },
         {
@@ -3306,6 +3406,11 @@
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            202
+          ],
+          "relocations": [],
           "declaration": "(EAST TO DIAMOND-6)",
           "source": {
             "file": "2dungeon.zil",
@@ -3319,6 +3424,10 @@
               "line": 786,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-6"
           }
         },
         {
@@ -3326,6 +3435,11 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            242
+          ],
+          "relocations": [],
           "declaration": "(WEST TO DIAMOND-4)",
           "source": {
             "file": "2dungeon.zil",
@@ -3339,6 +3453,10 @@
               "line": 785,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-4"
           }
         },
         {
@@ -3346,6 +3464,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            75
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO DIAMOND-8)",
           "source": {
             "file": "2dungeon.zil",
@@ -3359,6 +3482,10 @@
               "line": 788,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-8"
           }
         },
         {
@@ -3366,6 +3493,11 @@
             "name": "NE",
             "number": 27
           },
+          "byteLength": 1,
+          "bytes": [
+            142
+          ],
+          "relocations": [],
           "declaration": "(NE TO DIAMOND-3)",
           "source": {
             "file": "2dungeon.zil",
@@ -3379,6 +3511,10 @@
               "line": 784,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-3"
           }
         },
         {
@@ -3386,6 +3522,11 @@
             "name": "NW",
             "number": 26
           },
+          "byteLength": 1,
+          "bytes": [
+            185
+          ],
+          "relocations": [],
           "declaration": "(NW TO DIAMOND-1)",
           "source": {
             "file": "2dungeon.zil",
@@ -3399,6 +3540,10 @@
               "line": 782,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-1"
           }
         },
         {
@@ -3406,6 +3551,11 @@
             "name": "SE",
             "number": 25
           },
+          "byteLength": 1,
+          "bytes": [
+            95
+          ],
+          "relocations": [],
           "declaration": "(SE TO DIAMOND-9)",
           "source": {
             "file": "2dungeon.zil",
@@ -3419,6 +3569,10 @@
               "line": 789,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-9"
           }
         },
         {
@@ -3426,6 +3580,11 @@
             "name": "SW",
             "number": 24
           },
+          "byteLength": 1,
+          "bytes": [
+            226
+          ],
+          "relocations": [],
           "declaration": "(SW TO DIAMOND-7)",
           "source": {
             "file": "2dungeon.zil",
@@ -3439,6 +3598,10 @@
               "line": 787,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-7"
           }
         },
         {
@@ -3446,6 +3609,11 @@
             "name": "UP",
             "number": 23
           },
+          "byteLength": 1,
+          "bytes": [
+            240
+          ],
+          "relocations": [],
           "declaration": "(UP TO STAIRWAY-TOP)",
           "source": {
             "file": "2dungeon.zil",
@@ -3459,6 +3627,10 @@
               "line": 791,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "STAIRWAY-TOP"
           }
         },
         {
@@ -3466,6 +3638,11 @@
             "name": "DOWN",
             "number": 22
           },
+          "byteLength": 1,
+          "bytes": [
+            162
+          ],
+          "relocations": [],
           "declaration": "(DOWN TO CERBERUS-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -3479,6 +3656,10 @@
               "line": 790,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "CERBERUS-ROOM"
           }
         }
       ]
@@ -3637,7 +3818,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "FOOT-BRIDGE",
@@ -3767,12 +3948,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            168
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO NARROW-TUNNEL)",
           "source": {
             "file": "2dungeon.zil",
@@ -3786,6 +3972,10 @@
               "line": 215,
               "column": 31
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "NARROW-TUNNEL"
           }
         },
         {
@@ -3793,6 +3983,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            183
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO GREAT-CAVERN)",
           "source": {
             "file": "2dungeon.zil",
@@ -3806,6 +4001,10 @@
               "line": 216,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "GREAT-CAVERN"
           }
         },
         {
@@ -3813,6 +4012,18 @@
             "name": "DOWN",
             "number": 22
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "The drop would be fatal."
+            }
+          ],
           "declaration": "(DOWN \"The drop would be fatal.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -3826,6 +4037,10 @@
               "line": 217,
               "column": 40
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "The drop would be fatal."
           }
         },
         {
@@ -3833,6 +4048,18 @@
             "name": "CROSS",
             "number": 18
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "You'll have to specify a direction."
+            }
+          ],
           "declaration": "(CROSS \"You'll have to specify a direction.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -3846,6 +4073,10 @@
               "line": 218,
               "column": 52
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "You'll have to specify a direction."
           }
         }
       ]
@@ -4053,7 +4284,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "MATCH",
@@ -4283,7 +4514,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "WAND",
@@ -4469,7 +4700,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "ME",
@@ -4606,7 +4837,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "UNICORN",
@@ -4785,7 +5016,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "SQUARE-BUTTON",
@@ -4937,7 +5168,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "GUARDIAN-ROOM",
@@ -5084,12 +5315,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            206
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO COBWEBBY-CORRIDOR)",
           "source": {
             "file": "2dungeon.zil",
@@ -5103,6 +5339,10 @@
               "line": 962,
               "column": 35
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "COBWEBBY-CORRIDOR"
           }
         },
         {
@@ -5110,6 +5350,15 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 5,
+          "bytes": [
+            45,
+            43,
+            0,
+            0,
+            0
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO WIZARDS-WORKSHOP IF WIZ-DOOR IS OPEN)",
           "source": {
             "file": "2dungeon.zil",
@@ -5123,6 +5372,12 @@
               "line": 964,
               "column": 28
             }
+          },
+          "view": {
+            "kind": "DEXIT",
+            "to": "WIZARDS-WORKSHOP",
+            "door": "WIZ-DOOR",
+            "message": null
           }
         },
         {
@@ -5130,6 +5385,15 @@
             "name": "IN",
             "number": 21
           },
+          "byteLength": 5,
+          "bytes": [
+            45,
+            43,
+            0,
+            0,
+            0
+          ],
+          "relocations": [],
           "declaration": "(IN TO WIZARDS-WORKSHOP IF WIZ-DOOR IS OPEN)",
           "source": {
             "file": "2dungeon.zil",
@@ -5143,6 +5407,12 @@
               "line": 966,
               "column": 28
             }
+          },
+          "view": {
+            "kind": "DEXIT",
+            "to": "WIZARDS-WORKSHOP",
+            "door": "WIZ-DOOR",
+            "message": null
           }
         }
       ]
@@ -5387,7 +5657,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "MARBLE-HALL",
@@ -5509,12 +5779,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            231
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO DEEP-FORD)",
           "source": {
             "file": "2dungeon.zil",
@@ -5528,6 +5803,10 @@
               "line": 382,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DEEP-FORD"
           }
         },
         {
@@ -5535,6 +5814,20 @@
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 4,
+          "bytes": [
+            212,
+            179,
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 2,
+              "text": "That's a wall there."
+            }
+          ],
           "declaration": "(EAST TO STREAM-PATH IF SECRET-DOOR ELSE \"That's a wall there.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -5548,6 +5841,12 @@
               "line": 381,
               "column": 71
             }
+          },
+          "view": {
+            "kind": "CEXIT",
+            "to": "STREAM-PATH",
+            "global": "SECRET-DOOR",
+            "message": "That's a wall there."
           }
         },
         {
@@ -5555,6 +5854,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            144
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO CAROUSEL-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -5568,6 +5872,10 @@
               "line": 383,
               "column": 31
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "CAROUSEL-ROOM"
           }
         }
       ]
@@ -5790,7 +6098,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "SERPENT",
@@ -5972,7 +6280,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "PALANTIR-2",
@@ -6184,7 +6492,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "VAIR-1",
@@ -6283,7 +6591,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "ORANGE-ICING",
@@ -6481,7 +6789,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "PALANTIR-4",
@@ -6723,7 +7031,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "ROOMS",
@@ -6751,12 +7059,17 @@
       "flags": [],
       "flagsSource": null,
       "properties": [],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "IN",
             "number": 21
           },
+          "byteLength": 1,
+          "bytes": [
+            37
+          ],
+          "relocations": [],
           "declaration": "(IN TO ROOMS)",
           "source": {
             "file": "gglobals.zil",
@@ -6770,6 +7083,10 @@
               "line": 29,
               "column": 15
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "ROOMS"
           }
         }
       ]
@@ -6867,12 +7184,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            119
+          ],
+          "relocations": [],
           "declaration": "(EAST TO WELL-BOTTOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -6886,6 +7208,10 @@
               "line": 1294,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "WELL-BOTTOM"
           }
         },
         {
@@ -6893,6 +7219,11 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            238
+          ],
+          "relocations": [],
           "declaration": "(WEST TO RIDDLE-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -6906,6 +7237,10 @@
               "line": 1295,
               "column": 23
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "RIDDLE-ROOM"
           }
         }
       ]
@@ -7069,7 +7404,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "ADVENTURER",
@@ -7210,7 +7545,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "GREEN-BOOK",
@@ -7478,7 +7813,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "FLASK",
@@ -7726,7 +8061,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "WIZ-DOOR",
@@ -7890,7 +8225,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "LOCAL-GLOBALS",
@@ -8200,7 +8535,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "WIZARDS-WORKSHOP",
@@ -8369,12 +8704,21 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 5,
+          "bytes": [
+            28,
+            43,
+            0,
+            0,
+            0
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO GUARDIAN-ROOM IF WIZ-DOOR IS OPEN)",
           "source": {
             "file": "2dungeon.zil",
@@ -8388,6 +8732,12 @@
               "line": 984,
               "column": 51
             }
+          },
+          "view": {
+            "kind": "DEXIT",
+            "to": "GUARDIAN-ROOM",
+            "door": "WIZ-DOOR",
+            "message": null
           }
         },
         {
@@ -8395,6 +8745,11 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            94
+          ],
+          "relocations": [],
           "declaration": "(WEST TO WORKBENCH-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -8408,6 +8763,10 @@
               "line": 986,
               "column": 31
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "WORKBENCH-ROOM"
           }
         },
         {
@@ -8415,6 +8774,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            63
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO TROPHY-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -8428,6 +8792,10 @@
               "line": 987,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "TROPHY-ROOM"
           }
         },
         {
@@ -8435,6 +8803,15 @@
             "name": "OUT",
             "number": 20
           },
+          "byteLength": 5,
+          "bytes": [
+            28,
+            43,
+            0,
+            0,
+            0
+          ],
+          "relocations": [],
           "declaration": "(OUT TO GUARDIAN-ROOM IF WIZ-DOOR IS OPEN)",
           "source": {
             "file": "2dungeon.zil",
@@ -8448,6 +8825,12 @@
               "line": 985,
               "column": 49
             }
+          },
+          "view": {
+            "kind": "DEXIT",
+            "to": "GUARDIAN-ROOM",
+            "door": "WIZ-DOOR",
+            "message": null
           }
         }
       ]
@@ -8605,12 +8988,21 @@
           "byteLength": 3
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 5,
+          "bytes": [
+            59,
+            137,
+            0,
+            0,
+            0
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO DREARY-ROOM IF PDOOR IS OPEN)",
           "source": {
             "file": "2dungeon.zil",
@@ -8624,6 +9016,12 @@
               "line": 1716,
               "column": 46
             }
+          },
+          "view": {
+            "kind": "DEXIT",
+            "to": "DREARY-ROOM",
+            "door": "PDOOR",
+            "message": null
           }
         },
         {
@@ -8631,6 +9029,11 @@
             "name": "DOWN",
             "number": 22
           },
+          "byteLength": 1,
+          "bytes": [
+            124
+          ],
+          "relocations": [],
           "declaration": "(DOWN TO RAVINE-LEDGE)",
           "source": {
             "file": "2dungeon.zil",
@@ -8644,6 +9047,10 @@
               "line": 1718,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "RAVINE-LEDGE"
           }
         },
         {
@@ -8651,6 +9058,15 @@
             "name": "IN",
             "number": 21
           },
+          "byteLength": 5,
+          "bytes": [
+            59,
+            137,
+            0,
+            0,
+            0
+          ],
+          "relocations": [],
           "declaration": "(IN TO DREARY-ROOM IF PDOOR IS OPEN)",
           "source": {
             "file": "2dungeon.zil",
@@ -8664,6 +9080,12 @@
               "line": 1717,
               "column": 43
             }
+          },
+          "view": {
+            "kind": "DEXIT",
+            "to": "DREARY-ROOM",
+            "door": "PDOOR",
+            "message": null
           }
         }
       ]
@@ -8818,7 +9240,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "ROSE-BUSH",
@@ -8982,7 +9404,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "OFFICE",
@@ -9077,12 +9499,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            200
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO DEPOSITORY)",
           "source": {
             "file": "2dungeon.zil",
@@ -9096,6 +9523,10 @@
               "line": 1678,
               "column": 28
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DEPOSITORY"
           }
         }
       ]
@@ -9276,7 +9707,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "INSIDE-BARROW",
@@ -9375,12 +9806,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            168
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO NARROW-TUNNEL)",
           "source": {
             "file": "2dungeon.zil",
@@ -9394,6 +9830,10 @@
               "line": 186,
               "column": 31
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "NARROW-TUNNEL"
           }
         },
         {
@@ -9401,6 +9841,18 @@
             "name": "OUT",
             "number": 20
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "You may not recall, but when you entered, the door of the barrow shut behind you. There is no way out."
+            }
+          ],
           "declaration": "(OUT \"You may not recall, but when you entered, the door of the barrow\nshut behind you. There is no way out.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -9414,6 +9866,10 @@
               "line": 189,
               "column": 40
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "You may not recall, but when you entered, the door of the barrow shut behind you. There is no way out."
           }
         }
       ]
@@ -9689,7 +10145,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "SHALLOW-FORD",
@@ -9815,12 +10271,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            183
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO GREAT-CAVERN)",
           "source": {
             "file": "2dungeon.zil",
@@ -9834,6 +10295,10 @@
               "line": 245,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "GREAT-CAVERN"
           }
         },
         {
@@ -9841,6 +10306,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            158
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO DARK-TUNNEL)",
           "source": {
             "file": "2dungeon.zil",
@@ -9854,6 +10324,10 @@
               "line": 246,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DARK-TUNNEL"
           }
         },
         {
@@ -9861,6 +10335,11 @@
             "name": "CROSS",
             "number": 18
           },
+          "byteLength": 1,
+          "bytes": [
+            158
+          ],
+          "relocations": [],
           "declaration": "(CROSS TO DARK-TUNNEL)",
           "source": {
             "file": "2dungeon.zil",
@@ -9874,6 +10353,10 @@
               "line": 247,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DARK-TUNNEL"
           }
         }
       ]
@@ -9975,12 +10458,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            87
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO MACHINE-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -9994,6 +10482,10 @@
               "line": 1464,
               "column": 31
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "MACHINE-ROOM"
           }
         },
         {
@@ -10001,6 +10493,11 @@
             "name": "OUT",
             "number": 20
           },
+          "byteLength": 1,
+          "bytes": [
+            87
+          ],
+          "relocations": [],
           "declaration": "(OUT TO MACHINE-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -10014,6 +10511,10 @@
               "line": 1463,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "MACHINE-ROOM"
           }
         }
       ]
@@ -10194,7 +10695,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "PORTRAIT",
@@ -10429,7 +10930,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DEAD-DRAGON",
@@ -10584,7 +11085,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "CERBERUS",
@@ -10790,7 +11291,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DREARY-ROOM",
@@ -10945,12 +11446,21 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 5,
+          "bytes": [
+            46,
+            137,
+            0,
+            0,
+            0
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO TINY-ROOM IF PDOOR IS OPEN)",
           "source": {
             "file": "2dungeon.zil",
@@ -10964,6 +11474,12 @@
               "line": 1706,
               "column": 44
             }
+          },
+          "view": {
+            "kind": "DEXIT",
+            "to": "TINY-ROOM",
+            "door": "PDOOR",
+            "message": null
           }
         },
         {
@@ -10971,6 +11487,15 @@
             "name": "OUT",
             "number": 20
           },
+          "byteLength": 5,
+          "bytes": [
+            46,
+            137,
+            0,
+            0,
+            0
+          ],
+          "relocations": [],
           "declaration": "(OUT TO TINY-ROOM IF PDOOR IS OPEN)",
           "source": {
             "file": "2dungeon.zil",
@@ -10984,6 +11509,12 @@
               "line": 1707,
               "column": 42
             }
+          },
+          "view": {
+            "kind": "DEXIT",
+            "to": "TINY-ROOM",
+            "door": "PDOOR",
+            "message": null
           }
         }
       ]
@@ -11129,7 +11660,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "BLUE-BOOK",
@@ -11389,7 +11920,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "GLOBAL-OBJECTS",
@@ -11482,7 +12013,7 @@
         }
       },
       "properties": [],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "TROPHY-ROOM",
@@ -11620,12 +12151,17 @@
           "byteLength": 8
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            45
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO WIZARDS-WORKSHOP)",
           "source": {
             "file": "2dungeon.zil",
@@ -11639,6 +12175,10 @@
               "line": 1087,
               "column": 34
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "WIZARDS-WORKSHOP"
           }
         }
       ]
@@ -11775,7 +12315,7 @@
           "byteLength": 4
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "HOOK-2",
@@ -11907,7 +12447,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "IT",
@@ -12023,7 +12563,7 @@
           "byteLength": 8
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "BROKEN-CASE",
@@ -12173,7 +12713,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "BAT",
@@ -12353,7 +12893,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "WIZARDS-QUARTERS",
@@ -12473,12 +13013,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            233
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO AQUARIUM-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -12492,6 +13037,10 @@
               "line": 1250,
               "column": 31
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "AQUARIUM-ROOM"
           }
         }
       ]
@@ -12658,7 +13207,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "PATHOBJ",
@@ -12826,7 +13375,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "COLLAR",
@@ -13038,7 +13587,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "RIBBON",
@@ -13194,7 +13743,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "BRIDGE",
@@ -13354,7 +13903,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DIAMOND-8",
@@ -13501,12 +14050,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            19
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO DIAMOND-5)",
           "source": {
             "file": "2dungeon.zil",
@@ -13520,6 +14074,10 @@
               "line": 826,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-5"
           }
         },
         {
@@ -13527,6 +14085,11 @@
             "name": "NE",
             "number": 27
           },
+          "byteLength": 1,
+          "bytes": [
+            202
+          ],
+          "relocations": [],
           "declaration": "(NE TO DIAMOND-6)",
           "source": {
             "file": "2dungeon.zil",
@@ -13540,6 +14103,10 @@
               "line": 828,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-6"
           }
         },
         {
@@ -13547,6 +14114,11 @@
             "name": "NW",
             "number": 26
           },
+          "byteLength": 1,
+          "bytes": [
+            242
+          ],
+          "relocations": [],
           "declaration": "(NW TO DIAMOND-4)",
           "source": {
             "file": "2dungeon.zil",
@@ -13560,6 +14132,10 @@
               "line": 827,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-4"
           }
         }
       ]
@@ -13743,7 +14319,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "PCRACK",
@@ -13870,7 +14446,7 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "STAMP",
@@ -14101,7 +14677,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DOOR-KEEPER",
@@ -14265,7 +14841,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "STONE-BRIDGE",
@@ -14391,12 +14967,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            248
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO DRAGON-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -14410,6 +14991,10 @@
               "line": 547,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DRAGON-ROOM"
           }
         },
         {
@@ -14417,6 +15002,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            172
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO COOL-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -14430,6 +15020,10 @@
               "line": 548,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "COOL-ROOM"
           }
         },
         {
@@ -14437,6 +15031,18 @@
             "name": "DOWN",
             "number": 22
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "It's a long way down."
+            }
+          ],
           "declaration": "(DOWN \"It's a long way down.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -14450,6 +15056,10 @@
               "line": 549,
               "column": 37
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "It's a long way down."
           }
         },
         {
@@ -14457,6 +15067,18 @@
             "name": "CROSS",
             "number": 18
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "You'll have to specify a direction."
+            }
+          ],
           "declaration": "(CROSS \"You'll have to specify a direction.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -14470,6 +15092,10 @@
               "line": 550,
               "column": 52
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "You'll have to specify a direction."
           }
         }
       ]
@@ -14706,7 +15332,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "POOL-ROOM",
@@ -14801,12 +15427,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            122
+          ],
+          "relocations": [],
           "declaration": "(WEST TO POSTS-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -14820,6 +15451,10 @@
               "line": 1552,
               "column": 28
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "POSTS-ROOM"
           }
         },
         {
@@ -14827,6 +15462,11 @@
             "name": "OUT",
             "number": 20
           },
+          "byteLength": 1,
+          "bytes": [
+            122
+          ],
+          "relocations": [],
           "declaration": "(OUT TO POSTS-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -14840,6 +15480,10 @@
               "line": 1551,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "POSTS-ROOM"
           }
         }
       ]
@@ -15062,7 +15706,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "MENHIR",
@@ -15242,7 +15886,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "TROPHY-BOTTLES",
@@ -15398,7 +16042,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "VAIR-3",
@@ -15497,7 +16141,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "MACHINE-ROOM",
@@ -15596,12 +16240,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            187
+          ],
+          "relocations": [],
           "declaration": "(WEST TO MAGNET-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -15615,6 +16264,10 @@
               "line": 1447,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "MAGNET-ROOM"
           }
         },
         {
@@ -15622,6 +16275,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            54
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO CAGE-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -15635,6 +16293,10 @@
               "line": 1448,
               "column": 28
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "CAGE-ROOM"
           }
         }
       ]
@@ -15769,7 +16431,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "STAND-1",
@@ -15963,7 +16625,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "SOUTH-WALL",
@@ -16094,7 +16756,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "PENTAGRAM-ROOM",
@@ -16228,12 +16890,17 @@
           "byteLength": 3
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            94
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO WORKBENCH-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -16247,6 +16914,10 @@
               "line": 1174,
               "column": 32
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "WORKBENCH-ROOM"
           }
         }
       ]
@@ -16344,12 +17015,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            141
+          ],
+          "relocations": [],
           "declaration": "(EAST TO FRESCO-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -16363,6 +17039,10 @@
               "line": 1579,
               "column": 28
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "FRESCO-ROOM"
           }
         },
         {
@@ -16370,6 +17050,11 @@
             "name": "NE",
             "number": 27
           },
+          "byteLength": 1,
+          "bytes": [
+            243
+          ],
+          "relocations": [],
           "declaration": "(NE TO TELLER-EAST)",
           "source": {
             "file": "2dungeon.zil",
@@ -16383,6 +17068,10 @@
               "line": 1578,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "TELLER-EAST"
           }
         },
         {
@@ -16390,6 +17079,11 @@
             "name": "NW",
             "number": 26
           },
+          "byteLength": 1,
+          "bytes": [
+            152
+          ],
+          "relocations": [],
           "declaration": "(NW TO TELLER-WEST)",
           "source": {
             "file": "2dungeon.zil",
@@ -16403,6 +17097,10 @@
               "line": 1577,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "TELLER-WEST"
           }
         }
       ]
@@ -16557,7 +17255,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "WORKBENCH-ROOM",
@@ -16699,12 +17397,17 @@
           "byteLength": 8
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            45
+          ],
+          "relocations": [],
           "declaration": "(EAST TO WIZARDS-WORKSHOP)",
           "source": {
             "file": "2dungeon.zil",
@@ -16718,6 +17421,10 @@
               "line": 1008,
               "column": 33
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "WIZARDS-WORKSHOP"
           }
         },
         {
@@ -16725,6 +17432,11 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            233
+          ],
+          "relocations": [],
           "declaration": "(WEST TO AQUARIUM-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -16738,6 +17450,10 @@
               "line": 1010,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "AQUARIUM-ROOM"
           }
         },
         {
@@ -16745,6 +17461,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            91
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO PENTAGRAM-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -16758,6 +17479,10 @@
               "line": 1009,
               "column": 32
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "PENTAGRAM-ROOM"
           }
         }
       ]
@@ -16907,12 +17632,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NW",
             "number": 26
           },
+          "byteLength": 1,
+          "bytes": [
+            19
+          ],
+          "relocations": [],
           "declaration": "(NW TO DIAMOND-5)",
           "source": {
             "file": "2dungeon.zil",
@@ -16926,6 +17656,10 @@
               "line": 839,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-5"
           }
         }
       ]
@@ -17100,7 +17834,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "RUBY",
@@ -17301,7 +18035,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "ROBOT",
@@ -17468,7 +18202,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "STAND-3",
@@ -17662,7 +18396,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "PLACE-MAT",
@@ -17874,7 +18608,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "EXPLOSION",
@@ -17976,7 +18710,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "VIEWING-EAST",
@@ -18110,12 +18844,17 @@
           "byteLength": 4
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            92
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO BANK-ENTRANCE)",
           "source": {
             "file": "2dungeon.zil",
@@ -18129,6 +18868,10 @@
               "line": 1632,
               "column": 31
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "BANK-ENTRANCE"
           }
         }
       ]
@@ -18329,7 +19072,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "STREAM",
@@ -18485,7 +19228,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "CHASM",
@@ -18641,7 +19384,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "IN-CAGE",
@@ -18769,7 +19512,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "TEAPOT",
@@ -18963,7 +19706,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "KEYHOLE-2",
@@ -19122,7 +19865,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "LID-2",
@@ -19282,7 +20025,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "ROSE",
@@ -19449,7 +20192,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "ICE",
@@ -19618,7 +20361,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "LID-1",
@@ -19774,7 +20517,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "VAIR-2",
@@ -19873,12 +20616,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            13
+          ],
+          "relocations": [],
           "declaration": "(WEST TO LEDGE-1)",
           "source": {
             "file": "2dungeon.zil",
@@ -19892,6 +20640,10 @@
               "line": 1326,
               "column": 25
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "LEDGE-1"
           }
         },
         {
@@ -19899,6 +20651,11 @@
             "name": "LAND",
             "number": 19
           },
+          "byteLength": 1,
+          "bytes": [
+            13
+          ],
+          "relocations": [],
           "declaration": "(LAND TO LEDGE-1)",
           "source": {
             "file": "2dungeon.zil",
@@ -19912,6 +20669,10 @@
               "line": 1327,
               "column": 25
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "LEDGE-1"
           }
         }
       ]
@@ -20022,7 +20783,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DEPOSIT-BOX",
@@ -20186,7 +20947,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "CRYPT",
@@ -20372,7 +21133,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "VOLCANO-VIEW",
@@ -20467,12 +21228,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            184
+          ],
+          "relocations": [],
           "declaration": "(EAST TO LAVA-TUBE)",
           "source": {
             "file": "2dungeon.zil",
@@ -20486,6 +21252,10 @@
               "line": 1383,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "LAVA-TUBE"
           }
         },
         {
@@ -20493,6 +21263,18 @@
             "name": "DOWN",
             "number": 22
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "I wouldn't try that."
+            }
+          ],
           "declaration": "(DOWN \"I wouldn't try that.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -20506,6 +21288,10 @@
               "line": 1381,
               "column": 37
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "I wouldn't try that."
           }
         },
         {
@@ -20513,6 +21299,18 @@
             "name": "CROSS",
             "number": 18
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "It is impossible to cross this distance."
+            }
+          ],
           "declaration": "(CROSS \"It is impossible to cross this distance.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -20526,6 +21324,10 @@
               "line": 1382,
               "column": 58
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "It is impossible to cross this distance."
           }
         }
       ]
@@ -20669,7 +21471,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "WELL-BOTTOM",
@@ -20795,12 +21597,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            38
+          ],
+          "relocations": [],
           "declaration": "(WEST TO PEARL-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -20814,6 +21621,10 @@
               "line": 1500,
               "column": 28
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "PEARL-ROOM"
           }
         },
         {
@@ -20821,6 +21632,18 @@
             "name": "UP",
             "number": 23
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "The walls cannot be climbed."
+            }
+          ],
           "declaration": "(UP \"The walls cannot be climbed.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -20834,6 +21657,10 @@
               "line": 1501,
               "column": 43
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "The walls cannot be climbed."
           }
         }
       ]
@@ -20965,7 +21792,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DIAMOND-2",
@@ -21112,12 +21939,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            19
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO DIAMOND-5)",
           "source": {
             "file": "2dungeon.zil",
@@ -21131,6 +21963,10 @@
               "line": 745,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-5"
           }
         },
         {
@@ -21138,6 +21974,11 @@
             "name": "SE",
             "number": 25
           },
+          "byteLength": 1,
+          "bytes": [
+            202
+          ],
+          "relocations": [],
           "declaration": "(SE TO DIAMOND-6)",
           "source": {
             "file": "2dungeon.zil",
@@ -21151,6 +21992,10 @@
               "line": 746,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-6"
           }
         },
         {
@@ -21158,6 +22003,11 @@
             "name": "SW",
             "number": 24
           },
+          "byteLength": 1,
+          "bytes": [
+            242
+          ],
+          "relocations": [],
           "declaration": "(SW TO DIAMOND-4)",
           "source": {
             "file": "2dungeon.zil",
@@ -21171,6 +22021,10 @@
               "line": 747,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-4"
           }
         }
       ]
@@ -21324,12 +22178,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            82
+          ],
+          "relocations": [],
           "declaration": "(EAST TO POOL-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -21343,6 +22202,10 @@
               "line": 1538,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "POOL-ROOM"
           }
         },
         {
@@ -21350,6 +22213,18 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "A great chasm blocks your way."
+            }
+          ],
           "declaration": "(WEST \"A great chasm blocks your way.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -21363,6 +22238,10 @@
               "line": 1539,
               "column": 47
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "A great chasm blocks your way."
           }
         },
         {
@@ -21370,6 +22249,18 @@
             "name": "NW",
             "number": 26
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "A great chasm blocks your way."
+            }
+          ],
           "declaration": "(NW \"A great chasm blocks your way.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -21383,6 +22274,10 @@
               "line": 1537,
               "column": 45
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "A great chasm blocks your way."
           }
         },
         {
@@ -21390,6 +22285,18 @@
             "name": "DOWN",
             "number": 22
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "A great chasm blocks your way."
+            }
+          ],
           "declaration": "(DOWN \"A great chasm blocks your way.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -21403,6 +22310,10 @@
               "line": 1540,
               "column": 47
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "A great chasm blocks your way."
           }
         }
       ]
@@ -21538,7 +22449,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "RAVINE-LEDGE",
@@ -21660,12 +22571,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            171
+          ],
+          "relocations": [],
           "declaration": "(WEST TO LEDGE-TUNNEL)",
           "source": {
             "file": "2dungeon.zil",
@@ -21679,6 +22595,10 @@
               "line": 415,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "LEDGE-TUNNEL"
           }
         },
         {
@@ -21686,6 +22606,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            231
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO DEEP-FORD)",
           "source": {
             "file": "2dungeon.zil",
@@ -21699,6 +22624,10 @@
               "line": 414,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DEEP-FORD"
           }
         },
         {
@@ -21706,6 +22635,11 @@
             "name": "UP",
             "number": 23
           },
+          "byteLength": 1,
+          "bytes": [
+            46
+          ],
+          "relocations": [],
           "declaration": "(UP TO TINY-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -21719,6 +22653,10 @@
               "line": 413,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "TINY-ROOM"
           }
         },
         {
@@ -21726,6 +22664,11 @@
             "name": "DOWN",
             "number": 22
           },
+          "byteLength": 1,
+          "bytes": [
+            231
+          ],
+          "relocations": [],
           "declaration": "(DOWN TO DEEP-FORD)",
           "source": {
             "file": "2dungeon.zil",
@@ -21739,6 +22682,10 @@
               "line": 416,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DEEP-FORD"
           }
         }
       ]
@@ -21914,12 +22861,21 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 5,
+          "bytes": [
+            194,
+            245,
+            0,
+            0,
+            0
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO CRYPT-ANTEROOM IF CRYPT-DOOR IS OPEN)",
           "source": {
             "file": "2dungeon.zil",
@@ -21933,6 +22889,12 @@
               "line": 906,
               "column": 54
             }
+          },
+          "view": {
+            "kind": "DEXIT",
+            "to": "CRYPT-ANTEROOM",
+            "door": "CRYPT-DOOR",
+            "message": null
           }
         },
         {
@@ -21940,6 +22902,14 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 4,
+          "bytes": [
+            230,
+            139,
+            0,
+            0
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO ZORK3 IF DIM-DOOR-FLAG)",
           "source": {
             "file": "2dungeon.zil",
@@ -21953,6 +22923,12 @@
               "line": 907,
               "column": 40
             }
+          },
+          "view": {
+            "kind": "CEXIT",
+            "to": "ZORK3",
+            "global": "DIM-DOOR-FLAG",
+            "message": null
           }
         }
       ]
@@ -22137,7 +23113,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "GOLD-KEY",
@@ -22353,7 +23329,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "KENNEL",
@@ -22475,12 +23451,26 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NE",
             "number": 27
           },
+          "byteLength": 4,
+          "bytes": [
+            159,
+            61,
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 2,
+              "text": "You are trying to walk through an enormous rock."
+            }
+          ],
           "declaration": "(NE TO MENHIR-ROOM IF MENHIR-POSITION ELSE \"You are trying to walk through an enormous rock.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -22494,6 +23484,12 @@
               "line": 684,
               "column": 65
             }
+          },
+          "view": {
+            "kind": "CEXIT",
+            "to": "MENHIR-ROOM",
+            "global": "MENHIR-POSITION",
+            "message": "You are trying to walk through an enormous rock."
           }
         },
         {
@@ -22501,6 +23497,20 @@
             "name": "OUT",
             "number": 20
           },
+          "byteLength": 4,
+          "bytes": [
+            159,
+            61,
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 2,
+              "text": "You are trying to walk through an enormous rock."
+            }
+          ],
           "declaration": "(OUT TO MENHIR-ROOM IF MENHIR-POSITION ELSE \"You are trying to walk through an enormous rock.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -22514,6 +23524,12 @@
               "line": 687,
               "column": 65
             }
+          },
+          "view": {
+            "kind": "CEXIT",
+            "to": "MENHIR-ROOM",
+            "global": "MENHIR-POSITION",
+            "message": "You are trying to walk through an enormous rock."
           }
         }
       ]
@@ -22724,7 +23740,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "KEYHOLE-1",
@@ -22883,7 +23899,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "CANDY",
@@ -23133,7 +24149,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "SAFE",
@@ -23319,7 +24335,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "GNOME-OF-ZURICH",
@@ -23490,7 +24506,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "PEARL",
@@ -23695,7 +24711,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "COMPASS",
@@ -23803,7 +24819,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "LIBRARY",
@@ -23898,12 +24914,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            13
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO LEDGE-1)",
           "source": {
             "file": "2dungeon.zil",
@@ -23917,6 +24938,10 @@
               "line": 1368,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "LEDGE-1"
           }
         },
         {
@@ -23924,6 +24949,11 @@
             "name": "OUT",
             "number": 20
           },
+          "byteLength": 1,
+          "bytes": [
+            13
+          ],
+          "relocations": [],
           "declaration": "(OUT TO LEDGE-1)",
           "source": {
             "file": "2dungeon.zil",
@@ -23937,6 +24967,10 @@
               "line": 1369,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "LEDGE-1"
           }
         }
       ]
@@ -24099,7 +25133,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "BALLOON-LABEL",
@@ -24285,7 +25319,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "WISH",
@@ -24414,7 +25448,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "VIOLIN",
@@ -24644,7 +25678,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "FRESCO-ROOM",
@@ -24739,12 +25773,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            248
+          ],
+          "relocations": [],
           "declaration": "(EAST TO DRAGON-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -24758,6 +25797,10 @@
               "line": 535,
               "column": 28
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DRAGON-ROOM"
           }
         },
         {
@@ -24765,6 +25808,11 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            92
+          ],
+          "relocations": [],
           "declaration": "(WEST TO BANK-ENTRANCE)",
           "source": {
             "file": "2dungeon.zil",
@@ -24778,6 +25826,10 @@
               "line": 536,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "BANK-ENTRANCE"
           }
         }
       ]
@@ -24927,12 +25979,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "SW",
             "number": 24
           },
+          "byteLength": 1,
+          "bytes": [
+            19
+          ],
+          "relocations": [],
           "declaration": "(SW TO DIAMOND-5)",
           "source": {
             "file": "2dungeon.zil",
@@ -24946,6 +26003,10 @@
               "line": 758,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-5"
           }
         }
       ]
@@ -25072,12 +26133,20 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 4,
+          "bytes": [
+            176,
+            88,
+            0,
+            0
+          ],
+          "relocations": [],
           "declaration": "(WEST TO VOLCANO-BOTTOM IF GNOME-DOOR-FLAG)",
           "source": {
             "file": "2dungeon.zil",
@@ -25091,6 +26160,12 @@
               "line": 1391,
               "column": 51
             }
+          },
+          "view": {
+            "kind": "CEXIT",
+            "to": "VOLCANO-BOTTOM",
+            "global": "GNOME-DOOR-FLAG",
+            "message": null
           }
         },
         {
@@ -25098,6 +26173,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            182
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO SAFE-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -25111,6 +26191,10 @@
               "line": 1392,
               "column": 28
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "SAFE-ROOM"
           }
         },
         {
@@ -25118,6 +26202,18 @@
             "name": "DOWN",
             "number": 22
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "It's a long way down."
+            }
+          ],
           "declaration": "(DOWN \"It's a long way down.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -25131,6 +26227,10 @@
               "line": 1390,
               "column": 38
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "It's a long way down."
           }
         }
       ]
@@ -25253,12 +26353,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            30
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO MARBLE-HALL)",
           "source": {
             "file": "2dungeon.zil",
@@ -25272,6 +26377,10 @@
               "line": 1258,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "MARBLE-HALL"
           }
         },
         {
@@ -25279,6 +26388,11 @@
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            218
+          ],
+          "relocations": [],
           "declaration": "(EAST TO TOPIARY-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -25292,6 +26406,10 @@
               "line": 1260,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "TOPIARY-ROOM"
           }
         },
         {
@@ -25299,6 +26417,11 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            207
+          ],
+          "relocations": [],
           "declaration": "(WEST TO ROOM-8)",
           "source": {
             "file": "2dungeon.zil",
@@ -25312,6 +26435,10 @@
               "line": 1264,
               "column": 23
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "ROOM-8"
           }
         },
         {
@@ -25319,6 +26446,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            159
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO MENHIR-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -25332,6 +26464,10 @@
               "line": 1262,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "MENHIR-ROOM"
           }
         },
         {
@@ -25339,6 +26475,11 @@
             "name": "NE",
             "number": 27
           },
+          "byteLength": 1,
+          "bytes": [
+            212
+          ],
+          "relocations": [],
           "declaration": "(NE TO STREAM-PATH)",
           "source": {
             "file": "2dungeon.zil",
@@ -25352,6 +26493,10 @@
               "line": 1259,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "STREAM-PATH"
           }
         },
         {
@@ -25359,6 +26504,11 @@
             "name": "NW",
             "number": 26
           },
+          "byteLength": 1,
+          "bytes": [
+            172
+          ],
+          "relocations": [],
           "declaration": "(NW TO COOL-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -25372,6 +26522,10 @@
               "line": 1265,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "COOL-ROOM"
           }
         },
         {
@@ -25379,6 +26533,11 @@
             "name": "SE",
             "number": 25
           },
+          "byteLength": 1,
+          "bytes": [
+            238
+          ],
+          "relocations": [],
           "declaration": "(SE TO RIDDLE-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -25392,6 +26551,10 @@
               "line": 1261,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "RIDDLE-ROOM"
           }
         },
         {
@@ -25399,6 +26562,11 @@
             "name": "SW",
             "number": 24
           },
+          "byteLength": 1,
+          "bytes": [
+            206
+          ],
+          "relocations": [],
           "declaration": "(SW TO COBWEBBY-CORRIDOR)",
           "source": {
             "file": "2dungeon.zil",
@@ -25412,6 +26580,10 @@
               "line": 1263,
               "column": 32
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "COBWEBBY-CORRIDOR"
           }
         }
       ]
@@ -25592,7 +26764,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "CROWN",
@@ -25819,7 +26991,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "RED-ICING",
@@ -26017,7 +27189,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "NORTH-WALL",
@@ -26148,7 +27320,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "LAMP",
@@ -26356,7 +27528,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "PRINCESS",
@@ -26542,7 +27714,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DIM-DOOR",
@@ -26718,7 +27890,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "TELLER-WEST",
@@ -26838,12 +28010,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            204
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO VIEWING-WEST)",
           "source": {
             "file": "2dungeon.zil",
@@ -26857,6 +28034,10 @@
               "line": 1586,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "VIEWING-WEST"
           }
         },
         {
@@ -26864,6 +28045,11 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            200
+          ],
+          "relocations": [],
           "declaration": "(WEST TO DEPOSITORY)",
           "source": {
             "file": "2dungeon.zil",
@@ -26877,6 +28063,10 @@
               "line": 1588,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DEPOSITORY"
           }
         },
         {
@@ -26884,6 +28074,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            92
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO BANK-ENTRANCE)",
           "source": {
             "file": "2dungeon.zil",
@@ -26897,6 +28092,10 @@
               "line": 1587,
               "column": 31
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "BANK-ENTRANCE"
           }
         }
       ]
@@ -27003,7 +28202,7 @@
           "byteLength": 4
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "GLOBAL-UNICORN",
@@ -27159,7 +28358,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "ALICE-TABLE",
@@ -27320,7 +28519,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "EAST-WALL",
@@ -27451,7 +28650,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "FORMAL-GARDEN",
@@ -27606,12 +28805,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            234
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO GARDEN-NORTH)",
           "source": {
             "file": "2dungeon.zil",
@@ -27625,6 +28829,10 @@
               "line": 320,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "GARDEN-NORTH"
           }
         },
         {
@@ -27632,6 +28840,11 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            212
+          ],
+          "relocations": [],
           "declaration": "(WEST TO STREAM-PATH)",
           "source": {
             "file": "2dungeon.zil",
@@ -27645,6 +28858,10 @@
               "line": 319,
               "column": 28
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "STREAM-PATH"
           }
         },
         {
@@ -27652,6 +28869,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            218
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO TOPIARY-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -27665,6 +28887,10 @@
               "line": 321,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "TOPIARY-ROOM"
           }
         }
       ]
@@ -27762,12 +28988,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NE",
             "number": 27
           },
+          "byteLength": 1,
+          "bytes": [
+            53
+          ],
+          "relocations": [],
           "declaration": "(NE TO SHALLOW-FORD)",
           "source": {
             "file": "2dungeon.zil",
@@ -27781,6 +29012,10 @@
               "line": 259,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "SHALLOW-FORD"
           }
         },
         {
@@ -27788,6 +29023,11 @@
             "name": "SE",
             "number": 25
           },
+          "byteLength": 1,
+          "bytes": [
+            234
+          ],
+          "relocations": [],
           "declaration": "(SE TO GARDEN-NORTH)",
           "source": {
             "file": "2dungeon.zil",
@@ -27801,6 +29041,10 @@
               "line": 260,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "GARDEN-NORTH"
           }
         },
         {
@@ -27808,6 +29052,11 @@
             "name": "SW",
             "number": 24
           },
+          "byteLength": 1,
+          "bytes": [
+            212
+          ],
+          "relocations": [],
           "declaration": "(SW TO STREAM-PATH)",
           "source": {
             "file": "2dungeon.zil",
@@ -27821,6 +29070,10 @@
               "line": 261,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "STREAM-PATH"
           }
         }
       ]
@@ -27970,12 +29223,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            144
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO CAROUSEL-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -27989,6 +29247,10 @@
               "line": 646,
               "column": 31
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "CAROUSEL-ROOM"
           }
         },
         {
@@ -27996,6 +29258,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            240
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO STAIRWAY-TOP)",
           "source": {
             "file": "2dungeon.zil",
@@ -28009,6 +29276,10 @@
               "line": 650,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "STAIRWAY-TOP"
           }
         },
         {
@@ -28016,6 +29287,20 @@
             "name": "SW",
             "number": 24
           },
+          "byteLength": 4,
+          "bytes": [
+            128,
+            61,
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 2,
+              "text": "You are trying to walk through an enormous rock."
+            }
+          ],
           "declaration": "(SW TO KENNEL IF MENHIR-POSITION ELSE \"You are trying to walk through an enormous rock.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -28029,6 +29314,12 @@
               "line": 649,
               "column": 65
             }
+          },
+          "view": {
+            "kind": "CEXIT",
+            "to": "KENNEL",
+            "global": "MENHIR-POSITION",
+            "message": "You are trying to walk through an enormous rock."
           }
         }
       ]
@@ -28199,7 +29490,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "GLACIER-ROOM",
@@ -28319,12 +29610,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            172
+          ],
+          "relocations": [],
           "declaration": "(EAST TO COOL-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -28338,6 +29634,10 @@
               "line": 573,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "COOL-ROOM"
           }
         },
         {
@@ -28345,6 +29645,20 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 4,
+          "bytes": [
+            15,
+            106,
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 2,
+              "text": "You don't even have an ice-pick."
+            }
+          ],
           "declaration": "(WEST TO LAVA-ROOM IF ICE-MELTED ELSE \"You don't even have an ice-pick.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -28358,6 +29672,12 @@
               "line": 575,
               "column": 62
             }
+          },
+          "view": {
+            "kind": "CEXIT",
+            "to": "LAVA-ROOM",
+            "global": "ICE-MELTED",
+            "message": "You don't even have an ice-pick."
           }
         },
         {
@@ -28365,6 +29685,11 @@
             "name": "UP",
             "number": 23
           },
+          "byteLength": 1,
+          "bytes": [
+            184
+          ],
+          "relocations": [],
           "declaration": "(UP TO LAVA-TUBE)",
           "source": {
             "file": "2dungeon.zil",
@@ -28378,6 +29703,10 @@
               "line": 576,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "LAVA-TUBE"
           }
         }
       ]
@@ -28567,12 +29896,26 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 4,
+          "bytes": [
+            194,
+            134,
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 2,
+              "text": "The huge dog snaps nastily at you."
+            }
+          ],
           "declaration": "(EAST TO CRYPT-ANTEROOM IF CERBERUS-LEASHED ELSE \"The huge dog snaps nastily at you.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -28586,6 +29929,12 @@
               "line": 859,
               "column": 70
             }
+          },
+          "view": {
+            "kind": "CEXIT",
+            "to": "CRYPT-ANTEROOM",
+            "global": "CERBERUS-LEASHED",
+            "message": "The huge dog snaps nastily at you."
           }
         },
         {
@@ -28593,6 +29942,11 @@
             "name": "UP",
             "number": 23
           },
+          "byteLength": 1,
+          "bytes": [
+            19
+          ],
+          "relocations": [],
           "declaration": "(UP TO DIAMOND-5)",
           "source": {
             "file": "2dungeon.zil",
@@ -28606,6 +29960,10 @@
               "line": 862,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-5"
           }
         },
         {
@@ -28613,6 +29971,20 @@
             "name": "IN",
             "number": 21
           },
+          "byteLength": 4,
+          "bytes": [
+            194,
+            134,
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 2,
+              "text": "The huge dog snaps nastily at you."
+            }
+          ],
           "declaration": "(IN TO CRYPT-ANTEROOM IF CERBERUS-LEASHED ELSE \"The huge dog snaps nastily at you.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -28626,6 +29998,12 @@
               "line": 861,
               "column": 70
             }
+          },
+          "view": {
+            "kind": "CEXIT",
+            "to": "CRYPT-ANTEROOM",
+            "global": "CERBERUS-LEASHED",
+            "message": "The huge dog snaps nastily at you."
           }
         }
       ]
@@ -28783,7 +30161,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "LUNGS",
@@ -28895,7 +30273,7 @@
           "byteLength": 8
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "WEST-WALL",
@@ -29026,7 +30404,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "GLOBAL-MENHIR",
@@ -29198,7 +30576,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "BROKEN-LAMP",
@@ -29344,7 +30722,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "NARROW-TUNNEL",
@@ -29482,12 +30860,17 @@
           "byteLength": 4
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            51
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO INSIDE-BARROW)",
           "source": {
             "file": "2dungeon.zil",
@@ -29501,6 +30884,10 @@
               "line": 201,
               "column": 31
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "INSIDE-BARROW"
           }
         },
         {
@@ -29508,6 +30895,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            21
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO FOOT-BRIDGE)",
           "source": {
             "file": "2dungeon.zil",
@@ -29521,6 +30913,10 @@
               "line": 202,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "FOOT-BRIDGE"
           }
         },
         {
@@ -29528,6 +30924,18 @@
             "name": "DOWN",
             "number": 22
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "As you start down, you slip on the crumbling rocks and pull back, narrowly averting a fatal fall."
+            }
+          ],
           "declaration": "(DOWN \"As you start down, you slip on the crumbling\nrocks and pull back, narrowly averting a fatal fall.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -29541,6 +30949,10 @@
               "line": 205,
               "column": 55
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "As you start down, you slip on the crumbling rocks and pull back, narrowly averting a fatal fall."
           }
         },
         {
@@ -29548,6 +30960,11 @@
             "name": "CROSS",
             "number": 18
           },
+          "byteLength": 1,
+          "bytes": [
+            21
+          ],
+          "relocations": [],
           "declaration": "(CROSS TO FOOT-BRIDGE)",
           "source": {
             "file": "2dungeon.zil",
@@ -29561,6 +30978,10 @@
               "line": 203,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "FOOT-BRIDGE"
           }
         }
       ]
@@ -29814,7 +31235,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "BRAIDED-WIRE",
@@ -29970,7 +31391,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "LEDGE-TUNNEL",
@@ -30065,12 +31486,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            248
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO DRAGON-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -30084,6 +31510,10 @@
               "line": 428,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DRAGON-ROOM"
           }
         },
         {
@@ -30091,6 +31521,11 @@
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            124
+          ],
+          "relocations": [],
           "declaration": "(EAST TO RAVINE-LEDGE)",
           "source": {
             "file": "2dungeon.zil",
@@ -30104,6 +31539,10 @@
               "line": 426,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "RAVINE-LEDGE"
           }
         },
         {
@@ -30111,6 +31550,18 @@
             "name": "DOWN",
             "number": 22
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "There are a lot of sharp rocks down there."
+            }
+          ],
           "declaration": "(DOWN \"There are a lot of sharp rocks down there.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -30124,6 +31575,10 @@
               "line": 429,
               "column": 58
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "There are a lot of sharp rocks down there."
           }
         },
         {
@@ -30131,6 +31586,11 @@
             "name": "IN",
             "number": 21
           },
+          "byteLength": 1,
+          "bytes": [
+            248
+          ],
+          "relocations": [],
           "declaration": "(IN TO DRAGON-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -30144,6 +31604,10 @@
               "line": 427,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DRAGON-ROOM"
           }
         }
       ]
@@ -30268,12 +31732,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            80
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO STONE-BRIDGE)",
           "source": {
             "file": "2dungeon.zil",
@@ -30287,6 +31756,10 @@
               "line": 563,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "STONE-BRIDGE"
           }
         },
         {
@@ -30294,6 +31767,11 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            161
+          ],
+          "relocations": [],
           "declaration": "(WEST TO GLACIER-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -30307,6 +31785,10 @@
               "line": 564,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "GLACIER-ROOM"
           }
         },
         {
@@ -30314,6 +31796,11 @@
             "name": "SE",
             "number": 25
           },
+          "byteLength": 1,
+          "bytes": [
+            144
+          ],
+          "relocations": [],
           "declaration": "(SE TO CAROUSEL-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -30327,6 +31814,10 @@
               "line": 562,
               "column": 28
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "CAROUSEL-ROOM"
           }
         },
         {
@@ -30334,6 +31825,11 @@
             "name": "CROSS",
             "number": 18
           },
+          "byteLength": 1,
+          "bytes": [
+            80
+          ],
+          "relocations": [],
           "declaration": "(CROSS TO STONE-BRIDGE)",
           "source": {
             "file": "2dungeon.zil",
@@ -30347,6 +31843,10 @@
               "line": 565,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "STONE-BRIDGE"
           }
         }
       ]
@@ -30501,7 +32001,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "GRUE",
@@ -30648,7 +32148,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DEGREE",
@@ -30807,7 +32307,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "VOLCANO-BOTTOM",
@@ -30906,12 +32406,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            15
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO LAVA-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -30925,6 +32430,10 @@
               "line": 1308,
               "column": 28
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "LAVA-ROOM"
           }
         }
       ]
@@ -31026,12 +32535,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            143
+          ],
+          "relocations": [],
           "declaration": "(WEST TO LEDGE-2)",
           "source": {
             "file": "2dungeon.zil",
@@ -31045,6 +32559,10 @@
               "line": 1346,
               "column": 25
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "LEDGE-2"
           }
         },
         {
@@ -31052,6 +32570,11 @@
             "name": "LAND",
             "number": 19
           },
+          "byteLength": 1,
+          "bytes": [
+            143
+          ],
+          "relocations": [],
           "declaration": "(LAND TO LEDGE-2)",
           "source": {
             "file": "2dungeon.zil",
@@ -31065,6 +32588,10 @@
               "line": 1345,
               "column": 25
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "LEDGE-2"
           }
         }
       ]
@@ -31228,7 +32755,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "BILLS",
@@ -31522,7 +33049,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "STAIRS",
@@ -31706,7 +33233,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "NEWSPAPER",
@@ -31871,7 +33398,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "SAFE-ROOM",
@@ -31995,12 +33522,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            143
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO LEDGE-2)",
           "source": {
             "file": "2dungeon.zil",
@@ -32014,6 +33546,10 @@
               "line": 1400,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "LEDGE-2"
           }
         }
       ]
@@ -32185,12 +33721,17 @@
           "byteLength": 8
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NE",
             "number": 27
           },
+          "byteLength": 1,
+          "bytes": [
+            21
+          ],
+          "relocations": [],
           "declaration": "(NE TO FOOT-BRIDGE)",
           "source": {
             "file": "2dungeon.zil",
@@ -32204,6 +33745,10 @@
               "line": 231,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "FOOT-BRIDGE"
           }
         },
         {
@@ -32211,6 +33756,11 @@
             "name": "SW",
             "number": 24
           },
+          "byteLength": 1,
+          "bytes": [
+            53
+          ],
+          "relocations": [],
           "declaration": "(SW TO SHALLOW-FORD)",
           "source": {
             "file": "2dungeon.zil",
@@ -32224,6 +33774,10 @@
               "line": 232,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "SHALLOW-FORD"
           }
         }
       ]
@@ -32354,12 +33908,17 @@
           "byteLength": 4
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            206
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO COBWEBBY-CORRIDOR)",
           "source": {
             "file": "2dungeon.zil",
@@ -32373,6 +33932,10 @@
               "line": 590,
               "column": 35
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "COBWEBBY-CORRIDOR"
           }
         },
         {
@@ -32380,6 +33943,11 @@
             "name": "UP",
             "number": 23
           },
+          "byteLength": 1,
+          "bytes": [
+            117
+          ],
+          "relocations": [],
           "declaration": "(UP TO VOLCANO-VIEW)",
           "source": {
             "file": "2dungeon.zil",
@@ -32393,6 +33961,10 @@
               "line": 589,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "VOLCANO-VIEW"
           }
         },
         {
@@ -32400,6 +33972,11 @@
             "name": "DOWN",
             "number": 22
           },
+          "byteLength": 1,
+          "bytes": [
+            161
+          ],
+          "relocations": [],
           "declaration": "(DOWN TO GLACIER-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -32413,6 +33990,10 @@
               "line": 588,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "GLACIER-ROOM"
           }
         }
       ]
@@ -32562,12 +34143,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "SE",
             "number": 25
           },
+          "byteLength": 1,
+          "bytes": [
+            19
+          ],
+          "relocations": [],
           "declaration": "(SE TO DIAMOND-5)",
           "source": {
             "file": "2dungeon.zil",
@@ -32581,6 +34167,10 @@
               "line": 734,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-5"
           }
         }
       ]
@@ -32753,7 +34343,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "MAGNET-ROOM",
@@ -32877,12 +34467,26 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 3,
+          "bytes": [
+            1,
+            67,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "routine",
+              "offset": 0,
+              "name": "MAGNET-ROOM-EXIT",
+              "id": 323
+            }
+          ],
           "declaration": "(NORTH PER MAGNET-ROOM-EXIT)",
           "source": {
             "file": "2dungeon.zil",
@@ -32896,6 +34500,10 @@
               "line": 1424,
               "column": 36
             }
+          },
+          "view": {
+            "kind": "FEXIT",
+            "routine": "MAGNET-ROOM-EXIT"
           }
         },
         {
@@ -32903,6 +34511,20 @@
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 3,
+          "bytes": [
+            1,
+            67,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "routine",
+              "offset": 0,
+              "name": "MAGNET-ROOM-EXIT",
+              "id": 323
+            }
+          ],
           "declaration": "(EAST PER MAGNET-ROOM-EXIT)",
           "source": {
             "file": "2dungeon.zil",
@@ -32916,6 +34538,10 @@
               "line": 1431,
               "column": 35
             }
+          },
+          "view": {
+            "kind": "FEXIT",
+            "routine": "MAGNET-ROOM-EXIT"
           }
         },
         {
@@ -32923,6 +34549,20 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 3,
+          "bytes": [
+            1,
+            67,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "routine",
+              "offset": 0,
+              "name": "MAGNET-ROOM-EXIT",
+              "id": 323
+            }
+          ],
           "declaration": "(WEST PER MAGNET-ROOM-EXIT)",
           "source": {
             "file": "2dungeon.zil",
@@ -32936,6 +34576,10 @@
               "line": 1426,
               "column": 35
             }
+          },
+          "view": {
+            "kind": "FEXIT",
+            "routine": "MAGNET-ROOM-EXIT"
           }
         },
         {
@@ -32943,6 +34587,20 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 3,
+          "bytes": [
+            1,
+            67,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "routine",
+              "offset": 0,
+              "name": "MAGNET-ROOM-EXIT",
+              "id": 323
+            }
+          ],
           "declaration": "(SOUTH PER MAGNET-ROOM-EXIT)",
           "source": {
             "file": "2dungeon.zil",
@@ -32956,6 +34614,10 @@
               "line": 1425,
               "column": 36
             }
+          },
+          "view": {
+            "kind": "FEXIT",
+            "routine": "MAGNET-ROOM-EXIT"
           }
         },
         {
@@ -32963,6 +34625,20 @@
             "name": "NE",
             "number": 27
           },
+          "byteLength": 3,
+          "bytes": [
+            1,
+            67,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "routine",
+              "offset": 0,
+              "name": "MAGNET-ROOM-EXIT",
+              "id": 323
+            }
+          ],
           "declaration": "(NE PER MAGNET-ROOM-EXIT)",
           "source": {
             "file": "2dungeon.zil",
@@ -32976,6 +34652,10 @@
               "line": 1427,
               "column": 33
             }
+          },
+          "view": {
+            "kind": "FEXIT",
+            "routine": "MAGNET-ROOM-EXIT"
           }
         },
         {
@@ -32983,6 +34663,20 @@
             "name": "NW",
             "number": 26
           },
+          "byteLength": 3,
+          "bytes": [
+            1,
+            67,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "routine",
+              "offset": 0,
+              "name": "MAGNET-ROOM-EXIT",
+              "id": 323
+            }
+          ],
           "declaration": "(NW PER MAGNET-ROOM-EXIT)",
           "source": {
             "file": "2dungeon.zil",
@@ -32996,6 +34690,10 @@
               "line": 1428,
               "column": 33
             }
+          },
+          "view": {
+            "kind": "FEXIT",
+            "routine": "MAGNET-ROOM-EXIT"
           }
         },
         {
@@ -33003,6 +34701,20 @@
             "name": "SE",
             "number": 25
           },
+          "byteLength": 3,
+          "bytes": [
+            1,
+            67,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "routine",
+              "offset": 0,
+              "name": "MAGNET-ROOM-EXIT",
+              "id": 323
+            }
+          ],
           "declaration": "(SE PER MAGNET-ROOM-EXIT)",
           "source": {
             "file": "2dungeon.zil",
@@ -33016,6 +34728,10 @@
               "line": 1430,
               "column": 33
             }
+          },
+          "view": {
+            "kind": "FEXIT",
+            "routine": "MAGNET-ROOM-EXIT"
           }
         },
         {
@@ -33023,6 +34739,20 @@
             "name": "SW",
             "number": 24
           },
+          "byteLength": 3,
+          "bytes": [
+            1,
+            67,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "routine",
+              "offset": 0,
+              "name": "MAGNET-ROOM-EXIT",
+              "id": 323
+            }
+          ],
           "declaration": "(SW PER MAGNET-ROOM-EXIT)",
           "source": {
             "file": "2dungeon.zil",
@@ -33036,6 +34766,10 @@
               "line": 1429,
               "column": 33
             }
+          },
+          "view": {
+            "kind": "FEXIT",
+            "routine": "MAGNET-ROOM-EXIT"
           }
         },
         {
@@ -33043,6 +34777,20 @@
             "name": "OUT",
             "number": 20
           },
+          "byteLength": 3,
+          "bytes": [
+            1,
+            67,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "routine",
+              "offset": 0,
+              "name": "MAGNET-ROOM-EXIT",
+              "id": 323
+            }
+          ],
           "declaration": "(OUT PER MAGNET-ROOM-EXIT)",
           "source": {
             "file": "2dungeon.zil",
@@ -33056,6 +34804,10 @@
               "line": 1432,
               "column": 34
             }
+          },
+          "view": {
+            "kind": "FEXIT",
+            "routine": "MAGNET-ROOM-EXIT"
           }
         }
       ]
@@ -33222,7 +34974,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "GROUND",
@@ -33342,7 +35094,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "TEA-ROOM",
@@ -33474,12 +35226,24 @@
           "byteLength": 4
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "Only a mouse could get in there."
+            }
+          ],
           "declaration": "(EAST \"Only a mouse could get in there.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -33493,6 +35257,10 @@
               "line": 1514,
               "column": 49
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "Only a mouse could get in there."
           }
         },
         {
@@ -33500,6 +35268,11 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            8
+          ],
+          "relocations": [],
           "declaration": "(WEST TO WELL-TOP)",
           "source": {
             "file": "2dungeon.zil",
@@ -33513,6 +35286,10 @@
               "line": 1515,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "WELL-TOP"
           }
         },
         {
@@ -33520,6 +35297,11 @@
             "name": "NW",
             "number": 26
           },
+          "byteLength": 1,
+          "bytes": [
+            187
+          ],
+          "relocations": [],
           "declaration": "(NW TO MAGNET-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -33533,6 +35315,10 @@
               "line": 1516,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "MAGNET-ROOM"
           }
         }
       ]
@@ -33668,7 +35454,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DRAGON",
@@ -33876,7 +35662,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "NOT-HERE-OBJECT",
@@ -33942,7 +35728,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "CRYPT-ANTEROOM",
@@ -34111,12 +35897,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            162
+          ],
+          "relocations": [],
           "declaration": "(WEST TO CERBERUS-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -34130,6 +35921,10 @@
               "line": 896,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "CERBERUS-ROOM"
           }
         },
         {
@@ -34137,6 +35932,15 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 5,
+          "bytes": [
+            125,
+            245,
+            0,
+            0,
+            0
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO CRYPT-ROOM IF CRYPT-DOOR IS OPEN)",
           "source": {
             "file": "2dungeon.zil",
@@ -34150,6 +35954,12 @@
               "line": 895,
               "column": 50
             }
+          },
+          "view": {
+            "kind": "DEXIT",
+            "to": "CRYPT-ROOM",
+            "door": "CRYPT-DOOR",
+            "message": null
           }
         },
         {
@@ -34157,6 +35967,15 @@
             "name": "IN",
             "number": 21
           },
+          "byteLength": 5,
+          "bytes": [
+            125,
+            245,
+            0,
+            0,
+            0
+          ],
+          "relocations": [],
           "declaration": "(IN TO CRYPT-ROOM IF CRYPT-DOOR IS OPEN)",
           "source": {
             "file": "2dungeon.zil",
@@ -34170,6 +35989,12 @@
               "line": 894,
               "column": 47
             }
+          },
+          "view": {
+            "kind": "DEXIT",
+            "to": "CRYPT-ROOM",
+            "door": "CRYPT-DOOR",
+            "message": null
           }
         }
       ]
@@ -34303,7 +36128,7 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "INTNUM",
@@ -34403,7 +36228,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "STAND-4",
@@ -34608,7 +36433,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "PURPLE-BOOK",
@@ -34868,7 +36693,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "SSWL",
@@ -35046,7 +36871,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DEPOSITORY",
@@ -35197,12 +37022,24 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "There is a curtain of light there."
+            }
+          ],
           "declaration": "(NORTH \"There is a curtain of light there.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -35216,6 +37053,10 @@
               "line": 1663,
               "column": 51
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "There is a curtain of light there."
           }
         },
         {
@@ -35223,6 +37064,20 @@
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 3,
+          "bytes": [
+            1,
+            74,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "routine",
+              "offset": 0,
+              "name": "BKLEAVEE",
+              "id": 330
+            }
+          ],
           "declaration": "(EAST PER BKLEAVEE)",
           "source": {
             "file": "2dungeon.zil",
@@ -35236,6 +37091,10 @@
               "line": 1665,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "FEXIT",
+            "routine": "BKLEAVEE"
           }
         },
         {
@@ -35243,6 +37102,20 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 3,
+          "bytes": [
+            1,
+            75,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "routine",
+              "offset": 0,
+              "name": "BKLEAVEW",
+              "id": 331
+            }
+          ],
           "declaration": "(WEST PER BKLEAVEW)",
           "source": {
             "file": "2dungeon.zil",
@@ -35256,6 +37129,10 @@
               "line": 1664,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "FEXIT",
+            "routine": "BKLEAVEW"
           }
         },
         {
@@ -35263,6 +37140,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            49
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO OFFICE)",
           "source": {
             "file": "2dungeon.zil",
@@ -35276,6 +37158,10 @@
               "line": 1666,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "OFFICE"
           }
         }
       ]
@@ -35373,12 +37259,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            248
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO DRAGON-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -35392,6 +37283,10 @@
               "line": 459,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DRAGON-ROOM"
           }
         },
         {
@@ -35399,6 +37294,11 @@
             "name": "OUT",
             "number": 20
           },
+          "byteLength": 1,
+          "bytes": [
+            248
+          ],
+          "relocations": [],
           "declaration": "(OUT TO DRAGON-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -35412,6 +37312,10 @@
               "line": 460,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DRAGON-ROOM"
           }
         }
       ]
@@ -35561,12 +37465,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            19
+          ],
+          "relocations": [],
           "declaration": "(WEST TO DIAMOND-5)",
           "source": {
             "file": "2dungeon.zil",
@@ -35580,6 +37489,10 @@
               "line": 802,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-5"
           }
         },
         {
@@ -35587,6 +37500,11 @@
             "name": "NW",
             "number": 26
           },
+          "byteLength": 1,
+          "bytes": [
+            121
+          ],
+          "relocations": [],
           "declaration": "(NW TO DIAMOND-2)",
           "source": {
             "file": "2dungeon.zil",
@@ -35600,6 +37518,10 @@
               "line": 803,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-2"
           }
         },
         {
@@ -35607,6 +37529,11 @@
             "name": "SW",
             "number": 24
           },
+          "byteLength": 1,
+          "bytes": [
+            75
+          ],
+          "relocations": [],
           "declaration": "(SW TO DIAMOND-8)",
           "source": {
             "file": "2dungeon.zil",
@@ -35620,6 +37547,10 @@
               "line": 804,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-8"
           }
         }
       ]
@@ -35794,7 +37725,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "VIEWING-WEST",
@@ -35928,12 +37859,17 @@
           "byteLength": 4
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            92
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO BANK-ENTRANCE)",
           "source": {
             "file": "2dungeon.zil",
@@ -35947,6 +37883,10 @@
               "line": 1615,
               "column": 31
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "BANK-ENTRANCE"
           }
         }
       ]
@@ -36057,7 +37997,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "COBWEBBY-CORRIDOR",
@@ -36185,12 +38125,17 @@
           "byteLength": 4
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            184
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO LAVA-TUBE)",
           "source": {
             "file": "2dungeon.zil",
@@ -36204,6 +38149,10 @@
               "line": 610,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "LAVA-TUBE"
           }
         },
         {
@@ -36211,6 +38160,11 @@
             "name": "NE",
             "number": 27
           },
+          "byteLength": 1,
+          "bytes": [
+            144
+          ],
+          "relocations": [],
           "declaration": "(NE TO CAROUSEL-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -36224,6 +38178,10 @@
               "line": 611,
               "column": 28
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "CAROUSEL-ROOM"
           }
         },
         {
@@ -36231,6 +38189,11 @@
             "name": "SW",
             "number": 24
           },
+          "byteLength": 1,
+          "bytes": [
+            28
+          ],
+          "relocations": [],
           "declaration": "(SW TO GUARDIAN-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -36244,6 +38207,10 @@
               "line": 612,
               "column": 28
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "GUARDIAN-ROOM"
           }
         },
         {
@@ -36251,6 +38218,11 @@
             "name": "UP",
             "number": 23
           },
+          "byteLength": 1,
+          "bytes": [
+            184
+          ],
+          "relocations": [],
           "declaration": "(UP TO LAVA-TUBE)",
           "source": {
             "file": "2dungeon.zil",
@@ -36264,6 +38236,10 @@
               "line": 609,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "LAVA-TUBE"
           }
         },
         {
@@ -36271,6 +38247,11 @@
             "name": "DOWN",
             "number": 22
           },
+          "byteLength": 1,
+          "bytes": [
+            28
+          ],
+          "relocations": [],
           "declaration": "(DOWN TO GUARDIAN-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -36284,6 +38265,10 @@
               "line": 613,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "GUARDIAN-ROOM"
           }
         },
         {
@@ -36291,6 +38276,11 @@
             "name": "IN",
             "number": 21
           },
+          "byteLength": 1,
+          "bytes": [
+            184
+          ],
+          "relocations": [],
           "declaration": "(IN TO LAVA-TUBE)",
           "source": {
             "file": "2dungeon.zil",
@@ -36304,6 +38294,10 @@
               "line": 608,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "LAVA-TUBE"
           }
         }
       ]
@@ -36401,12 +38395,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            144
+          ],
+          "relocations": [],
           "declaration": "(EAST TO CAROUSEL-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -36420,6 +38419,10 @@
               "line": 639,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "CAROUSEL-ROOM"
           }
         }
       ]
@@ -36581,7 +38584,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "PENTAGRAM",
@@ -36783,7 +38786,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DEAD-PALANTIR-4",
@@ -36907,7 +38910,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "SWWL",
@@ -37085,7 +39088,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "STREAM-PATH",
@@ -37215,12 +39218,17 @@
           "byteLength": 3
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            157
+          ],
+          "relocations": [],
           "declaration": "(EAST TO FORMAL-GARDEN)",
           "source": {
             "file": "2dungeon.zil",
@@ -37234,6 +39242,10 @@
               "line": 364,
               "column": 25
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "FORMAL-GARDEN"
           }
         },
         {
@@ -37241,6 +39253,14 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 4,
+          "bytes": [
+            30,
+            179,
+            0,
+            0
+          ],
+          "relocations": [],
           "declaration": "(WEST TO MARBLE-HALL IF SECRET-DOOR)",
           "source": {
             "file": "2dungeon.zil",
@@ -37254,6 +39274,12 @@
               "line": 367,
               "column": 38
             }
+          },
+          "view": {
+            "kind": "CEXIT",
+            "to": "MARBLE-HALL",
+            "global": "SECRET-DOOR",
+            "message": null
           }
         },
         {
@@ -37261,6 +39287,11 @@
             "name": "NE",
             "number": 27
           },
+          "byteLength": 1,
+          "bytes": [
+            158
+          ],
+          "relocations": [],
           "declaration": "(NE TO DARK-TUNNEL)",
           "source": {
             "file": "2dungeon.zil",
@@ -37274,6 +39305,10 @@
               "line": 365,
               "column": 21
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DARK-TUNNEL"
           }
         },
         {
@@ -37281,6 +39316,11 @@
             "name": "SW",
             "number": 24
           },
+          "byteLength": 1,
+          "bytes": [
+            144
+          ],
+          "relocations": [],
           "declaration": "(SW TO CAROUSEL-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -37294,6 +39334,10 @@
               "line": 366,
               "column": 23
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "CAROUSEL-ROOM"
           }
         },
         {
@@ -37301,6 +39345,18 @@
             "name": "DOWN",
             "number": 22
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "The ravine is extremely deep. You would never make it."
+            }
+          ],
           "declaration": "(DOWN \"The ravine is extremely deep. You would never make it.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -37314,6 +39370,10 @@
               "line": 368,
               "column": 65
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "The ravine is extremely deep. You would never make it."
           }
         }
       ]
@@ -37528,7 +39588,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "REPELLENT",
@@ -37736,7 +39796,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "SALTY-WATER",
@@ -37906,7 +39966,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DWINDOW",
@@ -38066,7 +40126,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "MOSS",
@@ -38230,7 +40290,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "TOPIARY-ROOM",
@@ -38389,12 +40449,17 @@
           "byteLength": 3
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            157
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO FORMAL-GARDEN)",
           "source": {
             "file": "2dungeon.zil",
@@ -38408,6 +40473,10 @@
               "line": 338,
               "column": 31
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "FORMAL-GARDEN"
           }
         },
         {
@@ -38415,6 +40484,11 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            144
+          ],
+          "relocations": [],
           "declaration": "(WEST TO CAROUSEL-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -38428,6 +40502,10 @@
               "line": 337,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "CAROUSEL-ROOM"
           }
         }
       ]
@@ -38624,7 +40702,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "BANK-BROCHURE",
@@ -38841,7 +40919,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "TUNNEL",
@@ -39005,7 +41083,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "GLOBAL-WIZARD-CASE",
@@ -39148,7 +41226,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "SWORD",
@@ -39394,7 +41472,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DEAD-PALANTIR-1",
@@ -39545,12 +41623,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            227
+          ],
+          "relocations": [],
           "declaration": "(WEST TO DEAD-PALANTIR-2)",
           "source": {
             "file": "2dungeon.zil",
@@ -39564,6 +41647,10 @@
               "line": 2662,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DEAD-PALANTIR-2"
           }
         }
       ]
@@ -39800,7 +41887,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DIAMOND-7",
@@ -39947,12 +42034,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NE",
             "number": 27
           },
+          "byteLength": 1,
+          "bytes": [
+            19
+          ],
+          "relocations": [],
           "declaration": "(NE TO DIAMOND-5)",
           "source": {
             "file": "2dungeon.zil",
@@ -39966,6 +42058,10 @@
               "line": 815,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-5"
           }
         }
       ]
@@ -40119,12 +42215,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            228
+          ],
+          "relocations": [],
           "declaration": "(WEST TO DEAD-PALANTIR-3)",
           "source": {
             "file": "2dungeon.zil",
@@ -40138,6 +42239,10 @@
               "line": 2671,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DEAD-PALANTIR-3"
           }
         }
       ]
@@ -40291,12 +42396,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            210
+          ],
+          "relocations": [],
           "declaration": "(WEST TO DEAD-PALANTIR-4)",
           "source": {
             "file": "2dungeon.zil",
@@ -40310,6 +42420,10 @@
               "line": 2680,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DEAD-PALANTIR-4"
           }
         }
       ]
@@ -40460,7 +42574,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "ZORK3",
@@ -40584,7 +42698,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DEEP-FORD",
@@ -40714,12 +42828,17 @@
           "byteLength": 3
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            124
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO RAVINE-LEDGE)",
           "source": {
             "file": "2dungeon.zil",
@@ -40733,6 +42852,10 @@
               "line": 395,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "RAVINE-LEDGE"
           }
         },
         {
@@ -40740,6 +42863,18 @@
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "The stream deepens rapidly, and you wisely return before drowning."
+            }
+          ],
           "declaration": "(EAST \"The stream deepens rapidly, and you wisely return before drowning.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -40753,6 +42888,10 @@
               "line": 399,
               "column": 70
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "The stream deepens rapidly, and you wisely return before drowning."
           }
         },
         {
@@ -40760,6 +42899,18 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 2,
+          "bytes": [
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 0,
+              "text": "You notice that the ledge above would be a drier route west."
+            }
+          ],
           "declaration": "(WEST \"You notice that the ledge above would be a drier route west.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -40773,6 +42924,10 @@
               "line": 401,
               "column": 64
             }
+          },
+          "view": {
+            "kind": "NEXIT",
+            "message": "You notice that the ledge above would be a drier route west."
           }
         },
         {
@@ -40780,6 +42935,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            30
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO MARBLE-HALL)",
           "source": {
             "file": "2dungeon.zil",
@@ -40793,6 +42953,10 @@
               "line": 397,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "MARBLE-HALL"
           }
         },
         {
@@ -40800,6 +42964,11 @@
             "name": "UP",
             "number": 23
           },
+          "byteLength": 1,
+          "bytes": [
+            124
+          ],
+          "relocations": [],
           "declaration": "(UP TO RAVINE-LEDGE)",
           "source": {
             "file": "2dungeon.zil",
@@ -40813,6 +42982,10 @@
               "line": 396,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "RAVINE-LEDGE"
           }
         }
       ]
@@ -41079,7 +43252,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "AQUARIUM-ROOM",
@@ -41178,12 +43351,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            94
+          ],
+          "relocations": [],
           "declaration": "(EAST TO WORKBENCH-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -41197,6 +43375,10 @@
               "line": 1193,
               "column": 31
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "WORKBENCH-ROOM"
           }
         },
         {
@@ -41204,6 +43386,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            69
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO WIZARDS-QUARTERS)",
           "source": {
             "file": "2dungeon.zil",
@@ -41217,6 +43404,10 @@
               "line": 1195,
               "column": 34
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "WIZARDS-QUARTERS"
           }
         },
         {
@@ -41224,6 +43415,11 @@
             "name": "IN",
             "number": 21
           },
+          "byteLength": 1,
+          "bytes": [
+            237
+          ],
+          "relocations": [],
           "declaration": "(IN TO IN-AQUARIUM)",
           "source": {
             "file": "2dungeon.zil",
@@ -41237,6 +43433,10 @@
               "line": 1194,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "IN-AQUARIUM"
           }
         }
       ]
@@ -41402,12 +43602,17 @@
           "byteLength": 4
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            158
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO DARK-TUNNEL)",
           "source": {
             "file": "2dungeon.zil",
@@ -41421,6 +43626,10 @@
               "line": 293,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DARK-TUNNEL"
           }
         },
         {
@@ -41428,6 +43637,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            157
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO FORMAL-GARDEN)",
           "source": {
             "file": "2dungeon.zil",
@@ -41441,6 +43655,10 @@
               "line": 294,
               "column": 31
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "FORMAL-GARDEN"
           }
         },
         {
@@ -41448,6 +43666,11 @@
             "name": "IN",
             "number": 21
           },
+          "byteLength": 1,
+          "bytes": [
+            16
+          ],
+          "relocations": [],
           "declaration": "(IN TO GAZEBO-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -41461,6 +43684,10 @@
               "line": 292,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "GAZEBO-ROOM"
           }
         }
       ]
@@ -41619,7 +43846,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "WARNING-LABEL",
@@ -41790,7 +44017,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "IN-AQUARIUM",
@@ -41914,12 +44141,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "OUT",
             "number": 20
           },
+          "byteLength": 1,
+          "bytes": [
+            233
+          ],
+          "relocations": [],
           "declaration": "(OUT TO AQUARIUM-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -41933,6 +44165,10 @@
               "line": 1242,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "AQUARIUM-ROOM"
           }
         }
       ]
@@ -42088,12 +44324,21 @@
           "byteLength": 4
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 5,
+          "bytes": [
+            38,
+            7,
+            0,
+            0,
+            0
+          ],
+          "relocations": [],
           "declaration": "(EAST TO PEARL-ROOM IF RIDDLE-DOOR IS OPEN)",
           "source": {
             "file": "2dungeon.zil",
@@ -42107,6 +44352,12 @@
               "line": 1276,
               "column": 51
             }
+          },
+          "view": {
+            "kind": "DEXIT",
+            "to": "PEARL-ROOM",
+            "door": "RIDDLE-DOOR",
+            "message": null
           }
         },
         {
@@ -42114,6 +44365,11 @@
             "name": "NW",
             "number": 26
           },
+          "byteLength": 1,
+          "bytes": [
+            144
+          ],
+          "relocations": [],
           "declaration": "(NW TO CAROUSEL-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -42127,6 +44383,10 @@
               "line": 1275,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "CAROUSEL-ROOM"
           }
         },
         {
@@ -42134,6 +44394,11 @@
             "name": "DOWN",
             "number": 22
           },
+          "byteLength": 1,
+          "bytes": [
+            144
+          ],
+          "relocations": [],
           "declaration": "(DOWN TO CAROUSEL-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -42147,6 +44412,10 @@
               "line": 1274,
               "column": 31
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "CAROUSEL-ROOM"
           }
         }
       ]
@@ -42308,7 +44577,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "STAIRWAY-TOP",
@@ -42430,12 +44699,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            159
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO MENHIR-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -42449,6 +44723,10 @@
               "line": 724,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "MENHIR-ROOM"
           }
         },
         {
@@ -42456,6 +44734,11 @@
             "name": "DOWN",
             "number": 22
           },
+          "byteLength": 1,
+          "bytes": [
+            19
+          ],
+          "relocations": [],
           "declaration": "(DOWN TO DIAMOND-5)",
           "source": {
             "file": "2dungeon.zil",
@@ -42469,6 +44752,10 @@
               "line": 723,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-5"
           }
         }
       ]
@@ -42631,7 +44918,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DIAMOND-4",
@@ -42778,12 +45065,17 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            19
+          ],
+          "relocations": [],
           "declaration": "(EAST TO DIAMOND-5)",
           "source": {
             "file": "2dungeon.zil",
@@ -42797,6 +45089,10 @@
               "line": 771,
               "column": 26
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-5"
           }
         },
         {
@@ -42804,6 +45100,11 @@
             "name": "NE",
             "number": 27
           },
+          "byteLength": 1,
+          "bytes": [
+            121
+          ],
+          "relocations": [],
           "declaration": "(NE TO DIAMOND-2)",
           "source": {
             "file": "2dungeon.zil",
@@ -42817,6 +45118,10 @@
               "line": 769,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-2"
           }
         },
         {
@@ -42824,6 +45129,11 @@
             "name": "SE",
             "number": 25
           },
+          "byteLength": 1,
+          "bytes": [
+            75
+          ],
+          "relocations": [],
           "declaration": "(SE TO DIAMOND-8)",
           "source": {
             "file": "2dungeon.zil",
@@ -42837,6 +45147,10 @@
               "line": 770,
               "column": 24
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DIAMOND-8"
           }
         }
       ]
@@ -42959,12 +45273,17 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 1,
+          "bytes": [
+            102
+          ],
+          "relocations": [],
           "declaration": "(NORTH TO VIEWING-EAST)",
           "source": {
             "file": "2dungeon.zil",
@@ -42978,6 +45297,10 @@
               "line": 1596,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "VIEWING-EAST"
           }
         },
         {
@@ -42985,6 +45308,11 @@
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            200
+          ],
+          "relocations": [],
           "declaration": "(EAST TO DEPOSITORY)",
           "source": {
             "file": "2dungeon.zil",
@@ -42998,6 +45326,10 @@
               "line": 1598,
               "column": 27
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "DEPOSITORY"
           }
         },
         {
@@ -43005,6 +45337,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            92
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO BANK-ENTRANCE)",
           "source": {
             "file": "2dungeon.zil",
@@ -43018,6 +45355,10 @@
               "line": 1597,
               "column": 31
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "BANK-ENTRANCE"
           }
         }
       ]
@@ -43229,7 +45570,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "CRYPT-DOOR",
@@ -43389,7 +45730,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "COIN",
@@ -43650,7 +45991,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "LETTER-OPENER",
@@ -43803,7 +46144,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "DRAGON-ROOM",
@@ -43925,12 +46266,26 @@
           "byteLength": 1
         }
       ],
-      "pendingExits": [
+      "exits": [
         {
           "property": {
             "name": "NORTH",
             "number": 31
           },
+          "byteLength": 4,
+          "bytes": [
+            201,
+            106,
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 2,
+              "text": "The dragon hisses at you and blocks your way."
+            }
+          ],
           "declaration": "(NORTH TO DRAGON-LAIR IF ICE-MELTED ELSE \"The dragon hisses at you and blocks your way.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -43944,6 +46299,12 @@
               "line": 444,
               "column": 69
             }
+          },
+          "view": {
+            "kind": "CEXIT",
+            "to": "DRAGON-LAIR",
+            "global": "ICE-MELTED",
+            "message": "The dragon hisses at you and blocks your way."
           }
         },
         {
@@ -43951,6 +46312,11 @@
             "name": "EAST",
             "number": 30
           },
+          "byteLength": 1,
+          "bytes": [
+            171
+          ],
+          "relocations": [],
           "declaration": "(EAST TO LEDGE-TUNNEL)",
           "source": {
             "file": "2dungeon.zil",
@@ -43964,6 +46330,10 @@
               "line": 442,
               "column": 29
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "LEDGE-TUNNEL"
           }
         },
         {
@@ -43971,6 +46341,11 @@
             "name": "WEST",
             "number": 29
           },
+          "byteLength": 1,
+          "bytes": [
+            141
+          ],
+          "relocations": [],
           "declaration": "(WEST TO FRESCO-ROOM)",
           "source": {
             "file": "2dungeon.zil",
@@ -43984,6 +46359,10 @@
               "line": 447,
               "column": 28
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "FRESCO-ROOM"
           }
         },
         {
@@ -43991,6 +46370,11 @@
             "name": "SOUTH",
             "number": 28
           },
+          "byteLength": 1,
+          "bytes": [
+            80
+          ],
+          "relocations": [],
           "declaration": "(SOUTH TO STONE-BRIDGE)",
           "source": {
             "file": "2dungeon.zil",
@@ -44004,6 +46388,10 @@
               "line": 448,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "STONE-BRIDGE"
           }
         },
         {
@@ -44011,6 +46399,20 @@
             "name": "IN",
             "number": 21
           },
+          "byteLength": 4,
+          "bytes": [
+            201,
+            106,
+            0,
+            0
+          ],
+          "relocations": [
+            {
+              "kind": "string",
+              "offset": 2,
+              "text": "The dragon hisses at you and blocks your way."
+            }
+          ],
           "declaration": "(IN TO DRAGON-LAIR IF ICE-MELTED ELSE \"The dragon hisses at you and blocks your way.\")",
           "source": {
             "file": "2dungeon.zil",
@@ -44024,6 +46426,12 @@
               "line": 446,
               "column": 76
             }
+          },
+          "view": {
+            "kind": "CEXIT",
+            "to": "DRAGON-LAIR",
+            "global": "ICE-MELTED",
+            "message": "The dragon hisses at you and blocks your way."
           }
         },
         {
@@ -44031,6 +46439,11 @@
             "name": "CROSS",
             "number": 18
           },
+          "byteLength": 1,
+          "bytes": [
+            80
+          ],
+          "relocations": [],
           "declaration": "(CROSS TO STONE-BRIDGE)",
           "source": {
             "file": "2dungeon.zil",
@@ -44044,6 +46457,10 @@
               "line": 449,
               "column": 30
             }
+          },
+          "view": {
+            "kind": "UEXIT",
+            "to": "STONE-BRIDGE"
           }
         }
       ]
@@ -44127,7 +46544,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "AQUARIUM",
@@ -44331,7 +46748,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     },
     {
       "name": "PTABLE",
@@ -44496,7 +46913,7 @@
           "byteLength": 2
         }
       ],
-      "pendingExits": []
+      "exits": []
     }
   ]
 }

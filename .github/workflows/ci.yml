@@ -18,6 +18,10 @@ jobs:
       - run: npm run semantics:check
       - run: npm run symbols:check
       - run: npm run world:check
+      - run: npm run vocabulary:check
+      - run: npm run logic:check
+      - run: npm run operations:check
+      - run: npm run memory:check
       - run: npx --yes --package=. zxr check reference/zork2
       - run: npm run reference:check
       - run: npm run reference:audit -- --check

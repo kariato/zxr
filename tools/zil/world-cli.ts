@@ -6,5 +6,5 @@ try {
   const artifacts=[['games/zork2/world.zxr.json',world],['reference/world-audit.json',audit]] as const;
   if(mode==='record')mkdirSync('games/zork2',{recursive:true});
   for(const [path,data] of artifacts){const text=JSON.stringify(data,null,2)+'\n';if(mode==='record')writeFileSync(path,text);else if(readFileSync(path,'utf8')!==text)throw new Error(`${path} differs; review the source and world audit before running world:record.`);}
-  console.log(`World metadata: ${world.counts.rooms} rooms, ${world.counts.objects} objects; ${audit.checked.metadataProperties} properties and ${audit.checked.shortNames} short names match assembly and binary. ${world.counts.pendingExits} exits await encoding.`);
+  console.log(`World metadata: ${world.counts.rooms} rooms, ${world.counts.objects} objects; ${audit.checked.metadataProperties} properties and ${audit.checked.shortNames} short names match assembly and binary. ${audit.checked.exitProperties} exit properties match assembly and binary after reference relocation.`);
 } catch(error){console.error(error instanceof Error?error.message:String(error));process.exitCode=1;}

@@ -50,6 +50,14 @@
   ],
   "normalizations": [
     {
+      "rule": "SRC-011",
+      "global": "INDENTS",
+      "sourceHash": "3d4d6ac54dd1899cb29d8488dbc56c159c59b3e0867a6e555cbc654859984bd9",
+      "file": "gverbs.zil",
+      "line": 2061,
+      "reason": "The assembly aliases the first empty-string initializer to the following two-space string. Preserve the binary table rather than applying this alias to general empty strings."
+    },
+    {
       "rule": "SRC-006",
       "routine": "DREARY-ROOM-FCN",
       "sourceHash": "b73329ca559f98ba836e92d954bfb18131e21e73122e79eeec6b4d9dababa6bf",

@@ -1,6 +1,7 @@
 import type { Node, Sequence, Span } from './ast.ts';
 import { atomName, head } from './ast.ts';
-import { print } from './printer.ts';
+import { encodeExit, decodeExit, deriveExitGraph } from './exits.ts';
+import type { WorldExit } from './exits.ts';
 import { ZilError } from './diagnostics.ts';
 import { decodeZilText } from './text.ts';
 import type { SymbolAnalysis, SymbolDefinition, SymbolKind } from './symbols.ts';
@@ -18,21 +19,20 @@ export type WorldProperty =
   | PropertyBase & {kind:'adjectives';adjectives:NamedNumber[]}
   | PropertyBase & {kind:'objects';objects:EntityReference[]}
   | PropertyBase & {kind:'pseudos';entries:{word:WordReference;routine:RoutineReference}[]};
-export interface PendingExit { property:NamedNumber; declaration:string; source:Span }
 export interface WorldEntity {
   name:string;id:number;kind:'room'|'object';source:Span;
   parent:EntityReference|null;parentSource:Span|null;
   shortName:{text:string;source:Span|null};flags:NamedNumber[];flagsSource:Span|null;
-  properties:WorldProperty[];pendingExits:PendingExit[];
+  properties:WorldProperty[];exits:WorldExit[];
 }
 export interface WorldMetadata {
   format:'zxr-world-v1';semantics:'zxr-zork2-semantics-v1';stage:'metadata';
-  counts:{rooms:number;objects:number;properties:number;pendingExits:number};
+  counts:{rooms:number;objects:number;properties:number;exits:number};
   propertyDefaults:{number:number;name:string|null;value:number;source:Span|null}[];
   entities:WorldEntity[];
 }
 
-/** Source-driven declaration lowering. Exit bytes, tables and runtime memory are later stages. */
+/** Source-driven declaration lowering. Exit payloads are relocatable; tables and runtime memory are later stages. */
 export function compileWorldMetadata(forms:readonly Node[],analysis:SymbolAnalysis):WorldMetadata {
   if(analysis.diagnostics.length){const d=analysis.diagnostics[0]!;throw new ZilError(d.code,d.message,d.span);}
   const symbols=new Map(analysis.symbols.map(s=>[s.name,s]));
@@ -66,7 +66,7 @@ export function compileWorldMetadata(forms:readonly Node[],analysis:SymbolAnalys
     }
     if(!['ROOM','OBJECT'].includes(head(node) ?? ''))continue;
     const f=node as Sequence,ref=entity(f.items[1]!);
-    const e:WorldEntity={...ref,kind:head(node)==='ROOM'?'room':'object',source:node.span,parent:null,parentSource:null,shortName:{text:'',source:null},flags:[],flagsSource:null,properties:[],pendingExits:[]};
+    const e:WorldEntity={...ref,kind:head(node)==='ROOM'?'room':'object',source:node.span,parent:null,parentSource:null,shortName:{text:'',source:null},flags:[],flagsSource:null,properties:[],exits:[]};
     const seen=new Set<string>();
     for(const n of f.items.slice(2)){
       if(n.kind!=='list'||!n.items.length)return fail('Expected a nonempty object property list',n);
@@ -80,7 +80,7 @@ export function compileWorldMetadata(forms:readonly Node[],analysis:SymbolAnalys
       }
       const p=property(n.items[0]!);
       if(p.number >= (symbols.get('LOW-DIRECTION')?.number ?? 32)){
-        e.pendingExits.push({property:p,declaration:print(n),source:n.span});continue;
+        const encoded=encodeExit(n,analysis);e.exits.push({...encoded,view:decodeExit(encoded,analysis)});continue;
       }
       const base={property:p,source:n.span};let value:WorldProperty;
       if(['LDESC','FDESC','TEXT'].includes(key)){arity(1);value={...base,kind:'text',text:text(args[0]!),byteLength:2};}
@@ -98,7 +98,7 @@ export function compileWorldMetadata(forms:readonly Node[],analysis:SymbolAnalys
       if(value.byteLength<1||value.byteLength>8)return fail(`${key} exceeds the V3 property size (1..8 bytes): ${value.byteLength}`,n);
       e.properties.push(value);
     }
-    e.properties.sort((a,b)=>b.property.number-a.property.number);e.pendingExits.sort((a,b)=>b.property.number-a.property.number);entities.push(e);
+    e.properties.sort((a,b)=>b.property.number-a.property.number);e.exits.sort((a,b)=>b.property.number-a.property.number);entities.push(e);
   }
   entities.sort((a,b)=>a.id-b.id);
   const byName=new Map(entities.map(e=>[e.name,e]));
@@ -109,7 +109,8 @@ export function compileWorldMetadata(forms:readonly Node[],analysis:SymbolAnalys
       const target=byName.get(current.parent.name);if(!target||target.id!==current.parent.id)return fail(`Missing initial parent ${current.parent.name}`,current.parentSource ?? current.source);current=target;
     }
   }
+  deriveExitGraph(entities,analysis);
   return {format:'zxr-world-v1',semantics:'zxr-zork2-semantics-v1',stage:'metadata',
-    counts:{rooms:entities.filter(e=>e.kind==='room').length,objects:entities.filter(e=>e.kind==='object').length,properties:entities.reduce((n,e)=>n+e.properties.length,0),pendingExits:entities.reduce((n,e)=>n+e.pendingExits.length,0)},
+    counts:{rooms:entities.filter(e=>e.kind==='room').length,objects:entities.filter(e=>e.kind==='object').length,properties:entities.reduce((n,e)=>n+e.properties.length,0),exits:entities.reduce((n,e)=>n+e.exits.length,0)},
     propertyDefaults:[...defaults.values()],entities};
 }

@@ -1,11 +1,20 @@
 import { readFileSync } from 'node:fs';
 import { atomName, head, print, ZilError } from '../../src/zil/index.ts';
 import type { Node, Sequence } from '../../src/zil/index.ts';
-import { sha256 } from '../reference/symbols.ts';
+import { sha256, STORY, STORY_SHA256 } from '../reference/symbols.ts';
 
 export function normalizeReferenceProgram(forms:readonly Node[]) {
-  const normalizations:{rule:string;routine:string;sourceHash:string;file:string;line:number;reason:string}[]=[];
+  const normalizations:{rule:string;routine?:string;global?:string;sourceHash:string;file:string;line:number;reason:string}[]=[];
   const normalized=forms.map(node=>{
+    if(head(node)==='GLOBAL'&&atomName((node as Sequence).items[1])==='INDENTS'){
+      const sourceHash=sha256(print(node));
+      if(sourceHash!=='3d4d6ac54dd1899cb29d8488dbc56c159c59b3e0867a6e555cbc654859984bd9')throw new ZilError('ZIL005','SRC-011 normalization requires the audited INDENTS source; review changed initializers',node.span);
+      const assembly=readFileSync('reference/zork2/zork2dat.zap','utf8'),strings=readFileSync('reference/zork2/zork2str.zap','utf8');
+      if(!assembly.includes('.GVAR INDENTS=T?20,TABLE')||!assembly.includes('T?20::\t.TABLE\n\tSTR?183\n\tSTR?183\n')||!strings.includes('.GSTR STR?183,"  "')||sha256(readFileSync(STORY))!==STORY_SHA256)throw new Error('SRC-011 assembly/binary evidence changed');
+      const f=node as Sequence,table=f.items[2] as Sequence,empty=table.items[2]!;
+      normalizations.push({rule:'SRC-011',global:'INDENTS',sourceHash,file:empty.span.file,line:empty.span.start.line,reason:'The assembly aliases the first empty-string initializer to the following two-space string. Preserve the binary table rather than applying this alias to general empty strings.'});
+      return {...f,items:[...f.items.slice(0,2),{...table,items:table.items.map((n,i)=>i===2?{...n,kind:'string' as const,value:'  ',semantic:{kind:'reference-normalization:SRC-011',values:[empty]}}:n)}]};
+    }
     if(head(node)!=='ROUTINE'||atomName((node as Sequence).items[1])!=='DREARY-ROOM-FCN')return node;
     const sourceHash=sha256(print(node));
     if(sourceHash!=='b73329ca559f98ba836e92d954bfb18131e21e73122e79eeec6b4d9dababa6bf')

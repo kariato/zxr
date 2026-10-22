@@ -7,5 +7,5 @@ try {
   const text=JSON.stringify(manifest,null,2)+'\n',path='reference/symbol-table.json';
   if(mode==='record')writeFileSync(path,text);
   else if(readFileSync(path,'utf8')!==text)throw new Error(`${path} differs; review numbering, references and source before running symbols:record.`);
-  console.log(`Symbol audit: ${manifest.counts.references} references; 439 routines; 251 rooms/objects; 168 globals; 689 dictionary entries; zero unresolved names. One guarded source normalization (SRC-006).`);
+  console.log(`Symbol audit: ${manifest.counts.references} references; 439 routines; 251 rooms/objects; 168 globals; 689 dictionary entries; zero unresolved names. ${manifest.normalizations.length} guarded source normalizations (${manifest.normalizations.map(n=>n.rule).join(', ')}).`);
 } catch(error){console.error(error instanceof Error?error.message:String(error));process.exitCode=1;}

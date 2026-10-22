@@ -1,0 +1,5373 @@
+{
+  "format": "zxr-strings-v1",
+  "entries": [
+    {
+      "id": 1,
+      "text": "You are inside an ancient barrow hidden deep within a dark forest. The barrow opens into a narrow tunnel at its southern end. You can see a faint glow at the far end."
+    },
+    {
+      "id": 2,
+      "text": "You may not recall, but when you entered, the door of the barrow shut behind you. There is no way out."
+    },
+    {
+      "id": 3,
+      "text": "You are standing at the southern end of a narrow tunnel where it opens into a wide cavern. The cavern is dimly illuminated by phosphorescent mosses clinging to its high ceiling. A deep ravine winds through the cavern, with a small stream at the bottom. The walls of the ravine are steep and crumbly. A foot bridge crosses the ravine to the south."
+    },
+    {
+      "id": 4,
+      "text": "As you start down, you slip on the crumbling rocks and pull back, narrowly averting a fatal fall."
+    },
+    {
+      "id": 5,
+      "text": "You are standing on a crude but sturdy wooden foot bridge crossing a deep ravine. The path runs north and south from here."
+    },
+    {
+      "id": 6,
+      "text": "The drop would be fatal."
+    },
+    {
+      "id": 7,
+      "text": "You'll have to specify a direction."
+    },
+    {
+      "id": 8,
+      "text": "This is the center of the great cavern, carved out of the limestone. Stalactites and stalagmites of many sizes are everywhere. The room glows with dim light provided by phosphorescent moss, and weird shadows move all around you. A narrow path winds southwest among the stalagmites, and another leads northeast."
+    },
+    {
+      "id": 9,
+      "text": "You are at the southern edge of a great cavern. To the south across a shallow ford is a dark tunnel which looks like it was once enlarged and smoothed. To the north a narrow path winds among stalagmites. Dim light illuminates the cavern."
+    },
+    {
+      "id": 10,
+      "text": "This is a dark tunnel with dim light to the northeast. The tunnel is smooth but dusty and filled with twigs and leaves, debris which becomes deeper as the tunnel branches into a wide corridor leading southwest and a narrower one leading southeast."
+    },
+    {
+      "id": 11,
+      "text": "There is a beautiful unicorn here cropping grass."
+    },
+    {
+      "id": 12,
+      "text": "This is the northern end of a formal garden. Hedges hide the cavern walls, and if you don't look up, the illusion is of a cloudy day outside. The light comes from a large growth of glowing mosses on the roof of the cave. A break in the hedge is almost overgrown to the north. A carefully manicured path leads south. In the center of a rosebed is a small open structure, painted white. It appears to be a gazebo."
+    },
+    {
+      "id": 13,
+      "text": "This is a gazebo in the midst of a formal garden. It is cool and restful here. A tea table adorns the center of the gazebo."
+    },
+    {
+      "id": 14,
+      "text": "This is the middle part of a formal garden. Hedges hide the cavern walls and a dim illumination comes from mosses far above. The path is of small crushed white stones. It winds among bushes and flower beds from south to north. To the north a small structure can be seen. To the south are peculiarly shaped bushes. There is a small gap in the hedges to the west."
+    },
+    {
+      "id": 15,
+      "text": "This is the southern end of a formal garden. Hedges hide the cavern walls and mosses provide dim illumination. Fantastically shaped hedges and bushes are arrayed with geometric precision. They have not recently been clipped, but you can discern creatures in the shapes of the bushes: There is a dragon, a unicorn, a great serpent, a huge misshapen dog, and several human figures. On the west side of the garden the path leads through a rose arbor into a tunnel."
+    },
+    {
+      "id": 16,
+      "text": "The hedges are shaped like various animals: dogs, serpents, dragons, and the like, and they are vaguely troubling to look at."
+    },
+    {
+      "id": 17,
+      "text": "The path follows the south edge of a deep ravine and heads northeast. A tunnel heads southwest, narrowing to a rather tight crawl. A faint whirring sound can be heard in that direction. On the east is a ruined archway choked with vegetation."
+    },
+    {
+      "id": 18,
+      "text": "The ravine is extremely deep. You would never make it."
+    },
+    {
+      "id": 19,
+      "text": "This is an arched hall of fine marble. The hall stops abruptly to the north at a ford across a stream, where the marble is cracked and broken. Perhaps a flood or collapse of the cave was responsible. To the south the hall opens into a large room. There is rather annoying whirring sound coming from that room."
+    },
+    {
+      "id": 20,
+      "text": "That's a wall there."
+    },
+    {
+      "id": 21,
+      "text": "You are fording the stream at a deep but not impossible spot. The water is very cold. The walls of the ravine rise to east and west. There is a small ledge along the north wall of the ravine. To the south is the entrance to a well-constructed but somewhat ruined hall."
+    },
+    {
+      "id": 22,
+      "text": "The stream deepens rapidly, and you wisely return before drowning."
+    },
+    {
+      "id": 23,
+      "text": "You notice that the ledge above would be a drier route west."
+    },
+    {
+      "id": 24,
+      "text": "You are on a narrow ledge near the bottom of a deep ravine. The ledge continues to the west. A precarious climb up to another tiny ledge is possible. A short scramble down the rock face leads to a stream."
+    },
+    {
+      "id": 25,
+      "text": "A ledge from the east ends here, and a tunnel leads north into the wall. There is a rather odd smokey odor in the warm air of the tunnel."
+    },
+    {
+      "id": 26,
+      "text": "There are a lot of sharp rocks down there."
+    },
+    {
+      "id": 27,
+      "text": "The room is a large cavern full of broken stone. The walls are scorched and there are deep scratches on the floor. A sooty dry smell is very strong here. A paved path winds from a large passage to the west, through the room, and across a huge stone bridge to the south. To the east a small crack is visible. A dark and smokey tunnel leads north."
+    },
+    {
+      "id": 28,
+      "text": "The dragon hisses at you and blocks your way."
+    },
+    {
+      "id": 29,
+      "text": "You are in the dragon's lair, where the rock walls are scarred by flame. A blackened doorway leads to the south."
+    },
+    {
+      "id": 30,
+      "text": "A rotten old wooden chest is in one corner among the debris."
+    },
+    {
+      "id": 31,
+      "text": "Nestled in the chest is a wrought gold statuette of a dragon."
+    },
+    {
+      "id": 32,
+      "text": "A huge red dragon is lying on the rocks here, watching."
+    },
+    {
+      "id": 33,
+      "text": "A huge red dragon is lying here, blocking the entrance to a tunnel leading north. Smoke curls from his nostrils and out between his teeth."
+    },
+    {
+      "id": 34,
+      "text": "A huge dead dragon is lying half blocking the stream."
+    },
+    {
+      "id": 35,
+      "text": "A beautiful young woman, wearing a dirty and bedraggled gown, sits on a rock in the corner. Her hair is unkempt and she is oblivious to your presence, almost in a trance."
+    },
+    {
+      "id": 36,
+      "text": "A path leads east-west through a room decorated with beautiful frescoes of someone battling dragons and rescuing fair maidens. It is hard to tell who is doing this as those parts of the frescoes have been blackened and cracked by intense heat."
+    },
+    {
+      "id": 37,
+      "text": "This is the middle of a ruined but still impressive stone bridge spanning a deep chasm. Water flows far beneath. A paved path leads north into a large open space. To the south, the path leads into a misty tunnel."
+    },
+    {
+      "id": 38,
+      "text": "It's a long way down."
+    },
+    {
+      "id": 39,
+      "text": "The room is cool and damp. The air is misty. A twisty path from the southeast splits here toward a wide northerly stone bridge, and a narrow westerly tunnel. It is from the latter that the mist and chill seem to originate."
+    },
+    {
+      "id": 40,
+      "text": " "
+    },
+    {
+      "id": 41,
+      "text": "You don't even have an ice-pick."
+    },
+    {
+      "id": 42,
+      "text": "You are in a tight chimney of solidified lava. It extends up at least another hundred feet and down to a large room far below. A large crack opens to the south, probably the result of a shift in the rock strata."
+    },
+    {
+      "id": 43,
+      "text": "A winding corridor is filled with cobwebs. Some are broken and the dust on the floor is disturbed. The trend of the twists and turns is northeast to southwest. On the north side of one twist, high up, is a narrow crack."
+    },
+    {
+      "id": 44,
+      "text": "The crack is fairly wide. You should be able to get into it."
+    },
+    {
+      "id": 45,
+      "text": "This is a small chamber carved out of the rock at the end of a short crawl. On the wall is crudely chiseled the number \"8\"."
+    },
+    {
+      "id": 46,
+      "text": "You are trying to walk through an enormous rock."
+    },
+    {
+      "id": 47,
+      "text": "It's not here."
+    },
+    {
+      "id": 48,
+      "text": "This room looks like it was once a kennel for a very large dog (some of the bones would fit a dinosaur). It apparently hasn't been used for a long time, as the dust is fairly thick all over. The only exit is northeast."
+    },
+    {
+      "id": 49,
+      "text": "A gigantic dog collar, large enough for three rhinoceros-sized dogs, is lying amidst the debris."
+    },
+    {
+      "id": 50,
+      "text": "A long wooden club lies on the ground near the diamond-shaped window. The club is curiously burned at the thick end."
+    },
+    {
+      "id": 51,
+      "text": "The words \"Babe Flathead\" are burned into the wood."
+    },
+    {
+      "id": 52,
+      "text": "A marble stairway leads down into the gloom and a passage leads north."
+    },
+    {
+      "id": 53,
+      "text": "A small room with oddly angled walls and passages in all directions."
+    },
+    {
+      "id": 54,
+      "text": "This is the entrance to a huge crypt or tomb. A marble stairway leads up from a gateway arch."
+    },
+    {
+      "id": 55,
+      "text": "The huge dog snaps nastily at you."
+    },
+    {
+      "id": 56,
+      "text": "He's not here."
+    },
+    {
+      "id": 57,
+      "text": "There is a vicious-looking dog guarding the entrance. It is more or less your usual dog, except that it has three heads and is the size of an elephant."
+    },
+    {
+      "id": 58,
+      "text": "\"Here lie the Flatheads, whose heads were placed on poles by the Keeper of the Dungeon for amazing untastefulness.\""
+    },
+    {
+      "id": 59,
+      "text": "This is the workshop of the Wizard of Frobozz."
+    },
+    {
+      "id": 60,
+      "text": "This room is the Wizard's workroom. A hall continues east and west, and a larger room lies to the south. There are many shelves and racks on the walls, but the Wizard's workbench dominates the room. It is made of dark, heavy wood bound with iron. The workbench is stained from many years of use, and is deeply gouged as though some huge clawed animal was imprisoned on it. There are burn marks and even notes written in a crabbed hand. Many arcane items are scattered about the bench; alembics, mortar and pestle, small knives of various sizes, odd scraps of vellum, wax candles, and much more. In the center of a relatively clear area of the bench are affixed three stands - ruby, sapphire, and diamond - which form a triangle."
+    },
+    {
+      "id": 61,
+      "text": "There is a strange black sphere here."
+    },
+    {
+      "id": 62,
+      "text": "This is the Wizard's trophy room, filled with memorabilia of various sorts. On one wall is the Wizard's D. T. (Doctor of Thaumaturgy) degree from GUE Tech. Several old magic wands are mounted on a wand rack. A collection of dull and nicked swords testify to the fate of many foolhardy adventurers. Small bottles contain discarded homunculi (a few preserved in alcohol). There is a stuffed owl on a perch."
+    },
+    {
+      "id": 63,
+      "text": "The text is in some obscure tongue. All that can be made out is a reference to \"sending in a matchbook cover.\""
+    },
+    {
+      "id": 64,
+      "text": "A hand-lettered label is affixed to the wall."
+    },
+    {
+      "id": 65,
+      "text": "Warning!\n\nThe exhibits in this room are the property of the mighty Wizard of Frobozz (me), and are the fruits of diligent labor and study over many years. He who touches anything will regret it.\n\n(signed)\nFrobozz\n"
+    },
+    {
+      "id": 66,
+      "text": "Imbedded in the wall is an ornate trophy cabinet."
+    },
+    {
+      "id": 67,
+      "text": "Shards of a smashed trophy case litter the room."
+    },
+    {
+      "id": 68,
+      "text": "In this room, inscribed on the floor, is a great pentagram drawn with black chalk. In its center is a black circle."
+    },
+    {
+      "id": 69,
+      "text": "Here a dark hallway turns a corner. To the south is a dark room, to the east is fitful light."
+    },
+    {
+      "id": 70,
+      "text": "Filling the northern half of the room is a huge aquarium."
+    },
+    {
+      "id": 71,
+      "text": "There is a clear crystal sphere lying in the sand."
+    },
+    {
+      "id": 72,
+      "text": "There is a baby sea serpent swimming in the aquarium."
+    },
+    {
+      "id": 73,
+      "text": "There is a dead sea serpent in a heap here."
+    },
+    {
+      "id": 74,
+      "text": "The floor here seems to be made of sand, but it is hard to see anything else."
+    },
+    {
+      "id": 75,
+      "text": "This is a former broom closet. The exits are to the east and west."
+    },
+    {
+      "id": 76,
+      "text": "You are at the bottom of a large dormant volcano. High above you light enters from the cone of the volcano. The only exit is to the north."
+    },
+    {
+      "id": 77,
+      "text": "You are about one hundred feet above the bottom of the volcano. The top of the volcano is clearly visible here."
+    },
+    {
+      "id": 78,
+      "text": "You are about two hundred feet above the volcano floor. Looming above is the rim of the volcano. There is a small ledge on the west side."
+    },
+    {
+      "id": 79,
+      "text": "You are high above the floor of the volcano. The rim of the volcano looks very narrow and you are very near it. To the east is what appears to be a viewing ledge, too thin to land on."
+    },
+    {
+      "id": 80,
+      "text": "You are near the rim of the volcano. Above you it is open to the sky. To the west, there is a place to land on a wide ledge."
+    },
+    {
+      "id": 81,
+      "text": "You are on a narrow ledge within an old dormant volcano. This ledge is about halfway between the floor below and the rim above. There is an exit to the south."
+    },
+    {
+      "id": 82,
+      "text": "I wouldn't jump from here."
+    },
+    {
+      "id": 83,
+      "text": "This must have been a large library, probably for the royal family. All of the shelves have been gnawed to pieces by unfriendly gnomes. To the north is an exit."
+    },
+    {
+      "id": 84,
+      "text": "You are on a ledge in the middle of a large volcano. Below you the volcano bottom can be seen and above is the rim of the volcano. A couple of ledges can be seen on the other side of the volcano; it appears that this ledge is intermediate in elevation between those on the other side. The exit from this room is to the east."
+    },
+    {
+      "id": 85,
+      "text": "I wouldn't try that."
+    },
+    {
+      "id": 86,
+      "text": "It is impossible to cross this distance."
+    },
+    {
+      "id": 87,
+      "text": "This is a small room, whose walls are formed by an old lava flow. There are exits here to the east and the south."
+    },
+    {
+      "id": 88,
+      "text": "This is a large room full of assorted heavy machinery, whirring noisily. The room smells of burned resistors. Along one wall are three buttons which are, respectively, round, triangular, and square. Naturally, above these buttons are instructions written in EBCDIC. A large sign in English above all the buttons says\n       \"DANGER -- HIGH VOLTAGE\"\nThere are exits to the west and the south."
+    },
+    {
+      "id": 89,
+      "text": "This is a dingy closet adjacent to a larger room to the north. Chiselled into a wall are these words:\n\n     Protected by\n       FROBOZZ\n Magic Alarm Company\n  (Hello, footpad!)\n\nThere doesn't seem to be any footpad here, however."
+    },
+    {
+      "id": 90,
+      "text": "You are trapped inside a solid steel cage."
+    },
+    {
+      "id": 91,
+      "text": "You are at the top of the well. Well done. There are etchings on the side of the well. There is a small crack across the floor at the entrance to a room on the east, but it can be crossed easily."
+    },
+    {
+      "id": 92,
+      "text": "It's a long way down!"
+    },
+    {
+      "id": 93,
+      "text": "It is a small crack (as advertised) with no redeeming value."
+    },
+    {
+      "id": 94,
+      "text": "This is a damp circular room, whose walls are made of brick and mortar. The roof of this room is not visible, but there appear to be some etchings on the walls. There is a passageway to the west."
+    },
+    {
+      "id": 95,
+      "text": "The walls cannot be climbed."
+    },
+    {
+      "id": 96,
+      "text": "This is a small room containing a large oblong table, no doubt set for afternoon tea. It is clear from the objects on the table that the users were indeed mad. In the eastern corner of the room is a small hole (no more than four inches high). There are passageways leading away to the west and the northwest."
+    },
+    {
+      "id": 97,
+      "text": "Only a mouse could get in there."
+    },
+    {
+      "id": 98,
+      "text": "The hole is very small. You could never enter it."
+    },
+    {
+      "id": 99,
+      "text": "You can't see what's beyond the hole from here."
+    },
+    {
+      "id": 100,
+      "text": "It doesn't fit through the hole."
+    },
+    {
+      "id": 101,
+      "text": "This is an enormous room, in the center of which are four wooden posts delineating a rectangular area, above which is what appears to be a wooden roof. In fact, all objects in this room appear to be abnormally large. To the east is a passageway. There are large gaping chasms to the west and northwest."
+    },
+    {
+      "id": 102,
+      "text": "A great chasm blocks your way."
+    },
+    {
+      "id": 103,
+      "text": "This is a large room, one half of which is depressed. Salty water flows from a large leak in the ceiling. The only exit is to the west."
+    },
+    {
+      "id": 104,
+      "text": "This is the entrance hall of the Bank of Zork, the largest banking institution of the Great Underground Empire. A partial account of its history is in \"The Lives of the Twelve Flatheads,\" in the chapter on J. Pierpont Flathead. A more detailed history (albeit less objective) may be found in Flathead's outrageous autobiography \"I'm Rich and You Aren't - So There!\". Most of the furniture has been ravaged by passing scavengers. All that remains are two signs at the northwest and northeast corners of the room, which say:\n\n    <--  VIEWING ROOMS  -->\n\nThe way out (ornate but tasteful) is to the east. "
+    },
+    {
+      "id": 105,
+      "text": "This room was used by holders of safety deposit boxes to view their contents. On the north side of the room is a sign which says:\n\n\"Remain here while the teller retrieves your safety deposit box. When you are finished, leave the box, and exit to the south. Safety deposit boxes cannot be removed from this room!\n\nThank You for Banking at the Zork!\" "
+    },
+    {
+      "id": 106,
+      "text": "This room was used by holders of safety deposit boxes to view their contents. On the north side of the room is a sign which says\n\n\"Remain here while the teller retrieves your safety deposit box. When you are finished, leave the box, and exit to the south. Safety deposit boxes cannot be removed from this room!\n\nThank You for Banking at the Zork!\" "
+    },
+    {
+      "id": 107,
+      "text": "This is a small, bare room with no distinguishing features. There are no exits from this room."
+    },
+    {
+      "id": 108,
+      "text": "This is the Vault of the Bank of Zork, in which there are no doors."
+    },
+    {
+      "id": 109,
+      "text": "This is a large rectangular room. The east and west walls were used for storing safety deposit boxes, but all have been carefully removed by evil persons. To the east, west, and south of the room are large doorways. The northern \"wall\" of the room is a shimmering curtain of light. In the center of the room is a large stone cube, about 10 feet on a side. Engraved on the side of the cube is some lettering."
+    },
+    {
+      "id": 110,
+      "text": "There is a curtain of light there."
+    },
+    {
+      "id": 111,
+      "text": "This room was the office of the Chairman of the Bank of Zork. Like the other rooms here, it has been extensively vandalized. The lone exit is to the north."
+    },
+    {
+      "id": 112,
+      "text": "There is a matchbook saying \"Visit ZORK I\" here."
+    },
+    {
+      "id": 113,
+      "text": "\">> Visit Exotic ZORK I <<\n\nConsult the Frobozz Magic Travel Agency, or visit your local computer store for more details.\""
+    },
+    {
+      "id": 114,
+      "text": "There is a nervous Volcano Gnome here."
+    },
+    {
+      "id": 115,
+      "text": "There is a blue label here."
+    },
+    {
+      "id": 116,
+      "text": " !! FROBOZZ MAGIC BALLOON COMPANY !!\n\nHello, Aviator!\n\nTo land your balloon, say LAND\nOtherwise, you're on your own!\n\nNo warranty expressed or implied."
+    },
+    {
+      "id": 117,
+      "text": "There is a square brick here which feels like clay."
+    },
+    {
+      "id": 118,
+      "text": "The room is cluttered with debris from an explosion. The walls seem ready to collapse."
+    },
+    {
+      "id": 119,
+      "text": "There is a balloon here, broken into pieces."
+    },
+    {
+      "id": 120,
+      "text": "There is a card with writing on it here."
+    },
+    {
+      "id": 121,
+      "text": " Warning:\n    This room was constructed over very weak rock strata. Detonation of explosives in this room is strictly prohibited!\n         Frobozz Magic Cave Company\n         per M. Agrippa, foreman\n"
+    },
+    {
+      "id": 122,
+      "text": "The excessively gaudy crown of Lord Dimwit Flathead sits in the safe."
+    },
+    {
+      "id": 123,
+      "text": "Lord Dimwit's crown is here."
+    },
+    {
+      "id": 124,
+      "text": "There is a beautiful red crystal sphere here."
+    },
+    {
+      "id": 125,
+      "text": "There is a Stradivarius here."
+    },
+    {
+      "id": 126,
+      "text": "A mass of ice fills the western half of the room."
+    },
+    {
+      "id": 127,
+      "text": "A stoppered glass flask with a skull-and-crossbones marking is here. The flask is filled with some clear liquid."
+    },
+    {
+      "id": 128,
+      "text": "There is a skull-and-crossbones engraved on the glass."
+    },
+    {
+      "id": 129,
+      "text": "There is a green piece of paper here."
+    },
+    {
+      "id": 130,
+      "text": "!!  FROBOZZ MAGIC ROBOT COMPANY  !!\n\n Hello, Master!\n\n   I am a late-model robot, trained at GUE Tech to perform various simple household functions.\n\n   To activate me, say the following:\n\n        >ROBOT, <things to do>\n\nAt your service!"
+    },
+    {
+      "id": 131,
+      "text": "There's nothing in the hole."
+    },
+    {
+      "id": 132,
+      "text": "The oblong hole has been chipped out of the box, probably by someone wanting whatever is inside the box. The attempt was a pathetic failure, however."
+    },
+    {
+      "id": 133,
+      "text": "There is a small hook attached to the rock here."
+    },
+    {
+      "id": 134,
+      "text": "A strangely familiar brass lantern is lying on the ground."
+    },
+    {
+      "id": 135,
+      "text": "There is a mangled steel cage here."
+    },
+    {
+      "id": 136,
+      "text": "There is a pearl necklace here with hundreds of large pearls."
+    },
+    {
+      "id": 137,
+      "text": "The icing spells out \"Eat Me.\""
+    },
+    {
+      "id": 138,
+      "text": "The leak has submerged the depressed area in a pool of tears. There is a hazy something at the deepest part of the pool."
+    },
+    {
+      "id": 139,
+      "text": "On the floor is a priceless gold zorkmid (a valuable collector's item)."
+    },
+    {
+      "id": 140,
+      "text": "There is an engraved zorkmid here."
+    },
+    {
+      "id": 141,
+      "text": "This is a beautiful octagonal coin bearing the legends \"Ten Thousand Zorkmids\" and \"In Frobs We Trust\"."
+    },
+    {
+      "id": 142,
+      "text": "There is a Flathead stamp here."
+    },
+    {
+      "id": 143,
+      "text": "This three zorkmid stamp bears a portrait of Lord Dimwit Flathead, \"Our Excessive Leader\"."
+    },
+    {
+      "id": 144,
+      "text": "A handsome book, bound in green leather, sits in the center of the room."
+    },
+    {
+      "id": 145,
+      "text": "This book is written in a tongue with which I am unfamiliar."
+    },
+    {
+      "id": 146,
+      "text": "Worn and battered in one corner of the room is a blue book."
+    },
+    {
+      "id": 147,
+      "text": "Right beside the purple book sits a white one."
+    },
+    {
+      "id": 148,
+      "text": "It is written in an unfamiliar tongue and details the use of various magical objects, chiefly the so-called \"magic wand\". Apparently these devices work by pointing them at the object to be ensorcelled, and then chanting the appropriate magic words. (It's truly amazing how credulous these ancients were, isn't it?)"
+    },
+    {
+      "id": 149,
+      "text": "Lying in the dust, and covered with mold, is a purple book."
+    },
+    {
+      "id": 150,
+      "text": "This book is written in a tongue with which I am unfamiliar. Assuming that one can indeed tell a book by its cover, it is likely filled with purple prose, the like of which is rarely seen outside the Great Underground Empire."
+    },
+    {
+      "id": 151,
+      "text": "There is a robot here."
+    },
+    {
+      "id": 152,
+      "text": "On the floor lies a moby ruby."
+    },
+    {
+      "id": 153,
+      "text": "There is a moby ruby lying here."
+    },
+    {
+      "id": 154,
+      "text": "There is a dented steel box here."
+    },
+    {
+      "id": 155,
+      "text": "There is a solid steel cage in the middle of the room."
+    },
+    {
+      "id": 156,
+      "text": "There is a package of candied goodies here."
+    },
+    {
+      "id": 157,
+      "text": "There is a coil of black, braided string here."
+    },
+    {
+      "id": 158,
+      "text": "There is a wooden bucket here, 3 feet in diameter and 3 feet high."
+    },
+    {
+      "id": 159,
+      "text": "200 neatly stacked zorkmid bills are here."
+    },
+    {
+      "id": 160,
+      "text": "On the floor sit 200 neatly stacked zorkmid bills."
+    },
+    {
+      "id": 161,
+      "text": "Each bill is worth 100 zorkmids, and bears the legend \"In Frobs We Trust\"."
+    },
+    {
+      "id": 162,
+      "text": "The portrait of J. Pierpont Flathead is here."
+    },
+    {
+      "id": 163,
+      "text": "A portrait of J. Pierpont Flathead hangs on the wall."
+    },
+    {
+      "id": 164,
+      "text": "On the ground is a small, worn piece of paper."
+    },
+    {
+      "id": 165,
+      "text": "The paper is barely readable. You can only make out \"... valuables are completely safe ... advanced magic technology ... impossible to take valuables from the depository ... either teller's ... Many customers faint ... teller pops in ... seems to walk through ... walls ...\""
+    },
+    {
+      "id": 166,
+      "text": "There is a Gnome of Zurich here."
+    },
+    {
+      "id": 167,
+      "text": "In the center of the table sits a blue crystal sphere."
+    },
+    {
+      "id": 168,
+      "text": "** U.S. News and Dungeon Report **\n\nFAMED ADVENTURER TO EXPLORE GREAT UNDERGROUND EMPIRE\n\nOur correspondents report that a world-famous and battle-hardened adventurer has been seen in the vicinity of the Great Underground Empire. Local grues have been reported sharpening their (slavering) fangs....\n\n\"Zork II: The Wizard of Frobozz\" was written by Dave Lebling and Marc Blank, and is (c) Copyright 1981, 1982, 1983 by Infocom, Inc."
+    },
+    {
+      "id": 169,
+      "text": "The teapot has no lid."
+    },
+    {
+      "id": 170,
+      "text": "There is some water here."
+    },
+    {
+      "id": 171,
+      "text": "Unlike your efforts here, it comes out smelling like a rose."
+    },
+    {
+      "id": 172,
+      "text": "A rose is a rose is a rose...."
+    },
+    {
+      "id": 173,
+      "text": "There is a demon floating in midair here."
+    },
+    {
+      "id": 174,
+      "text": "The Wizard of Frobozz is here, eyeing you warily."
+    },
+    {
+      "id": 175,
+      "text": "An Elvish sword of great antiquity is here."
+    },
+    {
+      "id": 176,
+      "text": "A sword of Elvish workmanship is on the ground."
+    },
+    {
+      "id": 177,
+      "text": "A spray can is in the corner. In large type is the legend \"Frobozz Magic Grue Repellent\"."
+    },
+    {
+      "id": 178,
+      "text": "!!! FROBOZZ MAGIC GRUE REPELLENT !!!\n\nInstructions for use: Apply liberally to creature to be protected. Duration of effect is unpredictable. Use only in place of death!\n\n(No warranty expressed or implied)"
+    },
+    {
+      "id": 179,
+      "text": "A footpad is a thief."
+    },
+    {
+      "id": 180,
+      "text": "It's on your person. And lucky for you, or you would become hopelessly lost."
+    },
+    {
+      "id": 181,
+      "text": "You can't get rid of it. It is an extension of yourself."
+    },
+    {
+      "id": 182,
+      "text": "It's one of those gizmos with a needle and a card with the eight major compass directions. Simple, but effective."
+    },
+    {
+      "id": 183,
+      "text": "It doesn't make very interesting reading - just the compass directions."
+    },
+    {
+      "id": 184,
+      "text": "You can't do that. And don't bother to ask why."
+    },
+    {
+      "id": 185,
+      "text": "F"
+    },
+    {
+      "id": 186,
+      "text": "Those things aren't here!"
+    },
+    {
+      "id": 187,
+      "text": "You can't see any "
+    },
+    {
+      "id": 188,
+      "text": " here!"
+    },
+    {
+      "id": 189,
+      "text": "The "
+    },
+    {
+      "id": 190,
+      "text": " seems confused. \"I don't see any "
+    },
+    {
+      "id": 191,
+      "text": " here!\""
+    },
+    {
+      "id": 192,
+      "text": "You should say whether you want to go up or down."
+    },
+    {
+      "id": 193,
+      "text": "You can't talk to the sailor that way."
+    },
+    {
+      "id": 194,
+      "text": "There is no sailor to be seen."
+    },
+    {
+      "id": 195,
+      "text": "You seem to be repeating yourself."
+    },
+    {
+      "id": 196,
+      "text": "I think that phrase is getting a bit worn out."
+    },
+    {
+      "id": 197,
+      "text": "Nothing happens here."
+    },
+    {
+      "id": 198,
+      "text": "The ground is too hard for digging here."
+    },
+    {
+      "id": 199,
+      "text": "The grue is a sinister, lurking presence in the dark places of the earth. Its favorite diet is adventurers, but its insatiable appetite is tempered by its fear of light. No grue has ever been seen by the light of day, and few have survived its fearsome jaws to tell the tale."
+    },
+    {
+      "id": 200,
+      "text": "There is no grue here, but I'm sure there is at least one lurking in the darkness nearby. I wouldn't let my light go out if I were you!"
+    },
+    {
+      "id": 201,
+      "text": "It makes no sound but is always lurking in the darkness nearby."
+    },
+    {
+      "id": 202,
+      "text": "Talking to yourself is said to be a sign of impending mental collapse."
+    },
+    {
+      "id": 203,
+      "text": "Only you can do that."
+    },
+    {
+      "id": 204,
+      "text": "You'll have to do that on your own."
+    },
+    {
+      "id": 205,
+      "text": "Auto-cannibalism is not the answer."
+    },
+    {
+      "id": 206,
+      "text": "If you insist.... Poof, you're dead!"
+    },
+    {
+      "id": 207,
+      "text": "Suicide is not the answer."
+    },
+    {
+      "id": 208,
+      "text": "Why don't you just walk like normal people?"
+    },
+    {
+      "id": 209,
+      "text": "How romantic!"
+    },
+    {
+      "id": 210,
+      "text": "That's difficult unless your eyes are prehensile."
+    },
+    {
+      "id": 211,
+      "text": "You must specify a direction to go."
+    },
+    {
+      "id": 212,
+      "text": "I can't help you there...."
+    },
+    {
+      "id": 213,
+      "text": "Not a chance."
+    },
+    {
+      "id": 214,
+      "text": "The zorkmid is the unit of currency of the Great Underground Empire."
+    },
+    {
+      "id": 215,
+      "text": "The best way to find zorkmids is to go out and look for them."
+    },
+    {
+      "id": 216,
+      "text": "It's too dark to see."
+    },
+    {
+      "id": 217,
+      "text": "It's not clear what you're referring to."
+    },
+    {
+      "id": 218,
+      "text": "other "
+    },
+    {
+      "id": 219,
+      "text": "object"
+    },
+    {
+      "id": 220,
+      "text": "s"
+    },
+    {
+      "id": 221,
+      "text": " that you mentioned "
+    },
+    {
+      "id": 222,
+      "text": "are"
+    },
+    {
+      "id": 223,
+      "text": "is"
+    },
+    {
+      "id": 224,
+      "text": "n't here."
+    },
+    {
+      "id": 225,
+      "text": "There's nothing here you can take."
+    },
+    {
+      "id": 226,
+      "text": ": "
+    },
+    {
+      "id": 227,
+      "text": "I don't see what you are referring to."
+    },
+    {
+      "id": 228,
+      "text": ">"
+    },
+    {
+      "id": 229,
+      "text": "I beg your pardon?"
+    },
+    {
+      "id": 230,
+      "text": "I can't help your clumsiness."
+    },
+    {
+      "id": 231,
+      "text": "Sorry, you can't correct mistakes in quoted text."
+    },
+    {
+      "id": 232,
+      "text": "Warning: only the first word after OOPS is used."
+    },
+    {
+      "id": 233,
+      "text": "There was no word to replace!"
+    },
+    {
+      "id": 234,
+      "text": "Beg pardon?"
+    },
+    {
+      "id": 235,
+      "text": "It's difficult to repeat fragments."
+    },
+    {
+      "id": 236,
+      "text": "That would just repeat a mistake."
+    },
+    {
+      "id": 237,
+      "text": "I couldn't understand that sentence."
+    },
+    {
+      "id": 238,
+      "text": "There were too many nouns in that sentence."
+    },
+    {
+      "id": 239,
+      "text": "Please consult your manual for the correct way to talk to other people or creatures."
+    },
+    {
+      "id": 240,
+      "text": "Nothing happens."
+    },
+    {
+      "id": 241,
+      "text": "I don't know the word \""
+    },
+    {
+      "id": 242,
+      "text": "\"."
+    },
+    {
+      "id": 243,
+      "text": "You used the word \""
+    },
+    {
+      "id": 244,
+      "text": "\" in a way that I don't understand."
+    },
+    {
+      "id": 245,
+      "text": "There was no verb in that sentence!"
+    },
+    {
+      "id": 246,
+      "text": "That sentence isn't one I recognize."
+    },
+    {
+      "id": 247,
+      "text": "That question can't be answered."
+    },
+    {
+      "id": 248,
+      "text": "What do you want to "
+    },
+    {
+      "id": 249,
+      "text": "tell"
+    },
+    {
+      "id": 250,
+      "text": "?"
+    },
+    {
+      "id": 251,
+      "text": "\"I don't understand! What are you referring to?\""
+    },
+    {
+      "id": 252,
+      "text": ", "
+    },
+    {
+      "id": 253,
+      "text": "the "
+    },
+    {
+      "id": 254,
+      "text": "("
+    },
+    {
+      "id": 255,
+      "text": " of"
+    },
+    {
+      "id": 256,
+      "text": "your hands"
+    },
+    {
+      "id": 257,
+      "text": ")"
+    },
+    {
+      "id": 258,
+      "text": "There seems to be a noun missing in that sentence!"
+    },
+    {
+      "id": 259,
+      "text": "(How about the "
+    },
+    {
+      "id": 260,
+      "text": "?)"
+    },
+    {
+      "id": 261,
+      "text": "It's too dark to see!"
+    },
+    {
+      "id": 262,
+      "text": "Which "
+    },
+    {
+      "id": 263,
+      "text": " do you mean, "
+    },
+    {
+      "id": 264,
+      "text": ","
+    },
+    {
+      "id": 265,
+      "text": " or "
+    },
+    {
+      "id": 266,
+      "text": "I don't see what you're referring to."
+    },
+    {
+      "id": 267,
+      "text": "You don't have that!"
+    },
+    {
+      "id": 268,
+      "text": "You don't have the "
+    },
+    {
+      "id": 269,
+      "text": "."
+    },
+    {
+      "id": 270,
+      "text": "(Taken)"
+    },
+    {
+      "id": 271,
+      "text": "You can't use multiple "
+    },
+    {
+      "id": 272,
+      "text": "in"
+    },
+    {
+      "id": 273,
+      "text": "direct objects with \""
+    },
+    {
+      "id": 274,
+      "text": "Maximum verbosity."
+    },
+    {
+      "id": 275,
+      "text": "Brief descriptions."
+    },
+    {
+      "id": 276,
+      "text": "Superbrief descriptions."
+    },
+    {
+      "id": 277,
+      "text": "You are empty-handed."
+    },
+    {
+      "id": 278,
+      "text": "Would you like to restart the game from the beginning, restore a saved game position, or end this session of the game?\n(Type RESTART, RESTORE, or QUIT):\n>"
+    },
+    {
+      "id": 279,
+      "text": "Failed."
+    },
+    {
+      "id": 280,
+      "text": "Ok."
+    },
+    {
+      "id": 281,
+      "text": "Do you wish to leave the game? (Y is affirmative): "
+    },
+    {
+      "id": 282,
+      "text": "Do you wish to restart? (Y is affirmative): "
+    },
+    {
+      "id": 283,
+      "text": "Restarting."
+    },
+    {
+      "id": 284,
+      "text": "Here begins a transcript of interaction with"
+    },
+    {
+      "id": 285,
+      "text": "Here ends a transcript of interaction with"
+    },
+    {
+      "id": 286,
+      "text": "ZORK II: The Wizard of Frobozz\nInfocom interactive fiction - a fantasy story\nCopyright (c) 1981, 1982, 1983, 1986"
+    },
+    {
+      "id": 287,
+      "text": " Infocom, Inc. All rights reserved."
+    },
+    {
+      "id": 288,
+      "text": "ZORK is a registered trademark of Infocom, Inc.\nRelease "
+    },
+    {
+      "id": 289,
+      "text": " / Serial number "
+    },
+    {
+      "id": 290,
+      "text": "Verifying disk..."
+    },
+    {
+      "id": 291,
+      "text": "The disk is correct."
+    },
+    {
+      "id": 292,
+      "text": "** Disk Failure **"
+    },
+    {
+      "id": 293,
+      "text": "Illegal call to #RND."
+    },
+    {
+      "id": 294,
+      "text": "A hollow voice says \"Fool.\""
+    },
+    {
+      "id": 295,
+      "text": "He's wide awake, or haven't you noticed..."
+    },
+    {
+      "id": 296,
+      "text": " isn't sleeping."
+    },
+    {
+      "id": 297,
+      "text": "Nobody seems to be awaiting your answer."
+    },
+    {
+      "id": 298,
+      "text": "I've known strange people, but fighting a "
+    },
+    {
+      "id": 299,
+      "text": "Trying to attack a "
+    },
+    {
+      "id": 300,
+      "text": " with your bare hands is suicidal."
+    },
+    {
+      "id": 301,
+      "text": "You aren't even holding the "
+    },
+    {
+      "id": 302,
+      "text": "Trying to attack the "
+    },
+    {
+      "id": 303,
+      "text": " with a "
+    },
+    {
+      "id": 304,
+      "text": " is suicidal."
+    },
+    {
+      "id": 305,
+      "text": "You can't."
+    },
+    {
+      "id": 306,
+      "text": "Sorry, my memory is poor. Please give a direction."
+    },
+    {
+      "id": 307,
+      "text": "You can't blast anything by using words."
+    },
+    {
+      "id": 308,
+      "text": " must be on the ground to be boarded."
+    },
+    {
+      "id": 309,
+      "text": "You are already in the "
+    },
+    {
+      "id": 310,
+      "text": "!"
+    },
+    {
+      "id": 311,
+      "text": "You have a theory on how to board a "
+    },
+    {
+      "id": 312,
+      "text": ", perhaps?"
+    },
+    {
+      "id": 313,
+      "text": "You are now in the "
+    },
+    {
+      "id": 314,
+      "text": "If you wish, but heaven only knows why."
+    },
+    {
+      "id": 315,
+      "text": "Bug? Not in a flawless program like this! (Cough, cough)."
+    },
+    {
+      "id": 316,
+      "text": "You didn't say with what!"
+    },
+    {
+      "id": 317,
+      "text": "With a "
+    },
+    {
+      "id": 318,
+      "text": "??!?"
+    },
+    {
+      "id": 319,
+      "text": " catches fire. Unfortunately, you were "
+    },
+    {
+      "id": 320,
+      "text": "holding"
+    },
+    {
+      "id": 321,
+      "text": " it at the time."
+    },
+    {
+      "id": 322,
+      "text": " catches fire and is consumed."
+    },
+    {
+      "id": 323,
+      "text": "You can't burn a "
+    },
+    {
+      "id": 324,
+      "text": "Preposterous!"
+    },
+    {
+      "id": 325,
+      "text": "You can't climb onto the "
+    },
+    {
+      "id": 326,
+      "text": " do"
+    },
+    {
+      "id": 327,
+      "text": "es"
+    },
+    {
+      "id": 328,
+      "text": "n't lead "
+    },
+    {
+      "id": 329,
+      "text": "up"
+    },
+    {
+      "id": 330,
+      "text": "down"
+    },
+    {
+      "id": 331,
+      "text": "ward."
+    },
+    {
+      "id": 332,
+      "text": "Climbing the walls is to no avail."
+    },
+    {
+      "id": 333,
+      "text": "There are no climbable trees here."
+    },
+    {
+      "id": 334,
+      "text": "You can't go that way."
+    },
+    {
+      "id": 335,
+      "text": "You can't do that!"
+    },
+    {
+      "id": 336,
+      "text": "You must tell me how to do that to a "
+    },
+    {
+      "id": 337,
+      "text": "Closed."
+    },
+    {
+      "id": 338,
+      "text": "It is now pitch black."
+    },
+    {
+      "id": 339,
+      "text": "It is already closed."
+    },
+    {
+      "id": 340,
+      "text": " is now closed."
+    },
+    {
+      "id": 341,
+      "text": "You cannot close that."
+    },
+    {
+      "id": 342,
+      "text": " pays no attention."
+    },
+    {
+      "id": 343,
+      "text": "You cannot talk to that!"
+    },
+    {
+      "id": 344,
+      "text": "Well, for one, you are playing Zork..."
+    },
+    {
+      "id": 345,
+      "text": "You have lost your mind."
+    },
+    {
+      "id": 346,
+      "text": "You can't cross that!"
+    },
+    {
+      "id": 347,
+      "text": "Insults of this nature won't help you."
+    },
+    {
+      "id": 348,
+      "text": "What a loony!"
+    },
+    {
+      "id": 349,
+      "text": "Such language in a high-class establishment like this!"
+    },
+    {
+      "id": 350,
+      "text": "Not a bright idea, especially since you're in it."
+    },
+    {
+      "id": 351,
+      "text": "Your skillful "
+    },
+    {
+      "id": 352,
+      "text": "smanship slices the "
+    },
+    {
+      "id": 353,
+      "text": " into innumerable slivers which blow away."
+    },
+    {
+      "id": 354,
+      "text": "The \"cutting edge\" of a "
+    },
+    {
+      "id": 355,
+      "text": " is hardly adequate."
+    },
+    {
+      "id": 356,
+      "text": "Strange concept, cutting the "
+    },
+    {
+      "id": 357,
+      "text": "...."
+    },
+    {
+      "id": 358,
+      "text": "Come on, now!"
+    },
+    {
+      "id": 359,
+      "text": "Digging with the "
+    },
+    {
+      "id": 360,
+      "text": " is slow and tedious."
+    },
+    {
+      "id": 361,
+      "text": "Digging with a "
+    },
+    {
+      "id": 362,
+      "text": " is silly."
+    },
+    {
+      "id": 363,
+      "text": "You're not in that!"
+    },
+    {
+      "id": 364,
+      "text": "You are on your own feet again."
+    },
+    {
+      "id": 365,
+      "text": "You realize that getting out here would be fatal."
+    },
+    {
+      "id": 366,
+      "text": " seems stronger now."
+    },
+    {
+      "id": 367,
+      "text": " no longer appears clumsy."
+    },
+    {
+      "id": 368,
+      "text": " no longer appears afraid."
+    },
+    {
+      "id": 369,
+      "text": " moves again."
+    },
+    {
+      "id": 370,
+      "text": " stops swaying."
+    },
+    {
+      "id": 371,
+      "text": " appears more peaceful."
+    },
+    {
+      "id": 372,
+      "text": " sinks to the ground."
+    },
+    {
+      "id": 373,
+      "text": "The sweet smell has dispersed."
+    },
+    {
+      "id": 374,
+      "text": "How peculiar!"
+    },
+    {
+      "id": 375,
+      "text": "Dropped."
+    },
+    {
+      "id": 376,
+      "text": "You're not holding that."
+    },
+    {
+      "id": 377,
+      "text": "How can you drink that?"
+    },
+    {
+      "id": 378,
+      "text": "Thank you very much. It really hit the spot."
+    },
+    {
+      "id": 379,
+      "text": "There isn't any water here."
+    },
+    {
+      "id": 380,
+      "text": "You have to be holding the "
+    },
+    {
+      "id": 381,
+      "text": " first."
+    },
+    {
+      "id": 382,
+      "text": "You'll have to open the "
+    },
+    {
+      "id": 383,
+      "text": "I don't think that the "
+    },
+    {
+      "id": 384,
+      "text": " would agree with you."
+    },
+    {
+      "id": 385,
+      "text": "Thank you very much. I was rather thirsty (from all this talking, probably)."
+    },
+    {
+      "id": 386,
+      "text": "echo echo ..."
+    },
+    {
+      "id": 387,
+      "text": "You must be more specific."
+    },
+    {
+      "id": 388,
+      "text": "The wand stops glowing, but there is no other obvious effect."
+    },
+    {
+      "id": 389,
+      "text": "That might have done something, but it's hard to tell with a "
+    },
+    {
+      "id": 390,
+      "text": "A strong odor of chocolate permeates the room."
+    },
+    {
+      "id": 391,
+      "text": " begins to glow."
+    },
+    {
+      "id": 392,
+      "text": "Filched!"
+    },
+    {
+      "id": 393,
+      "text": "You can't filch the "
+    },
+    {
+      "id": 394,
+      "text": " floats serenely in midair."
+    },
+    {
+      "id": 395,
+      "text": " goes up in a puff of smoke."
+    },
+    {
+      "id": 396,
+      "text": "The wand stops glowing, but there is no other apparent effect."
+    },
+    {
+      "id": 397,
+      "text": "You are left in the dark..."
+    },
+    {
+      "id": 398,
+      "text": "There's nothing special about the "
+    },
+    {
+      "id": 399,
+      "text": "What a bizarre concept!"
+    },
+    {
+      "id": 400,
+      "text": "There is nothing to fill it with."
+    },
+    {
+      "id": 401,
+      "text": "There's nothing to fill it with."
+    },
+    {
+      "id": 402,
+      "text": "You may know how to do that, but I don't."
+    },
+    {
+      "id": 403,
+      "text": "Within six feet of your head, assuming you haven't left that somewhere."
+    },
+    {
+      "id": 404,
+      "text": "You're around here somewhere..."
+    },
+    {
+      "id": 405,
+      "text": "You find it."
+    },
+    {
+      "id": 406,
+      "text": "You have it."
+    },
+    {
+      "id": 407,
+      "text": "It's right here."
+    },
+    {
+      "id": 408,
+      "text": " has it."
+    },
+    {
+      "id": 409,
+      "text": "It's on the "
+    },
+    {
+      "id": 410,
+      "text": "It's in the "
+    },
+    {
+      "id": 411,
+      "text": "Beats me."
+    },
+    {
+      "id": 412,
+      "text": "You're nuts!"
+    },
+    {
+      "id": 413,
+      "text": "The FROBOZZ Corporation created, owns, and operates this dungeon."
+    },
+    {
+      "id": 414,
+      "text": "That's easy for you to say since you don't even have the "
+    },
+    {
+      "id": 415,
+      "text": "You can't give a "
+    },
+    {
+      "id": 416,
+      "text": " to a "
+    },
+    {
+      "id": 417,
+      "text": " refuses it politely."
+    },
+    {
+      "id": 418,
+      "text": "Bizarre!"
+    },
+    {
+      "id": 419,
+      "text": " bows his head to you in greeting."
+    },
+    {
+      "id": 420,
+      "text": "It's a well known fact that only schizophrenics say \"Hello\" to a "
+    },
+    {
+      "id": 421,
+      "text": "The wand glows very brightly for a moment."
+    },
+    {
+      "id": 422,
+      "text": "The incantation echoes back faintly, but nothing else happens."
+    },
+    {
+      "id": 423,
+      "text": "How can you inflate that?"
+    },
+    {
+      "id": 424,
+      "text": "Kicking the "
+    },
+    {
+      "id": 425,
+      "text": "I'd sooner kiss a pig."
+    },
+    {
+      "id": 426,
+      "text": "Nobody's home."
+    },
+    {
+      "id": 427,
+      "text": "Why knock on a "
+    },
+    {
+      "id": 428,
+      "text": "It is already off."
+    },
+    {
+      "id": 429,
+      "text": " is now off."
+    },
+    {
+      "id": 430,
+      "text": "You can't turn that off."
+    },
+    {
+      "id": 431,
+      "text": "It is already on."
+    },
+    {
+      "id": 432,
+      "text": " is now on."
+    },
+    {
+      "id": 433,
+      "text": "If you wish to burn the "
+    },
+    {
+      "id": 434,
+      "text": ", you should say so."
+    },
+    {
+      "id": 435,
+      "text": "You can't turn that on."
+    },
+    {
+      "id": 436,
+      "text": "You can't launch that by saying \"launch\"!"
+    },
+    {
+      "id": 437,
+      "text": "That's pretty weird."
+    },
+    {
+      "id": 438,
+      "text": "Getting tired?"
+    },
+    {
+      "id": 439,
+      "text": " is too big to jump over."
+    },
+    {
+      "id": 440,
+      "text": "That would be a good trick."
+    },
+    {
+      "id": 441,
+      "text": "This was not a very safe place to try jumping."
+    },
+    {
+      "id": 442,
+      "text": "You should have looked before you leaped."
+    },
+    {
+      "id": 443,
+      "text": "In the movies, your life would be passing before your eyes."
+    },
+    {
+      "id": 444,
+      "text": "Geronimo..."
+    },
+    {
+      "id": 445,
+      "text": " makes no sound."
+    },
+    {
+      "id": 446,
+      "text": "It doesn't seem to work."
+    },
+    {
+      "id": 447,
+      "text": "There is nothing behind the "
+    },
+    {
+      "id": 448,
+      "text": " is open, but I can't tell what's beyond it."
+    },
+    {
+      "id": 449,
+      "text": " is closed."
+    },
+    {
+      "id": 450,
+      "text": "There is nothing special to be seen."
+    },
+    {
+      "id": 451,
+      "text": " is empty."
+    },
+    {
+      "id": 452,
+      "text": "You can't look inside a "
+    },
+    {
+      "id": 453,
+      "text": "Look on a "
+    },
+    {
+      "id": 454,
+      "text": "???"
+    },
+    {
+      "id": 455,
+      "text": "There is nothing but dust there."
+    },
+    {
+      "id": 456,
+      "text": "Playing in this way with the "
+    },
+    {
+      "id": 457,
+      "text": "You can't do that."
+    },
+    {
+      "id": 458,
+      "text": "It's not clear that a "
+    },
+    {
+      "id": 459,
+      "text": " can be melted."
+    },
+    {
+      "id": 460,
+      "text": "You aren't an accomplished enough juggler."
+    },
+    {
+      "id": 461,
+      "text": "Moving the "
+    },
+    {
+      "id": 462,
+      "text": " reveals nothing."
+    },
+    {
+      "id": 463,
+      "text": "You can't move the "
+    },
+    {
+      "id": 464,
+      "text": "You'll have to speak up if you expect me to hear you!"
+    },
+    {
+      "id": 465,
+      "text": "Trying to destroy the "
+    },
+    {
+      "id": 466,
+      "text": " with "
+    },
+    {
+      "id": 467,
+      "text": "your bare hands"
+    },
+    {
+      "id": 468,
+      "text": "a "
+    },
+    {
+      "id": 469,
+      "text": " is futile."
+    },
+    {
+      "id": 470,
+      "text": "Nice try."
+    },
+    {
+      "id": 471,
+      "text": "Wasn't he a sailor?"
+    },
+    {
+      "id": 472,
+      "text": "You probably put spinach in your gas tank, too."
+    },
+    {
+      "id": 473,
+      "text": "It is already open."
+    },
+    {
+      "id": 474,
+      "text": "Opened."
+    },
+    {
+      "id": 475,
+      "text": " opens."
+    },
+    {
+      "id": 476,
+      "text": "Opening the "
+    },
+    {
+      "id": 477,
+      "text": " reveals "
+    },
+    {
+      "id": 478,
+      "text": "Huh?"
+    },
+    {
+      "id": 479,
+      "text": "You can't pick that."
+    },
+    {
+      "id": 480,
+      "text": "You become so engrossed in the role of the "
+    },
+    {
+      "id": 481,
+      "text": " that you kill yourself, just as he might have done!"
+    },
+    {
+      "id": 482,
+      "text": ""
+    },
+    {
+      "id": 483,
+      "text": "That's silly!"
+    },
+    {
+      "id": 484,
+      "text": "This has no effect."
+    },
+    {
+      "id": 485,
+      "text": " is extinguished."
+    },
+    {
+      "id": 486,
+      "text": "The water spills over the "
+    },
+    {
+      "id": 487,
+      "text": ", to the floor, and evaporates."
+    },
+    {
+      "id": 488,
+      "text": "You can't pour that."
+    },
+    {
+      "id": 489,
+      "text": "If you pray enough, your prayers may be answered."
+    },
+    {
+      "id": 490,
+      "text": "It's really not clear how."
+    },
+    {
+      "id": 491,
+      "text": "Pushing the "
+    },
+    {
+      "id": 492,
+      "text": "You can't push things to that."
+    },
+    {
+      "id": 493,
+      "text": " isn't open."
+    },
+    {
+      "id": 494,
+      "text": "How can you do that?"
+    },
+    {
+      "id": 495,
+      "text": " is already in the "
+    },
+    {
+      "id": 496,
+      "text": "There's no room."
+    },
+    {
+      "id": 497,
+      "text": "Done."
+    },
+    {
+      "id": 498,
+      "text": "That hiding place is too obvious."
+    },
+    {
+      "id": 499,
+      "text": "There's no good surface on the "
+    },
+    {
+      "id": 500,
+      "text": "What a (ahem!) strange idea."
+    },
+    {
+      "id": 501,
+      "text": "It is impossible to read in the dark."
+    },
+    {
+      "id": 502,
+      "text": "How does one look through a "
+    },
+    {
+      "id": 503,
+      "text": "How does one read a "
+    },
+    {
+      "id": 504,
+      "text": "It could very well be too late!"
+    },
+    {
+      "id": 505,
+      "text": "It is hardly likely that the "
+    },
+    {
+      "id": 506,
+      "text": " is interested."
+    },
+    {
+      "id": 507,
+      "text": "How, exactly, can you ring that?"
+    },
+    {
+      "id": 508,
+      "text": "Fiddling with the "
+    },
+    {
+      "id": 509,
+      "text": "You must address the "
+    },
+    {
+      "id": 510,
+      "text": " directly."
+    },
+    {
+      "id": 511,
+      "text": "Talking to yourself is a sign of impending mental collapse."
+    },
+    {
+      "id": 512,
+      "text": "You find nothing unusual."
+    },
+    {
+      "id": 513,
+      "text": "Why would you send for the "
+    },
+    {
+      "id": 514,
+      "text": "That doesn't make sends."
+    },
+    {
+      "id": 515,
+      "text": "Foo!"
+    },
+    {
+      "id": 516,
+      "text": "This seems to have no effect."
+    },
+    {
+      "id": 517,
+      "text": "You can't take it; thus, you can't shake it!"
+    },
+    {
+      "id": 518,
+      "text": "The contents of the "
+    },
+    {
+      "id": 519,
+      "text": " spill "
+    },
+    {
+      "id": 520,
+      "text": "out and disappears"
+    },
+    {
+      "id": 521,
+      "text": "to the ground"
+    },
+    {
+      "id": 522,
+      "text": "Shaken."
+    },
+    {
+      "id": 523,
+      "text": "It sounds like there is something inside the "
+    },
+    {
+      "id": 524,
+      "text": " sounds empty."
+    },
+    {
+      "id": 525,
+      "text": "Very good. Now you can go to the second grade."
+    },
+    {
+      "id": 526,
+      "text": "Are you enjoying yourself?"
+    },
+    {
+      "id": 527,
+      "text": "Wheeeeeeeeee!!!!!"
+    },
+    {
+      "id": 528,
+      "text": "Do you expect me to applaud?"
+    },
+    {
+      "id": 529,
+      "text": "It smells like a "
+    },
+    {
+      "id": 530,
+      "text": "You can't spin that!"
+    },
+    {
+      "id": 531,
+      "text": " does not understand this."
+    },
+    {
+      "id": 532,
+      "text": "How singularly useless."
+    },
+    {
+      "id": 533,
+      "text": "No doubt you propose to stab the "
+    },
+    {
+      "id": 534,
+      "text": " with your pinky?"
+    },
+    {
+      "id": 535,
+      "text": "You are already standing, I think."
+    },
+    {
+      "id": 536,
+      "text": "You will be lost without me!"
+    },
+    {
+      "id": 537,
+      "text": "Since you aren't versed in hand-to-hand combat, you'd better attack the "
+    },
+    {
+      "id": 538,
+      "text": " with a weapon."
+    },
+    {
+      "id": 539,
+      "text": "Swimming isn't usually allowed in the "
+    },
+    {
+      "id": 540,
+      "text": "dungeon."
+    },
+    {
+      "id": 541,
+      "text": "Go jump in a lake!"
+    },
+    {
+      "id": 542,
+      "text": "Whoosh!"
+    },
+    {
+      "id": 543,
+      "text": "You are already wearing it."
+    },
+    {
+      "id": 544,
+      "text": "You already have that!"
+    },
+    {
+      "id": 545,
+      "text": "You can't reach something that's inside a closed container."
+    },
+    {
+      "id": 546,
+      "text": " isn't in the "
+    },
+    {
+      "id": 547,
+      "text": "You're inside of it!"
+    },
+    {
+      "id": 548,
+      "text": "You are now wearing the "
+    },
+    {
+      "id": 549,
+      "text": "Taken."
+    },
+    {
+      "id": 550,
+      "text": " pauses for a moment, perhaps thinking that you should reread the manual."
+    },
+    {
+      "id": 551,
+      "text": "You can't talk to the "
+    },
+    {
+      "id": 552,
+      "text": "You can't go more than part way through the curtain."
+    },
+    {
+      "id": 553,
+      "text": "You hit your head against the "
+    },
+    {
+      "id": 554,
+      "text": " as you attempt this feat."
+    },
+    {
+      "id": 555,
+      "text": "That would involve quite a contortion!"
+    },
+    {
+      "id": 556,
+      "text": "A terrific throw! The "
+    },
+    {
+      "id": 557,
+      "text": " hits you squarely in the head. Normally, this wouldn't do much damage, but by incredible mischance, you fall over backwards trying to duck, and break your neck, justice being swift and merciful in the Great Underground Empire."
+    },
+    {
+      "id": 558,
+      "text": " ducks as the "
+    },
+    {
+      "id": 559,
+      "text": " flies by and crashes to the ground."
+    },
+    {
+      "id": 560,
+      "text": "Thrown."
+    },
+    {
+      "id": 561,
+      "text": "You can't throw anything off of that!"
+    },
+    {
+      "id": 562,
+      "text": "You can't tie anything to yourself."
+    },
+    {
+      "id": 563,
+      "text": "You can't tie the "
+    },
+    {
+      "id": 564,
+      "text": " to that."
+    },
+    {
+      "id": 565,
+      "text": "You could certainly never tie it with that!"
+    },
+    {
+      "id": 566,
+      "text": "Your bare hands don't appear to be enough."
+    },
+    {
+      "id": 567,
+      "text": "You can't turn that!"
+    },
+    {
+      "id": 568,
+      "text": "This cannot be tied, so it cannot be untied!"
+    },
+    {
+      "id": 569,
+      "text": "Time passes..."
+    },
+    {
+      "id": 570,
+      "text": "There are odd noises in the darkness, and there is no exit in that direction."
+    },
+    {
+      "id": 571,
+      "text": "Oh, no! You have walked into the slavering fangs of a lurking grue!"
+    },
+    {
+      "id": 572,
+      "text": "Use compass directions for movement."
+    },
+    {
+      "id": 573,
+      "text": "It's here!"
+    },
+    {
+      "id": 574,
+      "text": "You should supply a direction!"
+    },
+    {
+      "id": 575,
+      "text": "Waving the "
+    },
+    {
+      "id": 576,
+      "text": "You can't wear the "
+    },
+    {
+      "id": 577,
+      "text": "Naturally!"
+    },
+    {
+      "id": 578,
+      "text": "You cannot wind up a "
+    },
+    {
+      "id": 579,
+      "text": "Aaaarrrrgggghhhh!"
+    },
+    {
+      "id": 580,
+      "text": "At your service!"
+    },
+    {
+      "id": 581,
+      "text": "It is pitch black."
+    },
+    {
+      "id": 582,
+      "text": " You are likely to be eaten by a grue."
+    },
+    {
+      "id": 583,
+      "text": ", in the "
+    },
+    {
+      "id": 584,
+      "text": "Only bats can see in the dark. And you're not one."
+    },
+    {
+      "id": 585,
+      "text": "There is a "
+    },
+    {
+      "id": 586,
+      "text": " here"
+    },
+    {
+      "id": 587,
+      "text": " (providing light)"
+    },
+    {
+      "id": 588,
+      "text": "A "
+    },
+    {
+      "id": 589,
+      "text": " (being worn)"
+    },
+    {
+      "id": 590,
+      "text": " (floating in midair)"
+    },
+    {
+      "id": 591,
+      "text": " (outside the "
+    },
+    {
+      "id": 592,
+      "text": "and "
+    },
+    {
+      "id": 593,
+      "text": " here."
+    },
+    {
+      "id": 594,
+      "text": "You are carrying:"
+    },
+    {
+      "id": 595,
+      "text": "Sitting on the "
+    },
+    {
+      "id": 596,
+      "text": " is: "
+    },
+    {
+      "id": 597,
+      "text": " is holding: "
+    },
+    {
+      "id": 598,
+      "text": " contains:"
+    },
+    {
+      "id": 599,
+      "text": "You can't reach that. It's floating above your head."
+    },
+    {
+      "id": 600,
+      "text": "It seems rooted to the spot."
+    },
+    {
+      "id": 601,
+      "text": "Your load is too heavy"
+    },
+    {
+      "id": 602,
+      "text": ", especially in light of your condition."
+    },
+    {
+      "id": 603,
+      "text": "You're holding too many things already!"
+    },
+    {
+      "id": 604,
+      "text": "When you touch the "
+    },
+    {
+      "id": 605,
+      "text": " it immediately disappears!"
+    },
+    {
+      "id": 606,
+      "text": "You're not carrying the "
+    },
+    {
+      "id": 607,
+      "text": "  "
+    },
+    {
+      "id": 608,
+      "text": "    "
+    },
+    {
+      "id": 609,
+      "text": "      "
+    },
+    {
+      "id": 610,
+      "text": "        "
+    },
+    {
+      "id": 611,
+      "text": "          "
+    },
+    {
+      "id": 612,
+      "text": " isn't here!"
+    },
+    {
+      "id": 613,
+      "text": " doesn't seem to work."
+    },
+    {
+      "id": 614,
+      "text": " isn't notably helpful."
+    },
+    {
+      "id": 615,
+      "text": " has no effect."
+    },
+    {
+      "id": 616,
+      "text": "You can't go there in a "
+    },
+    {
+      "id": 617,
+      "text": "You can't go there without a vehicle."
+    },
+    {
+      "id": 618,
+      "text": "The balloon lands."
+    },
+    {
+      "id": 619,
+      "text": " comes to a stop."
+    },
+    {
+      "id": 620,
+      "text": "There are sinister gurgling noises in the darkness all around you!"
+    },
+    {
+      "id": 621,
+      "text": "Oh, no! A lurking grue slithered into the "
+    },
+    {
+      "id": 622,
+      "text": "room"
+    },
+    {
+      "id": 623,
+      "text": " and devoured you!"
+    },
+    {
+      "id": 624,
+      "text": "You have moved into a dark place."
+    },
+    {
+      "id": 625,
+      "text": " leaves the room."
+    },
+    {
+      "id": 626,
+      "text": "You can't swim in the dungeon."
+    },
+    {
+      "id": 627,
+      "text": "Hello."
+    },
+    {
+      "id": 628,
+      "text": "Good day."
+    },
+    {
+      "id": 629,
+      "text": "Nice weather we've been having lately."
+    },
+    {
+      "id": 630,
+      "text": "Goodbye."
+    },
+    {
+      "id": 631,
+      "text": "A valiant attempt."
+    },
+    {
+      "id": 632,
+      "text": "You can't be serious."
+    },
+    {
+      "id": 633,
+      "text": "An interesting idea..."
+    },
+    {
+      "id": 634,
+      "text": "What a concept!"
+    },
+    {
+      "id": 635,
+      "text": "Your sword has begun to glow very brightly."
+    },
+    {
+      "id": 636,
+      "text": "Your sword is glowing with a faint blue glow."
+    },
+    {
+      "id": 637,
+      "text": "Your sword is no longer glowing."
+    },
+    {
+      "id": 638,
+      "text": "You are in a large circular room whose high ceiling is lost in gloom. Eight identical passages leave the room."
+    },
+    {
+      "id": 639,
+      "text": "A loud whirring sound comes from all around, and you feel sort of disoriented in here."
+    },
+    {
+      "id": 640,
+      "text": "Feeling dizzy, you pick a direction at random."
+    },
+    {
+      "id": 641,
+      "text": "You're not sure which direction is which. This room is very disorienting."
+    },
+    {
+      "id": 642,
+      "text": "An amazingly offensive noise issues from the violin."
+    },
+    {
+      "id": 643,
+      "text": "The cloth bag is inflated and "
+    },
+    {
+      "id": 644,
+      "text": "there is a "
+    },
+    {
+      "id": 645,
+      "text": " burning in the receptacle."
+    },
+    {
+      "id": 646,
+      "text": "some smoke is leaking out of the closed receptacle."
+    },
+    {
+      "id": 647,
+      "text": "The cloth bag is draped over the side of the basket. Directly in the middle of the basket is a metal receptacle which is "
+    },
+    {
+      "id": 648,
+      "text": "open"
+    },
+    {
+      "id": 649,
+      "text": ". A "
+    },
+    {
+      "id": 650,
+      "text": " is "
+    },
+    {
+      "id": 651,
+      "text": "burning"
+    },
+    {
+      "id": 652,
+      "text": "nestled"
+    },
+    {
+      "id": 653,
+      "text": " inside"
+    },
+    {
+      "id": 654,
+      "text": "closed"
+    },
+    {
+      "id": 655,
+      "text": " The balloon is tied to a hook by the braided wire."
+    },
+    {
+      "id": 656,
+      "text": " A braided wire is dangling over the side of the basket."
+    },
+    {
+      "id": 657,
+      "text": "There is a large and extremely heavy wicker basket here. An enormous cloth bag "
+    },
+    {
+      "id": 658,
+      "text": "attached to the basket is inflated. A metal receptacle is fastened to the center of the basket. "
+    },
+    {
+      "id": 659,
+      "text": "In it is a burning "
+    },
+    {
+      "id": 660,
+      "text": "Some smoke leaks out around its closed lid"
+    },
+    {
+      "id": 661,
+      "text": "is draped over the side and is firmly attached to the basket. A metal receptacle is fastened to the center of the basket"
+    },
+    {
+      "id": 662,
+      "text": ". A piece of wire tied to a hook holds the balloon in place."
+    },
+    {
+      "id": 663,
+      "text": ". Dangling from the basket is a piece of braided wire."
+    },
+    {
+      "id": 664,
+      "text": "You are tied to the ledge."
+    },
+    {
+      "id": 665,
+      "text": "You can't control the balloon this way."
+    },
+    {
+      "id": 666,
+      "text": "Opening it reveals a burning "
+    },
+    {
+      "id": 667,
+      "text": "You don't really want to hold a burning "
+    },
+    {
+      "id": 668,
+      "text": "The receptacle is already occupied."
+    },
+    {
+      "id": 669,
+      "text": "It takes more than words to inflate a balloon."
+    },
+    {
+      "id": 670,
+      "text": " burns inside the receptacle."
+    },
+    {
+      "id": 671,
+      "text": "The cloth bag inflates as it fills with hot air."
+    },
+    {
+      "id": 672,
+      "text": "A small label drops from the bag into the basket."
+    },
+    {
+      "id": 673,
+      "text": "You watch as the balloon slowly "
+    },
+    {
+      "id": 674,
+      "text": "The balloon floats majestically out of the volcano, revealing a breathtaking view of a wooded river valley surrounded by impassable mountains. In a clearing stands a white house. You drift into high winds, which carry you towards the snow-capped peaks. Oh, no! You crash into the jagged cliffs of the Flathead Mountains!"
+    },
+    {
+      "id": 675,
+      "text": "You watch the balloon drift out over the rim and away on the wind."
+    },
+    {
+      "id": 676,
+      "text": "The balloon ascends."
+    },
+    {
+      "id": 677,
+      "text": "ascends."
+    },
+    {
+      "id": 678,
+      "text": "The balloon leaves the ledge."
+    },
+    {
+      "id": 679,
+      "text": "floats away. It seems to be ascending, due to its light load."
+    },
+    {
+      "id": 680,
+      "text": "The balloon rises slowly from the ground."
+    },
+    {
+      "id": 681,
+      "text": "lifts off."
+    },
+    {
+      "id": 682,
+      "text": "The balloon has landed."
+    },
+    {
+      "id": 683,
+      "text": "You have landed, but the balloon did not survive."
+    },
+    {
+      "id": 684,
+      "text": "lands."
+    },
+    {
+      "id": 685,
+      "text": "The balloon descends."
+    },
+    {
+      "id": 686,
+      "text": "descends."
+    },
+    {
+      "id": 687,
+      "text": " is an integral part of the basket and cannot be removed."
+    },
+    {
+      "id": 688,
+      "text": " The wire might possibly be tied, though."
+    },
+    {
+      "id": 689,
+      "text": "The bag is enormous. The concept of opening it here is ludicrous."
+    },
+    {
+      "id": 690,
+      "text": "It doesn't appear that there's anything inside."
+    },
+    {
+      "id": 691,
+      "text": "The receptacle is "
+    },
+    {
+      "id": 692,
+      "text": "open."
+    },
+    {
+      "id": 693,
+      "text": "closed."
+    },
+    {
+      "id": 694,
+      "text": " is part of the basket. It may be manipulated within the basket but cannot be removed."
+    },
+    {
+      "id": 695,
+      "text": "The balloon is fastened to the hook."
+    },
+    {
+      "id": 696,
+      "text": "The wire falls off of the hook."
+    },
+    {
+      "id": 697,
+      "text": "The wire is not tied to anything."
+    },
+    {
+      "id": 698,
+      "text": " has now burned out, and the cloth bag starts to deflate."
+    },
+    {
+      "id": 699,
+      "text": "You are in a dusty old room which is featureless, except for an exit on the north side."
+    },
+    {
+      "id": 700,
+      "text": "Imbedded in the far wall is a rusty box. It appears to be somewhat damaged, since an oblong hole has been chipped out of the front of it."
+    },
+    {
+      "id": 701,
+      "text": "On the far wall is a rusty box, whose door has been blown off."
+    },
+    {
+      "id": 702,
+      "text": "The box is imbedded in the wall."
+    },
+    {
+      "id": 703,
+      "text": "The box has no door!"
+    },
+    {
+      "id": 704,
+      "text": "The box is rusted and will not open."
+    },
+    {
+      "id": 705,
+      "text": "The box isn't open!"
+    },
+    {
+      "id": 706,
+      "text": "Now you've done it. It seems that the brick has other properties than weight, namely the ability to blow you to smithereens."
+    },
+    {
+      "id": 707,
+      "text": "The string starts to burn."
+    },
+    {
+      "id": 708,
+      "text": "The way is blocked by debris from an explosion."
+    },
+    {
+      "id": 709,
+      "text": "There is an explosion nearby."
+    },
+    {
+      "id": 710,
+      "text": "The string rapidly burns into nothingness."
+    },
+    {
+      "id": 711,
+      "text": "The room trembles and 5000 tons of rock fall on you, turning you into a pancake."
+    },
+    {
+      "id": 712,
+      "text": "You may recall that recent explosion. Probably as a result of it, you hear an ominous rumbling, as if a nearby room had collapsed."
+    },
+    {
+      "id": 713,
+      "text": "The ledge collapses, probably as a result of the explosion, and plummets to the ground far below. Sadly, you were still attached to the ledge."
+    },
+    {
+      "id": 714,
+      "text": "The ledge collapses, leaving you with no place to land."
+    },
+    {
+      "id": 715,
+      "text": "The force of the recent explosion has caused the ledge to collapse."
+    },
+    {
+      "id": 716,
+      "text": "The ledge collapses. (That was a narrow escape!)"
+    },
+    {
+      "id": 717,
+      "text": "The ledge has collapsed and cannot be landed on."
+    },
+    {
+      "id": 718,
+      "text": "You are on a wide ledge high in the volcano. The rim of the volcano is about 200 feet above and there is a precipitous drop to the bottom."
+    },
+    {
+      "id": 719,
+      "text": " The way to the south is blocked by rubble."
+    },
+    {
+      "id": 720,
+      "text": " There is a small door to the south."
+    },
+    {
+      "id": 721,
+      "text": "A volcano gnome seems to walk straight out of the wall and "
+    },
+    {
+      "id": 722,
+      "text": "noticing the wand, straight back in."
+    },
+    {
+      "id": 723,
+      "text": "says \"I have a busy appointment schedule and little time to waste on trespassers, but for a small fee I'll show you the way out.\" You notice the gnome nervously glancing at his watch."
+    },
+    {
+      "id": 724,
+      "text": "The gnome appears increasingly nervous."
+    },
+    {
+      "id": 725,
+      "text": "\"Thank you very much for the "
+    },
+    {
+      "id": 726,
+      "text": ". I don't believe I've ever seen one as beautiful. Follow me,\" he says, and a door appears on the west end of the ledge. Through the door, you can see a narrow chimney sloping steeply downward. The gnome moves quickly, and disappears from sight."
+    },
+    {
+      "id": 727,
+      "text": "\"That certainly wasn't what I had in mind,\" he says, and disappears."
+    },
+    {
+      "id": 728,
+      "text": "\"That wasn't quite what I had in mind,\" he says, crunching the "
+    },
+    {
+      "id": 729,
+      "text": " in his rock-hard hands."
+    },
+    {
+      "id": 730,
+      "text": "The gnome glances at his watch. \"Oops. I'm late for an appointment!\" He disappears, leaving you alone on the ledge."
+    },
+    {
+      "id": 731,
+      "text": "The Flatheads are dead; therefore they do not respond."
+    },
+    {
+      "id": 732,
+      "text": "Although the Flatheads are dead, they foresaw that some cretin might tamper with their remains. Therefore, they took steps to punish such actions."
+    },
+    {
+      "id": 733,
+      "text": "The anteroom is large and empty. Marble bas reliefs depict the stirring times and afterlife of the Flatheads (the latter a bit optimistically). The exit is to the west. A huge marble door stands to the south. "
+    },
+    {
+      "id": 734,
+      "text": "The door is "
+    },
+    {
+      "id": 735,
+      "text": " Above the door is the cryptic inscription: \"Feel Free\"."
+    },
+    {
+      "id": 736,
+      "text": "The room contains the earthly remains of the mighty Flatheads, twelve somewhat flat heads mounted securely on poles. While the room might be expected to contain funerary urns or other evidence of the ritual practices of the ancient Zorkers, it is empty of all such objects. There is writing carved on the crypt. The only apparent exit is to the north through the door to the anteroom. The door is "
+    },
+    {
+      "id": 737,
+      "text": "Looking closely at the south wall, you can see the dim outline of a secret door labelled with the letter \"F\"."
+    },
+    {
+      "id": 738,
+      "text": "It is dark, but on the south wall is a faint outline of a rectangle, as though light were shining around a doorway. You can also make out a faintly glowing letter in the center of this area. It might be an \"F\"."
+    },
+    {
+      "id": 739,
+      "text": "The crypt is sealed for all time."
+    },
+    {
+      "id": 740,
+      "text": "The marble is cool."
+    },
+    {
+      "id": 741,
+      "text": "The crypt door squeaks open."
+    },
+    {
+      "id": 742,
+      "text": "The crypt door squeaks closed."
+    },
+    {
+      "id": 743,
+      "text": "A hollow echo responds."
+    },
+    {
+      "id": 744,
+      "text": "The secret door opens noiselessly."
+    },
+    {
+      "id": 745,
+      "text": "The secret door closes noiselessly."
+    },
+    {
+      "id": 746,
+      "text": "The can seems empty."
+    },
+    {
+      "id": 747,
+      "text": "There is a sloshing sound from inside."
+    },
+    {
+      "id": 748,
+      "text": "The repellent is all gone."
+    },
+    {
+      "id": 749,
+      "text": "The spray stinks amazingly for a few moments, then drifts away."
+    },
+    {
+      "id": 750,
+      "text": "The spray smells like a mixture of old socks and burning rubber. If I were a grue I'd sure stay clear!"
+    },
+    {
+      "id": 751,
+      "text": "That horrible smell is much less pungent now."
+    },
+    {
+      "id": 752,
+      "text": "Beyond the door is a roughly hewn staircase leading down into darkness. The landing on which you stand is covered with carefully drawn magical runes like those sketched upon the workbench of the Wizard of Frobozz. These have been overlaid with sweeping green lines of enormous power, which undulate back and forth across the landing. "
+    },
+    {
+      "id": 753,
+      "text": "The wand begins to vibrate in harmony with the motion of the lines. You feel yourself compelled downward, and you yield, stepping onto the staircase. As you pass the green lines, they flare and disappear with a burst of light, and you tumble down the staircase!\n\nAt the bottom, a vast red-lit hall stretches off into the distance. Sinister statues guard the entrance to a dimly visible room far ahead. With courage and cunning you have conquered the Wizard of Frobozz and become the master of his domain, but the final challenge awaits!\n\n(The ultimate adventure concludes in \"Zork III: The Dungeon Master\".)\n\n"
+    },
+    {
+      "id": 754,
+      "text": "The green curves begin to vibrate toward you, as if searching for something. One by one your possessions glow bright green. Finally, you are attacked by these magical wardens, and destroyed!"
+    },
+    {
+      "id": 755,
+      "text": "The water leaks out of the "
+    },
+    {
+      "id": 756,
+      "text": " and evaporates immediately."
+    },
+    {
+      "id": 757,
+      "text": "The teapot is now full of water."
+    },
+    {
+      "id": 758,
+      "text": "The teapot isn't currently empty."
+    },
+    {
+      "id": 759,
+      "text": "The water slips through your fingers."
+    },
+    {
+      "id": 760,
+      "text": "You don't have any water."
+    },
+    {
+      "id": 761,
+      "text": "The water spills to the floor and evaporates."
+    },
+    {
+      "id": 762,
+      "text": "The water splashes on the walls and evaporates."
+    },
+    {
+      "id": 763,
+      "text": "There is now a puddle in the bottom of the "
+    },
+    {
+      "id": 764,
+      "text": "The bucket is fireproof, and won't burn."
+    },
+    {
+      "id": 765,
+      "text": "The bucket swiftly rises up, and is gone."
+    },
+    {
+      "id": 766,
+      "text": "If you insist."
+    },
+    {
+      "id": 767,
+      "text": "The bucket rises and comes to a stop."
+    },
+    {
+      "id": 768,
+      "text": "The last of the water evaporates, and the bucket descends."
+    },
+    {
+      "id": 769,
+      "text": "The bucket descends and comes to a stop."
+    },
+    {
+      "id": 770,
+      "text": " is now much larger than you are. You have no hope of taking it."
+    },
+    {
+      "id": 771,
+      "text": "Suddenly, the room appears to have become very large (although everything you are carrying seems to be its normal size)."
+    },
+    {
+      "id": 772,
+      "text": " has crumbled to dust."
+    },
+    {
+      "id": 773,
+      "text": "The cake is much too tall now for you to read the lettering."
+    },
+    {
+      "id": 774,
+      "text": "The letters, now visible, say \""
+    },
+    {
+      "id": 775,
+      "text": "Evaporate"
+    },
+    {
+      "id": 776,
+      "text": "Explode"
+    },
+    {
+      "id": 777,
+      "text": "Enlarge"
+    },
+    {
+      "id": 778,
+      "text": "You can't see through that!"
+    },
+    {
+      "id": 779,
+      "text": "The first letter is a capital E. The rest is too small to read."
+    },
+    {
+      "id": 780,
+      "text": "That was delicious, but your dying memory is of feeling horribly dehydrated and thirsty."
+    },
+    {
+      "id": 781,
+      "text": "The room around you seems to be getting smaller."
+    },
+    {
+      "id": 782,
+      "text": "The room seems to have become too small to hold you. The walls are not as compressible as your body, which is demolished."
+    },
+    {
+      "id": 783,
+      "text": "The cake sinks majestically into the pool."
+    },
+    {
+      "id": 784,
+      "text": "Most of the pool evaporates, revealing a (slightly damp but still valuable) package of rare candies. The red cake must be pretty strong stuff, since it remains intact!"
+    },
+    {
+      "id": 785,
+      "text": "       Frobozz Magic Candy Company\n         >>Special Assortment<<\n          Candied Grasshoppers\n             Chocolated Ants\n              Worms Glacee\n(By Appointment to His Majesty, Dimwit I)\n"
+    },
+    {
+      "id": 786,
+      "text": "Such rich food would probably not be good for you."
+    },
+    {
+      "id": 787,
+      "text": "       o  b  o\n   r             z\nf   M  A  G  I  C   z\nc    W  E   L  L    y\n   o             n\n       m  p  a\n"
+    },
+    {
+      "id": 788,
+      "text": "       o  b  o\n\n       A  G  I\n        E   L\n\n       m  p  a\n"
+    },
+    {
+      "id": 789,
+      "text": "              Bank of Zork\n                   VAULT\n                 *722 GUE*\n        Frobozz Magic Vault Company\n"
+    },
+    {
+      "id": 790,
+      "text": "The water is extremely salty."
+    },
+    {
+      "id": 791,
+      "text": "You'd probably have to enter the pool to see what's below the surface."
+    },
+    {
+      "id": 792,
+      "text": "You enter the pool, thrash around for a good while, and then drown. Sad, but true."
+    },
+    {
+      "id": 793,
+      "text": "You notice that objects behind the flask appear to be magnified. You might try looking at something through the flask."
+    },
+    {
+      "id": 794,
+      "text": "The flask distorts and magnifies the "
+    },
+    {
+      "id": 795,
+      "text": ", showing details not noticed earlier."
+    },
+    {
+      "id": 796,
+      "text": "Noxious vapors prevent your entry."
+    },
+    {
+      "id": 797,
+      "text": "The flask breaks into pieces."
+    },
+    {
+      "id": 798,
+      "text": "As you pass out, you realize that the vapors from the flask's contents are fatal."
+    },
+    {
+      "id": 799,
+      "text": "The leak is too high above you to reach."
+    },
+    {
+      "id": 800,
+      "text": "The entrance is blocked by sticky orange rubble. Probably some careless adventurer was playing with blasting cakes."
+    },
+    {
+      "id": 801,
+      "text": "You have been blasted to smithereens (wherever they are)."
+    },
+    {
+      "id": 802,
+      "text": "You are in a circular room with a low ceiling. There are exits to the east and southeast."
+    },
+    {
+      "id": 803,
+      "text": "According to Prof. TAA of GUE Tech, the rapidly changing magnetic fields in the room are intense enough to electrocute you. I really don't know, but in any event, something just killed you."
+    },
+    {
+      "id": 804,
+      "text": "According to Prof. TAA of GUE Tech, the magnetic fields in the room are intense enough to fry the delicate innards of the robot. I really don't know, but in any event, smoke pours from its ears and it has stopped moving."
+    },
+    {
+      "id": 805,
+      "text": "As you enter, your compass starts spinning wildly."
+    },
+    {
+      "id": 806,
+      "text": "What compass, you ask? The one which allows you to specify compass directions for movement."
+    },
+    {
+      "id": 807,
+      "text": "You cannot get your bearings..."
+    },
+    {
+      "id": 808,
+      "text": "There is a giant spark and you are fried to a crisp."
+    },
+    {
+      "id": 809,
+      "text": "Nothing seems to happen."
+    },
+    {
+      "id": 810,
+      "text": "The whirring increases in intensity."
+    },
+    {
+      "id": 811,
+      "text": "The whirring decreases in intensity."
+    },
+    {
+      "id": 812,
+      "text": "A dull thump is heard in the distance."
+    },
+    {
+      "id": 813,
+      "text": "Click."
+    },
+    {
+      "id": 814,
+      "text": "As you reach for the sphere, a solid steel cage falls from the ceiling to entrap you. To make matters worse, poisonous gas starts coming into the room."
+    },
+    {
+      "id": 815,
+      "text": "As the robot reaches for the sphere, a solid steel cage falls from the ceiling, trapping him. You can faintly hear his last words: \"Whirr, buzz, click!\" A cloud of smoke rising from beneath the cage confirms your fears about the fate of your brave mechanical friend."
+    },
+    {
+      "id": 816,
+      "text": "You are stopped by a cloud of poisonous gas."
+    },
+    {
+      "id": 817,
+      "text": "Time passes...and you die from some obscure poisoning."
+    },
+    {
+      "id": 818,
+      "text": "\"My memory circuits are not that advanced. I can move as directed, though.\""
+    },
+    {
+      "id": 819,
+      "text": "The cage shakes and is hurled across the room. It's hard to say, but the robot appears to be smiling."
+    },
+    {
+      "id": 820,
+      "text": "\"I am sorry but that is difficult for a being with no mouth.\""
+    },
+    {
+      "id": 821,
+      "text": "\"Buzz! Buzz! Buzz! My circuits are getting rusty. Try again.\""
+    },
+    {
+      "id": 822,
+      "text": "\"My vision is not sufficiently acute to do that.\""
+    },
+    {
+      "id": 823,
+      "text": "\"Whirr, buzz, click!\""
+    },
+    {
+      "id": 824,
+      "text": "\"Click! I don't have that. Buzz! Whirr!\""
+    },
+    {
+      "id": 825,
+      "text": "\"Buzz, click, whirr!\""
+    },
+    {
+      "id": 826,
+      "text": "\"My programming is insufficient to allow me to perform that task.\""
+    },
+    {
+      "id": 827,
+      "text": "There's no access panel or door on the robot."
+    },
+    {
+      "id": 828,
+      "text": "The robot gladly takes the "
+    },
+    {
+      "id": 829,
+      "text": " and nods his head-like appendage in thanks."
+    },
+    {
+      "id": 830,
+      "text": "The robot falls to the ground and (being of shoddy construction) disintegrates before your eyes."
+    },
+    {
+      "id": 831,
+      "text": "Nothing like having money to burn!"
+    },
+    {
+      "id": 832,
+      "text": "Talk about eating rich foods!"
+    },
+    {
+      "id": 833,
+      "text": "An alarm rings briefly, and an invisible force bars your way."
+    },
+    {
+      "id": 834,
+      "text": "You are in a small room, which was used by a bank officer who retrieved safety deposit boxes for the customer. On the north side of the room is a sign which reads  \"Viewing Room\". On the "
+    },
+    {
+      "id": 835,
+      "text": "west"
+    },
+    {
+      "id": 836,
+      "text": "east"
+    },
+    {
+      "id": 837,
+      "text": " side of the room, above an open door, is a sign reading:\n\n          BANK PERSONNEL ONLY\n"
+    },
+    {
+      "id": 838,
+      "text": "As you try, your hand seems to go through it."
+    },
+    {
+      "id": 839,
+      "text": " goes through it."
+    },
+    {
+      "id": 840,
+      "text": " passes through the wall and vanishes."
+    },
+    {
+      "id": 841,
+      "text": "The curtain dims slightly as the "
+    },
+    {
+      "id": 842,
+      "text": " passes through."
+    },
+    {
+      "id": 843,
+      "text": "You feel somewhat disoriented as you pass through..."
+    },
+    {
+      "id": 844,
+      "text": "A metallic voice says \"Hello, Intruder! Your unauthorized presence in the vault of the Bank of Zork has set off all sorts of nasty surprises, most of which are fatal. This message brought to you by the Frobozz Magic Vault Company.\""
+    },
+    {
+      "id": 845,
+      "text": "You hear a faint voice say \"Curtain Door Closed.\""
+    },
+    {
+      "id": 846,
+      "text": "An epicene gnome of Zurich wearing a three-piece suit and carrying a safety deposit box materializes in the room."
+    },
+    {
+      "id": 847,
+      "text": " He notices the wand and dematerializes speedily."
+    },
+    {
+      "id": 848,
+      "text": " \"You seem to have forgotten to deposit your valuables,\" he says, tapping the lid of the box impatiently. \"We don't usually allow customers to use the boxes here, but we can make this ONE exception, I suppose...\" He looks askance at you over his wire-rimmed bifocals."
+    },
+    {
+      "id": 849,
+      "text": "The gnome clutches it possessively."
+    },
+    {
+      "id": 850,
+      "text": "The gnome appears increasingly impatient."
+    },
+    {
+      "id": 851,
+      "text": "The gnome carefully places the "
+    },
+    {
+      "id": 852,
+      "text": " in the deposit box. \"Let me show you the way out,\" he says, making it clear he will be pleased to see the last of you. Then, you are momentarily disoriented, and when you recover you are back at the Bank Entrance."
+    },
+    {
+      "id": 853,
+      "text": "\"You are so very gracious. I really cannot accept.\" he says. He disappears, a wry smile on his lips."
+    },
+    {
+      "id": 854,
+      "text": "\"I wouldn't put THAT in a safety deposit box,\" remarks the gnome with disdain, tossing it over his shoulder, where it disappears with an understated \"pop\"."
+    },
+    {
+      "id": 855,
+      "text": "The gnome says \"Well, I never...\" and disappears with a snap of his fingers, leaving you alone."
+    },
+    {
+      "id": 856,
+      "text": "The gnome looks impatient: \"I may have another customer waiting; you'll just have to fend for yourself, I'm afraid.\" He disappears, leaving you alone."
+    },
+    {
+      "id": 857,
+      "text": "This is a tiny room carved out of the wall of the ravine. There is an exit down a precarious climb. "
+    },
+    {
+      "id": 858,
+      "text": "north"
+    },
+    {
+      "id": 859,
+      "text": "This is a small and rather dreary room, eerily illuminated by a red glow emanating from a crack in one wall. The light falls upon a dusty wooden table in the center of the room. "
+    },
+    {
+      "id": 860,
+      "text": "south"
+    },
+    {
+      "id": 861,
+      "text": "On the "
+    },
+    {
+      "id": 862,
+      "text": " side of the room is a massive wooden door, which has a small window barred with iron. A formidable bolt lock is set within the door frame. A keyhole "
+    },
+    {
+      "id": 863,
+      "text": "covered by a thin metal lid "
+    },
+    {
+      "id": 864,
+      "text": "lies within the lock."
+    },
+    {
+      "id": 865,
+      "text": " A "
+    },
+    {
+      "id": 866,
+      "text": " is in place within the keyhole."
+    },
+    {
+      "id": 867,
+      "text": " The edge of a place mat is visible under the door."
+    },
+    {
+      "id": 868,
+      "text": " Lying on the place mat is a "
+    },
+    {
+      "id": 869,
+      "text": "You can see a lighted room at the other end."
+    },
+    {
+      "id": 870,
+      "text": "No light can be seen through the keyhole."
+    },
+    {
+      "id": 871,
+      "text": "The keyhole is blocked."
+    },
+    {
+      "id": 872,
+      "text": "There is a faint noise from behind the door and a small cloud of dust rises from beneath it."
+    },
+    {
+      "id": 873,
+      "text": " doesn't fit."
+    },
+    {
+      "id": 874,
+      "text": "The lid is in the way."
+    },
+    {
+      "id": 875,
+      "text": "The lid is now open."
+    },
+    {
+      "id": 876,
+      "text": "The keyhole is occupied."
+    },
+    {
+      "id": 877,
+      "text": "The lid covers the keyhole."
+    },
+    {
+      "id": 878,
+      "text": "There's a keyhole behind the lid."
+    },
+    {
+      "id": 879,
+      "text": "There is something misty in the sphere. Perhaps if you were to look into it..."
+    },
+    {
+      "id": 880,
+      "text": "You are inside a huge crystalline sphere filled with thin "
+    },
+    {
+      "id": 881,
+      "text": "red"
+    },
+    {
+      "id": 882,
+      "text": "blue"
+    },
+    {
+      "id": 883,
+      "text": "white"
+    },
+    {
+      "id": 884,
+      "text": " mist. The mist becomes "
+    },
+    {
+      "id": 885,
+      "text": "black"
+    },
+    {
+      "id": 886,
+      "text": " to the west."
+    },
+    {
+      "id": 887,
+      "text": "You strain to look out through the mist... "
+    },
+    {
+      "id": 888,
+      "text": "You see a small room with a sign on the wall, but it is too blurry to read."
+    },
+    {
+      "id": 889,
+      "text": "You look out into a large, dreary room with a great door and a huge table. There is an odd glow to the mist."
+    },
+    {
+      "id": 890,
+      "text": "A strange blurry room is barely visible."
+    },
+    {
+      "id": 891,
+      "text": " An odd sinuous shadow crosses the mist as you look."
+    },
+    {
+      "id": 892,
+      "text": "You follow a corridor of black mist into a black walled spherical room."
+    },
+    {
+      "id": 893,
+      "text": " The room is empty. A huge face looks down on you from outside and laughs sardonically. It doesn't look like you're getting out of this predicament!"
+    },
+    {
+      "id": 894,
+      "text": " As you enter, a huge and horrible face materializes out of the mist.\n\n\"What brings you here to trouble my imprisonment, wanderer?\" it asks. Hearing no immediate answer, it studies you for a moment."
+    },
+    {
+      "id": 895,
+      "text": "\"Not you again! This is getting tedious. You'll obviously never be much help to me. Better luck next time, oh wondrous adventurer.\" The face disappears and everything goes black."
+    },
+    {
+      "id": 896,
+      "text": "\"Perhaps you may be of some use to me in gaining my freedom from this place. Return to your foolish quest! I shall not destroy you this time. Mayhap you will repay this favor in kind someday.\" The face vanishes and the mist begins to swirl. When it clears you are returned to the world of life."
+    },
+    {
+      "id": 897,
+      "text": "The sphere is unbreakable."
+    },
+    {
+      "id": 898,
+      "text": "As you peer into the sphere, a strange vision takes shape...a huge and fearful face with yellow eyes. The face peers out at you expectantly."
+    },
+    {
+      "id": 899,
+      "text": "You see only darkness."
+    },
+    {
+      "id": 900,
+      "text": "As you peer through the mist, a strangely colored vision of a huge room takes shape..."
+    },
+    {
+      "id": 901,
+      "text": "As you peer into the sphere, a strange vision takes shape of a distant room, which can be described clearly...."
+    },
+    {
+      "id": 902,
+      "text": "An astonished adventurer is staring into a crystal sphere."
+    },
+    {
+      "id": 903,
+      "text": "The vision fades, revealing only an ordinary crystal sphere."
+    },
+    {
+      "id": 904,
+      "text": "The door is open, dummy."
+    },
+    {
+      "id": 905,
+      "text": "Perhaps if you were diced...."
+    },
+    {
+      "id": 906,
+      "text": "The place mat is under the door."
+    },
+    {
+      "id": 907,
+      "text": "The door is now unlocked."
+    },
+    {
+      "id": 908,
+      "text": "It doesn't fit the lock."
+    },
+    {
+      "id": 909,
+      "text": "It can't be unlocked with that."
+    },
+    {
+      "id": 910,
+      "text": "The door is locked."
+    },
+    {
+      "id": 911,
+      "text": "It can't be locked with that."
+    },
+    {
+      "id": 912,
+      "text": "The paper is very small and vanishes under the door."
+    },
+    {
+      "id": 913,
+      "text": "The newspaper crumples up and won't go under the door."
+    },
+    {
+      "id": 914,
+      "text": "The door is now open."
+    },
+    {
+      "id": 915,
+      "text": "The door is now closed."
+    },
+    {
+      "id": 916,
+      "text": "The place mat fits easily under the door."
+    },
+    {
+      "id": 917,
+      "text": "There's not enough room under this door."
+    },
+    {
+      "id": 918,
+      "text": "As the place mat is moved, a "
+    },
+    {
+      "id": 919,
+      "text": " falls from it and onto the floor."
+    },
+    {
+      "id": 920,
+      "text": "A whispering voice replies: \"Water makes the bucket go.\" Unfortunately, wishing makes the coin go...."
+    },
+    {
+      "id": 921,
+      "text": "No one is listening."
+    },
+    {
+      "id": 922,
+      "text": " is now sitting at the bottom of the well."
+    },
+    {
+      "id": 923,
+      "text": "You can't climb the well."
+    },
+    {
+      "id": 924,
+      "text": "I'm afraid you have run out of matches."
+    },
+    {
+      "id": 925,
+      "text": "One of the matches starts to burn."
+    },
+    {
+      "id": 926,
+      "text": "The match is out."
+    },
+    {
+      "id": 927,
+      "text": "You have "
+    },
+    {
+      "id": 928,
+      "text": " match"
+    },
+    {
+      "id": 929,
+      "text": "es."
+    },
+    {
+      "id": 930,
+      "text": "A match is burning."
+    },
+    {
+      "id": 931,
+      "text": "No match is burning."
+    },
+    {
+      "id": 932,
+      "text": "The match has gone out."
+    },
+    {
+      "id": 933,
+      "text": "The lamp appears a bit dimmer."
+    },
+    {
+      "id": 934,
+      "text": "The lamp is definitely dimmer now."
+    },
+    {
+      "id": 935,
+      "text": "The lamp is nearly out."
+    },
+    {
+      "id": 936,
+      "text": "The lamp has smashed into the floor, and the light has gone out."
+    },
+    {
+      "id": 937,
+      "text": "A burned-out lamp won't light."
+    },
+    {
+      "id": 938,
+      "text": "The lamp has already burned out."
+    },
+    {
+      "id": 939,
+      "text": "The lamp has burned out."
+    },
+    {
+      "id": 940,
+      "text": "The lamp is on."
+    },
+    {
+      "id": 941,
+      "text": "The lamp is turned off."
+    },
+    {
+      "id": 942,
+      "text": "You'd better have more light than from the "
+    },
+    {
+      "id": 943,
+      "text": "This is a room which is bare on all sides. There is an exit down in the northwest corner of the room. To the east is a great "
+    },
+    {
+      "id": 944,
+      "text": " door made of stone. Above the stone, the following words are written: \"No man shall pass this door without solving this riddle:\n\n  What is tall as a house,\n    round as a cup,\n      and all the king's horses\n        can't draw it up?\"\n"
+    },
+    {
+      "id": 945,
+      "text": "There is a deafening clap of thunder and the stone door quietly swings open to reveal a passageway beyond."
+    },
+    {
+      "id": 946,
+      "text": "A hollow laugh seems to come from the stone door."
+    },
+    {
+      "id": 947,
+      "text": "It is open!"
+    },
+    {
+      "id": 948,
+      "text": "The door can only be opened by answering the riddle."
+    },
+    {
+      "id": 949,
+      "text": "Not a chance. The door weighs many tons."
+    },
+    {
+      "id": 950,
+      "text": "It is closed!"
+    },
+    {
+      "id": 951,
+      "text": "Look around."
+    },
+    {
+      "id": 952,
+      "text": "You think it isn't?"
+    },
+    {
+      "id": 953,
+      "text": "I think you've already done that."
+    },
+    {
+      "id": 954,
+      "text": "Use the \"Look\" command."
+    },
+    {
+      "id": 955,
+      "text": "You find yourself drawn toward the edge of the bridge. You peer over the side. Oops, that was clumsy of you! You tripped on something and fell in. Too bad."
+    },
+    {
+      "id": 956,
+      "text": "For some odd reason you have tripped on your own feet, or perhaps an invisible cord stretched across the path. The resulting fall seems to have done you in."
+    },
+    {
+      "id": 957,
+      "text": "You just tripped on an invisible cord, or perhaps your own feet. But this must be your lucky day, as you managed to regain your balance before what could have been a fatal fall."
+    },
+    {
+      "id": 958,
+      "text": "You get in the "
+    },
+    {
+      "id": 959,
+      "text": " but you fall out again, almost as though an invisible hand had tipped it over."
+    },
+    {
+      "id": 960,
+      "text": "I suppose you plan to do that by flapping your arms?"
+    },
+    {
+      "id": 961,
+      "text": " drops to the ground."
+    },
+    {
+      "id": 962,
+      "text": "You can't reach that! It's on the ground."
+    },
+    {
+      "id": 963,
+      "text": "You are frozen solid. You might as well wait it out, because you can't do anything else in this state."
+    },
+    {
+      "id": 964,
+      "text": "An invisible fence of magical force bars your way."
+    },
+    {
+      "id": 965,
+      "text": "Oops, you seem a little unsteady... I'm not sure you got where you intended going."
+    },
+    {
+      "id": 966,
+      "text": "All at once, you are overcome by fear! There's is a "
+    },
+    {
+      "id": 967,
+      "text": " in here! Maybe it's after you! "
+    },
+    {
+      "id": 968,
+      "text": "You huddle in the corner, terrified."
+    },
+    {
+      "id": 969,
+      "text": "You run from the room screaming in terror!"
+    },
+    {
+      "id": 970,
+      "text": "You are maddened by an overwhelming ferocity, and attack the "
+    },
+    {
+      "id": 971,
+      "text": " instead."
+    },
+    {
+      "id": 972,
+      "text": "dark"
+    },
+    {
+      "id": 973,
+      "text": "flickering dimly"
+    },
+    {
+      "id": 974,
+      "text": "dimly glowing"
+    },
+    {
+      "id": 975,
+      "text": "glowing"
+    },
+    {
+      "id": 976,
+      "text": "glowing brightly"
+    },
+    {
+      "id": 977,
+      "text": "On the floor is a very small diamond shaped window which is "
+    },
+    {
+      "id": 978,
+      "text": "glowing serenely"
+    },
+    {
+      "id": 979,
+      "text": "The window is an integral part of the floor."
+    },
+    {
+      "id": 980,
+      "text": "The window is diamond-hard and cannot be broken."
+    },
+    {
+      "id": 981,
+      "text": "This is a room with oddly angled walls and passages in all directions. The walls are made of some glassy substance."
+    },
+    {
+      "id": 982,
+      "text": "A marble stairway leads upward."
+    },
+    {
+      "id": 983,
+      "text": " The floor has swung down at the end of the stairway to reveal a secret passage leading down into unrelieved darkness."
+    },
+    {
+      "id": 984,
+      "text": "You hear a strange rusty squeal echoing in the distance."
+    },
+    {
+      "id": 985,
+      "text": "There is no way to go in that direction."
+    },
+    {
+      "id": 986,
+      "text": "As you thrash about in the maze, the mirthful voice of the Wizard taunts you: \"Fool! You'll never get past "
+    },
+    {
+      "id": 987,
+      "text": " base at this rate!\""
+    },
+    {
+      "id": 988,
+      "text": "first"
+    },
+    {
+      "id": 989,
+      "text": "second"
+    },
+    {
+      "id": 990,
+      "text": "third"
+    },
+    {
+      "id": 991,
+      "text": "home"
+    },
+    {
+      "id": 992,
+      "text": "The dog looks puzzled."
+    },
+    {
+      "id": 993,
+      "text": "\"Arf! Arf! Arf!\""
+    },
+    {
+      "id": 994,
+      "text": "\"Grrrr!\""
+    },
+    {
+      "id": 995,
+      "text": "With a quiet bark of disappointment, the creature expires. Its six eyes look at you reproachfully. As it dies, it collapses into a small pile of dust which blows away into nothing."
+    },
+    {
+      "id": 996,
+      "text": "The dog-thing snaps at you viciously, and succeeds. Your head, it seems, is only a small mouthful for the poor animal, who is just as hungry afterward."
+    },
+    {
+      "id": 997,
+      "text": "The maddened dog-thing snaps viciously at you."
+    },
+    {
+      "id": 998,
+      "text": "An insipidly grinning three-headed dog is wagging its tail here. It is wearing a huge dog collar."
+    },
+    {
+      "id": 999,
+      "text": "The creature whines happily, then the center head licks your face (which is roughly like experiencing a sandpaper washcloth). The other two heads look about, as though the monster felt a sudden need to find a pair of slippers somewhere. Its huge tail wags enthusiastically, knocking small rocks around and almost blowing you over from the breeze it creates."
+    },
+    {
+      "id": 1000,
+      "text": "The huge dog rises about an inch off the ground, for a moment."
+    },
+    {
+      "id": 1001,
+      "text": "Cerberus tears you limb from limb! What ferocity!"
+    },
+    {
+      "id": 1002,
+      "text": "What an effect! He now has the strength of just one elephant, rather than ten!"
+    },
+    {
+      "id": 1003,
+      "text": "The three-headed dog snaps at you viciously!"
+    },
+    {
+      "id": 1004,
+      "text": "The dog is now insanely happy, slobbering all over the place and whining with uncontained doggish joy."
+    },
+    {
+      "id": 1005,
+      "text": "That wasn't such a good idea. The creature was enjoying being your pet. As you unfasten the collar, the disappointed monster hound begins to growl, and then its three fang-crammed mouths rend you into little doggy biscuits."
+    },
+    {
+      "id": 1006,
+      "text": "This is a big glacier; you'll need a lot of heat."
+    },
+    {
+      "id": 1007,
+      "text": "This is a large hall of ancient lava, since worn smooth by the movement of a glacier. A large passage exits to the east and an upward lava tube is at the top of a jumble of fallen rocks."
+    },
+    {
+      "id": 1008,
+      "text": "A damp and scorched passage leads west. It is still partly full of steam."
+    },
+    {
+      "id": 1009,
+      "text": "The dragon looks amused. He speaks in a voice so deep you feel it rather than hear it, but the tongue is unknown to you. You find yourself almost hypnotized."
+    },
+    {
+      "id": 1010,
+      "text": "He turns and looks back at you, his cat's eyes yellow in the gloom. You start to feel weak, and quickly turn away."
+    },
+    {
+      "id": 1011,
+      "text": "With your bare hands? I doubt the dragon even noticed."
+    },
+    {
+      "id": 1012,
+      "text": "The dragon is pleased by your gift, excuses himself for a moment, and returns without it."
+    },
+    {
+      "id": 1013,
+      "text": "The dragon snakes his long red tongue around the bomb and politely swallows it. A few moments later he belches and smoke curls out of his nostrils."
+    },
+    {
+      "id": 1014,
+      "text": "The dragon refuses your gift."
+    },
+    {
+      "id": 1015,
+      "text": "The dragon puts out a claw, grins (all of his sword-sharp teeth glinting in the light), and blocks your way."
+    },
+    {
+      "id": 1016,
+      "text": "Dragon hide is tough as steel, but you have succeeded in annoying him a bit. He looks at you as if deciding whether or not to eat you."
+    },
+    {
+      "id": 1017,
+      "text": "That captured his interest. He stares at you balefully."
+    },
+    {
+      "id": 1018,
+      "text": "The dragon is surprised and interested (for the moment)."
+    },
+    {
+      "id": 1019,
+      "text": "You've made him rather angry. You had better be very careful now."
+    },
+    {
+      "id": 1020,
+      "text": "That did no damage, but he turns his smoky yellow eyes in your direction and sighs."
+    },
+    {
+      "id": 1021,
+      "text": "The dragon tires of this game. With an almost bored yawn, he opens his mouth and "
+    },
+    {
+      "id": 1022,
+      "text": "blasts you with a great gout of fire, but it washes over you harmlessly."
+    },
+    {
+      "id": 1023,
+      "text": "incinerates you in a blast of white-hot dragon fire."
+    },
+    {
+      "id": 1024,
+      "text": "The dragon doubles back and charges into the room, maddened by your attempt to sneak past him. His eyes glow with a white heat of anger."
+    },
+    {
+      "id": 1025,
+      "text": "A huge ball of flame envelops you, but you don't even feel the heat. The dragon is puzzled, but not too puzzled to crush you in his jaws."
+    },
+    {
+      "id": 1026,
+      "text": "Worse for you, his mouth opens and a great gout of flame puffs out and consumes you on the spot."
+    },
+    {
+      "id": 1027,
+      "text": "The dragon looks bored."
+    },
+    {
+      "id": 1028,
+      "text": "The dragon is no longer around. He must have become bored with you."
+    },
+    {
+      "id": 1029,
+      "text": "The dragon seems to have lost interest in you."
+    },
+    {
+      "id": 1030,
+      "text": " He wanders off."
+    },
+    {
+      "id": 1031,
+      "text": "The dragon will follow no further."
+    },
+    {
+      "id": 1032,
+      "text": "As the dragon enters, he sees his reflection on the icy surface of the glacier at its western end. He becomes enraged: There is another dragon here, behind that glass, he thinks! Dragons are smart, but sometimes naive, and this one has never seen ice before. He rears up to his full height to challenge this intruder into his territory. He roars a challenge! The intruder responds! The dragon takes a deep breath, and out of his mouth pours a massive gout of flame. It washes over the ice, which melts rapidly, sending out torrents of water and a huge cloud of steam! You manage to clamber up to a small shelf, but the dragon is terrified! A huge splash goes down his throat! There is a muffled explosion and the dragon, a puzzled expression on his face, dies. He is carried away by the water.\n\nWhen the flood recedes you climb gingerly down. While no trace of the dragon can be found, the melting of the ice has revealed a passage leading west."
+    },
+    {
+      "id": 1033,
+      "text": "The dragon follows you, out of mingled curiosity and anger."
+    },
+    {
+      "id": 1034,
+      "text": "The dragon continues to watch you carefully."
+    },
+    {
+      "id": 1035,
+      "text": "The unicorn bounds lightly away."
+    },
+    {
+      "id": 1036,
+      "text": "A unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck."
+    },
+    {
+      "id": 1037,
+      "text": "You look around, and strangely, the topiary animals seem to have changed position slightly."
+    },
+    {
+      "id": 1038,
+      "text": "The topiary animals seem to close in on you. You turn and they are very close. They seem to be leering at you."
+    },
+    {
+      "id": 1039,
+      "text": "The topiary animals attack! You are crushed by their branches and clawed by their thorns."
+    },
+    {
+      "id": 1040,
+      "text": "There is a large, white animal partly hidden behind some trees."
+    },
+    {
+      "id": 1041,
+      "text": "You catch a glimpse of something white between two hedges."
+    },
+    {
+      "id": 1042,
+      "text": "A unicorn is cropping grass on the other side of the room. A gold key hangs from a ribbon around its neck."
+    },
+    {
+      "id": 1043,
+      "text": "There is a beautiful unicorn eating roses here. Around his neck is a red satin ribbon on which is strung a tiny key."
+    },
+    {
+      "id": 1044,
+      "text": "The unicorn is way up at the north end of the garden."
+    },
+    {
+      "id": 1045,
+      "text": "I don't know where it is now."
+    },
+    {
+      "id": 1046,
+      "text": "The unicorn is a mythical beast."
+    },
+    {
+      "id": 1047,
+      "text": "Unicorn? What unicorn?"
+    },
+    {
+      "id": 1048,
+      "text": "The unicorn listens distractedly, then goes back to cropping grass."
+    },
+    {
+      "id": 1049,
+      "text": "The unicorn shies away as you approach."
+    },
+    {
+      "id": 1050,
+      "text": "The unicorn shies away as you approach for a closer look, but you do notice a tiny gold key hanging from a red satin ribbon looped around the animal's neck."
+    },
+    {
+      "id": 1051,
+      "text": "The unicorn, unsurprised by this evidence that you are indeed the uncouth sort of vagabond it suspected you were, melts into the hedges and is gone."
+    },
+    {
+      "id": 1052,
+      "text": "You're already in it."
+    },
+    {
+      "id": 1053,
+      "text": "The opening of the squeaky lid startles the young woman."
+    },
+    {
+      "id": 1054,
+      "text": "The hinges are very rusty, but they seem to be starting to give. You can probably open it if you try again. There is something bumping around inside."
+    },
+    {
+      "id": 1055,
+      "text": " All this rummaging around has startled the young woman."
+    },
+    {
+      "id": 1056,
+      "text": "You can't follow her until she leaves..."
+    },
+    {
+      "id": 1057,
+      "text": "I seem to have lost track of her."
+    },
+    {
+      "id": 1058,
+      "text": "There is no princess here."
+    },
+    {
+      "id": 1059,
+      "text": "The princess screams as you approach. \"Won't someone deliver me from this awful fate?\" she cries. "
+    },
+    {
+      "id": 1060,
+      "text": "Shocked, the Wizard of Frobozz turns toward you."
+    },
+    {
+      "id": 1061,
+      "text": "Just in time, the Wizard of Frobozz appears, seeming to unroll himself out of nothing like a window shade."
+    },
+    {
+      "id": 1062,
+      "text": " \"Fry!\" he intones, and a massive bolt of lightning reduces you to a pile of smoking ashes. (Serves you right, too, if you ask me.)"
+    },
+    {
+      "id": 1063,
+      "text": "There is a dishevelled and slightly unkempt princess here."
+    },
+    {
+      "id": 1064,
+      "text": "The princess (for she is obviously one) shakes herself awake, then notices you for the first time. She smiles. \"Thank you for rescuing me from that horrid worm,\" she says. \"I must depart. My parents will be worried about me.\" With that, she arises, looking purposefully out of the lair."
+    },
+    {
+      "id": 1065,
+      "text": "The princess ignores you. She looks about the room, but her eyes fix on the "
+    },
+    {
+      "id": 1066,
+      "text": "garden outside"
+    },
+    {
+      "id": 1067,
+      "text": "gazebo"
+    },
+    {
+      "id": 1068,
+      "text": "ledge"
+    },
+    {
+      "id": 1069,
+      "text": "She's in a trance!"
+    },
+    {
+      "id": 1070,
+      "text": "out"
+    },
+    {
+      "id": 1071,
+      "text": "The princess presses a loose piece of marble in the wall and a large section of the wall slides away, revealing a passage to the east. She enters it."
+    },
+    {
+      "id": 1072,
+      "text": "The princess appears from behind some rocks, as though she had walked through a wall."
+    },
+    {
+      "id": 1073,
+      "text": "The princess enters the gazebo"
+    },
+    {
+      "id": 1074,
+      "text": ", although you would never get past the debris. She must be magically protected."
+    },
+    {
+      "id": 1075,
+      "text": "The princess climbs daintily down the rock face."
+    },
+    {
+      "id": 1076,
+      "text": "The princess walks "
+    },
+    {
+      "id": 1077,
+      "text": ". She glances back at you as she goes."
+    },
+    {
+      "id": 1078,
+      "text": "The princess joins you in the gazebo."
+    },
+    {
+      "id": 1079,
+      "text": "The princess climbs down the rock wall onto the beach."
+    },
+    {
+      "id": 1080,
+      "text": "The princess enters from the "
+    },
+    {
+      "id": 1081,
+      "text": ". She seems surprised to see you."
+    },
+    {
+      "id": 1082,
+      "text": "Shyly, a unicorn peeks out of the hedges. It notices the princess and seems captivated. It approaches her and bows its head as though curtseying to her. Around its neck is a red satin ribbon on which is strung a delicate gold key. The princess takes the ribbon and uses it to tie up her hair. She looks at you and then, smiling, hands you the key and a fresh rose which she plucks from the arbor. \"You may have use of such a thing,\" she says. \"It is the least I can do for one who rescued me from a fate I dare not contemplate.\" With that, she mounts the unicorn (side-saddle, of course) and rides off into the gloom."
+    },
+    {
+      "id": 1083,
+      "text": "This is a large room which was evidently used once as a quarry. Many large limestone chunks lie helter-skelter around the room. Some are rough-hewn and unworked, others smooth and well-finished. One side of the room appears to have been used to quarry building blocks, the other to produce menhirs (standing stones). Obvious passages lead north and south."
+    },
+    {
+      "id": 1084,
+      "text": "One particularly large menhir, at least twenty feet tall and eight feet thick, is leaning against the wall blocking a dark opening leading southwest. On this side of the menhir is carved an ornate letter \"F\"."
+    },
+    {
+      "id": 1085,
+      "text": "There is a huge menhir lying on the floor near a southwest passage."
+    },
+    {
+      "id": 1086,
+      "text": "A dark opening leads southwest."
+    },
+    {
+      "id": 1087,
+      "text": "There is a huge menhir here."
+    },
+    {
+      "id": 1088,
+      "text": "There is a huge menhir floating like a feather in midair here. A passage to the southwest opens beneath it."
+    },
+    {
+      "id": 1089,
+      "text": "The explosion appears to have had no effect on the menhir."
+    },
+    {
+      "id": 1090,
+      "text": "Behind the menhir is some air and then a wall."
+    },
+    {
+      "id": 1091,
+      "text": "The gap between the menhir and the wall is very narrow, but it is clear that there is a sizeable room in there. Your light only reveals a part of the far wall."
+    },
+    {
+      "id": 1092,
+      "text": "The menhir weighs many tons and is eight feet wide. You can't even get a grip on it, much less move it."
+    },
+    {
+      "id": 1093,
+      "text": "\"F\""
+    },
+    {
+      "id": 1094,
+      "text": "It is nicely finished, and the letter \"F\" on it is particularly well carved."
+    },
+    {
+      "id": 1095,
+      "text": "The menhir floats majestically into the air, rising about ten feet. The passage beneath it beckons invitingly."
+    },
+    {
+      "id": 1096,
+      "text": "The menhir sinks to the ground."
+    },
+    {
+      "id": 1097,
+      "text": "Try as you may, you can't wake it."
+    },
+    {
+      "id": 1098,
+      "text": "He is asleep, at least for the moment."
+    },
+    {
+      "id": 1099,
+      "text": "The guardian greedily wolfs down the candy, including the package. (It seemed to enjoy the grasshoppers particularly.) It then becomes quiet and its eyes close. (Lizards are known to sleep a long time while digesting their meals.)"
+    },
+    {
+      "id": 1100,
+      "text": "The lizard sniffs it experimentally, then looks at you angrily, hissing and snapping."
+    },
+    {
+      "id": 1101,
+      "text": "The guardian greedily wolfs it down. After a while, you hear a very small pop and the guardian's eyes bulge out. It hisses nastily at you."
+    },
+    {
+      "id": 1102,
+      "text": "The guardian greedily gobbles the sphere, but finds it unchewable. He then tries repeatedly to swallow it whole, with disappointing results. Finally, he spits it on the ground."
+    },
+    {
+      "id": 1103,
+      "text": "The lizard wolfs down the "
+    },
+    {
+      "id": 1104,
+      "text": ", crunching greedily."
+    },
+    {
+      "id": 1105,
+      "text": "The guardian seems impervious to your attack. In fact, your blows don't even seem to be landing."
+    },
+    {
+      "id": 1106,
+      "text": "The lizard comes to life and snaps at you as you reach for the handle."
+    },
+    {
+      "id": 1107,
+      "text": "The lizard door keeper comes awake and bites at your hand. You jerk away just in time."
+    },
+    {
+      "id": 1108,
+      "text": " The guardian does get the key, though. It grins maniacally."
+    },
+    {
+      "id": 1109,
+      "text": " You drop the key, though."
+    },
+    {
+      "id": 1110,
+      "text": "It is already!"
+    },
+    {
+      "id": 1111,
+      "text": "The key turns and the bolt clicks. The door is unlocked."
+    },
+    {
+      "id": 1112,
+      "text": "That won't unlock it."
+    },
+    {
+      "id": 1113,
+      "text": "It is locked already."
+    },
+    {
+      "id": 1114,
+      "text": "The door is now locked."
+    },
+    {
+      "id": 1115,
+      "text": "That won't lock it."
+    },
+    {
+      "id": 1116,
+      "text": "The door creaks open."
+    },
+    {
+      "id": 1117,
+      "text": "The door reluctantly closes."
+    },
+    {
+      "id": 1118,
+      "text": "The door is locked!"
+    },
+    {
+      "id": 1119,
+      "text": "This room is cobwebby and musty, but tracks in the dust show that it has seen visitors recently. At the south end of the room is a stained and battered (but very strong-looking) door. To the north, a corridor exits."
+    },
+    {
+      "id": 1120,
+      "text": "The door is open."
+    },
+    {
+      "id": 1121,
+      "text": "Imbedded in the door is a nasty-looking lizard head, with sharp teeth and beady eyes. "
+    },
+    {
+      "id": 1122,
+      "text": "The lizard is sniffing at you."
+    },
+    {
+      "id": 1123,
+      "text": "The eyes move to watch you approach."
+    },
+    {
+      "id": 1124,
+      "text": "A sleepy-looking lizard head is mounted on the door."
+    },
+    {
+      "id": 1125,
+      "text": "You are standing in the entry hall of the Wizard's Workshop. Dark corridors lead west and south from here. The corridor to the west smells slightly of incense or candle smoke."
+    },
+    {
+      "id": 1126,
+      "text": " The workshop door is open."
+    },
+    {
+      "id": 1127,
+      "text": "The stuff on the bench appears to be so much junk, and you decide that it would only get in your way if you took it."
+    },
+    {
+      "id": 1128,
+      "text": "As your fingers near it, you get a nasty shock (but fortunately not a fatal one)."
+    },
+    {
+      "id": 1129,
+      "text": " is firmly attached to the bench."
+    },
+    {
+      "id": 1130,
+      "text": "As you place the "
+    },
+    {
+      "id": 1131,
+      "text": " in the "
+    },
+    {
+      "id": 1132,
+      "text": ", a low humming noise begins, and you can feel the hairs on the back of your neck begin to stand up. The three spheres begin to vibrate, faster and faster, as the noise becomes higher and higher pitched. Three puffs of smoke, one red, one blue, one white, rise up from empty stands. The spheres are gone! But in the center of the triangle formed by the stands is now a black stand of obsidian in which rests a strange black sphere."
+    },
+    {
+      "id": 1133,
+      "text": "There is a sandy floor here, and your vision seems murky and blurred. The wall you are looking at is nicely dressed stone."
+    },
+    {
+      "id": 1134,
+      "text": "While you watch a shadow seems to pass overhead."
+    },
+    {
+      "id": 1135,
+      "text": "The head of some horrible serpent pokes into view, its beady green eyes almost seeming to see you."
+    },
+    {
+      "id": 1136,
+      "text": "You drop into the aquarium with a splash (which attracts the serpent). He greedily eats you. He's just a baby, after all, and needs all the food he can get."
+    },
+    {
+      "id": 1137,
+      "text": "Oh dear, you have cut yourself severely on the broken glass. I'm afraid you've bled to death."
+    },
+    {
+      "id": 1138,
+      "text": "In the aquarium is a baby sea-serpent who eyes you suspiciously. His scaly body writhes about in the huge tank."
+    },
+    {
+      "id": 1139,
+      "text": "The aquarium is already broken!"
+    },
+    {
+      "id": 1140,
+      "text": "The flask shatters, and poison gas fills the room!"
+    },
+    {
+      "id": 1141,
+      "text": "A shattered aquarium fills the northern half of the room."
+    },
+    {
+      "id": 1142,
+      "text": " shatters the glass wall of the aquarium, spilling out an impressive amount of salt water and wet sand. It also spills out an extremely annoyed sea serpent who bites angrily at the "
+    },
+    {
+      "id": 1143,
+      "text": ", and then at you. He is having difficulty breathing, and he seems to hold you responsible for his current problem."
+    },
+    {
+      "id": 1144,
+      "text": " He manages to rend you limb from limb before he drowns in the air."
+    },
+    {
+      "id": 1145,
+      "text": "I guess you were too careless."
+    },
+    {
+      "id": 1146,
+      "text": " He tries to slither across the stone floor towards you. Fortunately, he expires mere inches away from biting off your foot. A clear crystal sphere sits amid the sand and broken glass on the bottom of the aquarium."
+    },
+    {
+      "id": 1147,
+      "text": " bounces harmlessly off the glass."
+    },
+    {
+      "id": 1148,
+      "text": "The serpent only stares hungrily at you."
+    },
+    {
+      "id": 1149,
+      "text": "He swims towards you with a powerful stroke of his flippers, dagger-like teeth dripping. Fortunately, he doesn't want to crash into the aquarium wall, and contents himself with splashing you with water."
+    },
+    {
+      "id": 1150,
+      "text": "Impossible for many reasons."
+    },
+    {
+      "id": 1151,
+      "text": "He takes you instead. *Uurrp!*"
+    },
+    {
+      "id": 1152,
+      "text": "This may only be a baby sea serpent, but it's as big as a small whale."
+    },
+    {
+      "id": 1153,
+      "text": "The genie grins demonically, but says nothing."
+    },
+    {
+      "id": 1154,
+      "text": "\"My fee is not paid! I perform no tasks for free! We demons have a strong union these days.\""
+    },
+    {
+      "id": 1155,
+      "text": "\"I will do one thing only, oh gracious master!\""
+    },
+    {
+      "id": 1156,
+      "text": "The demon is gone for a moment. \"A trifle... My little finger alone was enough.\""
+    },
+    {
+      "id": 1157,
+      "text": "The demon flashes away for a second. \"I have little use for such a thing, but perhaps as a doorstop...\""
+    },
+    {
+      "id": 1158,
+      "text": "\"This I do gladly, oh fool!\" cackles the demon gleefully. He stretches out an enormous hand towards the wand and taking it like a toothpick (this is a large demon), points it at himself. \"Free!\" he commands, and the demon and his wand vanish forever."
+    },
+    {
+      "id": 1159,
+      "text": "The demon snaps his fingers, the "
+    },
+    {
+      "id": 1160,
+      "text": " spins wildly in the air in front of him, then he and it depart."
+    },
+    {
+      "id": 1161,
+      "text": "\"I fear that I cannot take such a thing.\""
+    },
+    {
+      "id": 1162,
+      "text": "\"I hear and obey!\" says the demon. He stretches out an enormous hand towards the wand. The Wizard is unsure what to do, pointing it threateningly at the demon, then at you. \"Fudge!\" he cries, but aside from a strong odor of chocolate in the air, there is no effect. The demon plucks the wand out of his hand (it's about toothpick-size to him) and gingerly lays it before you. He fades into the smoke, which disperses. The wizard runs from the room in terror."
+    },
+    {
+      "id": 1163,
+      "text": "He waves his hands, and the menhir drops softly at your feet."
+    },
+    {
+      "id": 1164,
+      "text": " appears before you and settles to the ground."
+    },
+    {
+      "id": 1165,
+      "text": "\"Were it possible, this would be my fondest wish, but alas...\""
+    },
+    {
+      "id": 1166,
+      "text": "\"This may prove taxing, but we'll see. Perhaps I'll tame him for a pup instead.\" The demon disappears for an instant, then reappears. He looks rather gnawed and scratched. He winces. \"Too much for me. Puppy dog, indeed. You're welcome to him. Never did like dogs anyway... Any other orders, oh beneficent one?\""
+    },
+    {
+      "id": 1167,
+      "text": "The demon grins hideously. \"This has been my desire e'er since this charlatan bent me to his service. I perform this deed with pleasure!\" The demon forms himself back into a cloud of greasy smoke. The cloud envelops the Wizard, who waves his wand fruitlessly, mumbling various phrases which begin with \"F\". A horrible scream is heard, and the smoke begins to clear. Nothing remains of the Wizard but his wand."
+    },
+    {
+      "id": 1168,
+      "text": "\"Foolish mortal, if you insist...\" The demon crushes you with one blow of his enormous hand."
+    },
+    {
+      "id": 1169,
+      "text": "\"I know no way to kill a "
+    },
+    {
+      "id": 1170,
+      "text": ".\""
+    },
+    {
+      "id": 1171,
+      "text": "\"I am not permitted to "
+    },
+    {
+      "id": 1172,
+      "text": "answer questions"
+    },
+    {
+      "id": 1173,
+      "text": "perform such menial tasks"
+    },
+    {
+      "id": 1174,
+      "text": ". The terms of my contract are explicit on this matter, learned one. Surely you would not wish to violate my contract?\" He licks his lips with a forked tongue like a snake's. \"The penalty clauses are ... hmm ... devilish.\""
+    },
+    {
+      "id": 1175,
+      "text": "\"Apologies, oh master, but even for such a one as I this is not possible.\" He seems somewhat chagrined to have to admit this."
+    },
+    {
+      "id": 1176,
+      "text": "The demon laughs uproariously."
+    },
+    {
+      "id": 1177,
+      "text": "The genie frowns briefly, then "
+    },
+    {
+      "id": 1178,
+      "text": "looks inside"
+    },
+    {
+      "id": 1179,
+      "text": "opens"
+    },
+    {
+      "id": 1180,
+      "text": " the box. He smiles horribly."
+    },
+    {
+      "id": 1181,
+      "text": "A dejected and fearful Wizard watches from the corner."
+    },
+    {
+      "id": 1182,
+      "text": "\"This will do for my fee. 'Tis a paltry hoard, but as you have done me a small service by loosing me from this wizard, it will suffice.\""
+    },
+    {
+      "id": 1183,
+      "text": "\""
+    },
+    {
+      "id": 1184,
+      "text": "The Wizard looks at you as if you are a madman. He tears his beard and stares at you fearfully."
+    },
+    {
+      "id": 1185,
+      "text": "\"I fear that this violates my contract, oh foolish one. Thus, I am free to depart.\""
+    },
+    {
+      "id": 1186,
+      "text": "The demon gladly takes the "
+    },
+    {
+      "id": 1187,
+      "text": " and smiles balefully, revealing enormous fangs."
+    },
+    {
+      "id": 1188,
+      "text": "The genie departs, his agreement fulfilled."
+    },
+    {
+      "id": 1189,
+      "text": "Most fine, master! But 'tis not enough. I will do a great service, and are not great services bought at great price?"
+    },
+    {
+      "id": 1190,
+      "text": "Very nice, but not enough!"
+    },
+    {
+      "id": 1191,
+      "text": "Ah, truly magnificent! Keep them coming."
+    },
+    {
+      "id": 1192,
+      "text": "Almost halfway there, oh worthy one!"
+    },
+    {
+      "id": 1193,
+      "text": "Oh, such beauty! Your generosity almost overwhelms me!"
+    },
+    {
+      "id": 1194,
+      "text": "Truly I shall do thee a wonderful service when thou hast finished!"
+    },
+    {
+      "id": 1195,
+      "text": "Truly you are most generous! But still, this is yet not enough."
+    },
+    {
+      "id": 1196,
+      "text": "A fine gift, mighty one, you have almost reached my fee."
+    },
+    {
+      "id": 1197,
+      "text": "Wondrous fine, master! But one treasure is yet to be given!"
+    },
+    {
+      "id": 1198,
+      "text": "You try to enter the pentagram, but are forced back by an invisible power."
+    },
+    {
+      "id": 1199,
+      "text": "A cold wind blows outward from the sphere. The candles flicker, and a low moan, almost inaudible, is heard. It rises in volume and pitch until it becomes a high-pitched keening. A dim shape becomes visible in the air above the sphere. The shape resolves into a large and somewhat formidable looking demon. He looks around, tests the walls of the pentagram experimentally, then sees you! \"Hmm, a new master...\" he says under his breath. \"Greetings, oh master! Wouldst desire a service, as our contract stateth? For some pittance of wealth, some trifle, I will gratify thy desires to the utmost limit of my powers, and they are not inconsiderable.\" He makes a pass with his massive arms and the walls begin to shake a little. Another pass and the shaking stops. \"A nice effect... I find it makes for a better relationship to give such a demonstration early on.\" He grins vilely."
+    },
+    {
+      "id": 1200,
+      "text": "The Wizard replies \"Foolishment!\""
+    },
+    {
+      "id": 1201,
+      "text": "The Wizard considers your statement carefully. His expression indicates he regards it as fanciful."
+    },
+    {
+      "id": 1202,
+      "text": "The wizard accepts this final folly resignedly."
+    },
+    {
+      "id": 1203,
+      "text": "\"Hmm...\" The Wizard mutters something, then waves his wand over the bomb. It transforms into a bouquet of flowers. Both Wizard and flowers disappear."
+    },
+    {
+      "id": 1204,
+      "text": "\"Thank you.\" As the Wizard places the "
+    },
+    {
+      "id": 1205,
+      "text": " under his robe, the room becomes dark."
+    },
+    {
+      "id": 1206,
+      "text": "\"Thank you.\""
+    },
+    {
+      "id": 1207,
+      "text": "The Wizard seems surprised, much as you might be if a dog talked."
+    },
+    {
+      "id": 1208,
+      "text": "The Wizard retreats, waving his wand and chanting. He says \"Fear!\" "
+    },
+    {
+      "id": 1209,
+      "text": "The Wizard tries to cast the \"Fear!\" spell, but without his wand! "
+    },
+    {
+      "id": 1210,
+      "text": "Nothing happens! With a terrified glance at the demon, the wizard runs past you and out of the room."
+    },
+    {
+      "id": 1211,
+      "text": "You are suddenly terrified. The Wizard seems huge and terrible, looming over you. You flee, terrified. He chuckles, snaps his fingers, and disappears."
+    },
+    {
+      "id": 1212,
+      "text": "You plunge to the bottom of the shaft as the spell wears off."
+    },
+    {
+      "id": 1213,
+      "text": "As the spell wears off, you find yourself making a half-gainer towards the bottom of the volcano."
+    },
+    {
+      "id": 1214,
+      "text": "Suddenly the Wizard materializes in the room. He is astonished by what he sees: his servant in deep conversation with a common adventurer! He draws forth his wand, waves it frantically, and incants \"Frobizz! Frobozzle! Frobnoid!\" The demon laughs heartily. \"You no longer control the Black Crystal, hedge-wizard! Your wand is powerless! Your doom is sealed!\" The demon turns to you, expectantly."
+    },
+    {
+      "id": 1215,
+      "text": "In the darkness you hear the voice of the Wizard. \"Dear me, you seem to have gotten into quite a pickle.\" He chuckles. \"Fluoresce!\" he incants. It is no longer dark."
+    },
+    {
+      "id": 1216,
+      "text": "The Wizard vanishes."
+    },
+    {
+      "id": 1217,
+      "text": "You feel a slight outrush of air as something moves nearby."
+    },
+    {
+      "id": 1218,
+      "text": "A huge and terrible wizard appears before you, as large as the largest tree! He looks down on you as you would look upon a gnat!"
+    },
+    {
+      "id": 1219,
+      "text": "The Wizard appears, floating nonchalantly in the air beside you. He grins sideways at you."
+    },
+    {
+      "id": 1220,
+      "text": "A strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard."
+    },
+    {
+      "id": 1221,
+      "text": "The Wizard notices that you carry the Black Crystal, and with an unseemly haste, he disappears."
+    },
+    {
+      "id": 1222,
+      "text": "You feel a sudden inrush of air as though something disappeared."
+    },
+    {
+      "id": 1223,
+      "text": "He mutters something (muffled by his beard) and disappears as suddenly as he came."
+    },
+    {
+      "id": 1224,
+      "text": "You hear low, confused muttering."
+    },
+    {
+      "id": 1225,
+      "text": "The Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow."
+    },
+    {
+      "id": 1226,
+      "text": "Suddenly, illuminated by the faint blue glow of a magic wand pointed in your direction, you see the Wizard!"
+    },
+    {
+      "id": 1227,
+      "text": "The Wizard, in a deep and resonant voice, speaks the word \""
+    },
+    {
+      "id": 1228,
+      "text": "!\" He then vanishes, cackling gleefully."
+    },
+    {
+      "id": 1229,
+      "text": "The Wizard, almost inaudibly, whispers a word beginning with \"F,\" and then disappears, chuckling nastily."
+    },
+    {
+      "id": 1230,
+      "text": "You suddenly fall headlong out of the "
+    },
+    {
+      "id": 1231,
+      "text": " as though someone had flipped it over."
+    },
+    {
+      "id": 1232,
+      "text": "You plummet to the bottom of the shaft."
+    },
+    {
+      "id": 1233,
+      "text": "You make a rather messy swan dive to the bottom of the volcano."
+    },
+    {
+      "id": 1234,
+      "text": " You rise majestically out of the "
+    },
+    {
+      "id": 1235,
+      "text": ", coming to a stop about five feet above it and to one side."
+    },
+    {
+      "id": 1236,
+      "text": "Slowly, you and all your belongings rise into the air, stopping after about five feet."
+    },
+    {
+      "id": 1237,
+      "text": "In fact, you feel so weak that you drop the "
+    },
+    {
+      "id": 1238,
+      "text": "You cower in the corner of the "
+    },
+    {
+      "id": 1239,
+      "text": ", hoping the wizard won't see you."
+    },
+    {
+      "id": 1240,
+      "text": "Ooops! You dropped the "
+    },
+    {
+      "id": 1241,
+      "text": "Something you are carrying has disappeared!"
+    },
+    {
+      "id": 1242,
+      "text": "The Wizard mumbles something under his breath, and just before you reach him, he vanishes."
+    },
+    {
+      "id": 1243,
+      "text": "There is a loud crackling noise. Blue smoke rises from out of the Wizard's sleeve. He sighs and disappears."
+    },
+    {
+      "id": 1244,
+      "text": "The Wizard incants \""
+    },
+    {
+      "id": 1245,
+      "text": "!\" but nothing happens. He shakes the wand. Nothing happens. With a slightly embarrassed glance in your direction, he vanishes."
+    },
+    {
+      "id": 1246,
+      "text": "The Wizard seems about to say something, but thinks better of it, and peers at you from under his bushy eyebrows."
+    },
+    {
+      "id": 1247,
+      "text": "Feeble"
+    },
+    {
+      "id": 1248,
+      "text": "Fumble"
+    },
+    {
+      "id": 1249,
+      "text": "Fear"
+    },
+    {
+      "id": 1250,
+      "text": "Filch"
+    },
+    {
+      "id": 1251,
+      "text": "Freeze"
+    },
+    {
+      "id": 1252,
+      "text": "Fall"
+    },
+    {
+      "id": 1253,
+      "text": "Ferment"
+    },
+    {
+      "id": 1254,
+      "text": "Fierce"
+    },
+    {
+      "id": 1255,
+      "text": "Float"
+    },
+    {
+      "id": 1256,
+      "text": "Fireproof"
+    },
+    {
+      "id": 1257,
+      "text": "Fence"
+    },
+    {
+      "id": 1258,
+      "text": "Fantasize"
+    },
+    {
+      "id": 1259,
+      "text": "All at once you feel very tired."
+    },
+    {
+      "id": 1260,
+      "text": "You look at the Wizard in terror. You scramble away, trying to get as far as possible from him."
+    },
+    {
+      "id": 1261,
+      "text": "Your limbs suddenly feel like they have turned to stone. You can't move a muscle."
+    },
+    {
+      "id": 1262,
+      "text": "You begin to feel lightheaded."
+    },
+    {
+      "id": 1263,
+      "text": "You rush at the Wizard, intending to tear him limb from limb."
+    },
+    {
+      "id": 1264,
+      "text": "You feel more energetic now."
+    },
+    {
+      "id": 1265,
+      "text": "You suddenly decide that the Wizard isn't that terrifying..."
+    },
+    {
+      "id": 1266,
+      "text": "Your little finger begins to twitch, and then your whole body is free again."
+    },
+    {
+      "id": 1267,
+      "text": "Your head is clearer now."
+    },
+    {
+      "id": 1268,
+      "text": "You feel cooler and less angry now."
+    },
+    {
+      "id": 1269,
+      "text": "You sink quietly down again."
+    },
+    {
+      "id": 1270,
+      "text": "The demon smashes the case into smithereens. Everything in it smashes as well."
+    },
+    {
+      "id": 1271,
+      "text": "The contents of the case are arrayed at your feet."
+    },
+    {
+      "id": 1272,
+      "text": "The case is protected by a fearful spell. You cannot touch it in any way."
+    },
+    {
+      "id": 1273,
+      "text": "The Wizard snatches it away."
+    },
+    {
+      "id": 1274,
+      "text": "The Wizard snatches the wand away, muttering the word \"Float\" at the robot. Unfortunately he has no floating-point processor and dies in a vain attempt to divide 4.85 by 3.62."
+    },
+    {
+      "id": 1275,
+      "text": "There is no grue in sight, but a hissing sound issues forth from the darkness."
+    },
+    {
+      "id": 1276,
+      "text": "You don't have the wand!"
+    },
+    {
+      "id": 1277,
+      "text": "The wand was still recharging from its last use. It discharges magic all over everything. You turn into a toad, the room fills with a fetid smell, and all sorts of other grubby things happen. Then the wand explodes!"
+    },
+    {
+      "id": 1278,
+      "text": "A lot you know about magic! A magic wand takes a while to recharge after use! You might cause it to short-circuit!"
+    },
+    {
+      "id": 1279,
+      "text": "At what?"
+    },
+    {
+      "id": 1280,
+      "text": "Touch what?"
+    },
+    {
+      "id": 1281,
+      "text": "The wand grows warm and seems to vibrate."
+    },
+    {
+      "id": 1282,
+      "text": "Fortunately a safety interlock prevents the fatal feedback loop that this would cause."
+    },
+    {
+      "id": 1283,
+      "text": "The wand grows warm, the "
+    },
+    {
+      "id": 1284,
+      "text": " seems to glow dimly with magical essences, and you feel suffused with power."
+    },
+    {
+      "id": 1285,
+      "text": " stops glowing and the power within you weakens."
+    },
+    {
+      "id": 1286,
+      "text": "This is where the Wizard of Frobozz lives. The room is "
+    },
+    {
+      "id": 1287,
+      "text": "sparsely furnished and almost monkish in its austerity."
+    },
+    {
+      "id": 1288,
+      "text": "an opulently furnished seraglio out of an Arabian folktale."
+    },
+    {
+      "id": 1289,
+      "text": "decorated in the Louis XIV style."
+    },
+    {
+      "id": 1290,
+      "text": "overhung with palm-trees and lianas. The only furniture is a hammock."
+    },
+    {
+      "id": 1291,
+      "text": "constructed of delicate and wispy cloud-stuffs."
+    },
+    {
+      "id": 1292,
+      "text": "furnished in plastic and metal and looks like the control deck of a spaceship."
+    },
+    {
+      "id": 1293,
+      "text": "a suburban bedroom out of the 1950's, complete with bunk beds."
+    },
+    {
+      "id": 1294,
+      "text": "a dank and dimly lighted cave, its floor piled with furs and old bones."
+    },
+    {
+      "id": 1295,
+      "text": "You execute a perfect swan-dive into the depths below."
+    },
+    {
+      "id": 1296,
+      "text": "You can't swim in the stream."
+    },
+    {
+      "id": 1297,
+      "text": "You'll have to find a ford or a bridge."
+    },
+    {
+      "id": 1298,
+      "text": "For a change, you look before leaping. You realize you would never survive."
+    },
+    {
+      "id": 1299,
+      "text": "You'll have to find a bridge."
+    },
+    {
+      "id": 1300,
+      "text": " drops out of sight into the chasm."
+    },
+    {
+      "id": 1301,
+      "text": "The only ones you can reach are too large to successfully break off."
+    },
+    {
+      "id": 1302,
+      "text": "Some of the moss rubs off on you, but it stops glowing very quickly once plucked from its environment."
+    },
+    {
+      "id": 1303,
+      "text": "You prick your finger trying to take a rose, and jump back annoyed. The rose almost seemed to move its thorns into your path."
+    },
+    {
+      "id": 1304,
+      "text": "pile of jewels"
+    },
+    {
+      "id": 1305,
+      "text": "gold ingot"
+    },
+    {
+      "id": 1306,
+      "text": "basilisk"
+    },
+    {
+      "id": 1307,
+      "text": "bulging chest"
+    },
+    {
+      "id": 1308,
+      "text": "yellow sphere"
+    },
+    {
+      "id": 1309,
+      "text": "grue"
+    },
+    {
+      "id": 1310,
+      "text": "convention of wizards"
+    },
+    {
+      "id": 1311,
+      "text": "copy of ZORK I"
+    },
+    {
+      "id": 1312,
+      "text": "You are dead."
+    },
+    {
+      "id": 1313,
+      "text": "You are drunk."
+    },
+    {
+      "id": 1314,
+      "text": "You seem unusually weak right now."
+    },
+    {
+      "id": 1315,
+      "text": "You seem somewhat light."
+    },
+    {
+      "id": 1316,
+      "text": "You are frozen stiff."
+    },
+    {
+      "id": 1317,
+      "text": "You are in perfect health."
+    },
+    {
+      "id": 1318,
+      "text": "You have been killed "
+    },
+    {
+      "id": 1319,
+      "text": "once."
+    },
+    {
+      "id": 1320,
+      "text": "twice."
+    },
+    {
+      "id": 1321,
+      "text": "an awful lot."
+    },
+    {
+      "id": 1322,
+      "text": "Your score "
+    },
+    {
+      "id": 1323,
+      "text": "would be "
+    },
+    {
+      "id": 1324,
+      "text": "is "
+    },
+    {
+      "id": 1325,
+      "text": " (total of 400 points), in "
+    },
+    {
+      "id": 1326,
+      "text": " move."
+    },
+    {
+      "id": 1327,
+      "text": " moves."
+    },
+    {
+      "id": 1328,
+      "text": "This score gives you the rank of "
+    },
+    {
+      "id": 1329,
+      "text": "Master Adventurer"
+    },
+    {
+      "id": 1330,
+      "text": ", but somehow you don't feel done"
+    },
+    {
+      "id": 1331,
+      "text": "Wizard"
+    },
+    {
+      "id": 1332,
+      "text": "Master"
+    },
+    {
+      "id": 1333,
+      "text": "Adventurer"
+    },
+    {
+      "id": 1334,
+      "text": "Junior Adventurer"
+    },
+    {
+      "id": 1335,
+      "text": "Novice Adventurer"
+    },
+    {
+      "id": 1336,
+      "text": "Amateur Adventurer"
+    },
+    {
+      "id": 1337,
+      "text": "Beginner"
+    },
+    {
+      "id": 1338,
+      "text": " \n    ****  The "
+    },
+    {
+      "id": 1339,
+      "text": " has died  **** \n\n"
+    },
+    {
+      "id": 1340,
+      "text": " \n    ****  You have died  **** \n\n"
+    },
+    {
+      "id": 1341,
+      "text": "Now, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything."
+    },
+    {
+      "id": 1342,
+      "text": "You'll need to get in the bucket to reach it."
+    }
+  ]
+}

@@ -1,19 +1,23 @@
 import { createRequire } from 'node:module';
 import { readFileSync } from 'node:fs';
-import { analyzeSymbols, compileWorldMetadata, expandMacros, loadProgram } from '../../src/zil/index.ts';
+import { analyzeSymbols, compileWorldMetadata, decodeExit, deriveExitGraph, linkExit, expandMacros, loadProgram } from '../../src/zil/index.ts';
 import type { WorldMetadata, WorldProperty } from '../../src/zil/index.ts';
 import { loadSymbols, STORY, STORY_SHA256, sha256 } from '../reference/symbols.ts';
 import { sourceFiles } from './program.ts';
 import { referenceSymbolLayout } from './symbols.ts';
 import { normalizeReferenceProgram } from './reference-program.ts';
 
-export function buildWorldMetadata() {
+export function worldSymbolAnalysis() {
   const sources=sourceFiles(),program=loadProgram(sources),expanded=expandMacros(program.forms,program.definitions,program.globals);
   const normalized=normalizeReferenceProgram(expanded.forms),analysis=analyzeSymbols(program,normalized.forms,referenceSymbolLayout());
-  return compileWorldMetadata(normalized.forms,analysis);
+  return {forms:normalized.forms,analysis};
+}
+export function buildWorldMetadata() {
+  const {forms,analysis}=worldSymbolAnalysis();return compileWorldMetadata(forms,analysis);
 }
 /** Independent oracle: assembly declarations/cells plus raw pre-GO story data and upstream text decoder. */
 export function auditWorldMetadata(world:WorldMetadata) {
+  const {analysis}=worldSymbolAnalysis();
   const symbols=loadSymbols(),story=readFileSync(STORY),data=readFileSync('reference/zork2/zork2dat.zap','utf8'),strings=readFileSync('reference/zork2/zork2str.zap','utf8');
   if(sha256(story)!==STORY_SHA256)throw new Error('World audit: story hash differs');
   const require=createRequire(import.meta.url),{ZVM}=require('ifvms'),{MemoryView}=require('ifvms/src/common/utils.js');
@@ -27,12 +31,13 @@ export function auditWorldMetadata(world:WorldMetadata) {
   const dictionary=new Map(referenceSymbolLayout().words.map(w=>[w.name,w.referenceAddress!]));
   const wordIndices=new Map(referenceSymbolLayout().words.map((w,i)=>[w.name,i+1]));
   const objectIds=new Map(symbols.objects.map((name,id)=>[name,id]));
+  const globalNumbers=new Map(symbols.globals.map((name,i)=>[name,i+16]));
   const routinePacked=new Map(symbols.routines.map(r=>[r.name,r.packed]));
   const equal=(actual:unknown,expected:unknown,label:string)=>{
     if(JSON.stringify(actual)!==JSON.stringify(expected))throw new Error(`World audit: ${label} differs\nactual ${JSON.stringify(actual)}\nexpected ${JSON.stringify(expected)}`);
   };
   const value=(token:string):number=>token.split('+').reduce((sum,part)=>{
-    const t=part.trim(),v=/^-?\d+$/.test(t)?Number(t):symbols.constants[t] ?? objectIds.get(t) ?? routinePacked.get(t) ?? (t.startsWith('W?')?dictionary.get(t.slice(2)):undefined);
+    const t=part.trim(),v=/^-?\d+$/.test(t)?Number(t):symbols.constants[t] ?? objectIds.get(t) ?? globalNumbers.get(t) ?? routinePacked.get(t) ?? (t.startsWith('W?')?dictionary.get(t.slice(2)):undefined);
     if(v===undefined)throw new Error(`World audit: unknown assembly value ${t}`);return sum+v;
   },0)&0xffff;
   const cells=(s:string,length:number)=>{
@@ -62,9 +67,9 @@ export function auditWorldMetadata(world:WorldMetadata) {
     }
   };
   const low=symbols.constants['LOW-DIRECTION']!,objectBase=story.readUInt16BE(10)+62;
-  let properties=0,shortNames=0,textProperties=0,exitDeclarations=0;
+  let properties=0,shortNames=0,textProperties=0,exits=0;const exitKinds:Record<string,number>={UEXIT:0,NEXIT:0,FEXIT:0,CEXIT:0,DEXIT:0};
   equal(world.format,'zxr-world-v1','format');equal(world.stage,'metadata','stage');equal(world.semantics,'zxr-zork2-semantics-v1','semantics');
-  equal(world.counts,{rooms:world.entities.filter(e=>e.kind==='room').length,objects:world.entities.filter(e=>e.kind==='object').length,properties:world.entities.reduce((n,e)=>n+e.properties.length,0),pendingExits:world.entities.reduce((n,e)=>n+e.pendingExits.length,0)},'counts');
+  equal(world.counts,{rooms:world.entities.filter(e=>e.kind==='room').length,objects:world.entities.filter(e=>e.kind==='object').length,properties:world.entities.reduce((n,e)=>n+e.properties.length,0),exits:world.entities.reduce((n,e)=>n+e.exits.length,0)},'counts');
   equal(new Set(world.entities.map(e=>e.id)).size,world.entities.length,'unique entity IDs');
   equal(world.propertyDefaults.map(p=>p.number),Array.from({length:31},(_,i)=>i+1),'default numbering');
   equal(world.entities.length,declarations.length,'entity count');
@@ -85,7 +90,8 @@ export function auditWorldMetadata(world:WorldMetadata) {
     while(story[cursor]){const header=story[cursor++]!,length=(header>>>5)+1;raw.set(header&31,story.subarray(cursor,cursor+length));cursor+=length;}
     equal(e.properties.map(p=>p.property.number),aps.filter(p=>p.number<low).map(p=>p.number),`${e.name} assembly property presence/order`);
     equal(e.properties.map(p=>p.property.number),[...raw.keys()].filter(n=>n<low),`${e.name} binary property presence/order`);
-    equal(e.pendingExits.map(p=>p.property.number),aps.filter(p=>p.number>=low).map(p=>p.number),`${e.name} pending exit presence/order`);
+    equal(e.exits.map(p=>p.property.number),aps.filter(p=>p.number>=low).map(p=>p.number),`${e.name} assembly exit presence/order`);
+    equal(e.exits.map(p=>p.property.number),[...raw.keys()].filter(n=>n>=low),`${e.name} binary exit presence/order`);
     for(const p of e.properties){
       const a=aps.find(a=>a.number===p.property.number)!,r=raw.get(p.property.number)!;
       equal(p.property.name,a.name,`${e.name} property name/number`);
@@ -104,7 +110,32 @@ export function auditWorldMetadata(world:WorldMetadata) {
       const bv=p.kind==='text'?[decode(r.readUInt16BE(0)*2)]:Array.from({length:r.length/widths},(_,i)=>widths===1?r[i]!:r.readUInt16BE(i*2));
       equal(expectedValues(p,true),bv,`${e.name}.${p.property.name} binary values`);properties++;if(p.kind==='text')textProperties++;
     }
-    exitDeclarations+=e.pendingExits.length;
+    for(const p of e.exits){
+      const a=aps.find(a=>a.number===p.property.number)!,r=raw.get(p.property.number)!;
+      const label=`${e.name}.${p.property.name} exit`;
+      equal(p.property.name,a.name,label+' property name/number');
+      equal(p.byteLength,a.byteLength,label+' assembly length');equal(p.byteLength,r.length,label+' binary length');
+      const view=decodeExit(p,analysis);equal(p.view,view,label+' derived view');exitKinds[view.kind]!++;
+      const widths=({UEXIT:[1],NEXIT:[2],FEXIT:[2,1],CEXIT:[1,1,2],DEXIT:[1,1,2,1]} as const)[view.kind];
+      equal(a.cells.map(c=>c.width),widths,label+' assembly field widths');
+      const stringOffset=view.kind==='NEXIT'?0:view.kind==='CEXIT'||view.kind==='DEXIT'?2:-1;
+      const message='message' in view?view.message:null;
+      const stringPointer=stringOffset>=0?r.readUInt16BE(stringOffset):0;
+      equal(message===null,stringPointer===0,label+' message presence');
+      if(message!==null)equal(message,decode(stringPointer*2),label+' binary message');
+      const linked=linkExit(p,text=>{
+        equal(text,message,label+' relocation text');return stringPointer;
+      },name=>routinePacked.get(name) ?? 0);
+      equal(linked,[...r],label+' binary bytes');
+      let offset=0;
+      const assemblyBytes=a.cells.flatMap(c=>{
+        let v:number;
+        if(offset===stringOffset&&message!==null){equal(textByName.get(c.token),message,label+' assembly message');v=stringPointer;}
+        else v=value(c.token);
+        offset+=c.width;return c.width===1?[v]:[v>>>8,v&255];
+      });
+      equal(linked,assemblyBytes,label+' assembly bytes');exits++;
+    }
   }
   const defaultText=data.match(/^OBJECT::\.TABLE[^\n]*\n([\s\S]*?)(?=\s*\.OBJECT)/m)?.[1];
   if(defaultText===undefined)throw new Error('World audit: missing property defaults');
@@ -112,12 +143,13 @@ export function auditWorldMetadata(world:WorldMetadata) {
   equal(world.propertyDefaults.map(p=>p.value),assemblyDefaults,'assembly property defaults');
   for(const p of world.propertyDefaults)equal(p.value,story.readUInt16BE(story.readUInt16BE(10)+(p.number-1)*2),`binary default ${p.number}`);
   const sources=sourceFiles();
-  const spots=auditWorldSpotChecks(world);
+  const spots=auditWorldSpotChecks(world),graph=deriveExitGraph(world.entities,analysis);
+  equal(graph.length,exits,'exit graph coverage');
   return {format:'zxr-world-audit-v1',stage:'metadata',storySha256:STORY_SHA256,worldSha256:sha256(JSON.stringify(world)),
     sourceHashes:[...sources].map(([file,text])=>({file,sha256:sha256(text)})),
-    checked:{entities:world.entities.length,rooms:world.counts.rooms,objects:world.counts.objects,shortNames,metadataProperties:properties,textProperties,propertyDefaults:world.propertyDefaults.length,pendingExitDeclarations:exitDeclarations},
+    checked:{entities:world.entities.length,rooms:world.counts.rooms,objects:world.counts.objects,shortNames,metadataProperties:properties,textProperties,propertyDefaults:world.propertyDefaults.length,exitProperties:exits,exitKinds},
     sourceSpotChecks:spots,
-    limits:['Exit encodings are pending step 2.3; only declaration presence is checked here.','The image is initial story data before GO; startup mutations are not pre-applied.','This is world metadata, not a runtime memory image, sibling ordering or a complete game bundle.']};
+    limits:['String relocations are linked to oracle handles and routine IDs to oracle packed addresses for byte comparisons; runtime pool allocation remains step 2.7.','The image is initial story data before GO; startup mutations are not pre-applied.','This is world metadata, not a runtime memory image, sibling ordering or a complete game bundle.']};
 }
 
 export function propertyValue(p:WorldProperty):unknown {

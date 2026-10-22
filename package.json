@@ -26,7 +26,15 @@
     "symbols:check": "node tools/zil/symbols-cli.ts check",
     "symbols:record": "node tools/zil/symbols-cli.ts record",
     "world:check": "node tools/zil/world-cli.ts check",
-    "world:record": "node tools/zil/world-cli.ts record"
+    "world:record": "node tools/zil/world-cli.ts record",
+    "vocabulary:check": "node tools/zil/vocabulary-cli.ts check",
+    "vocabulary:record": "node tools/zil/vocabulary-cli.ts record",
+    "logic:check": "node tools/zil/logic-cli.ts check",
+    "logic:record": "node tools/zil/logic-cli.ts record",
+    "operations:check": "node tools/zil/operations-cli.ts check",
+    "operations:record": "node tools/zil/operations-cli.ts record",
+    "memory:check": "node tools/zil/memory-cli.ts check",
+    "memory:record": "node tools/zil/memory-cli.ts record"
   },
   "dependencies": {
     "three": "0.186.0"

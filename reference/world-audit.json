@@ -2,7 +2,7 @@
   "format": "zxr-world-audit-v1",
   "stage": "metadata",
   "storySha256": "3ae7d5558943e9721f3e4b273c8a7faec1a03a604e1ae4ee1cde472c21cb24ac",
-  "worldSha256": "bea6206c7ec34cac51c58f5cad48c39fd77b5a68529cedf533512b72032722e6",
+  "worldSha256": "e2af61d93c853e9b902ceb84e86dbe50e4beebe3a0170a6c430d4d3edc1a122e",
   "sourceHashes": [
     {
       "file": "2actions.zil",
@@ -57,7 +57,14 @@
     "metadataProperties": 795,
     "textProperties": 175,
     "propertyDefaults": 31,
-    "pendingExitDeclarations": 220
+    "exitProperties": 220,
+    "exitKinds": {
+      "UEXIT": 163,
+      "NEXIT": 21,
+      "FEXIT": 11,
+      "CEXIT": 13,
+      "DEXIT": 12
+    }
   },
   "sourceSpotChecks": [
     {
@@ -182,7 +189,7 @@
     }
   ],
   "limits": [
-    "Exit encodings are pending step 2.3; only declaration presence is checked here.",
+    "String relocations are linked to oracle handles and routine IDs to oracle packed addresses for byte comparisons; runtime pool allocation remains step 2.7.",
     "The image is initial story data before GO; startup mutations are not pre-applied.",
     "This is world metadata, not a runtime memory image, sibling ordering or a complete game bundle."
   ]
