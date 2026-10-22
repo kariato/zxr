@@ -22,6 +22,11 @@ jobs:
       - run: npm run logic:check
       - run: npm run operations:check
       - run: npm run memory:check
+      - run: npm run parser:check
+      - run: npm run source-maps:check
+      - run: npm run schemas:check
+      - run: npm run bundle:check
+      - run: npm run output:check
       - run: npx --yes --package=. zxr check reference/zork2
       - run: npm run reference:check
       - run: npm run reference:audit -- --check

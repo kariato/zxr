@@ -34,7 +34,17 @@
     "operations:check": "node tools/zil/operations-cli.ts check",
     "operations:record": "node tools/zil/operations-cli.ts record",
     "memory:check": "node tools/zil/memory-cli.ts check",
-    "memory:record": "node tools/zil/memory-cli.ts record"
+    "memory:record": "node tools/zil/memory-cli.ts record",
+    "parser:check": "node tools/zil/parser-cli.ts check",
+    "parser:record": "node tools/zil/parser-cli.ts record",
+    "source-maps:record": "node tools/zil/source-maps-cli.ts record",
+    "source-maps:check": "node tools/zil/source-maps-cli.ts check",
+    "schemas:record": "node tools/zil/schema-cli.ts record",
+    "schemas:check": "node tools/zil/schema-cli.ts check",
+    "bundle:record": "node tools/zil/bundle-cli.ts record",
+    "bundle:check": "node tools/zil/bundle-cli.ts check",
+    "output:record": "node tools/engine/look-output-cli.ts record",
+    "output:check": "node tools/engine/look-output-cli.ts check"
   },
   "dependencies": {
     "three": "0.186.0"
@@ -44,6 +54,7 @@
     "@playwright/test": "1.56.1",
     "@types/node": "24.10.0",
     "@types/three": "0.186.0",
+    "ajv": "8.20.0",
     "ifvms": "1.1.6",
     "typescript": "7.0.2",
     "vite": "8.3.5",

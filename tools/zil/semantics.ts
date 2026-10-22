@@ -50,7 +50,7 @@ export function semanticsInventory() {
   const sortedOps=[...operations].sort(([a],[b])=>a.localeCompare(b,'en')).map(([operation,sites])=>({operation,count:sites.length,sites}));
   verifyPrimitiveInventory(sortedOps.map(o=>o.operation));
   const parser=new Set(routineDetails.filter(r=>r.file==='gparser.zil').map(r=>r.name));
-  const keep=new Set(['MANY-CHECK','TAKE-CHECK','LIT?','META-LOC']);
+  const keep=new Set(['MANY-CHECK','TAKE-CHECK','LIT?','META-LOC','GLOBAL-CHECK']);
   for(const r of routineDetails.filter(r=>r.file!=='gparser.zil'))for(const call of r.calls)if(parser.has(call)&&call!=='PARSER')keep.add(call);
   let changed=true;while(changed){changed=false;for(const r of routineDetails.filter(r=>keep.has(r.name)))for(const call of r.calls)if(parser.has(call)&&!keep.has(call)&&call!=='PARSER'){keep.add(call);changed=true;}}
   const allGlobals=loadSymbols().globals;

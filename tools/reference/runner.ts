@@ -19,7 +19,9 @@ export interface Checkpoint {
   stack: string[]; locals: number[];
   parser?: { direct: number[]; indirect: number[]; syntax: number; globals: Record<string, number> };
 }
+export interface ReferenceContext {room:string;inventory:readonly string[]}
 export interface ReferenceRun {
+  preparedContext?:ReferenceContext;
   format: 'zxr-reference-v1'; interpreter: { package: string; version: string; adapter: number; rng: string; seed: number; storySha256: string; settings: Record<string,string|number|boolean> };
   commands: string[]; transcript: string[]; random: RandomDraw[]; initialMemory: string;
   checkpoints: Checkpoint[]; routineCoverage: string[]; final: Summary;
@@ -28,8 +30,8 @@ export interface ReferenceRun {
 }
 interface ReadRequest { text: number; parse: number }
 
-/** Executes the actual V3 binary. No game routines or rule state are replaced. */
-export function runReference(commands: string[], seed = 2, options: { capture?: boolean; maxInstructions?: number } = {}): ReferenceRun {
+/** Executes the actual V3 binary. Optional contexts prepare locations at first READ; game routines are never replaced. */
+export function runReference(commands: string[], seed = 2, options: { context?:ReferenceContext; capture?: boolean; maxInstructions?: number; onOutput?:(event:{input:number;text:string;stack:string[]})=>void } = {}): ReferenceRun {
   const symbols = loadSymbols();
   const parserRoutines = new Set(symbols.routines.filter(r => r.file.endsWith('gparser.zap')).map(r => r.name));
   const story = readFileSync(STORY);
@@ -94,7 +96,11 @@ export function runReference(commands: string[], seed = 2, options: { capture?: 
   vm.set_style = () => {};
   vm.output_stream = () => { throw new Error('Reference output_stream is not supported by this host'); };
   vm.input_stream = () => { throw new Error('Reference input_stream is not supported by this host'); };
-  vm._print = (text: string) => { transcript[input + 1] = (transcript[input + 1] ?? '') + text.replaceAll('\r', '\n'); };
+  vm._print = (text: string) => {
+    const normalized=text.replaceAll('\r','\n');
+    transcript[input + 1] = (transcript[input + 1] ?? '') + normalized;
+    options.onOutput?.({input,text:normalized,stack:[...calls]});
+  };
   vm.read = (_storer: number, text: number, parse: number) => {
     request = { text, parse }; vm.stop = 1; checkpoint('read');
     if (calls.includes('FINISH')) checkpoint('end');
@@ -169,6 +175,18 @@ export function runReference(commands: string[], seed = 2, options: { capture?: 
   previous = new Uint8Array(vm.ram.getUint8Array(0, vm.staticmem));
   initialMemory = Buffer.from(previous).toString('base64');
   vm.run();
+  // Explicit synthetic fixture after GO/first READ. Default oracle recordings are untouched.
+  let preparedContext:ReferenceContext|undefined;
+  if(options.context){
+    const {room,inventory}=options.context,roomId=symbols.objects.indexOf(room),rooms=symbols.objects.indexOf('ROOMS'),player=global('PLAYER');
+    if(!request||roomId<1||vm.get_parent(roomId)!==rooms||!vm.test_attr(roomId,symbols.constants['ONBIT']))throw new Error('Reference context needs a naturally lit room');
+    const ids=inventory.map(name=>symbols.objects.indexOf(name));
+    if(ids.length>49||new Set(ids).size!==ids.length||ids.some(id=>id<1||id===player||vm.get_parent(id)===rooms||['ROOMS','GLOBAL-OBJECTS','LOCAL-GLOBALS'].includes(symbols.objects[id]!)))throw new Error('Invalid reference context inventory');
+    const setGlobal=(name:string,value:number)=>vm.ram.setUint16(vm.globals+2*symbols.globals.indexOf(name),value);
+    vm.insert_obj(player,roomId);setGlobal('HERE',roomId);setGlobal('WINNER',player);setGlobal('LIT',1);
+    for(const id of ids)vm.insert_obj(id,player);
+    preparedContext={room,inventory:[...inventory]};checkpoint('read');
+  }
   for (input = 0; input < commands.length; input++) {
     if (!request || vm.quit) throw new Error(`Command ${input + 1} supplied after the story stopped: ${commands[input]}`);
     const command = commands[input]!;
@@ -187,5 +205,5 @@ export function runReference(commands: string[], seed = 2, options: { capture?: 
       settings: { instructionLimit:maxInstructions, memoryCheckpoints:capture, stackBytes:100_000, undoBytes:1_000_000,
         statusLine:false, lineWrapping:false, inputEncoding:'printable ASCII', newline:'LF', saveSlots:1,
         randomZero:'configured seed', randomRestart:'configured seed', randomStateInSaves:true, streamSelection:'unsupported' } },
-    commands, transcript, random: draws, initialMemory, checkpoints, routineCoverage: [...coverage].sort(), final: summary(), host, deaths };
+    ...(preparedContext?{preparedContext}:{}),commands, transcript, random: draws, initialMemory, checkpoints, routineCoverage: [...coverage].sort(), final: summary(), host, deaths };
 }

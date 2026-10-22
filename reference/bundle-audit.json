@@ -1,0 +1,59 @@
+{
+  "format": "zxr-bundle-audit-v1",
+  "games": [
+    {
+      "game": "three-room",
+      "buildHash": "21757bdb0e878099d35dac77ed33c21c54701109d4066a9f233ee55c9c3fc58a",
+      "presentationHash": "3ecd6ff5c39d37196d99bbf10b1a321339d2acc1876357eb66ffd52de8d704dd",
+      "contentHash": "89e45883d4939ab3b1e55dd0e4d6d1dcfa4c78809edebcfcd25563c1407c0eb9",
+      "packedSha256": "1d8169e11c6bf55275c17e4f8522fc4712e883907c2532ede849cc41a7ebf49f",
+      "bytes": 49947,
+      "routines": 2,
+      "rooms": 3,
+      "objects": 0,
+      "memoryBytes": 704,
+      "entry": {
+        "name": "GO",
+        "id": 1
+      },
+      "adapter": null,
+      "rng": {
+        "algorithm": "xorshift32-v1",
+        "seed": 2
+      }
+    },
+    {
+      "game": "zork2",
+      "buildHash": "a5de4a25c3feb07a048b382eba841d589d552de176b9577aa99281b5a263fd6b",
+      "presentationHash": "03dad1f53d380bef2cb1153be09829196460c906f72ec598003e8e636cfa1d54",
+      "contentHash": "55a0139a09d0583238e84bacc9db40d0e4cc5ec071e97f729719ea05a0aa2bb2",
+      "packedSha256": "643a9050c64b74c1a24551cd5b34374f5bc4a4e683f07921fbb1937d9c0cdff3",
+      "bytes": 21625340,
+      "routines": 412,
+      "rooms": 86,
+      "objects": 165,
+      "memoryBytes": 19882,
+      "entry": {
+        "name": "GO",
+        "id": 4
+      },
+      "adapter": {
+        "id": 33,
+        "version": "zxr-adapter-v7",
+        "entryCommands": 11,
+        "checkCalls": [
+          "MANY-CHECK",
+          "TAKE-CHECK"
+        ]
+      },
+      "rng": {
+        "algorithm": "xorshift32-v1",
+        "seed": 2
+      }
+    }
+  ],
+  "limits": [
+    "Both bundles validate with independent AJV 2020 and load through the headless loader.",
+    "Initial memory is pre-GO. Interpreter execution and post-startup conformance remain phase 3.2."
+  ]
+}

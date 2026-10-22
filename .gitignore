@@ -5,3 +5,4 @@ test-results/
 .reference-work/
 *.tsbuildinfo
 .DS_Store
+out/

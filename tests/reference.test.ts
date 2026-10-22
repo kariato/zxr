@@ -16,6 +16,21 @@ describe('reference interpreter', () => {
     expect(Array.from({length:20},()=>random.draw(32767))).toEqual(future);
     expect(()=>random.draw(0)).toThrow('Invalid random range');
   });
+  it('observes original output with owned call stacks without changing reference execution', () => {
+    const chunks:string[]=[];let look=false;
+    const traced=runReference(['look'],2,{onOutput:event=>{chunks.push(event.text);look ||= event.stack.includes('V-LOOK');event.stack.length=0;}});
+    expect(traced).toEqual(runReference(['look']));expect(chunks.join('')).toBe(traced.transcript.join(''));expect(look).toBe(true);
+  });
+  it('marks prepared contexts, owns their metadata and validates lit rooms and inventory',()=>{
+    const context={room:'TEA-ROOM',inventory:['LAMP']},run=runReference(['examine hole','put lamp in hole'],2,{context});
+    expect(run.preparedContext).toEqual(context);expect(run.transcript[1]).toContain('The hole is very small.');expect(run.transcript[2]).toContain("It doesn't fit through the hole.");
+    const snapshots=[...memories(run)],initial=decodeState(snapshots[0]!),prepared=decodeState(snapshots[1]!);
+    expect(initial.objects.find(o=>o.id===initial.globals['HERE'])!.name).toBe('INSIDE-BARROW');
+    expect(prepared.objects.find(o=>o.id===prepared.globals['HERE'])!.name).toBe('TEA-ROOM');
+    expect(prepared.globals['MOVES']).toBe(initial.globals['MOVES']);expect(runReference([]).preparedContext).toBeUndefined();
+    context.inventory.push('SWORD');expect(run.preparedContext!.inventory).toEqual(['LAMP']);
+    for(const bad of [{room:'MISSING',inventory:[]},{room:'RIDDLE-ROOM',inventory:[]},{room:'TEA-ROOM',inventory:['ROOMS']},{room:'TEA-ROOM',inventory:['LAMP','LAMP']},{room:'TEA-ROOM',inventory:['MISSING']}])expect(()=>runReference([],2,{context:bad})).toThrow(/context/);
+  });
   it('records TAKE ALL match tables and one completed move for multiple objects', () => {
     const run = runReference(['take all']);
     const parsed = run.checkpoints.find(c=>c.kind === 'parser-return')!;

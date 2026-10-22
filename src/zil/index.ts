@@ -16,3 +16,11 @@ export * from './strings.ts';
 export * from './encoding.ts';
 export * from './memory.ts';
 export * from './linker.ts';
+
+export * from './parser.ts';
+export * from './source-maps.ts';
+export * from './integrity.ts';
+export * from './schema.ts';
+export * from './schemas.ts';
+export * from './bundle.ts';
+export * from './parser-adapter.ts';

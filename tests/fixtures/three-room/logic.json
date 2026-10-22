@@ -1,0 +1,17 @@
+{
+  "format":"zxr-logic-v1","semantics":"zxr-zork2-semantics-v1","stage":"operations",
+  "routines":[
+    {
+      "name":"GO","id":1,"required":0,"optional":0,"slotCount":0,"bindings":[],
+      "body":[{"op":"evaluate","expression":{"op":"output","operator":"PRINTI","args":[{"op":"string","handle":1,"source":{"file":"game.zil","start":{"offset":214,"line":5,"column":24},"end":{"offset":228,"line":5,"column":38}}}],"source":{"file":"game.zil","start":{"offset":206,"line":5,"column":16},"end":{"offset":229,"line":5,"column":39}}},"source":{"file":"game.zil","start":{"offset":206,"line":5,"column":16},"end":{"offset":229,"line":5,"column":39}}}],
+      "fullyLowered":true,"source":{"file":"game.zil","start":{"offset":191,"line":5,"column":1},"end":{"offset":230,"line":5,"column":40}}
+    },
+    {
+      "name":"V-LOOK","id":2,"required":0,"optional":0,"slotCount":0,"bindings":[],
+      "body":[{"op":"evaluate","expression":{"op":"output","operator":"PRINTI","args":[{"op":"string","handle":2,"source":{"file":"game.zil","start":{"offset":258,"line":6,"column":28},"end":{"offset":267,"line":6,"column":37}}}],"source":{"file":"game.zil","start":{"offset":250,"line":6,"column":20},"end":{"offset":268,"line":6,"column":38}}},"source":{"file":"game.zil","start":{"offset":250,"line":6,"column":20},"end":{"offset":268,"line":6,"column":38}}}],
+      "fullyLowered":true,"source":{"file":"game.zil","start":{"offset":231,"line":6,"column":1},"end":{"offset":269,"line":6,"column":39}}
+    }
+  ],
+  "untranslated":[],
+  "strings":{"format":"zxr-strings-v1","entries":[{"id":1,"text":"Three rooms."},{"id":2,"text":"A room."}]}
+}

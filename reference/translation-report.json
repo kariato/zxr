@@ -1,0 +1,1105 @@
+{
+  "format": "zxr-translation-report-v1",
+  "untranslated": [],
+  "replacements": [
+    {
+      "routine": "PARSER",
+      "policy": "adapter",
+      "sourceMapId": "sm1:PARSER:routine:38e46c7cd6dc9e8e",
+      "nodeId": "PARSER:n1"
+    },
+    {
+      "routine": "STUFF",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:STUFF:routine:3812f27fceb0dc79",
+      "nodeId": "STUFF:n1"
+    },
+    {
+      "routine": "INBUF-STUFF",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:INBUF-STUFF:routine:2d6ac60efa32c130",
+      "nodeId": "INBUF-STUFF:n1"
+    },
+    {
+      "routine": "INBUF-ADD",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:INBUF-ADD:routine:8d3f74a713702fc9",
+      "nodeId": "INBUF-ADD:n1"
+    },
+    {
+      "routine": "WT?",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:WT%3F:routine:d1cbab19b397766f",
+      "nodeId": "WT%3F:n1"
+    },
+    {
+      "routine": "CLAUSE",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:CLAUSE:routine:4a54f54ef87f8ea4",
+      "nodeId": "CLAUSE:n1"
+    },
+    {
+      "routine": "NUMBER?",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:NUMBER%3F:routine:07eaceeb414b17fd",
+      "nodeId": "NUMBER%3F:n1"
+    },
+    {
+      "routine": "ORPHAN-MERGE",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:ORPHAN-MERGE:routine:f6f91f84b2dbb01e",
+      "nodeId": "ORPHAN-MERGE:n1"
+    },
+    {
+      "routine": "ACLAUSE-WIN",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:ACLAUSE-WIN:routine:f0c44d14273ad6aa",
+      "nodeId": "ACLAUSE-WIN:n1"
+    },
+    {
+      "routine": "NCLAUSE-WIN",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:NCLAUSE-WIN:routine:e30d83bdcca85f8b",
+      "nodeId": "NCLAUSE-WIN:n1"
+    },
+    {
+      "routine": "UNKNOWN-WORD",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:UNKNOWN-WORD:routine:df4d7632f0448468",
+      "nodeId": "UNKNOWN-WORD:n1"
+    },
+    {
+      "routine": "CANT-USE",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:CANT-USE:routine:f7dc786127f525eb",
+      "nodeId": "CANT-USE:n1"
+    },
+    {
+      "routine": "SYNTAX-CHECK",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:SYNTAX-CHECK:routine:16e15d1340f89db9",
+      "nodeId": "SYNTAX-CHECK:n1"
+    },
+    {
+      "routine": "CANT-ORPHAN",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:CANT-ORPHAN:routine:5770bcf2e6a9ee64",
+      "nodeId": "CANT-ORPHAN:n1"
+    },
+    {
+      "routine": "ORPHAN",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:ORPHAN:routine:030de817812dd0ed",
+      "nodeId": "ORPHAN:n1"
+    },
+    {
+      "routine": "THING-PRINT",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:THING-PRINT:routine:3d119263f6a1432d",
+      "nodeId": "THING-PRINT:n1"
+    },
+    {
+      "routine": "PREP-PRINT",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:PREP-PRINT:routine:56c04ac68e4861f4",
+      "nodeId": "PREP-PRINT:n1"
+    },
+    {
+      "routine": "CLAUSE-COPY",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:CLAUSE-COPY:routine:ba087740734f052e",
+      "nodeId": "CLAUSE-COPY:n1"
+    },
+    {
+      "routine": "CLAUSE-ADD",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:CLAUSE-ADD:routine:f470f2c0b726e722",
+      "nodeId": "CLAUSE-ADD:n1"
+    },
+    {
+      "routine": "PREP-FIND",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:PREP-FIND:routine:d9ffd010db9a088e",
+      "nodeId": "PREP-FIND:n1"
+    },
+    {
+      "routine": "SYNTAX-FOUND",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:SYNTAX-FOUND:routine:b702df9f89749f1d",
+      "nodeId": "SYNTAX-FOUND:n1"
+    },
+    {
+      "routine": "GWIM",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:GWIM:routine:99369fedb2fdaa6f",
+      "nodeId": "GWIM:n1"
+    },
+    {
+      "routine": "SNARF-OBJECTS",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:SNARF-OBJECTS:routine:0d0e0074253e26ba",
+      "nodeId": "SNARF-OBJECTS:n1"
+    },
+    {
+      "routine": "BUT-MERGE",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:BUT-MERGE:routine:854c8a0b27501b5d",
+      "nodeId": "BUT-MERGE:n1"
+    },
+    {
+      "routine": "SNARFEM",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:SNARFEM:routine:6666f33b6d745f2d",
+      "nodeId": "SNARFEM:n1"
+    },
+    {
+      "routine": "GET-OBJECT",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:GET-OBJECT:routine:39d6a6b5452123b7",
+      "nodeId": "GET-OBJECT:n1"
+    },
+    {
+      "routine": "WHICH-PRINT",
+      "policy": "replaced-middle",
+      "sourceMapId": "sm1:WHICH-PRINT:routine:6acafc9e2b9b8670",
+      "nodeId": "WHICH-PRINT:n1"
+    }
+  ],
+  "parserConsumers": [
+    {
+      "routine": "GO",
+      "global": "P-LEXV",
+      "mode": "load",
+      "source": {
+        "file": "2dungeon.zil",
+        "start": {
+          "offset": 215,
+          "line": 8,
+          "column": 9
+        },
+        "end": {
+          "offset": 222,
+          "line": 8,
+          "column": 16
+        }
+      },
+      "ledger": "ADAPT-004",
+      "plan": "Preserve initial P-LEXV capacity setup before the first adapter input.",
+      "points": [
+        {
+          "sourceMapId": "sm1:GO:expression:669bac0ee0c200dc",
+          "nodeId": "GO:n4"
+        }
+      ]
+    },
+    {
+      "routine": "NOT-HERE-OBJECT-F",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "gglobals.zil",
+        "start": {
+          "offset": 1389,
+          "line": 64,
+          "column": 3
+        },
+        "end": {
+          "offset": 1405,
+          "line": 64,
+          "column": 19
+        }
+      },
+      "ledger": "ADAPT-010",
+      "plan": "Keep translated continuation cancellation at this exact handler/turn-loop site; the adapter must not restore or pre-clear it.",
+      "points": [
+        {
+          "sourceMapId": "sm1:NOT-HERE-OBJECT-F:expression:f2303db290319210",
+          "nodeId": "NOT-HERE-OBJECT-F:n41"
+        }
+      ]
+    },
+    {
+      "routine": "SAILOR-FCN",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "gglobals.zil",
+        "start": {
+          "offset": 3858,
+          "line": 157,
+          "column": 4
+        },
+        "end": {
+          "offset": 3874,
+          "line": 157,
+          "column": 20
+        }
+      },
+      "ledger": "ADAPT-010",
+      "plan": "Keep translated continuation cancellation at this exact handler/turn-loop site; the adapter must not restore or pre-clear it.",
+      "points": [
+        {
+          "sourceMapId": "sm1:SAILOR-FCN:expression:fde3e7ab3e60cb4d",
+          "nodeId": "SAILOR-FCN:n8"
+        }
+      ]
+    },
+    {
+      "routine": "CRETIN-FCN",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "gglobals.zil",
+        "start": {
+          "offset": 6771,
+          "line": 256,
+          "column": 3
+        },
+        "end": {
+          "offset": 6787,
+          "line": 256,
+          "column": 19
+        }
+      },
+      "ledger": "ADAPT-010",
+      "plan": "Keep translated continuation cancellation at this exact handler/turn-loop site; the adapter must not restore or pre-clear it.",
+      "points": [
+        {
+          "sourceMapId": "sm1:CRETIN-FCN:expression:3a0a754e9cd34108",
+          "nodeId": "CRETIN-FCN:n8"
+        }
+      ]
+    },
+    {
+      "routine": "MAIN-LOOP-1",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "gmain.zil",
+        "start": {
+          "offset": 4118,
+          "line": 161,
+          "column": 31
+        },
+        "end": {
+          "offset": 4134,
+          "line": 161,
+          "column": 47
+        }
+      },
+      "ledger": "ADAPT-010",
+      "plan": "Keep translated continuation cancellation at this exact handler/turn-loop site; the adapter must not restore or pre-clear it.",
+      "points": [
+        {
+          "sourceMapId": "sm1:MAIN-LOOP-1:expression:f2f8d1a1ecbc12ab",
+          "nodeId": "MAIN-LOOP-1:n522"
+        }
+      ]
+    },
+    {
+      "routine": "MAIN-LOOP-1",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "gmain.zil",
+        "start": {
+          "offset": 4150,
+          "line": 163,
+          "column": 6
+        },
+        "end": {
+          "offset": 4166,
+          "line": 163,
+          "column": 22
+        }
+      },
+      "ledger": "ADAPT-010",
+      "plan": "Keep translated continuation cancellation at this exact handler/turn-loop site; the adapter must not restore or pre-clear it.",
+      "points": [
+        {
+          "sourceMapId": "sm1:MAIN-LOOP-1:expression:f2f8d1a1ecbc12ab",
+          "nodeId": "MAIN-LOOP-1:n526"
+        }
+      ]
+    },
+    {
+      "routine": "FINISH",
+      "global": "P-LEXV",
+      "mode": "load",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 914,
+          "line": 42,
+          "column": 19
+        },
+        "end": {
+          "offset": 921,
+          "line": 42,
+          "column": 26
+        }
+      },
+      "ledger": "ADAPT-005",
+      "plan": "Pending RESTART/RESTORE/QUIT choice fills one dictionary-backed READ response, then resumes FINISH unchanged.",
+      "points": [
+        {
+          "sourceMapId": "sm1:FINISH:expression:c9775c41ac7ffb53",
+          "nodeId": "FINISH:n18"
+        }
+      ]
+    },
+    {
+      "routine": "FINISH",
+      "global": "P-LEXV",
+      "mode": "load",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 940,
+          "line": 43,
+          "column": 18
+        },
+        "end": {
+          "offset": 947,
+          "line": 43,
+          "column": 25
+        }
+      },
+      "ledger": "ADAPT-005",
+      "plan": "Pending RESTART/RESTORE/QUIT choice fills one dictionary-backed READ response, then resumes FINISH unchanged.",
+      "points": [
+        {
+          "sourceMapId": "sm1:FINISH:expression:43b5b29157dba7a3",
+          "nodeId": "FINISH:n22"
+        }
+      ]
+    },
+    {
+      "routine": "V-ANSWER",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 4470,
+          "line": 191,
+          "column": 3
+        },
+        "end": {
+          "offset": 4486,
+          "line": 191,
+          "column": 19
+        }
+      },
+      "ledger": "ADAPT-010",
+      "plan": "Keep translated continuation cancellation at this exact handler/turn-loop site; the adapter must not restore or pre-clear it.",
+      "points": [
+        {
+          "sourceMapId": "sm1:V-ANSWER:expression:3060221937ece5ff",
+          "nodeId": "V-ANSWER:n10"
+        }
+      ]
+    },
+    {
+      "routine": "V-INCANT",
+      "global": "P-LEXV",
+      "mode": "load",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 21525,
+          "line": 775,
+          "column": 25
+        },
+        "end": {
+          "offset": 21532,
+          "line": 775,
+          "column": 32
+        }
+      },
+      "ledger": "ADAPT-006",
+      "plan": "Quoted say/incant option supplies a vocabulary word at P-CONT; preserve its dictionary address in SPELL-USED and translated resets.",
+      "points": [
+        {
+          "sourceMapId": "sm1:V-INCANT:expression:65ba77c83cc4d2aa",
+          "nodeId": "V-INCANT:n19"
+        }
+      ]
+    },
+    {
+      "routine": "V-INCANT",
+      "global": "P-CONT",
+      "mode": "load",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 21533,
+          "line": 775,
+          "column": 33
+        },
+        "end": {
+          "offset": 21540,
+          "line": 775,
+          "column": 40
+        }
+      },
+      "ledger": "ADAPT-006",
+      "plan": "Quoted say/incant option supplies a vocabulary word at P-CONT; preserve its dictionary address in SPELL-USED and translated resets.",
+      "points": [
+        {
+          "sourceMapId": "sm1:V-INCANT:expression:db11187ebba18274",
+          "nodeId": "V-INCANT:n20"
+        }
+      ]
+    },
+    {
+      "routine": "V-INCANT",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 21909,
+          "line": 787,
+          "column": 3
+        },
+        "end": {
+          "offset": 21925,
+          "line": 787,
+          "column": 19
+        }
+      },
+      "ledger": "ADAPT-006",
+      "plan": "Quoted say/incant option supplies a vocabulary word at P-CONT; preserve its dictionary address in SPELL-USED and translated resets.",
+      "points": [
+        {
+          "sourceMapId": "sm1:V-INCANT:expression:a6375708c263b0e6",
+          "nodeId": "V-INCANT:n57"
+        }
+      ]
+    },
+    {
+      "routine": "V-REPLY",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 33109,
+          "line": 1202,
+          "column": 3
+        },
+        "end": {
+          "offset": 33125,
+          "line": 1202,
+          "column": 19
+        }
+      },
+      "ledger": "ADAPT-010",
+      "plan": "Keep translated continuation cancellation at this exact handler/turn-loop site; the adapter must not restore or pre-clear it.",
+      "points": [
+        {
+          "sourceMapId": "sm1:V-REPLY:expression:1b0b8e3129688533",
+          "nodeId": "V-REPLY:n16"
+        }
+      ]
+    },
+    {
+      "routine": "V-SAY",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 34042,
+          "line": 1234,
+          "column": 3
+        },
+        "end": {
+          "offset": 34058,
+          "line": 1234,
+          "column": 19
+        }
+      },
+      "ledger": "ADAPT-007",
+      "plan": "Quoted say option supplies canonical P-LEXV records and P-CONT. Preserve HELLO continuation and wand delegation; handlers own cancellation.",
+      "points": [
+        {
+          "sourceMapId": "sm1:V-SAY:expression:b1680cc87a1e5a3a",
+          "nodeId": "V-SAY:n38"
+        }
+      ]
+    },
+    {
+      "routine": "V-SAY",
+      "global": "P-LEXV",
+      "mode": "load",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 34087,
+          "line": 1235,
+          "column": 28
+        },
+        "end": {
+          "offset": 34094,
+          "line": 1235,
+          "column": 35
+        }
+      },
+      "ledger": "ADAPT-007",
+      "plan": "Quoted say option supplies canonical P-LEXV records and P-CONT. Preserve HELLO continuation and wand delegation; handlers own cancellation.",
+      "points": [
+        {
+          "sourceMapId": "sm1:V-SAY:expression:951903881d0a744e",
+          "nodeId": "V-SAY:n43"
+        }
+      ]
+    },
+    {
+      "routine": "V-SAY",
+      "global": "P-CONT",
+      "mode": "load",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 34095,
+          "line": 1235,
+          "column": 36
+        },
+        "end": {
+          "offset": 34102,
+          "line": 1235,
+          "column": 43
+        }
+      },
+      "ledger": "ADAPT-007",
+      "plan": "Quoted say option supplies canonical P-LEXV records and P-CONT. Preserve HELLO continuation and wand delegation; handlers own cancellation.",
+      "points": [
+        {
+          "sourceMapId": "sm1:V-SAY:expression:b130093e28e70248",
+          "nodeId": "V-SAY:n44"
+        }
+      ]
+    },
+    {
+      "routine": "V-SAY",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 34124,
+          "line": 1236,
+          "column": 10
+        },
+        "end": {
+          "offset": 34140,
+          "line": 1236,
+          "column": 26
+        }
+      },
+      "ledger": "ADAPT-007",
+      "plan": "Quoted say option supplies canonical P-LEXV records and P-CONT. Preserve HELLO continuation and wand delegation; handlers own cancellation.",
+      "points": [
+        {
+          "sourceMapId": "sm1:V-SAY:expression:b1680cc87a1e5a3a",
+          "nodeId": "V-SAY:n47"
+        }
+      ]
+    },
+    {
+      "routine": "V-TELL",
+      "global": "P-CONT",
+      "mode": "load",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 39443,
+          "line": 1435,
+          "column": 10
+        },
+        "end": {
+          "offset": 39450,
+          "line": 1435,
+          "column": 17
+        }
+      },
+      "ledger": "ADAPT-009",
+      "plan": "Actor option uses the original two-pass TELL continuation. Continue only if translated V-TELL leaves P-CONT live; preserve refusal resets.",
+      "points": [
+        {
+          "sourceMapId": "sm1:V-TELL:expression:62a711c38abcba55",
+          "nodeId": "V-TELL:n9"
+        }
+      ]
+    },
+    {
+      "routine": "V-TELL",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 39725,
+          "line": 1445,
+          "column": 3
+        },
+        "end": {
+          "offset": 39741,
+          "line": 1445,
+          "column": 19
+        }
+      },
+      "ledger": "ADAPT-009",
+      "plan": "Actor option uses the original two-pass TELL continuation. Continue only if translated V-TELL leaves P-CONT live; preserve refusal resets.",
+      "points": [
+        {
+          "sourceMapId": "sm1:V-TELL:expression:3cb0209e4fe36438",
+          "nodeId": "V-TELL:n49"
+        }
+      ]
+    },
+    {
+      "routine": "YES?",
+      "global": "P-LEXV",
+      "mode": "load",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 53190,
+          "line": 1918,
+          "column": 18
+        },
+        "end": {
+          "offset": 53197,
+          "line": 1918,
+          "column": 25
+        }
+      },
+      "ledger": "ADAPT-005",
+      "plan": "Pending YES/NO choice fills one dictionary-backed READ response, then resumes YES? unchanged.",
+      "points": [
+        {
+          "sourceMapId": "sm1:YES%3F:expression:a64c3bba33dd7b98",
+          "nodeId": "YES%3F:n8"
+        }
+      ]
+    },
+    {
+      "routine": "YES?",
+      "global": "P-LEXV",
+      "mode": "load",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 53221,
+          "line": 1919,
+          "column": 23
+        },
+        "end": {
+          "offset": 53228,
+          "line": 1919,
+          "column": 30
+        }
+      },
+      "ledger": "ADAPT-005",
+      "plan": "Pending YES/NO choice fills one dictionary-backed READ response, then resumes YES? unchanged.",
+      "points": [
+        {
+          "sourceMapId": "sm1:YES%3F:expression:f4e41e1e9abcf034",
+          "nodeId": "YES%3F:n13"
+        }
+      ]
+    },
+    {
+      "routine": "GOTO",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 59413,
+          "line": 2164,
+          "column": 10
+        },
+        "end": {
+          "offset": 59429,
+          "line": 2164,
+          "column": 26
+        }
+      },
+      "ledger": "ADAPT-010",
+      "plan": "Keep translated continuation cancellation at this exact handler/turn-loop site; the adapter must not restore or pre-clear it.",
+      "points": [
+        {
+          "sourceMapId": "sm1:GOTO:expression:583b6625139fded3",
+          "nodeId": "GOTO:n232"
+        }
+      ]
+    },
+    {
+      "routine": "GNOME-FCN",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "2actions.zil",
+        "start": {
+          "offset": 16566,
+          "line": 536,
+          "column": 5
+        },
+        "end": {
+          "offset": 16582,
+          "line": 536,
+          "column": 21
+        }
+      },
+      "ledger": "ADAPT-010",
+      "plan": "Keep translated continuation cancellation at this exact handler/turn-loop site; the adapter must not restore or pre-clear it.",
+      "points": [
+        {
+          "sourceMapId": "sm1:GNOME-FCN:expression:e2ff9404ed2c9f26",
+          "nodeId": "GNOME-FCN:n8"
+        }
+      ]
+    },
+    {
+      "routine": "ZGNOME-FCN",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "2actions.zil",
+        "start": {
+          "offset": 45157,
+          "line": 1467,
+          "column": 5
+        },
+        "end": {
+          "offset": 45173,
+          "line": 1467,
+          "column": 21
+        }
+      },
+      "ledger": "ADAPT-010",
+      "plan": "Keep translated continuation cancellation at this exact handler/turn-loop site; the adapter must not restore or pre-clear it.",
+      "points": [
+        {
+          "sourceMapId": "sm1:ZGNOME-FCN:expression:242d3dc621514760",
+          "nodeId": "ZGNOME-FCN:n8"
+        }
+      ]
+    },
+    {
+      "routine": "RIDDLE-ROOM-FCN",
+      "global": "P-LEXV",
+      "mode": "load",
+      "source": {
+        "file": "2actions.zil",
+        "start": {
+          "offset": 62244,
+          "line": 2029,
+          "column": 27
+        },
+        "end": {
+          "offset": 62251,
+          "line": 2029,
+          "column": 34
+        }
+      },
+      "ledger": "ADAPT-008",
+      "plan": "Quoted say/answer option supplies dictionary words at P-CONT and P-CONT+2. Keep WELL in either tested position and retain failure responses.",
+      "points": [
+        {
+          "sourceMapId": "sm1:RIDDLE-ROOM-FCN:expression:98a7adae67279188",
+          "nodeId": "RIDDLE-ROOM-FCN:n54"
+        }
+      ]
+    },
+    {
+      "routine": "RIDDLE-ROOM-FCN",
+      "global": "P-CONT",
+      "mode": "load",
+      "source": {
+        "file": "2actions.zil",
+        "start": {
+          "offset": 62252,
+          "line": 2029,
+          "column": 35
+        },
+        "end": {
+          "offset": 62259,
+          "line": 2029,
+          "column": 42
+        }
+      },
+      "ledger": "ADAPT-008",
+      "plan": "Quoted say/answer option supplies dictionary words at P-CONT and P-CONT+2. Keep WELL in either tested position and retain failure responses.",
+      "points": [
+        {
+          "sourceMapId": "sm1:RIDDLE-ROOM-FCN:expression:d930e040a2da8356",
+          "nodeId": "RIDDLE-ROOM-FCN:n55"
+        }
+      ]
+    },
+    {
+      "routine": "RIDDLE-ROOM-FCN",
+      "global": "P-LEXV",
+      "mode": "load",
+      "source": {
+        "file": "2actions.zil",
+        "start": {
+          "offset": 62289,
+          "line": 2030,
+          "column": 20
+        },
+        "end": {
+          "offset": 62296,
+          "line": 2030,
+          "column": 27
+        }
+      },
+      "ledger": "ADAPT-008",
+      "plan": "Quoted say/answer option supplies dictionary words at P-CONT and P-CONT+2. Keep WELL in either tested position and retain failure responses.",
+      "points": [
+        {
+          "sourceMapId": "sm1:RIDDLE-ROOM-FCN:expression:5a3364dfb3add8e1",
+          "nodeId": "RIDDLE-ROOM-FCN:n59"
+        }
+      ]
+    },
+    {
+      "routine": "RIDDLE-ROOM-FCN",
+      "global": "P-CONT",
+      "mode": "load",
+      "source": {
+        "file": "2actions.zil",
+        "start": {
+          "offset": 62300,
+          "line": 2030,
+          "column": 31
+        },
+        "end": {
+          "offset": 62307,
+          "line": 2030,
+          "column": 38
+        }
+      },
+      "ledger": "ADAPT-008",
+      "plan": "Quoted say/answer option supplies dictionary words at P-CONT and P-CONT+2. Keep WELL in either tested position and retain failure responses.",
+      "points": [
+        {
+          "sourceMapId": "sm1:RIDDLE-ROOM-FCN:expression:9d6157a7ada2e9d9",
+          "nodeId": "RIDDLE-ROOM-FCN:n61"
+        }
+      ]
+    },
+    {
+      "routine": "RIDDLE-ROOM-FCN",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "2actions.zil",
+        "start": {
+          "offset": 62604,
+          "line": 2039,
+          "column": 9
+        },
+        "end": {
+          "offset": 62620,
+          "line": 2039,
+          "column": 25
+        }
+      },
+      "ledger": "ADAPT-008",
+      "plan": "Quoted say/answer option supplies dictionary words at P-CONT and P-CONT+2. Keep WELL in either tested position and retain failure responses.",
+      "points": [
+        {
+          "sourceMapId": "sm1:RIDDLE-ROOM-FCN:expression:dc6cd79a1ecc4768",
+          "nodeId": "RIDDLE-ROOM-FCN:n87"
+        }
+      ]
+    },
+    {
+      "routine": "HELLO?",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "2actions.zil",
+        "start": {
+          "offset": 76034,
+          "line": 2450,
+          "column": 10
+        },
+        "end": {
+          "offset": 76050,
+          "line": 2450,
+          "column": 26
+        }
+      },
+      "ledger": "ADAPT-010",
+      "plan": "Keep translated continuation cancellation at this exact handler/turn-loop site; the adapter must not restore or pre-clear it.",
+      "points": [
+        {
+          "sourceMapId": "sm1:HELLO%3F:expression:600aa3e57d285263",
+          "nodeId": "HELLO%3F:n33"
+        }
+      ]
+    },
+    {
+      "routine": "GENIE-LEAVES",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "2actions.zil",
+        "start": {
+          "offset": 108039,
+          "line": 3347,
+          "column": 3
+        },
+        "end": {
+          "offset": 108055,
+          "line": 3347,
+          "column": 19
+        }
+      },
+      "ledger": "ADAPT-010",
+      "plan": "Keep translated continuation cancellation at this exact handler/turn-loop site; the adapter must not restore or pre-clear it.",
+      "points": [
+        {
+          "sourceMapId": "sm1:GENIE-LEAVES:expression:436c89571f4989b1",
+          "nodeId": "GENIE-LEAVES:n19"
+        }
+      ]
+    },
+    {
+      "routine": "JIGS-UP",
+      "global": "P-CONT",
+      "mode": "store",
+      "source": {
+        "file": "2actions.zil",
+        "start": {
+          "offset": 128937,
+          "line": 3991,
+          "column": 4
+        },
+        "end": {
+          "offset": 128953,
+          "line": 3991,
+          "column": 20
+        }
+      },
+      "ledger": "ADAPT-010",
+      "plan": "Keep translated continuation cancellation at this exact handler/turn-loop site; the adapter must not restore or pre-clear it.",
+      "points": [
+        {
+          "sourceMapId": "sm1:JIGS-UP:expression:c6d6fd8b5db5e889",
+          "nodeId": "JIGS-UP:n107"
+        }
+      ]
+    }
+  ],
+  "reads": [
+    {
+      "routine": "PARSER",
+      "source": {
+        "file": "gparser.zil",
+        "start": {
+          "offset": 4222,
+          "line": 153,
+          "column": 9
+        },
+        "end": {
+          "offset": 4245,
+          "line": 153,
+          "column": 32
+        }
+      },
+      "policy": "adapter-input",
+      "points": [
+        {
+          "sourceMapId": "sm1:PARSER:expression:3c807c5b167af011",
+          "nodeId": "PARSER:n186"
+        }
+      ]
+    },
+    {
+      "routine": "FINISH",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 899,
+          "line": 42,
+          "column": 4
+        },
+        "end": {
+          "offset": 922,
+          "line": 42,
+          "column": 27
+        }
+      },
+      "policy": "pending-decision",
+      "points": [
+        {
+          "sourceMapId": "sm1:FINISH:expression:1955eb9b93830709",
+          "nodeId": "FINISH:n16"
+        }
+      ]
+    },
+    {
+      "routine": "YES?",
+      "source": {
+        "file": "gverbs.zil",
+        "start": {
+          "offset": 53175,
+          "line": 1918,
+          "column": 3
+        },
+        "end": {
+          "offset": 53198,
+          "line": 1918,
+          "column": 26
+        }
+      },
+      "policy": "pending-decision",
+      "points": [
+        {
+          "sourceMapId": "sm1:YES%3F:expression:118a24e8a9759a6a",
+          "nodeId": "YES%3F:n6"
+        }
+      ]
+    }
+  ],
+  "unsupportedHost": [
+    {
+      "routine": "V-COMMAND-FILE",
+      "operator": "DIRIN",
+      "points": [
+        {
+          "sourceMapId": "sm1:V-COMMAND-FILE:expression:ad847ef5973b4d37",
+          "nodeId": "V-COMMAND-FILE:n3"
+        }
+      ]
+    },
+    {
+      "routine": "V-RECORD",
+      "operator": "DIROUT",
+      "points": [
+        {
+          "sourceMapId": "sm1:V-RECORD:expression:9d5d935afaea97cc",
+          "nodeId": "V-RECORD:n3"
+        }
+      ]
+    },
+    {
+      "routine": "V-UNRECORD",
+      "operator": "DIROUT",
+      "points": [
+        {
+          "sourceMapId": "sm1:V-UNRECORD:expression:e0e2ace4cdfaf142",
+          "nodeId": "V-UNRECORD:n3"
+        }
+      ]
+    }
+  ]
+}

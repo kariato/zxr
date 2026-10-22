@@ -1,6 +1,6 @@
 # Phase 2 progress: compatibility, world, vocabulary and routine logic
 
-Steps **2.0–2.7 are complete**. The compatibility candidate was presented for review, then Mark instructed “next” on 2026-10-21; that authorizes continuing with its contracts. Steps 2.0–2.2 were committed as `20de48a`; steps 2.3–2.7 are the current uncommitted changes. Steps 2.8–2.10 have not started.
+Steps **2.0–2.10 are complete**. The compatibility candidate was presented for review, then Mark instructed “next” on 2026-10-21; that authorizes continuing with its contracts. Steps 2.0–2.2 were committed as `20de48a` and 2.3–2.7 as `c3d325b`; steps 2.8–2.10 and the first phase 3 work are currently uncommitted.
 
 The accepted [compatibility specification](compat-semantics.md) gives concrete contracts for the six draft obligations, backed by `reference/semantics-inventory.json` and `reference/semantics-probes.json`.
 
@@ -148,6 +148,48 @@ All **168 global initializers**, **251 objects**, **1,015 properties**, **689 di
 
 Twelve new tests cover the complete independent audit, constructor layouts, nested tables, aliases, byte/word representation, pooled empty strings, all memory operations and REST defaults, invalid arities/flags/counts/overflows, initializer cycles, static declarations, dictionary key-order independence, pseudo-object layout, header metadata and corrupted images. These are compiler and initial-layout checks. Runtime writes, pointer comparison, clock scheduling, GETP defaults and V-VERSION execution still require step 3.2.
 
+## Step 2.8 — parser library split
+
+`src/zil/parser.ts` classifies all **42 gparser routines**: **15 kept**, **26 replaced-middle**, and **PARSER as the adapter entry**. GLOBAL-CHECK was added during phase 3.4 to retain original global fallback for ALL and ordinary noun lookup. Required adapter helpers and direct calls from every non-parser routine seed retention; the transitive parser-helper closure is retained. The 15 are WORD-PRINT, BUFFER-PRINT, GLOBAL-CHECK, DO-SL, SEARCH-LIST, OBJ-FOUND, TAKE-CHECK, ITAKE-CHECK, MANY-CHECK, ZMEMQ, ZMEMQB, LIT?, THIS-IT?, ACCESSIBLE? and META-LOC. The runtime view contains **412 routines**, preserving every original ZXR ID and excluding the adapter's original body and the replaced middle. The complete 439-routine linked IR remains available for audits.
+
+Each parser row records source spans, retention reasons, direct calls, full call closure and direct/transitive may-effects. The analysis visits defaults, AUX and nested block initializers and every branch. A fixed point carries pointer origins through local assignments, REST/BACK, arithmetic, recursive calls and argument substitution. This captures OBJ-FOUND's writes through its second formal, SEARCH-LIST's forwarded table and DO-SL's P-TABLE. LIT?'s explicit writes are HERE, P-GWIMBIT, P-SLOCBITS and P-TABLE; its memory effects include the buffers named by P-MERGE and P-TABLE. These are writes through pointer values, not assignment to the P-MERGE global slot.
+
+Memory-base labels are symbolic runtime global values, formal argument slots, allocations, properties or `unknown`. They may alias. Unknown includes every address, including globals, and is never discarded as pure. Explicit global writes, object mutations, output, RNG and host effects are separate fields. This is conservative flow-insensitive analysis, not a complete points-to, execution or purity proof. The dispatch boundary prohibits **all translated routines during options queries**. Kept helpers run only in action/adapter transactions.
+
+All **16 APPLY sites** have classified domains: routine-valued properties ACTION/CONTFCN/DESCFCN, action/preaction dispatch tables, clock records and functional exits. Their target sets deliberately over-approximate all **312 named first-class routine values** in the linked IR and initial memory. No parser routine appears in that set. New unclassified APPLY domains, invalid routine references, first-class references to removed/adapter entries, or retained calls back into removed code fail with ZIL012. MAIN-LOOP-1's direct PARSER call remains the approved adapter boundary. The future runtime must also reject unknown/removed numeric routine IDs; `resolveParserEntry` supplies that boundary, including null calls and adapter routing restricted to the MAIN-LOOP-1 direct call. Static named-target checks do not prove arbitrary numeric memory values safe.
+
+The split identifies **32 P-LEXV/P-CONT accesses outside gparser.zil**, including explicit variable writes that the earlier comma-reference scan did not report. Each exact source site has a ledger rule and planned handling. GO retains buffer initialization; FINISH and YES? use pending decisions; INCANT preserves a dictionary word in SPELL-USED; SAY preserves HELLO/wand continuation; the riddle checks WELL in either tested position; TELL keeps the two-pass actor protocol; handler/turn-loop cancellation writes stay translated. Unexpected readers and nonzero assignments fail pending classification. All **three READ sites** are explicit: PARSER is replaced by action options, FINISH chooses RESTART/RESTORE/QUIT, and YES? chooses YES/NO. Canonical speech spelling and response-buffer construction remain the phase 3 adapter's work.
+
+`games/zork2/parser.zxr.json` contains the partition and effect/dependency evidence. `reference/parser-audit.json` records source hashes, complete partition/runtime-IR hashes, coverage and planned handling. `games/zork2/parser-ledger.md` lists all 42 classifications, all 32 consumer sites and all READ sites; the main rules ledger links it. The Node-side audit independently compares classification, direct calls and explicit global writes to the earlier source-AST inventory. `parser:record` generates the three files after checking; `parser:check` verifies them and runs in CI. Reference-assisted `zxr check` now validates the split and reports 412 retained routines plus the adapter.
+
+Eleven tests verify complete reproducibility, exact retained helpers and IDs, recursive and default-initializer effects, argument/AUX/global aliases, unknown-pointer conservatism, all indirect domains and first-class references, hidden removed targets in memory, invalid IDs and parser re-entry, options-query prohibition, all speech/actor/decision plans and newly unclassified sites. CLI source-copy checks assert file/line/caret diagnostics for an unclassified CLOCKER APPLY. These checks do not execute an adapter or interpreter.
+
+## Step 2.9 — semantic source maps and translation report
+
+`src/zil/source-maps.ts` maps **26,503 sites** across all 439 reference routines: 439 routine entries, 487 bindings, 6,487 commands and 19,090 expressions. The runtime projection retains the 412 routines from the parser split. Every site carries a stable `sourceMapId` and an exact, build-local `nodeId`; removing those fields reproduces the original linked IR exactly. The source map records **24,399 semantic IDs**, **1,424 ambiguous IDs**, **16,164 locations**, **6,250 anchors** and **8,102 macro-origin points**. Call and definition locations are verified against the loaded macro definitions.
+
+Identity uses routine names, canonical source forms, roles inside forms/macro expansions and symbolic IR meaning. It excludes line numbers, relocated addresses, routine/string/local/block numbers and sibling instruction indices. Lexical binding/control-target identities and actual string text remain significant. Formatting, comments, equivalent numeric notation, numbering changes and unrelated insertions preserve unchanged semantic anchors. Comments do not shift operand roles. Exact node/location IDs are build-local and must not be used as persistent overlay targets.
+
+`resolveSourcePoint` fails for missing, changed, ambiguous or excluded targets. Repeated identical points share an ID rather than receiving unstable occurrence numbers. An optional unique semantic ancestor (`within`) can disambiguate them; it must still leave exactly one runtime candidate. `lookupSourceNode` resolves exact diagnostic instances even when their semantic ID is ambiguous. No runtime or presentation overlay is executed here. The complete format, invariants and a verified SCORE-UPD target are in [source-maps.md](source-maps.md).
+
+Original source text is stored once per file, with interned UTF-16 spans and original macro provenance. Both guarded source normalizations are recorded; SRC-006 points retain their trailing source-list location. The generated REST argument explicitly names SRC-010 and maps to the actual one-argument source form. The map also marks **211 implicit zero initializers**. No vendored source edits or invented source arguments are needed.
+
+`reference/translation-report.json` has **zero untranslated constructs**. Its adaptation sections link all **27 intentional parser replacements**, **32 classified external P-LEXV/P-CONT sites**, all **three READs** and the **three explicit unsupported debug-stream sites** to real mapped instruction instances. These are deliberate parser/host contracts; they are not missing lowering concealed by an empty report. Unexpected deferred IR still fails before mapping.
+
+`games/zork2/source-map.zxr.json` holds the source map in compact JSON rows. `reference/source-map-audit.json` records SHA-256 artifact/runtime-program hashes, original source hashes and independent coverage/macro-definition checks. Full mapped reference/runtime IR remains available through the headless API. `source-maps:record` generates all three files after validation; `source-maps:check` verifies them and runs in CI. Reference-assisted `zxr check` now generates the map and reports 26,503 mapped sites and zero untranslated constructs. Schema validation and bundle packing remain step 2.10.
+
+Fourteen new tests check complete coverage and reproducibility; formatting/comment/radix/line-ending stability; unrelated insertion, string-handle/routine/local-slot changes; lexical shadowing; changed/deleted targets; ambiguity and semantic-ancestor resolution; macro expansion roles and original definitions; Unicode/CRLF positions; guarded normalizations/generated defaults; parser/READ/stream reports; exact diagnostic lookup; missing source/deferred nodes; corrupted IDs, origins, policies, projections and reports; and relocation-independent dictionary references. Runtime behavior remains phase 3.
+
+## Step 2.10 — schemas and deterministic bundles
+
+Phase 2's gate is complete. `zxr compile reference/zork2 --out out/zork2.zxb` writes schema-valid components and a canonical UTF-8 `.zxb`. Eleven JSON Schema 2020-12 roots distinguish commands/expressions and validate all runtime components. A host-independent validator and independent AJV 2020 checks agree on the full game and the hand-written three-room example. Cross-file validation covers calls/scopes/control targets, typed data, world/property/exit bytes, packed vocabulary/dispatch, source maps and explicit adaptation reports.
+
+The bundle separates semantic build identity, presentation identity and whole-content integrity using SHA-256 checked against Node's independent implementation. Diagnostic positions/IDs/source spelling and the presentation title do not affect rule identity. Initialization is explicitly pre-GO with the owned RNG algorithm/seed; compiler/VM/adapter/option-encoder/gate-rule versions are part of the semantic contract. The original routine namespace is preserved, including explicit exclusions and the adapter entry. Runtime symbol maps contain relocated word addresses and no oracle addresses.
+
+Canonical round trips exposed a key-order dependency in the older memory relocation validator; it now compares canonical records, so shuffled object keys validate identically. Malformed schemas/operations/references, corrupt hashes, incompatible versions, protected header changes, invalid local/call targets and prototype-shaped extra fields are tested. `reference/bundle-audit.json` records independently verified hashes/sizes for both examples. The full generated bundle is reproduced under ignored output directories rather than committed. [bundles.md](bundles.md) documents the format, CLI and validation limits.
+
+The bundle loader is also implemented as phase 3.0. World-state and continuation-evaluator progress is documented separately in [phase-3.md](phase-3.md); no gameplay execution is claimed by completing compilation.
+
 ## Reproduce
 
 ```sh
@@ -160,17 +202,21 @@ npm run vocabulary:check
 npm run logic:check
 npm run operations:check
 npm run memory:check
+npm run parser:check
+npm run source-maps:check
+npm run schemas:check
+npm run bundle:check
 npm run zil:check
 npm run reference:audit -- --check
 npm run build
 ```
 
-Validation: 173 tests pass, including compatibility evidence, symbol/scoping/constant checks, guarded normalization, all dictionary encodings, CLI error positions and source-copy symbol errors. Each of the twelve probes reproduces identically in two fresh original-story runs. They compare checked-in observations and independently asserted critical values, rather than claiming generated JSON is a compiler correctness proof. Existing reference tests still exercise the maximum-score walkthrough and source/binary audit. No browser behavior changed; browser checks remain those from phase 1.
+Validation: 288 tests pass, including compatibility evidence, symbol/scoping/constant checks, guarded normalization, all dictionary encodings, CLI error positions and source-copy symbol errors. Each of the twelve probes reproduces identically in two fresh original-story runs. They compare checked-in observations and independently asserted critical values, rather than claiming generated JSON is a compiler correctness proof. Existing reference tests still exercise the maximum-score walkthrough and source/binary audit. No browser behavior changed; browser checks remain those from phase 1.
 
-The operation scan is conservative, not an interprocedural reachability/alias proof. Parser classification includes transitive direct callees; indirect references must be resolved and validated in phase 2.8. Source/assembly samples from phase 1 remain the evaluation/control-flow evidence; phase 3 must execute every primitive and lifecycle contract against the oracle. Parser classification, stable source maps, runtime schemas and `.zxb` packing remain phase 2.8–2.10 work.
+The operation scan is conservative, not an interprocedural reachability/alias proof. The parser split validates named first-class references and known indirect domains conservatively; runtime ID guards remain required. Source/assembly samples from phase 1 remain the evaluation/control-flow evidence; phase 3 must execute every primitive and lifecycle contract against the oracle. The compiler gate is complete; runtime stepping, complete checkpoints, adapter behavior and conformance remain phase 3 work.
 
 ## Status and provenance
 
-The instruction to proceed closes the step 2.0 gate. Steps 2.1–2.7 are verified; **step 2.8, parser-library classification, is next**. The specification does not certify the later runtime.
+The instruction to proceed closes the step 2.0 gate. Steps 2.1–2.10 are verified; phase 3 runtime work is in progress. The specification does not certify the later runtime.
 
 The vendored source and all 75 phase 0 golden fixtures are unchanged. New tooling is Apache-2.0. The generated world metadata and inventories derive source facts/snippets from the pinned MIT source; its MIT notice is in `reference/zork2/LICENSE`. Probes use setup prefixes from the existing GPL-3.0 walkthrough, retain their prefix indices and are covered by the same reference-data provenance and GPL notice described in `reference/README.md`. None of these artifacts enters the browser bundle.

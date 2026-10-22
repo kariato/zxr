@@ -8,18 +8,20 @@ import { sourceFiles } from '../tools/zil/program.ts';
 it('runs the executable CLI help', () => {
   expect(execFileSync(process.execPath, ['bin/zxr.ts', '--help'], { encoding: 'utf8' })).toContain('compile|play|check');
 });
-it.each(['compile', 'play'])('does not claim %s is implemented', command => {
+it.each(['play'])('does not claim %s is implemented', command => {
   const result = spawnSync(process.execPath, ['bin/zxr.ts', command], { encoding: 'utf8' });
   expect(result.status).toBe(1);
   expect(result.stdout).toContain('not implemented');
 });
 it('checks the whole Zork II source project through the CLI',()=>{
   const text=execFileSync(process.execPath,['bin/zxr.ts','check','reference/zork2'],{encoding:'utf8'});
-  expect(text).toContain('439 routines');expect(text).toContain('269 syntax entries');expect(text).toContain('compilation is not implemented');
+  expect(text).toContain('439 routines');expect(text).toContain('269 syntax entries');expect(text).toContain('Use zxr compile');
   expect(text).toContain('Resolved 11901 symbol references');
   expect(text).toContain('World metadata: 86 rooms, 165 objects, 220 encoded exits');
   expect(text).toContain('Vocabulary: 269 syntax rows, 689 words');
   expect(text).toContain('Memory: 19882 bytes, 45 source tables');
+  expect(text).toContain('Parser split: 42 classified, 412 retained routines plus adapter');
+  expect(text).toContain('Source maps: 26503 sites, 0 untranslated constructs');
   expect(text).toContain('Logic operations: 439 routines, 0 deferred memory/address sites, 1342 strings');
 });
 it('reports symbol errors in a source copy without changing the vendored game',()=>{
@@ -60,6 +62,11 @@ it('reports symbol errors in a source copy without changing the vendored game',(
     writeFileSync(join(directory,'gparser.zil'),memorySource);
     const memory=spawnSync(process.execPath,['bin/zxr.ts','check','--symbols',directory],{encoding:'utf8'});
     expect(memory.status).toBe(1);expect(memory.stderr).toContain(join(directory,'gparser.zil')+':');expect(memory.stderr).toContain('ZIL011: REST expects 1..2 argument(s), got 0');expect(memory.stderr).toContain('^');
+    writeFileSync(join(directory,'gparser.zil'),sources.get('gparser.zil')!);
+    const parserSource=sources.get('gclock.zil')!.replace('<APPLY <GET .C ,C-RTN>>','<APPLY .C>');expect(parserSource).not.toBe(sources.get('gclock.zil'));
+    writeFileSync(join(directory,'gclock.zil'),parserSource);
+    const parser=spawnSync(process.execPath,['bin/zxr.ts','check','--symbols',directory],{encoding:'utf8'});
+    expect(parser.status).toBe(1);expect(parser.stderr).toContain(join(directory,'gclock.zil')+':');expect(parser.stderr).toContain('ZIL012: Unclassified indirect call in CLOCKER');expect(parser.stderr).toContain('^');
   } finally {rmSync(directory,{recursive:true,force:true});}
 });
 it('rejects unknown or repeated check flags',()=>{

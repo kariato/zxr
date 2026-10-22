@@ -55426,7 +55426,7 @@
         "REST",
         "BACK"
       ],
-      "contract": "GET/PUT use byte address + 2*index, GETB/PUTB address + index. Words big-endian, byte writes use low 8 bits; writes return 1. REST/BACK add/subtract byte count (REST defaults to one byte when omitted, SRC-010); address overflow or access outside a declared segment errors. Interior pointers retain identity."
+      "contract": "GET/PUT use byte address + 2*index, GETB/PUTB address + index. Words big-endian, byte writes use low 8 bits; writes return 1. REST/BACK add/subtract byte count (REST defaults to one byte when omitted, SRC-010); address overflow or access outside a declared segment errors. Interior pointers retain identity. Shared boundary addresses select a fitting allocation containing the base in its closed pointer range; accesses never straddle allocations or dereference padding (SRC-012)."
     },
     {
       "operations": [
@@ -63290,7 +63290,7 @@
     },
     {
       "name": "GLOBAL-CHECK",
-      "policy": "replaced-middle",
+      "policy": "kept",
       "calls": [
         "DO-SL",
         "OBJ-FOUND",

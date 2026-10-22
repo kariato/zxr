@@ -1,0 +1,53 @@
+{
+  "format": "zxr-look-output-v1",
+  "storySha256": "3ae7d5558943e9721f3e4b273c8a7faec1a03a604e1ae4ee1cde472c21cb24ac",
+  "seed": 2,
+  "capture": "Only output while V-LOOK is on the original interpreter call stack; parser prompts and CLOCKER output excluded.",
+  "cases": [
+    {
+      "room": "INSIDE-BARROW",
+      "commands": [
+        "look"
+      ],
+      "text": "Inside the Barrow\nYou are inside an ancient barrow hidden deep within a dark forest. The barrow opens into a narrow tunnel at its southern end. You can see a faint glow at the far end.\nA sword of Elvish workmanship is on the ground.\nA strangely familiar brass lantern is lying on the ground.\n"
+    },
+    {
+      "room": "NARROW-TUNNEL",
+      "commands": [
+        "south",
+        "look"
+      ],
+      "text": "Narrow Tunnel\nYou are standing at the southern end of a narrow tunnel where it opens into a wide cavern. The cavern is dimly illuminated by phosphorescent mosses clinging to its high ceiling. A deep ravine winds through the cavern, with a small stream at the bottom. The walls of the ravine are steep and crumbly. A foot bridge crosses the ravine to the south.\n"
+    },
+    {
+      "room": "FOOT-BRIDGE",
+      "commands": [
+        "south",
+        "south",
+        "look"
+      ],
+      "text": "Foot Bridge\nYou are standing on a crude but sturdy wooden foot bridge crossing a deep ravine. The path runs north and south from here.\n"
+    },
+    {
+      "room": "GREAT-CAVERN",
+      "commands": [
+        "south",
+        "south",
+        "south",
+        "look"
+      ],
+      "text": "Great Cavern\nThis is the center of the great cavern, carved out of the limestone. Stalactites and stalagmites of many sizes are everywhere. The room glows with dim light provided by phosphorescent moss, and weird shadows move all around you. A narrow path winds southwest among the stalagmites, and another leads northeast.\n"
+    },
+    {
+      "room": "SHALLOW-FORD",
+      "commands": [
+        "south",
+        "south",
+        "south",
+        "sw",
+        "look"
+      ],
+      "text": "Shallow Ford\nYou are at the southern edge of a great cavern. To the south across a shallow ford is a dark tunnel which looks like it was once enlarged and smoothed. To the north a narrow path winds among stalagmites. Dim light illuminates the cavern.\n"
+    }
+  ]
+}

@@ -6,7 +6,7 @@ Games are written entirely in JSON, logic included, and run on a headless TypeSc
 
 The first target is **Zork II**, whose source Microsoft released under the MIT license in 2025. The goal is a full Zork II playable in XR and published on itch.io.
 
-> Status: phase 2 in progress through step 2.7. Zork II reads, expands, resolves symbols and generates metadata for all 86 rooms and 165 objects, 220 encoded exits and 269 syntax rows. All 439 routines now lower and link against a shared string pool and a 19,882-byte memory image, including 689 packed dictionary entries. The browser shell and reproducible original-story corpus are in place. Bundle compilation and the game engine are not implemented yet.
+> Status: phase 2 compilation is complete. `node bin/zxr.ts compile reference/zork2 --out out/zork2.zxb` produces schema-valid components and a deterministic, verified bundle. The loader, memory-backed world and continuation evaluator run translated Zork II startup to its parser boundary, matching the opening text and object state. Validated low-level execution checkpoints also round-trip suspended calls. Structured PLAYER actions and actor act/walk commands now run the translated turn loop with nested scope, up to two operand slots, ALL, one-sided lists, explicit room pseudo features and quoted PLAYER speech, checked against original-story fixtures. Full parser adaptation, public saves and session lifecycle remain pending, so `play` is still unimplemented. See [bundle usage](docs/bundles.md) and [phase 3 progress](docs/phase-3.md).
 
 ## Development
 
@@ -19,11 +19,11 @@ npm run dev
 
 Verify with `npm run typecheck`, `npm test`, `npm run zil:check`, `npm run semantics:check`, `npm run symbols:check`, `npm run world:check`, `npm run reference:check`, `npm run reference:audit -- --check`, and `npm run build`. For browser checks, run `npx playwright install chromium firefox` once, then `npm run test:browser`.
 
-Run `npx --package=. zxr check reference/zork2` to read, load, expand and resolve the game's symbols. `zxr check entry.zil` checks another entry file and reports source locations for reader or macro errors. The vendored Zork II entry also checks 11,901 symbol references using the pinned numbering layout and validates room/object metadata. Use `zxr check --symbols path/to/zork2-copy` to apply those checks to a source copy. Other entries retain reader/macro checks; source-only numbering is deferred. The `compile` and `play` commands still print “not implemented” and exit with status 1.
+Run `npx --package=. zxr check reference/zork2` to read, load, expand and resolve the game's symbols. `zxr check entry.zil` checks another entry file and reports source locations for reader or macro errors. The vendored Zork II entry also checks 11,901 symbol references using the pinned numbering layout and validates room/object metadata. Use `zxr check --symbols path/to/zork2-copy` to apply those checks to a source copy. Other entries retain reader/macro checks; source-only numbering is deferred. The `compile` command produces verified bundles; `play` remains unimplemented.
 
 The [phase 1 implementation note](docs/phase-1.md) explains the reader, finite compile-time evaluator, pinned macro ports and audit limits. The [phase 0 note](docs/phase-0.md) records dependency pins and the remaining hosted CI/Pages check. The [reference corpus guide](reference/README.md) explains the 75 fixtures: a 400-point victory and coverage of all 50 compiled death sites and 23 interrupts.
 
-[Phase 2 progress](docs/phase-2.md) records the accepted compatibility contract, symbol table, diagnostics and source/compiler findings. Generated [world metadata](games/zork2/world.zxr.json) and its [provenance](games/zork2/PROVENANCE.md) are checked against the original assembly and binary. Use `npm run world:check` to verify it or `npm run world:record` to intentionally regenerate it. Exit byte encoding is next.
+[Phase 2 progress](docs/phase-2.md) records the accepted compatibility contract, symbol table, diagnostics and source/compiler findings. Generated [world metadata](games/zork2/world.zxr.json) and its [provenance](games/zork2/PROVENANCE.md) are checked against the original assembly and binary. Use `npm run world:check` to verify it or `npm run world:record` to intentionally regenerate it. Exit byte encoding is complete; current engine work is tracked in the phase 3 progress note.
 
 ## Documents
 

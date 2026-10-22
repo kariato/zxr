@@ -1,3 +1,4 @@
+import { canonicalJson } from './integrity.ts';
 import { atomName, head } from './ast.ts';
 import type { Node, Sequence, Span } from './ast.ts';
 import type { SymbolAnalysis } from './symbols.ts';
@@ -258,7 +259,7 @@ export function validateMemoryImage(image:MemoryImage):void {
   }
   if(end!==image.bytes.length)fail('unallocated image tail');
   const declared=image.segments.flatMap(s=>s.fields.filter(f=>f.target!==undefined&&['address','string','routine'].includes(f.domain)).map(f=>({address:s.base+f.offset,width:f.width,domain:f.domain,target:f.target,addend:f.addend ?? 0})));
-  const key=(r:unknown)=>JSON.stringify(r);if(JSON.stringify(declared.map(key).sort())!==JSON.stringify(image.relocations.map(key).sort()))fail('relocation coverage mismatch');
+  const key=(r:unknown)=>canonicalJson(r);if(JSON.stringify(declared.map(key).sort())!==JSON.stringify(image.relocations.map(key).sort()))fail('relocation coverage mismatch');
   const word=(a:number)=>image.bytes[a]!*256+image.bytes[a+1]!;
   for(const r of image.relocations){
     if(r.width!==1&&r.width!==2)fail('bad relocation width');

@@ -1,0 +1,5040 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ZXR raw-logic v1",
+  "$ref": "#/$defs/rawLogic",
+  "$defs": {
+    "position": {
+      "type": "object",
+      "properties": {
+        "offset": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "line": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "column": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        }
+      },
+      "required": [
+        "offset",
+        "line",
+        "column"
+      ],
+      "additionalProperties": false
+    },
+    "span": {
+      "type": "object",
+      "properties": {
+        "file": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start": {
+          "$ref": "#/$defs/position"
+        },
+        "end": {
+          "$ref": "#/$defs/position"
+        }
+      },
+      "required": [
+        "file",
+        "start",
+        "end"
+      ],
+      "additionalProperties": false
+    },
+    "macro": {
+      "type": "object",
+      "properties": {
+        "macro": {
+          "type": "string",
+          "minLength": 1
+        },
+        "call": {
+          "$ref": "#/$defs/span"
+        },
+        "definition": {
+          "$ref": "#/$defs/span"
+        }
+      },
+      "required": [
+        "macro",
+        "call"
+      ],
+      "additionalProperties": false
+    },
+    "variable": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "scope": {
+              "const": "local"
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "number": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 15
+            }
+          },
+          "required": [
+            "scope",
+            "name",
+            "number"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "scope": {
+              "const": "global"
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "number": {
+              "type": "integer",
+              "minimum": 16,
+              "maximum": 255
+            }
+          },
+          "required": [
+            "scope",
+            "name",
+            "number"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "target": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "routine"
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "block"
+            },
+            "id": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            }
+          },
+          "required": [
+            "kind",
+            "id"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "binding": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "slot": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 15
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "required",
+            "optional",
+            "aux",
+            "block"
+          ]
+        },
+        "initializer": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/expression"
+            }
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/span"
+        },
+        "origin": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/macro"
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        },
+        "sourceMapId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nodeId": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "name",
+        "slot",
+        "kind",
+        "initializer",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "command": {
+      "type": "object",
+      "properties": {
+        "op": {
+          "const": "evaluate"
+        },
+        "expression": {
+          "$ref": "#/$defs/expression"
+        },
+        "source": {
+          "$ref": "#/$defs/span"
+        },
+        "origin": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/macro"
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        },
+        "sourceMapId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nodeId": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "op",
+        "expression",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "routine": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65535
+        },
+        "required": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 15
+        },
+        "optional": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 15
+        },
+        "slotCount": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 15
+        },
+        "bindings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/binding"
+          },
+          "minItems": 0,
+          "maxItems": 15
+        },
+        "body": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/command"
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        },
+        "fullyLowered": {
+          "const": true
+        },
+        "source": {
+          "$ref": "#/$defs/span"
+        },
+        "origin": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/macro"
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        },
+        "sourceMapId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nodeId": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "name",
+        "id",
+        "required",
+        "optional",
+        "slotCount",
+        "bindings",
+        "body",
+        "fullyLowered",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "expression": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "literal"
+            },
+            "value": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 65535
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "value",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "symbol"
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "constant",
+                "object",
+                "room",
+                "routine",
+                "property",
+                "attribute",
+                "action",
+                "lexical-verb",
+                "preposition",
+                "adjective",
+                "builtin"
+              ]
+            },
+            "value": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 65535
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "name",
+            "kind",
+            "value",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "variable-number"
+            },
+            "variable": {
+              "$ref": "#/$defs/variable"
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "variable",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "load"
+            },
+            "variable": {
+              "$ref": "#/$defs/variable"
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "variable",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "store"
+            },
+            "variable": {
+              "$ref": "#/$defs/variable"
+            },
+            "value": {
+              "$ref": "#/$defs/expression"
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "variable",
+            "value",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "update-compare"
+            },
+            "operator": {
+              "type": "string",
+              "enum": [
+                "IGRTR?",
+                "DLESS?"
+              ]
+            },
+            "variable": {
+              "$ref": "#/$defs/variable"
+            },
+            "bound": {
+              "$ref": "#/$defs/expression"
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "operator",
+            "variable",
+            "bound",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "value"
+            },
+            "variable": {
+              "$ref": "#/$defs/expression"
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "variable",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "primitive"
+            },
+            "operator": {
+              "type": "string",
+              "enum": [
+                "+",
+                "-",
+                "*",
+                "/",
+                "MOD",
+                "BAND",
+                "BOR",
+                "BTST",
+                "EQUAL?",
+                "==?",
+                "N==?",
+                "L?",
+                "G?",
+                "0?",
+                "ZERO?",
+                "1?",
+                "NOT"
+              ]
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/expression"
+              },
+              "minItems": 1,
+              "maxItems": 65535
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "operator",
+            "args",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "and"
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/expression"
+              },
+              "minItems": 0,
+              "maxItems": 65535
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "args",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "or"
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/expression"
+              },
+              "minItems": 0,
+              "maxItems": 65535
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "args",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "cond"
+            },
+            "clauses": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "test": {
+                    "$ref": "#/$defs/expression"
+                  },
+                  "body": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/command"
+                    },
+                    "minItems": 0,
+                    "maxItems": 100000
+                  }
+                },
+                "required": [
+                  "test",
+                  "body"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "clauses",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "block"
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "prog",
+                "repeat"
+              ]
+            },
+            "id": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            },
+            "bindings": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/binding"
+              },
+              "minItems": 0,
+              "maxItems": 15
+            },
+            "body": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/command"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "kind",
+            "id",
+            "bindings",
+            "body",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "return"
+            },
+            "target": {
+              "$ref": "#/$defs/target"
+            },
+            "value": {
+              "$ref": "#/$defs/expression"
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "target",
+            "value",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "again"
+            },
+            "target": {
+              "$ref": "#/$defs/target"
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "target",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "push"
+            },
+            "value": {
+              "$ref": "#/$defs/expression"
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "value",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "return-stack"
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "call"
+            },
+            "routine": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "id": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 65535
+                }
+              },
+              "required": [
+                "name",
+                "id"
+              ],
+              "additionalProperties": false
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/expression"
+              },
+              "minItems": 0,
+              "maxItems": 15
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "routine",
+            "args",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "apply"
+            },
+            "routine": {
+              "$ref": "#/$defs/expression"
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/expression"
+              },
+              "minItems": 0,
+              "maxItems": 15
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "routine",
+            "args",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "string"
+            },
+            "handle": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 65535
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "handle",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "memory"
+            },
+            "operator": {
+              "type": "string",
+              "enum": [
+                "GET",
+                "PUT",
+                "GETB",
+                "PUTB",
+                "REST",
+                "BACK"
+              ]
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/expression"
+              },
+              "minItems": 2,
+              "maxItems": 3
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "operator",
+            "args",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "object"
+            },
+            "operator": {
+              "type": "string",
+              "enum": [
+                "LOC",
+                "FIRST?",
+                "NEXT?",
+                "IN?",
+                "MOVE",
+                "REMOVE",
+                "FSET",
+                "FCLEAR",
+                "FSET?",
+                "GETP",
+                "PUTP",
+                "GETPT",
+                "PTSIZE",
+                "NEXTP"
+              ]
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/expression"
+              },
+              "minItems": 1,
+              "maxItems": 3
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "operator",
+            "args",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "output"
+            },
+            "operator": {
+              "type": "string",
+              "enum": [
+                "PRINT",
+                "PRINTI",
+                "PRINTB",
+                "PRINTC",
+                "PRINTD",
+                "PRINTN",
+                "CRLF"
+              ]
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/expression"
+              },
+              "minItems": 0,
+              "maxItems": 1
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "operator",
+            "args",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "random"
+            },
+            "bound": {
+              "$ref": "#/$defs/expression"
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "bound",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "suspend"
+            },
+            "operator": {
+              "type": "string",
+              "enum": [
+                "READ",
+                "SAVE",
+                "RESTORE",
+                "RESTART",
+                "QUIT"
+              ]
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/expression"
+              },
+              "minItems": 0,
+              "maxItems": 2
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "operator",
+            "args",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "verify"
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "unsupported-host"
+            },
+            "operator": {
+              "type": "string",
+              "enum": [
+                "DIRIN",
+                "DIROUT"
+              ]
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/expression"
+              },
+              "minItems": 1,
+              "maxItems": 1
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "op",
+            "operator",
+            "args",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "address"
+            },
+            "value": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 65535
+            },
+            "allocation": {
+              "type": "string",
+              "minLength": 1
+            },
+            "addend": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 65535
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "origin": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/macro"
+              },
+              "minItems": 0,
+              "maxItems": 100000
+            },
+            "sourceMapId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "nodeId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "tableConstructor": {
+              "type": "string",
+              "enum": [
+                "TABLE",
+                "LTABLE",
+                "ITABLE"
+              ]
+            }
+          },
+          "required": [
+            "op",
+            "value",
+            "allocation",
+            "addend",
+            "name",
+            "source"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "rawLogic": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "type": "string",
+          "enum": [
+            "zxr-logic-v1"
+          ]
+        },
+        "semantics": {
+          "const": "zxr-zork2-semantics-v1"
+        },
+        "stage": {
+          "type": "string",
+          "enum": [
+            "operations",
+            "linked"
+          ]
+        },
+        "routines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/routine"
+          },
+          "minItems": 1,
+          "maxItems": 65535
+        },
+        "untranslated": {
+          "type": "array",
+          "items": {},
+          "minItems": 0,
+          "maxItems": 0
+        },
+        "strings": {
+          "$ref": "#/$defs/strings"
+        }
+      },
+      "required": [
+        "format",
+        "semantics",
+        "stage",
+        "routines",
+        "untranslated",
+        "strings"
+      ],
+      "additionalProperties": false
+    },
+    "runtimeLogic": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "zxr-runtime-logic-v1"
+        },
+        "semantics": {
+          "const": "zxr-zork2-semantics-v1"
+        },
+        "routines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/routine"
+          },
+          "minItems": 1,
+          "maxItems": 65535
+        },
+        "adapter": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "const": "PARSER"
+                },
+                "id": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 65535
+                },
+                "entry": {
+                  "$ref": "#/$defs/routine"
+                },
+                "checks": {
+                  "$ref": "#/$defs/routine"
+                }
+              },
+              "required": [
+                "name",
+                "id",
+                "entry",
+                "checks"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "excluded": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "id": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 65535
+              },
+              "policy": {
+                "type": "string",
+                "enum": [
+                  "adapter",
+                  "replaced-middle"
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "id",
+              "policy"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 65535
+        }
+      },
+      "required": [
+        "format",
+        "semantics",
+        "routines",
+        "adapter",
+        "excluded"
+      ],
+      "additionalProperties": false
+    },
+    "strings": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "zxr-strings-v1"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 65535
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "text"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 65535
+        }
+      },
+      "required": [
+        "format",
+        "entries"
+      ],
+      "additionalProperties": false
+    },
+    "property": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "property": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "number": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 65535
+                }
+              },
+              "required": [
+                "name",
+                "number"
+              ],
+              "additionalProperties": false
+            },
+            "byteLength": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 8
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "kind": {
+              "const": "number"
+            },
+            "value": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 65535
+            }
+          },
+          "required": [
+            "property",
+            "byteLength",
+            "source",
+            "kind",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "property": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "number": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 65535
+                }
+              },
+              "required": [
+                "name",
+                "number"
+              ],
+              "additionalProperties": false
+            },
+            "byteLength": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 8
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "kind": {
+              "const": "text"
+            },
+            "text": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "property",
+            "byteLength",
+            "source",
+            "kind",
+            "text"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "property": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "number": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 65535
+                }
+              },
+              "required": [
+                "name",
+                "number"
+              ],
+              "additionalProperties": false
+            },
+            "byteLength": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 8
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "kind": {
+              "const": "routine"
+            },
+            "routine": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "id": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 65535
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "id"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "required": [
+            "property",
+            "byteLength",
+            "source",
+            "kind",
+            "routine"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "property": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "number": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 65535
+                }
+              },
+              "required": [
+                "name",
+                "number"
+              ],
+              "additionalProperties": false
+            },
+            "byteLength": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 8
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "kind": {
+              "const": "words"
+            },
+            "words": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "dictionaryIndex": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 65535
+                  }
+                },
+                "required": [
+                  "name",
+                  "dictionaryIndex"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 1,
+              "maxItems": 4
+            }
+          },
+          "required": [
+            "property",
+            "byteLength",
+            "source",
+            "kind",
+            "words"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "property": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "number": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 65535
+                }
+              },
+              "required": [
+                "name",
+                "number"
+              ],
+              "additionalProperties": false
+            },
+            "byteLength": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 8
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "kind": {
+              "const": "adjectives"
+            },
+            "adjectives": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "number": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 65535
+                  }
+                },
+                "required": [
+                  "name",
+                  "number"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 1,
+              "maxItems": 8
+            }
+          },
+          "required": [
+            "property",
+            "byteLength",
+            "source",
+            "kind",
+            "adjectives"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "property": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "number": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 65535
+                }
+              },
+              "required": [
+                "name",
+                "number"
+              ],
+              "additionalProperties": false
+            },
+            "byteLength": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 8
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "kind": {
+              "const": "objects"
+            },
+            "objects": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "id": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 255
+                  }
+                },
+                "required": [
+                  "name",
+                  "id"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 1,
+              "maxItems": 8
+            }
+          },
+          "required": [
+            "property",
+            "byteLength",
+            "source",
+            "kind",
+            "objects"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "property": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "number": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 65535
+                }
+              },
+              "required": [
+                "name",
+                "number"
+              ],
+              "additionalProperties": false
+            },
+            "byteLength": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 8
+            },
+            "source": {
+              "$ref": "#/$defs/span"
+            },
+            "kind": {
+              "const": "pseudos"
+            },
+            "entries": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "word": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "dictionaryIndex": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 65535
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "dictionaryIndex"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "routine": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "id": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 65535
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "id"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "word",
+                  "routine"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 1,
+              "maxItems": 2
+            }
+          },
+          "required": [
+            "property",
+            "byteLength",
+            "source",
+            "kind",
+            "entries"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "exit": {
+      "type": "object",
+      "properties": {
+        "property": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "number": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 65535
+            }
+          },
+          "required": [
+            "name",
+            "number"
+          ],
+          "additionalProperties": false
+        },
+        "byteLength": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "bytes": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+          },
+          "minItems": 1,
+          "maxItems": 5
+        },
+        "relocations": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "string"
+                  },
+                  "offset": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "offset",
+                  "text"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "routine"
+                  },
+                  "offset": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "id": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 65535
+                  }
+                },
+                "required": [
+                  "kind",
+                  "offset",
+                  "name",
+                  "id"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 2
+        },
+        "declaration": {
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/span"
+        },
+        "view": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "UEXIT"
+                },
+                "to": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "kind",
+                "to"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "NEXIT"
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "kind",
+                "message"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "FEXIT"
+                },
+                "routine": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "kind",
+                "routine"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "CEXIT"
+                },
+                "to": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "global": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "message": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "kind",
+                "to",
+                "global",
+                "message"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "DEXIT"
+                },
+                "to": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "door": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "message": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "kind",
+                "to",
+                "door",
+                "message"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "property",
+        "byteLength",
+        "bytes",
+        "relocations",
+        "declaration",
+        "source",
+        "view"
+      ],
+      "additionalProperties": false
+    },
+    "world": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "zxr-world-v1"
+        },
+        "semantics": {
+          "const": "zxr-zork2-semantics-v1"
+        },
+        "stage": {
+          "const": "metadata"
+        },
+        "counts": {
+          "type": "object",
+          "properties": {
+            "rooms": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 255
+            },
+            "objects": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 255
+            },
+            "properties": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "exits": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            }
+          },
+          "required": [
+            "rooms",
+            "objects",
+            "properties",
+            "exits"
+          ],
+          "additionalProperties": false
+        },
+        "propertyDefaults": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "number": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 31
+              },
+              "name": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                ]
+              },
+              "value": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 65535
+              },
+              "source": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "$ref": "#/$defs/span"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "number",
+              "name",
+              "value",
+              "source"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 31,
+          "maxItems": 31
+        },
+        "entities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "id": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 255
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "room",
+                  "object"
+                ]
+              },
+              "source": {
+                "$ref": "#/$defs/span"
+              },
+              "parent": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "id": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 255
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "id"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "parentSource": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "$ref": "#/$defs/span"
+                  }
+                ]
+              },
+              "shortName": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "source": {
+                    "anyOf": [
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "$ref": "#/$defs/span"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "text",
+                  "source"
+                ],
+                "additionalProperties": false
+              },
+              "flags": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "number": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 65535
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "number"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 0,
+                "maxItems": 32
+              },
+              "flagsSource": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "$ref": "#/$defs/span"
+                  }
+                ]
+              },
+              "properties": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/property"
+                },
+                "minItems": 0,
+                "maxItems": 31
+              },
+              "exits": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/exit"
+                },
+                "minItems": 0,
+                "maxItems": 31
+              }
+            },
+            "required": [
+              "name",
+              "id",
+              "kind",
+              "source",
+              "parent",
+              "parentSource",
+              "shortName",
+              "flags",
+              "flagsSource",
+              "properties",
+              "exits"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 255
+        }
+      },
+      "required": [
+        "format",
+        "semantics",
+        "stage",
+        "counts",
+        "propertyDefaults",
+        "entities"
+      ],
+      "additionalProperties": false
+    },
+    "vocabulary": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "zxr-vocabulary-v1"
+        },
+        "semantics": {
+          "const": "zxr-zork2-semantics-v1"
+        },
+        "stage": {
+          "const": "vocabulary"
+        },
+        "counts": {
+          "type": "object",
+          "properties": {
+            "words": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "verbs": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "syntax": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "synonyms": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "buzz": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "directions": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "prepositions": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "actions": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            }
+          },
+          "required": [
+            "words",
+            "verbs",
+            "syntax",
+            "synonyms",
+            "buzz",
+            "directions",
+            "prepositions",
+            "actions"
+          ],
+          "additionalProperties": false
+        },
+        "words": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "dictionaryIndex": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 65535
+              },
+              "roles": {
+                "type": "object",
+                "properties": {
+                  "object": {
+                    "const": true
+                  },
+                  "adjective": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "number": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 65535
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "number"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "direction": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "number": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 65535
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "number"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "preposition": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "number": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 65535
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "number"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "verb": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "number": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 65535
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "number"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "buzz": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                  }
+                },
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "name",
+              "dictionaryIndex",
+              "roles"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 65535
+        },
+        "verbs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "number": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "word": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "dictionaryIndex": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 65535
+                  }
+                },
+                "required": [
+                  "name",
+                  "dictionaryIndex"
+                ],
+                "additionalProperties": false
+              },
+              "rows": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 255
+                    },
+                    "slots": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "preposition": {
+                            "anyOf": [
+                              {
+                                "type": "null"
+                              },
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "name": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  },
+                                  "number": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                  }
+                                },
+                                "required": [
+                                  "name",
+                                  "number"
+                                ],
+                                "additionalProperties": false
+                              }
+                            ]
+                          },
+                          "find": {
+                            "anyOf": [
+                              {
+                                "type": "null"
+                              },
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "name": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  },
+                                  "number": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                  }
+                                },
+                                "required": [
+                                  "name",
+                                  "number"
+                                ],
+                                "additionalProperties": false
+                              }
+                            ]
+                          },
+                          "rules": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "enum": [
+                                "HELD",
+                                "CARRIED",
+                                "ON-GROUND",
+                                "IN-ROOM",
+                                "TAKE",
+                                "MANY",
+                                "HAVE"
+                              ]
+                            },
+                            "minItems": 0,
+                            "maxItems": 7
+                          },
+                          "flags": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 255
+                          }
+                        },
+                        "required": [
+                          "preposition",
+                          "find",
+                          "rules",
+                          "flags"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 0,
+                      "maxItems": 2
+                    },
+                    "action": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "number": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 65535
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "number"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "preaction": {
+                      "anyOf": [
+                        {
+                          "type": "null"
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "id": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 65535
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "id"
+                          ],
+                          "additionalProperties": false
+                        }
+                      ]
+                    },
+                    "bytes": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 255
+                      },
+                      "minItems": 8,
+                      "maxItems": 8
+                    },
+                    "source": {
+                      "$ref": "#/$defs/span"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "slots",
+                    "action",
+                    "preaction",
+                    "bytes",
+                    "source"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 255
+              }
+            },
+            "required": [
+              "name",
+              "number",
+              "word",
+              "rows"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 255
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "number": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "routine": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "id": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 65535
+                  }
+                },
+                "required": [
+                  "name",
+                  "id"
+                ],
+                "additionalProperties": false
+              },
+              "preaction": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "id": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 65535
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "id"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "number",
+              "routine",
+              "preaction"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 256
+        },
+        "prepositions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "number": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "word": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "dictionaryIndex": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 65535
+                  }
+                },
+                "required": [
+                  "name",
+                  "dictionaryIndex"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "name",
+              "number",
+              "word"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 255
+        },
+        "directions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "number": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "word": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "dictionaryIndex": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 65535
+                  }
+                },
+                "required": [
+                  "name",
+                  "dictionaryIndex"
+                ],
+                "additionalProperties": false
+              },
+              "source": {
+                "$ref": "#/$defs/span"
+              }
+            },
+            "required": [
+              "name",
+              "number",
+              "word",
+              "source"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 31
+        },
+        "buzz": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "word": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "dictionaryIndex": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 65535
+                  }
+                },
+                "required": [
+                  "name",
+                  "dictionaryIndex"
+                ],
+                "additionalProperties": false
+              },
+              "number": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "source": {
+                "$ref": "#/$defs/span"
+              }
+            },
+            "required": [
+              "word",
+              "number",
+              "source"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 255
+        },
+        "synonyms": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "canonical": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "dictionaryIndex": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 65535
+                  }
+                },
+                "required": [
+                  "name",
+                  "dictionaryIndex"
+                ],
+                "additionalProperties": false
+              },
+              "aliases": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "dictionaryIndex": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 65535
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "dictionaryIndex"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 65535
+              },
+              "source": {
+                "$ref": "#/$defs/span"
+              }
+            },
+            "required": [
+              "canonical",
+              "aliases",
+              "source"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        }
+      },
+      "required": [
+        "format",
+        "semantics",
+        "stage",
+        "counts",
+        "words",
+        "verbs",
+        "actions",
+        "prepositions",
+        "directions",
+        "buzz",
+        "synonyms"
+      ],
+      "additionalProperties": false
+    },
+    "memoryField": {
+      "type": "object",
+      "properties": {
+        "offset": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 65535
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65536
+        },
+        "domain": {
+          "type": "string",
+          "enum": [
+            "address",
+            "adjective",
+            "ascii",
+            "dictionary-header",
+            "dictionary-roles",
+            "dictionary-text",
+            "integer",
+            "object",
+            "padding",
+            "preposition",
+            "property",
+            "property-header",
+            "reserved",
+            "room",
+            "routine",
+            "string",
+            "syntax-row",
+            "variable",
+            "zstring"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string"
+        },
+        "addend": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 65536
+        }
+      },
+      "required": [
+        "offset",
+        "width",
+        "domain"
+      ],
+      "additionalProperties": false
+    },
+    "memory": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "zxr-memory-v1"
+        },
+        "semantics": {
+          "const": "zxr-zork2-semantics-v1"
+        },
+        "stage": {
+          "const": "memory"
+        },
+        "bytes": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+          },
+          "minItems": 64,
+          "maxItems": 65536
+        },
+        "staticBase": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 65535
+        },
+        "segments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "type": "string",
+                "minLength": 1
+              },
+              "base": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 65535
+              },
+              "length": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 65536
+              },
+              "mutable": {
+                "type": "boolean"
+              },
+              "fields": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/memoryField"
+                },
+                "minItems": 1,
+                "maxItems": 65536
+              },
+              "source": {
+                "$ref": "#/$defs/span"
+              },
+              "writableRanges": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "offset": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 65535
+                    },
+                    "length": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 65536
+                    }
+                  },
+                  "required": [
+                    "offset",
+                    "length"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 0,
+                "maxItems": 100000
+              }
+            },
+            "required": [
+              "name",
+              "kind",
+              "base",
+              "length",
+              "mutable",
+              "fields"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 65536
+        },
+        "relocations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "address": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 65535
+              },
+              "width": {
+                "enum": [
+                  1,
+                  2
+                ]
+              },
+              "domain": {
+                "type": "string",
+                "enum": [
+                  "address",
+                  "string",
+                  "routine"
+                ]
+              },
+              "target": {
+                "type": "string"
+              },
+              "addend": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 65536
+              }
+            },
+            "required": [
+              "address",
+              "width",
+              "domain",
+              "target",
+              "addend"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        },
+        "globals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "number": {
+                "type": "integer",
+                "minimum": 16,
+                "maximum": 255
+              },
+              "address": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 65535
+              },
+              "initial": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 65535
+              }
+            },
+            "required": [
+              "name",
+              "number",
+              "address",
+              "initial"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 240
+        },
+        "objects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "id": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 255
+              },
+              "address": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 65535
+              },
+              "propertyTable": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 65535
+              },
+              "properties": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "number": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 31
+                    },
+                    "address": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 65535
+                    },
+                    "length": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 8
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "number",
+                    "address",
+                    "length"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 0,
+                "maxItems": 31
+              }
+            },
+            "required": [
+              "name",
+              "id",
+              "address",
+              "propertyTable",
+              "properties"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 255
+        },
+        "words": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "dictionaryIndex": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 65535
+              },
+              "address": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 65535
+              },
+              "primaryRole": {
+                "type": "string",
+                "enum": [
+                  "object",
+                  "verb",
+                  "adjective",
+                  "direction",
+                  "preposition",
+                  "buzz"
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "dictionaryIndex",
+              "address",
+              "primaryRole"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 65535
+        },
+        "tables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "owner": {
+                "type": "string",
+                "minLength": 1
+              },
+              "base": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 65535
+              },
+              "length": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 65535
+              },
+              "constructor": {
+                "type": "string",
+                "enum": [
+                  "TABLE",
+                  "LTABLE",
+                  "ITABLE"
+                ]
+              },
+              "source": {
+                "$ref": "#/$defs/span"
+              }
+            },
+            "required": [
+              "name",
+              "owner",
+              "base",
+              "length",
+              "constructor",
+              "source"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        }
+      },
+      "required": [
+        "format",
+        "semantics",
+        "stage",
+        "bytes",
+        "staticBase",
+        "segments",
+        "relocations",
+        "globals",
+        "objects",
+        "words",
+        "tables"
+      ],
+      "additionalProperties": false
+    },
+    "symbols": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "zxr-symbols-v1"
+        },
+        "symbols": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "constant",
+                  "global",
+                  "object",
+                  "room",
+                  "routine",
+                  "property",
+                  "attribute",
+                  "word",
+                  "action",
+                  "lexical-verb",
+                  "preposition",
+                  "adjective",
+                  "builtin"
+                ]
+              },
+              "number": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 65535
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "source",
+                  "compiler",
+                  "compile-time"
+                ]
+              },
+              "source": {
+                "$ref": "#/$defs/span"
+              },
+              "dictionaryIndex": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 65535
+              }
+            },
+            "required": [
+              "name",
+              "kind",
+              "number",
+              "origin"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        }
+      },
+      "required": [
+        "format",
+        "symbols"
+      ],
+      "additionalProperties": false
+    },
+    "sourceMap": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "zxr-source-map-v1"
+        },
+        "semantics": {
+          "const": "zxr-zork2-semantics-v1"
+        },
+        "identity": {
+          "const": "semantic-form-v1"
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "file",
+              "text"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 1000
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991
+              },
+              "file": {
+                "type": "string",
+                "minLength": 1
+              },
+              "start": {
+                "type": "array",
+                "prefixItems": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991
+                  }
+                ],
+                "minItems": 3,
+                "maxItems": 3
+              },
+              "end": {
+                "type": "array",
+                "prefixItems": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991
+                  }
+                ],
+                "minItems": 3,
+                "maxItems": 3
+              }
+            },
+            "required": [
+              "id",
+              "file",
+              "start",
+              "end"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 100000
+        },
+        "anchors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "location": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "id",
+              "location"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 100000
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "routine": {
+                "type": "string",
+                "minLength": 1
+              },
+              "routineId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 65535
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "routine",
+                  "binding",
+                  "command",
+                  "expression"
+                ]
+              },
+              "anchor": {
+                "type": "string",
+                "minLength": 1
+              },
+              "role": {
+                "type": "string"
+              },
+              "semanticHash": {
+                "type": "string",
+                "minLength": 1
+              },
+              "points": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "nodeId": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "path": {
+                      "type": "string"
+                    },
+                    "location": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 9007199254740991
+                    },
+                    "policy": {
+                      "type": "string",
+                      "enum": [
+                        "runtime",
+                        "adapter",
+                        "replaced-middle"
+                      ]
+                    },
+                    "origin": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "macro": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "call": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 9007199254740991
+                          },
+                          "definition": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 9007199254740991
+                          }
+                        },
+                        "required": [
+                          "macro",
+                          "call"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 0,
+                      "maxItems": 100000
+                    },
+                    "normalizations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "minItems": 0,
+                      "maxItems": 100000
+                    },
+                    "generated": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "nodeId",
+                    "path",
+                    "location",
+                    "policy"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 100000
+              }
+            },
+            "required": [
+              "id",
+              "routine",
+              "routineId",
+              "kind",
+              "anchor",
+              "role",
+              "semanticHash",
+              "points"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 100000
+        },
+        "normalizations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "rule": {
+                "type": "string",
+                "minLength": 1
+              },
+              "location": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "rule",
+              "location"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        }
+      },
+      "required": [
+        "format",
+        "semantics",
+        "identity",
+        "files",
+        "locations",
+        "anchors",
+        "entries",
+        "normalizations"
+      ],
+      "additionalProperties": false
+    },
+    "report": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "zxr-translation-report-v1"
+        },
+        "untranslated": {
+          "type": "array",
+          "items": {},
+          "minItems": 0,
+          "maxItems": 0
+        },
+        "replacements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "routine": {
+                "type": "string",
+                "minLength": 1
+              },
+              "policy": {
+                "type": "string",
+                "enum": [
+                  "adapter",
+                  "replaced-middle"
+                ]
+              },
+              "sourceMapId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "nodeId": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "routine",
+              "policy",
+              "sourceMapId",
+              "nodeId"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        },
+        "parserConsumers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "routine": {
+                "type": "string",
+                "minLength": 1
+              },
+              "global": {
+                "type": "string",
+                "enum": [
+                  "P-LEXV",
+                  "P-CONT"
+                ]
+              },
+              "mode": {
+                "type": "string",
+                "enum": [
+                  "load",
+                  "store",
+                  "variable-number",
+                  "update-compare"
+                ]
+              },
+              "source": {
+                "$ref": "#/$defs/span"
+              },
+              "ledger": {
+                "type": "string",
+                "minLength": 1
+              },
+              "plan": {
+                "type": "string",
+                "minLength": 1
+              },
+              "points": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "sourceMapId": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "nodeId": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "sourceMapId",
+                    "nodeId"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 100000
+              }
+            },
+            "required": [
+              "routine",
+              "global",
+              "mode",
+              "source",
+              "ledger",
+              "plan",
+              "points"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        },
+        "reads": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "routine": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source": {
+                "$ref": "#/$defs/span"
+              },
+              "policy": {
+                "type": "string",
+                "enum": [
+                  "adapter-input",
+                  "pending-decision"
+                ]
+              },
+              "points": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "sourceMapId": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "nodeId": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "sourceMapId",
+                    "nodeId"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 100000
+              }
+            },
+            "required": [
+              "routine",
+              "source",
+              "policy",
+              "points"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        },
+        "unsupportedHost": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "routine": {
+                "type": "string",
+                "minLength": 1
+              },
+              "operator": {
+                "type": "string",
+                "enum": [
+                  "DIRIN",
+                  "DIROUT"
+                ]
+              },
+              "points": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "sourceMapId": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "nodeId": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "sourceMapId",
+                    "nodeId"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 100000
+              }
+            },
+            "required": [
+              "routine",
+              "operator",
+              "points"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        }
+      },
+      "required": [
+        "format",
+        "untranslated",
+        "replacements",
+        "parserConsumers",
+        "reads",
+        "unsupportedHost"
+      ],
+      "additionalProperties": false
+    },
+    "parser": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "zxr-parser-split-v1"
+        },
+        "semantics": {
+          "const": "zxr-zork2-semantics-v1"
+        },
+        "routines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "id": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 65535
+              },
+              "source": {
+                "$ref": "#/$defs/span"
+              },
+              "policy": {
+                "type": "string",
+                "enum": [
+                  "adapter",
+                  "kept",
+                  "replaced-middle"
+                ]
+              },
+              "reasons": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0,
+                "maxItems": 100000
+              },
+              "calls": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0,
+                "maxItems": 100000
+              },
+              "closure": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0,
+                "maxItems": 100000
+              },
+              "direct": {
+                "type": "object",
+                "properties": {
+                  "globalWrites": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0,
+                    "maxItems": 100000
+                  },
+                  "memoryWrites": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0,
+                    "maxItems": 100000
+                  },
+                  "objectWrites": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0,
+                    "maxItems": 100000
+                  },
+                  "host": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0,
+                    "maxItems": 100000
+                  },
+                  "output": {
+                    "type": "boolean"
+                  },
+                  "random": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "globalWrites",
+                  "memoryWrites",
+                  "objectWrites",
+                  "host",
+                  "output",
+                  "random"
+                ],
+                "additionalProperties": false
+              },
+              "effects": {
+                "type": "object",
+                "properties": {
+                  "globalWrites": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0,
+                    "maxItems": 100000
+                  },
+                  "memoryWrites": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0,
+                    "maxItems": 100000
+                  },
+                  "objectWrites": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0,
+                    "maxItems": 100000
+                  },
+                  "host": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0,
+                    "maxItems": 100000
+                  },
+                  "output": {
+                    "type": "boolean"
+                  },
+                  "random": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "globalWrites",
+                  "memoryWrites",
+                  "objectWrites",
+                  "host",
+                  "output",
+                  "random"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "name",
+              "id",
+              "source",
+              "policy",
+              "reasons",
+              "calls",
+              "closure",
+              "direct",
+              "effects"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        },
+        "runtimeRoutineIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 65535
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        },
+        "adapterRoutineId": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65535
+        },
+        "indirect": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "routine": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source": {
+                "$ref": "#/$defs/span"
+              },
+              "kind": {
+                "type": "string",
+                "minLength": 1
+              },
+              "targets": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0,
+                "maxItems": 100000
+              }
+            },
+            "required": [
+              "routine",
+              "source",
+              "kind",
+              "targets"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        },
+        "routineValues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source": {
+                "$ref": "#/$defs/span"
+              },
+              "owner": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "name",
+              "source",
+              "owner"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        },
+        "consumers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "routine": {
+                "type": "string",
+                "minLength": 1
+              },
+              "global": {
+                "type": "string",
+                "enum": [
+                  "P-LEXV",
+                  "P-CONT"
+                ]
+              },
+              "mode": {
+                "type": "string",
+                "enum": [
+                  "load",
+                  "store",
+                  "variable-number",
+                  "update-compare"
+                ]
+              },
+              "source": {
+                "$ref": "#/$defs/span"
+              },
+              "ledger": {
+                "type": "string",
+                "minLength": 1
+              },
+              "plan": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "routine",
+              "global",
+              "mode",
+              "source",
+              "ledger",
+              "plan"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        },
+        "reads": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "routine": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source": {
+                "$ref": "#/$defs/span"
+              },
+              "policy": {
+                "type": "string",
+                "enum": [
+                  "adapter-input",
+                  "pending-decision"
+                ]
+              }
+            },
+            "required": [
+              "routine",
+              "source",
+              "policy"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        },
+        "limits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        }
+      },
+      "required": [
+        "format",
+        "semantics",
+        "routines",
+        "runtimeRoutineIds",
+        "adapterRoutineId",
+        "indirect",
+        "routineValues",
+        "consumers",
+        "reads",
+        "limits"
+      ],
+      "additionalProperties": false
+    },
+    "payload": {
+      "type": "object",
+      "properties": {
+        "game": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]{0,63}$"
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "id",
+            "title"
+          ],
+          "additionalProperties": false
+        },
+        "versions": {
+          "type": "object",
+          "properties": {
+            "compiler": {
+              "type": "string",
+              "minLength": 1
+            },
+            "vm": {
+              "type": "string",
+              "minLength": 1
+            },
+            "adapter": {
+              "type": "string",
+              "minLength": 1
+            },
+            "optionEncoder": {
+              "type": "string",
+              "minLength": 1
+            },
+            "gateRules": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "compiler",
+            "vm",
+            "adapter",
+            "optionEncoder",
+            "gateRules"
+          ],
+          "additionalProperties": false
+        },
+        "initialization": {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "call-entry"
+            },
+            "routine": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "id": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 65535
+                }
+              },
+              "required": [
+                "name",
+                "id"
+              ],
+              "additionalProperties": false
+            },
+            "checkpoint": {
+              "const": "pre-GO"
+            },
+            "rng": {
+              "type": "object",
+              "properties": {
+                "algorithm": {
+                  "const": "xorshift32-v1"
+                },
+                "seed": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 4294967295
+                }
+              },
+              "required": [
+                "algorithm",
+                "seed"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "kind",
+            "routine",
+            "checkpoint",
+            "rng"
+          ],
+          "additionalProperties": false
+        },
+        "gateRules": {
+          "type": "array",
+          "items": {},
+          "minItems": 0,
+          "maxItems": 0
+        },
+        "world": {
+          "$ref": "#/$defs/world"
+        },
+        "vocabulary": {
+          "$ref": "#/$defs/vocabulary"
+        },
+        "memory": {
+          "$ref": "#/$defs/memory"
+        },
+        "strings": {
+          "$ref": "#/$defs/strings"
+        },
+        "symbols": {
+          "$ref": "#/$defs/symbols"
+        },
+        "logic": {
+          "$ref": "#/$defs/runtimeLogic"
+        }
+      },
+      "required": [
+        "game",
+        "versions",
+        "initialization",
+        "gateRules",
+        "world",
+        "vocabulary",
+        "memory",
+        "strings",
+        "symbols",
+        "logic"
+      ],
+      "additionalProperties": false
+    },
+    "bundle": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "zxr-bundle-v1"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "semantics": {
+          "const": "zxr-zork2-semantics-v1"
+        },
+        "buildHash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "presentationHash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "contentHash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload"
+        },
+        "debug": {
+          "type": "object",
+          "properties": {
+            "sources": {
+              "$ref": "#/$defs/sourceMap"
+            },
+            "report": {
+              "$ref": "#/$defs/report"
+            },
+            "parser": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "$ref": "#/$defs/parser"
+                }
+              ]
+            }
+          },
+          "required": [
+            "sources",
+            "report",
+            "parser"
+          ],
+          "additionalProperties": false
+        },
+        "licenses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "spdx": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9.+-]{1,64}$"
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "spdx",
+              "text"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 100
+        }
+      },
+      "required": [
+        "format",
+        "schemaVersion",
+        "semantics",
+        "buildHash",
+        "presentationHash",
+        "contentHash",
+        "payload",
+        "debug",
+        "licenses"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

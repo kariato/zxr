@@ -37,7 +37,7 @@ flowchart TB
     P6["Phase 6 · Scene planner<br/>LLM plans, briefs, labels"] --> P7["Phase 7 · Asset builder<br/>Blender generators to GLB"]
   end
   subgraph pres["Presentation"]
-    P8["Phase 8 · Desktop, tablet<br/>3D rooms, chips, touch"] --> P9["Phase 9 · Characters<br/>animation, timelines, hotspots"] --> P10["Phase 10 · WebXR<br/>headset, rays, grab, voice"] --> P11["Phase 11 · itch.io release<br/>Mark publishes"]
+    P8["Phase 8 · Desktop, tablet<br/>3D rooms, chips, touch"] --> P9["Phase 9 · Characters<br/>animation, timelines, hotspots"] --> P10["Phase 10 · WebXR<br/>headset, rays, grab, choices"] --> P11["Phase 11 · itch.io release<br/>Mark publishes"]
   end
   P2 --> P6
   P5 -- text engine + assets --> P8
@@ -60,7 +60,7 @@ These rules hold in every phase. They are rougeXR's boundaries applied to ZIL.
 7. **Translate, don't reimplement.** `MAIN-LOOP-1`, `PERFORM`, `CLOCKER`, `JIGS-UP` and every verb and game routine are translated from ZIL, not rewritten in TypeScript. Only two things are replaced: the middle of `PARSER` (reading, word lookup, clause parsing, noun resolution), which becomes the parser adapter, and `READ`, which becomes an interpreter suspension. `PARSER`'s prologue and its closing `MANY-CHECK` and `TAKE-CHECK` are kept. Each replacement is listed in the ledger.
 8. **Semantics are written down first.** [compat-semantics.md](compat-semantics.md) defines values, arithmetic, the memory image, strings, property layouts, numbering, the parser adapter, pending decisions, host operations, saves, randomness, errors and the conformance projection. The front end and engine follow it, and any change to it reruns the conformance suite.
 10. **Execution segments are atomic.** A runtime error or exhausted budget restores every authoritative state component to the last exposed input/decision/host boundary. Previously returned prompts and completed host effects remain committed. The budget persists across a command's suspensions; see the compatibility contract.
-9. **Presentation never writes state.** Hotspots and voice submit options through `execute()`; clip events, timelines and ambient triggers emit effects only.
+9. **Presentation never writes state.** Hotspots and predefined text choices submit options through `execute()`; clip events, timelines and ambient triggers emit effects only.
 
 **Core engine contract** (mirrors rougeXR's `GameEngine`):
 
@@ -235,9 +235,9 @@ Implementation, evidence and scope limits: [phase 1](phase-1.md). `npm run zil:c
 - [x] 2.5 — all 439 routines lower to partial core IR; four hand-authored trees and scope/control-flow/operator tests pass. Remaining 2.6/2.7 constructs are explicitly reported.
 - [x] 2.6 — all 189 verb-library and 176 game-action routines lower alongside the remaining 74 routines; 1,342 shared strings verified, all 70 operation names classified. Only 656 memory/address sites remain for 2.7.
 - [x] 2.7 — 19,882-byte initial memory image, 45 source tables, all 689 packed dictionary entries and 1,488 relocations verified; all 439 routines fully linked. Runtime aliasing/clock/header behavior remains step 3.2.
-- [ ] 2.8
-- [ ] 2.9
-- [ ] 2.10
+- [x] 2.8 — all 42 parser routines classified (15 kept, 26 replaced, PARSER adapter); 412 runtime routines retain IDs. Alias-aware may-effects, 16 indirect sites, 32 consumer sites and all 3 READs verified; exact sites/plans in the generated parser ledger.
+- [x] 2.9 — 26,503 routine/binding/command/expression sites mapped; semantic overlay IDs and exact diagnostic IDs verified. Zero untranslated constructs; parser replacements/consumers, READ and intentional stream errors explicitly reported.
+- [x] 2.10 — 11 JSON Schema roots plus strict cross-file validation; hand-written three-room logic and all Zork II output deterministically pack, hash and load. Compiler/check CLI and independent AJV/Node-SHA audits pass.
 
 **Gate:** the whole game compiles to schema-valid JSON, and every gap is named.
 
@@ -258,11 +258,11 @@ Implementation, evidence and scope limits: [phase 1](phase-1.md). `npm run zil:c
 | 3.8 | Debug API: state dump, turn trace with ZIL file and line for each executed command, reveal-all mode for tests only. | Trace of one turn points at the right lines in `2actions.zil`. |
 | 3.9 | Reference random replay: an RNG mode that returns the results recorded in phase 0.4, checking that each call's range matches. | A run with a wizard spell, a random actor outcome and a death-and-recovery sequence matches the reference exactly, including the turns after it. |
 
-- [ ] 3.0
-- [ ] 3.1
-- [ ] 3.2
-- [ ] 3.3
-- [ ] 3.4
+- [x] 3.0 — schema/ABI/hash/reference-validated bundles load with owned, frozen definitions and independent initial memory.
+- [x] 3.1 — memory-backed world, structural validation and copy-on-write snapshots tested. Translated GO matches the original opening, all 168 globals, 251 objects, 1,015 properties and 1,523 cells across 45 tables after typed relocation.
+- [x] 3.2 — explicit continuation evaluator, locals/defaults, control flow, primitives, suspension and segment rollback tested. Execution checkpoints round-trip with shape/frame/memory/RNG checks; YES?/FINISH decision buffers resume translated branches. Public parser/session/save/host protocol remains steps 3.4 and 3.7.
+- [x] 3.3 — buffered interpreter output matches original V-LOOK byte-for-byte in five rooms; darkness, world ownership and output-budget rollback tested. Public ActionResolution assembly follows with the turn loop.
+- [ ] 3.4 — 3.4a–g plans, V3 encoding and source-derived entry/check programs tested. Ordinary PLAYER actions, nested/global scope, ALL and one-sided lists run the translated loop and clock; original-story comparisons cover table contents, PUT ON, MANY refusal and mixed-success TAKE ALL. Explicit pseudo features run through GLOBAL-CHECK with prepared-context Tea Room/Cavern comparisons. Quoted PLAYER speech and the single-HELLO continuation pass natural-route riddle and wand fixtures. Actor act/walk passes pass robot inventory/movement/cage rescue and unicorn cancellation fixtures. Full-turn implicit taking and a natural-route bucket ride match the original. A source-extracted PERFORM trace proves dispatch order, early stopping and nested action restoration. Actor speech, broader spoken continuations, distinguishing spellings and complete exit acceptance remain pending.
 - [ ] 3.5
 - [ ] 3.6
 - [ ] 3.7
@@ -332,7 +332,7 @@ Implementation, evidence and scope limits: [phase 1](phase-1.md). `npm run zil:c
 | 6.3 | Context builder: for each room, its `DESC` and `LDESC`, exits and neighbouring room names, the objects that start there and the objects that can be brought there, room flags (lit, outdoors), and any `TELL` text from its action routine, with features marked as concealed or changeable where the room's routines reveal, open or destroy them. | Context bundles for all 86 rooms generated and readable. |
 | 6.4 | Planner client: calls the LLM API (Claude by default) with structured JSON output, validates against the schema, retries on failure. Approved plans, briefs and labels are committed to the repository with the model id, prompt version and input hash that made them; the cache only saves API calls, and builds read the committed files. | A clean checkout with no API key builds from the committed plans; changing an input marks exactly the affected plans as stale. |
 | 6.5 | Consistency pass and scene variants: rooms joined by an exit agree on where the doorway is; an object that moves between rooms has one brief; no plan invents interactive objects that the game does not have (scenery only). Concealed, openable and destructible features are separate nodes with reveal rules keyed to game flags, never baked into the static shell. | Automatic checks pass for all rooms; a concealed entrance is absent from the rendered scene until its flag is set. |
-| 6.6 | Labels and gate proposals: natural labels for every option, plus suggested knowledge gates for puzzle answers. Gates need human approval, and an approved gate is a rule change: it reruns the phase 5 suite and the phase 4 reachability tests. | Every option has an approved label; gate changes pass phases 4.9 and 5. |
+| 6.6 | Labels and gate proposals: pre-baked natural text strings for every non-movement action and dialogue choice, plus suggested knowledge gates for puzzle answers. Strings are reviewed build assets mapped to structured actions; players select them without transcription or free-text command entry. Gates need human approval, and an approved gate is a rule change: it reruns the phase 5 suite and the phase 4 reachability tests. | Every option has an approved label; gate changes pass phases 4.9 and 5. |
 | 6.7 | Review page: lists plans and briefs, shows changes since the last run, lets a person edit and lock fields. Locked fields are never overwritten by a re-run. | An edited, locked field survives a full re-plan. |
 
 - [ ] 6.1
@@ -411,7 +411,7 @@ Zork II needs 10 characters (the Wizard of Frobozz, the dragon, the princess, th
 | 9.4 | Clip blending, layering and `look-at` head turns, as in the design doc. | No visible pops when switching clips in the preview test scene. |
 | 9.5 | Hotspots: GLB empties with `zxr_hotspot` or `zxr_option`, with exported shape and size and ids scoped to their scene. `point` and `touch` submit the named option through `execute()` with the current epoch and revision, exactly like a chip; a touch commits only on a deliberate press (overlap, then a pinch or a short dwell and release), once per press, whichever hand. `enter`, `exit`, `gaze` and `near` play effects only. No hotspot runs game code. Option ids in GLBs are checked at build time for structure and known names only; whether an option is available is decided at run time. | Touching the stairs, picking "Go down" and the headless replay of `WALK:PLAYER:DOWN` give identical text, clock ticks, events and state. |
 | 9.6 | Clip events (footstep, sword hit) for sound and effects only; they never change game state. | Clip-event sounds play in sync in the dragon fight; running at 30 and 90 frames per second, or skipping animations, gives the same state hash. |
-| 9.7 | Audio: ambient per room from the plan, synthesized effects reused from rougeXR, optional narration of `TELL` text through the browser's speech synthesis. | Sound and narration can each be muted and the choice persists. |
+| 9.7 | Audio: ambient per room from the plan and synthesized effects reused from rougeXR. Generate character dialogue audio files ahead of time using Python TTS models running locally on the Mac mini; package the files for client playback with speaker/text mappings in the presentation overlay. Optional narration may use the same pipeline. | Dialogue clips play with their captions and speaking animation. Missing clips retain text output; sound and narration can each be muted and the choice persists. Playback, skipping and muting leave game state unchanged. |
 
 - [ ] 9.1
 - [ ] 9.2
@@ -432,7 +432,7 @@ Zork II needs 10 characters (the Wizard of Frobozz, the dragon, the princess, th
 | 10.1 | XR session entry and exit, reusing rougeXR's session controller; unsupported browsers keep the full desktop game. | Entering and leaving XR keeps the same room, revision and state hash. |
 | 10.2 | Controller rays and gaze-and-pinch on chips, exit markers and the wrist menu; one gesture commits at most one option. | Emulated XR tests (rougeXR's Playwright XR runtime) pass. |
 | 10.3 | Grab and place as a small state machine: a grab is provisional and commits "take" through `execute()`; releasing inside a container's bounds commits "put in", elsewhere "drop". If the engine refuses (the object is too heavy, the container is closed), the object snaps back to where the observation says it is. | Lamp-into-container works by hand in emulation; a refused take and a put into a closed container both snap back, with the refusal text shown. |
-| 10.4 | Voice (optional): speak an option's label; matching only against the current options list. | Speaking a label in a supported browser commits that option. |
+| 10.4 | Predefined action text: expose the pre-baked, reviewed text strings for available non-movement actions and dialogue choices in XR. Selection submits the associated structured option with its current epoch/revision. No microphone, speech recognition or speech-to-text input. | Selecting a displayed action string submits exactly its option; hidden/unavailable choices remain absent, and the flow works without microphone access. |
 | 10.5 | Comfort: room transitions by fade, no forced camera motion during timelines, readable text panel distance, seated and standing modes. | Device checklist comfort items pass. |
 | 10.6 | Device checklist adapted from rougeXR's `xr-device-checklist.md`, run on a real headset. | All items recorded with browser, headset and build commit. |
 

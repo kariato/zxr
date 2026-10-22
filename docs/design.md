@@ -60,6 +60,8 @@ We keep ZIL's authoring model almost intact and replace the machine underneath i
 | Z-machine bytecode, 64-256 KB memory, versions 3-8 | Bytecode is replaced by a headless engine that interprets JSON. Tables, property tables and header reads keep Z-machine memory semantics through a byte-addressed memory image (see [compat-semantics.md](compat-semantics.md)) |
 | Fixed-width screen windows | Replaced by spatial UI panels and captions |
 
+Character voices use audio files generated ahead of time by Python TTS models running locally on the Mac mini. The client plays these packaged assets alongside captions and speaking animations. Speaker/text-to-clip mappings belong to the presentation overlay; the headless engine continues to produce authoritative text. Playback and its timing never advance the game clock or change state. The model, voices and file format remain to be selected.
+
 What is new: assets, scenes, timelines, spatial anchors, real-time events and multimodal input. Each is described below.
 
 ## Language design
@@ -341,7 +343,7 @@ flowchart LR
   GLTF["glTF assets<br/>meshes, rigs, clips, named anchors"] --> C
   C --> B["Story bundle<br/>checked JSON, manifest, packed GLB files"]
   subgraph RT["Runtime on the device"]
-    IN["Input mapper<br/>option picks, grabs, voice: game actions"] --> VM["ZXR engine<br/>world model, options, turn clock, saves"]
+    IN["Input mapper<br/>option picks, grabs, gestures: game actions"] --> VM["ZXR engine<br/>world model, options, turn clock, saves"]
     VM --> SD["Scene director<br/>BIND rules, clips, timelines, real time"]
     SD --> R["Renderer adapter<br/>WebXR + three.js; later Unity, Godot"]
     R -- the player acts in the scene --> IN
@@ -354,7 +356,7 @@ flowchart LR
 - **ZXR engine:** a headless TypeScript engine, following rougeXR's engine contract, that interprets the validated JSON directly and runs the world model, actions and turn clock. It has no rendering code and runs the same in a terminal, a browser or a headset.
 - **Scene director:** listens to disclosed presentation events (something the player can perceive moved, opened or lit; `PLAY`, `CUE`; room changed), applies `BIND` rules and runs timelines on the real-time clock. Internal changes the player cannot perceive never reach it.
 - **Renderer adapter:** a thin interface (`load-scene`, `spawn`, `play-clip`, `move`, `caption`) so the same bundle can drive more than one engine. First target: WebXR with three.js, which runs on Quest, Vision Pro and desktop browsers with no app store step.
-- **Input mapper:** turns speech, pointing, grabs and gestures into option picks and sends them to the engine, closing the loop. It never sends anything else.
+- **Input mapper:** maps predefined action choices, pointing, grabs and gestures to option picks and sends them to the engine, closing the loop. It never sends anything else.
 
 ## Interaction: options instead of a parser
 
@@ -371,12 +373,12 @@ Players never type. Each turn the runtime offers options built from the game's o
 | Act on an object | Label chips over the object when the player looks at it or reaches toward it |
 | Use one object on another | Pick up the first, then chips appear on valid targets ("Put lamp in trophy case") |
 | Move | A marker in each doorway or path, including blocked ones (trying costs a turn and prints the original refusal); pick it to walk there |
-| Talk to a character | Speech options beside the character |
+| Talk to a character | Predefined dialogue choices beside the character |
 | Always available | Look, wait, inventory, score and save on a wrist menu. As in the original, look, wait and inventory cost a turn; score and save do not |
 | More actions | Every other legal action for an object, one page further down, so nothing is ever unreachable |
 | Say a word | A word picker built from the game's own vocabulary (about 690 words), for answers and spells |
 
-Players pick with gaze and pinch, a controller trigger, or by saying the label aloud. Because the possible phrases are known in advance, speech recognition only has to match a short list. Hotspots from the GLB feed the same actions, so touching the trap door and picking "Open the trap door" do the same thing.
+Players pick with gaze and pinch, a controller trigger, touch or keyboard. Every non-movement action has a predefined text string associated with its structured action; dialogue and puzzle answers are selected from authored choices. There is no microphone input, speech recognition or speech-to-text. Hotspots from the GLB feed the same actions, so touching the trap door and picking "Open the trap door" do the same thing.
 
 **The puzzle problem:** many ZIL puzzles depend on the player thinking of an action, such as saying a magic word or tying a rope to a railing. A full option list gives those answers away. Proposed rules, to be confirmed by Mark and playtested:
 
@@ -391,7 +393,7 @@ Players pick with gaze and pinch, a controller trigger, or by saying the label a
 
 | Device | View | How the player picks options | Moves between rooms |
 |---|---|---|---|
-| XR headset (WebXR immersive) | Stand inside the room | Gaze and pinch, controller, or voice | Point at an exit marker |
+| XR headset (WebXR immersive) | Stand inside the room | Gaze and pinch or controller | Point at an exit marker |
 | Tablet (touch browser) | First-person view; drag to look around | Tap an object, then tap a chip | Tap an exit marker |
 | Desktop (mouse and keyboard) | First-person view; mouse to look, WASD to step | Click an object, then click a chip; number keys for the list | Click an exit marker |
 
@@ -443,7 +445,7 @@ Build the text core first, then add scenes, then motion and input, so every phas
 flowchart LR
   P1["Phase 1: Text core<br/>ZIL front end + engine; rooms, objects, flags;<br/>saves; options in a terminal; transcript tests"]
   P2["Phase 2: Scenes<br/>LLM scene planner; asset builder, GLB;<br/>WebXR + three.js; BIND rules; rooms load as scenes"]
-  P3["Phase 3: Motion<br/>PLAY, clips, blends; timelines, cutscenes;<br/>character states; voice, gaze, gesture mapped to verbs"]
+  P3["Phase 3: Motion<br/>PLAY, clips, blends; timelines, cutscenes;<br/>character states; predefined choices, gaze, gesture mapped to verbs"]
   P4["Phase 4: Tooling<br/>language server; hot reload; scene inspector;<br/>second renderer; USDZ import"]
   P1 -- "gate: Zork II plays with options in a terminal" --> P2
   P2 -- "gate: walk three rooms, grab and drop items" --> P3
