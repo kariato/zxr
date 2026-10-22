@@ -6,7 +6,7 @@ import type { ReadEncoding } from './read-input.ts';
 import { assertSchema } from '../zil/schema.ts';
 import type { Schema } from '../zil/schema.ts';
 
-export type Operand=string|{object:string;noun:string;adjective?:string}|{pseudo:{room:string;word:string}};
+export type Operand=string|{object:string;noun:string;adjective?:string}|{object:string;adjective:string}|{pseudo:{room:string;word:string}};
 export type Selection=Operand|Operand[]|'ALL';
 export type ActAction={kind:'act';actor:string;verb:string;lexicalTable:string;syntax:number;prso?:Selection;prsi?:Selection};
 export type WalkAction={kind:'walk';actor:string;direction:string};
@@ -15,7 +15,7 @@ export type GameAction=
   | ActAction
   | WalkAction
   | {kind:'say';actor:string;verb:string;lexicalTable:string;syntax:number;words:string[];prso?:Operand;continuation?:QuotedAction};
-export interface PlannedOperand {id:number;name:string;words:string[];adjective?:number;pseudo?:{room:number;word:string;routine:number}}
+export interface PlannedOperand {id:number;name:string;words:string[];adjective?:number;adjectiveOnly?:boolean;pseudo?:{room:number;word:string;routine:number}}
 export type PlannedSelection={kind:'all'}|{kind:'objects';objects:PlannedOperand[]};
 export interface ActionPlan {
   format:'zxr-action-plan-v1';buildHash:string;optionId:string;action:GameAction;
@@ -28,7 +28,7 @@ export interface ActionPlan {
 }
 const name:Schema={type:'string',pattern:'^[A-Z][A-Z0-9?!.\\-]{0,63}$',minLength:1};
 const object=(properties:Record<string,Schema>,optional:Record<string,Schema>={}):Schema=>({type:'object',properties:{...properties,...optional},required:Object.keys(properties),additionalProperties:false});
-const operand:Schema={anyOf:[name,object({object:name,noun:name},{adjective:name}),object({pseudo:object({room:name,word:name})})]};
+const operand:Schema={anyOf:[name,object({object:name,noun:name},{adjective:name}),object({object:name,adjective:name}),object({pseudo:object({room:name,word:name})})]};
 const selection:Schema={anyOf:[operand,{type:'array',items:operand,minItems:1,maxItems:49}]};
 const syntax={actor:name,verb:name,lexicalTable:name,syntax:{type:'integer',minimum:1,maximum:255} as Schema};
 const continuationSchema:Schema={anyOf:[object({kind:{const:'act'},...syntax,actor:{const:'PLAYER'}},{prso:selection,prsi:selection}),object({kind:{const:'walk'},actor:{const:'PLAYER'},direction:name})]};
@@ -50,8 +50,8 @@ export function prepareAction(game:LoadedGame,world:WorldState,input:unknown):Ac
     }
     const e=entity(typeof value==='string'?value:value.object),synonyms=e.properties.find(p=>p.property.name==='SYNONYM');
     if(synonyms?.kind!=='words'||!synonyms.words.length)throw new Error('Action entity has no noun spelling '+e.name);
-    const word=typeof value==='string'?synonyms.words[0]!.name:value.noun;
-    if(!synonyms.words.some(w=>w.name===word))throw new Error('Noun is not a source synonym of '+e.name);
+    const word=typeof value==='string'?synonyms.words[0]!.name:'noun' in value?value.noun:undefined;
+    if(word!==undefined&&!synonyms.words.some(w=>w.name===word))throw new Error('Noun is not a source synonym of '+e.name);
     const adjective=typeof value==='string'?undefined:value.adjective;
     let adjectiveNumber:number|undefined;
     if(adjective!==undefined){
@@ -60,12 +60,12 @@ export function prepareAction(game:LoadedGame,world:WorldState,input:unknown):Ac
       if(!entry)throw new Error('Adjective is not a source adjective of '+e.name);
       adjectiveNumber=entry.number;
     }
-    const words=adjective===undefined?[word]:[adjective,word];
+    const words=word===undefined?[adjective!]:adjective===undefined?[word]:[adjective,word];
     for(const spelling of words){
       const tokens=encodeReadText(game,spelling).tokens,vocabulary=payload.vocabulary.words.find(w=>w.name===spelling);
       if(tokens.length!==1||!tokens[0]!.address||vocabulary?.roles.buzz)throw new Error('Unsupported noun spelling '+spelling);
     }
-    return {id:e.id,name:e.name,words,...(adjectiveNumber===undefined?{}:{adjective:adjectiveNumber})};
+    return {id:e.id,name:e.name,words,...(adjectiveNumber===undefined?{}:{adjective:adjectiveNumber}),...(word===undefined?{adjectiveOnly:true}:{})};
   };
   const selected=(value:Selection|undefined):PlannedSelection|null=>{
     if(value===undefined)return null;if(value==='ALL')return {kind:'all'};

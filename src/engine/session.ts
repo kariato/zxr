@@ -164,6 +164,7 @@ export class GameSession {
     return hashJson({interpreter:this.#loop.checkpoint().interpreter,knowledge:this.#knowledge,terminal:this.#state==='terminal'});
   }
   acceptedInputs():AcceptedInput[] {return own(this.#log);}
+  assertReplayComplete():void {this.#loop.assertReplayComplete();}
   /** Available only to code holding the testing capability; never a player observation. */
   [SESSION_DEBUG]() {
     if(!this.#diagnostics)throw new Error('Session diagnostics are not enabled');

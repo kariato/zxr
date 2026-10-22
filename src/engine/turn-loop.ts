@@ -71,6 +71,7 @@ export class TurnLoop {
   /** Diagnostic checkpoint, not a public save or an accepted host restore payload. */
   checkpoint():TurnCheckpoint {return {format:'zxr-turn-checkpoint-v1',started:this.#started,actionSequence:this.#sequence,interpreter:this.#vm.checkpoint()};}
   stateHash():string {return hashJson(this.checkpoint());}
+  assertReplayComplete():void {this.#vm.assertReplayComplete();}
   static restore(game:LoadedGame,input:unknown,options:Pick<Options,'replay'|typeof DIAGNOSTICS>={}):TurnLoop {
     assertSchema(input,turnCheckpointSchema,{},'turn checkpoint');
     const checkpoint=JSON.parse(canonicalJson(input)) as TurnCheckpoint;

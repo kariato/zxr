@@ -81,3 +81,12 @@ The disassembly was produced by txd from [ecliptik/ztools](https://github.com/ec
 ## Isolated LOOK output
 
 `look-output.json` records original V-LOOK output for five naturally lit opening rooms, reached using the listed ordinary commands with seed 2. A read-only call-stack observer captures only V-LOOK and its callees; parser prompts and later clock messages are excluded. `npm run output:record` regenerates it and `npm run output:check` verifies it. `tests/engine-output.test.ts` compares translated V-LOOK in prepared room contexts against these exact strings. This is isolated output acceptance, not turn-loop or world-state conformance for the routes. The independently authored routes and observer code are Apache-2.0; recorded game text retains the Zork II MIT notice. No walkthrough setup data is used for this fixture.
+
+
+## Structured engine replay (phase 3.9)
+
+`npm run replay:check` checks the reviewed explicit actions in `structured-replay.json` against the original binary for the complete solve, all twelve areas and a wizard/robot/death/recovery sequence. `engine-replay.json` records exact coverage, per-case checkpoint digest/final state, random call sites and all reviewed input normalizations. `npm run replay:check -- area-robot` selects one case. `npm run replay:record` deliberately regenerates these two derived artifacts only, after every engine/oracle comparison passes.
+
+Two original period-separated inputs become separate choices; the two non-action parser responses at original solve inputs 142 and 224 are explicitly accounted for under the existing typed-input exclusions. These are structured counterparts, not changed raw goldens. Every accepted engine step still compares all 128 included globals, every object/property and all non-parser gameplay tables. The bridge back to frozen raw goldens names the exact retained parser-context differences and inserted prompt characters. The reference REMOVE defect has an exact affected-name schedule at each boundary. See [the full acceptance contract](../docs/phase-3.md#completed-reference-replay-acceptance-39).
+
+The source walkthrough's existing provenance/licence and the source/story MIT notices continue to apply to this derived reference data. These files remain development fixtures and are not bundled into the player application. Phase 5 adds the general conformance CLI and broader replay corpus.

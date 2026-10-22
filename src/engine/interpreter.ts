@@ -95,6 +95,7 @@ export class Interpreter {
     return {format:'zxr-interpreter-checkpoint-v1',buildHash:this.#game.buildHash,inputBoundary:this.#inputBoundary,limits:{...this.#limits},frames:structuredFrames(this.#frames),wait:copyWait(this.#wait),result:this.#result,steps:this.#steps,output:this.#output,world:this.#world.snapshot(),rng:this.#random.snapshot()};
   }
   stateHash():string {return hashJson(this.checkpoint());}
+  assertReplayComplete():void {this.#random.assertReplayComplete();}
   static restore(game:LoadedGame,input:unknown,options:{replay?:readonly RandomEvent[];[DIAGNOSTICS]?:ExecutionDiagnostics}={}):Interpreter {
     assertSchema(input,checkpointSchema,{},'interpreter checkpoint');
     // Canonical serialization also rejects prototypes, cycles, sparse arrays and non-JSON values.
@@ -454,8 +455,9 @@ export class Interpreter {
           const noun=plan.input.tokens[token+operand.words.length-1]!.address;
           // SNARF-OBJECTS prefers an adjective role; GET-OBJECT then promotes a
           // lone adjective/noun word to P-NAM without updating P-ONEOBJ.
-          const promoted=!operand.adjective&&this.#game.bundle.payload.vocabulary.words.find(w=>w.name===operand.words.at(-1))?.roles.adjective;
-          targets.push({operand,slot,noun,adjective:operand.adjective ?? 0,adjectiveWord:operand.adjective?plan.input.tokens[token]!.address:promoted?noun:null,updateOne:!promoted,first:i===0,multiple:selection.objects.length>1});
+          const roles=this.#game.bundle.payload.vocabulary.words.find(w=>w.name===operand.words.at(-1))?.roles;
+          const promoted=operand.adjectiveOnly?!!roles?.object:!operand.adjective&&!!roles?.adjective;
+          targets.push({operand,slot,noun:operand.adjectiveOnly&&!promoted?0:noun,adjective:promoted?0:operand.adjective ?? 0,adjectiveWord:operand.adjective?plan.input.tokens[token]!.address:promoted?noun:null,updateOne:!promoted&&!operand.adjectiveOnly,first:i===0,multiple:selection.objects.length>1});
           token+=operand.words.length+1;
         }
       }

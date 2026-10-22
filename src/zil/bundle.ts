@@ -18,7 +18,7 @@ import { SYNTAX_FLAGS } from './vocabulary.ts';
 import type { MappedRoutine, LogicSourceMap, TranslationReport, SourceMapResult } from './source-maps.ts';
 import { mappedSites, sourceLocationSpan } from './source-maps.ts';
 import type { ParserSplit } from './parser.ts';
-export const BUNDLE_VERSIONS={compiler:'zxr-compiler-v1',vm:'zxr-vm-v1',adapter:'zxr-adapter-v14',optionEncoder:'zxr-option-encoder-v1',gateRules:'zxr-gates-v1'} as const;
+export const BUNDLE_VERSIONS={compiler:'zxr-compiler-v1',vm:'zxr-vm-v1',adapter:'zxr-adapter-v15',optionEncoder:'zxr-option-encoder-v1',gateRules:'zxr-gates-v1'} as const;
 export interface RuntimeSymbols {format:'zxr-symbols-v1';symbols:Omit<SymbolDefinition,'referenceAddress'>[]}
 export interface RuntimeLogic {format:'zxr-runtime-logic-v1';semantics:'zxr-zork2-semantics-v1';routines:MappedRoutine[];adapter:ParserAdapter|null;excluded:{name:string;id:number;policy:'adapter'|'replaced-middle'}[]}
 export interface BundlePayload {game:{id:string;title:string};versions:typeof BUNDLE_VERSIONS;initialization:{kind:'call-entry';routine:{name:string;id:number};checkpoint:'pre-GO';rng:{algorithm:'xorshift32-v1';seed:number}};gateRules:never[];world:WorldMetadata;vocabulary:Vocabulary;memory:MemoryImage;strings:StringPool;symbols:RuntimeSymbols;logic:RuntimeLogic}

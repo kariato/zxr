@@ -87,9 +87,10 @@ it('plans source-backed adjective/noun spellings with exact clause and lexical s
   expect(plan.direct).toMatchObject({kind:'objects',objects:[{name:'LAMP',words:['BRASS','LANTERN'],adjective:171}]});
   expect(vm.stateHash()).toBe(before);
   expect(prepareAction(game,world,act('TAKE',8,'TAKE',{prso:{object:'LAMP',noun:'LANTERN'}})).input.text).toBe('take lantern');
+  expect(prepareAction(game,world,act('TAKE',8,'TAKE',{prso:{object:'LAMP',adjective:'BRASS'}})).direct).toMatchObject({kind:'objects',objects:[{name:'LAMP',words:['BRASS'],adjectiveOnly:true}]});
 });
 it('rejects fabricated spellings and duplicate identities even when their spellings differ',()=>{
-  for(const prso of [{object:'LAMP',noun:'SWORD'},{object:'LAMP',noun:'LAMP',adjective:'GREEN'},{object:'LAMP',noun:'LAMP',adjective:'XYZZY'},{object:'LAMP',noun:'LAMP',extra:true},{object:'LAMP',adjective:'BRASS'},{object:'LAMP',noun:'LAMP',pseudo:{room:'TEA-ROOM',word:'HOLE'}},['LAMP',{object:'LAMP',noun:'LANTERN',adjective:'BRASS'}]])expect(()=>prepareAction(game,world,act('TAKE',8,'TAKE',{prso}))).toThrow();
+  for(const prso of [{object:'LAMP',noun:'SWORD'},{object:'LAMP',noun:'LAMP',adjective:'GREEN'},{object:'LAMP',noun:'LAMP',adjective:'XYZZY'},{object:'LAMP',noun:'LAMP',extra:true},{object:'LAMP'},{object:'LAMP',noun:'LAMP',pseudo:{room:'TEA-ROOM',word:'HOLE'}},['LAMP',{object:'LAMP',noun:'LANTERN',adjective:'BRASS'}]])expect(()=>prepareAction(game,world,act('TAKE',8,'TAKE',{prso}))).toThrow();
   const action=act('TAKE',8,'TAKE',{prso:{object:'LAMP',noun:'LANTERN',adjective:'BRASS'}}),plan=prepareAction(game,world,action);
   expect(plan.optionId).not.toBe(prepareAction(game,world,act('TAKE',8,'TAKE',{prso:'LAMP'})).optionId);
   (action as any).prso.noun='SWORD';expect(plan.input.text).toBe('take brass lantern');expect(plan.action).not.toEqual(action);

@@ -14,7 +14,7 @@ export class GameRandom {
   #next():number {let n=this.#state;n^=n<<13;n^=n>>>17;n^=n<<5;return this.#state=n>>>0;}
   random(bound:number):number {
     const range=signed(assertWord(bound)),expected=this.#replay?.[this.#cursor];
-    if(this.#replay&&(!expected||expected.range!==range))throw new Error('Random replay range mismatch or exhausted tape');
+    if(this.#replay&&(!expected||expected.range!==range))throw new Error('Random replay range mismatch or exhausted tape at cursor '+this.#cursor+': expected '+(expected?.range??'end of tape')+', received '+range);
     if(this.#position===Number.MAX_SAFE_INTEGER)throw new Error('Random request counter exhausted');
     let result=0;
     if(range<=0)this.#state=(range<0?-range:this.#seed)||0x6d2b79f5;

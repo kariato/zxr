@@ -44,7 +44,9 @@
     "bundle:record": "node tools/zil/bundle-cli.ts record",
     "bundle:check": "node tools/zil/bundle-cli.ts check",
     "output:record": "node tools/engine/look-output-cli.ts record",
-    "output:check": "node tools/engine/look-output-cli.ts check"
+    "output:check": "node tools/engine/look-output-cli.ts check",
+    "replay:record": "node tools/engine/replay-cli.ts record",
+    "replay:check": "node tools/engine/replay-cli.ts check"
   },
   "dependencies": {
     "three": "0.186.0"

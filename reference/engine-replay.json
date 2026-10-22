@@ -1,0 +1,804 @@
+{
+  "format": "zxr-engine-replay-v1",
+  "buildHash": "ac91fc33afb541f9cecd4ece845c16189d4f365263c3d6f8ef8c46488e1938fa",
+  "cases": [
+    {
+      "id": "walkthrough",
+      "commands": 388,
+      "originalInputs": 386,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        },
+        {
+          "input": 224,
+          "kind": "orphan-protocol",
+          "command": "take off crown",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 224,
+          "kind": "excluded-typed-input",
+          "command": "take off crown",
+          "fields": [],
+          "originalText": "That sentence isn't one I recognize.\n\n>"
+        }
+      ],
+      "projection": {
+        "globals": 128,
+        "objects": 251,
+        "properties": 1015,
+        "tables": 29,
+        "fields": 1984
+      },
+      "gameDraws": 143,
+      "activeSpellBoundaries": 0,
+      "parserDraws": 0,
+      "randomRoutines": [
+        "CAROUSEL-ROOM-FCN",
+        "CHEST-FCN",
+        "DIAMOND-MOTION",
+        "I-GARDEN",
+        "I-PRINCESS",
+        "I-WIZARD",
+        "ITAKE",
+        "MAGNET-ROOM-EXIT",
+        "RANDOM-ELEMENT",
+        "ROBOT-FCN",
+        "V-INCANT"
+      ],
+      "clockTicks": 419,
+      "detachedSiblingNames": [
+        "BILLS",
+        "BLUE-ICING",
+        "CANDY",
+        "COIN",
+        "CROWN",
+        "EAT-ME-CAKE",
+        "GOLD-KEY",
+        "PALANTIR-4",
+        "PEARL",
+        "POOL",
+        "PORTRAIT",
+        "PRINCESS",
+        "RUBY",
+        "STAMP",
+        "STATUETTE",
+        "VIOLIN",
+        "WIZARD"
+      ],
+      "checkpointsHash": "4f8535273fb371e4422ecb3769fa9ad0d56b1fc918209609226cc8b61a1fb3e9",
+      "final": {
+        "room": "ZORK3",
+        "winner": "ADVENTURER",
+        "score": 400,
+        "moves": 419,
+        "won": true,
+        "deaths": 0
+      },
+      "finalStateHash": "758a2d36ff2a8060ad72cc3b5144403823efc9d5132ae14d20370e895765f9bb"
+    },
+    {
+      "id": "area-barrow",
+      "commands": 6,
+      "originalInputs": 6,
+      "adaptations": [],
+      "projection": {
+        "globals": 128,
+        "objects": 251,
+        "properties": 1015,
+        "tables": 29,
+        "fields": 1984
+      },
+      "gameDraws": 2,
+      "activeSpellBoundaries": 0,
+      "parserDraws": 0,
+      "randomRoutines": [
+        "I-WIZARD"
+      ],
+      "clockTicks": 6,
+      "detachedSiblingNames": [],
+      "checkpointsHash": "7e4cc4282d53c9023133cbc5a6707b64c8897feabfa27e99ebe1be190110fb94",
+      "final": {
+        "room": "GREAT-CAVERN",
+        "winner": "ADVENTURER",
+        "score": 0,
+        "moves": 6,
+        "won": false,
+        "deaths": 0
+      },
+      "finalStateHash": "398b18280001328e471b7ca03414f09e27d31ad5d29bbb079f7b1c558f5f7aac"
+    },
+    {
+      "id": "area-garden",
+      "commands": 16,
+      "originalInputs": 16,
+      "adaptations": [],
+      "projection": {
+        "globals": 128,
+        "objects": 251,
+        "properties": 1015,
+        "tables": 29,
+        "fields": 1984
+      },
+      "gameDraws": 9,
+      "activeSpellBoundaries": 0,
+      "parserDraws": 0,
+      "randomRoutines": [
+        "I-GARDEN",
+        "I-WIZARD"
+      ],
+      "clockTicks": 16,
+      "detachedSiblingNames": [],
+      "checkpointsHash": "bce6976aaa2309e747903964912740854b2164c16bcbcb6926f47f5ddfd0d6d0",
+      "final": {
+        "room": "DARK-TUNNEL",
+        "winner": "ADVENTURER",
+        "score": 0,
+        "moves": 16,
+        "won": false,
+        "deaths": 0
+      },
+      "finalStateHash": "830952807086196776ead2b61ea572637f5688eda565c537e7e84869f51f0235"
+    },
+    {
+      "id": "area-riddle",
+      "commands": 25,
+      "originalInputs": 25,
+      "adaptations": [],
+      "projection": {
+        "globals": 128,
+        "objects": 251,
+        "properties": 1015,
+        "tables": 29,
+        "fields": 1984
+      },
+      "gameDraws": 16,
+      "activeSpellBoundaries": 0,
+      "parserDraws": 0,
+      "randomRoutines": [
+        "CAROUSEL-ROOM-FCN",
+        "I-GARDEN",
+        "I-WIZARD"
+      ],
+      "clockTicks": 25,
+      "detachedSiblingNames": [],
+      "checkpointsHash": "13196c74df73fb64df8d70072301dc0735f684f4579b339443ef895247e7038f",
+      "final": {
+        "room": "WELL-BOTTOM",
+        "winner": "ADVENTURER",
+        "score": 20,
+        "moves": 25,
+        "won": false,
+        "deaths": 0
+      },
+      "finalStateHash": "bc1b97dc57526d5dcfc176933917f597c95ecad17d815a2459051c05db01a555"
+    },
+    {
+      "id": "area-well",
+      "commands": 29,
+      "originalInputs": 29,
+      "adaptations": [],
+      "projection": {
+        "globals": 128,
+        "objects": 251,
+        "properties": 1015,
+        "tables": 29,
+        "fields": 1984
+      },
+      "gameDraws": 17,
+      "activeSpellBoundaries": 0,
+      "parserDraws": 0,
+      "randomRoutines": [
+        "CAROUSEL-ROOM-FCN",
+        "I-GARDEN",
+        "I-WIZARD"
+      ],
+      "clockTicks": 29,
+      "detachedSiblingNames": [],
+      "checkpointsHash": "ad55f3e5fea61ba3bdc99f36b0a4f964ee5c7eae870e26f7e1fa9164c60ed2e8",
+      "final": {
+        "room": "TEA-ROOM",
+        "winner": "ADVENTURER",
+        "score": 30,
+        "moves": 29,
+        "won": false,
+        "deaths": 0
+      },
+      "finalStateHash": "def86676a304ff6ed14c1cf87987c94f6db6798845e426b4f064e4b75ea1ebcb"
+    },
+    {
+      "id": "area-cakes",
+      "commands": 38,
+      "originalInputs": 38,
+      "adaptations": [],
+      "projection": {
+        "globals": 128,
+        "objects": 251,
+        "properties": 1015,
+        "tables": 29,
+        "fields": 1984
+      },
+      "gameDraws": 19,
+      "activeSpellBoundaries": 0,
+      "parserDraws": 0,
+      "randomRoutines": [
+        "CAROUSEL-ROOM-FCN",
+        "I-GARDEN",
+        "I-WIZARD"
+      ],
+      "clockTicks": 38,
+      "detachedSiblingNames": [
+        "BLUE-ICING",
+        "EAT-ME-CAKE",
+        "POOL"
+      ],
+      "checkpointsHash": "f880537586ebcda834b0ff1d20528754bdf94f8e6ff7f84a431916fc30dd371e",
+      "final": {
+        "room": "MAGNET-ROOM",
+        "winner": "ADVENTURER",
+        "score": 45,
+        "moves": 38,
+        "won": false,
+        "deaths": 0
+      },
+      "finalStateHash": "5d63ccdf7d4a7d306a041a42ac78d1af1bd0ef6da4fa0ba9f3645f86e4b3469e"
+    },
+    {
+      "id": "area-robot",
+      "commands": 53,
+      "originalInputs": 53,
+      "adaptations": [],
+      "projection": {
+        "globals": 128,
+        "objects": 251,
+        "properties": 1015,
+        "tables": 29,
+        "fields": 1984
+      },
+      "gameDraws": 32,
+      "activeSpellBoundaries": 0,
+      "parserDraws": 0,
+      "randomRoutines": [
+        "CAROUSEL-ROOM-FCN",
+        "I-GARDEN",
+        "I-WIZARD",
+        "MAGNET-ROOM-EXIT",
+        "ROBOT-FCN"
+      ],
+      "clockTicks": 53,
+      "detachedSiblingNames": [
+        "BLUE-ICING",
+        "EAT-ME-CAKE",
+        "POOL"
+      ],
+      "checkpointsHash": "9446911705b7915e547b447e7755d96eba0d303c7045474756b7781da6fd9719",
+      "final": {
+        "room": "MACHINE-ROOM",
+        "winner": "ADVENTURER",
+        "score": 65,
+        "moves": 53,
+        "won": false,
+        "deaths": 0
+      },
+      "finalStateHash": "d8a5b902b7a2e7a1418e06e44fbe3cd12c5cb89017be7ed783c8773c149840a1"
+    },
+    {
+      "id": "area-tiny-room",
+      "commands": 101,
+      "originalInputs": 99,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        }
+      ],
+      "projection": {
+        "globals": 128,
+        "objects": 251,
+        "properties": 1015,
+        "tables": 29,
+        "fields": 1984
+      },
+      "gameDraws": 53,
+      "activeSpellBoundaries": 0,
+      "parserDraws": 0,
+      "randomRoutines": [
+        "CAROUSEL-ROOM-FCN",
+        "I-GARDEN",
+        "I-WIZARD",
+        "MAGNET-ROOM-EXIT",
+        "ROBOT-FCN"
+      ],
+      "clockTicks": 101,
+      "detachedSiblingNames": [
+        "BLUE-ICING",
+        "CANDY",
+        "EAT-ME-CAKE",
+        "POOL"
+      ],
+      "checkpointsHash": "67342dc249d5efb5720dd31f6080903947e776f8456e1ea3073e75d32d8497d1",
+      "final": {
+        "room": "TINY-ROOM",
+        "winner": "ADVENTURER",
+        "score": 105,
+        "moves": 101,
+        "won": false,
+        "deaths": 0
+      },
+      "finalStateHash": "7aaa0a69d921bc6fe82257277e971e7a03124b6df1bbc87a7ecee35d24bc07d2"
+    },
+    {
+      "id": "area-dragon",
+      "commands": 115,
+      "originalInputs": 113,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        }
+      ],
+      "projection": {
+        "globals": 128,
+        "objects": 251,
+        "properties": 1015,
+        "tables": 29,
+        "fields": 1984
+      },
+      "gameDraws": 59,
+      "activeSpellBoundaries": 0,
+      "parserDraws": 0,
+      "randomRoutines": [
+        "CAROUSEL-ROOM-FCN",
+        "I-GARDEN",
+        "I-WIZARD",
+        "MAGNET-ROOM-EXIT",
+        "RANDOM-ELEMENT",
+        "ROBOT-FCN"
+      ],
+      "clockTicks": 115,
+      "detachedSiblingNames": [
+        "BLUE-ICING",
+        "CANDY",
+        "EAT-ME-CAKE",
+        "POOL"
+      ],
+      "checkpointsHash": "fd4e39170324b779823cf8e0d8f26a59bd681dc5a8c5f7a5c621c4206b2f0d98",
+      "final": {
+        "room": "DRAGON-LAIR",
+        "winner": "ADVENTURER",
+        "score": 110,
+        "moves": 115,
+        "won": false,
+        "deaths": 0
+      },
+      "finalStateHash": "948860ced694543f59e3ce0bceb5db63b452245ff4c6db9c59e17db30561dd9b"
+    },
+    {
+      "id": "area-princess",
+      "commands": 145,
+      "originalInputs": 144,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        }
+      ],
+      "projection": {
+        "globals": 128,
+        "objects": 251,
+        "properties": 1015,
+        "tables": 29,
+        "fields": 1984
+      },
+      "gameDraws": 82,
+      "activeSpellBoundaries": 0,
+      "parserDraws": 0,
+      "randomRoutines": [
+        "CAROUSEL-ROOM-FCN",
+        "I-GARDEN",
+        "I-PRINCESS",
+        "I-WIZARD",
+        "MAGNET-ROOM-EXIT",
+        "RANDOM-ELEMENT",
+        "ROBOT-FCN"
+      ],
+      "clockTicks": 174,
+      "detachedSiblingNames": [
+        "BLUE-ICING",
+        "CANDY",
+        "EAT-ME-CAKE",
+        "POOL",
+        "PRINCESS"
+      ],
+      "checkpointsHash": "3c3825a3427f7c1468dcb306ab162e41e64ad4cb3d48275d01a9dbbfd93cd671",
+      "final": {
+        "room": "GARDEN-NORTH",
+        "winner": "ADVENTURER",
+        "score": 125,
+        "moves": 174,
+        "won": false,
+        "deaths": 0
+      },
+      "finalStateHash": "91ffec3e833b8a02cda17e2eca6bcd3fbab3743f5e248ede16b3641eddc9e844"
+    },
+    {
+      "id": "area-workshop",
+      "commands": 169,
+      "originalInputs": 166,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "projection": {
+        "globals": 128,
+        "objects": 251,
+        "properties": 1015,
+        "tables": 29,
+        "fields": 1984
+      },
+      "gameDraws": 92,
+      "activeSpellBoundaries": 0,
+      "parserDraws": 0,
+      "randomRoutines": [
+        "CAROUSEL-ROOM-FCN",
+        "I-GARDEN",
+        "I-PRINCESS",
+        "I-WIZARD",
+        "ITAKE",
+        "MAGNET-ROOM-EXIT",
+        "RANDOM-ELEMENT",
+        "ROBOT-FCN"
+      ],
+      "clockTicks": 197,
+      "detachedSiblingNames": [
+        "BLUE-ICING",
+        "CANDY",
+        "EAT-ME-CAKE",
+        "POOL",
+        "PRINCESS"
+      ],
+      "checkpointsHash": "92c319c313fe4d845c46fe1aa172b4c9a8a31a81daecea11bbab9dbbe36840e4",
+      "final": {
+        "room": "WIZARDS-WORKSHOP",
+        "winner": "ADVENTURER",
+        "score": 185,
+        "moves": 197,
+        "won": false,
+        "deaths": 0
+      },
+      "finalStateHash": "423c6ece10a6b2ef885707836a7502b04e355051a3a9b718fc12103c2c8ee62f"
+    },
+    {
+      "id": "area-volcano",
+      "commands": 220,
+      "originalInputs": 217,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "projection": {
+        "globals": 128,
+        "objects": 251,
+        "properties": 1015,
+        "tables": 29,
+        "fields": 1984
+      },
+      "gameDraws": 109,
+      "activeSpellBoundaries": 0,
+      "parserDraws": 0,
+      "randomRoutines": [
+        "CAROUSEL-ROOM-FCN",
+        "I-GARDEN",
+        "I-PRINCESS",
+        "I-WIZARD",
+        "ITAKE",
+        "MAGNET-ROOM-EXIT",
+        "RANDOM-ELEMENT",
+        "ROBOT-FCN"
+      ],
+      "clockTicks": 262,
+      "detachedSiblingNames": [
+        "BLUE-ICING",
+        "CANDY",
+        "EAT-ME-CAKE",
+        "POOL",
+        "PRINCESS"
+      ],
+      "checkpointsHash": "abbbea1b8b46f28081dea66744f48246c94712da2860f09ebd64ea5fab7e2290",
+      "final": {
+        "room": "VOLCANO-BOTTOM",
+        "winner": "ADVENTURER",
+        "score": 250,
+        "moves": 262,
+        "won": false,
+        "deaths": 0
+      },
+      "finalStateHash": "62f8e3dcffbff1b78133608964bcc5f325a0e0d1aaf8f19e6091c3bccd6c41cf"
+    },
+    {
+      "id": "area-bank",
+      "commands": 263,
+      "originalInputs": 261,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        },
+        {
+          "input": 224,
+          "kind": "orphan-protocol",
+          "command": "take off crown",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 224,
+          "kind": "excluded-typed-input",
+          "command": "take off crown",
+          "fields": [],
+          "originalText": "That sentence isn't one I recognize.\n\n>"
+        }
+      ],
+      "projection": {
+        "globals": 128,
+        "objects": 251,
+        "properties": 1015,
+        "tables": 29,
+        "fields": 1984
+      },
+      "gameDraws": 121,
+      "activeSpellBoundaries": 0,
+      "parserDraws": 0,
+      "randomRoutines": [
+        "CAROUSEL-ROOM-FCN",
+        "CHEST-FCN",
+        "I-GARDEN",
+        "I-PRINCESS",
+        "I-WIZARD",
+        "ITAKE",
+        "MAGNET-ROOM-EXIT",
+        "RANDOM-ELEMENT",
+        "ROBOT-FCN"
+      ],
+      "clockTicks": 305,
+      "detachedSiblingNames": [
+        "BLUE-ICING",
+        "CANDY",
+        "EAT-ME-CAKE",
+        "POOL",
+        "PRINCESS"
+      ],
+      "checkpointsHash": "c8132d58d1e035b2d3b43ad43cfcc9d37e6ce24efa82f49299122e4e8c64d043",
+      "final": {
+        "room": "BANK-ENTRANCE",
+        "winner": "ADVENTURER",
+        "score": 315,
+        "moves": 305,
+        "won": false,
+        "deaths": 0
+      },
+      "finalStateHash": "397d1a07b007ba35e3a8eec46804a1f6ab36777d836dd6d28431b7fdeb4a9599"
+    },
+    {
+      "id": "random-death-recovery",
+      "commands": 78,
+      "originalInputs": 78,
+      "adaptations": [],
+      "projection": {
+        "globals": 128,
+        "objects": 251,
+        "properties": 1015,
+        "tables": 29,
+        "fields": 1984
+      },
+      "gameDraws": 49,
+      "activeSpellBoundaries": 4,
+      "parserDraws": 0,
+      "randomRoutines": [
+        "CAROUSEL-ROOM-FCN",
+        "DEAD-PALANTIR",
+        "I-GARDEN",
+        "I-WIZARD",
+        "MAGNET-ROOM-EXIT",
+        "RANDOM-WALK",
+        "ROBOT-FCN"
+      ],
+      "clockTicks": 105,
+      "detachedSiblingNames": [
+        "BLUE-ICING",
+        "EAT-ME-CAKE",
+        "POOL",
+        "WIZARD"
+      ],
+      "checkpointsHash": "c375a7c2700ebc93f29c5848f937eae55093f2a18597b9b42fce105bd86b60ef",
+      "final": {
+        "room": "INSIDE-BARROW",
+        "winner": "ADVENTURER",
+        "score": 55,
+        "moves": 105,
+        "won": false,
+        "deaths": 1
+      },
+      "finalStateHash": "87b3edd5942e062caffd27b2eeafc9c14dc929b9a4ebb5520feefb6ecd74d604"
+    }
+  ]
+}

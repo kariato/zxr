@@ -3,10 +3,10 @@
   "games": [
     {
       "game": "three-room",
-      "buildHash": "5ad2c7013a66ca90647fcf7db83f31a7b0109ff9529c1d448d42165cdc4611b6",
+      "buildHash": "a8d2c0cd7549c9e179cf8f0046f3420919bff6eb7a0e09745251e528ac5cfa05",
       "presentationHash": "3ecd6ff5c39d37196d99bbf10b1a321339d2acc1876357eb66ffd52de8d704dd",
-      "contentHash": "93675003b4df96f0e2755edccee189a825e552b25caac3d75844ff864c272e5c",
-      "packedSha256": "ca826fd04843b554c33c1bb8b171e54530c993edc8cd349900e2565dc2c856fd",
+      "contentHash": "6ea2911613ce73d20d6c79da615ee6275d005c1dfa2fde43e77c268860a0a29e",
+      "packedSha256": "ddd0b9bef723e9e7e3baee6991e2698ae05f609ef63672970c1247fdb4c72707",
       "bytes": 49948,
       "routines": 2,
       "rooms": 3,
@@ -24,10 +24,10 @@
     },
     {
       "game": "zork2",
-      "buildHash": "ba5d09272cb7084effdbbb047c35fb803fe6c3cc7c448a9e43621e7c8aa9ff6e",
+      "buildHash": "ac91fc33afb541f9cecd4ece845c16189d4f365263c3d6f8ef8c46488e1938fa",
       "presentationHash": "03dad1f53d380bef2cb1153be09829196460c906f72ec598003e8e636cfa1d54",
-      "contentHash": "e30e817f894264eb1667c2d635b162b496bb5a1c908a370200c4608cf1b5ee04",
-      "packedSha256": "4427bf78eeb6cc31b95d84996fd715e0ed757d2e710a77f3e751fdfa9ee6e825",
+      "contentHash": "040b16ba3265407f58fed182503bbee24b69a845cfa3ccbc6ba0a2fbef7f49d1",
+      "packedSha256": "3f0dc71ac2304c1eb3746a565723423ca96bce0232688670e56d5d86e83b8130",
       "bytes": 21695668,
       "routines": 414,
       "rooms": 86,
@@ -39,7 +39,7 @@
       },
       "adapter": {
         "id": 33,
-        "version": "zxr-adapter-v14",
+        "version": "zxr-adapter-v15",
         "entryCommands": 11,
         "checkCalls": [
           "MANY-CHECK",
