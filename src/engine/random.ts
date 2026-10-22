@@ -1,6 +1,7 @@
 import { hashJson } from '../zil/integrity.ts';
 import { assertWord, signed } from './numeric.ts';
 export interface RandomEvent {range:number;result:number}
+/** position counts accepted ZIL RANDOM requests, including reseeds, not internal rejection attempts. */
 export interface RandomSnapshot {algorithm:'xorshift32-v1';initialSeed:number;state:number;position:number;cursor:number;replayHash:string|null}
 /** Owned deterministic RNG. Oracle replay validates each request and never falls back to a fresh draw. */
 export class GameRandom {
@@ -14,6 +15,7 @@ export class GameRandom {
   random(bound:number):number {
     const range=signed(assertWord(bound)),expected=this.#replay?.[this.#cursor];
     if(this.#replay&&(!expected||expected.range!==range))throw new Error('Random replay range mismatch or exhausted tape');
+    if(this.#position===Number.MAX_SAFE_INTEGER)throw new Error('Random request counter exhausted');
     let result=0;
     if(range<=0)this.#state=(range<0?-range:this.#seed)||0x6d2b79f5;
     else if(expected)result=expected.result;

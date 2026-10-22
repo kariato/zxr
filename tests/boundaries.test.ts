@@ -20,3 +20,26 @@ describe('headless boundaries', () => {
     expect(checkSource('/project/src/engine/model.ts', 'import type { Value } from "../zil/value.ts";', '/project')).toEqual([]);
   });
 });
+
+describe('test-only diagnostic boundaries',()=>{
+  it.each([
+    'import { createDebugSession } from "./engine/testing.ts";',
+    'export * from "./engine/testing.ts";',
+    'import("./engine/testing.ts");',
+    'type Debug = import("./engine/testing.ts").ExecutionTrace;',
+    'import { createDebugSession } from "./engine/testing.js";',
+    'export * from "./engine/testing";',
+    'import { SESSION_DEBUG } from "./engine/diagnostics.ts";',
+  ])('rejects production access to debug capabilities: %s',source=>{
+    expect(checkSource('/project/src/player.ts',source,'/project').length).toBeGreaterThan(0);
+  });
+  it('blocks re-exports from the public engine entry point',()=>{
+    expect(checkSource('/project/src/engine/index.ts','export * from "./testing.ts";','/project').length).toBeGreaterThan(0);
+    expect(checkSource('/project/src/engine/index.ts','export * from "./diagnostics.ts";','/project').length).toBeGreaterThan(0);
+  });
+  it('allows internal engine instrumentation and explicit test imports',()=>{
+    expect(checkSource('/project/src/engine/session.ts','import { DIAGNOSTICS } from "./diagnostics.ts";','/project')).toEqual([]);
+    expect(checkSource('/project/tests/debug.test.ts','import { createDebugSession } from "../src/engine/testing.ts";','/project')).toEqual([]);
+    expect(checkSource('/project/src/presentation/player.ts','const now=Date.now(); import "three";','/project')).toEqual([]);
+  });
+});

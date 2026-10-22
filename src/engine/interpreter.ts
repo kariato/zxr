@@ -15,6 +15,8 @@ import { canonicalJson, hashJson } from '../zil/integrity.ts';
 import type { RandomSnapshot } from './random.ts';
 import type { WorldSnapshot } from './world-state.ts';
 import type { Span } from '../zil/ast.ts';
+import { DIAGNOSTICS } from './diagnostics.ts';
+import type { ExecutionDiagnostics, TraceEntry, TraceSite, TraceFrame } from './diagnostics.ts';
 
 type ExpressionTask = {kind:'expression';id:number;stage:number;values:number[]};
 type ActivationTask = {kind:'activation';expression:number|null;phase:'bindings'|'body';index:number;waiting:boolean;last:number;args:number[]};
@@ -43,6 +45,7 @@ export class Interpreter {
   readonly #limits:ExecutionLimits;
   readonly #inputBoundary:'parser'|'read';
   readonly #random:GameRandom;
+  readonly #diagnostics:ExecutionDiagnostics|undefined;
   #world:WorldState;
   #frames:Frame[]=[];
   #wait:InterpreterWait|null=null;
@@ -58,12 +61,13 @@ export class Interpreter {
   #quotedError:{kind:'unknown'|'cant-use'|'no-verb';clause:boolean}|null=null;
   #actor:{plan:ActionPlan;phase:'tell'|'command'}|null=null;
 
-  constructor(game:LoadedGame,options:{inputBoundary?:'parser'|'read';world?:WorldState;fragment?:'entry'|'checks'|'no-verb'|'not-here';routine?:number;args?:readonly number[];replay?:readonly RandomEvent[];limits?:Partial<ExecutionLimits>}={}){
+  constructor(game:LoadedGame,options:{[DIAGNOSTICS]?:ExecutionDiagnostics;seed?:number;inputBoundary?:'parser'|'read';world?:WorldState;fragment?:'entry'|'checks'|'no-verb'|'not-here';routine?:number;args?:readonly number[];replay?:readonly RandomEvent[];limits?:Partial<ExecutionLimits>}={}){
     this.#game=game;
+    this.#diagnostics=options[DIAGNOSTICS];
     if(options.world&&options.world.buildHash!==game.buildHash)throw new Error('Execution world belongs to another build');
     this.#world=options.world?options.world.fork():WorldState.create(game);
     if(options.world)this.#world.validate();
-    this.#random=game.createRandom(options.replay);
+    this.#random=game.createRandom(options.replay,options.seed);
     this.#inputBoundary=options.inputBoundary ?? 'parser';
     if(!['parser','read'].includes(this.#inputBoundary))throw new Error('Invalid input boundary');
     this.#limits={...DEFAULT_LIMITS,...options.limits};
@@ -86,17 +90,17 @@ export class Interpreter {
   /** Diagnostic continuation only; it is not an accepted external save format. */
   inspect(){return {buildHash:this.#game.buildHash,frames:structuredFrames(this.#frames),wait:copyWait(this.#wait),result:this.#result,steps:this.#steps,output:this.#output,rng:this.#random.snapshot()};}
 
-  /** Complete low-level execution state, excluding the not-yet-implemented public session protocol. */
+  /** Complete low-level execution state; diagnostic history and session protocol are separate. */
   checkpoint():InterpreterCheckpoint {
     return {format:'zxr-interpreter-checkpoint-v1',buildHash:this.#game.buildHash,inputBoundary:this.#inputBoundary,limits:{...this.#limits},frames:structuredFrames(this.#frames),wait:copyWait(this.#wait),result:this.#result,steps:this.#steps,output:this.#output,world:this.#world.snapshot(),rng:this.#random.snapshot()};
   }
   stateHash():string {return hashJson(this.checkpoint());}
-  static restore(game:LoadedGame,input:unknown,options:{replay?:readonly RandomEvent[]}={}):Interpreter {
+  static restore(game:LoadedGame,input:unknown,options:{replay?:readonly RandomEvent[];[DIAGNOSTICS]?:ExecutionDiagnostics}={}):Interpreter {
     assertSchema(input,checkpointSchema,{},'interpreter checkpoint');
     // Canonical serialization also rejects prototypes, cycles, sparse arrays and non-JSON values.
     const checkpoint=JSON.parse(canonicalJson(input)) as InterpreterCheckpoint;
     if(checkpoint.buildHash!==game.buildHash)throw new Error('Incompatible interpreter checkpoint build');
-    const vm=new Interpreter(game,{limits:checkpoint.limits,inputBoundary:checkpoint.inputBoundary,...options});
+    const vm=new Interpreter(game,{limits:checkpoint.limits,inputBoundary:checkpoint.inputBoundary,seed:checkpoint.rng.initialSeed,replay:options.replay,[DIAGNOSTICS]:options[DIAGNOSTICS]});
     vm.#frames=checkpoint.frames;vm.#wait=checkpoint.wait;vm.#result=checkpoint.result;vm.#steps=checkpoint.steps;vm.#output=checkpoint.output;
     vm.#validateContinuation();
     vm.#world=WorldState.restore(game,checkpoint.world);vm.#random.restore(checkpoint.rng);
@@ -113,7 +117,7 @@ export class Interpreter {
     if(value>1)throw new Error('Host primitive result must be zero or one');
     return this.#segment(value);
   }
-  /** Internal decision answer. Public callers still need the later correlated decision protocol. */
+  /** Internal decision answer. GameSession correlates public decision requests. */
   answer(choice:'YES'|'NO'|'RESTART'|'RESTORE'|'QUIT'):InterpreterResult {
     if(this.#wait?.kind!=='READ')throw new Error('Interpreter is not waiting for a decision');
     const name=this.#game.routine(this.#wait.routine)?.name;
@@ -139,12 +143,15 @@ export class Interpreter {
   #segment(resume?:number|{read:string}|{parserText:string}|{action:ActionPlan}):InterpreterResult {
     const oldWorld=this.#world,oldFrames=structuredFrames(this.#frames),oldWait=copyWait(this.#wait),oldResult=this.#result,oldSteps=this.#steps,oldOutput=this.#output,oldRandom=this.#random.snapshot(),oldPlan=this.#pendingPlan,oldScope=this.#scope,oldSpeech=this.#speech,oldQuotedCommand=this.#quotedCommand,oldQuotedError=this.#quotedError,oldActor=this.#actor;
     this.#world=this.#world.fork();this.#text=[];
+    this.#diagnostics?.begin(resume===undefined?'run':typeof resume==='number'?'host':'action' in resume?'action':'read' in resume?'decision':'parser-text');
     try {
+      this.#source=this.#frames.length?this.#routine().source:null;
       if(resume!==undefined){
-        if(this.#wait)this.#source=this.#expression(this.#frames.at(-1)!,this.#wait.expression).source;
+        if(typeof resume==='object'&&'action' in resume){this.#steps=0;this.#output=0;}
+        if(this.#wait){const site=this.#expression(this.#frames.at(-1)!,this.#wait.expression);this.#source=site.source;this.#trace('resume',site,site.op);}
         if(typeof resume==='object'&&'action' in resume){
           const read=this.#wait!.kind==='READ'?this.#wait:null;
-          this.#pendingPlan=resume.action;this.#actor=resume.action.actorPass?{plan:resume.action,phase:'tell'}:null;this.#speech=resume.action.action.kind==='say'?resume.action:null;this.#steps=0;this.#output=0;this.#wait=null;
+          this.#pendingPlan=resume.action;this.#actor=resume.action.actorPass?{plan:resume.action,phase:'tell'}:null;this.#speech=resume.action.action.kind==='say'?resume.action:null;this.#wait=null;
           if(read){this.#world=writeReadText(this.#game,this.#world,read.args[0]!,read.args[1]!,resume.action.input.text);this.#finish(1);}
           else this.#call(this.#game.bundle.payload.logic.adapter!.id,[],'parser-entry');
         }else {
@@ -160,12 +167,25 @@ export class Interpreter {
       this.#world.validate();
       const text=this.#text;this.#text=[];
       const random=this.#random.drainEvents();
+      this.#diagnostics?.end(this.#wait?'suspended':'returned');
       return this.#wait?{status:'suspended',wait:copyWait(this.#wait)!,text,random}:{status:'returned',value:this.#result!,text,random};
     }catch(error){
       const source=this.#source;
+      this.#diagnostics?.end('error',{cause:error instanceof Error?error.message:String(error),source,stack:this.#traceStack()});
       this.#world=oldWorld;this.#frames=oldFrames;this.#wait=oldWait;this.#result=oldResult;this.#steps=oldSteps;this.#output=oldOutput;this.#random.restore(oldRandom);this.#pendingPlan=oldPlan;this.#scope=oldScope;this.#speech=oldSpeech;this.#quotedCommand=oldQuotedCommand;this.#quotedError=oldQuotedError;this.#actor=oldActor;this.#text=[];
       return {status:'error',cause:error instanceof Error?error.message:String(error),source,text:[],random:[]};
     }
+  }
+  #trace(kind:TraceEntry['kind'],site:TraceSite,operation:string):void {
+    if(!this.#diagnostics)return;
+    const frame=this.#frames.at(-1)!;
+    this.#diagnostics.record({kind,operation,program:frame.program,routine:frame.routine,name:this.#routine(frame).name,depth:this.#frames.length,step:this.#steps,
+      source:site.source,...(site.sourceMapId?{sourceMapId:site.sourceMapId}:{}),...(site.nodeId?{nodeId:site.nodeId}:{}),...(site.origin?{origin:site.origin}:{})});
+  }
+  #traceStack():TraceFrame[] {
+    if(!this.#diagnostics)return [];
+    return this.#frames.map(frame=>{const top=frame.tasks.at(-1),routine=this.#routine(frame);
+      return {program:frame.program,routine:frame.routine,name:routine.name,source:top?.kind==='expression'?this.#expression(frame,top.id).source:routine.source};});
   }
   #routine(frame=this.#frames.at(-1)!):Readonly<LogicRoutine> {
     const routine=this.#definition(frame.routine,frame.program);if(!routine)throw new Error('Unknown runtime routine '+frame.routine);return routine;
@@ -177,6 +197,7 @@ export class Interpreter {
     const id=this.#indices.get(expression);if(id===undefined)throw new Error('Unindexed expression');
     const tasks=this.#frames.at(-1)!.tasks;if(tasks.length>=65536)throw new Error('Expression stack budget exhausted');
     tasks.push({kind:'expression',id,stage:0,values:[]});
+    this.#trace('expression',expression,'operator' in expression?expression.operator:expression.op);
   }
   #definition(id:number,program:ExecutionProgram):Readonly<LogicRoutine>|undefined {
     if(program==='runtime')return this.#game.routine(id);
@@ -283,13 +304,14 @@ export class Interpreter {
         const binding=bindings[task.index];
         if(!binding){task.phase='body';task.index=0;return;}
         this.#source=binding.source;
+        this.#trace('binding',binding,binding.name);
         if((binding.kind==='required'||binding.kind==='optional')&&task.index<task.args.length){frame.locals[binding.slot]=task.args[task.index]!;task.index++;return;}
         if(binding.initializer){task.waiting=true;this.#enqueueExpression(binding.initializer);}
         else {frame.locals[binding.slot]=0;task.index++;}
         return;
       }
       const command=body[task.index];
-      if(command){task.waiting=true;this.#enqueueExpression(command.expression);return;}
+      if(command){this.#source=command.source;this.#trace('command',command,'operator' in command.expression?command.expression.operator:command.expression.op);task.waiting=true;this.#enqueueExpression(command.expression);return;}
       if(repeat){task.index=0;task.last=1;return;}
       frame.tasks.pop();if(task.expression===null)this.#return(task.last);else this.#deliver(task.last);return;
     }
@@ -320,7 +342,7 @@ export class Interpreter {
         if(!values.length){this.#enqueueExpression(clause.test);return;}
         if(values[0]===0){task.stage++;task.values=[];return;}
         const command=clause.body[values.length-1];
-        if(command)this.#enqueueExpression(command.expression);else this.#finish(values.at(-1)!);return;
+        if(command){this.#trace('command',command,'operator' in command.expression?command.expression.operator:command.expression.op);this.#enqueueExpression(command.expression);}else this.#finish(values.at(-1)!);return;
       }
       case 'block':
         if(values.length){this.#finish(values[0]!);return;}

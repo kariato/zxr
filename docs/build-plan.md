@@ -74,7 +74,7 @@ interface ZxrEngine {
   completeHost(result: HostResult): ActionResolution;
   observe(): PlayerObservation;
   exportSave(): ZxrSave;            // refused while a decision or host operation is pending
-  importSave(save: ZxrSave): void;  // rejects a save from a different build; starts a new epoch
+  importSave(save: ZxrSave): ActionResolution; // emits saved SAVE-success text; starts a new epoch
 }
 
 type Operand = string | { pseudo: { room: string; word: string } };   // object name, or a room's pseudo feature
@@ -263,10 +263,10 @@ Implementation, evidence and scope limits: [phase 1](phase-1.md). `npm run zil:c
 - [x] 3.2 — explicit continuation evaluator, locals/defaults, control flow, primitives, suspension and segment rollback tested. Execution checkpoints round-trip with shape/frame/memory/RNG checks; YES?/FINISH decision buffers resume translated branches. Public parser/session/save/host protocol remains steps 3.4 and 3.7.
 - [x] 3.3 — buffered interpreter output matches original V-LOOK byte-for-byte in five rooms; darkness, world ownership and output-budget rollback tested. Public ActionResolution assembly follows with the turn loop.
 - [x] 3.4 — translated MAIN-LOOP-1/PERFORM/M-END/CLOCKER and the structured adapter pass the complete acceptance matrix. TurnLoop runs startup and each action through the next original fresh READ, with exact text/prompts, actor context restoration and turn packets. Original-story comparisons cover TAKE/DROP, two-object actions, LOOK, SAY, walks, implicit taking, mixed ALL, robot inventory/movement/cage rescue, bucket context and pseudo operands; source-extracted tests prove all eight dispatch layers and all five exit layouts. Missing matches, empty ALL, bounded quoted commands/directions, internal decision/host suspension, checkpoint restoration and full segment rollback are tested. Explicit action-language exclusions remain in the rules ledger. Public session correlation/save/replacement is 3.7; option generation is phase 4. See [phase 3 evidence](phase-3.md#completed-turn-loop-34).
-- [ ] 3.5
-- [ ] 3.6
-- [ ] 3.7
-- [ ] 3.8
+- [x] 3.5 — original QUEUE/INT/CLOCKER/V-WAIT scheduler semantics and both source clock call sites verified. A 235-action original-story sequence covers the full lantern lifetime, warnings/burnout and clock state after LOOK, INVENTORY, SCORE, SAVE, WAIT and failed actions. Match expiry, lantern disable/re-enable, direct death and a scheduled sphere death also match, including all 30 slots, scheduling bounds, unused allocation tail, lantern cursor/flags, moves and RNG position. All 23 original interrupt bodies have reachable registrations and runtime IDs; source CLOCKER/APPLY dispatch tests cover every callback slot. Mutation and late-error rollback checks pass. See [phase 3 clock evidence](phase-3.md#completed-clock-acceptance-35).
+- [x] 3.6 — per-run unsigned 32-bit seeds flow through TurnLoop/Interpreter without modifying bundle defaults; diagnostic restoration uses the saved seed. Normal seeded game runs reproduce complete outputs, requests and state hashes across interleaved runs and serialized input/decision/host boundaries. Independent BigInt vectors, forced rejection sampling, original PROB/ZPROB thresholds, reseeds, query/rejection purity and late-error retry all pass. The request counter rejects safe-integer exhaustion atomically. See [phase 3 RNG evidence](phase-3.md#completed-seeded-determinism-36).
+- [x] 3.7 — GameSession correlates decision/host IDs and epochs/revisions, stages atomic segments, validates public boundary/primitive-save envelopes, resumes saved SAVE success, replaces restore/restart sessions and makes QUIT terminal. Typed accepted logs embed restore/import bytes and hashes for store-free replay. Original opening/death/resurrection/victory, FINISH restore success/failure, stale requests, cancellation and budget rollback are tested. Normal availability/perception remains phase 4; see [lifecycle evidence](phase-3.md#completed-lifecycle-and-public-saves-37).
+- [x] 3.8 — separate test-only debug API supplies complete owned session dumps and decoded reveal-all world views, plus bounded per-segment ZIL command/expression traces with source-map/node IDs, macro origins and fault call stacks. Exact 2actions.zil SCORE locations, parser partition, error/rollback retention, query purity, snapshot ownership and restore/restart continuity are tested. Production import checks keep the test API out of the player entry point. See [debug evidence](phase-3.md#completed-debug-api-and-source-traces-38).
 - [ ] 3.9
 
 **Gate:** all per-area golden scripts pass with exact text and state match when replayed as `GameAction`s with the reference random log.

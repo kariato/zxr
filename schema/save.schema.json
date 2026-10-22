@@ -1,0 +1,434 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ZXR save v1",
+  "type": "object",
+  "properties": {
+    "format": {
+      "const": "zxr-save-v1"
+    },
+    "abi": {
+      "type": "string"
+    },
+    "buildHash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "kind": {
+      "enum": [
+        "boundary",
+        "primitive-save"
+      ]
+    },
+    "checkpoint": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "zxr-turn-checkpoint-v1"
+        },
+        "started": {
+          "type": "boolean"
+        },
+        "actionSequence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "interpreter": {
+          "type": "object",
+          "properties": {
+            "format": {
+              "const": "zxr-interpreter-checkpoint-v1"
+            },
+            "inputBoundary": {
+              "enum": [
+                "parser",
+                "read"
+              ]
+            },
+            "buildHash": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "limits": {
+              "type": "object",
+              "properties": {
+                "steps": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 1000000
+                },
+                "depth": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 256
+                },
+                "output": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 1000000
+                },
+                "operands": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 65536
+                }
+              },
+              "required": [
+                "steps",
+                "depth",
+                "output",
+                "operands"
+              ],
+              "additionalProperties": false
+            },
+            "steps": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000000
+            },
+            "output": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000000
+            },
+            "result": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 65535
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "frames": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "program": {
+                    "enum": [
+                      "runtime",
+                      "parser-entry",
+                      "parser-checks",
+                      "parser-no-verb",
+                      "parser-not-here"
+                    ]
+                  },
+                  "routine": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 65535
+                  },
+                  "locals": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 65535
+                    },
+                    "maxItems": 16
+                  },
+                  "operands": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 65535
+                    },
+                    "maxItems": 65536
+                  },
+                  "tasks": {
+                    "type": "array",
+                    "items": {
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "kind": {
+                              "const": "expression"
+                            },
+                            "id": {
+                              "type": "integer",
+                              "minimum": 0
+                            },
+                            "stage": {
+                              "type": "integer",
+                              "minimum": 0
+                            },
+                            "values": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 65535
+                              },
+                              "maxItems": 65536
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "id",
+                            "stage",
+                            "values"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "kind": {
+                              "const": "activation"
+                            },
+                            "expression": {
+                              "anyOf": [
+                                {
+                                  "type": "integer",
+                                  "minimum": 0
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            },
+                            "phase": {
+                              "enum": [
+                                "bindings",
+                                "body"
+                              ]
+                            },
+                            "index": {
+                              "type": "integer",
+                              "minimum": 0
+                            },
+                            "waiting": {
+                              "type": "boolean"
+                            },
+                            "last": {
+                              "type": "integer",
+                              "minimum": 0,
+                              "maximum": 65535
+                            },
+                            "args": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 65535
+                              },
+                              "maxItems": 15
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "expression",
+                            "phase",
+                            "index",
+                            "waiting",
+                            "last",
+                            "args"
+                          ],
+                          "additionalProperties": false
+                        }
+                      ]
+                    },
+                    "maxItems": 65536
+                  }
+                },
+                "required": [
+                  "program",
+                  "routine",
+                  "locals",
+                  "operands",
+                  "tasks"
+                ],
+                "additionalProperties": false
+              },
+              "maxItems": 256
+            },
+            "wait": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "parser",
+                        "READ",
+                        "SAVE",
+                        "RESTORE",
+                        "RESTART",
+                        "QUIT"
+                      ]
+                    },
+                    "routine": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 65535
+                    },
+                    "expression": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "args": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 65535
+                      },
+                      "maxItems": 15
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "routine",
+                    "expression",
+                    "args"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "world": {
+              "type": "object",
+              "properties": {
+                "format": {
+                  "const": "zxr-world-state-v1"
+                },
+                "buildHash": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "bytes": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                  },
+                  "maxItems": 65536
+                }
+              },
+              "required": [
+                "format",
+                "buildHash",
+                "bytes"
+              ],
+              "additionalProperties": false
+            },
+            "rng": {
+              "type": "object",
+              "properties": {
+                "algorithm": {
+                  "const": "xorshift32-v1"
+                },
+                "initialSeed": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 4294967295
+                },
+                "state": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 4294967295
+                },
+                "position": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "cursor": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "replayHash": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "algorithm",
+                "initialSeed",
+                "state",
+                "position",
+                "cursor",
+                "replayHash"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "format",
+            "inputBoundary",
+            "buildHash",
+            "limits",
+            "steps",
+            "output",
+            "result",
+            "frames",
+            "wait",
+            "world",
+            "rng"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "format",
+        "started",
+        "actionSequence",
+        "interpreter"
+      ],
+      "additionalProperties": false
+    },
+    "knowledge": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 0
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "epoch": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        }
+      },
+      "required": [
+        "epoch",
+        "revision"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "format",
+    "abi",
+    "buildHash",
+    "kind",
+    "checkpoint",
+    "knowledge",
+    "metadata"
+  ],
+  "additionalProperties": false
+}

@@ -15,7 +15,8 @@ export class LoadedGame {
   get bundle():Readonly<GameBundle>{return this.#bundle;}
   get buildHash():string{return this.#bundle.buildHash;}
   createInitialMemory():Uint8Array {return new Uint8Array(this.#bundle.payload.memory.bytes);}
-  createRandom(replay?:readonly RandomEvent[]):GameRandom {return new GameRandom(this.#bundle.payload.initialization.rng.seed,replay);}
+  /** A run may select a seed without changing the immutable bundle default. */
+  createRandom(replay?:readonly RandomEvent[],seed=this.#bundle.payload.initialization.rng.seed):GameRandom {return new GameRandom(seed,replay);}
   routine(id:number):Readonly<MappedRoutine>|undefined {return this.#routines.get(id);}
 }
 export const loadGame=(input:string|Uint8Array)=>LoadedGame.load(input);

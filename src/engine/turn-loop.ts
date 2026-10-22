@@ -6,6 +6,8 @@ import type { Span } from '../zil/ast.ts';
 import { canonicalJson, hashJson } from '../zil/integrity.ts';
 import { assertSchema } from '../zil/schema.ts';
 import { checkpointSchema } from './checkpoint.ts';
+import { DIAGNOSTICS } from './diagnostics.ts';
+import type { ExecutionDiagnostics } from './diagnostics.ts';
 
 export type TurnBoundary = {kind:'input'}
   | {kind:'decision';routine:'YES?'|'FINISH';choices:string[]}
@@ -21,11 +23,11 @@ export interface TurnResolution {
 export interface TurnCheckpoint {
   format:'zxr-turn-checkpoint-v1';started:boolean;actionSequence:number;interpreter:InterpreterCheckpoint;
 }
-const turnCheckpointSchema={type:'object' as const,properties:{
+export const turnCheckpointSchema={type:'object' as const,properties:{
   format:{const:'zxr-turn-checkpoint-v1'},started:{type:'boolean' as const},
   actionSequence:{type:'integer' as const,minimum:0,maximum:Number.MAX_SAFE_INTEGER},interpreter:checkpointSchema,
 },required:['format','started','actionSequence','interpreter'],additionalProperties:false};
-type Options={limits?:Partial<ExecutionLimits>;replay?:readonly RandomEvent[]};
+type Options={seed?:number;limits?:Partial<ExecutionLimits>;replay?:readonly RandomEvent[];[DIAGNOSTICS]?:ExecutionDiagnostics};
 
 /** Internal turn coordinator. The session protocol (epochs, correlated input/host IDs,
  * save envelopes) belongs above this layer, independently of the translated loop. */
@@ -59,20 +61,21 @@ export class TurnLoop {
     const before=this.#moves();
     try {return this.#publish(this.#vm.answer(choice),before);}catch(error){return this.#reject(error instanceof Error?error.message:String(error));}
   }
-  /** SAVE results and failed RESTORE/RESTART only. Successful replacement is phase 3.7. */
+  /** SAVE results and failed RESTORE/RESTART only. GameSession owns successful replacement. */
   resumePrimitive(value:number):TurnResolution {
     const before=this.#moves();
     try {return this.#publish(this.#vm.resume(value),before);}catch(error){return this.#reject(error instanceof Error?error.message:String(error));}
   }
   world(){return this.#vm.world();}
+  boundary():TurnBoundary|null {return this.#boundary();}
   /** Diagnostic checkpoint, not a public save or an accepted host restore payload. */
   checkpoint():TurnCheckpoint {return {format:'zxr-turn-checkpoint-v1',started:this.#started,actionSequence:this.#sequence,interpreter:this.#vm.checkpoint()};}
   stateHash():string {return hashJson(this.checkpoint());}
-  static restore(game:LoadedGame,input:unknown,options:Pick<Options,'replay'>={}):TurnLoop {
+  static restore(game:LoadedGame,input:unknown,options:Pick<Options,'replay'|typeof DIAGNOSTICS>={}):TurnLoop {
     assertSchema(input,turnCheckpointSchema,{},'turn checkpoint');
     const checkpoint=JSON.parse(canonicalJson(input)) as TurnCheckpoint;
     if(checkpoint.interpreter.inputBoundary!=='read'||!checkpoint.started&&checkpoint.actionSequence!==0)throw new Error('Invalid turn checkpoint boundary');
-    const loop=new TurnLoop(game,{...options,limits:checkpoint.interpreter.limits});
+    const loop=new TurnLoop(game,{...options,seed:checkpoint.interpreter.rng.initialSeed,limits:checkpoint.interpreter.limits});
     const vm=Interpreter.restore(game,checkpoint.interpreter,options);
     if(!checkpoint.started&&vm.stateHash()!==loop.#vm.stateHash())throw new Error('Invalid unstarted turn checkpoint');
     const root=vm.inspect().frames[0];
