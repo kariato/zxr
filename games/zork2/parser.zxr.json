@@ -699,7 +699,9 @@
       "policy": "kept",
       "reasons": [
         "helper-call:BUFFER-PRINT",
-        "helper-call:MANY-CHECK"
+        "helper-call:CANT-USE",
+        "helper-call:MANY-CHECK",
+        "helper-call:UNKNOWN-WORD"
       ],
       "calls": [],
       "closure": [],
@@ -736,9 +738,9 @@
           "column": 20
         }
       },
-      "policy": "replaced-middle",
+      "policy": "kept",
       "reasons": [
-        "typed-input-middle"
+        "adapter-helper"
       ],
       "calls": [
         "WORD-PRINT"
@@ -789,9 +791,9 @@
           "column": 20
         }
       },
-      "policy": "replaced-middle",
+      "policy": "kept",
       "reasons": [
-        "typed-input-middle"
+        "adapter-helper"
       ],
       "calls": [
         "WORD-PRINT"
@@ -2581,6 +2583,8 @@
     31,
     32,
     43,
+    44,
+    45,
     50,
     62,
     63,

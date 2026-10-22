@@ -14,7 +14,7 @@ function checkWorld(lexical:string,row:number,direct:number[],indirect:number[]=
   return world;
 }
 it('projects original entry code and check order, retaining source sites while excluding lexical-middle calls',()=>{
-  const original=buildSourceMapProgram().result.referenceRoutines.find(r=>r.name==='PARSER')!,projection=projectParserAdapter(original);
+  const original=buildSourceMapProgram().result.referenceRoutines.find(r=>r.name==='PARSER')!,projection=projectParserAdapter(original,buildSourceMapProgram().result.referenceRoutines.find(r=>r.name==='SYNTAX-CHECK')!,buildSourceMapProgram().result.referenceRoutines.find(r=>r.name==='GET-OBJECT')!);
   expect(projection).toEqual(adapter);expect(projection.entry.body.slice(0,10)).toEqual(original.body.slice(0,10));expect(projection.entry.bindings).toEqual(original.bindings);
   const mode=projection.entry.body[10]!.expression,originalMode=original.body[10]!.expression;
   if(mode.op!=='cond'||originalMode.op!=='cond')throw new Error('bad fixture');expect(mode.clauses).toEqual(originalMode.clauses.slice(1));
@@ -24,8 +24,8 @@ it('projects original entry code and check order, retaining source sites while e
 },30000);
 it('fails closed when the original parser entry or epilogue boundaries change',()=>{
   const original=buildSourceMapProgram().result.referenceRoutines.find(r=>r.name==='PARSER')!;
-  const shorter=structuredClone(original);shorter.body.pop();expect(()=>projectParserAdapter(shorter)).toThrow('projection');
-  const changed=structuredClone(original),mode=changed.body[10]!.expression;if(mode.op!=='cond')throw new Error('bad fixture');mode.clauses.reverse();expect(()=>projectParserAdapter(changed)).toThrow('projection');
+  const shorter=structuredClone(original);shorter.body.pop();expect(()=>projectParserAdapter(shorter,adapter.noVerb,adapter.notHere)).toThrow('projection');
+  const changed=structuredClone(original),mode=changed.body[10]!.expression;if(mode.op!=='cond')throw new Error('bad fixture');mode.clauses.reverse();expect(()=>projectParserAdapter(changed,adapter.noVerb,adapter.notHere)).toThrow('projection');
 },30000);
 it('executes the retained fresh prologue to original READ, matching original startup memory and prompt',()=>{
   const vm=new Interpreter(game,{world:initial,fragment:'entry'}),before=initial.worldHash(),result=vm.run();
@@ -33,6 +33,19 @@ it('executes the retained fresh prologue to original READ, matching original sta
   expect(auditStartup(game,vm.world(),runReference([]))).toMatchObject({globals:168,objects:251,tables:45});
   const restored=Interpreter.restore(game,JSON.parse(JSON.stringify(vm.checkpoint())));expect(restored.stateHash()).toBe(vm.stateHash());
   expect(restored.resumeParserRead('look')).toMatchObject({status:'returned',value:1,text:[]});expect(restored.world().getByte(restored.world().global('P-LEXV'),1)).toBe(1);
+});
+it('projects only the original no-verb rejection and restores its execution checkpoint',()=>{
+  const originals=buildSourceMapProgram().result.referenceRoutines,syntax=originals.find(r=>r.name==='SYNTAX-CHECK')!;
+  expect(adapter.noVerb.body).toEqual(syntax.body.slice(0,1));expect(adapter.noVerb.bindings).toEqual(syntax.bindings);
+  expect(()=>new Interpreter(game,{routine:syntax.id})).toThrow('removed');
+  const vm=new Interpreter(game,{world:initial,fragment:'no-verb'}),restored=Interpreter.restore(game,JSON.parse(JSON.stringify(vm.checkpoint())));
+  expect(restored.stateHash()).toBe(vm.stateHash());
+  const corrupt=vm.checkpoint();corrupt.frames[0]!.routine=adapter.id;expect(()=>Interpreter.restore(game,corrupt)).toThrow();
+  expect(vm.run()).toMatchObject({status:'returned',value:0});expect(restored.run()).toMatchObject({status:'returned',value:0});
+  expect(vm.stateHash()).toBe(restored.stateHash());
+  const failed=new Interpreter(game,{world:initial,fragment:'no-verb',limits:{output:2}}),before=failed.stateHash();
+  expect(failed.run()).toMatchObject({status:'error',text:[],cause:expect.stringContaining('output budget')});expect(failed.stateHash()).toBe(before);
+  const broken=structuredClone(syntax);broken.body.shift();expect(()=>projectParserAdapter(originals.find(r=>r.name==='PARSER')!,broken,adapter.notHere)).toThrow('projection');
 });
 it('copies/clears ten input-table words, resets counts only, and preserves prior context in locals',()=>{
   const world=initial.fork(),input=world.global('P-ITBL'),old=world.global('P-OTBL');
@@ -78,4 +91,22 @@ it('restores player context on a fresh entry and preserves actor/lighting on quo
 
 it('rejects synthetic reference contexts as startup conformance evidence',()=>{
   expect(()=>auditStartup(game,initial,runReference([],2,{context:{room:'TEA-ROOM',inventory:[]}}))).toThrow('first reference READ');
+});
+
+
+it('projects only the original missing-match arm, retaining bindings, sites and checkpoint identity',()=>{
+  const originals=buildSourceMapProgram().result.referenceRoutines,get=originals.find(r=>r.name==='GET-OBJECT')!,loop=get.body[7]!.expression;
+  if(loop.op!=='block'||loop.body[3]!.expression.op!=='cond')throw new Error('bad source fixture');
+  expect(adapter.notHere.body).toEqual([get.body[0],...loop.body[3]!.expression.clauses[0]!.body]);expect(adapter.notHere.bindings).toEqual(get.bindings);
+  expect([...logicExpressions(adapter.notHere)].filter(e=>e.op==='call').map(e=>e.routine.name)).toEqual(['OBJ-FOUND']);
+  expect(()=>new Interpreter(game,{routine:get.id,args:[initial.global('P-PRSO')]})).toThrow('removed');
+  const world=initial.fork();world.setGlobal('P-NAM',game.bundle.payload.memory.words.find(w=>w.name==='LAMP')!.address);
+  const vm=new Interpreter(game,{world,fragment:'not-here',args:[world.global('P-PRSO')]}),restored=Interpreter.restore(game,JSON.parse(JSON.stringify(vm.checkpoint())));
+  expect(vm.run()).toMatchObject({status:'returned',value:1,text:[]});expect(restored.run()).toMatchObject({status:'returned',value:1});expect(vm.stateHash()).toBe(restored.stateHash());
+  expect(vm.world().getWord(world.global('P-PRSO'),1)).toBe(id('NOT-HERE-OBJECT'));expect(vm.world().global('P-XNAM')).toBe(world.global('P-NAM'));expect(vm.world().global('P-NAM')).toBe(0);
+  const bad=new Interpreter(game,{world,fragment:'not-here',args:[world.global('P-PRSO')]}).checkpoint();bad.frames[0]!.routine=adapter.id;expect(()=>Interpreter.restore(game,bad)).toThrow();
+  const dark=world.fork();dark.setGlobal('LIT',0);
+  expect(new Interpreter(game,{world:dark,fragment:'not-here',args:[world.global('P-PRSO')]}).run()).toMatchObject({status:'returned',value:0,text:["It's too dark to see!",'\n']});
+  const failed=new Interpreter(game,{world:dark,fragment:'not-here',args:[world.global('P-PRSO')],limits:{output:3}}),before=failed.stateHash();expect(failed.run()).toMatchObject({status:'error',cause:expect.stringContaining('output budget'),text:[]});expect(failed.stateHash()).toBe(before);
+  const broken=structuredClone(get);broken.body.pop();expect(()=>projectParserAdapter(originals.find(r=>r.name==='PARSER')!,adapter.noVerb,broken)).toThrow('projection');
 });

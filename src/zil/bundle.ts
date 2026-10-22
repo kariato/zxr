@@ -18,13 +18,13 @@ import { SYNTAX_FLAGS } from './vocabulary.ts';
 import type { MappedRoutine, LogicSourceMap, TranslationReport, SourceMapResult } from './source-maps.ts';
 import { mappedSites, sourceLocationSpan } from './source-maps.ts';
 import type { ParserSplit } from './parser.ts';
-export const BUNDLE_VERSIONS={compiler:'zxr-compiler-v1',vm:'zxr-vm-v1',adapter:'zxr-adapter-v7',optionEncoder:'zxr-option-encoder-v1',gateRules:'zxr-gates-v1'} as const;
+export const BUNDLE_VERSIONS={compiler:'zxr-compiler-v1',vm:'zxr-vm-v1',adapter:'zxr-adapter-v14',optionEncoder:'zxr-option-encoder-v1',gateRules:'zxr-gates-v1'} as const;
 export interface RuntimeSymbols {format:'zxr-symbols-v1';symbols:Omit<SymbolDefinition,'referenceAddress'>[]}
 export interface RuntimeLogic {format:'zxr-runtime-logic-v1';semantics:'zxr-zork2-semantics-v1';routines:MappedRoutine[];adapter:ParserAdapter|null;excluded:{name:string;id:number;policy:'adapter'|'replaced-middle'}[]}
 export interface BundlePayload {game:{id:string;title:string};versions:typeof BUNDLE_VERSIONS;initialization:{kind:'call-entry';routine:{name:string;id:number};checkpoint:'pre-GO';rng:{algorithm:'xorshift32-v1';seed:number}};gateRules:never[];world:WorldMetadata;vocabulary:Vocabulary;memory:MemoryImage;strings:StringPool;symbols:RuntimeSymbols;logic:RuntimeLogic}
 export interface GameBundle {format:'zxr-bundle-v1';schemaVersion:1;semantics:'zxr-zork2-semantics-v1';buildHash:string;presentationHash:string;contentHash:string;payload:BundlePayload;debug:{sources:LogicSourceMap;report:TranslationReport;parser:ParserSplit|null};licenses:{spdx:string;text:string}[]}
 export function runtimeLogic(mapped:SourceMapResult):RuntimeLogic {
-  const p=mapped.program.parser;return {format:'zxr-runtime-logic-v1',semantics:mapped.program.semantics,routines:mapped.program.routines,adapter:p?projectParserAdapter(mapped.referenceRoutines.find(r=>r.id===p.adapterRoutineId)!):null,excluded:(p?.routines ?? []).filter(r=>r.policy!=='kept').map(r=>({name:r.name,id:r.id,policy:r.policy as 'adapter'|'replaced-middle'}))};
+  const p=mapped.program.parser;return {format:'zxr-runtime-logic-v1',semantics:mapped.program.semantics,routines:mapped.program.routines,adapter:p?projectParserAdapter(mapped.referenceRoutines.find(r=>r.id===p.adapterRoutineId)!,mapped.referenceRoutines.find(r=>r.name==='SYNTAX-CHECK')!,mapped.referenceRoutines.find(r=>r.name==='GET-OBJECT')!):null,excluded:(p?.routines ?? []).filter(r=>r.policy!=='kept').map(r=>({name:r.name,id:r.id,policy:r.policy as 'adapter'|'replaced-middle'}))};
 }
 /** Debug positions/IDs and source spelling do not change compatibility identity. */
 export function semanticBundleData(value:unknown):unknown {
@@ -145,7 +145,7 @@ export function validateBundleReferences(bundle:GameBundle):void {
 }
 function validateLogic(logic:RuntimeLogic,symbols:Map<string,RuntimeSymbols['symbols'][number]>,memory:MemoryImage,strings:StringPool,fail:(s:string)=>never){
   const routines=new Map(logic.routines.map(r=>[r.id,r])),handles=new Set(strings.entries.map(s=>s.id)),segments=new Map(memory.segments.map(s=>[s.name,s]));
-  for(const r of [...logic.routines,...(logic.adapter?[logic.adapter.entry,logic.adapter.checks]:[])]){
+  for(const r of [...logic.routines,...(logic.adapter?[logic.adapter.entry,logic.adapter.checks,logic.adapter.noVerb,logic.adapter.notHere]:[])]){
     const nodes=[...logicExpressions(r)],bindings=[...r.bindings,...nodes.filter(e=>e.op==='block').flatMap(e=>e.bindings)];
     if(new Set(bindings.map(b=>b.slot)).size!==bindings.length||bindings.length!==r.slotCount||bindings.map(b=>b.slot).sort((a,b)=>a-b).some((slot,i)=>slot!==i+1))fail('invalid local slot allocation in '+r.name);
     if(r.required!==r.bindings.filter(b=>b.kind==='required').length||r.optional!==r.bindings.filter(b=>b.kind==='optional').length||r.bindings.some(b=>b.kind==='block'))fail('invalid parameter counts');
@@ -208,11 +208,12 @@ function validateBundleSources(bundle:GameBundle,fail:(s:string)=>never){
     if(canonicalJson(origin ?? null)!==canonicalJson(s.value.origin ?? null))fail('macro origin mismatch');runtimePoints++;
   }
   if(runtimePoints!==[...nodes.values()].filter(n=>n.point.policy==='runtime').length)fail('orphan runtime source-map point');
-  if(logic.adapter)for(const r of [logic.adapter.entry,logic.adapter.checks]){
-    if(r.id!==logic.adapter.id||r.name!==logic.adapter.name||r.required||r.optional)fail('invalid parser fragment identity');
+  if(logic.adapter)for(const r of [logic.adapter.entry,logic.adapter.checks,logic.adapter.noVerb,logic.adapter.notHere]){
+    const middle=r===logic.adapter.noVerb||r===logic.adapter.notHere,policy=middle?'replaced-middle':'adapter',name=r===logic.adapter.notHere?'GET-OBJECT':'SYNTAX-CHECK';
+    if((middle?(r.name!==name||names.get(r.name)!==r.id||excluded.get(r.name)!=='replaced-middle'):(r.id!==logic.adapter.id||r.name!==logic.adapter.name))||r.required!==(r===logic.adapter.notHere?1:0)||r.optional!==(r===logic.adapter.notHere?1:0))fail('invalid parser fragment identity');
     for(const s of mappedSites(r)){
       const node=nodes.get(s.value.nodeId as string),kind=s.value.op==='evaluate'?'command':'slot' in s.value?'binding':Array.isArray(s.value.bindings)&&'name' in s.value?'routine':'expression';
-      if(!node||node.entry.id!==s.value.sourceMapId||node.entry.kind!==kind||node.entry.routine!==r.name||node.point.policy!=='adapter')fail('missing adapter source-map point');
+      if(!node||node.entry.id!==s.value.sourceMapId||node.entry.kind!==kind||node.entry.routine!==r.name||node.point.policy!==policy)fail('missing adapter source-map point');
       if(canonicalJson(sourceLocationSpan(locations.get(node!.point.location)!))!==canonicalJson(s.value.source))fail('adapter source span mismatch');
       const origin=node!.point.origin?.map(o=>({macro:o.macro,call:sourceLocationSpan(locations.get(o.call)!),...(o.definition?{definition:sourceLocationSpan(locations.get(o.definition)!)}:{})}));
       if(canonicalJson(origin ?? null)!==canonicalJson(s.value.origin ?? null))fail('adapter macro origin mismatch');

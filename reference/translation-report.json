@@ -63,18 +63,6 @@
       "nodeId": "NCLAUSE-WIN:n1"
     },
     {
-      "routine": "UNKNOWN-WORD",
-      "policy": "replaced-middle",
-      "sourceMapId": "sm1:UNKNOWN-WORD:routine:df4d7632f0448468",
-      "nodeId": "UNKNOWN-WORD:n1"
-    },
-    {
-      "routine": "CANT-USE",
-      "policy": "replaced-middle",
-      "sourceMapId": "sm1:CANT-USE:routine:f7dc786127f525eb",
-      "nodeId": "CANT-USE:n1"
-    },
-    {
       "routine": "SYNTAX-CHECK",
       "policy": "replaced-middle",
       "sourceMapId": "sm1:SYNTAX-CHECK:routine:16e15d1340f89db9",

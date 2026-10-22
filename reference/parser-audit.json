@@ -46,15 +46,15 @@
       "sha256": "d887ed2e0162dd555c08330eb3ab40a03790734ccfc426f4e354dd846205ed21"
     }
   ],
-  "partitionSha256": "9a3b7930dd83060e241e3ebe91df326de262020dd477e6b6c4ea4968def7e574",
-  "runtimeLogicSha256": "9313018273d9dad970f86e8668180d8f75008d1f8b5548f9484ead22823d68a1",
+  "partitionSha256": "6ab85080c0d262e9a20df3697be3e2ea17c11c63ed08c7884dce48bb260d8711",
+  "runtimeLogicSha256": "78d67e9485064a5446b1c0dd7a056f07a29ec156f6d75666a8152c2635610bd0",
   "checked": {
     "sourceRoutines": 439,
     "parserRoutines": 42,
-    "kept": 15,
-    "replaced": 26,
+    "kept": 17,
+    "replaced": 24,
     "adapters": 1,
-    "runtimeRoutines": 412,
+    "runtimeRoutines": 414,
     "indirectSites": 16,
     "firstClassRoutineTargets": 312,
     "consumerSites": 32,

@@ -16,7 +16,7 @@ const first=(r:SourceMapResult,op:string,name='F')=>[...mappedSites(r.referenceR
 describe('semantic source-map identities and complete translation report',()=>{
   it('maps all reference/runtime nodes deterministically and audits every macro definition',()=>{
     const audit=auditSourceMaps(result,built.logic);
-    expect(audit.checked).toEqual({routines:439,runtimeRoutines:412,sites:26503,byKind:{routine:439,binding:487,command:6487,expression:19090},stableIds:24399,ambiguousIds:1424,locations:16164,anchors:6250,macroPoints:8102,originLinks:8102,normalizations:2,generatedRestDefaults:1,implicitZeroInitializers:211,untranslated:0,replacements:27,parserConsumers:32,readSites:3,unsupportedHostSites:3});
+    expect(audit.checked).toEqual({routines:439,runtimeRoutines:414,sites:26503,byKind:{routine:439,binding:487,command:6487,expression:19090},stableIds:24399,ambiguousIds:1424,locations:16164,anchors:6250,macroPoints:8102,originLinks:8102,normalizations:2,generatedRestDefaults:1,implicitZeroInitializers:211,untranslated:0,replacements:25,parserConsumers:32,readSites:3,unsupportedHostSites:3});
     expect(audit).toEqual(JSON.parse(readFileSync('reference/source-map-audit.json','utf8')));
     expect(serializeSourceMap(result.sources)).toBe(readFileSync('games/zork2/source-map.zxr.json','utf8'));
     expect(result.report).toEqual(JSON.parse(readFileSync('reference/translation-report.json','utf8')));
@@ -88,7 +88,7 @@ describe('semantic source-map identities and complete translation report',()=>{
     expect(text).toBe('<REST .SYN>');
   });
   it('keeps excluded parser/consumer/READ/stream sites explicit and blocks overlays in removed code',()=>{
-    expect(result.report.untranslated).toEqual([]);expect(result.report.replacements).toHaveLength(27);expect(result.report.parserConsumers).toHaveLength(32);expect(result.report.reads).toHaveLength(3);expect(result.report.unsupportedHost).toHaveLength(3);
+    expect(result.report.untranslated).toEqual([]);expect(result.report.replacements).toHaveLength(25);expect(result.report.parserConsumers).toHaveLength(32);expect(result.report.reads).toHaveLength(3);expect(result.report.unsupportedHost).toHaveLength(3);
     expect(result.report.parserConsumers.every(c=>c.points.length>0&&c.plan.length>0)).toBe(true);
     const parser=result.referenceRoutines.find(r=>r.name==='PARSER')!;
     expect(result.program.routines.some(r=>r.id===parser.id)).toBe(false);

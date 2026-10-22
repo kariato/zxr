@@ -55,11 +55,44 @@ it('plans quoted speech including unknown dictionary words and exact continuatio
   expect(unknown.input.tokens[4]!.address).toBe(0);expect(unknown.speech?.continuation).toBe(9);
   expect(()=>prepareAction(game,world,{kind:'say',actor:'PLAYER',verb:'LOOK',lexicalTable:'LOOK',syntax:12,words:['HI']})).toThrow('speech');
 });
+it('binds an authored quoted command to its original input spans without resolving scope',()=>{
+  const command=act('TAKE',8,'TAKE',{prso:{object:'LAMP',noun:'LANTERN',adjective:'BRASS'}}),action={kind:'say',actor:'ROBOT',verb:'SAY',lexicalTable:'SAY',syntax:1,words:['TAKE','BRASS','LANTERN'],continuation:command},before=vm.stateHash();
+  const plan=prepareAction(game,world,action);
+  expect(plan.input.text).toBe('robot, say "take brass lantern"');expect(plan.quoted?.input).toEqual(plan.input);
+  expect(plan.quoted?.clauses.map(c=>[c.start,c.end])).toEqual([[5,7]]);
+  expect(plan.quoted?.direct).toMatchObject({kind:'objects',objects:[{name:'LAMP',words:['BRASS','LANTERN']}]});
+  expect(plan.quoted?.actorPass).toBe(false);expect(plan.quoted?.speech).toBe(null);expect(vm.stateHash()).toBe(before);
+  (action.continuation as any).prso.noun='SWORD';expect(plan.quoted?.direct).toMatchObject({kind:'objects',objects:[{words:['BRASS','LANTERN']}]});expect(plan.action).not.toEqual(action);
+});
+it('rejects mismatched quoted text, actor changes, nesting and simultaneous quoted multiplicity',()=>{
+  const speech={kind:'say',actor:'PLAYER',verb:'SAY',lexicalTable:'SAY',syntax:1,words:['HELLO','LAMP']};
+  for(const continuation of [act('TAKE',8,'TAKE',{prso:'LAMP'}),{...act('TAKE',8,'TAKE',{prso:'LAMP'}),actor:'ROBOT'},{kind:'walk',actor:'PLAYER',direction:'EAST'},{...speech,continuation:act('LOOK',12,'LOOK')},act('TAKE',8,'TAKE',{prso:'ALL'}),act('TAKE',8,'TAKE',{prso:['LAMP','SWORD']}),act('SAY',1,'SAY')])expect(()=>prepareAction(game,world,{...speech,continuation})).toThrow();
+  const before=vm.stateHash();expect(()=>vm.executeAction({...speech,continuation:act('TAKE',8,'TAKE',{prso:'LAMP'})})).toThrow('do not match');expect(vm.stateHash()).toBe(before);
+  expect(()=>prepareAction(game,world,{...speech,words:['GIVE','LAMP','AND','SWORD','TO','LAMP','AND','SWORD'],continuation:act('GIVE',2,'GIVE',{prso:['LAMP','SWORD'],prsi:['LAMP','SWORD']})})).toThrow('simultaneous');
+});
+it('includes the closing quote only in a terminal list or ALL noun clause',()=>{
+  const speech={kind:'say',actor:'ROBOT',verb:'SAY',lexicalTable:'SAY',syntax:1};
+  const cases=[{words:['DROP','LAMP','AND','SWORD'],command:act('DROP',4,'DROP',{prso:['LAMP','SWORD']}),spans:[[5,9]]},{words:['TAKE','ALL'],command:act('TAKE',8,'TAKE',{prso:'ALL'}),spans:[[5,7]]},{words:['GIVE','LAMP','AND','SWORD','TO','ROBOT'],command:act('GIVE',2,'GIVE',{prso:['LAMP','SWORD'],prsi:'ROBOT'}),spans:[[5,8],[9,10]]}];
+  for(const {words,command,spans} of cases){const plan=prepareAction(game,world,{...speech,words,continuation:command});expect(plan.quoted?.clauses.map(c=>[c.start,c.end])).toEqual(spans);}
+});
 it('owns action data and encodes every identity field deterministically',()=>{
   const action=act('TAKE',8,'TAKE',{prso:['LAMP','SWORD']}),plan=prepareAction(game,world,action);
   const reordered=Object.fromEntries(Object.entries(action).reverse());expect(prepareAction(game,world,reordered).optionId).toBe(plan.optionId);
   (action as any).prso.push('ROBOT');expect(plan.action).not.toEqual(action);
   expect(prepareAction(game,world,act('TAKE',8,'TAKE',{prso:['SWORD','LAMP']})).optionId).not.toBe(plan.optionId);
+});
+it('plans source-backed adjective/noun spellings with exact clause and lexical spans',()=>{
+  const before=vm.stateHash(),plan=prepareAction(game,world,act('GIVE',2,'GIVE',{prso:{object:'LAMP',noun:'LANTERN',adjective:'BRASS'},prsi:'ROBOT'}));
+  expect(plan.input.text).toBe('give brass lantern to robot');expect(plan.clauses.map(c=>[c.start,c.end])).toEqual([[1,3],[4,5]]);
+  expect(plan.direct).toMatchObject({kind:'objects',objects:[{name:'LAMP',words:['BRASS','LANTERN'],adjective:171}]});
+  expect(vm.stateHash()).toBe(before);
+  expect(prepareAction(game,world,act('TAKE',8,'TAKE',{prso:{object:'LAMP',noun:'LANTERN'}})).input.text).toBe('take lantern');
+});
+it('rejects fabricated spellings and duplicate identities even when their spellings differ',()=>{
+  for(const prso of [{object:'LAMP',noun:'SWORD'},{object:'LAMP',noun:'LAMP',adjective:'GREEN'},{object:'LAMP',noun:'LAMP',adjective:'XYZZY'},{object:'LAMP',noun:'LAMP',extra:true},{object:'LAMP',adjective:'BRASS'},{object:'LAMP',noun:'LAMP',pseudo:{room:'TEA-ROOM',word:'HOLE'}},['LAMP',{object:'LAMP',noun:'LANTERN',adjective:'BRASS'}]])expect(()=>prepareAction(game,world,act('TAKE',8,'TAKE',{prso}))).toThrow();
+  const action=act('TAKE',8,'TAKE',{prso:{object:'LAMP',noun:'LANTERN',adjective:'BRASS'}}),plan=prepareAction(game,world,action);
+  expect(plan.optionId).not.toBe(prepareAction(game,world,act('TAKE',8,'TAKE',{prso:'LAMP'})).optionId);
+  (action as any).prso.noun='SWORD';expect(plan.input.text).toBe('take brass lantern');expect(plan.action).not.toEqual(action);
 });
 it('rejects unknown keys, sparse operands, invalid actors/directions and oversized inputs',()=>{
   for(const action of [{...act('LOOK',12,'LOOK'),extra:true},act('TAKE',8,'TAKE',{prso:[]}),act('TAKE',8,'TAKE',{prso:new Array(2)}),{kind:'walk',actor:'PLAYER',direction:'MISSING'},{kind:'say',actor:'PLAYER',verb:'SAY',lexicalTable:'SAY',syntax:1,words:['A'.repeat(120)]}])expect(()=>prepareAction(game,world,action)).toThrow();

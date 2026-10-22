@@ -18,14 +18,14 @@ function extra(logic:LinkedLogic,name:string,id:number,parser:boolean,bindings:L
 describe('parser library partition and effect boundaries',()=>{
   it('classifies all 42 routines independently of the source inventory and records reproducible evidence',()=>{
     const audit=auditParserProgram(program);
-    expect(audit.checked).toEqual({sourceRoutines:439,parserRoutines:42,kept:15,replaced:26,adapters:1,runtimeRoutines:412,indirectSites:16,firstClassRoutineTargets:312,consumerSites:32,readSites:3});
+    expect(audit.checked).toEqual({sourceRoutines:439,parserRoutines:42,kept:17,replaced:24,adapters:1,runtimeRoutines:414,indirectSites:16,firstClassRoutineTargets:312,consumerSites:32,readSites:3});
     expect(audit).toEqual(JSON.parse(readFileSync('reference/parser-audit.json','utf8')));
     expect(p).toEqual(JSON.parse(readFileSync('games/zork2/parser.zxr.json','utf8')));
     expect(parserLedger(program)).toBe(readFileSync('games/zork2/parser-ledger.md','utf8'));
     expect(splitParserLibrary(built.logic,built.memory)).toEqual(program);
   });
   it('retains helper closures and IDs while excluding the parser middle from the runtime view',()=>{
-    expect(p.routines.filter(r=>r.policy==='kept').map(r=>r.name)).toEqual(['WORD-PRINT','BUFFER-PRINT','GLOBAL-CHECK','DO-SL','SEARCH-LIST','OBJ-FOUND','TAKE-CHECK','ITAKE-CHECK','MANY-CHECK','ZMEMQ','ZMEMQB','LIT?','THIS-IT?','ACCESSIBLE?','META-LOC']);
+    expect(p.routines.filter(r=>r.policy==='kept').map(r=>r.name)).toEqual(['WORD-PRINT','UNKNOWN-WORD','CANT-USE','BUFFER-PRINT','GLOBAL-CHECK','DO-SL','SEARCH-LIST','OBJ-FOUND','TAKE-CHECK','ITAKE-CHECK','MANY-CHECK','ZMEMQ','ZMEMQB','LIT?','THIS-IT?','ACCESSIBLE?','META-LOC']);
     expect(row('LIT?').closure).toEqual(['DO-SL','OBJ-FOUND','SEARCH-LIST','THIS-IT?','ZMEMQ','ZMEMQB']);
     expect(row('TAKE-CHECK').closure).toContain('ITAKE');expect(row('BUFFER-PRINT').closure).toContain('GLOBAL-IN?');
     expect(row('CLAUSE').policy).toBe('replaced-middle');expect(row('PARSER').policy).toBe('adapter');

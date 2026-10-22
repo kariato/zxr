@@ -27,7 +27,7 @@ describe('canonical bundle schema, integrity and reference validation',()=>{
     const ajv=new Ajv2020({strict:true,validateFormats:false}),schema=ajv.compile(jsonSchema('bundle'));
     for(const b of [small,full]){expect(schema(b),JSON.stringify(schema.errors)).toBe(true);expect(()=>validateBundle(b)).not.toThrow();}
     expect(ajv.compile(jsonSchema('raw-logic'))(JSON.parse(readFileSync('tests/fixtures/three-room/logic.json','utf8')))).toBe(true);
-    expect(full.payload.logic.routines).toHaveLength(412);expect(full.payload.memory.bytes).toHaveLength(19882);expect(full.licenses).toEqual([{spdx:'MIT',text:readFileSync('reference/zork2/LICENSE','utf8')}]);
+    expect(full.payload.logic.routines).toHaveLength(414);expect(full.payload.memory.bytes).toHaveLength(19882);expect(full.licenses).toEqual([{spdx:'MIT',text:readFileSync('reference/zork2/LICENSE','utf8')}]);
   });
   it('packs and loads both games without changing canonical bytes or hashes',()=>{
     for(const b of [small,full]){const bytes=packBundle(b),loaded=unpackBundle(bytes);expect(loaded.buildHash).toBe(b.buildHash);expect(hashJson(loaded)).toBe(hashJson(b));expect(Buffer.from(packBundle(loaded)).equals(Buffer.from(bytes))).toBe(true);}

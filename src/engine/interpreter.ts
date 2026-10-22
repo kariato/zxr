@@ -19,8 +19,8 @@ import type { Span } from '../zil/ast.ts';
 type ExpressionTask = {kind:'expression';id:number;stage:number;values:number[]};
 type ActivationTask = {kind:'activation';expression:number|null;phase:'bindings'|'body';index:number;waiting:boolean;last:number;args:number[]};
 type Task = ExpressionTask|ActivationTask;
-export type ExecutionProgram='runtime'|'parser-entry'|'parser-checks';
-interface ScopeTarget {operand:PlannedOperand|null;slot:0|1;noun:number;first:boolean;multiple:boolean}
+export type ExecutionProgram='runtime'|'parser-entry'|'parser-checks'|'parser-no-verb'|'parser-not-here';
+interface ScopeTarget {operand:PlannedOperand|null;slot:0|1;noun:number;adjective:number;adjectiveWord:number|null;updateOne:boolean;first:boolean;multiple:boolean}
 interface ScopeSearch {plan:ActionPlan;targets:ScopeTarget[];index:number;base:number;phase:'room'|'inventory'|'global';retry:boolean;depth:number;}
 interface Frame {program:ExecutionProgram;routine:number;locals:number[];operands:number[];tasks:Task[]}
 export interface ExecutionLimits {steps:number;depth:number;output:number;operands:number}
@@ -29,7 +29,7 @@ export type InterpreterResult = {status:'returned';value:number;text:string[];ra
   | {status:'suspended';wait:InterpreterWait;text:string[];random:RandomEvent[]}
   | {status:'error';cause:string;source:Span|null;text:[];random:[]};
 export interface InterpreterCheckpoint {
-  format:'zxr-interpreter-checkpoint-v1';buildHash:string;limits:ExecutionLimits;
+  format:'zxr-interpreter-checkpoint-v1';buildHash:string;inputBoundary:'parser'|'read';limits:ExecutionLimits;
   frames:Frame[];wait:InterpreterWait|null;result:number|null;steps:number;output:number;
   world:WorldSnapshot;rng:RandomSnapshot;
 }
@@ -41,6 +41,7 @@ export class Interpreter {
   readonly #expressions=new Map<string,LogicExpression[]>();
   readonly #indices=new Map<LogicExpression,number>();
   readonly #limits:ExecutionLimits;
+  readonly #inputBoundary:'parser'|'read';
   readonly #random:GameRandom;
   #world:WorldState;
   #frames:Frame[]=[];
@@ -53,28 +54,31 @@ export class Interpreter {
   #pendingPlan:ActionPlan|null=null;
   #scope:ScopeSearch|null=null;
   #speech:ActionPlan|null=null;
-  #hello:ActionPlan|null=null;
+  #quotedCommand:ActionPlan|null=null;
+  #quotedError:{kind:'unknown'|'cant-use'|'no-verb';clause:boolean}|null=null;
   #actor:{plan:ActionPlan;phase:'tell'|'command'}|null=null;
 
-  constructor(game:LoadedGame,options:{world?:WorldState;fragment?:'entry'|'checks';routine?:number;args?:readonly number[];replay?:readonly RandomEvent[];limits?:Partial<ExecutionLimits>}={}){
+  constructor(game:LoadedGame,options:{inputBoundary?:'parser'|'read';world?:WorldState;fragment?:'entry'|'checks'|'no-verb'|'not-here';routine?:number;args?:readonly number[];replay?:readonly RandomEvent[];limits?:Partial<ExecutionLimits>}={}){
     this.#game=game;
     if(options.world&&options.world.buildHash!==game.buildHash)throw new Error('Execution world belongs to another build');
     this.#world=options.world?options.world.fork():WorldState.create(game);
     if(options.world)this.#world.validate();
     this.#random=game.createRandom(options.replay);
+    this.#inputBoundary=options.inputBoundary ?? 'parser';
+    if(!['parser','read'].includes(this.#inputBoundary))throw new Error('Invalid input boundary');
     this.#limits={...DEFAULT_LIMITS,...options.limits};
     for(const [key,value] of Object.entries(this.#limits))if(!Number.isSafeInteger(value)||value<1||value>DEFAULT_LIMITS[key as keyof ExecutionLimits])throw new Error('Invalid interpreter limit '+key);
     const adapter=game.bundle.payload.logic.adapter;
-    const programs:[ExecutionProgram,Readonly<LogicRoutine>][]=[...game.bundle.payload.logic.routines.map(r=>['runtime',r] as [ExecutionProgram,Readonly<LogicRoutine>]),...(adapter?[['parser-entry',adapter.entry],['parser-checks',adapter.checks]] as [ExecutionProgram,Readonly<LogicRoutine>][]:[])];
+    const programs:[ExecutionProgram,Readonly<LogicRoutine>][]=[...game.bundle.payload.logic.routines.map(r=>['runtime',r] as [ExecutionProgram,Readonly<LogicRoutine>]),...(adapter?[['parser-entry',adapter.entry],['parser-checks',adapter.checks],['parser-no-verb',adapter.noVerb],['parser-not-here',adapter.notHere]] as [ExecutionProgram,Readonly<LogicRoutine>][]:[])];
     for(const [program,routine] of programs){
       const expressions=[...logicExpressions(routine)];
       this.#expressions.set(program+':'+routine.id,expressions);
       expressions.forEach((e,i)=>this.#indices.set(e,i));
     }
     if(options.fragment!==undefined){
-      if(!['entry','checks'].includes(options.fragment)||!adapter||options.routine!==undefined||options.args?.length)throw new Error('Invalid parser fragment entry');
+      if(!['entry','checks','no-verb','not-here'].includes(options.fragment)||!adapter||options.routine!==undefined||options.fragment!=='not-here'&&options.args?.length)throw new Error('Invalid parser fragment entry');
       if(options.fragment==='entry'&&this.#world.global('RESERVE-PTR'))throw new Error('Reserved parser input is unsupported');
-      this.#call(adapter.id,[],options.fragment==='entry'?'parser-entry':'parser-checks');
+      this.#call(options.fragment==='not-here'?adapter.notHere.id:options.fragment==='no-verb'?adapter.noVerb.id:adapter.id,[...(options.args ?? [])],options.fragment==='not-here'?'parser-not-here':options.fragment==='entry'?'parser-entry':options.fragment==='no-verb'?'parser-no-verb':'parser-checks');
     }else this.#call(options.routine ?? game.bundle.payload.initialization.routine.id,[...(options.args ?? [])]);
   }
   /** An independent world view. Mutating it cannot alter this execution. */
@@ -84,7 +88,7 @@ export class Interpreter {
 
   /** Complete low-level execution state, excluding the not-yet-implemented public session protocol. */
   checkpoint():InterpreterCheckpoint {
-    return {format:'zxr-interpreter-checkpoint-v1',buildHash:this.#game.buildHash,limits:{...this.#limits},frames:structuredFrames(this.#frames),wait:copyWait(this.#wait),result:this.#result,steps:this.#steps,output:this.#output,world:this.#world.snapshot(),rng:this.#random.snapshot()};
+    return {format:'zxr-interpreter-checkpoint-v1',buildHash:this.#game.buildHash,inputBoundary:this.#inputBoundary,limits:{...this.#limits},frames:structuredFrames(this.#frames),wait:copyWait(this.#wait),result:this.#result,steps:this.#steps,output:this.#output,world:this.#world.snapshot(),rng:this.#random.snapshot()};
   }
   stateHash():string {return hashJson(this.checkpoint());}
   static restore(game:LoadedGame,input:unknown,options:{replay?:readonly RandomEvent[]}={}):Interpreter {
@@ -92,7 +96,7 @@ export class Interpreter {
     // Canonical serialization also rejects prototypes, cycles, sparse arrays and non-JSON values.
     const checkpoint=JSON.parse(canonicalJson(input)) as InterpreterCheckpoint;
     if(checkpoint.buildHash!==game.buildHash)throw new Error('Incompatible interpreter checkpoint build');
-    const vm=new Interpreter(game,{limits:checkpoint.limits,...options});
+    const vm=new Interpreter(game,{limits:checkpoint.limits,inputBoundary:checkpoint.inputBoundary,...options});
     vm.#frames=checkpoint.frames;vm.#wait=checkpoint.wait;vm.#result=checkpoint.result;vm.#steps=checkpoint.steps;vm.#output=checkpoint.output;
     vm.#validateContinuation();
     vm.#world=WorldState.restore(game,checkpoint.world);vm.#random.restore(checkpoint.rng);
@@ -116,28 +120,33 @@ export class Interpreter {
     if(name==='YES?'?!['YES','NO'].includes(choice):name==='FINISH'?!['RESTART','RESTORE','QUIT'].includes(choice):true)throw new Error('Unsupported READ decision choice or routine');
     return this.#segment({read:choice});
   }
-  /** Structured actions with source-derived scope, actor passes and bounded PLAYER speech. */
+  /** Structured actions with source-derived scope, actor passes and bounded quoted speech. */
   executeAction(action:unknown):InterpreterResult {
-    if(this.#wait?.kind!=='parser'||this.#world.global('P-CONT'))throw new Error('Not at a fresh parser boundary');
+    if(!this.atInput()||this.#world.global('P-CONT'))throw new Error('Not at a fresh parser boundary');
     if(this.#world.global('RESERVE-PTR'))throw new Error('Reserved parser input is unsupported');
     const plan=prepareAction(this.#game,this.#world,action),a=plan.action;
-    if(a.kind==='act'&&['ANSWER','SAY','INCANT'].includes(a.verb)||plan.actorPass&&a.kind==='say')throw new Error('Action requires the full parser adapter');
+    if(a.kind==='act'&&['ANSWER','SAY','INCANT'].includes(a.verb))throw new Error('Action requires the full parser adapter');
     return this.#segment({action:plan});
   }
+  /** Fresh structured input only; nested YES?/FINISH READs are separate decisions. */
+  atInput():boolean {return this.#wait?.kind==='parser'||this.#wait?.kind==='READ'&&this.#frames.at(-1)?.program==='parser-entry';}
   /** Compatibility alias for the original limited integration API. */
   executeSimpleAction(action:unknown):InterpreterResult {return this.executeAction(action);}
   resumeParserRead(text:string):InterpreterResult {
-    if(this.#wait?.kind!=='READ'||this.#frames.at(-1)?.program!=='parser-entry')throw new Error('Not at a retained parser READ');
+    if(this.#wait?.kind!=='READ'||this.#frames.at(-1)?.program!=='parser-entry'||this.#frames.length!==1)throw new Error('Raw parser READ is restricted to a standalone diagnostic fragment');
     return this.#segment({parserText:text});
   }
   #segment(resume?:number|{read:string}|{parserText:string}|{action:ActionPlan}):InterpreterResult {
-    const oldWorld=this.#world,oldFrames=structuredFrames(this.#frames),oldWait=copyWait(this.#wait),oldResult=this.#result,oldSteps=this.#steps,oldOutput=this.#output,oldRandom=this.#random.snapshot(),oldPlan=this.#pendingPlan,oldScope=this.#scope,oldSpeech=this.#speech,oldHello=this.#hello,oldActor=this.#actor;
+    const oldWorld=this.#world,oldFrames=structuredFrames(this.#frames),oldWait=copyWait(this.#wait),oldResult=this.#result,oldSteps=this.#steps,oldOutput=this.#output,oldRandom=this.#random.snapshot(),oldPlan=this.#pendingPlan,oldScope=this.#scope,oldSpeech=this.#speech,oldQuotedCommand=this.#quotedCommand,oldQuotedError=this.#quotedError,oldActor=this.#actor;
     this.#world=this.#world.fork();this.#text=[];
     try {
       if(resume!==undefined){
         if(this.#wait)this.#source=this.#expression(this.#frames.at(-1)!,this.#wait.expression).source;
         if(typeof resume==='object'&&'action' in resume){
-          this.#pendingPlan=resume.action;this.#actor=resume.action.actorPass?{plan:resume.action,phase:'tell'}:null;this.#speech=resume.action.action.kind==='say'?resume.action:null;this.#steps=0;this.#output=0;this.#wait=null;this.#call(this.#game.bundle.payload.logic.adapter!.id,[],'parser-entry');
+          const read=this.#wait!.kind==='READ'?this.#wait:null;
+          this.#pendingPlan=resume.action;this.#actor=resume.action.actorPass?{plan:resume.action,phase:'tell'}:null;this.#speech=resume.action.action.kind==='say'?resume.action:null;this.#steps=0;this.#output=0;this.#wait=null;
+          if(read){this.#world=writeReadText(this.#game,this.#world,read.args[0]!,read.args[1]!,resume.action.input.text);this.#finish(1);}
+          else this.#call(this.#game.bundle.payload.logic.adapter!.id,[],'parser-entry');
         }else {
           if(typeof resume==='object'){const [text,parse]=this.#wait!.args;this.#world='parserText' in resume?writeReadText(this.#game,this.#world,text!,parse!,resume.parserText):writeReadWord(this.#game,this.#world,text!,parse!,resume.read);}
           this.#wait=null;this.#finish(typeof resume==='number'?resume:1);
@@ -147,14 +156,14 @@ export class Interpreter {
         if(++this.#steps>this.#limits.steps)throw new Error('Interpreter step budget exhausted');
         this.#step();
       }
-      if(this.#pendingPlan||this.#scope||this.#speech||this.#hello||this.#actor)throw new Error('Unsupported suspension during parser adaptation');
+      if(this.#pendingPlan||this.#scope||this.#speech||this.#quotedCommand||this.#quotedError||this.#actor)throw new Error('Unsupported suspension during parser adaptation');
       this.#world.validate();
       const text=this.#text;this.#text=[];
       const random=this.#random.drainEvents();
       return this.#wait?{status:'suspended',wait:copyWait(this.#wait)!,text,random}:{status:'returned',value:this.#result!,text,random};
     }catch(error){
       const source=this.#source;
-      this.#world=oldWorld;this.#frames=oldFrames;this.#wait=oldWait;this.#result=oldResult;this.#steps=oldSteps;this.#output=oldOutput;this.#random.restore(oldRandom);this.#pendingPlan=oldPlan;this.#scope=oldScope;this.#speech=oldSpeech;this.#hello=oldHello;this.#actor=oldActor;this.#text=[];
+      this.#world=oldWorld;this.#frames=oldFrames;this.#wait=oldWait;this.#result=oldResult;this.#steps=oldSteps;this.#output=oldOutput;this.#random.restore(oldRandom);this.#pendingPlan=oldPlan;this.#scope=oldScope;this.#speech=oldSpeech;this.#quotedCommand=oldQuotedCommand;this.#quotedError=oldQuotedError;this.#actor=oldActor;this.#text=[];
       return {status:'error',cause:error instanceof Error?error.message:String(error),source,text:[],random:[]};
     }
   }
@@ -172,7 +181,10 @@ export class Interpreter {
   #definition(id:number,program:ExecutionProgram):Readonly<LogicRoutine>|undefined {
     if(program==='runtime')return this.#game.routine(id);
     const adapter=this.#game.bundle.payload.logic.adapter;
-    if(!adapter||adapter.id!==id)return;
+    if(!adapter)return;
+    if(program==='parser-not-here')return id===adapter.notHere.id?adapter.notHere:undefined;
+    if(program==='parser-no-verb')return id===adapter.noVerb.id?adapter.noVerb:undefined;
+    if(adapter.id!==id)return;
     return program==='parser-entry'?adapter.entry:program==='parser-checks'?adapter.checks:undefined;
   }
   #call(id:number,args:number[],program:ExecutionProgram='runtime'):void {
@@ -202,15 +214,41 @@ export class Interpreter {
       const plan=this.#pendingPlan;this.#pendingPlan=null;
       if(this.#actor?.phase==='tell'){this.#beginActorTell(plan);return;}
       this.#populateAction(plan);
+      // TELL has handed control to the translated command. It may itself pause
+      // at a decision/host primitive; no native actor controller crosses that boundary.
+      if(this.#actor?.phase==='command')this.#actor=null;
       if(plan.dispatch.kind==='walk')this.#deliver(plan.dispatch.direction);
       else this.#beginScope(plan);
-    }else if(frame.program==='parser-entry'&&this.#hello){
-      const plan=this.#hello,speech=this.#speech!,token=speech.input.tokens[(speech.speech!.continuation-1)/2]!;
+    }else if(frame.program==='parser-entry'&&this.#quotedCommand){
+      const plan=this.#quotedCommand,speech=this.#speech!,token=speech.input.tokens[(speech.speech!.continuation-1)/2]!;
       this.#populateAction(plan);
-      this.#world.putByte(this.#world.global('P-VTBL'),3,token.offset);
-      this.#world.setGlobal('P-LEN',0);this.#world.putByte(this.#world.global('P-LEXV'),1,0);this.#world.setGlobal('QUOTE-FLAG',1);
-      this.#speech=null;this.#hello=null;this.#beginScope(plan);
-    }else if(this.#scope&&this.#frames.length===this.#scope.depth){this.#advanceScope();}
+      if(plan.dispatch.kind==='walk'){
+        // A bare direction returns before the closing quote is scanned. The
+        // source keeps the SAY verb record/syntax and remaining lexical count.
+        this.#world.setGlobal('P-LEN',speech.speech!.remaining-1);
+        this.#speech=null;this.#quotedCommand=null;this.#deliver(plan.dispatch.direction);return;
+      }
+      const verb=this.#world.global('P-VTBL');this.#world.putWord(verb,0,token.address);this.#world.putByte(verb,2,token.length);this.#world.putByte(verb,3,token.offset);
+      if(plan.clauses.length&&plan.dispatch.kind==='syntax')this.#world.setGlobal('P-ACT',plan.dispatch.lexical);
+      const last=plan.clauses.at(-1),selection=last?.slot===0?plan.direct:plan.indirect;
+      const terminalMany=selection?.kind==='all'||selection?.kind==='objects'&&selection.objects.length>1;
+      this.#world.setGlobal('P-LEN',terminalMany?65535:0);this.#world.putByte(this.#world.global('P-LEXV'),1,terminalMany?speech.speech!.remaining:0);this.#world.setGlobal('QUOTE-FLAG',terminalMany?0:1);
+      this.#speech=null;this.#quotedCommand=null;this.#beginScope(plan);
+    }else if(frame.program==='parser-entry'&&this.#quotedError){
+      const error=this.#quotedError,speech=this.#speech!,world=this.#world;this.#quotedError=null;this.#speech=null;
+      world.setGlobal('P-NUMBER',0);world.setGlobal('P-DIR',0);world.setGlobal('P-GETFLAGS',0);world.setGlobal('P-NCN',error.clause?1:0);world.setGlobal('P-LEN',error.kind==='no-verb'?0:1);
+      if(error.clause){world.setGlobal('P-ACT',0);world.putWord(world.global('P-ITBL'),6,world.global('P-LEXV')+2*speech.speech!.continuation);}
+      if(error.kind==='no-verb'){
+        if(error.clause)world.putWord(world.global('P-ITBL'),7,world.global('P-LEXV')+2*speech.speech!.continuation+4);
+        world.setGlobal('QUOTE-FLAG',1);world.putByte(world.global('P-LEXV'),1,0);world.setGlobal('P-WALK-DIR',0);world.setGlobal('AGAIN-DIR',0);
+        this.#call(this.#game.bundle.payload.logic.adapter!.noVerb.id,[],'parser-no-verb');
+      }else this.#call(this.#symbol(error.kind==='unknown'?'UNKNOWN-WORD':'CANT-USE'),[speech.speech!.continuation]);
+    }else if(this.#scope&&this.#frames.length===this.#scope.depth){
+      if(frame.program==='parser-not-here'){
+        if(value)this.#finishScopeTarget();
+        else {this.#scope=null;this.#deliver(0);}
+      }else this.#advanceScope();
+    }
     else this.#deliver(value);
   }
   #activation(frame:Frame,task:ActivationTask):{bindings:LogicBinding[];body:LogicCommand[];repeat:boolean}{
@@ -304,20 +342,40 @@ export class Interpreter {
               this.#actor.phase='command';this.#pendingPlan=this.#actor.plan;
               this.#call(adapter.id,[],'parser-entry');return;
             }
-            if(this.#world.global('P-CONT'))throw new Error('Unsupported actor command continuation');
+            if(this.#world.global('P-CONT')&&(!this.#speech||this.#world.global('P-CONT')!==this.#speech.speech!.continuation||this.#world.global('QUOTE-FLAG')))throw new Error('Unsupported actor command continuation');
             this.#actor=null;
           }
           if(this.#speech){
             if(this.#world.global('P-CONT')){
               const speech=this.#speech,action=speech.action;
-              if(action.kind!=='say'||action.verb!=='SAY'||action.words.length!==1||action.words[0]!=='HELLO'||this.#world.global('P-CONT')!==speech.speech!.continuation||this.#world.global('QUOTE-FLAG'))throw new Error('Unsupported spoken command continuation');
-              const row=this.#game.bundle.payload.vocabulary.verbs.find(v=>v.name==='HELLO')?.rows.find(r=>r.action.name==='HELLO'&&!r.slots.length);
-              if(!row)throw new Error('Missing HELLO continuation syntax');
-              this.#hello=prepareAction(this.#game,this.#world,{kind:'act',actor:'PLAYER',verb:'HELLO',lexicalTable:'HELLO',syntax:row.id});
+              if(action.kind!=='say'||this.#world.global('P-CONT')!==speech.speech!.continuation||this.#world.global('QUOTE-FLAG'))throw new Error('Unsupported spoken command continuation');
+              if(speech.quoted){this.#quotedCommand=speech.quoted;this.#call(adapter.id,[],'parser-entry');return;}
+              if(action.words.length!==1)throw new Error('Unsupported spoken command continuation');
+              const token=speech.input.tokens[(speech.speech!.continuation-1)/2]!,dictionary=this.#game.bundle.payload.memory.words.find(w=>w.address===token.address);
+              const word=this.#game.bundle.payload.vocabulary.words.find(w=>w.dictionaryIndex===dictionary?.dictionaryIndex);
+              if(/^[0-9]+$/.test(token.text)||['AGAIN','G','OOPS','THEN','ALL','ONE','BUT','EXCEPT','INTNUM'].includes(word?.name ?? ''))throw new Error('Unsupported spoken command continuation');
+              if(word?.roles.direction){
+                const direction=this.#game.bundle.payload.vocabulary.directions.find(d=>d.number===word.roles.direction!.number);
+                if(!direction)throw new Error('Unknown quoted direction');
+                this.#quotedCommand=prepareAction(this.#game,this.#world,{kind:'walk',actor:'PLAYER',direction:direction.name});
+                this.#call(adapter.id,[],'parser-entry');return;
+              }
+              const lexical=this.#game.bundle.payload.vocabulary.verbs.find(v=>v.number===word?.roles.verb?.number),row=lexical?.rows.find(r=>!r.slots.length);
+              if(!token.address)this.#quotedError={kind:'unknown',clause:false};
+              else if(!word?.roles.verb&&!word?.roles.direction&&!word?.roles.preposition){
+                if(word?.name==='OF')this.#quotedError={kind:'cant-use',clause:false};
+                else if(word?.roles.object)this.#quotedError={kind:'no-verb',clause:true};
+                else if(word?.roles.adjective)this.#quotedError={kind:'cant-use',clause:true};
+                else if(word?.roles.buzz)this.#quotedError={kind:'no-verb',clause:false};
+              }
+              if(this.#quotedError){this.#call(adapter.id,[],'parser-entry');return;}
+              if(!lexical||!row||word?.roles.direction||['ANSWER','SAY','INCANT'].includes(row.action.name))throw new Error('Unsupported spoken command continuation');
+              this.#quotedCommand=prepareAction(this.#game,this.#world,{kind:'act',actor:'PLAYER',verb:row.action.name,lexicalTable:lexical.name,syntax:row.id});
               this.#call(adapter.id,[],'parser-entry');return;
             }
             this.#speech=null;
           }
+          if(this.#inputBoundary==='read'){this.#call(adapter.id,[],'parser-entry');return;}
           this.#wait={kind:'parser',routine:frame.routine,expression:task.id,args:passed};return;
         }
         this.#call(id,passed);return;
@@ -342,7 +400,7 @@ export class Interpreter {
     const table=world.global('P-ITBL'),verb=world.global('P-VTBL'),lex=world.global('P-LEXV');
     world.putWord(table,0,plan.dispatch.lexical);world.putWord(table,1,implicitTell?0:verb);
     if(!implicitTell){const token=plan.input.tokens[plan.actorPass?2:0]!;world.putWord(verb,0,token.address);world.putByte(verb,2,token.length);world.putByte(verb,3,token.offset);}
-    if(plan.speech){world.setGlobal('P-CONT',plan.speech.continuation);world.setGlobal('P-LEN',plan.speech.remaining);world.setGlobal('P-DIR',0);world.setGlobal('QUOTE-FLAG',1);world.putByte(lex,1,plan.speech.remaining);}
+    if(plan.speech){world.setGlobal('P-CONT',plan.speech.continuation);world.setGlobal('P-LEN',plan.speech.remaining);world.setGlobal('P-DIR',0);world.setGlobal('QUOTE-FLAG',plan.actorPass?0:1);world.putByte(lex,1,plan.speech.remaining);}
     for(const clause of plan.clauses){world.putWord(table,2+2*clause.slot,clause.preposition);world.putWord(table,3+2*clause.slot,clause.word?plan.input.tokens[clause.start-1]!.address:0);world.putWord(table,6+2*clause.slot,lex+2+4*clause.start);world.putWord(table,7+2*clause.slot,lex+2+4*clause.end);}
   }
   #beginActorTell(plan:ActionPlan):void {
@@ -367,11 +425,15 @@ export class Interpreter {
     for(const [selection,slot] of [[plan.indirect,1],[plan.direct,0]] as const){
       if(!selection)continue;
       const clause=plan.clauses.find(c=>c.slot===slot)!;
-      if(selection.kind==='all')targets.push({operand:null,slot,noun:0,first:true,multiple:false});
+      if(selection.kind==='all')targets.push({operand:null,slot,noun:0,adjective:0,adjectiveWord:null,updateOne:false,first:true,multiple:false});
       else {
         let token=clause.start;
         for(const [i,operand] of selection.objects.entries()){
-          targets.push({operand,slot,noun:plan.input.tokens[token+operand.words.length-1]!.address,first:i===0,multiple:selection.objects.length>1});
+          const noun=plan.input.tokens[token+operand.words.length-1]!.address;
+          // SNARF-OBJECTS prefers an adjective role; GET-OBJECT then promotes a
+          // lone adjective/noun word to P-NAM without updating P-ONEOBJ.
+          const promoted=!operand.adjective&&this.#game.bundle.payload.vocabulary.words.find(w=>w.name===operand.words.at(-1))?.roles.adjective;
+          targets.push({operand,slot,noun,adjective:operand.adjective ?? 0,adjectiveWord:operand.adjective?plan.input.tokens[token]!.address:promoted?noun:null,updateOne:!promoted,first:i===0,multiple:selection.objects.length>1});
           token+=operand.words.length+1;
         }
       }
@@ -383,9 +445,10 @@ export class Interpreter {
   #startScope():void {
     const scope=this.#scope!,world=this.#world,target=scope.targets[scope.index]!;
     if(target.operand?.pseudo&&target.operand.pseudo.room!==world.global('HERE'))throw new Error('Pseudo feature is outside its declared room');
-    world.setGlobal('P-NAM',target.noun);world.setGlobal('P-ADJ',0);world.setGlobal('P-GWIMBIT',0);
+    world.setGlobal('P-NAM',target.noun);world.setGlobal('P-ADJ',target.adjective);world.setGlobal('P-GWIMBIT',0);
+    if(target.adjectiveWord!==null)world.setGlobal('P-ADJN',target.adjectiveWord);
     world.setGlobal('P-GETFLAGS',target.operand?0:this.#symbol('P-ALL'));world.setGlobal('P-AND',target.multiple?1:0);
-    if(target.operand)world.setGlobal('P-ONEOBJ',target.noun);
+    if(target.updateOne)world.setGlobal('P-ONEOBJ',target.noun);
     const table=world.global(target.slot===0?'P-PRSO':'P-PRSI');
     if(!scope.retry)scope.base=target.first?0:world.getWord(table);
     world.setGlobal('P-TABLE',table);world.putWord(table,0,scope.base);
@@ -407,11 +470,19 @@ export class Interpreter {
       scope.phase='global';this.#call(this.#symbol('GLOBAL-CHECK'),[world.global('P-TABLE')]);return;
     }
     if(target.operand&&count>1&&!scope.retry&&scope.phase!=='global'){scope.retry=true;this.#startScope();return;}
+    if(count===0&&!scope.retry&&!target.operand?.pseudo){
+      world.setGlobal('P-SLOCBITS',world.getByte(world.global('P-SYNTAX'),5+target.slot));
+      this.#call(this.#game.bundle.payload.logic.adapter!.notHere.id,[world.global('P-TABLE')],'parser-not-here');return;
+    }
     if(target.operand?(count!==1||world.getWord(world.global('P-TABLE'),scope.base+1)!==target.operand.id):count===0)throw new Error('Operand is outside supported scope or has an ambiguous noun');
     if(target.operand?.pseudo){
       const pseudo=target.operand.pseudo,action=this.#symbol('P?ACTION'),name=world.propertyAddress(target.operand.id,action)-5;
       if(scope.phase!=='global'||world.getProperty(target.operand.id,action)!==pseudo.routine||world.getWord(name)!==world.getWord(target.noun)||world.getWord(name,1)!==world.getWord(target.noun,1))throw new Error('Pseudo feature binding does not match the selected source feature');
     }
+    this.#finishScopeTarget();
+  }
+  #finishScopeTarget():void {
+    const scope=this.#scope!,world=this.#world,target=scope.targets[scope.index]!;
     world.setGlobal('P-SLOCBITS',world.getByte(world.global('P-SYNTAX'),5+target.slot));
     if(++scope.index<scope.targets.length){scope.retry=false;this.#startScope();return;}
     world.setGlobal('P-NAM',0);world.setGlobal('P-ADJ',0);world.setGlobal('P-GWIMBIT',0);
@@ -425,7 +496,7 @@ export class Interpreter {
     if(!this.#frames.length)fail();
     for(const [frameIndex,frame] of this.#frames.entries()){
       const routine=this.#routine(frame);
-      if(frameIndex>0&&frame.program!=='runtime'){const caller=this.#frames[frameIndex-1]!;if(this.#routine(caller).name!=='MAIN-LOOP-1'||frame.program!=='parser-checks')fail();}
+      if(frameIndex>0&&frame.program!=='runtime'){const caller=this.#frames[frameIndex-1]!;if(this.#routine(caller).name!=='MAIN-LOOP-1'||!['parser-entry','parser-checks','parser-no-verb','parser-not-here'].includes(frame.program))fail();}
       if(frame.locals.length!==routine.slotCount+1||frame.locals[0]!==0||frame.operands.length>this.#limits.operands||!frame.tasks.length)fail();
       const argsFor=(e:LogicExpression):LogicExpression[]=>{
         switch(e.op){

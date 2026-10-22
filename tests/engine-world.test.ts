@@ -9,7 +9,7 @@ const object=(name:string)=>full.bundle.payload.memory.objects.find(o=>o.name===
 
 describe('owned bundle loading and memory-backed world state',()=>{
   it('loads both games with frozen definitions and independent initial-memory copies',()=>{
-    expect(small.bundle.payload.world.counts.rooms).toBe(3);expect(full.bundle.payload.logic.routines).toHaveLength(412);
+    expect(small.bundle.payload.world.counts.rooms).toBe(3);expect(full.bundle.payload.logic.routines).toHaveLength(414);
     expect(full.routine(full.bundle.payload.initialization.routine.id)?.name).toBe('GO');expect(full.routine(full.bundle.payload.logic.adapter!.id)).toBeUndefined();
     const one=full.createInitialMemory(),two=full.createInitialMemory();one[0]=99;expect(two[0]).toBe(3);
     expect(()=>{full.bundle.payload.memory.bytes[0]=99;}).toThrow();

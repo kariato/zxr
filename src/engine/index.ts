@@ -6,3 +6,4 @@ export * from './text.ts';
 export * from './interpreter.ts';
 export * from './read-input.ts';
 export * from './action-plan.ts';
+export * from './turn-loop.ts';

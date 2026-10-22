@@ -2,7 +2,7 @@
 
 Step 2.9 supplies source identities for the future interpreter and presentation overlays. It does not execute game logic or implement the phase 9 cue overlay.
 
-`mapLogicSources()` takes fully linked logic, injected source files, the optional parser partition and the normalized expanded forms. It returns the mapped runtime program, all mapped reference routines, a source map and the translation report. The reference view includes the original parser bodies for diagnostics; the runtime view contains the same 412 routines selected in step 2.8. Removing only `sourceMapId` and `nodeId` reproduces the original 439-routine IR exactly. Earlier compiler APIs/artifacts remain regression stages.
+`mapLogicSources()` takes fully linked logic, injected source files, the optional parser partition and the normalized expanded forms. It returns the mapped runtime program, all mapped reference routines, a source map and the translation report. The reference view includes the original parser bodies for diagnostics; the runtime view contains the same 414 routines selected in step 2.8. Removing only `sourceMapId` and `nodeId` reproduces the original 439-routine IR exactly. Earlier compiler APIs/artifacts remain regression stages.
 
 Every routine, binding, command and expression has two references:
 

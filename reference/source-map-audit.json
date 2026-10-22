@@ -46,12 +46,12 @@
       "sha256": "d887ed2e0162dd555c08330eb3ab40a03790734ccfc426f4e354dd846205ed21"
     }
   ],
-  "sourceMapSha256": "e3c5bcfb77e1aa7f3e1bf23f55e41bfc4595a9c2da1d0dc17790a97e79442c64",
-  "mappedLogicSha256": "523d39732a7c839d4963b09732ae667534bf724c45d072186a7c03a96497c4ed",
-  "reportSha256": "89d8387d4587aff796ad89985dd448c6c4ded83b039f3d9d3678d944acd322d7",
+  "sourceMapSha256": "8026d8af1a72d194b93f396c23e95974fc29e57c846d665708d4dc910d535daf",
+  "mappedLogicSha256": "d6604d05f3350e4d84674e8426876a0c2a686b0b0d46df983902b49a033a1a3c",
+  "reportSha256": "f2226f2d8e6f91061bff6bfa1a8c08dceaa865792a7d3f70038ac88aae6ff9be",
   "checked": {
     "routines": 439,
-    "runtimeRoutines": 412,
+    "runtimeRoutines": 414,
     "sites": 26503,
     "byKind": {
       "routine": 439,
@@ -69,7 +69,7 @@
     "generatedRestDefaults": 1,
     "implicitZeroInitializers": 211,
     "untranslated": 0,
-    "replacements": 27,
+    "replacements": 25,
     "parserConsumers": 32,
     "readSites": 3,
     "unsupportedHostSites": 3

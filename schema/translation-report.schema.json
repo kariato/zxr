@@ -1668,13 +1668,21 @@
                 },
                 "checks": {
                   "$ref": "#/$defs/routine"
+                },
+                "noVerb": {
+                  "$ref": "#/$defs/routine"
+                },
+                "notHere": {
+                  "$ref": "#/$defs/routine"
                 }
               },
               "required": [
                 "name",
                 "id",
                 "entry",
-                "checks"
+                "checks",
+                "noVerb",
+                "notHere"
               ],
               "additionalProperties": false
             }

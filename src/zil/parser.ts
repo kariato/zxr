@@ -41,7 +41,7 @@ export function splitParserLibrary(logic:LinkedLogic,memory:MemoryImage):ParserP
   }))]));
   const keep=new Map<string,Set<string>>();
   const retain=(name:string,reason:string)=>{if(!parserNames.has(name)||name==='PARSER')return;const reasons=keep.get(name) ?? new Set<string>();reasons.add(reason);keep.set(name,reasons);};
-  for(const name of ['MANY-CHECK','TAKE-CHECK','LIT?','META-LOC','GLOBAL-CHECK']){
+  for(const name of ['MANY-CHECK','TAKE-CHECK','LIT?','META-LOC','GLOBAL-CHECK','UNKNOWN-WORD','CANT-USE']){
     if(!parserNames.has(name))throw new Error('Missing required adapter helper '+name);retain(name,'adapter-helper');
   }
   for(const r of logic.routines)if(!parserNames.has(r.name))for(const c of calls.get(r.name)!)retain(c,'external-call:'+r.name);

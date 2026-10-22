@@ -20,7 +20,7 @@ it('checks the whole Zork II source project through the CLI',()=>{
   expect(text).toContain('World metadata: 86 rooms, 165 objects, 220 encoded exits');
   expect(text).toContain('Vocabulary: 269 syntax rows, 689 words');
   expect(text).toContain('Memory: 19882 bytes, 45 source tables');
-  expect(text).toContain('Parser split: 42 classified, 412 retained routines plus adapter');
+  expect(text).toContain('Parser split: 42 classified, 414 retained routines plus adapter');
   expect(text).toContain('Source maps: 26503 sites, 0 untranslated constructs');
   expect(text).toContain('Logic operations: 439 routines, 0 deferred memory/address sites, 1342 strings');
 });

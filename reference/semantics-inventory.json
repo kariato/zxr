@@ -63053,7 +63053,7 @@
     },
     {
       "name": "UNKNOWN-WORD",
-      "policy": "replaced-middle",
+      "policy": "kept",
       "calls": [
         "WORD-PRINT"
       ],
@@ -63067,7 +63067,7 @@
     },
     {
       "name": "CANT-USE",
-      "policy": "replaced-middle",
+      "policy": "kept",
       "calls": [
         "WORD-PRINT"
       ],

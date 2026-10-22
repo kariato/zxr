@@ -25,7 +25,7 @@ export const definitions:Record<string,Schema>={
     expr('address',{value:word,allocation:name,addend:int(0,65535),name},{tableConstructor:en('TABLE','LTABLE','ITABLE')}),
   ]},
   rawLogic:obj({format:en('zxr-logic-v1'),semantics:abi,stage:en('operations','linked'),routines:arr(ref('routine'),1,65535),untranslated:arr({},0,0),strings:ref('strings')}),
-  runtimeLogic:obj({format:c('zxr-runtime-logic-v1'),semantics:abi,routines:arr(ref('routine'),1,65535),adapter:nullable(obj({name:c('PARSER'),id:int(1,65535),entry:ref('routine'),checks:ref('routine')})),excluded:arr(obj({name,id:int(1,65535),policy:en('adapter','replaced-middle')}),0,65535)}),
+  runtimeLogic:obj({format:c('zxr-runtime-logic-v1'),semantics:abi,routines:arr(ref('routine'),1,65535),adapter:nullable(obj({name:c('PARSER'),id:int(1,65535),entry:ref('routine'),checks:ref('routine'),noVerb:ref('routine'),notHere:ref('routine')})),excluded:arr(obj({name,id:int(1,65535),policy:en('adapter','replaced-middle')}),0,65535)}),
   strings:obj({format:c('zxr-strings-v1'),entries:arr(obj({id:int(1,65535),text:str}),0,65535)}),
 };
 const propertyBase={property:named,byteLength:int(1,8),source:ref('span')};
