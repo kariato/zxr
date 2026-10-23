@@ -15,13 +15,14 @@ import { logicExpressions, OBJECT_OPERATIONS, OUTPUT_OPERATIONS } from './logic.
 import type { LogicExpression, LogicRoutine, LogicBinding, LogicCommand } from './logic.ts';
 import type { Vocabulary } from './vocabulary.ts';
 import { SYNTAX_FLAGS } from './vocabulary.ts';
+import type { GateRule } from './gates.ts';
 import type { MappedRoutine, LogicSourceMap, TranslationReport, SourceMapResult } from './source-maps.ts';
 import { mappedSites, sourceLocationSpan } from './source-maps.ts';
 import type { ParserSplit } from './parser.ts';
-export const BUNDLE_VERSIONS={compiler:'zxr-compiler-v1',vm:'zxr-vm-v1',adapter:'zxr-adapter-v15',optionEncoder:'zxr-option-encoder-v1',gateRules:'zxr-gates-v1'} as const;
+export const BUNDLE_VERSIONS={compiler:'zxr-compiler-v1',vm:'zxr-vm-v1',adapter:'zxr-adapter-v15',optionEncoder:'zxr-option-encoder-v1',gateRules:'zxr-gates-v2',knowledge:'zxr-object-memory-v1'} as const;
 export interface RuntimeSymbols {format:'zxr-symbols-v1';symbols:Omit<SymbolDefinition,'referenceAddress'>[]}
 export interface RuntimeLogic {format:'zxr-runtime-logic-v1';semantics:'zxr-zork2-semantics-v1';routines:MappedRoutine[];adapter:ParserAdapter|null;excluded:{name:string;id:number;policy:'adapter'|'replaced-middle'}[]}
-export interface BundlePayload {game:{id:string;title:string};versions:typeof BUNDLE_VERSIONS;initialization:{kind:'call-entry';routine:{name:string;id:number};checkpoint:'pre-GO';rng:{algorithm:'xorshift32-v1';seed:number}};gateRules:never[];world:WorldMetadata;vocabulary:Vocabulary;memory:MemoryImage;strings:StringPool;symbols:RuntimeSymbols;logic:RuntimeLogic}
+export interface BundlePayload {game:{id:string;title:string};versions:typeof BUNDLE_VERSIONS;initialization:{kind:'call-entry';routine:{name:string;id:number};checkpoint:'pre-GO';rng:{algorithm:'xorshift32-v1';seed:number}};gateRules:GateRule[];world:WorldMetadata;vocabulary:Vocabulary;memory:MemoryImage;strings:StringPool;symbols:RuntimeSymbols;logic:RuntimeLogic}
 export interface GameBundle {format:'zxr-bundle-v1';schemaVersion:1;semantics:'zxr-zork2-semantics-v1';buildHash:string;presentationHash:string;contentHash:string;payload:BundlePayload;debug:{sources:LogicSourceMap;report:TranslationReport;parser:ParserSplit|null};licenses:{spdx:string;text:string}[]}
 export function runtimeLogic(mapped:SourceMapResult):RuntimeLogic {
   const p=mapped.program.parser;return {format:'zxr-runtime-logic-v1',semantics:mapped.program.semantics,routines:mapped.program.routines,adapter:p?projectParserAdapter(mapped.referenceRoutines.find(r=>r.id===p.adapterRoutineId)!,mapped.referenceRoutines.find(r=>r.name==='SYNTAX-CHECK')!,mapped.referenceRoutines.find(r=>r.name==='GET-OBJECT')!):null,excluded:(p?.routines ?? []).filter(r=>r.policy!=='kept').map(r=>({name:r.name,id:r.id,policy:r.policy as 'adapter'|'replaced-middle'}))};
@@ -69,6 +70,21 @@ export function validateBundleReferences(bundle:GameBundle):void {
   const strings=new Map(p.strings.entries.map(e=>[e.text,e.id])),objects=unique(world.entities,e=>e.id,'world object'),objectsByName=unique(world.entities,e=>e.name,'world object name'),words=unique(m.words,w=>w.name,'dictionary name'),segments=unique(m.segments,s=>s.name,'memory segment');
   same(world.entities.map(e=>[e.name,e.id]),m.objects.map(o=>[o.name,o.id]),'world/memory object identities');
   const globals=unique(m.globals,g=>g.name,'global name');unique(m.globals,g=>g.number,'global number');if(m.globals.some((g,i)=>g.number!==i+16))fail('global numbers are not dense');
+  unique(p.gateRules,r=>r.id,'gate rule');
+  for(const rule of p.gateRules){
+    if(new Set(rule.learn).size!==rule.learn.length)fail('duplicate gate clue '+rule.id);
+    for(const target of rule.targets){
+      if(!Object.keys(target).length)fail('empty gate target '+rule.id);
+      for(const [field,values] of Object.entries(target)){
+        if(new Set(values).size!==values.length)fail('duplicate gate target '+rule.id);
+        for(const value of values){
+          if(field==='verbs'&&symbols.get('V?'+value)?.kind!=='action')fail('unknown gate action '+value);
+          if(field==='words'&&!v.words.some(w=>w.name===value))fail('unknown gate word '+value);
+          if(['actors','direct','indirect'].includes(field)&&!objectsByName.has(value))fail('unknown gate entity '+value);
+        }
+      }
+    }
+  }
   for(const s of p.symbols.symbols){if(s.number===null)fail('unallocated runtime symbol '+s.name);
     if(s.kind==='global'){if(globals.get(s.name)?.number!==s.number)fail('global symbol mismatch '+s.name);}
     if(s.kind==='room'||s.kind==='object'){if(objectsByName.get(s.name)?.id!==s.number||objectsByName.get(s.name)?.kind!==s.kind)fail('object symbol mismatch '+s.name);}

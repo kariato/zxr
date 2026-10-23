@@ -1,0 +1,105 @@
+# Save after putting the opener in the keyhole; undo its removal, restore, and finish the door puzzle.
+take lamp
+take sword
+turn on lamp
+south
+south
+south
+sw
+south
+se
+enter gazebo
+take teapot
+exit
+north
+ne
+fill teapot
+south
+sw
+sw
+southeast
+west
+southeast
+answer "well"
+east
+take necklace
+east
+enter bucket
+pour water in bucket
+stand
+east
+take all
+eat green cake
+east
+drop orange cake
+throw red cake in pool
+take candies
+west
+eat blue cake
+nw
+read paper
+drop paper
+robot, go east
+east
+robot, go south
+south
+take red sphere
+robot, lift cage
+take red sphere
+look in red sphere
+robot, go north
+north
+robot, push triangular button
+west
+southeast
+west
+southeast
+west
+enter bucket
+fill teapot
+stand
+drop teapot
+west
+west
+nw
+open steel box
+take violin
+sw
+take string
+sw
+give candies to lizard
+drop necklace
+drop violin
+drop red sphere
+north
+ne
+east
+north
+north
+enter gazebo
+take all
+exit
+south
+west
+sw
+north
+take brick
+north
+north
+up
+put mat under door
+open lid
+put opener in keyhole
+save
+take opener
+restore
+take opener
+drop opener
+take mat
+take key
+unlock door with key
+open door
+north
+take blue sphere
+look in blue sphere
+south

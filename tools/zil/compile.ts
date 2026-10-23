@@ -5,6 +5,7 @@ import type { GameBundle, RuntimeSymbols, SymbolAnalysis, MemoryImage } from '..
 import { sourceFiles } from './program.ts';
 import { referenceSymbolLayout } from './symbols.ts';
 import { normalizeReferenceProgram } from './reference-program.ts';
+import type { GateRule } from '../../src/zil/gates.ts';
 export function runtimeSymbols(analysis:SymbolAnalysis,memory:MemoryImage):RuntimeSymbols {
   return {format:'zxr-symbols-v1',symbols:analysis.symbols.map(({referenceAddress,...s})=>s.kind==='word'?{...s,number:memory.words.find(w=>'W?'+w.name===s.name)!.address}:s)};
 }
@@ -15,7 +16,8 @@ export function compileSourcePath(path:string,options:{symbols?:boolean}={}):Gam
     const program=loadProgram(files,{entry}),expanded=expandMacros(program.forms,program.definitions,program.globals),normalized=normalizeReferenceProgram(expanded.forms),analysis=analyzeSymbols(program,normalized.forms,referenceSymbolLayout());
     if(analysis.diagnostics.length){const d=analysis.diagnostics[0]!;throw new ZilError(d.code,d.message,d.span);}
     const world=compileWorldMetadata(normalized.forms,analysis),vocabulary=compileVocabulary(normalized.forms,analysis),operations=translateLogic(normalized.forms,analysis),memory=compileMemory(normalized.forms,analysis,world,vocabulary,operations.strings),logic=linkMemoryLogic(operations,memory),parser=splitParserLibrary(logic,memory),mapped=mapLogicSources(logic,files,{parser,forms:normalized.forms}),go=logic.routines.find(r=>r.name==='GO')!;
-    return createBundle({game:{id:'zork2',title:'Zork II'},versions:BUNDLE_VERSIONS,initialization:{kind:'call-entry',routine:{name:go.name,id:go.id},checkpoint:'pre-GO',rng:{algorithm:'xorshift32-v1',seed:2}},gateRules:[],world,vocabulary,memory,strings:operations.strings,symbols:runtimeSymbols(analysis,memory),logic:runtimeLogic(mapped)},{sources:mapped.sources,report:mapped.report,parser:parser.partition},[{spdx:'MIT',text:readFileSync('reference/zork2/LICENSE','utf8')}]);
+    const gateRules=JSON.parse(readFileSync('games/zork2/gates.json','utf8')) as GateRule[];
+    return createBundle({game:{id:'zork2',title:'Zork II'},versions:BUNDLE_VERSIONS,initialization:{kind:'call-entry',routine:{name:go.name,id:go.id},checkpoint:'pre-GO',rng:{algorithm:'xorshift32-v1',seed:2}},gateRules,world,vocabulary,memory,strings:operations.strings,symbols:runtimeSymbols(analysis,memory),logic:runtimeLogic(mapped)},{sources:mapped.sources,report:mapped.report,parser:parser.partition},[{spdx:'MIT',text:readFileSync('reference/zork2/LICENSE','utf8')}]);
   }catch(error){if(error instanceof ZilError)throw new Error(formatDiagnostic(new ZilError(error.code,error.message,{...error.span,file:resolve(directory,error.span.file)}),files.get(error.span.file)));throw error;}
 }
 export function writeBundle(bundle:GameBundle,path:string){

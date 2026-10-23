@@ -4,7 +4,7 @@
   "type": "object",
   "properties": {
     "format": {
-      "const": "zxr-save-v1"
+      "const": "zxr-save-v2"
     },
     "abi": {
       "type": "string"
@@ -396,9 +396,32 @@
     "knowledge": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$"
       },
-      "maxItems": 0
+      "maxItems": 256
+    },
+    "remembered": {
+      "type": "array",
+      "maxItems": 256,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9?.!\\-]{0,63}$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ],
+        "additionalProperties": false
+      }
     },
     "metadata": {
       "type": "object",
@@ -428,6 +451,7 @@
     "kind",
     "checkpoint",
     "knowledge",
+    "remembered",
     "metadata"
   ],
   "additionalProperties": false

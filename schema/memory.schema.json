@@ -4805,6 +4805,91 @@
       ],
       "additionalProperties": false
     },
+    "gateRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "source",
+        "learn",
+        "targets"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]{0,63}$"
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "learn": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 12
+          },
+          "minItems": 1,
+          "maxItems": 32
+        },
+        "targets": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "verbs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "maxItems": 256
+              },
+              "actors": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "maxItems": 256
+              },
+              "direct": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "maxItems": 256
+              },
+              "indirect": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "maxItems": 256
+              },
+              "words": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "maxItems": 256
+              }
+            }
+          }
+        }
+      }
+    },
     "payload": {
       "type": "object",
       "properties": {
@@ -4848,6 +4933,10 @@
             "gateRules": {
               "type": "string",
               "minLength": 1
+            },
+            "knowledge": {
+              "type": "string",
+              "minLength": 1
             }
           },
           "required": [
@@ -4855,7 +4944,8 @@
             "vm",
             "adapter",
             "optionEncoder",
-            "gateRules"
+            "gateRules",
+            "knowledge"
           ],
           "additionalProperties": false
         },
@@ -4916,9 +5006,11 @@
         },
         "gateRules": {
           "type": "array",
-          "items": {},
+          "items": {
+            "$ref": "#/$defs/gateRule"
+          },
           "minItems": 0,
-          "maxItems": 0
+          "maxItems": 256
         },
         "world": {
           "$ref": "#/$defs/world"

@@ -46,7 +46,11 @@
     "output:record": "node tools/engine/look-output-cli.ts record",
     "output:check": "node tools/engine/look-output-cli.ts check",
     "replay:record": "node tools/engine/replay-cli.ts record",
-    "replay:check": "node tools/engine/replay-cli.ts check"
+    "replay:check": "node tools/engine/replay-cli.ts check",
+    "candidates:record": "node tools/engine/candidates-cli.ts record",
+    "candidates:check": "node tools/engine/candidates-cli.ts check",
+    "options:record": "node tools/engine/option-coverage-cli.ts record",
+    "options:check": "node tools/engine/option-coverage-cli.ts check"
   },
   "dependencies": {
     "three": "0.186.0"

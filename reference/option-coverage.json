@@ -1,0 +1,423 @@
+{
+  "format": "zxr-option-coverage-v1",
+  "buildHash": "41ba9c8185ee8dc59af0d6f2db9f61437f73475f5fe302284bb9a2006cbae586",
+  "policy": "All required structured actions must be selected from the shared shell controller; missing choices are errors. Exact area prefixes share checked witnesses.",
+  "originalInputDispositions": [
+    {
+      "input": 95,
+      "kind": "separate-structured-choices",
+      "command": "unlock door with key. open door. north",
+      "fields": []
+    },
+    {
+      "input": 142,
+      "kind": "orphan-protocol",
+      "command": "take key",
+      "fields": [
+        "global.P-WALK-DIR",
+        "global.PRSA",
+        "global.P-ONEOBJ",
+        "global.P-WON"
+      ]
+    },
+    {
+      "input": 142,
+      "kind": "excluded-typed-input",
+      "command": "take key",
+      "fields": [],
+      "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+    },
+    {
+      "input": 143,
+      "kind": "orphan-protocol",
+      "command": "drop rose",
+      "fields": [
+        "global.P-ONEOBJ"
+      ]
+    },
+    {
+      "input": 153,
+      "kind": "separate-structured-choices",
+      "command": "unlock door with gold key. open door. south",
+      "fields": []
+    },
+    {
+      "input": 224,
+      "kind": "orphan-protocol",
+      "command": "take off crown",
+      "fields": [
+        "global.P-WALK-DIR",
+        "global.P-WON"
+      ]
+    },
+    {
+      "input": 224,
+      "kind": "excluded-typed-input",
+      "command": "take off crown",
+      "fields": [],
+      "originalText": "That sentence isn't one I recognize.\n\n>"
+    }
+  ],
+  "cases": [
+    {
+      "id": "walkthrough",
+      "commands": 388,
+      "offered": 388,
+      "unsupported": 0,
+      "execution": "shell-controller",
+      "gameDraws": 143,
+      "clockTicks": 419,
+      "controls": 1909,
+      "moreExpansions": 323,
+      "pathHash": "6bcd2cce233e618627b237ddadb70381f420de917a9b3b544629ca7313608f39",
+      "checkpointsHash": "4f8535273fb371e4422ecb3769fa9ad0d56b1fc918209609226cc8b61a1fb3e9",
+      "final": {
+        "room": "ZORK3",
+        "winner": "ADVENTURER",
+        "score": 400,
+        "moves": 419,
+        "won": true,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-barrow",
+      "commands": 6,
+      "offered": 6,
+      "unsupported": 0,
+      "execution": "verified-walkthrough-prefix",
+      "gameDraws": 2,
+      "clockTicks": 6,
+      "controls": 30,
+      "moreExpansions": 6,
+      "pathHash": "81a810677f0b846c3f77189448d2a34132d328b177adffcde8a1862bbe2876e7",
+      "checkpointsHash": "7e4cc4282d53c9023133cbc5a6707b64c8897feabfa27e99ebe1be190110fb94",
+      "final": {
+        "room": "GREAT-CAVERN",
+        "winner": "ADVENTURER",
+        "score": 0,
+        "moves": 6,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-garden",
+      "commands": 16,
+      "offered": 16,
+      "unsupported": 0,
+      "execution": "verified-walkthrough-prefix",
+      "gameDraws": 9,
+      "clockTicks": 16,
+      "controls": 75,
+      "moreExpansions": 15,
+      "pathHash": "5c50a84d44e4a55bcab81f796520f4a73098d93b6fb418f214155e888e80fb74",
+      "checkpointsHash": "bce6976aaa2309e747903964912740854b2164c16bcbcb6926f47f5ddfd0d6d0",
+      "final": {
+        "room": "DARK-TUNNEL",
+        "winner": "ADVENTURER",
+        "score": 0,
+        "moves": 16,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-riddle",
+      "commands": 25,
+      "offered": 25,
+      "unsupported": 0,
+      "execution": "verified-walkthrough-prefix",
+      "gameDraws": 16,
+      "clockTicks": 25,
+      "controls": 112,
+      "moreExpansions": 22,
+      "pathHash": "d01781554e461544b56566a94142bdf579aa611da1aa1565893c3862f0753314",
+      "checkpointsHash": "13196c74df73fb64df8d70072301dc0735f684f4579b339443ef895247e7038f",
+      "final": {
+        "room": "WELL-BOTTOM",
+        "winner": "ADVENTURER",
+        "score": 20,
+        "moves": 25,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-well",
+      "commands": 29,
+      "offered": 29,
+      "unsupported": 0,
+      "execution": "verified-walkthrough-prefix",
+      "gameDraws": 17,
+      "clockTicks": 29,
+      "controls": 132,
+      "moreExpansions": 24,
+      "pathHash": "a06641611b6437280e916f86c536272cf7fd2e0478e52b2d9bd683663c2f17ad",
+      "checkpointsHash": "ad55f3e5fea61ba3bdc99f36b0a4f964ee5c7eae870e26f7e1fa9164c60ed2e8",
+      "final": {
+        "room": "TEA-ROOM",
+        "winner": "ADVENTURER",
+        "score": 30,
+        "moves": 29,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-cakes",
+      "commands": 38,
+      "offered": 38,
+      "unsupported": 0,
+      "execution": "verified-walkthrough-prefix",
+      "gameDraws": 19,
+      "clockTicks": 38,
+      "controls": 180,
+      "moreExpansions": 32,
+      "pathHash": "a5f6a9e6dcce912709de8bce0b25e90285a4f90ee3d1d8cb18e94bfd7fe80d5e",
+      "checkpointsHash": "f880537586ebcda834b0ff1d20528754bdf94f8e6ff7f84a431916fc30dd371e",
+      "final": {
+        "room": "MAGNET-ROOM",
+        "winner": "ADVENTURER",
+        "score": 45,
+        "moves": 38,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-robot",
+      "commands": 53,
+      "offered": 53,
+      "unsupported": 0,
+      "execution": "verified-walkthrough-prefix",
+      "gameDraws": 32,
+      "clockTicks": 53,
+      "controls": 260,
+      "moreExpansions": 43,
+      "pathHash": "ba2d72b832449c9a12008e2aae1be9afde5168be1e4cfb8bee3820ab039181df",
+      "checkpointsHash": "9446911705b7915e547b447e7755d96eba0d303c7045474756b7781da6fd9719",
+      "final": {
+        "room": "MACHINE-ROOM",
+        "winner": "ADVENTURER",
+        "score": 65,
+        "moves": 53,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-tiny-room",
+      "commands": 101,
+      "offered": 101,
+      "unsupported": 0,
+      "execution": "verified-walkthrough-prefix",
+      "gameDraws": 53,
+      "clockTicks": 101,
+      "controls": 499,
+      "moreExpansions": 83,
+      "pathHash": "364b3f181375d8738f6c4dd230d36f947b74e26125d473a8e34ddb914a29c69c",
+      "checkpointsHash": "67342dc249d5efb5720dd31f6080903947e776f8456e1ea3073e75d32d8497d1",
+      "final": {
+        "room": "TINY-ROOM",
+        "winner": "ADVENTURER",
+        "score": 105,
+        "moves": 101,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-dragon",
+      "commands": 115,
+      "offered": 115,
+      "unsupported": 0,
+      "execution": "verified-walkthrough-prefix",
+      "gameDraws": 59,
+      "clockTicks": 115,
+      "controls": 566,
+      "moreExpansions": 94,
+      "pathHash": "3548b5b29a62bfff9f38589ccc8ecfa29d705819764a6c0215d50ed338219352",
+      "checkpointsHash": "fd4e39170324b779823cf8e0d8f26a59bd681dc5a8c5f7a5c621c4206b2f0d98",
+      "final": {
+        "room": "DRAGON-LAIR",
+        "winner": "ADVENTURER",
+        "score": 110,
+        "moves": 115,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-princess",
+      "commands": 145,
+      "offered": 145,
+      "unsupported": 0,
+      "execution": "verified-walkthrough-prefix",
+      "gameDraws": 82,
+      "clockTicks": 174,
+      "controls": 663,
+      "moreExpansions": 99,
+      "pathHash": "594d46b1ef1ddc9f02ac6fd30e4dc88ae0c5f8a45dee9048e7e4ca31e0eb80d1",
+      "checkpointsHash": "3c3825a3427f7c1468dcb306ab162e41e64ad4cb3d48275d01a9dbbfd93cd671",
+      "final": {
+        "room": "GARDEN-NORTH",
+        "winner": "ADVENTURER",
+        "score": 125,
+        "moves": 174,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-workshop",
+      "commands": 169,
+      "offered": 169,
+      "unsupported": 0,
+      "execution": "verified-walkthrough-prefix",
+      "gameDraws": 92,
+      "clockTicks": 197,
+      "controls": 797,
+      "moreExpansions": 125,
+      "pathHash": "e264780c8fcc7c34776efa36266aee24097d1478dd448c5898d0ba1028454203",
+      "checkpointsHash": "92c319c313fe4d845c46fe1aa172b4c9a8a31a81daecea11bbab9dbbe36840e4",
+      "final": {
+        "room": "WIZARDS-WORKSHOP",
+        "winner": "ADVENTURER",
+        "score": 185,
+        "moves": 197,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-volcano",
+      "commands": 220,
+      "offered": 220,
+      "unsupported": 0,
+      "execution": "verified-walkthrough-prefix",
+      "gameDraws": 109,
+      "clockTicks": 262,
+      "controls": 1057,
+      "moreExpansions": 168,
+      "pathHash": "526cc3aa7a8d4f02a28fa26a5e4226f6a2f61860ca4933b0953409fce7fd8bb6",
+      "checkpointsHash": "abbbea1b8b46f28081dea66744f48246c94712da2860f09ebd64ea5fab7e2290",
+      "final": {
+        "room": "VOLCANO-BOTTOM",
+        "winner": "ADVENTURER",
+        "score": 250,
+        "moves": 262,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-bank",
+      "commands": 263,
+      "offered": 263,
+      "unsupported": 0,
+      "execution": "verified-walkthrough-prefix",
+      "gameDraws": 121,
+      "clockTicks": 305,
+      "controls": 1260,
+      "moreExpansions": 206,
+      "pathHash": "6ca683162f22f447a6552654c002c968fe1e04148e25e4cbd9b7a4c1b26e6f53",
+      "checkpointsHash": "c8132d58d1e035b2d3b43ad43cfcc9d37e6ce24efa82f49299122e4e8c64d043",
+      "final": {
+        "room": "BANK-ENTRANCE",
+        "winner": "ADVENTURER",
+        "score": 315,
+        "moves": 305,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "random-death-recovery",
+      "commands": 78,
+      "offered": 78,
+      "unsupported": 0,
+      "execution": "shell-controller",
+      "gameDraws": 49,
+      "clockTicks": 105,
+      "controls": 349,
+      "moreExpansions": 49,
+      "pathHash": "b37254ec643fffd59f674964e48eed30734de04c45c7ebce53a11f2660a863d8",
+      "checkpointsHash": "c375a7c2700ebc93f29c5848f937eae55093f2a18597b9b42fce105bd86b60ef",
+      "final": {
+        "room": "INSIDE-BARROW",
+        "winner": "ADVENTURER",
+        "score": 55,
+        "moves": 105,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "tiny-before-riddle",
+      "commands": 56,
+      "offered": 56,
+      "unsupported": 0,
+      "execution": "shell-controller",
+      "gameDraws": 24,
+      "clockTicks": 56,
+      "controls": 239,
+      "moreExpansions": 33,
+      "pathHash": "4c983acdd396d52af5665837dbd5a0161203bb37c43bb327d749ff2afdde7c79",
+      "checkpointsHash": "ebd35aed7c909d09913485ae9537c2d1d2bd5065c6a840a6ea9743a808b0c54f",
+      "final": {
+        "room": "PEARL-ROOM",
+        "winner": "ADVENTURER",
+        "score": 40,
+        "moves": 56,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "robot-before-cakes",
+      "commands": 62,
+      "offered": 62,
+      "unsupported": 0,
+      "execution": "shell-controller",
+      "gameDraws": 37,
+      "clockTicks": 62,
+      "controls": 303,
+      "moreExpansions": 52,
+      "pathHash": "579fd935ef88d1d74576a6da4dc76e6e2267665b86b7a72d14d18a21a362ef2e",
+      "checkpointsHash": "3365caa20666a33ed708f063b960e0c8335ff79c375fc50ec902c474372b0827",
+      "final": {
+        "room": "TEA-ROOM",
+        "winner": "ADVENTURER",
+        "score": 65,
+        "moves": 62,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "restore-mid-keyhole",
+      "commands": 104,
+      "offered": 104,
+      "unsupported": 0,
+      "execution": "shell-controller",
+      "gameDraws": 53,
+      "clockTicks": 102,
+      "controls": 513,
+      "moreExpansions": 86,
+      "pathHash": "e6ceae2887bd699caa5b75cd6341b4221e5c82f1576e19154dfa723b0a063609",
+      "checkpointsHash": "a4bf0a2cf997efd44a53cf457f2c49a15dc41439ce501d8421b70f2087847cac",
+      "final": {
+        "room": "TINY-ROOM",
+        "winner": "ADVENTURER",
+        "score": 105,
+        "moves": 101,
+        "won": false,
+        "deaths": 0
+      }
+    }
+  ],
+  "total": 1868,
+  "offered": 1868,
+  "unsupported": 0
+}

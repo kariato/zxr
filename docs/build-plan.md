@@ -287,15 +287,15 @@ Implementation, evidence and scope limits: [phase 1](phase-1.md). `npm run zil:c
 | 4.8 | Text shell: browser page with room text, scrolling transcript, options grouped by object, exits and menu, number-key shortcuts, screen-reader labels and adjustable text size; and `zxr play` in a terminal. | Playwright smoke test plays 20 turns in Chromium and Firefox, keyboard only. |
 | 4.9 | Coverage tests: convert each command of the golden walkthrough, and of scripts that solve puzzles in a different order, restore a save mid-puzzle, or recover after a death, into the option that should be on offer at that moment, and assert it is. Unsupported cases are reported as failures, never silently skipped. | 100% of steps in every script are reachable as offered options; the walkthrough ends with full score and `WON-FLAG` set. |
 
-- [ ] 4.1
-- [ ] 4.2
-- [ ] 4.3
-- [ ] 4.4
-- [ ] 4.5
-- [ ] 4.6
-- [ ] 4.7
-- [ ] 4.8
-- [ ] 4.9
+- [x] 4.1 — all 269 syntax families and 165 object rank tables; static dispatch evidence and non-pruning scope-input query ([details](phase-4.md))
+- [x] 4.2 — pure actor-relative scope and filtered perception; all-entity source-helper comparisons and ten sample layouts ([details](phase-4.md#pure-runtime-scope-and-observations-42))
+- [x] 4.3 — stateless staged selection and atomic commit; all 36 walkthrough two-object steps, implicit taking and robot inventory ([details](phase-4.md#staged-object-and-actor-selection-43))
+- [x] 4.4 — implementation and automated API/replay/tablet checks pass; human tablet usability check passed by user report on 2026-10-23 ([details](phase-4.md#vocabulary-pickers-and-special-inputs-44))
+- [x] 4.5 — saved clue knowledge, placement-only gates and replay/reachability checks ([details](phase-4.md#saved-knowledge-gates-45))
+- [x] 4.6 — bounded object/operand menus, separate always actions and one-step complete “more” expansion ([details](phase-4.md#ranked-menus-and-one-step-expansion-46))
+- [x] 4.7 — source-based labels for all menus, exits and staged choices; live names, neutral word placeholders and browser rendering checks ([details](phase-4.md#plain-action-labels-47))
+- [x] 4.8 — shared browser/terminal player, staged numbered choices, storage protocol and 20-turn keyboard smoke tests ([details](phase-4.md#browser-and-terminal-text-shells-48))
+- [x] 4.9 — 1,868/1,868 required structured actions across 17 scripts; original text/state/RNG, alternate orders, mid-puzzle restore, death recovery and 400-point victory ([details](phase-4.md#complete-offered-option-coverage-49))
 
 **Gate:** Zork II can be completed to full score and victory (`WON-FLAG`) using only offered options. This is the first public milestone, and the text version can go on GitHub Pages.
 

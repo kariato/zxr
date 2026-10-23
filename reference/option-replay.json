@@ -1,0 +1,2587 @@
+{
+  "format": "zxr-option-replay-v1",
+  "buildHash": "41ba9c8185ee8dc59af0d6f2db9f61437f73475f5fe302284bb9a2006cbae586",
+  "cases": [
+    {
+      "id": "tiny-before-riddle",
+      "commands": [
+        "take lamp",
+        "take sword",
+        "turn on lamp",
+        "south",
+        "south",
+        "south",
+        "sw",
+        "south",
+        "se",
+        "enter gazebo",
+        "take all",
+        "exit",
+        "south",
+        "west",
+        "sw",
+        "look",
+        "look",
+        "look",
+        "look",
+        "look",
+        "north",
+        "north",
+        "north",
+        "up",
+        "put mat under door",
+        "open lid",
+        "put opener in keyhole",
+        "take opener",
+        "drop opener",
+        "take mat",
+        "take key",
+        "unlock door with key",
+        "open door",
+        "north",
+        "take blue sphere",
+        "south",
+        "down",
+        "south",
+        "south",
+        "south",
+        "look",
+        "look",
+        "look",
+        "look",
+        "look",
+        "look",
+        "look",
+        "look",
+        "look",
+        "look",
+        "look",
+        "look",
+        "north",
+        "answer \"well\"",
+        "east",
+        "take necklace"
+      ],
+      "actions": [
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "LAMP",
+            "noun": "LAMP"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "SWORD",
+            "noun": "SWORD"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LAMP-ON",
+          "lexicalTable": "TURN",
+          "syntax": 5,
+          "prso": {
+            "object": "LAMP",
+            "noun": "LAMP"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SW"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SE"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "THROUGH",
+          "lexicalTable": "ENTER",
+          "syntax": 1,
+          "prso": {
+            "object": "GAZEBO",
+            "noun": "GAZEBO"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": "ALL",
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "EXIT",
+          "lexicalTable": "EXIT",
+          "syntax": 2,
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "WEST"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SW"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK",
+          "lexicalTable": "LOOK",
+          "syntax": 12,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK",
+          "lexicalTable": "LOOK",
+          "syntax": 12,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK",
+          "lexicalTable": "LOOK",
+          "syntax": 12,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK",
+          "lexicalTable": "LOOK",
+          "syntax": 12,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK",
+          "lexicalTable": "LOOK",
+          "syntax": 12,
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NORTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NORTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NORTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "UP"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "PUT-UNDER",
+          "lexicalTable": "PUT",
+          "syntax": 4,
+          "prso": {
+            "object": "PLACE-MAT",
+            "noun": "MAT"
+          },
+          "prsi": {
+            "object": "PDOOR",
+            "noun": "DOOR"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "OPEN",
+          "lexicalTable": "OPEN",
+          "syntax": 3,
+          "prso": {
+            "object": "LID-1",
+            "noun": "LID"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "PUT",
+          "lexicalTable": "PUT",
+          "syntax": 7,
+          "prso": {
+            "object": "LETTER-OPENER",
+            "noun": "OPENER"
+          },
+          "prsi": {
+            "object": "KEYHOLE-1",
+            "noun": "KEYHOLE"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "LETTER-OPENER",
+            "noun": "OPENER"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "DROP",
+          "lexicalTable": "DROP",
+          "syntax": 4,
+          "prso": {
+            "object": "LETTER-OPENER",
+            "noun": "OPENER"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "PLACE-MAT",
+            "noun": "MAT"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "KEY",
+            "noun": "KEY"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "UNLOCK",
+          "lexicalTable": "UNLOCK",
+          "syntax": 1,
+          "prso": {
+            "object": "PDOOR",
+            "noun": "DOOR"
+          },
+          "prsi": {
+            "object": "KEY",
+            "noun": "KEY"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "OPEN",
+          "lexicalTable": "OPEN",
+          "syntax": 3,
+          "prso": {
+            "object": "PDOOR",
+            "noun": "DOOR"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NORTH"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "PALANTIR-2",
+            "noun": "SPHERE",
+            "adjective": "BLUE"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "DOWN"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK",
+          "lexicalTable": "LOOK",
+          "syntax": 12,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK",
+          "lexicalTable": "LOOK",
+          "syntax": 12,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK",
+          "lexicalTable": "LOOK",
+          "syntax": 12,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK",
+          "lexicalTable": "LOOK",
+          "syntax": 12,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK",
+          "lexicalTable": "LOOK",
+          "syntax": 12,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK",
+          "lexicalTable": "LOOK",
+          "syntax": 12,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK",
+          "lexicalTable": "LOOK",
+          "syntax": 12,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK",
+          "lexicalTable": "LOOK",
+          "syntax": 12,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK",
+          "lexicalTable": "LOOK",
+          "syntax": 12,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK",
+          "lexicalTable": "LOOK",
+          "syntax": 12,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK",
+          "lexicalTable": "LOOK",
+          "syntax": 12,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK",
+          "lexicalTable": "LOOK",
+          "syntax": 12,
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NORTH"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "ANSWER",
+          "lexicalTable": "ANSWER",
+          "syntax": 2,
+          "kind": "say",
+          "words": [
+            "WELL"
+          ]
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "EAST"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "PEARL",
+            "noun": "NECKLACE"
+          },
+          "kind": "act"
+        }
+      ],
+      "originalHash": "3035cdcb0f445938681d324063c90f49a5a11ce8c700d6d22a7b2054141cc223",
+      "detachedSiblings": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "robot-before-cakes",
+      "commands": [
+        "take lamp",
+        "take sword",
+        "turn on lamp",
+        "south",
+        "south",
+        "south",
+        "sw",
+        "south",
+        "se",
+        "enter gazebo",
+        "take teapot",
+        "exit",
+        "north",
+        "ne",
+        "fill teapot",
+        "south",
+        "sw",
+        "sw",
+        "southeast",
+        "west",
+        "southeast",
+        "answer \"well\"",
+        "east",
+        "take necklace",
+        "east",
+        "enter bucket",
+        "pour water in bucket",
+        "stand",
+        "east",
+        "nw",
+        "read paper",
+        "robot, go east",
+        "east",
+        "robot, go south",
+        "south",
+        "take red sphere",
+        "robot, lift cage",
+        "take red sphere",
+        "robot, go north",
+        "north",
+        "robot, push triangular button",
+        "west",
+        "southeast",
+        "west",
+        "southeast",
+        "west",
+        "southeast",
+        "west",
+        "southeast",
+        "drop red sphere",
+        "drop paper",
+        "take blue cake",
+        "take green cake",
+        "take orange cake",
+        "take red cake",
+        "eat green cake",
+        "east",
+        "drop orange cake",
+        "throw red cake in pool",
+        "take candies",
+        "west",
+        "eat blue cake"
+      ],
+      "actions": [
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "LAMP",
+            "noun": "LAMP"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "SWORD",
+            "noun": "SWORD"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LAMP-ON",
+          "lexicalTable": "TURN",
+          "syntax": 5,
+          "prso": {
+            "object": "LAMP",
+            "noun": "LAMP"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SW"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SE"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "THROUGH",
+          "lexicalTable": "ENTER",
+          "syntax": 1,
+          "prso": {
+            "object": "GAZEBO",
+            "noun": "GAZEBO"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "TEAPOT",
+            "noun": "TEAPOT"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "EXIT",
+          "lexicalTable": "EXIT",
+          "syntax": 2,
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NORTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NE"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "FILL",
+          "lexicalTable": "FILL",
+          "syntax": 1,
+          "prso": {
+            "object": "TEAPOT",
+            "noun": "TEAPOT"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SW"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SW"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SE"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "WEST"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SE"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "ANSWER",
+          "lexicalTable": "ANSWER",
+          "syntax": 2,
+          "kind": "say",
+          "words": [
+            "WELL"
+          ]
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "EAST"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "PEARL",
+            "noun": "NECKLACE"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "EAST"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "THROUGH",
+          "lexicalTable": "ENTER",
+          "syntax": 1,
+          "prso": {
+            "object": "BUCKET",
+            "noun": "BUCKET"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "DROP",
+          "lexicalTable": "POUR",
+          "syntax": 3,
+          "prso": {
+            "object": "WATER",
+            "noun": "WATER"
+          },
+          "prsi": {
+            "object": "BUCKET",
+            "noun": "BUCKET"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "STAND",
+          "lexicalTable": "STAND",
+          "syntax": 2,
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "EAST"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NW"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "READ",
+          "lexicalTable": "READ",
+          "syntax": 4,
+          "prso": {
+            "object": "ROBOT-LABEL",
+            "noun": "PAPER"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "ROBOT",
+          "direction": "EAST"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "EAST"
+        },
+        {
+          "kind": "walk",
+          "actor": "ROBOT",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "PALANTIR-1",
+            "noun": "SPHERE",
+            "adjective": "RED"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "ROBOT",
+          "verb": "RAISE",
+          "lexicalTable": "RAISE",
+          "syntax": 2,
+          "prso": {
+            "object": "CAGE",
+            "noun": "CAGE"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "PALANTIR-1",
+            "noun": "SPHERE",
+            "adjective": "RED"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "ROBOT",
+          "direction": "NORTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NORTH"
+        },
+        {
+          "actor": "ROBOT",
+          "verb": "PUSH",
+          "lexicalTable": "PUSH",
+          "syntax": 4,
+          "prso": {
+            "object": "TRIANGULAR-BUTTON",
+            "noun": "BUTTON",
+            "adjective": "TRIANGULAR"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "WEST"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SE"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "WEST"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SE"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "WEST"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SE"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "WEST"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SE"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "DROP",
+          "lexicalTable": "DROP",
+          "syntax": 4,
+          "prso": {
+            "object": "PALANTIR-1",
+            "noun": "SPHERE",
+            "adjective": "RED"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "DROP",
+          "lexicalTable": "DROP",
+          "syntax": 4,
+          "prso": {
+            "object": "ROBOT-LABEL",
+            "noun": "PAPER"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "BLUE-ICING",
+            "noun": "CAKE",
+            "adjective": "BLUE"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "EAT-ME-CAKE",
+            "noun": "CAKE",
+            "adjective": "GREEN"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "ORANGE-ICING",
+            "noun": "CAKE",
+            "adjective": "ORANGE"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "RED-ICING",
+            "noun": "CAKE",
+            "adjective": "RED"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "EAT",
+          "lexicalTable": "EAT",
+          "syntax": 1,
+          "prso": {
+            "object": "EAT-ME-CAKE",
+            "noun": "CAKE",
+            "adjective": "GREEN"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "EAST"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "DROP",
+          "lexicalTable": "DROP",
+          "syntax": 4,
+          "prso": {
+            "object": "ORANGE-ICING",
+            "noun": "CAKE",
+            "adjective": "ORANGE"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "PUT",
+          "lexicalTable": "THROW",
+          "syntax": 4,
+          "prso": {
+            "object": "RED-ICING",
+            "noun": "CAKE",
+            "adjective": "RED"
+          },
+          "prsi": {
+            "object": "POOL",
+            "noun": "POOL"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "CANDY",
+            "adjective": "CANDIED"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "WEST"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "EAT",
+          "lexicalTable": "EAT",
+          "syntax": 1,
+          "prso": {
+            "object": "BLUE-ICING",
+            "noun": "CAKE",
+            "adjective": "BLUE"
+          },
+          "kind": "act"
+        }
+      ],
+      "originalHash": "0769cc63d7f7d1dca37888ed2d503abe629abd35d3946ca70f7bdfeaff640b77",
+      "detachedSiblings": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+          "EAT-ME-CAKE"
+        ],
+        [
+          "EAT-ME-CAKE"
+        ],
+        [
+          "EAT-ME-CAKE"
+        ],
+        [
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ]
+      ]
+    },
+    {
+      "id": "restore-mid-keyhole",
+      "commands": [
+        "take lamp",
+        "take sword",
+        "turn on lamp",
+        "south",
+        "south",
+        "south",
+        "sw",
+        "south",
+        "se",
+        "enter gazebo",
+        "take teapot",
+        "exit",
+        "north",
+        "ne",
+        "fill teapot",
+        "south",
+        "sw",
+        "sw",
+        "southeast",
+        "west",
+        "southeast",
+        "answer \"well\"",
+        "east",
+        "take necklace",
+        "east",
+        "enter bucket",
+        "pour water in bucket",
+        "stand",
+        "east",
+        "take all",
+        "eat green cake",
+        "east",
+        "drop orange cake",
+        "throw red cake in pool",
+        "take candies",
+        "west",
+        "eat blue cake",
+        "nw",
+        "read paper",
+        "drop paper",
+        "robot, go east",
+        "east",
+        "robot, go south",
+        "south",
+        "take red sphere",
+        "robot, lift cage",
+        "take red sphere",
+        "look in red sphere",
+        "robot, go north",
+        "north",
+        "robot, push triangular button",
+        "west",
+        "southeast",
+        "west",
+        "southeast",
+        "west",
+        "enter bucket",
+        "fill teapot",
+        "stand",
+        "drop teapot",
+        "west",
+        "west",
+        "nw",
+        "open steel box",
+        "take violin",
+        "sw",
+        "take string",
+        "sw",
+        "give candies to lizard",
+        "drop necklace",
+        "drop violin",
+        "drop red sphere",
+        "north",
+        "ne",
+        "east",
+        "north",
+        "north",
+        "enter gazebo",
+        "take all",
+        "exit",
+        "south",
+        "west",
+        "sw",
+        "north",
+        "take brick",
+        "north",
+        "north",
+        "up",
+        "put mat under door",
+        "open lid",
+        "put opener in keyhole",
+        "save",
+        "take opener",
+        "restore",
+        "take opener",
+        "drop opener",
+        "take mat",
+        "take key",
+        "unlock door with key",
+        "open door",
+        "north",
+        "take blue sphere",
+        "look in blue sphere",
+        "south"
+      ],
+      "actions": [
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "LAMP",
+            "noun": "LAMP"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "SWORD",
+            "noun": "SWORD"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LAMP-ON",
+          "lexicalTable": "TURN",
+          "syntax": 5,
+          "prso": {
+            "object": "LAMP",
+            "noun": "LAMP"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SW"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SE"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "THROUGH",
+          "lexicalTable": "ENTER",
+          "syntax": 1,
+          "prso": {
+            "object": "GAZEBO",
+            "noun": "GAZEBO"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "TEAPOT",
+            "noun": "TEAPOT"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "EXIT",
+          "lexicalTable": "EXIT",
+          "syntax": 2,
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NORTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NE"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "FILL",
+          "lexicalTable": "FILL",
+          "syntax": 1,
+          "prso": {
+            "object": "TEAPOT",
+            "noun": "TEAPOT"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SW"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SW"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SE"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "WEST"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SE"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "ANSWER",
+          "lexicalTable": "ANSWER",
+          "syntax": 2,
+          "kind": "say",
+          "words": [
+            "WELL"
+          ]
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "EAST"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "PEARL",
+            "noun": "NECKLACE"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "EAST"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "THROUGH",
+          "lexicalTable": "ENTER",
+          "syntax": 1,
+          "prso": {
+            "object": "BUCKET",
+            "noun": "BUCKET"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "DROP",
+          "lexicalTable": "POUR",
+          "syntax": 3,
+          "prso": {
+            "object": "WATER",
+            "noun": "WATER"
+          },
+          "prsi": {
+            "object": "BUCKET",
+            "noun": "BUCKET"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "STAND",
+          "lexicalTable": "STAND",
+          "syntax": 2,
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "EAST"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": "ALL",
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "EAT",
+          "lexicalTable": "EAT",
+          "syntax": 1,
+          "prso": {
+            "object": "EAT-ME-CAKE",
+            "noun": "CAKE",
+            "adjective": "GREEN"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "EAST"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "DROP",
+          "lexicalTable": "DROP",
+          "syntax": 4,
+          "prso": {
+            "object": "ORANGE-ICING",
+            "noun": "CAKE",
+            "adjective": "ORANGE"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "PUT",
+          "lexicalTable": "THROW",
+          "syntax": 4,
+          "prso": {
+            "object": "RED-ICING",
+            "noun": "CAKE",
+            "adjective": "RED"
+          },
+          "prsi": {
+            "object": "POOL",
+            "noun": "POOL"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "CANDY",
+            "adjective": "CANDIED"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "WEST"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "EAT",
+          "lexicalTable": "EAT",
+          "syntax": 1,
+          "prso": {
+            "object": "BLUE-ICING",
+            "noun": "CAKE",
+            "adjective": "BLUE"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NW"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "READ",
+          "lexicalTable": "READ",
+          "syntax": 4,
+          "prso": {
+            "object": "ROBOT-LABEL",
+            "noun": "PAPER"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "DROP",
+          "lexicalTable": "DROP",
+          "syntax": 4,
+          "prso": {
+            "object": "ROBOT-LABEL",
+            "noun": "PAPER"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "ROBOT",
+          "direction": "EAST"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "EAST"
+        },
+        {
+          "kind": "walk",
+          "actor": "ROBOT",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "PALANTIR-1",
+            "noun": "SPHERE",
+            "adjective": "RED"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "ROBOT",
+          "verb": "RAISE",
+          "lexicalTable": "RAISE",
+          "syntax": 2,
+          "prso": {
+            "object": "CAGE",
+            "noun": "CAGE"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "PALANTIR-1",
+            "noun": "SPHERE",
+            "adjective": "RED"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK-INSIDE",
+          "lexicalTable": "LOOK",
+          "syntax": 3,
+          "prso": {
+            "object": "PALANTIR-1",
+            "noun": "SPHERE",
+            "adjective": "RED"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "ROBOT",
+          "direction": "NORTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NORTH"
+        },
+        {
+          "actor": "ROBOT",
+          "verb": "PUSH",
+          "lexicalTable": "PUSH",
+          "syntax": 4,
+          "prso": {
+            "object": "TRIANGULAR-BUTTON",
+            "noun": "BUTTON",
+            "adjective": "TRIANGULAR"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "WEST"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SE"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "WEST"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SE"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "WEST"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "THROUGH",
+          "lexicalTable": "ENTER",
+          "syntax": 1,
+          "prso": {
+            "object": "BUCKET",
+            "noun": "BUCKET"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "FILL",
+          "lexicalTable": "FILL",
+          "syntax": 1,
+          "prso": {
+            "object": "TEAPOT",
+            "noun": "TEAPOT"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "STAND",
+          "lexicalTable": "STAND",
+          "syntax": 2,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "DROP",
+          "lexicalTable": "DROP",
+          "syntax": 4,
+          "prso": {
+            "object": "TEAPOT",
+            "noun": "TEAPOT"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "WEST"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "WEST"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NW"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "OPEN",
+          "lexicalTable": "OPEN",
+          "syntax": 3,
+          "prso": {
+            "object": "IRON-BOX",
+            "noun": "BOX",
+            "adjective": "STEEL"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "VIOLIN",
+            "noun": "VIOLIN"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SW"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "FUSE",
+            "noun": "STRING"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SW"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "GIVE",
+          "lexicalTable": "GIVE",
+          "syntax": 2,
+          "prso": {
+            "object": "CANDY",
+            "adjective": "CANDIED"
+          },
+          "prsi": {
+            "object": "DOOR-KEEPER",
+            "noun": "LIZARD"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "DROP",
+          "lexicalTable": "DROP",
+          "syntax": 4,
+          "prso": {
+            "object": "PEARL",
+            "noun": "NECKLACE"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "DROP",
+          "lexicalTable": "DROP",
+          "syntax": 4,
+          "prso": {
+            "object": "VIOLIN",
+            "noun": "VIOLIN"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "DROP",
+          "lexicalTable": "DROP",
+          "syntax": 4,
+          "prso": {
+            "object": "PALANTIR-1",
+            "noun": "SPHERE",
+            "adjective": "RED"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NORTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NE"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "EAST"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NORTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NORTH"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "THROUGH",
+          "lexicalTable": "ENTER",
+          "syntax": 1,
+          "prso": {
+            "object": "GAZEBO",
+            "noun": "GAZEBO"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": "ALL",
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "EXIT",
+          "lexicalTable": "EXIT",
+          "syntax": 2,
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "WEST"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SW"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NORTH"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "BRICK",
+            "noun": "BRICK"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NORTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NORTH"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "UP"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "PUT-UNDER",
+          "lexicalTable": "PUT",
+          "syntax": 4,
+          "prso": {
+            "object": "PLACE-MAT",
+            "noun": "MAT"
+          },
+          "prsi": {
+            "object": "PDOOR",
+            "noun": "DOOR"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "OPEN",
+          "lexicalTable": "OPEN",
+          "syntax": 3,
+          "prso": {
+            "object": "LID-1",
+            "noun": "LID"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "PUT",
+          "lexicalTable": "PUT",
+          "syntax": 7,
+          "prso": {
+            "object": "LETTER-OPENER",
+            "noun": "OPENER"
+          },
+          "prsi": {
+            "object": "KEYHOLE-1",
+            "noun": "KEYHOLE"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "SAVE",
+          "lexicalTable": "SAVE",
+          "syntax": 1,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "LETTER-OPENER",
+            "noun": "OPENER"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "RESTORE",
+          "lexicalTable": "RESTORE",
+          "syntax": 1,
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "LETTER-OPENER",
+            "noun": "OPENER"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "DROP",
+          "lexicalTable": "DROP",
+          "syntax": 4,
+          "prso": {
+            "object": "LETTER-OPENER",
+            "noun": "OPENER"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "PLACE-MAT",
+            "noun": "MAT"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "KEY",
+            "noun": "KEY"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "UNLOCK",
+          "lexicalTable": "UNLOCK",
+          "syntax": 1,
+          "prso": {
+            "object": "PDOOR",
+            "noun": "DOOR"
+          },
+          "prsi": {
+            "object": "KEY",
+            "noun": "KEY"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "OPEN",
+          "lexicalTable": "OPEN",
+          "syntax": 3,
+          "prso": {
+            "object": "PDOOR",
+            "noun": "DOOR"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "NORTH"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "TAKE",
+          "lexicalTable": "TAKE",
+          "syntax": 8,
+          "prso": {
+            "object": "PALANTIR-2",
+            "noun": "SPHERE",
+            "adjective": "BLUE"
+          },
+          "kind": "act"
+        },
+        {
+          "actor": "PLAYER",
+          "verb": "LOOK-INSIDE",
+          "lexicalTable": "LOOK",
+          "syntax": 3,
+          "prso": {
+            "object": "PALANTIR-2",
+            "noun": "SPHERE",
+            "adjective": "BLUE"
+          },
+          "kind": "act"
+        },
+        {
+          "kind": "walk",
+          "actor": "PLAYER",
+          "direction": "SOUTH"
+        }
+      ],
+      "originalHash": "4938c79b1c78e46a355f57a2b7f986e9b2868c48acc0c39dd3de3e24c6ed0b32",
+      "detachedSiblings": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+          "EAT-ME-CAKE"
+        ],
+        [
+          "EAT-ME-CAKE"
+        ],
+        [
+          "EAT-ME-CAKE"
+        ],
+        [
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ],
+        [
+          "BLUE-ICING",
+          "CANDY",
+          "EAT-ME-CAKE",
+          "POOL"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "format": "zxr-structured-replay-v1",
-  "buildHash": "ac91fc33afb541f9cecd4ece845c16189d4f365263c3d6f8ef8c46488e1938fa",
+  "buildHash": "41ba9c8185ee8dc59af0d6f2db9f61437f73475f5fe302284bb9a2006cbae586",
   "cases": [
     {
       "id": "walkthrough",

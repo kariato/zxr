@@ -38,7 +38,7 @@ function positioned(session:GameSession,room:string,inventory:string[]=[]){
 }
 it('publishes exact original opening and pure lifecycle observations without raw world data',()=>{
   const session=create();expect(session.opening()).toMatchObject({status:'resolved',epoch:1,revision:1,actionSequence:0,clockTicks:0});
-  expect(session.opening().text.join('')).toBe(runReference([]).transcript[0]);expect(session.observe()).toEqual({epoch:1,revision:1,moves:0,state:'input'});
+  expect(session.opening().text.join('')).toBe(runReference([]).transcript[0]);expect(session.observe()).toMatchObject({epoch:1,revision:1,moves:0,state:'input',perception:{actor:'ADVENTURER',lit:true}});
   const hash=session.stateHash(),save=session.exportSave();for(let i=0;i<3;i++){session.observe();session.options();session.opening();session.exportSave();}
   expect(session.stateHash()).toBe(hash);expect(session.exportSave()).toEqual(save);
   expect(new GameSession(game).options()).toEqual([]);

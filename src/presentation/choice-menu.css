@@ -1,0 +1,7 @@
+.choice-menu { max-width: 42rem; font-family: system-ui, sans-serif; }
+.choice-menu ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
+.choice-menu button { min-width: 45px; min-height: 45px; padding: .6rem .9rem; font: inherit; max-width: 100%; overflow-wrap: anywhere; text-align: left; }
+.choice-menu li button { width: 100%; }
+.choice-menu > button { margin-block: .6rem; }
+.choice-menu [hidden] { display: none; }
+.choice-menu button:focus-visible { outline: 3px solid #2455b2; outline-offset: 2px; }

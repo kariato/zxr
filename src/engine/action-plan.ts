@@ -28,11 +28,39 @@ export interface ActionPlan {
 }
 const name:Schema={type:'string',pattern:'^[A-Z][A-Z0-9?!.\\-]{0,63}$',minLength:1};
 const object=(properties:Record<string,Schema>,optional:Record<string,Schema>={}):Schema=>({type:'object',properties:{...properties,...optional},required:Object.keys(properties),additionalProperties:false});
-const operand:Schema={anyOf:[name,object({object:name,noun:name},{adjective:name}),object({object:name,adjective:name}),object({pseudo:object({room:name,word:name})})]};
-const selection:Schema={anyOf:[operand,{type:'array',items:operand,minItems:1,maxItems:49}]};
+export const operandSchema:Schema={anyOf:[name,object({object:name,noun:name},{adjective:name}),object({object:name,adjective:name}),object({pseudo:object({room:name,word:name})})]};
+export const selectionSchema:Schema={anyOf:[operandSchema,{type:'array',items:operandSchema,minItems:1,maxItems:49}]};
 const syntax={actor:name,verb:name,lexicalTable:name,syntax:{type:'integer',minimum:1,maximum:255} as Schema};
-const continuationSchema:Schema={anyOf:[object({kind:{const:'act'},...syntax,actor:{const:'PLAYER'}},{prso:selection,prsi:selection}),object({kind:{const:'walk'},actor:{const:'PLAYER'},direction:name})]};
-const actionSchema:Schema={anyOf:[object({kind:{const:'act'},...syntax},{prso:selection,prsi:selection}),object({kind:{const:'walk'},actor:name,direction:name}),object({kind:{const:'say'},...syntax,words:{type:'array',items:{type:'string',pattern:'^[A-Z0-9]{1,119}$',minLength:1},minItems:1,maxItems:57}},{prso:operand,continuation:continuationSchema})]};
+const continuationSchema:Schema={anyOf:[object({kind:{const:'act'},...syntax,actor:{const:'PLAYER'}},{prso:selectionSchema,prsi:selectionSchema}),object({kind:{const:'walk'},actor:{const:'PLAYER'},direction:name})]};
+const actionSchema:Schema={anyOf:[object({kind:{const:'act'},...syntax},{prso:selectionSchema,prsi:selectionSchema}),object({kind:{const:'walk'},actor:name,direction:name}),object({kind:{const:'say'},...syntax,words:{type:'array',items:{type:'string',pattern:'^[A-Z0-9]{1,119}$',minLength:1},minItems:1,maxItems:57}},{prso:operandSchema,continuation:continuationSchema})]};
+/** Validate a source operand spelling without creating an action or option ID. */
+export function prepareOperand(game:LoadedGame,value:Operand):PlannedOperand {
+  const payload=game.bundle.payload;
+  const entity=(key:string)=>{const e=payload.world.entities.find(e=>e.name===key);if(!e)throw new Error('Unknown action entity '+key);return e;};
+  if(typeof value!=='string'&&'pseudo' in value){
+    const room=entity(value.pseudo.room),entry=room.properties.flatMap(p=>p.kind==='pseudos'?p.entries:[]).find(e=>e.word.name===value.pseudo.word),proxy=entity('PSEUDO-OBJECT');
+    if(room.kind!=='room'||!entry)throw new Error('Unknown room pseudo feature');
+    return {id:proxy.id,name:proxy.name,words:[entry.word.name],pseudo:{room:room.id,word:entry.word.name,routine:entry.routine.id}};
+  }
+  const e=entity(typeof value==='string'?value:value.object),synonyms=e.properties.find(p=>p.property.name==='SYNONYM');
+  if(synonyms?.kind!=='words'||!synonyms.words.length)throw new Error('Action entity has no noun spelling '+e.name);
+  const word=typeof value==='string'?synonyms.words[0]!.name:'noun' in value?value.noun:undefined;
+  if(word!==undefined&&!synonyms.words.some(w=>w.name===word))throw new Error('Noun is not a source synonym of '+e.name);
+  const adjective=typeof value==='string'?undefined:value.adjective;
+  let adjectiveNumber:number|undefined;
+  if(adjective!==undefined){
+    const property=e.properties.find(p=>p.property.name==='ADJECTIVE');
+    const entry=property?.kind==='adjectives'?property.adjectives.find(a=>a.name===adjective):undefined;
+    if(!entry)throw new Error('Adjective is not a source adjective of '+e.name);
+    adjectiveNumber=entry.number;
+  }
+  const words=word===undefined?[adjective!]:adjective===undefined?[word]:[adjective,word];
+  for(const spelling of words){
+    const tokens=encodeReadText(game,spelling).tokens,vocabulary=payload.vocabulary.words.find(w=>w.name===spelling);
+    if(tokens.length!==1||!tokens[0]!.address||vocabulary?.roles.buzz)throw new Error('Unsupported noun spelling '+spelling);
+  }
+  return {id:e.id,name:e.name,words,...(adjectiveNumber===undefined?{}:{adjective:adjectiveNumber}),...(word===undefined?{adjectiveOnly:true}:{})};
+}
 /** Prepare lexical data only. It never runs routines, resolves ALL/scope, or writes parser/world state. */
 export function prepareAction(game:LoadedGame,world:WorldState,input:unknown):ActionPlan {
   if(world.buildHash!==game.buildHash)throw new Error('Action world belongs to another build');
@@ -42,31 +70,7 @@ export function prepareAction(game:LoadedGame,world:WorldState,input:unknown):Ac
   const actorId=action.actor==='PLAYER'?world.global('PLAYER'):entity(action.actor).id,actor=payload.world.entities.find(e=>e.id===actorId);
   const actorFlag=payload.symbols.symbols.find(s=>s.name==='ACTORBIT')?.number;
   if(!actor||actor.kind!=='object'||actorFlag==null||!world.hasFlag(actor.id,actorFlag))throw new Error('Action actor is not an initialized actor');
-  const noun=(value:Operand):PlannedOperand=>{
-    if(typeof value!=='string'&&'pseudo' in value){
-      const room=entity(value.pseudo.room),entry=room.properties.flatMap(p=>p.kind==='pseudos'?p.entries:[]).find(e=>e.word.name===value.pseudo.word),proxy=entity('PSEUDO-OBJECT');
-      if(room.kind!=='room'||!entry)throw new Error('Unknown room pseudo feature');
-      return {id:proxy.id,name:proxy.name,words:[entry.word.name],pseudo:{room:room.id,word:entry.word.name,routine:entry.routine.id}};
-    }
-    const e=entity(typeof value==='string'?value:value.object),synonyms=e.properties.find(p=>p.property.name==='SYNONYM');
-    if(synonyms?.kind!=='words'||!synonyms.words.length)throw new Error('Action entity has no noun spelling '+e.name);
-    const word=typeof value==='string'?synonyms.words[0]!.name:'noun' in value?value.noun:undefined;
-    if(word!==undefined&&!synonyms.words.some(w=>w.name===word))throw new Error('Noun is not a source synonym of '+e.name);
-    const adjective=typeof value==='string'?undefined:value.adjective;
-    let adjectiveNumber:number|undefined;
-    if(adjective!==undefined){
-      const property=e.properties.find(p=>p.property.name==='ADJECTIVE');
-      const entry=property?.kind==='adjectives'?property.adjectives.find(a=>a.name===adjective):undefined;
-      if(!entry)throw new Error('Adjective is not a source adjective of '+e.name);
-      adjectiveNumber=entry.number;
-    }
-    const words=word===undefined?[adjective!]:adjective===undefined?[word]:[adjective,word];
-    for(const spelling of words){
-      const tokens=encodeReadText(game,spelling).tokens,vocabulary=payload.vocabulary.words.find(w=>w.name===spelling);
-      if(tokens.length!==1||!tokens[0]!.address||vocabulary?.roles.buzz)throw new Error('Unsupported noun spelling '+spelling);
-    }
-    return {id:e.id,name:e.name,words,...(adjectiveNumber===undefined?{}:{adjective:adjectiveNumber}),...(word===undefined?{adjectiveOnly:true}:{})};
-  };
+  const noun=(value:Operand)=>prepareOperand(game,value);
   const selected=(value:Selection|undefined):PlannedSelection|null=>{
     if(value===undefined)return null;if(value==='ALL')return {kind:'all'};
     const values=Array.isArray(value)?value:[value],objects=values.map(noun);

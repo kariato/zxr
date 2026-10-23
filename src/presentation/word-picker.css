@@ -1,0 +1,9 @@
+.word-picker { max-width: 56rem; padding: 1rem; font-family: system-ui, sans-serif; }
+.word-picker h2 { font-size: 1.5rem; }
+.word-picker-letters, .word-picker-controls { display: flex; flex-wrap: wrap; gap: .4rem; margin-block: 1rem; }
+.word-picker button { min-width: 2.75rem; min-height: 2.75rem; padding: .5rem .75rem; font: inherit; cursor: pointer; }
+.word-picker button:focus-visible { outline: 3px solid #1673b1; outline-offset: 3px; }
+.word-picker button:disabled { cursor: default; opacity: .55; }
+.word-picker-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: .6rem; }
+.word-picker fieldset { min-width: 0; margin: 0; padding: .5rem; border: 1px solid #888; border-radius: .3rem; }
+.word-picker fieldset button { margin: .2rem; overflow-wrap: anywhere; }

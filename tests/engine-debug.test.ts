@@ -28,7 +28,9 @@ it('keeps debug and reveal-all capabilities out of the normal player API',()=>{
   expect(Object.keys(playerApi)).not.toContain('createDebugSession');expect(Object.keys(playerApi)).not.toContain('SESSION_DEBUG');expect(Object.keys(playerApi)).not.toContain('ExecutionDiagnostics');
   const normal=new GameSession(full,config);expect(()=>normal[SESSION_DEBUG]()).toThrow('not enabled');
   const {session,debug}=createDebugSession(full,config);expect(session.observe()).toEqual(normal.observe());expect(session.options()).toEqual(normal.options());
-  expect(Object.keys(session.observe())).toEqual(['epoch','revision','state','moves']);expect(session.opening()).not.toHaveProperty('trace');expect(session.opening()).not.toHaveProperty('random');
+  expect(Object.keys(session.observe())).toEqual(['epoch','revision','state','moves','perception']);expect(session.opening()).not.toHaveProperty('trace');expect(session.opening()).not.toHaveProperty('random');
+  expect(session.observe().perception.objects.some(o=>o.id==='WAND')).toBe(false);
+  expect(session.observe().perception).not.toHaveProperty('globals');
   expect(debug.revealAll().objects).toHaveLength(251);expect(debug.revealAll().objects.some(o=>o.name==='WAND')).toBe(true);
 });
 it('traces a source turn with exact 2actions.zil command locations and build-local source-map identities',()=>{

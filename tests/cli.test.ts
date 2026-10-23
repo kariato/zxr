@@ -8,11 +8,7 @@ import { sourceFiles } from '../tools/zil/program.ts';
 it('runs the executable CLI help', () => {
   expect(execFileSync(process.execPath, ['bin/zxr.ts', '--help'], { encoding: 'utf8' })).toContain('compile|play|check');
 });
-it.each(['play'])('does not claim %s is implemented', command => {
-  const result = spawnSync(process.execPath, ['bin/zxr.ts', command], { encoding: 'utf8' });
-  expect(result.status).toBe(1);
-  expect(result.stdout).toContain('not implemented');
-});
+
 it('checks the whole Zork II source project through the CLI',()=>{
   const text=execFileSync(process.execPath,['bin/zxr.ts','check','reference/zork2'],{encoding:'utf8'});
   expect(text).toContain('439 routines');expect(text).toContain('269 syntax entries');expect(text).toContain('Use zxr compile');

@@ -1,0 +1,63 @@
+# Rescue the red sphere before the cake/pool puzzle. Choose cakes explicitly after stashing two items. Fresh start, seed 2.
+take lamp
+take sword
+turn on lamp
+south
+south
+south
+sw
+south
+se
+enter gazebo
+take teapot
+exit
+north
+ne
+fill teapot
+south
+sw
+sw
+southeast
+west
+southeast
+answer "well"
+east
+take necklace
+east
+enter bucket
+pour water in bucket
+stand
+east
+nw
+read paper
+robot, go east
+east
+robot, go south
+south
+take red sphere
+robot, lift cage
+take red sphere
+robot, go north
+north
+robot, push triangular button
+west
+southeast
+west
+southeast
+west
+southeast
+west
+southeast
+drop red sphere
+drop paper
+take blue cake
+take green cake
+take orange cake
+take red cake
+eat green cake
+east
+drop orange cake
+throw red cake in pool
+take candies
+west
+eat blue cake

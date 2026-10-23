@@ -1,0 +1,41 @@
+[
+  {
+    "id": "riddle-well",
+    "source": "2actions.zil: RIDDLE-ROOM-FCN, printed M-LOOK riddle",
+    "learn": ["What is tall as a house,"],
+    "targets": [{"verbs": ["ANSWER", "SAY"], "words": ["WELL"]}]
+  },
+  {
+    "id": "robot-instructions",
+    "source": "2dungeon.zil: ROBOT-LABEL TEXT",
+    "learn": ["To activate me, say the following:"],
+    "targets": [{"actors": ["ROBOT"]}]
+  },
+  {
+    "id": "balloon-land",
+    "source": "2dungeon.zil: BALLOON-LABEL TEXT",
+    "learn": ["To land your balloon, say LAND"],
+    "targets": [{"verbs": ["SAY", "ANSWER", "INCANT"], "words": ["LAND"]}]
+  },
+  {
+    "id": "cerberus-collar",
+    "source": "2dungeon.zil: COLLAR FDESC, size suggests the three-headed dog",
+    "learn": ["A gigantic dog collar, large enough for three rhinoceros-sized dogs, is"],
+    "targets": [{"verbs": ["PUT", "PUT-ON"], "direct": ["COLLAR"], "indirect": ["CERBERUS"]}]
+  },
+  {
+    "id": "repellent-instructions",
+    "source": "2dungeon.zil: REPELLENT TEXT",
+    "learn": ["Instructions for use: Apply liberally to creature to be protected."],
+    "targets": [
+      {"verbs": ["PUT", "SPRAY"], "direct": ["REPELLENT"], "indirect": ["ME"]},
+      {"verbs": ["SSPRAY"], "direct": ["ME"], "indirect": ["REPELLENT"]}
+    ]
+  },
+  {
+    "id": "wizard-float",
+    "source": "2actions.zil: I-WIZARD assembled incantation or WAND-FCN robot refusal",
+    "learn": ["The Wizard incants \"Float!\"", "The Wizard snatches the wand away, muttering the word \"Float\""],
+    "targets": [{"verbs": ["SAY", "ANSWER", "INCANT"], "words": ["FLOAT"]}]
+  }
+]

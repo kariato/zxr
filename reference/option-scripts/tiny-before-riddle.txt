@@ -1,0 +1,57 @@
+# Solve the blue-sphere door puzzle before answering the riddle. Fresh start, seed 2.
+take lamp
+take sword
+turn on lamp
+south
+south
+south
+sw
+south
+se
+enter gazebo
+take all
+exit
+south
+west
+sw
+look
+look
+look
+look
+look
+north
+north
+north
+up
+put mat under door
+open lid
+put opener in keyhole
+take opener
+drop opener
+take mat
+take key
+unlock door with key
+open door
+north
+take blue sphere
+south
+down
+south
+south
+south
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+north
+answer "well"
+east
+take necklace
