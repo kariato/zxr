@@ -25,7 +25,7 @@ function submit(session:GameSession,label:string){const {epoch,revision}=session
 function host(session:GameSession,result:ReturnType<typeof submit>,outcome:HostResult['outcome']='success',save?:HostResult['save']){const {id,epoch,revision,kind}=result.host!;return session.completeHost({id,epoch,revision,kind,outcome,...(save?{save}:{})});}
 
 it('keeps debug and reveal-all capabilities out of the normal player API',()=>{
-  expect(Object.keys(playerApi)).not.toContain('createDebugSession');expect(Object.keys(playerApi)).not.toContain('SESSION_DEBUG');expect(Object.keys(playerApi)).not.toContain('ExecutionDiagnostics');
+  expect(Object.keys(playerApi)).not.toContain('createDebugSession');expect(Object.keys(playerApi)).not.toContain('SESSION_DEBUG');expect(Object.keys(playerApi)).not.toContain('ExecutionDiagnostics');expect(Object.keys(playerApi)).not.toContain('prepareRandomDiagnostic');expect(Object.keys(playerApi)).not.toContain('DIAGNOSTIC_INPUT');
   const normal=new GameSession(full,config);expect(()=>normal[SESSION_DEBUG]()).toThrow('not enabled');
   const {session,debug}=createDebugSession(full,config);expect(session.observe()).toEqual(normal.observe());expect(session.options()).toEqual(normal.options());
   expect(Object.keys(session.observe())).toEqual(['epoch','revision','state','moves','perception']);expect(session.opening()).not.toHaveProperty('trace');expect(session.opening()).not.toHaveProperty('random');
@@ -141,4 +141,18 @@ it('returns owned trace entries, origins and fault frames that cannot change fut
   const {interpreter,debug}=createDebugInterpreter(fixture('<ROUTINE GO () <F>> <ROUTINE F () </ 1 0>>'));interpreter.run();
   const before=debug.trace(),copy=debug.trace();copy.attempts[0]!.entries[0]!.source.file='forged.zil';copy.attempts[0]!.entries.length=0;copy.attempts[0]!.error!.stack[0]!.name='forged';
   expect(debug.trace()).toEqual(before);interpreter.run();expect(debug.trace().attempts[1]!.error).toEqual(before.attempts[0]!.error);
+});
+
+it('bounds internal checkpoint snapshots without changing execution when capture fills',()=>{
+  const game=fixture('<ROUTINE GO ("AUX" (I 0)) <REPEAT () <MAIN-LOOP-1> <COND (<G? <SET I <+ .I 1>> 300> <RETURN>)>>> <ROUTINE MAIN-LOOP-1 () 1>');
+  const plain=new Interpreter(game),{interpreter,debug}=createDebugInterpreter(game,{}, {captureBoundaries:true});
+  expect(interpreter.run()).toEqual(plain.run());expect(interpreter.stateHash()).toBe(plain.stateHash());
+  const attempt=debug.trace().attempts[0]!;expect(attempt.boundaries).toHaveLength(256);expect(attempt.droppedBoundaries).toBe(45);
+});
+it('filters diagnostic operations without changing output, RNG or checkpoint state',()=>{
+  const game=fixture('<ROUTINE GO () <SETG X <RANDOM 7>> <TELL "ready"> <RTRUE>>');
+  const full=createDebugInterpreter(game,{}, {maxEntries:128}),filtered=createDebugInterpreter(game,{}, {maxEntries:128,operations:['random']});
+  expect(filtered.interpreter.run()).toEqual(full.interpreter.run());expect(filtered.interpreter.checkpoint()).toEqual(full.interpreter.checkpoint());
+  const expected=full.debug.trace().attempts[0]!.entries.filter(e=>e.operation==='random');expect(expected).toHaveLength(1);expect(filtered.debug.trace().operations).toEqual(['random']);expect(filtered.debug.trace().attempts[0]!.entries).toEqual(expected);
+  expect(()=>createDebugInterpreter(game,{}, {operations:[]})).toThrow('filter');
 });

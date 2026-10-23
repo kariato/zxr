@@ -3,6 +3,18 @@ import type { MemoryImage, MemorySegment } from '../zil/memory.ts';
 import { hashJson } from '../zil/integrity.ts';
 export interface WorldSnapshot {format:'zxr-world-state-v1';buildHash:string;bytes:number[]}
 const PAGE=256;
+const propertyLayouts=new WeakMap<MemoryImage,{sizes:ReadonlyMap<number,number>;headers:ReadonlySet<number>}>();
+function propertyLayout(layout:MemoryImage){
+  let index=propertyLayouts.get(layout);if(index)return index;
+  const sizes=new Map<number,number>(),headers=new Set<number>();
+  for(const o of layout.objects){
+    headers.add(o.address+7);headers.add(o.address+8);headers.add(o.propertyTable);
+    let end=o.propertyTable+1+2*layout.bytes[o.propertyTable]!;
+    for(const p of o.properties){sizes.set(p.address,p.length);headers.add(p.address-1);end=p.address+p.length;}
+    headers.add(end);
+  }
+  index={sizes,headers};propertyLayouts.set(layout,index);return index;
+}
 class MemoryPages {
   #pages:Uint8Array[];#owned=new Set<number>();readonly length:number;
   constructor(bytes:Uint8Array,pages?:Uint8Array[],length=bytes.length){this.length=length;this.#pages=pages ?? [];if(!pages)for(let i=0;i<bytes.length;i+=PAGE)this.#pages.push(bytes.slice(i,i+PAGE));}
@@ -14,12 +26,13 @@ class MemoryPages {
 /** Raw memory remains authoritative for globals, flags, ordered trees and property data. */
 export class WorldState {
   readonly #game:LoadedGame;readonly #layout:MemoryImage;#memory:MemoryPages;
+  #layoutDirty=false;
   private constructor(game:LoadedGame,pages:MemoryPages,validate=true){this.#game=game;this.#layout=game.bundle.payload.memory;this.#memory=pages;if(validate)this.validate();}
   static create(game:LoadedGame):WorldState {return new WorldState(game,new MemoryPages(game.createInitialMemory()));}
   get buildHash():string{return this.#game.buildHash;}
   snapshot():WorldSnapshot {return {format:'zxr-world-state-v1',buildHash:this.buildHash,bytes:Array.from(this.#memory.bytes())};}
   worldHash():string {return hashJson(this.snapshot());}
-  fork():WorldState {return new WorldState(this.#game,this.#memory.fork(),false);}
+  fork():WorldState {const next=new WorldState(this.#game,this.#memory.fork(),false);next.#layoutDirty=this.#layoutDirty;return next;}
   static restore(game:LoadedGame,snapshot:WorldSnapshot):WorldState {
     if(snapshot?.format!=='zxr-world-state-v1'||snapshot.buildHash!==game.buildHash||!Array.isArray(snapshot.bytes)||snapshot.bytes.length!==game.bundle.payload.memory.bytes.length||snapshot.bytes.some(b=>!Number.isInteger(b)||b<0||b>255))throw new Error('Invalid or incompatible world snapshot');
     return new WorldState(game,new MemoryPages(new Uint8Array(snapshot.bytes)));
@@ -40,8 +53,8 @@ export class WorldState {
   #value(value:number):number {if(!Number.isSafeInteger(value)||value< -32768||value>65535)throw new Error('Value is outside the word domain');return value&65535;}
   getByte(base:number,index=0):number {return this.#memory.read(this.#range(base,index,1));}
   getWord(base:number,index=0):number {const a=this.#range(base,index,2);return this.#memory.read(a)*256+this.#memory.read(a+1);}
-  putByte(base:number,index:number,value:number):1 {const a=this.#range(base,index,1,true),v=this.#value(value);this.#memory.write(a,v&255);return 1;}
-  putWord(base:number,index:number,value:number):1 {const a=this.#range(base,index,2,true),v=this.#value(value);this.#memory.write(a,v>>>8);this.#memory.write(a+1,v&255);return 1;}
+  putByte(base:number,index:number,value:number):1 {const a=this.#range(base,index,1,true),v=this.#value(value);if(propertyLayout(this.#layout).headers.has(a))this.#layoutDirty=true;this.#memory.write(a,v&255);return 1;}
+  putWord(base:number,index:number,value:number):1 {const a=this.#range(base,index,2,true),v=this.#value(value),headers=propertyLayout(this.#layout).headers;if(headers.has(a)||headers.has(a+1))this.#layoutDirty=true;this.#memory.write(a,v>>>8);this.#memory.write(a+1,v&255);return 1;}
   rest(base:number,count=1):number {
     if(!Number.isSafeInteger(base)||!Number.isSafeInteger(count))throw new Error('Invalid pointer arithmetic');
     const next=base+count,segment=this.#allocations(base).find(s=>next>=s.base&&next<=s.base+s.length);
@@ -80,7 +93,13 @@ export class WorldState {
   propertyAddress(id:number,number:number):number {this.#propertyNumber(number);return this.#properties(id).find(p=>p.number===number)?.address ?? 0;}
   getProperty(id:number,number:number):number {this.#propertyNumber(number);const p=this.#properties(id).find(p=>p.number===number);if(!p){const defaults=this.#layout.segments.find(s=>s.name==='objects')!;return this.getWord(defaults.base,number-1);}return p.length===1?this.getByte(p.address):this.getWord(p.address);}
   putProperty(id:number,number:number,value:number):1 {this.#propertyNumber(number);const p=this.#properties(id).find(p=>p.number===number);if(!p||p.length>2)throw new Error('PUTP needs an existing one/two-byte property');return p.length===1?this.putByte(p.address,0,value):this.putWord(p.address,0,value);}
-  propertySize(address:number):number {if(address===0)return 0;for(const o of this.#layout.objects){const p=this.#properties(o.id).find(p=>p.address===address);if(p)return p.length;}throw new Error('PTSIZE requires a property data address');}
+  propertySize(address:number):number {
+    if(address===0)return 0;
+    // Validated layouts have fixed sizes. Raw header/pointer writes fall back
+    // to the original memory scan until validation proves the layout again.
+    if(this.#layoutDirty){for(const o of this.#layout.objects){const p=this.#properties(o.id).find(p=>p.address===address);if(p)return p.length;}throw new Error('PTSIZE requires a property data address');}
+    const size=propertyLayout(this.#layout).sizes.get(address);if(size===undefined)throw new Error('PTSIZE requires a property data address');return size;
+  }
   nextProperty(id:number,number:number):number {if(number!==0)this.#propertyNumber(number);const properties=this.#properties(id);if(number===0)return properties[0]?.number ?? 0;const index=properties.findIndex(p=>p.number===number);if(index<0)throw new Error('NEXTP requires an existing property');return properties[index+1]?.number ?? 0;}
   validate():void {
     const layout=this.#layout;if(this.#memory.length!==layout.bytes.length)throw new Error('World memory length mismatch');
@@ -101,5 +120,6 @@ export class WorldState {
       if(f.domain==='address'&&value>layout.bytes.length)throw new Error('Address reference outside memory');
       if(f.domain==='variable'&&!layout.globals.some(g=>g.number===value))throw new Error('Unknown global variable-number reference');
     }
+    this.#layoutDirty=false;
   }
 }

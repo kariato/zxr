@@ -1,0 +1,13 @@
+{
+  "format": "zxr-conformance-differences-v1",
+  "text": [
+    {
+      "ledger": "SRC-013",
+      "caseId": "death-8b33",
+      "input": 38,
+      "command": "play robot",
+      "referenceText": "You become so engrossed in the role of the robot that you kill yourself, just as he might have done!\nPushing the \n \n    ****  You have died  **** \n\nNow, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.\n\nRoom of Red Mist\nYou are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.\nYou strain to look out through the mist... \nYou see a small room with a sign on the wall, but it is too blurry to read.\n\n>",
+      "engineText": "You become so engrossed in the role of the robot that you kill yourself, just as he might have done!\n\n \n    ****  You have died  **** \n\nNow, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.\n\nRoom of Red Mist\nYou are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.\nYou strain to look out through the mist... \nYou see a small room with a sign on the wall, but it is too blurry to read.\n\n>"
+    }
+  ]
+}

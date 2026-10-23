@@ -23,7 +23,7 @@ const op=<K extends LogicExpression['op']>(data:CoreLogic,name:K)=>nodes(data).f
 describe('core ZIL routine lowering',()=>{
   it('lowers all 439 routines reproducibly and conserves source operations without hiding deferred work',()=>{
     expect(logic.routines).toHaveLength(439);expect(logic.routines.filter(r=>r.fullyLowered)).toHaveLength(32);expect(logic.untranslated).toHaveLength(5109);
-    expect(nodes(logic)).toHaveLength(19089);expect(logic.stage).toBe('core');
+    expect(nodes(logic)).toHaveLength(19093);expect(logic.stage).toBe('core');
     expect(logic).toEqual(buildCoreLogic());expect(JSON.parse(JSON.stringify(logic))).toEqual(logic);
     expect(auditCoreLogic(logic)).toEqual(JSON.parse(readFileSync('reference/logic-core.json','utf8')));
     expect(()=>assertFullyLoweredLogic(logic)).toThrow('requires step');

@@ -21,7 +21,7 @@ function fixture(source:string){
 describe('source-built memory image and linked IR',()=>{
   it('independently audits the complete initial data image and every linked routine',()=>{
     const audit=auditMemory(image,built.logic);
-    expect(audit.checked).toEqual({bytes:19882,segments:697,staticBase:11682,globals:168,tables:45,tableCells:1523,objects:251,shortNames:251,exactShortNameEncodings:142,properties:1015,dictionaryEntries:689,relocations:1488,routines:439,expressions:19090,deferred:0});
+    expect(audit.checked).toEqual({bytes:19882,segments:697,staticBase:11682,globals:168,tables:45,tableCells:1523,objects:251,shortNames:251,exactShortNameEncodings:142,properties:1015,dictionaryEntries:689,relocations:1488,routines:439,expressions:19094,deferred:0});
     expect(audit).toEqual(JSON.parse(readFileSync('reference/memory-audit.json','utf8')));
     expect(image).toEqual(JSON.parse(readFileSync('games/zork2/memory.zxr.json','utf8')));
     expect(buildMemory()).toEqual(built);expect(()=>assertFullyLoweredLogic(built.logic)).not.toThrow();

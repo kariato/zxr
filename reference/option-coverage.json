@@ -1,6 +1,6 @@
 {
   "format": "zxr-option-coverage-v1",
-  "buildHash": "41ba9c8185ee8dc59af0d6f2db9f61437f73475f5fe302284bb9a2006cbae586",
+  "buildHash": "f8df5f9e0b42f524fe371e0caaec7d0e26a657b269ec7b2839735ccf0b9f4032",
   "policy": "All required structured actions must be selected from the shared shell controller; missing choices are errors. Exact area prefixes share checked witnesses.",
   "originalInputDispositions": [
     {
@@ -69,7 +69,7 @@
       "clockTicks": 419,
       "controls": 1909,
       "moreExpansions": 323,
-      "pathHash": "6bcd2cce233e618627b237ddadb70381f420de917a9b3b544629ca7313608f39",
+      "pathHash": "0e3a42204bc75859b8a8905d998ce1345a129665118b6152f06e3cf9b43384a3",
       "checkpointsHash": "4f8535273fb371e4422ecb3769fa9ad0d56b1fc918209609226cc8b61a1fb3e9",
       "final": {
         "room": "ZORK3",
@@ -90,7 +90,7 @@
       "clockTicks": 6,
       "controls": 30,
       "moreExpansions": 6,
-      "pathHash": "81a810677f0b846c3f77189448d2a34132d328b177adffcde8a1862bbe2876e7",
+      "pathHash": "26bde8f3560994a193d926528faa0ed17b4762fdc20bbf7f4940df81d2eef378",
       "checkpointsHash": "7e4cc4282d53c9023133cbc5a6707b64c8897feabfa27e99ebe1be190110fb94",
       "final": {
         "room": "GREAT-CAVERN",
@@ -111,7 +111,7 @@
       "clockTicks": 16,
       "controls": 75,
       "moreExpansions": 15,
-      "pathHash": "5c50a84d44e4a55bcab81f796520f4a73098d93b6fb418f214155e888e80fb74",
+      "pathHash": "06a409b3d9e2460b6ff0e8812794d7e175bdb18057d8b3f2a4244dc28e63d037",
       "checkpointsHash": "bce6976aaa2309e747903964912740854b2164c16bcbcb6926f47f5ddfd0d6d0",
       "final": {
         "room": "DARK-TUNNEL",
@@ -132,7 +132,7 @@
       "clockTicks": 25,
       "controls": 112,
       "moreExpansions": 22,
-      "pathHash": "d01781554e461544b56566a94142bdf579aa611da1aa1565893c3862f0753314",
+      "pathHash": "9759c4c8804f4131a8a47d50ed7901d1133a3dd9e9fdb54184225a2a012cc4e7",
       "checkpointsHash": "13196c74df73fb64df8d70072301dc0735f684f4579b339443ef895247e7038f",
       "final": {
         "room": "WELL-BOTTOM",
@@ -153,7 +153,7 @@
       "clockTicks": 29,
       "controls": 132,
       "moreExpansions": 24,
-      "pathHash": "a06641611b6437280e916f86c536272cf7fd2e0478e52b2d9bd683663c2f17ad",
+      "pathHash": "58efe1f434f8f2eb9758a0f022880b21d251c1982dcb95bb1a31e95efb295f4f",
       "checkpointsHash": "ad55f3e5fea61ba3bdc99f36b0a4f964ee5c7eae870e26f7e1fa9164c60ed2e8",
       "final": {
         "room": "TEA-ROOM",
@@ -174,7 +174,7 @@
       "clockTicks": 38,
       "controls": 180,
       "moreExpansions": 32,
-      "pathHash": "a5f6a9e6dcce912709de8bce0b25e90285a4f90ee3d1d8cb18e94bfd7fe80d5e",
+      "pathHash": "c90546094e09b8ecc149bcad043ef8356c057c5f3a72c3adc86dda5b78a0a649",
       "checkpointsHash": "f880537586ebcda834b0ff1d20528754bdf94f8e6ff7f84a431916fc30dd371e",
       "final": {
         "room": "MAGNET-ROOM",
@@ -195,7 +195,7 @@
       "clockTicks": 53,
       "controls": 260,
       "moreExpansions": 43,
-      "pathHash": "ba2d72b832449c9a12008e2aae1be9afde5168be1e4cfb8bee3820ab039181df",
+      "pathHash": "9a624916c9acb2a4a7d91a734945df6470dba58155890494a3cd61402b8fbf38",
       "checkpointsHash": "9446911705b7915e547b447e7755d96eba0d303c7045474756b7781da6fd9719",
       "final": {
         "room": "MACHINE-ROOM",
@@ -216,7 +216,7 @@
       "clockTicks": 101,
       "controls": 499,
       "moreExpansions": 83,
-      "pathHash": "364b3f181375d8738f6c4dd230d36f947b74e26125d473a8e34ddb914a29c69c",
+      "pathHash": "9ee3c5d7a1a710de7d883721889022f4e6313f8147bb85c1795f12e2d62f07fa",
       "checkpointsHash": "67342dc249d5efb5720dd31f6080903947e776f8456e1ea3073e75d32d8497d1",
       "final": {
         "room": "TINY-ROOM",
@@ -237,7 +237,7 @@
       "clockTicks": 115,
       "controls": 566,
       "moreExpansions": 94,
-      "pathHash": "3548b5b29a62bfff9f38589ccc8ecfa29d705819764a6c0215d50ed338219352",
+      "pathHash": "e1438e9292e36da8261184522921f550950a277969188df47fa1b179882b0b6f",
       "checkpointsHash": "fd4e39170324b779823cf8e0d8f26a59bd681dc5a8c5f7a5c621c4206b2f0d98",
       "final": {
         "room": "DRAGON-LAIR",
@@ -258,7 +258,7 @@
       "clockTicks": 174,
       "controls": 663,
       "moreExpansions": 99,
-      "pathHash": "594d46b1ef1ddc9f02ac6fd30e4dc88ae0c5f8a45dee9048e7e4ca31e0eb80d1",
+      "pathHash": "11010f29563ef90bab257f877bfc4b833c66a7051a57b334546369b86632d3dc",
       "checkpointsHash": "3c3825a3427f7c1468dcb306ab162e41e64ad4cb3d48275d01a9dbbfd93cd671",
       "final": {
         "room": "GARDEN-NORTH",
@@ -279,7 +279,7 @@
       "clockTicks": 197,
       "controls": 797,
       "moreExpansions": 125,
-      "pathHash": "e264780c8fcc7c34776efa36266aee24097d1478dd448c5898d0ba1028454203",
+      "pathHash": "7a174da4f389a3f22a6d95625448b4f0ba45b6f66cd93928a5c6d81f2606c611",
       "checkpointsHash": "92c319c313fe4d845c46fe1aa172b4c9a8a31a81daecea11bbab9dbbe36840e4",
       "final": {
         "room": "WIZARDS-WORKSHOP",
@@ -300,7 +300,7 @@
       "clockTicks": 262,
       "controls": 1057,
       "moreExpansions": 168,
-      "pathHash": "526cc3aa7a8d4f02a28fa26a5e4226f6a2f61860ca4933b0953409fce7fd8bb6",
+      "pathHash": "8e1fc0aeb3e5e15204a2de89989633a95c528baa9a7436ea3510539e342abfa4",
       "checkpointsHash": "abbbea1b8b46f28081dea66744f48246c94712da2860f09ebd64ea5fab7e2290",
       "final": {
         "room": "VOLCANO-BOTTOM",
@@ -321,7 +321,7 @@
       "clockTicks": 305,
       "controls": 1260,
       "moreExpansions": 206,
-      "pathHash": "6ca683162f22f447a6552654c002c968fe1e04148e25e4cbd9b7a4c1b26e6f53",
+      "pathHash": "97e16f49151892b777bd41f70646360a224090d82037917de151ea33f395f20c",
       "checkpointsHash": "c8132d58d1e035b2d3b43ad43cfcc9d37e6ce24efa82f49299122e4e8c64d043",
       "final": {
         "room": "BANK-ENTRANCE",
@@ -342,7 +342,7 @@
       "clockTicks": 105,
       "controls": 349,
       "moreExpansions": 49,
-      "pathHash": "b37254ec643fffd59f674964e48eed30734de04c45c7ebce53a11f2660a863d8",
+      "pathHash": "ecfb7ac14cdf4864166195c04b7280c15cc7f7a9b99fb94f696ff74b85e572b5",
       "checkpointsHash": "c375a7c2700ebc93f29c5848f937eae55093f2a18597b9b42fce105bd86b60ef",
       "final": {
         "room": "INSIDE-BARROW",
@@ -363,7 +363,7 @@
       "clockTicks": 56,
       "controls": 239,
       "moreExpansions": 33,
-      "pathHash": "4c983acdd396d52af5665837dbd5a0161203bb37c43bb327d749ff2afdde7c79",
+      "pathHash": "7e8c9b1d31148f9fb9a6763306ccc7f0b88d35d7f64dbae88bc9319c3a7a8e04",
       "checkpointsHash": "ebd35aed7c909d09913485ae9537c2d1d2bd5065c6a840a6ea9743a808b0c54f",
       "final": {
         "room": "PEARL-ROOM",
@@ -384,7 +384,7 @@
       "clockTicks": 62,
       "controls": 303,
       "moreExpansions": 52,
-      "pathHash": "579fd935ef88d1d74576a6da4dc76e6e2267665b86b7a72d14d18a21a362ef2e",
+      "pathHash": "c32329edf95c53b4d7b33a93284d27a1f13cc338b739bf77263af7dbf7bf7d51",
       "checkpointsHash": "3365caa20666a33ed708f063b960e0c8335ff79c375fc50ec902c474372b0827",
       "final": {
         "room": "TEA-ROOM",
@@ -405,7 +405,7 @@
       "clockTicks": 102,
       "controls": 513,
       "moreExpansions": 86,
-      "pathHash": "e6ceae2887bd699caa5b75cd6341b4221e5c82f1576e19154dfa723b0a063609",
+      "pathHash": "a642b81fa1e795d1d046940f37e2bab344c0914d14e5e384482b18e74e7e6f7d",
       "checkpointsHash": "a4bf0a2cf997efd44a53cf457f2c49a15dc41439ce501d8421b70f2087847cac",
       "final": {
         "room": "TINY-ROOM",

@@ -68,7 +68,7 @@ function assertGoals(id:string,run:ReferenceRun){
 /** Every path is actually selected through TextPlayer. The twelve area cases
  * are exact prefixes of the full solve: reuse its witness only after checking
  * EACH action, transcript, typed state, RNG slots and source call sites. */
-export function checkOptionCoverage(game:LoadedGame,base:ReplayFixtures,extra:OptionFixtures,onCase?:(id:string,steps:number,reused:boolean)=>void){
+export function checkOptionCoverage(game:LoadedGame,base:ReplayFixtures,extra:OptionFixtures,onCase?:(id:string,steps:number,reused:boolean)=>void,onStep?:(id:string,steps:number,total:number)=>void){
   validateOptionInputs(game,base,extra);const legacy=JSON.parse(readFileSync('reference/engine-replay.json','utf8'));same(legacy.buildHash,game.buildHash,'Legacy replay build');const projection=createProjection(game),witnesses=new Map<string,Witness[]>();
   const cases=[];
   for(const fixture of [...base.cases,...extra.cases]){
@@ -79,7 +79,7 @@ export function checkOptionCoverage(game:LoadedGame,base:ReplayFixtures,extra:Op
     });
     const main=witnesses.get('walkthrough'),reuse=fixture.id.startsWith('area-')&&!!main&&fixture.actions.every((a,i)=>isDeepStrictEqual(a,main[i]?.action));
     let own:ReturnType<typeof createDebugSession>|undefined,player:TextPlayer|undefined,saved:ZxrSave|undefined;
-    if(!reuse){own=createDebugSession(game,{seed:run.interpreter.seed,replay:tape},{maxEntries:65536,maxAttempts:4});player=new TextPlayer(own.session);same(player.lastResult.text.join(''),run.transcript[0],fixture.id+' opening text');
+    if(!reuse){own=createDebugSession(game,{seed:run.interpreter.seed,replay:tape},{maxEntries:65536,maxAttempts:4,operations:['random']});player=new TextPlayer(own.session);same(player.lastResult.text.join(''),run.transcript[0],fixture.id+' opening text');
       const ram=snapshots[boundary(run,-1)]!;compareProjection(projection.own(WorldState.restore(game,own.session.exportSave().checkpoint.interpreter.world)),projection.reference(ram,projection.detachedSiblings(ram)),fixture.id+' opening');}
     const steps:Witness[]=[];
     for(const [i,action] of fixture.actions.entries()){
@@ -98,6 +98,7 @@ export function checkOptionCoverage(game:LoadedGame,base:ReplayFixtures,extra:Op
       }catch(error){throw new Error(label+': '+(error instanceof Error?error.message:String(error)),{cause:error});}
       same(witness.random,run.random.filter(r=>r.input===i&&r.category==='game').map(r=>({range:r.range,result:r.result})),label+' RNG events');same(witness.action,action,label+' authored action');same(witness.text,run.transcript[i+1],label+' original text');same(witness.state,hashJson(referenceStates[i]),label+' typed state');same(witness.cursor,cursors[i],label+' RNG cursor');
       same(witness.sites,run.random.filter(r=>r.input===i&&r.category==='game').map(r=>r.routine),label+' RNG source sites');same(witness.summary,run.checkpoints[boundary(run,i)]!.summary,label+' original summary');steps.push(witness);
+      onStep?.(fixture.id,i+1,fixture.actions.length);
     }
     if(steps.at(-1)?.cursor!==tape.length)throw new Error(fixture.id+' unused tape');
     if(own){own.session.assertReplayComplete();if(own.session.options().some(o=>o.action.kind!=='decide'))throw new Error('Coverage must not use a trusted action catalogue');

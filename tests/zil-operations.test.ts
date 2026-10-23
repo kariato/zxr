@@ -23,7 +23,7 @@ const first=(body:string)=>compile('<ROUTINE F () '+body+'>').routines[0]!.body[
 describe('object, output and host operation lowering',()=>{
   it('covers every routine, operation family and literal deterministically while retaining memory deferrals',()=>{
     expect(logic.routines).toHaveLength(439);expect(logic.stage).toBe('operations');expect(logic.untranslated).toHaveLength(656);expect(logic.routines.filter(r=>r.fullyLowered)).toHaveLength(321);
-    expect(nodes(logic)).toHaveLength(19089);expect(logic.strings.entries).toHaveLength(1342);expect(logic.untranslated.every(s=>s.phase==='2.7')).toBe(true);
+    expect(nodes(logic)).toHaveLength(19093);expect(logic.strings.entries).toHaveLength(1342);expect(logic.untranslated.every(s=>s.phase==='2.7')).toBe(true);
     expect(logic).toEqual(buildOperationsLogic());expect(JSON.parse(JSON.stringify(logic))).toEqual(logic);
     const audit=auditOperationsLogic(logic);expect(audit.byFile).toMatchObject({'gverbs.zil':189,'2actions.zil':176,'gparser.zil':42});
     expect(audit).toEqual(JSON.parse(readFileSync('reference/logic-operations.json','utf8')));

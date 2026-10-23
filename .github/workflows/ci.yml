@@ -13,7 +13,15 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run typecheck
+      - run: npm run capabilities:check
       - run: npm test
+      - run: npm run fuzz -- --games 2 --turns 16 --output out/fuzz/smoke.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fuzz-smoke-results
+          path: out/fuzz/*.json
+          if-no-files-found: ignore
       - run: npm run zil:check
       - run: npm run semantics:check
       - run: npm run symbols:check
@@ -28,6 +36,7 @@ jobs:
       - run: npm run bundle:check
       - run: npm run output:check
       - run: npx --yes --package=. zxr check reference/zork2
+      - run: node bin/zxr.ts check --conformance
       - run: npm run reference:check
       - run: npm run reference:audit -- --check
       - run: npm run build

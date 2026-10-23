@@ -19,13 +19,13 @@ export function replaySources():{id:string;commands:string[];golden?:ReferenceRu
   const sources=selected.map(f=>({id:f.id,commands:fixtureCommands(f),golden:JSON.parse(gunzipSync(readFileSync(`reference/transcripts/${f.id}.json.gz`)).toString('utf8')) as ReferenceRun}));
   return [...sources,{id:'random-death-recovery',commands:[...commandFile('reference/scripts/walkthrough.txt').slice(0,53),...Array(15).fill('wait'),'attack me with sword','west','west','west','score','take lamp','turn on lamp','look','wait','inventory']}];
 }
-function boundaryIndex(run:ReferenceRun,input:number):number {
-  const n=run.checkpoints.findLastIndex(c=>c.input===input&&(c.kind==='read'||c.kind==='end'));if(n<0)throw new Error('Missing exposed reference boundary '+input);return n;
+export function boundaryIndex(run:ReferenceRun,input:number):number {
+  const n=run.checkpoints.findLastIndex(c=>(c.input===input||input===run.commands.length-1&&c.input===run.commands.length&&c.kind==='end')&&(c.kind==='read'||c.kind==='end'));if(n<0)throw new Error('Missing exposed reference boundary '+input);return n;
 }
 /** Validate the reviewed structured-input normalization against the frozen golden.
  * No gameplay fields are silently excluded: the two unsupported typed inputs are
  * accounted for separately, and every ensuing structured action is compared in full. */
-function goldenBridge(game:LoadedGame,golden:ReferenceRun,run:ReferenceRun,groups:number[][]) {
+export function goldenBridge(game:LoadedGame,golden:ReferenceRun,run:ReferenceRun,groups:number[][]) {
   const projection=createProjection(game),original=[...memories(golden)],normalized=[...memories(run)];
   const adaptations:{input:number;kind:string;command:string;fields:string[];originalText?:string}[]=[];
   let last=-1;

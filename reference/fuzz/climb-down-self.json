@@ -1,0 +1,51 @@
+{
+  "format": "zxr-fuzz-known-issue-v1",
+  "id": "climb-down-self-bounds",
+  "status": "resolved",
+  "campaign": {
+    "seed": 5920850,
+    "game": 2,
+    "input": 15
+  },
+  "minimal": {
+    "seed": 2,
+    "request": {
+      "actor": "PLAYER",
+      "expected": {
+        "epoch": 1,
+        "revision": 1
+      },
+      "family": "CLIMB:5",
+      "operands": [
+        {
+          "object": "ME",
+          "noun": "SELF"
+        }
+      ]
+    }
+  },
+  "reference": {
+    "storySha256": "3ae7d5558943e9721f3e4b273c8a7faec1a03a604e1ae4ee1cde472c21cb24ac",
+    "command": "climb down self",
+    "text": "You can't do that!\n\n>",
+    "moves": 1
+  },
+  "source": {
+    "caller": "gverbs.zil:340-341 V-CLIMB-UP passes PTSIZE (bytes) as ZMEMQ's inclusive word index",
+    "fault": "gparser.zil:1345 ZMEMQ GET reads past the SYNONYM allocation",
+    "assembly": "gverbs.zap:358-360 reproduces the same PTSIZE argument"
+  },
+  "policy": "Historical failure evidence. SRC-014 corrects only the audited synonym membership bound; allocation checks remain strict. The regression compares original refusal and turn cost.",
+  "historicalBuildHash": "41ba9c8185ee8dc59af0d6f2db9f61437f73475f5fe302284bb9a2006cbae586",
+  "historicalEngine": {
+    "status": "error",
+    "cause": "Memory access crosses allocation bounds",
+    "moves": 0
+  },
+  "repair": {
+    "ledger": "SRC-014",
+    "status": "resolved",
+    "moves": 1,
+    "bound": "PTSIZE / 2 - 1"
+  }
+}

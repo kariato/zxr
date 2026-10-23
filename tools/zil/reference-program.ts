@@ -6,6 +6,25 @@ import { sha256, STORY, STORY_SHA256 } from '../reference/symbols.ts';
 export function normalizeReferenceProgram(forms:readonly Node[]) {
   const normalizations:{rule:string;routine?:string;global?:string;sourceHash:string;file:string;line:number;reason:string}[]=[];
   const normalized=forms.map(node=>{
+    if(head(node)==='ROUTINE'&&atomName((node as Sequence).items[1])==='V-CLIMB-UP'){
+      const sourceHash=sha256(print(node));
+      if(sourceHash!=='50f488980220104c962d65b767eb12d6a2f7d27902281ff6e4fcd2e10976889b')throw new ZilError('ZIL005','SRC-014 normalization requires the audited V-CLIMB-UP source',node.span);
+      const assembly=readFileSync('reference/zork2/gverbs.zap','utf8');
+      if(!assembly.includes('PTSIZE\tX\n\tCALL\tZMEMQ,W?WALL,X,STACK')||sha256(readFileSync(STORY))!==STORY_SHA256)throw new Error('SRC-014 assembly/binary evidence changed');
+      let replacements=0;
+      const visit=(n:Node):Node=>{
+        if(n.kind!=='form'&&n.kind!=='list')return n;
+        if(head(n)==='ZMEMQ'&&print(n.items.at(-1)!)==='<PTSIZE .X>'){
+          const size=n.items.at(-1)!,atom=(value:string):Node=>({kind:'atom',value,span:size.span}),number=(value:number):Node=>({kind:'number',value,radix:10,span:size.span}),form=(...items:Node[]):Sequence=>({kind:'form',items,span:size.span});
+          replacements++;
+          return {...n,items:[...n.items.slice(0,-1),{...form(atom('-'),form(atom('/'),size,number(2)),number(1)),semantic:{kind:'reference-normalization:SRC-014',values:[size]}}]};
+        }
+        return {...n,items:n.items.map(visit)};
+      };
+      const result=visit(node);if(replacements!==1)throw new Error('SRC-014 expected one synonym membership bound');
+      normalizations.push({rule:'SRC-014',routine:'V-CLIMB-UP',sourceHash,file:node.span.file,line:node.span.start.line,reason:'Convert SYNONYM byte length to the inclusive word index required by ZMEMQ, matching WORD-IN-SYNONYM. The original flat-memory overread is unsafe in bounded allocations.'});
+      return result;
+    }
     if(head(node)==='GLOBAL'&&atomName((node as Sequence).items[1])==='INDENTS'){
       const sourceHash=sha256(print(node));
       if(sourceHash!=='3d4d6ac54dd1899cb29d8488dbc56c159c59b3e0867a6e555cbc654859984bd9')throw new ZilError('ZIL005','SRC-011 normalization requires the audited INDENTS source; review changed initializers',node.span);

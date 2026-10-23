@@ -100,7 +100,24 @@ export function createProjection(game:LoadedGame) {
     if(canonicalJson(actual)!==canonicalJson([...detachedSiblings].sort()))throw new Error('Unreviewed REF-001 detached siblings: '+actual.join(','));
     return project(Buffer.concat([ram,story.subarray(ram.length)]),'reference',detachedSiblings);
   }
+  function parser(bytes:Buffer,side:'own'|'reference') {
+    const global=(name:string)=>side==='own'?bytes.readUInt16BE(layout.globals.find(g=>g.name===name)!.address):bytes.readUInt16BE(globalBase+2*symbols.globals.indexOf(name));
+    const matches=(name:string)=>{const base=global(name),count=bytes.readUInt16BE(base);if(count>49)throw new Error('Invalid parser matches '+name);return Array.from({length:count},(_,n)=>bytes.readUInt16BE(base+2+2*n));};
+    const walking=global('P-WALK-DIR')!==0,syntax=global('P-SYNTAX'),input=global('P-ITBL'),lex=global('P-LEXV'),dictionary=bases.get('dictionary')![side];
+    const word=(n:number)=>n?n-dictionary:0,pointer=(n:number)=>n?n-lex:0;
+    const operands=walking?null:[0,1].map(slot=>{
+      const start=bytes.readUInt16BE(input+12+4*slot),end=bytes.readUInt16BE(input+14+4*slot);
+      if(!start&&!end)return [];
+      if(start<lex+2||end<start||(end-start)%4||end>lex+2+4*59)throw new Error('Invalid parser clause extent');
+      return Array.from({length:(end-start)/4},(_,n)=>word(bytes.readUInt16BE(start+4*n)));
+    });
+    return {direct:matches('P-PRSO'),indirect:matches('P-PRSI'),syntax:walking?null:syntax?[...bytes.subarray(syntax,syntax+8)]:[],operands,
+      continuation:global('P-CONT'),quoted:global('QUOTE-FLAG'),
+      input:walking?null:[bytes.readUInt16BE(input),bytes.readUInt16BE(input+4),bytes.readUInt16BE(input+8),...Array.from({length:4},(_,n)=>pointer(bytes.readUInt16BE(input+12+2*n)))]};
+  }
   return {
+    parserOwn:(world:WorldState)=>parser(Buffer.from(world.snapshot().bytes),'own'),
+    parserReference:(ram:Buffer)=>parser(Buffer.concat([ram,story.subarray(ram.length)]),'reference'),
     own:(world:WorldState)=>project(Buffer.from(world.snapshot().bytes),'own',[]),reference,
     detachedSiblings:(ram:Buffer)=>layout.objects.filter(o=>ram[objectBase+9*(o.id-1)+4]===0&&ram[objectBase+9*(o.id-1)+5]!==0).map(o=>o.name).sort(),
     counts:{globals:layout.globals.filter(g=>!excluded.has(g.name)).length,objects:layout.objects.length,properties:layout.objects.reduce((n,o)=>n+o.properties.length,0),tables:layout.tables.filter(t=>!(parserBufferGlobals as readonly string[]).includes(t.owner)).length,fields:fields.length},

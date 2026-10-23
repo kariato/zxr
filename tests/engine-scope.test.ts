@@ -1,6 +1,5 @@
 import { expect, it } from 'vitest';
-import { GameSession, Interpreter, ScopeQuery, buildCandidateCatalog, generateCandidates, loadGame, queryScope } from '../src/engine/index.ts';
-import type { WorldState } from '../src/engine/index.ts';
+import { GameSession, Interpreter, ScopeQuery, WorldState, buildCandidateCatalog, generateCandidates, loadGame, queryScope } from '../src/engine/index.ts';
 import { packBundle } from '../src/zil/bundle.ts';
 import { compileSourcePath } from '../tools/zil/compile.ts';
 import { hashJson } from '../src/zil/integrity.ts';
@@ -10,6 +9,17 @@ const id=(name:string)=>game.bundle.payload.world.entities.find(e=>e.name===name
 const flag=(name:string)=>game.bundle.payload.symbols.symbols.find(s=>s.name===name)!.number!;
 const move=(w:WorldState,object:string,parent:string)=>w.move(id(object),id(parent));
 const set=(w:WorldState,object:string,attribute:string,value=true)=>w.setFlag(id(object),flag(attribute),value);
+it('offers local-global actor commands in the current room and lets the source handler refuse them',()=>{
+  const s=new GameSession(game),save=s.exportSave(),w=WorldState.restore(game,save.checkpoint.interpreter.world);
+  move(w,'ADVENTURER','GARDEN-NORTH');w.setGlobal('HERE',id('GARDEN-NORTH'));w.setGlobal('LIT',1);
+  save.checkpoint.interpreter.world=w.snapshot();s.importSave(save);
+  expect(s.actors().some(a=>a.actor==='GLOBAL-UNICORN')).toBe(true);const before=s.stateHash();
+  const menu=s.menu('GLOBAL-UNICORN');expect(s.stateHash()).toBe(before);
+  const wait=[...menu.always.primary,...menu.always.more].find(c=>c.label.toLowerCase().includes('wait'))!;
+  expect(wait).toBeDefined();const result=s.commitSelection(wait.draft);expect(result.status).toBe('resolved');expect(result.text.join('')).toContain('Unicorn? What unicorn?');
+  const next=s.exportSave(),present=WorldState.restore(game,next.checkpoint.interpreter.world);move(present,'UNICORN','GARDEN-NORTH');next.checkpoint.interpreter.world=present.snapshot();s.importSave(next);
+  expect(s.actors().some(a=>a.actor==='GLOBAL-UNICORN')).toBe(false);expect(s.actors().some(a=>a.actor==='UNICORN')).toBe(true);expect(()=>s.menu('GLOBAL-UNICORN')).toThrow('ambiguous prefix');
+});
 function call(w:WorldState,name:string,args:number[]){
   const vm=new Interpreter(game,{world:w,routine:game.bundle.payload.logic.routines.find(r=>r.name===name)!.id,args}),result=vm.run();
   expect(result.status).toBe('returned');if(result.status!=='returned')throw new Error(name+' did not return');return {value:result.value,world:vm.world()};

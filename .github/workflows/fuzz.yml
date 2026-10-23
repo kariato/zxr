@@ -1,0 +1,105 @@
+name: Full deterministic fuzz campaign
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      seed:
+        description: Fixed unsigned 32-bit campaign seed
+        required: true
+        type: number
+        default: 5920850
+permissions:
+  contents: read
+concurrency:
+  group: fuzz-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: node bin/zxr.ts compile reference/zork2 --out out/fuzz-input.zxb
+      - run: npm run fuzz -- --bundle out/fuzz-input.zxb --seed "$FUZZ_SEED" --games 3 --turns 300 --output out/fuzz/preflight.json
+        env:
+          FUZZ_SEED: ${{ github.event_name == 'workflow_dispatch' && format('{0}', inputs.seed) || '5920850' }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fuzz-preflight
+          path: out/fuzz/*.json
+          if-no-files-found: ignore
+      - run: npm run fuzz:keys
+      - id: matrix
+        run: node -e 'require("fs").appendFileSync(process.env.GITHUB_OUTPUT,"matrix="+JSON.stringify({shard:Array.from({length:256},(_,i)=>i)})+"\n")'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fuzz-input
+          path: out/fuzz-input.zxb
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fuzz-key-order
+          path: out/fuzz/key-order.json
+  fuzz:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+    env:
+      FUZZ_SEED: ${{ github.event_name == 'workflow_dispatch' && format('{0}', inputs.seed) || '5920850' }}
+      FUZZ_SHARD: ${{ matrix.shard }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: fuzz-input
+          path: out
+      - run: npm run fuzz -- --bundle out/fuzz-input.zxb --seed "$FUZZ_SEED" --games 10000 --turns 300 --shards 256 --shard "$FUZZ_SHARD" --output "out/fuzz/shard-$FUZZ_SHARD.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fuzz-shard-${{ matrix.shard }}
+          path: out/fuzz/*.json
+          if-no-files-found: error
+  verify:
+    needs: fuzz
+    runs-on: ubuntu-latest
+    env:
+      FUZZ_SEED: ${{ github.event_name == 'workflow_dispatch' && format('{0}', inputs.seed) || '5920850' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: fuzz-input
+          path: out
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: fuzz-shard-*
+          merge-multiple: true
+          path: out/fuzz
+      - run: node tools/engine/fuzz-merge-cli.ts out/fuzz out/fuzz-input.zxb "$FUZZ_SEED"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fuzz-campaign
+          path: out/fuzz/campaign.json

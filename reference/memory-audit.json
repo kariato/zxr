@@ -2,7 +2,7 @@
   "format": "zxr-memory-audit-v1",
   "storySha256": "3ae7d5558943e9721f3e4b273c8a7faec1a03a604e1ae4ee1cde472c21cb24ac",
   "memorySha256": "7e1bec633f6d277999de53ba8fd504fadef156ae6c3a552b71dd1679a6334ab0",
-  "logicSha256": "6760d03047d793e949109a36c19ea5372b18725998d1d4c996fbc6f9166c3ebd",
+  "logicSha256": "f2452033171c8dcb5b275d22c78a3f41726237a0a4924b2f7a42e1f5af4eac0e",
   "checked": {
     "bytes": 19882,
     "segments": 697,
@@ -17,7 +17,7 @@
     "dictionaryEntries": 689,
     "relocations": 1488,
     "routines": 439,
-    "expressions": 19090,
+    "expressions": 19094,
     "deferred": 0
   },
   "routines": [
@@ -1227,9 +1227,9 @@
       "optional": 2,
       "slots": 4,
       "fullyLowered": true,
-      "expressions": 113,
+      "expressions": 117,
       "deferred": 0,
-      "sha256": "d6cdcbbbd9389cbf3a9ec87f590747740909bb69f49d97d5b4ed3778877aa3b0"
+      "sha256": "b12f66e2acb04aca07767203f98e0f4b7a221fb4a4fa5887c1d20ede4713f217"
     },
     {
       "name": "V-CLOSE",

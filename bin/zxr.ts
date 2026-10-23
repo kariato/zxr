@@ -7,7 +7,11 @@ import { compileSourcePath, writeBundle } from '../tools/zil/compile.ts';
 import { checkSourcePath } from '../tools/zil/check.ts';
 const [command,...args]=process.argv.slice(2);
 if (command === '--help' || command === '-h' || !command) {
-  console.log('Usage: zxr <compile|play|check> [path]\nzxr compile <source-directory|entry.zil> [--symbols] [--out file.zxb]\nzxr play [game.zxb] [--save file.json] [--seed uint32]: numbered choices; defaults to Zork II and out/zork2.save.json\nzxr check [--symbols] [entry.zil|source-directory|game.zxb]: check a bundle, or read, load and expand ZIL (defaults to reference/zork2). Zork II symbol checks run automatically for reference/zork2; --symbols opts another path into that numbering layout.');
+  console.log('Usage: zxr <compile|play|check> [path]\nzxr compile <source-directory|entry.zil> [--symbols] [--out file.zxb]\nzxr play [game.zxb] [--save file.json] [--seed uint32]: numbered choices; defaults to Zork II and out/zork2.save.json\nzxr check --conformance: compare all golden Zork II scripts against the engine\nzxr check [--symbols] [entry.zil|source-directory|game.zxb]: check a bundle, or read, load and expand ZIL (defaults to reference/zork2). Zork II symbol checks run automatically for reference/zork2; --symbols opts another path into that numbering layout.');
+} else if (command==='check'&&args.includes('--conformance')) {
+  if(args.length!==1){console.error('Usage: zxr check --conformance');process.exitCode=2;}
+  else try{const {runConformance}=await import('../tools/engine/conformance-cli.ts');runConformance();}
+  catch(error){console.error(error instanceof Error?error.message:String(error));process.exitCode=1;}
 } else if (command==='check') {
   const paths=args.filter(a=>a!=='--symbols'),flags=args.filter(a=>a==='--symbols');
   if(paths.length>1||flags.length>1||paths.some(p=>p.startsWith('-'))) {console.error('Usage: zxr check [--symbols] [entry.zil|source-directory]');process.exitCode=2;}

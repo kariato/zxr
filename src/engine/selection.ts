@@ -20,7 +20,7 @@ export interface SelectionView {
 const counter:Schema={type:'integer',minimum:0,maximum:Number.MAX_SAFE_INTEGER};
 export const selectionRequestSchema:Schema={type:'object',additionalProperties:false,required:['expected','actor','family','operands'],properties:{
   expected:{type:'object',additionalProperties:false,required:['epoch','revision'],properties:{epoch:counter,revision:counter}},
-  actor:{type:'string',pattern:'^[A-Z][A-Z0-9?.!\\-]{0,63}$'},family:{type:'string',pattern:'^[A-Za-z0-9?.!:\\-]{1,128}$'},
+  actor:{type:'string',pattern:'^[A-Z][A-Z0-9?.!\\-]{0,63}$'},family:{type:'string',pattern:'^[A-Za-z0-9$?.!:\\-]{1,128}$'},
   operands:{type:'array',items:selectionSchema,maxItems:2},
   words:{type:'array',items:{type:'integer',minimum:1},maxItems:57},
 }};
@@ -39,7 +39,7 @@ export function operandSpellings(game:LoadedGame,operand:Operand):Operand[] {
   return proposed.filter(value=>{try{prepareOperand(game,value);return true;}catch{return false;}});
 }
 /** Validate a partial selection against the freshly generated actor-relative families. */
-export function reviewSelection(game:LoadedGame,set:CandidateSet,request:SelectionRequest,catalog:WordCatalog=buildWordCatalog(game.bundle.payload.vocabulary),labels?:LabelContext):SelectionView {
+export function reviewSelection(game:LoadedGame,set:CandidateSet,request:SelectionRequest,catalog:WordCatalog=buildWordCatalog(game.bundle.payload.vocabulary),labels?:LabelContext,spellings=(operand:Operand,_index:number)=>operandSpellings(game,operand)):SelectionView {
   if(set.buildHash!==game.buildHash)throw new Error('Selection candidates belong to another build');
   if(request.family.startsWith('walk:')){
     if(!set.exits.some(e=>request.family==='walk:'+e.direction))throw new Error('Unknown walk selection');
@@ -60,7 +60,7 @@ export function reviewSelection(game:LoadedGame,set:CandidateSet,request:Selecti
     if(new Set(identities).size!==identities.length)throw new Error('Duplicate selected operand');
     const normalized=values.map(value=>{
       if(!family.operands[index]!.some(o=>operandIdentity(o.operand)===operandIdentity(value)))throw new Error('Selected operand is outside actor scope');
-      const spelling=typeof value==='string'?operandSpellings(game,value)[0]:value;
+      const offered=spellings(value,index);const spelling=typeof value==='string'?offered[0]:offered.find(o=>canonicalJson(o)===canonicalJson(value));
       if(!spelling)throw new Error('Selected operand has no supported source spelling');
       prepareOperand(game,spelling);return own(spelling);
     });return Array.isArray(selection)?normalized:normalized[0]!;
@@ -70,8 +70,8 @@ export function reviewSelection(game:LoadedGame,set:CandidateSet,request:Selecti
   if(new Set(pseudos).size>1)throw new Error('Different pseudo features share one runtime object');
   const nextIndex=selected.length,slot=family.slots[nextIndex];
   const choices=slot?family.operands[nextIndex]!.map(o=>{
-    const spellings=operandSpellings(game,o.operand);return {...own(o),label:operandLabel(o.operand,labels),operand:own(spellings[0]??o.operand),spellings};
-  }):[];
+    const offered=spellings(o.operand,nextIndex);return {...own(o),label:operandLabel(o.operand,labels),operand:own(offered[0]??o.operand),spellings:offered};
+  }).filter(o=>o.spellings.length&&(!pseudos.length||typeof o.operand==='string'||!('pseudo' in o.operand)||pseudos.includes(operandIdentity(o.operand)))):[];
   const words=family.input==='say'?pickedWords(catalog,request.words??[]):undefined;
   return {expected:own(request.expected),actor:request.actor,family:request.family,label:actionLabel(family,request.actor,selected,words?.map(w=>w.word),labels),selected,ready:!slot&&(words===undefined||words.length>0),
     next:slot?{index:nextIndex,slot:own(slot),choices,allowAll:slot.many&&!selected.some(multiple)}:null,

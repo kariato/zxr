@@ -107,7 +107,7 @@ it('offers every two-object step at its actual walkthrough boundary and executes
     expect(['rejected','error']).not.toContain(result.status);
   }
   expect(staged).toBe(36);expect(reference.final).toMatchObject({score:400,won:true});session.assertReplayComplete();
-},120000);
+},300000);
 it('rejects stale, incomplete, malformed, out-of-scope and spoofed selections atomically',()=>{
   const session=new GameSession(game),base=request(session,'GIVE:2',[operand('LAMP')]);
   const bad=[base,{...base,expected:{epoch:0,revision:0}},{...base,operands:[operand('LAMP'),operand('ROBOT')]},

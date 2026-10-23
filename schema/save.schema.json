@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "ZXR save v1",
+  "title": "ZXR save v2",
   "type": "object",
   "properties": {
     "format": {

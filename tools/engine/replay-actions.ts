@@ -4,11 +4,14 @@ import type { ReferenceRun } from '../reference/runner.ts';
 import { memories } from '../reference/state.ts';
 import { loadSymbols, STORY } from '../reference/symbols.ts';
 const symbols=loadSymbols(),story=readFileSync(STORY);
+const snapshotCache=new WeakMap<ReferenceRun,Buffer[]>();
 /** Development-only authoring from ORIGINAL parser snapshots. No parser or oracle
  * enters the runtime; the resulting explicit actions are reviewed fixture data. */
-export function authorActions(game:LoadedGame,run:ReferenceRun):GameAction[] {
-  const snapshots=[...memories(run)],vocab=game.bundle.payload.vocabulary;
-  return run.commands.map((command,input)=>{
+export function authorActions(game:LoadedGame,run:ReferenceRun,inputs:readonly number[]=run.commands.map((_,i)=>i)):GameAction[] {
+  let snapshots=snapshotCache.get(run);if(!snapshots){snapshots=[...memories(run)];snapshotCache.set(run,snapshots);}
+  const vocab=game.bundle.payload.vocabulary;
+  return inputs.map(input=>{
+    const command=run.commands[input]!;
     const indices=run.checkpoints.flatMap((c,i)=>c.input===input&&c.kind==='parser-return'?[i]:[]);
     const index=indices.at(-1);if(index===undefined)throw new Error('No parsed action: '+input+' '+command);
     const ram=snapshots[index]!,base=ram.readUInt16BE(12),globals=Object.fromEntries(symbols.globals.map((name,i)=>[name,ram.readUInt16BE(base+2*i)])),parsed=run.checkpoints[index]!.parser!;
@@ -22,13 +25,13 @@ export function authorActions(game:LoadedGame,run:ReferenceRun):GameAction[] {
     const bytes=[...story.subarray(parsed.syntax,parsed.syntax+8)],row=lexical?.rows.find(r=>JSON.stringify(r.bytes)===JSON.stringify(bytes));
     if(!lexical||!row||row.action.name!==action.name)throw new Error('No syntax '+command+' '+action.name+' lexical '+lexical?.name+' bytes '+bytes);
     const words:string[]=command.toUpperCase().match(/[A-Z0-9-]+/g)??[];
-    function operand(id:number):Operand {
+    function operand(id:number,words:readonly string[]):Operand {
       const entity=game.bundle.payload.world.entities.find(e=>e.id===id);if(!entity)throw new Error('No entity '+id+' '+command);
       if(entity.name==='NOT-HERE-OBJECT'){
         const adjectives=words.filter(w=>vocab.words.find(v=>v.name===w)?.roles.adjective);
         const lastNoun=[...words].reverse().find(w=>vocab.words.find(v=>v.name===w)?.roles.object);
         const candidates=game.bundle.payload.world.entities.filter(e=>e.properties.some(p=>p.kind==='words'&&p.property.name==='SYNONYM'&&p.words.some(w=>w.name===lastNoun))&&adjectives.every(a=>e.properties.some(p=>p.kind==='words'&&p.property.name==='SYNONYM'&&p.words.some(w=>w.name===a))||e.properties.some(p=>p.kind==='adjectives'&&p.adjectives.some(w=>w.name===a))));
-        if(candidates.length!==1)throw new Error('Missing operand needs reviewed binding '+command+' '+candidates.map(e=>e.name));return operand(candidates[0]!.id);
+        if(candidates.length!==1)throw new Error('Missing operand needs reviewed binding '+command+' '+candidates.map(e=>e.name));return operand(candidates[0]!.id,words);
       }
       if(entity.name==='PSEUDO-OBJECT'){
         const room=game.bundle.payload.world.entities.find(e=>e.id===globals.HERE)!;
@@ -47,8 +50,11 @@ export function authorActions(game:LoadedGame,run:ReferenceRun):GameAction[] {
     }
     const selection=(ids:number[],slot:number):Selection|undefined=>{
       if(!row!.slots[slot])return undefined;
-      if(words.includes('ALL')&&row!.slots[slot]!.rules.includes('MANY'))return 'ALL';
-      const operands=ids.map(operand);if(!operands.length){if(command==='take key')return {object:'KEY',noun:'KEY'};throw new Error('No operands '+input+' '+command);}return operands.length===1?operands[0]:operands;
+      const table=globals['P-ITBL']!,start=ram.readUInt16BE(table+12+4*slot),end=ram.readUInt16BE(table+14+4*slot),clause:string[]=[];
+      if(start&&end>=start&&(end-start)%4===0)for(let cursor=start;cursor<end;cursor+=4){const length=ram[cursor+2]!,offset=ram[cursor+3]!;clause.push(ram.subarray(globals['P-INBUF']!+offset,globals['P-INBUF']!+offset+length).toString('ascii').toUpperCase());}
+      const slotWords=clause.length?clause:words;
+      if(slotWords.includes('ALL')&&row!.slots[slot]!.rules.includes('MANY'))return 'ALL';
+      const operands=ids.map(id=>operand(id,slotWords));if(!operands.length){if(command==='take key')return {object:'KEY',noun:'KEY'};throw new Error('No operands '+input+' '+command);}return operands.length===1?operands[0]:operands;
     };
     const prso=selection(parsed.direct,0),prsi=selection(parsed.indirect,1);
     const common={actor,verb:action.name,lexicalTable:lexical.name,syntax:row.id,...(prso?{prso}:{}),...(prsi?{prsi}:{})};

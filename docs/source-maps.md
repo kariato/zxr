@@ -45,7 +45,7 @@ Repeated identical semantic forms can share an ID. An overlay can supply `within
 
 SRC-006 and SRC-011 are recorded as source normalizations. The original file text is unchanged. SRC-006's lowered block maps back to its trailing source list; SRC-011 affects initial data rather than an executable instruction.
 
-The map covers **26,503 sites**: 439 routines, 487 bindings, 6,487 commands and 19,090 expressions. There are **24,399 semantic IDs**, including **1,424 ambiguous IDs**, 16,164 locations, 6,250 anchors and 8,102 macro-origin points. The full mapped IR is available through the headless API; the audit records its runtime-program hash instead of checking in a second complete logic tree. The map uses compact JSON rows to avoid deeply indented repeated metadata.
+The map covers **26,507 sites**: 439 routines, 487 bindings, 6,487 commands and 19,094 expressions. There are **24,403 semantic IDs**, including **1,424 ambiguous IDs**, 16,164 locations, 6,250 anchors and 8,102 macro-origin points. The full mapped IR is available through the headless API; the audit records its runtime-program hash instead of checking in a second complete logic tree. The map uses compact JSON rows to avoid deeply indented repeated metadata.
 
 `reference/translation-report.json` has zero untranslated constructs. It separately records all 27 intentional parser replacements (PARSER adapter plus 26 middle routines), 32 classified external parser-variable accesses, three READ sites and three explicitly unsupported debug-stream sites. Every item links to actual mapped node instances. These are deliberate adaptation or runtime-error policies, not omitted source accidentally reported as implemented.
 
@@ -60,3 +60,5 @@ npm run build
 ```
 
 `source-maps:record` intentionally regenerates the map, report and audit. CI runs the check. Reference-assisted `zxr check` now builds the maps and reports complete coverage and zero untranslated constructs; `zxr compile` now packs and validates the complete bundle.
+
+Phase 5.5 adds four expression sites through guarded SRC-014 (the CLIMB synonym bound). The current totals above include that correction; vendored source locations and macro-origin counts are unchanged.

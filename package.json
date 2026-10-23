@@ -50,7 +50,15 @@
     "candidates:record": "node tools/engine/candidates-cli.ts record",
     "candidates:check": "node tools/engine/candidates-cli.ts check",
     "options:record": "node tools/engine/option-coverage-cli.ts record",
-    "options:check": "node tools/engine/option-coverage-cli.ts check"
+    "options:check": "node tools/engine/option-coverage-cli.ts check",
+    "conformance:record": "node tools/engine/conformance-record.ts",
+    "conformance:check": "node bin/zxr.ts check --conformance",
+    "conformance-review:record": "node tools/engine/conformance-review-cli.ts record",
+    "conformance-review:check": "node tools/engine/conformance-review-cli.ts check",
+    "fuzz": "node tools/engine/fuzz-cli.ts",
+    "fuzz:keys": "node tools/engine/key-order-cli.ts",
+    "capabilities:check": "node tools/capabilities.ts check",
+    "capabilities:record": "node tools/capabilities.ts record"
   },
   "dependencies": {
     "three": "0.186.0"

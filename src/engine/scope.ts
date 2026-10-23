@@ -1,6 +1,7 @@
 import type { LoadedGame } from './bundle-loader.ts';
 import type { WorldState } from './world-state.ts';
-import type { Operand } from './action-plan.ts';
+import { prepareOperand } from './action-plan.ts';
+import type { Operand, PlannedOperand } from './action-plan.ts';
 import type { CandidateScope } from './candidates.ts';
 import { decodeZText } from './text.ts';
 
@@ -38,7 +39,11 @@ export class ScopeQuery {
     this.#properties=new Map(symbols.filter(s=>s.kind==='property').map(s=>[s.name.slice(2),s.number!]));
     this.player=world.global('PLAYER');this.actor=context.actor===undefined||context.actor==='PLAYER'?this.player:this.id(context.actor);
     if(!this.flag(this.actor,'ACTORBIT'))throw new Error('Scope actor is not an initialized actor');
-    this.here=context.room?this.id(context.room):this.metaLocation(this.actor)||world.global('HERE');
+    const location=this.metaLocation(this.actor);
+    // Local/global actor proxies (e.g. the distant unicorn) live under an
+    // implementation container. Their offered command still starts in HERE;
+    // the source TELL handler decides whether to accept or refuse it.
+    this.here=context.room?this.id(context.room):this.#entities.get(location)?.kind==='room'?location:world.global('HERE');
     this.#known=new Set(context.known??[]);for(const name of this.#known)this.id(name);
   }
   id(name:string):number {const id=this.#names.get(name);if(id===undefined)throw new Error('Unknown scope entity '+name);return id;}
@@ -102,6 +107,35 @@ export class ScopeQuery {
       if(adjective&&(!adjectives||!Array.from({length:this.#world.propertySize(adjectives)},(_,i)=>this.#world.getByte(adjectives,i)).includes(adjective)))return false;
       return true;
     });
+  }
+  /** Pure counterpart of the structured adapter's DO-SL/GLOBAL-CHECK noun search.
+   * Zero physical matches may take the source NOT-HERE branch; ambiguity may not. */
+  acceptsSpelling(value:Operand,hints:readonly string[],verb:string):boolean {return this.spellingMatcher()(prepareOperand(this.#game,value),hints,verb);}
+  /** Snapshot matcher, cached only within one session revision. */
+  spellingMatcher(){
+    const searches=new Map<string,number[]>(),properties=new Map<number,{invisible:boolean;nouns:Set<number>;adjectives:Set<number>}>(),lit=!!this.#world.global('LIT'),here=this.#world.global('HERE');
+    const search=(root:number,depth:0|1|2=1,opaque=0)=>{const key=root+':'+depth+':'+opaque;let result=searches.get(key);if(!result){result=this.search(root,depth,opaque);searches.set(key,result);}return result;};
+    const words=new Map(this.#game.bundle.payload.vocabulary.words.map(w=>[w.name,w])),addresses=new Map(this.#game.bundle.payload.memory.words.map(w=>[w.name,w.address]));
+    return (operand:PlannedOperand,hints:readonly string[],verb:string):boolean=>{
+    const last=operand.words.at(-1)!,word=words.get(last)!;
+    const promoted=operand.adjectiveOnly?!!word.roles.object:!operand.adjective&&!!word.roles.adjective;
+    const noun=operand.adjectiveOnly&&!promoted?0:addresses.get(last)!,adjective=promoted?0:operand.adjective??0;
+    const matches=(id:number)=>{
+      let entry=properties.get(id);if(!entry){const synonyms=this.#property(id,'SYNONYM'),adjectives=this.#property(id,'ADJECTIVE');entry={invisible:this.flag(id,'INVISIBLE'),nouns:new Set(synonyms?Array.from({length:this.#world.propertySize(synonyms)/2},(_,i)=>this.#world.getWord(synonyms,i)):[]),adjectives:new Set(adjectives?Array.from({length:this.#world.propertySize(adjectives)},(_,i)=>this.#world.getByte(adjectives,i)):[])};properties.set(id,entry);}
+      return !entry.invisible&&(!noun||entry.nouns.has(noun))&&(!adjective||entry.adjectives.has(adjective));
+    };
+    const scan=(root:number,top:boolean,bottom:boolean,opaque=0)=>top||bottom?search(root,top&&bottom?1:top?0:2,opaque).filter(matches):[];
+    const physical=(retry:boolean)=>[...(lit?scan(here,!retry||hints.includes('ON-GROUND'),!retry||hints.includes('IN-ROOM'),this.player):[]),...scan(this.player,!retry||hints.includes('HELD'),!retry||hints.includes('CARRIED'))];
+    let found=physical(false);
+    if(found.length>1){found=physical(true);return found.length===1&&found[0]===operand.id;}
+    if(!found.length){
+      const globals=this.#property(here,'GLOBAL');if(globals)found=Array.from({length:this.#world.propertySize(globals)},(_,i)=>this.#world.getByte(globals,i)).filter(matches);
+      const pseudos=this.#property(here,'PSEUDO');if(pseudos&&noun)for(let i=0;i<this.#world.propertySize(pseudos);i+=4)if(this.#world.getWord(pseudos+i)===noun){found.push(this.id('PSEUDO-OBJECT'));break;}
+      if(!found.length)found=search(this.id('GLOBAL-OBJECTS')).filter(matches);
+      if(!found.length&&['LOOK-INSIDE','SEARCH','EXAMINE'].includes(verb))found=search(this.id('ROOMS')).filter(matches);
+    }
+    return found.length===0?!operand.pseudo:found.length===1&&found[0]===operand.id;
+    };
   }
   #shortName(id:number):string {
     const object=this.#game.bundle.payload.memory.objects.find(o=>o.id===id)!,address=object.propertyTable;

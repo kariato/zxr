@@ -4,7 +4,7 @@ import type { ActionMenu, PagedSelection, MenuChoice, ChoicePage, Operand } from
 export interface ChoiceTarget {family?:string;placement?:'primary'|'more';actor?:string;operand?:Operand;spelling?:Operand;all?:boolean;commit?:boolean}
 export interface PlayerChoice {key:string;label:string;target?:ChoiceTarget}
 export interface TranscriptEntry {command?:string;text:string}
-export interface PlayerView {title:string;choices:PlayerChoice[];words:boolean;canUndoWord:boolean;state:string}
+export interface PlayerView {title:string;choices:PlayerChoice[];words:boolean;canUndoWord:boolean;canFinish:boolean;finishLabel?:string;canCancel:boolean;state:string}
 /** Shared option-only navigation. Browsing never calls an engine commit. */
 export class TextPlayer {
   readonly session:GameSession;readonly transcript:TranscriptEntry[]=[];
@@ -28,6 +28,19 @@ export class TextPlayer {
   }
   addWord(index:number){if(!this.#draft)throw new Error('No word selection');const next={...this.#draft,words:[...(this.#draft.words??[]),index]};this.session.select(next);this.#draft=next;}
   removeWord(){if(this.#draft)this.#draft={...this.#draft,words:(this.#draft.words??[]).slice(0,-1)};}
+  cancel():boolean {if(this.session.observe().state!=='input')return false;this.#reset();return true;}
+  #completion(){
+    if(!this.#draft)return null;
+    let draft=this.#draft;
+    if(this.#spelling)draft={...draft,operands:[...draft.operands,this.#spelling.operand]};
+    if(this.#multiple){if(!this.#multiple.length)return null;draft={...draft,operands:[...draft.operands,this.#multiple]};}
+    return this.session.selectionCompletion(draft);
+  }
+  finish():boolean {
+    if(this.session.observe().state!=='input')return false;
+    const draft=this.#completion();if(!draft)return false;
+    const label=this.session.select(draft).label;this.#reset();this.receive(this.session.commitSelection(draft),label);return true;
+  }
   #append(operand:SelectionRequest['operands'][number]){const next={...this.#draft!,operands:[...this.#draft!.operands,operand]};this.session.select(next);this.#draft=next;this.#spelling=undefined;this.#multiple=undefined;this.#expanded=false;}
   view():PlayerView {
     this.#callbacks.clear();const choices:PlayerChoice[]=[];
@@ -58,6 +71,7 @@ export class TextPlayer {
       }else if(this.#multiple){
         title='Choose multiple objects';
         for(const c of [...view.next!.choices.primary,...view.next!.choices.more]){
+          if(typeof c.operand==='object'&&'pseudo' in c.operand&&this.#multiple.some(o=>typeof o==='object'&&'pseudo' in o&&operandIdentity(o)!==operandIdentity(c.operand)))continue;
           const selected=this.#multiple.some(o=>operandIdentity(o)===operandIdentity(c.operand));
           add((selected?'Selected: ':'Select: ')+c.label,()=>{this.#multiple=selected?this.#multiple!.filter(o=>operandIdentity(o)!==operandIdentity(c.operand)):[...this.#multiple!,c.operand];},{operand:c.operand});
         }
@@ -94,6 +108,7 @@ export class TextPlayer {
       }
       if(this.#page!=='root')add('Back',()=>nav(this.#page==='object'?'objects':'root'));
     }
-    return {title,choices,words,canUndoWord:!!this.#draft?.words?.length,state};
+    const completion=state==='input'?this.#completion():null;
+    return {title,choices,words,canUndoWord:!!this.#draft?.words?.length,canFinish:!!completion,...(completion?{finishLabel:this.session.select(completion).label}:{}),canCancel:state==='input',state};
   }
 }

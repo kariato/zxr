@@ -1,6 +1,6 @@
 {
   "format": "zxr-engine-replay-v1",
-  "buildHash": "41ba9c8185ee8dc59af0d6f2db9f61437f73475f5fe302284bb9a2006cbae586",
+  "buildHash": "f8df5f9e0b42f524fe371e0caaec7d0e26a657b269ec7b2839735ccf0b9f4032",
   "cases": [
     {
       "id": "walkthrough",
@@ -114,7 +114,7 @@
         "won": true,
         "deaths": 0
       },
-      "finalStateHash": "b9ee0e00fcdd0b29f1d6db14b472e7a1f4b56dbbc2fb39471879dbf58c305f80"
+      "finalStateHash": "87f11f2961a1a2c08b93b4635026f4643002fa864f779f8fd5ba1f76ea473e5b"
     },
     {
       "id": "area-barrow",
@@ -145,7 +145,7 @@
         "won": false,
         "deaths": 0
       },
-      "finalStateHash": "741fd4b91008c0b616bd06c76374e020455986d4e4beacda58e29aadc8277037"
+      "finalStateHash": "d368c1f222e7350643886c5f7dc795e2968fef147fa7d043832c27b3ab17b4ca"
     },
     {
       "id": "area-garden",
@@ -177,7 +177,7 @@
         "won": false,
         "deaths": 0
       },
-      "finalStateHash": "d3f3938f1fb40ba26ec196afc532b15e8455997793b758b35b0324e064b8aa6a"
+      "finalStateHash": "3c611d259a6debda3229c78e4df405161a9b736fb10afe3e4c7a11a2d03d1831"
     },
     {
       "id": "area-riddle",
@@ -210,7 +210,7 @@
         "won": false,
         "deaths": 0
       },
-      "finalStateHash": "86e193fccd4a76d0e436230aa3af68e01602f80476b6feaab78b2aa364c30a96"
+      "finalStateHash": "ce1152ddc93a7dc7b4e91e5c163e64a3b180cdeea08c18d0022205e5df003caf"
     },
     {
       "id": "area-well",
@@ -243,7 +243,7 @@
         "won": false,
         "deaths": 0
       },
-      "finalStateHash": "bc04220fc1116d523bc25aef7c198f5883060937499d39b5130f1a4231ed29f5"
+      "finalStateHash": "9f6cc88acf38c1cb396a1c783b6e4f597814efaeebbf9e6f980887ee971e6812"
     },
     {
       "id": "area-cakes",
@@ -280,7 +280,7 @@
         "won": false,
         "deaths": 0
       },
-      "finalStateHash": "49eff761c3a8734222eae01c9754da19300135b1e2225be8178284a218100e08"
+      "finalStateHash": "dcfb30ee7b1880909a3706ad63d942967021efdbb0d829837c189163c8ffe99c"
     },
     {
       "id": "area-robot",
@@ -319,7 +319,7 @@
         "won": false,
         "deaths": 0
       },
-      "finalStateHash": "142098be8d8a9321c3e8cbad3a83255ed3a747b18d479b9eb13677224f33df12"
+      "finalStateHash": "5eb24a61de7a79b9f30f960a477bc0985deb5123b949703ebdb7f69c36302c0a"
     },
     {
       "id": "area-tiny-room",
@@ -366,7 +366,7 @@
         "won": false,
         "deaths": 0
       },
-      "finalStateHash": "d064efb8b59d62473e77b4bed31bc577f5f2b73ea3a58475bbd554ef819a2509"
+      "finalStateHash": "2cace4a3cd9a76332a74a2979bf6d46d963c06ba8ae0ea329a04884ef478bbbf"
     },
     {
       "id": "area-dragon",
@@ -414,7 +414,7 @@
         "won": false,
         "deaths": 0
       },
-      "finalStateHash": "5899a97eb6b3ab6edf8f00bb15f3e999ba04cc4cd0683655a44e9f36f4c93b8d"
+      "finalStateHash": "585d11f5b3f8ef6834e9afd2d2958cfa71bb96fc60a5a8aedea1bfd98f68e0e2"
     },
     {
       "id": "area-princess",
@@ -490,7 +490,7 @@
         "won": false,
         "deaths": 0
       },
-      "finalStateHash": "c4a8fb6bcdc62e3c59bcc9d556605c8a4eacb99684dc96fb1b1821affe428d80"
+      "finalStateHash": "0bfa09358a1632d24f2f5570b4c1fca74eea523fe637abd33e72c3ee9aa08cf7"
     },
     {
       "id": "area-workshop",
@@ -573,7 +573,7 @@
         "won": false,
         "deaths": 0
       },
-      "finalStateHash": "c04edad5586cd2140982de2107961fb9ac178ec09d033687a94b77632e5a355b"
+      "finalStateHash": "0f850bfca338a7f5685d6af2b262ee03bad2300a0f39526407ff741383fbb820"
     },
     {
       "id": "area-volcano",
@@ -656,7 +656,7 @@
         "won": false,
         "deaths": 0
       },
-      "finalStateHash": "034b9fb4aed2cf9e3f579793a218df22e0ed3bfb51dbba88e298731d5012c5a0"
+      "finalStateHash": "078cc7a30e74404baf4a4b9307d9174b682ba9eab925af0dca13930f792eaff1"
     },
     {
       "id": "area-bank",
@@ -756,7 +756,7 @@
         "won": false,
         "deaths": 0
       },
-      "finalStateHash": "d27dcc08feb49c505ca32d9abac44a340fd4ab8eaa7ae2e25904c15d845a876c"
+      "finalStateHash": "1359ab0a5e5f73c2a1dbfc49a3646118a7bb8c88045456825d12d26ad82467aa"
     },
     {
       "id": "random-death-recovery",
@@ -798,7 +798,7 @@
         "won": false,
         "deaths": 1
       },
-      "finalStateHash": "5f41ca2b8dc96c92b853dba394db6603971548807f6e0258b2ef71b4fee2b196"
+      "finalStateHash": "4789903f1f4f160b0692440dba52f24576ac95e86a7505fad0e4ef5fbdfc70af"
     }
   ]
 }

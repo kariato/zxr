@@ -51,7 +51,9 @@ describe('owned bundle loading and memory-backed world state',()=>{
   it('reads defaults and exact property addresses/lengths and writes existing byte/word properties',()=>{
     const w=WorldState.create(small),north=31;expect(w.getProperty(1,north)).toBe(2);const address=w.propertyAddress(1,north);expect(w.propertySize(address)).toBe(1);expect(w.propertySize(0)).toBe(0);
     expect(w.nextProperty(1,0)).toBe(31);expect(w.nextProperty(1,31)).toBe(0);expect(w.propertyAddress(1,14)).toBe(0);expect(w.getProperty(1,14)).toBe(0);
-    w.putProperty(1,north,3);expect(w.getByte(address)).toBe(3);expect(()=>w.putProperty(1,14,1)).toThrow('existing');w.validate();
+    w.putProperty(1,north,3);expect(w.getByte(address)).toBe(3);expect(w.propertySize(address)).toBe(1);expect(w.fork().propertySize(address)).toBe(1);
+    const header=w.getByte(address-1);w.putByte(address-1,0,0);expect(()=>w.propertySize(address)).toThrow('property data address');expect(()=>w.fork().propertySize(address)).toThrow('property data address');expect(()=>w.validate()).toThrow('Property layout');
+    w.putByte(address-1,0,header);w.validate();expect(w.propertySize(address)).toBe(1);expect(()=>w.propertySize(address+1)).toThrow('property data address');expect(()=>w.putProperty(1,14,1)).toThrow('existing');
     const z=WorldState.create(full);expect(z.getProperty(object('INSIDE-BARROW'),14)).toBe(5);
     const pseudo=full.bundle.payload.memory.objects.find(o=>o.name==='PSEUDO-OBJECT')!,action=pseudo.properties.find(p=>p.name==='ACTION')!;expect(z.propertyAddress(pseudo.id,action.number)-5).toBe(pseudo.propertyTable+1);
   });

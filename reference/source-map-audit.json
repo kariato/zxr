@@ -46,26 +46,26 @@
       "sha256": "d887ed2e0162dd555c08330eb3ab40a03790734ccfc426f4e354dd846205ed21"
     }
   ],
-  "sourceMapSha256": "8026d8af1a72d194b93f396c23e95974fc29e57c846d665708d4dc910d535daf",
-  "mappedLogicSha256": "d6604d05f3350e4d84674e8426876a0c2a686b0b0d46df983902b49a033a1a3c",
+  "sourceMapSha256": "a18ffb6bdc51a91751a3406e34ddc6aeef5a4ced1ffd06010e38fe44915c25c6",
+  "mappedLogicSha256": "29a6d7c68e231c67910ae6e4ce326e0345d3e7a67005736d12ac8fe6b86a807e",
   "reportSha256": "f2226f2d8e6f91061bff6bfa1a8c08dceaa865792a7d3f70038ac88aae6ff9be",
   "checked": {
     "routines": 439,
     "runtimeRoutines": 414,
-    "sites": 26503,
+    "sites": 26507,
     "byKind": {
       "routine": 439,
       "binding": 487,
       "command": 6487,
-      "expression": 19090
+      "expression": 19094
     },
-    "stableIds": 24399,
+    "stableIds": 24403,
     "ambiguousIds": 1424,
     "locations": 16164,
     "anchors": 6250,
     "macroPoints": 8102,
     "originLinks": 8102,
-    "normalizations": 2,
+    "normalizations": 3,
     "generatedRestDefaults": 1,
     "implicitZeroInitializers": 211,
     "untranslated": 0,

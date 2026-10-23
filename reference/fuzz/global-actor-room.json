@@ -1,0 +1,26 @@
+{
+  "format": "zxr-fuzz-known-issue-v1",
+  "id": "global-actor-room",
+  "status": "resolved",
+  "campaign": {
+    "seed": 5920850,
+    "game": 2,
+    "input": 225
+  },
+  "state": {
+    "room": "GARDEN-NORTH",
+    "actor": "GLOBAL-UNICORN"
+  },
+  "cause": "The visible distant-unicorn actor is stored in LOCAL-GLOBALS. META-LOC returns GLOBAL-OBJECTS, an implementation container, so candidate generation rejected its room.",
+  "repair": "Use the real containing room or current HERE for actor menus. If the TELL handler preserves P-CONT while leaving WINNER=PLAYER, execute the remaining command in that retained player context, as the original parser does. Do not reassign WINNER or cancel the continuation.",
+  "reference": {
+    "command": "unicorn, wait",
+    "context": {
+      "room": "GARDEN-NORTH",
+      "inventory": []
+    },
+    "text": "Unicorn? What unicorn?\n\nTime passes...\n\n>",
+    "moves": 3,
+    "winner": "ADVENTURER"
+  }
+}

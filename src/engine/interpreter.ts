@@ -1,4 +1,4 @@
-import { prepareAction } from './action-plan.ts';
+import { prepareAction, prepareRandomDiagnostic } from './action-plan.ts';
 import type { ActionPlan, PlannedOperand } from './action-plan.ts';
 import type { LoadedGame } from './bundle-loader.ts';
 import { writeReadText, writeReadWord } from './read-input.ts';
@@ -15,9 +15,10 @@ import { canonicalJson, hashJson } from '../zil/integrity.ts';
 import type { RandomSnapshot } from './random.ts';
 import type { WorldSnapshot } from './world-state.ts';
 import type { Span } from '../zil/ast.ts';
-import { DIAGNOSTICS } from './diagnostics.ts';
+import { DIAGNOSTICS, DIAGNOSTIC_INPUT, DIAGNOSTIC_NUMBER } from './diagnostics.ts';
 import type { ExecutionDiagnostics, TraceEntry, TraceSite, TraceFrame } from './diagnostics.ts';
 
+type DiagnosticPlan=ActionPlan & {[DIAGNOSTIC_NUMBER]?:number};
 type ExpressionTask = {kind:'expression';id:number;stage:number;values:number[]};
 type ActivationTask = {kind:'activation';expression:number|null;phase:'bindings'|'body';index:number;waiting:boolean;last:number;args:number[]};
 type Task = ExpressionTask|ActivationTask;
@@ -125,6 +126,17 @@ export class Interpreter {
     if(name==='YES?'?!['YES','NO'].includes(choice):name==='FINISH'?!['RESTART','RESTORE','QUIT'].includes(choice):true)throw new Error('Unsupported READ decision choice or routine');
     return this.#segment({read:choice});
   }
+  /** Diagnostic capability; never accepted by the player/session input schema. */
+  [DIAGNOSTIC_INPUT](input:{kind:'numeric';value:number}|{kind:'invalid-finish';text:string}):InterpreterResult {
+    if(input.kind==='invalid-finish'){
+      if(this.#wait?.kind!=='READ'||this.#game.routine(this.#wait.routine)?.name!=='FINISH'||input.text!=='nonsense')throw new Error('Unsupported diagnostic decision');
+      return this.#segment({read:input.text.toUpperCase()});
+    }
+    if(!this.atInput()||!Number.isInteger(input.value)||input.value<0||input.value>32767)throw new Error('Invalid diagnostic numeric input');
+    const plan=prepareRandomDiagnostic(this.#game,this.#world);
+    (plan as DiagnosticPlan)[DIAGNOSTIC_NUMBER]=input.value;
+    return this.#segment({action:plan});
+  }
   /** Structured actions with source-derived scope, actor passes and bounded quoted speech. */
   executeAction(action:unknown):InterpreterResult {
     if(!this.atInput()||this.#world.global('P-CONT'))throw new Error('Not at a fresh parser boundary');
@@ -178,7 +190,7 @@ export class Interpreter {
     }
   }
   #trace(kind:TraceEntry['kind'],site:TraceSite,operation:string):void {
-    if(!this.#diagnostics)return;
+    if(!this.#diagnostics?.accepts(operation))return;
     const frame=this.#frames.at(-1)!;
     this.#diagnostics.record({kind,operation,program:frame.program,routine:frame.routine,name:this.#routine(frame).name,depth:this.#frames.length,step:this.#steps,
       source:site.source,...(site.sourceMapId?{sourceMapId:site.sourceMapId}:{}),...(site.nodeId?{nodeId:site.nodeId}:{}),...(site.origin?{origin:site.origin}:{})});
@@ -232,6 +244,7 @@ export class Interpreter {
   #finish(value:number):void {this.#frames.at(-1)!.tasks.pop();this.#deliver(value);}
   #return(value:number):void {
     const frame=this.#frames.pop()!;
+    if(this.#diagnostics&&frame.program==='runtime'&&this.#routine(frame).name==='MAIN-LOOP-1')this.#diagnostics.boundary('action-complete',()=>this.#world.snapshot(),this.#routine(frame).source,this.#random.snapshot().cursor);
     if(frame.program==='parser-entry'&&this.#pendingPlan){
       const plan=this.#pendingPlan;this.#pendingPlan=null;
       if(this.#actor?.phase==='tell'){this.#beginActorTell(plan);return;}
@@ -324,7 +337,7 @@ export class Interpreter {
       case 'string':this.#finish(e.handle);return;
       case 'variable-number':this.#finish(e.variable.number);return;
       case 'load':this.#finish(this.#variable(frame,e.variable));return;
-      case 'store':one(e.value,v=>{this.#store(frame,e.variable,v);this.#finish(v);});return;
+      case 'store':one(e.value,v=>{this.#store(frame,e.variable,v);if(this.#diagnostics&&e.variable.scope==='global'&&e.variable.name==='P-WON'&&e.value.op==='call'&&e.value.routine.id===this.#game.bundle.payload.logic.adapter?.id)this.#diagnostics?.boundary('parser-return',()=>this.#world.snapshot(),e.source,this.#random.snapshot().cursor);this.#finish(v);});return;
       case 'value':one(e.variable,v=>this.#finish(this.#variable(frame,v)));return;
       case 'update-compare':one(e.bound,v=>{const result=updateCompare(e.operator,this.#variable(frame,e.variable),v);this.#store(frame,e.variable,result.value);this.#finish(result.result);});return;
       case 'random':one(e.bound,v=>this.#finish(this.#random.random(v)));return;
@@ -361,7 +374,11 @@ export class Interpreter {
           if(e.op!=='call'||this.#routine(frame).name!=='MAIN-LOOP-1')throw new Error('Parser adapter called outside MAIN-LOOP-1');
           if(this.#actor){
             if(this.#actor.phase==='tell'&&this.#world.global('P-CONT')){
-              if(this.#world.global('P-CONT')!==5||!this.#world.global('QUOTE-FLAG')||this.#world.global('WINNER')!==this.#actor.plan.actor.id)throw new Error('Unsupported actor command continuation');
+              const winner=this.#world.global('WINNER');
+              // A direct-object handler can intercept TELL without cancelling
+              // P-CONT or changing WINNER (the distant unicorn does this).
+              // The original parser then executes the remaining player command.
+              if(this.#world.global('P-CONT')!==5||!this.#world.global('QUOTE-FLAG')||winner!==this.#actor.plan.actor.id&&winner!==this.#world.global('PLAYER'))throw new Error('Unsupported actor command continuation');
               this.#actor.phase='command';this.#pendingPlan=this.#actor.plan;
               this.#call(adapter.id,[],'parser-entry');return;
             }
@@ -415,6 +432,7 @@ export class Interpreter {
   #populateAction(plan:ActionPlan,implicitTell=false):void {
     const world=this.#world;
     for(const key of ['P-NUMBER','P-NAM','P-ADJ','P-OFLAG','RESERVE-PTR','P-MERGED','P-GETFLAGS'])world.setGlobal(key,0);
+    const number=(plan as DiagnosticPlan)[DIAGNOSTIC_NUMBER];if(number!==undefined)world.setGlobal('P-NUMBER',number);
     world.setGlobal('QUOTE-FLAG',0);world.setGlobal('P-NCN',plan.clauses.length);world.setGlobal('PRSA',plan.dispatch.action);world.setGlobal('P-DIR',0);world.setGlobal('P-LEN',plan.dispatch.kind==='walk'?0:65535);
     if(plan.dispatch.kind==='walk'){
       world.setGlobal('PRSO',plan.dispatch.direction);world.setGlobal('P-WALK-DIR',plan.dispatch.direction);world.setGlobal('AGAIN-DIR',plan.dispatch.direction);return;
@@ -498,7 +516,7 @@ export class Interpreter {
       world.setGlobal('P-SLOCBITS',world.getByte(world.global('P-SYNTAX'),5+target.slot));
       this.#call(this.#game.bundle.payload.logic.adapter!.notHere.id,[world.global('P-TABLE')],'parser-not-here');return;
     }
-    if(target.operand?(count!==1||world.getWord(world.global('P-TABLE'),scope.base+1)!==target.operand.id):count===0)throw new Error('Operand is outside supported scope or has an ambiguous noun');
+    if(target.operand?(count!==1||world.getWord(world.global('P-TABLE'),scope.base+1)!==target.operand.id):count===0)throw new Error('Operand is outside supported scope or has an ambiguous noun: '+(target.operand?.name??'ALL'));
     if(target.operand?.pseudo){
       const pseudo=target.operand.pseudo,action=this.#symbol('P?ACTION'),name=world.propertyAddress(target.operand.id,action)-5;
       if(scope.phase!=='global'||world.getProperty(target.operand.id,action)!==pseudo.routine||world.getWord(name)!==world.getWord(target.noun)||world.getWord(name,1)!==world.getWord(target.noun,1))throw new Error('Pseudo feature binding does not match the selected source feature');

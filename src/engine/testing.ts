@@ -4,10 +4,11 @@ import { GameSession } from './session.ts';
 import type { SessionOptions } from './session.ts';
 import { Interpreter } from './interpreter.ts';
 import { TurnLoop } from './turn-loop.ts';
+import type { TurnCheckpoint } from './turn-loop.ts';
 import { WorldState } from './world-state.ts';
 import type { LoadedGame } from './bundle-loader.ts';
 import type { WorldSnapshot } from './world-state.ts';
-import { DIAGNOSTICS, SESSION_DEBUG, ExecutionDiagnostics } from './diagnostics.ts';
+import { DIAGNOSTICS, DIAGNOSTIC_INPUT, SESSION_DEBUG, SESSION_VALIDATE, ExecutionDiagnostics } from './diagnostics.ts';
 import type { TraceOptions } from './diagnostics.ts';
 import { signed } from './numeric.ts';
 export type { ExecutionTrace, TraceAttempt, TraceEntry, TraceFrame, TraceOptions } from './diagnostics.ts';
@@ -38,7 +39,12 @@ export function createDebugInterpreter(game:LoadedGame,options:ConstructorParame
   const diagnostics=new ExecutionDiagnostics(traceOptions),interpreter=new Interpreter(game,{...options,[DIAGNOSTICS]:diagnostics});
   return {interpreter,debug:{trace:()=>diagnostics.trace(),clearTrace:()=>diagnostics.clear(),stateDump:()=>interpreter.checkpoint(),revealAll:()=>revealWorld(game,interpreter.world().snapshot())}};
 }
-export function createDebugTurnLoop(game:LoadedGame,options:ConstructorParameters<typeof TurnLoop>[1]={},traceOptions:TraceOptions={}) {
-  const diagnostics=new ExecutionDiagnostics(traceOptions),loop=new TurnLoop(game,{...options,[DIAGNOSTICS]:diagnostics});
-  return {loop,debug:{trace:()=>diagnostics.trace(),clearTrace:()=>diagnostics.clear(),stateDump:()=>loop.checkpoint(),revealAll:()=>revealWorld(game,loop.world().snapshot())}};
+export function createDebugTurnLoop(game:LoadedGame,options:ConstructorParameters<typeof TurnLoop>[1]={},traceOptions:TraceOptions={}) {return debugTurnLoop(game,options,traceOptions);}
+export function restoreDebugTurnLoop(game:LoadedGame,checkpoint:TurnCheckpoint,options:Parameters<typeof TurnLoop.restore>[2]={},traceOptions:TraceOptions={}) {return debugTurnLoop(game,options,traceOptions,checkpoint);}
+function debugTurnLoop(game:LoadedGame,options:ConstructorParameters<typeof TurnLoop>[1],traceOptions:TraceOptions,checkpoint?:TurnCheckpoint) {
+  const diagnostics=new ExecutionDiagnostics(traceOptions),loop=checkpoint?TurnLoop.restore(game,checkpoint,{...options,[DIAGNOSTICS]:diagnostics}):new TurnLoop(game,{...options,[DIAGNOSTICS]:diagnostics});
+  return {loop,debug:{input:(input:Parameters<Interpreter[typeof DIAGNOSTIC_INPUT]>[0])=>loop[DIAGNOSTIC_INPUT](input),trace:()=>diagnostics.trace(),clearTrace:()=>diagnostics.clear(),stateDump:()=>loop.checkpoint(),revealAll:()=>revealWorld(game,loop.world().snapshot())}};
 }
+
+/** Pure invariant check without enabling execution tracing. */
+export function validateSessionState(session:GameSession):void {session[SESSION_VALIDATE]();}

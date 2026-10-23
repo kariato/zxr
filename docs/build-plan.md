@@ -236,7 +236,7 @@ Implementation, evidence and scope limits: [phase 1](phase-1.md). `npm run zil:c
 - [x] 2.6 — all 189 verb-library and 176 game-action routines lower alongside the remaining 74 routines; 1,342 shared strings verified, all 70 operation names classified. Only 656 memory/address sites remain for 2.7.
 - [x] 2.7 — 19,882-byte initial memory image, 45 source tables, all 689 packed dictionary entries and 1,488 relocations verified; all 439 routines fully linked. Runtime aliasing/clock/header behavior remains step 3.2.
 - [x] 2.8 — all 42 parser routines classified (17 kept, 24 replaced, PARSER adapter); 414 runtime routines retain IDs. Alias-aware may-effects, 16 indirect sites, 32 consumer sites and all 3 READs verified; exact sites/plans in the generated parser ledger.
-- [x] 2.9 — 26,503 routine/binding/command/expression sites mapped; semantic overlay IDs and exact diagnostic IDs verified. Zero untranslated constructs; parser replacements/consumers, READ and intentional stream errors explicitly reported.
+- [x] 2.9 — 26,507 routine/binding/command/expression sites mapped; semantic overlay IDs and exact diagnostic IDs verified. Zero untranslated constructs; parser replacements/consumers, READ and intentional stream errors explicitly reported.
 - [x] 2.10 — 11 JSON Schema roots plus strict cross-file validation; hand-written three-room logic and all Zork II output deterministically pack, hash and load. Compiler/check CLI and independent AJV/Node-SHA audits pass.
 
 **Gate:** the whole game compiles to schema-valid JSON, and every gap is named.
@@ -312,12 +312,12 @@ Implementation, evidence and scope limits: [phase 1](phase-1.md). `npm run zil:c
 | 5.5 | Fuzz test: thousands of random option sequences with fixed seeds, checking that the engine never throws, never offers an option that is then rejected, keeps the state valid, and that `options()` and `observe()` never change the state hash. JSON files with their object keys shuffled must compile to identical output. | 10,000 random games of 300 turns run clean in CI. |
 | 5.6 | Capability manifest listing exactly what works, what is stubbed and what differs. | Manifest shown in the debug panel and in the README. |
 
-- [ ] 5.1
-- [ ] 5.2
-- [ ] 5.3
-- [ ] 5.4
-- [ ] 5.5
-- [ ] 5.6
+- [x] 5.1 — all 75 golden scripts, 9,568 structured/decision/diagnostic inputs and 29,207 exposed/internal checkpoints; first-divergence diagnostics, mutation checks and CI command ([details](phase-5.md#conformance-runner-51))
+- [x] 5.2 — 35 ledger entries reviewed; duplicate REF ID fixed; exact text policy/source/evidence review enforced before all 75 conformance scripts ([details](phase-5.md#fix-or-ledger-review-52))
+- [x] 5.3 — IndexedDB autosave, named checkpoints and asynchronous source SAVE/RESTORE; reload/state identity, transaction abort, corrupt-save recovery and stale completion checks ([details](phase-5.md#persistent-saves-53))
+- [x] 5.4 — portable seed/save replay bundles, per-input state verification, isolated step/play/pause/speed viewer; full 400-point and mid-save replay hashes match ([details](phase-5.md#replay-bundles-and-playback-54))
+- [ ] 5.5 — deterministic runner, shuffled-key checks and sharded CI implemented; FOOTPAD, CLIMB, $VERIFY, debug-offering and unicorn actor defects fixed; full 10,000-game CI acceptance remains unverified ([details](phase-5.md#deterministic-fuzzing-55-acceptance-still-open))
+- [x] 5.6 — shared capability inventory published in README and read-only browser debug panel; unsupported and pending capabilities remain explicit ([details](phase-5.md#capability-manifest-56))
 
 **Gate:** the text engine is done. From here on, phases only add presentation; any change to rules goes back through this suite.
 

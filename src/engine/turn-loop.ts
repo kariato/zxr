@@ -6,7 +6,7 @@ import type { Span } from '../zil/ast.ts';
 import { canonicalJson, hashJson } from '../zil/integrity.ts';
 import { assertSchema } from '../zil/schema.ts';
 import { checkpointSchema } from './checkpoint.ts';
-import { DIAGNOSTICS } from './diagnostics.ts';
+import { DIAGNOSTICS, DIAGNOSTIC_INPUT } from './diagnostics.ts';
 import type { ExecutionDiagnostics } from './diagnostics.ts';
 
 export type TurnBoundary = {kind:'input'}
@@ -54,6 +54,11 @@ export class TurnLoop {
     try {result=this.#vm.executeAction(action);}catch(error){return this.#reject(error instanceof Error?error.message:String(error));}
     if(result.status!=='error')this.#sequence++;
     return this.#publish(result,before);
+  }
+  [DIAGNOSTIC_INPUT](input:Parameters<Interpreter[typeof DIAGNOSTIC_INPUT]>[0]):TurnResolution {
+    const before=this.#moves();
+    try {const result=this.#vm[DIAGNOSTIC_INPUT](input);if(input.kind==='numeric'&&result.status!=='error')this.#sequence++;return this.#publish(result,before);}
+    catch(error){return this.#reject(error instanceof Error?error.message:String(error));}
   }
   /** Internal continuation only. The session layer must correlate the decision first. */
   answer(choice:'YES'|'NO'|'RESTART'|'RESTORE'|'QUIT'):TurnResolution {

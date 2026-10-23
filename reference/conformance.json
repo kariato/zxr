@@ -1,0 +1,3179 @@
+{
+  "format": "zxr-conformance-v1",
+  "buildHash": "f8df5f9e0b42f524fe371e0caaec7d0e26a657b269ec7b2839735ccf0b9f4032",
+  "cases": [
+    {
+      "id": "walkthrough",
+      "originalInputs": 386,
+      "inputs": 388,
+      "checkpoints": 389,
+      "internalCheckpoints": 787,
+      "internalCheckpointsHash": "8ac3a37e76b837a007374e0154a8bd8012c83c16c2a858a558eca45c525155c3",
+      "gameDraws": 143,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        },
+        {
+          "input": 224,
+          "kind": "orphan-protocol",
+          "command": "take off crown",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 224,
+          "kind": "excluded-typed-input",
+          "command": "take off crown",
+          "fields": [],
+          "originalText": "That sentence isn't one I recognize.\n\n>"
+        },
+        {
+          "input": 351,
+          "kind": "canonical-actor-spelling",
+          "command": "demon, give me wand",
+          "normalizedCommand": "devil, give me wand",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "31ca63eb494c0a357bbb8d038add4c9bd7aa483b60379d67110ebf0e990ef63e",
+      "final": {
+        "room": "ZORK3",
+        "winner": "ADVENTURER",
+        "score": 400,
+        "moves": 419,
+        "won": true,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-barrow",
+      "originalInputs": 6,
+      "inputs": 6,
+      "checkpoints": 7,
+      "internalCheckpoints": 12,
+      "internalCheckpointsHash": "5b60db99d4914d8264714c569aac3931e693ed9f7a5c2774187bea3aaba7227c",
+      "gameDraws": 2,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "661b0f5e300860eb50f3da0a1ab94bec022cab53d6a95699d02e7d364f35b002",
+      "final": {
+        "room": "GREAT-CAVERN",
+        "winner": "ADVENTURER",
+        "score": 0,
+        "moves": 6,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-garden",
+      "originalInputs": 16,
+      "inputs": 16,
+      "checkpoints": 17,
+      "internalCheckpoints": 32,
+      "internalCheckpointsHash": "d8615d6e78828feca8fa858e359e3e29c964c51372c8853c5fae0fb14d0f8c59",
+      "gameDraws": 9,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "aa1f2dbc4e7ae483f7be464260d1eca0307f85b88b727797e9f6e110ca0c9a03",
+      "final": {
+        "room": "DARK-TUNNEL",
+        "winner": "ADVENTURER",
+        "score": 0,
+        "moves": 16,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-riddle",
+      "originalInputs": 25,
+      "inputs": 25,
+      "checkpoints": 26,
+      "internalCheckpoints": 50,
+      "internalCheckpointsHash": "17f77e07060ed586ad1ede3ccbb9eb1f0d11b408858599e3c01293b02eaec587",
+      "gameDraws": 16,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "32d6c03a9a91075e6efd0b8a737d38e8f35b4134cb82fd7ca8d96775484f5ffb",
+      "final": {
+        "room": "WELL-BOTTOM",
+        "winner": "ADVENTURER",
+        "score": 20,
+        "moves": 25,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-well",
+      "originalInputs": 29,
+      "inputs": 29,
+      "checkpoints": 30,
+      "internalCheckpoints": 58,
+      "internalCheckpointsHash": "167cb3fa293b164852df130deada03db8a3742f26f5ef5bdecf72973832a8868",
+      "gameDraws": 17,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "6f9cea02b572d4cb98867dab7ad911b7505e6a8d5c77d7d1540d9090c4f47840",
+      "final": {
+        "room": "TEA-ROOM",
+        "winner": "ADVENTURER",
+        "score": 30,
+        "moves": 29,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-cakes",
+      "originalInputs": 38,
+      "inputs": 38,
+      "checkpoints": 39,
+      "internalCheckpoints": 76,
+      "internalCheckpointsHash": "21062e53f328bbf45637d6d8aaed5b5425597da80864fe1ef58b1315a202cc98",
+      "gameDraws": 19,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "be72d77fe56a6fa0013c7f65964cd93227d7f61a65fc246d7ee22ff8e1e82d50",
+      "final": {
+        "room": "MAGNET-ROOM",
+        "winner": "ADVENTURER",
+        "score": 45,
+        "moves": 38,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-robot",
+      "originalInputs": 53,
+      "inputs": 53,
+      "checkpoints": 54,
+      "internalCheckpoints": 116,
+      "internalCheckpointsHash": "85e717d0af76d33b5bf1e37c20edc36c745def58decc75467813354cfd22d70d",
+      "gameDraws": 32,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "de970e4c2d1aebae16ed43467b5070ec59314d060e98a014254ba2d58b5947b9",
+      "final": {
+        "room": "MACHINE-ROOM",
+        "winner": "ADVENTURER",
+        "score": 65,
+        "moves": 53,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-tiny-room",
+      "originalInputs": 99,
+      "inputs": 101,
+      "checkpoints": 102,
+      "internalCheckpoints": 212,
+      "internalCheckpointsHash": "5c57e943b9eafc6922458e0dfb213d31be4d80fd375523b0eeffe192583d130e",
+      "gameDraws": 53,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "f5af2db310c1985b3f0339a7c535f33afbfa14cc25d3de688d0d857c0f3ca77a",
+      "final": {
+        "room": "TINY-ROOM",
+        "winner": "ADVENTURER",
+        "score": 105,
+        "moves": 101,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-dragon",
+      "originalInputs": 113,
+      "inputs": 115,
+      "checkpoints": 116,
+      "internalCheckpoints": 240,
+      "internalCheckpointsHash": "bb8c4be11dfa38d7cd34ca03e20f35a24e38a161f2d58e1af25a0d9fa4eb9fcd",
+      "gameDraws": 59,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "3cba93a037e86e36118b51febbb610a73ea5d821dd103fb61bf31f15859aa32a",
+      "final": {
+        "room": "DRAGON-LAIR",
+        "winner": "ADVENTURER",
+        "score": 110,
+        "moves": 115,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-princess",
+      "originalInputs": 144,
+      "inputs": 145,
+      "checkpoints": 146,
+      "internalCheckpoints": 300,
+      "internalCheckpointsHash": "7636bbc1175c864ecb3c4c615c0cdd9e024afb719707d170db196ad0bd6937f1",
+      "gameDraws": 82,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "df430940feed3ff2935b152af83b226607f6fc4843fdeb9e7c233e803aed2bbd",
+      "final": {
+        "room": "GARDEN-NORTH",
+        "winner": "ADVENTURER",
+        "score": 125,
+        "moves": 174,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-workshop",
+      "originalInputs": 166,
+      "inputs": 169,
+      "checkpoints": 170,
+      "internalCheckpoints": 348,
+      "internalCheckpointsHash": "64ff08883c1e438db600f4ab13cf9eb687077a0aa3d838ae59bfe0d9fa142419",
+      "gameDraws": 92,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "6ba58167ac0065df23d80c4f828ca82c96433194f8a3547af460f2585c368c4e",
+      "final": {
+        "room": "WIZARDS-WORKSHOP",
+        "winner": "ADVENTURER",
+        "score": 185,
+        "moves": 197,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-volcano",
+      "originalInputs": 217,
+      "inputs": 220,
+      "checkpoints": 221,
+      "internalCheckpoints": 450,
+      "internalCheckpointsHash": "ad7492f804f7b08f69db322917e2e12a79bf43f47c64e5c4fc0411b57d7534fe",
+      "gameDraws": 109,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "46affb4f74fb2be37e278e321f18f1433767d7f9938ba4b25350074476d822c1",
+      "final": {
+        "room": "VOLCANO-BOTTOM",
+        "winner": "ADVENTURER",
+        "score": 250,
+        "moves": 262,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "area-bank",
+      "originalInputs": 261,
+      "inputs": 263,
+      "checkpoints": 264,
+      "internalCheckpoints": 536,
+      "internalCheckpointsHash": "b91919472a0cccebe5f50f792a9cff004411af7b1e7428f318fe2def239a0f4f",
+      "gameDraws": 121,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        },
+        {
+          "input": 224,
+          "kind": "orphan-protocol",
+          "command": "take off crown",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 224,
+          "kind": "excluded-typed-input",
+          "command": "take off crown",
+          "fields": [],
+          "originalText": "That sentence isn't one I recognize.\n\n>"
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "f0d3b49d279847703d5ab5d6bf466398b6e35bfe1515cacdeba521fb733daf13",
+      "final": {
+        "room": "BANK-ENTRANCE",
+        "winner": "ADVENTURER",
+        "score": 315,
+        "moves": 305,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "death-5496",
+      "originalInputs": 4,
+      "inputs": 4,
+      "checkpoints": 5,
+      "internalCheckpoints": 8,
+      "internalCheckpointsHash": "16bbde32617b82e2fed058cf4f2402ddc6cde847b95284fe963af78f82a95f98",
+      "gameDraws": 0,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "e31d09d894b0509d901b41e2d722b2383bd613d933956f73fdcf725125ba54db",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 65526,
+        "moves": 4,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-7a2b",
+      "originalInputs": 179,
+      "inputs": 182,
+      "checkpoints": 183,
+      "internalCheckpoints": 374,
+      "internalCheckpointsHash": "3a1219b5c12061cb6765ee5fbfc7127b63c0657d92d5e4c173466d36dac9e2d4",
+      "gameDraws": 95,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "a23423816b4e307bb1835f738889c4022cf248962892ed57667befd3ff743fab",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 190,
+        "moves": 210,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-87a8",
+      "originalInputs": 5,
+      "inputs": 5,
+      "checkpoints": 6,
+      "internalCheckpoints": 10,
+      "internalCheckpointsHash": "f6cb6660b40622df0f1c0ef0b6b83e7087c4ded902b12b974425318c936377ba",
+      "gameDraws": 3,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "b5335f6f7d026e97f27347ccc6e26dd10d0fa08785b34a875db2fadcf5f0a347",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 65526,
+        "moves": 5,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-8b33",
+      "originalInputs": 39,
+      "inputs": 39,
+      "checkpoints": 40,
+      "internalCheckpoints": 78,
+      "internalCheckpointsHash": "edc1e751f0ee86fce1dccacf217c3626a2ed83a2a2ccd1da66f2cbe3cbdf03e1",
+      "gameDraws": 19,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [
+        {
+          "input": 38,
+          "ledger": "SRC-013",
+          "referenceHash": "34fecbc45153624072d2f0958bc8fb5f26eabd5ad3c7ea2729b9028c3c0de07e",
+          "engineHash": "75d81d355c55c714c2e4e279cd9702d3a0c300676da35ae70bae040864abee4e"
+        }
+      ],
+      "checkpointsHash": "b4564d81757a168626719064706339a1600cb91a437ec2ec7cffb13a70bec884",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 35,
+        "moves": 39,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-937c",
+      "originalInputs": 4,
+      "inputs": 4,
+      "checkpoints": 5,
+      "internalCheckpoints": 8,
+      "internalCheckpointsHash": "f1ec111d1d0ee20fce10b270ca7e374e200124fda54eadd864d4096eadb6cc55",
+      "gameDraws": 0,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "f40a54ce355dbcdc811f3b124af00149489c2b4b953fd3ffddccf5a8ba3769f7",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 65526,
+        "moves": 4,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-95c8",
+      "originalInputs": 88,
+      "inputs": 88,
+      "checkpoints": 89,
+      "internalCheckpoints": 186,
+      "internalCheckpointsHash": "f4839d9653109a7c754d862b727d11b847b581593f508c4ef0e9a778d224e3e5",
+      "gameDraws": 50,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "2ff19e9f5dfbad87961755f888500dd57741a7e664b83b2cd73b71fabb723140",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 75,
+        "moves": 88,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-9e2d",
+      "originalInputs": 89,
+      "inputs": 89,
+      "checkpoints": 90,
+      "internalCheckpoints": 188,
+      "internalCheckpointsHash": "353c69ca34def8022916937918d8bb4775f73e4002b53a46ceff73356033db2b",
+      "gameDraws": 51,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "5a353d563124317775b2f380f0caea88011228b8900dde62f87fd49068df815e",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 75,
+        "moves": 89,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-a62a",
+      "originalInputs": 183,
+      "inputs": 186,
+      "checkpoints": 187,
+      "internalCheckpoints": 382,
+      "internalCheckpointsHash": "b39e1c810f008833011722faf6e6323f705123fe4272ca9ab01f4de2c4f9be68",
+      "gameDraws": 98,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "200d547de26e13c5e532dd5974b9fbc19c1d52221785d3f5ef85e22666cbe751",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 190,
+        "moves": 223,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-aa85",
+      "originalInputs": 202,
+      "inputs": 205,
+      "checkpoints": 206,
+      "internalCheckpoints": 420,
+      "internalCheckpointsHash": "dc6e3eb8bc080b215409f77ba6ba1d766dab4b3f322657f2005925af29bd808d",
+      "gameDraws": 103,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "71ff25f46bdbd9af729e71f661228c72ae9ad05c6581148e51d97b12ddd8757f",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 220,
+        "moves": 240,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-aaed",
+      "originalInputs": 203,
+      "inputs": 206,
+      "checkpoints": 207,
+      "internalCheckpoints": 422,
+      "internalCheckpointsHash": "81c813bff9464fc9c0d5249901fb942b9f379b3916a9a141c57b64572f762233",
+      "gameDraws": 104,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "13ad3069cc7df07d4dbd2a173a015b6519589c4cec4abc2a8031e7707f00abc9",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 220,
+        "moves": 241,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-ab95",
+      "originalInputs": 206,
+      "inputs": 209,
+      "checkpoints": 210,
+      "internalCheckpoints": 428,
+      "internalCheckpointsHash": "e4c31f9a414df294e0a9f4a98ad3df760129ff72342665e1419aeb1a0e190261",
+      "gameDraws": 105,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "a864040bb2c9f16b137b4e0acef4da20332d0384b4b5b12abf2bd8bd6559e684",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 240,
+        "moves": 246,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-ac46",
+      "originalInputs": 211,
+      "inputs": 214,
+      "checkpoints": 215,
+      "internalCheckpoints": 438,
+      "internalCheckpointsHash": "eeadfe188a9e23d176ada525eda55f2759b49f7d61267f94dc07606635e9425e",
+      "gameDraws": 107,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "ad64e61902bf7ea60e17eefe8445a415b58f7cc75a6b28620938afafdd778106",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 240,
+        "moves": 254,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-ac73",
+      "originalInputs": 211,
+      "inputs": 214,
+      "checkpoints": 215,
+      "internalCheckpoints": 438,
+      "internalCheckpointsHash": "e0852eae1d9cb7adf816c2fc3a269e9818764cfebe257f026fff9e0afc80f714",
+      "gameDraws": 107,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "62a418b62fd85e5b59a9820e8ec6b145b6bd0f5219702e11304d70c14732e2ae",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 240,
+        "moves": 254,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-b04e",
+      "originalInputs": 383,
+      "inputs": 385,
+      "checkpoints": 386,
+      "internalCheckpoints": 782,
+      "internalCheckpointsHash": "38a55424e54d3a81defd365404cd282c770f6ebb334b9d7bdd028b5ddc5b83d6",
+      "gameDraws": 143,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        },
+        {
+          "input": 224,
+          "kind": "orphan-protocol",
+          "command": "take off crown",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 224,
+          "kind": "excluded-typed-input",
+          "command": "take off crown",
+          "fields": [],
+          "originalText": "That sentence isn't one I recognize.\n\n>"
+        },
+        {
+          "input": 351,
+          "kind": "canonical-actor-spelling",
+          "command": "demon, give me wand",
+          "normalizedCommand": "devil, give me wand",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "fc8468485de216d56ea7670798f3770bd5670eccd766a78e39a31fababcceff6",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 390,
+        "moves": 417,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-b6ac",
+      "originalInputs": 387,
+      "inputs": 389,
+      "checkpoints": 390,
+      "internalCheckpoints": 790,
+      "internalCheckpointsHash": "fa43b5ae8f5fe063009f6bef9a82f7061ff8aabfb6221e990c458918d9af98d5",
+      "gameDraws": 143,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        },
+        {
+          "input": 224,
+          "kind": "orphan-protocol",
+          "command": "take off crown",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 224,
+          "kind": "excluded-typed-input",
+          "command": "take off crown",
+          "fields": [],
+          "originalText": "That sentence isn't one I recognize.\n\n>"
+        },
+        {
+          "input": 351,
+          "kind": "canonical-actor-spelling",
+          "command": "demon, give me wand",
+          "normalizedCommand": "devil, give me wand",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "af60332bd668ae231f6c899a7a648f41ec20961a878f0d701b3cd31b8cf70193",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 390,
+        "moves": 421,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-b909",
+      "originalInputs": 27,
+      "inputs": 27,
+      "checkpoints": 28,
+      "internalCheckpoints": 54,
+      "internalCheckpointsHash": "801369fdfae04df013fd1b68d25199b3edac2a7124dc58129e79ca2d9a49d01d",
+      "gameDraws": 16,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "34a466df0297d03698722c585577467f344500b692efd5cb39763fbfb87e944f",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 10,
+        "moves": 27,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-bba3",
+      "originalInputs": 31,
+      "inputs": 31,
+      "checkpoints": 32,
+      "internalCheckpoints": 62,
+      "internalCheckpointsHash": "f5f61890324438875a85d26c2f861b72e4099664042274e6909f5cd327de9cda",
+      "gameDraws": 17,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "c4a689facc7cc0ee8841f63563a5cab675a8c5ca00525901d5fe27a207eb548a",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 20,
+        "moves": 31,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-bc03",
+      "originalInputs": 31,
+      "inputs": 31,
+      "checkpoints": 32,
+      "internalCheckpoints": 62,
+      "internalCheckpointsHash": "6a5eb73db79aeea2e5609854eca804e419036e611c5ea8993054df41e874cc88",
+      "gameDraws": 17,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "81e090af38a41f329a8ca3d441b58285c33a4e96d0ad08e0702114484389f066",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 20,
+        "moves": 31,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-bf25",
+      "originalInputs": 33,
+      "inputs": 33,
+      "checkpoints": 34,
+      "internalCheckpoints": 66,
+      "internalCheckpointsHash": "0fc45e8d6c0f89bb364cb90d927754f19ae4d5d635964eaba0910c3fb7c1b3b0",
+      "gameDraws": 18,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "e51700a442564143be64fbf319ac7b1d747c3f06dbe2114c52e4b9700a537428",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 20,
+        "moves": 33,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-bfbd",
+      "originalInputs": 33,
+      "inputs": 33,
+      "checkpoints": 34,
+      "internalCheckpoints": 66,
+      "internalCheckpointsHash": "4f0fdf7fc85c6a637d53609e1be41a45cb45616ac1dfdcb4ff36abaf529d6d87",
+      "gameDraws": 18,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "b92f82268bda68c63d511a10596d93b880328f3b1e7be6c09f66c5772b9c1143",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 20,
+        "moves": 33,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-bfe0",
+      "originalInputs": 33,
+      "inputs": 33,
+      "checkpoints": 34,
+      "internalCheckpoints": 66,
+      "internalCheckpointsHash": "ad1094db1f8e33c971d6f707747f926b9cc7915c83ab86b3aec90cf2f5ed5327",
+      "gameDraws": 18,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "63222442eb1b1829f68e5ab13319b154824f40cf319be8222fc65ceda8bb9c1f",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 20,
+        "moves": 33,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-c01b",
+      "originalInputs": 31,
+      "inputs": 31,
+      "checkpoints": 32,
+      "internalCheckpoints": 62,
+      "internalCheckpointsHash": "e5e83c4c500b3e0f8f70a727b81190f9d7ecdbd6ecea0659bb3086a6790e7f16",
+      "gameDraws": 17,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "82055b21123b4a624c9d00129048e36f88e13f60a5ce0d3fb91964906a478429",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 20,
+        "moves": 31,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-c073",
+      "originalInputs": 53,
+      "inputs": 53,
+      "checkpoints": 54,
+      "internalCheckpoints": 118,
+      "internalCheckpointsHash": "cc59089bf30174ae3d0675f9c42688eed5c311c6777064719119c44117052965",
+      "gameDraws": 33,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "1502762bef289444e6d2dd0dc7a683d49232ed34034b463b8530853d3704c999",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 55,
+        "moves": 53,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-c12d",
+      "originalInputs": 43,
+      "inputs": 43,
+      "checkpoints": 44,
+      "internalCheckpoints": 88,
+      "internalCheckpointsHash": "1c86ef7b9d4c4e5a36df2454f8b48ee73d47ff4191f3bd4d7562cca0766057f0",
+      "gameDraws": 22,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "76c4e6ddeeb3e7ec6feee368ee83632526d264f48a15e99a1b9d13007d909d22",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 35,
+        "moves": 43,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-c290",
+      "originalInputs": 45,
+      "inputs": 45,
+      "checkpoints": 46,
+      "internalCheckpoints": 96,
+      "internalCheckpointsHash": "585f5a0dcdb1d4e3504584369000a83a6d991689e958c15eac7837d1220310a9",
+      "gameDraws": 27,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "0dcab57c0dee6b6256fc4d68cd5d7601ecf0e1cb7e771a2c9e724a5f6693b1cb",
+      "final": {
+        "room": "CAGE-ROOM",
+        "winner": "ADVENTURER",
+        "score": 45,
+        "moves": 45,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "death-c2b6",
+      "originalInputs": 47,
+      "inputs": 47,
+      "checkpoints": 48,
+      "internalCheckpoints": 98,
+      "internalCheckpointsHash": "1d4afbcd6fc79ae55f2b9dcc21cd5c320d9b358154694d0bc39bc710f1c9a736",
+      "gameDraws": 26,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "d1d96296044cc5c20be6fbc842ef55034c83fc1b578b33461becd345556f483f",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 35,
+        "moves": 50,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-c83c",
+      "originalInputs": 255,
+      "inputs": 257,
+      "checkpoints": 258,
+      "internalCheckpoints": 524,
+      "internalCheckpointsHash": "e0d30b82f2428b95c4384c7f48cd644512ba22ca4c37d6080e13ec48d8ba4ead",
+      "gameDraws": 121,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        },
+        {
+          "input": 224,
+          "kind": "orphan-protocol",
+          "command": "take off crown",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 224,
+          "kind": "excluded-typed-input",
+          "command": "take off crown",
+          "fields": [],
+          "originalText": "That sentence isn't one I recognize.\n\n>"
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "cfa3fb9fa7c951725430104669c8950fc02412eddd8f9d2bc641dcec6d831380",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 280,
+        "moves": 306,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-dce5",
+      "originalInputs": 21,
+      "inputs": 21,
+      "checkpoints": 22,
+      "internalCheckpoints": 42,
+      "internalCheckpointsHash": "d9aa5350fce7c491c3f9142924565e0096a5ec0ffca9adbe299e4f59fd258fe3",
+      "gameDraws": 13,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "83847da3b8d2da7dffcf1e9078bc66a9a66cb3b8ebc12c8f978839c9af44655f",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 65526,
+        "moves": 21,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-dcf5",
+      "originalInputs": 33,
+      "inputs": 33,
+      "checkpoints": 34,
+      "internalCheckpoints": 66,
+      "internalCheckpointsHash": "f79da9570e173501cc7c8d8a2e0e21c15400ca4f98223e73bd01dc9195370d19",
+      "gameDraws": 29,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "a1532b9f129bcd1250c87f93048da59db1b221a72740c0c1976af8372f37fc17",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 20,
+        "moves": 37,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-e399",
+      "originalInputs": 379,
+      "inputs": 381,
+      "checkpoints": 382,
+      "internalCheckpoints": 774,
+      "internalCheckpointsHash": "4a4165082f04326175230dd91401a7b407c5c09404ffa8a63fddeb1447780fd8",
+      "gameDraws": 144,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        },
+        {
+          "input": 224,
+          "kind": "orphan-protocol",
+          "command": "take off crown",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 224,
+          "kind": "excluded-typed-input",
+          "command": "take off crown",
+          "fields": [],
+          "originalText": "That sentence isn't one I recognize.\n\n>"
+        },
+        {
+          "input": 351,
+          "kind": "canonical-actor-spelling",
+          "command": "demon, give me wand",
+          "normalizedCommand": "devil, give me wand",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "5e7510c30aeb4e45efe35a21862563c67543279c46b1fd6512881d9f8b44070a",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 385,
+        "moves": 413,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-e4e5",
+      "originalInputs": 380,
+      "inputs": 382,
+      "checkpoints": 383,
+      "internalCheckpoints": 776,
+      "internalCheckpointsHash": "2134867f36d16f6bc57cb7e5e6881f7bc6b0678dfe655c2592d2bdffa7a067d3",
+      "gameDraws": 144,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        },
+        {
+          "input": 224,
+          "kind": "orphan-protocol",
+          "command": "take off crown",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 224,
+          "kind": "excluded-typed-input",
+          "command": "take off crown",
+          "fields": [],
+          "originalText": "That sentence isn't one I recognize.\n\n>"
+        },
+        {
+          "input": 351,
+          "kind": "canonical-actor-spelling",
+          "command": "demon, give me wand",
+          "normalizedCommand": "devil, give me wand",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "22a2f045f0d27e06b842da54f8f149c478e11e8e5472e5f8d98aca94e22be5ba",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 385,
+        "moves": 414,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-e594",
+      "originalInputs": 380,
+      "inputs": 382,
+      "checkpoints": 383,
+      "internalCheckpoints": 776,
+      "internalCheckpointsHash": "c1e7586a673ab7df29f665bd3d5df0729d666bf9a865673dfad2660693c26c7f",
+      "gameDraws": 143,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        },
+        {
+          "input": 224,
+          "kind": "orphan-protocol",
+          "command": "take off crown",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 224,
+          "kind": "excluded-typed-input",
+          "command": "take off crown",
+          "fields": [],
+          "originalText": "That sentence isn't one I recognize.\n\n>"
+        },
+        {
+          "input": 351,
+          "kind": "canonical-actor-spelling",
+          "command": "demon, give me wand",
+          "normalizedCommand": "devil, give me wand",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "15c7495ddcd8dfe9a757ba8e018302aabc6db304d7598e333b8dc75019d4597c",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 385,
+        "moves": 414,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-e95f",
+      "originalInputs": 105,
+      "inputs": 107,
+      "checkpoints": 108,
+      "internalCheckpoints": 224,
+      "internalCheckpointsHash": "59c228ef617122f0ae3e48fba19472ce428c3bcd9a951594056975b924ad072f",
+      "gameDraws": 57,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "19b5815eb9f9913e7951628766359f5f17a6cef2d323e598970505ba29b72ed6",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 95,
+        "moves": 107,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-e9c8",
+      "originalInputs": 124,
+      "inputs": 126,
+      "checkpoints": 127,
+      "internalCheckpoints": 262,
+      "internalCheckpointsHash": "1df0ccf85e66f89e5d3ebac50f59ff3845975021a7b685d095ae383257a0ddaf",
+      "gameDraws": 82,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "e9e810c9517c79c38948b78957707e0d268cf3bca61eb01f426a6a91e650fe3e",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 95,
+        "moves": 159,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-e9d2",
+      "originalInputs": 106,
+      "inputs": 108,
+      "checkpoints": 109,
+      "internalCheckpoints": 226,
+      "internalCheckpointsHash": "e2bbb9a1d8cbe14822fd1f7b4cd0fab95b2e90ef9e88790e615bf7e3bb6317c1",
+      "gameDraws": 56,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "ccfe31a622665faa01fa38145ec18cca4d6320ff05bd6a7bbbd863d496d145fe",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 95,
+        "moves": 108,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-eeba",
+      "originalInputs": 34,
+      "inputs": 34,
+      "checkpoints": 35,
+      "internalCheckpoints": 68,
+      "internalCheckpointsHash": "f50a83299be14128fa2e6313c33d87bab06959f1f4d0a2ea0c1ff250c6dd2fc4",
+      "gameDraws": 150,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "9b2bf9f160349896cdae5d4d1e224c01dba67133a0541d069742966e208e4c16",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 65526,
+        "moves": 75,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-f2bf",
+      "originalInputs": 113,
+      "inputs": 115,
+      "checkpoints": 116,
+      "internalCheckpoints": 240,
+      "internalCheckpointsHash": "6dfe0829abdf48b68190a862cf075f068271b7a84c73d2e4d4294d61c140e8fe",
+      "gameDraws": 59,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "673aeeb97475e3fcef8cd73b864cf4b91b3cf08dc5accb6f7f020d3ea3875ff9",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 100,
+        "moves": 115,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-10360",
+      "originalInputs": 157,
+      "inputs": 160,
+      "checkpoints": 161,
+      "internalCheckpoints": 330,
+      "internalCheckpointsHash": "7f40e35b90c4004cfe7e000d9ebc656bd38aaaeadf606ec667da437e1591c1d6",
+      "gameDraws": 87,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "222fc3d730effdbe994e84a76e18fe034fee46948216367c4ae8f68138e86675",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 125,
+        "moves": 188,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-10368",
+      "originalInputs": 158,
+      "inputs": 161,
+      "checkpoints": 162,
+      "internalCheckpoints": 332,
+      "internalCheckpointsHash": "d9ce701e2ef0b8e24b34bb503e308ab76b72e3cc3d52286fca3fa8aff70844b7",
+      "gameDraws": 88,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "85682b87611889139d95b919ea6e63f8176d60a2fab31abf7dffd8ae86402bb3",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 125,
+        "moves": 189,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-1040b",
+      "originalInputs": 157,
+      "inputs": 160,
+      "checkpoints": 161,
+      "internalCheckpoints": 330,
+      "internalCheckpointsHash": "5347a9f19b9f9259350fd7c77d80708dcc2cea17823fa67393d1fc988d82f81c",
+      "gameDraws": 89,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "05dc3cbaaa390cfa7aaed0e6296f2819547ce409f49c4e78deb7c4fa955d4cf3",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 125,
+        "moves": 188,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-1052c",
+      "originalInputs": 157,
+      "inputs": 160,
+      "checkpoints": 161,
+      "internalCheckpoints": 330,
+      "internalCheckpointsHash": "77e100133b8e8242aee3e87c88ecc1aa844d805a7357b3e56404d6ed1cf2854a",
+      "gameDraws": 87,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "985333faf0efe8e2de30de79d3e7c68b89d07fd5d9c23f562caa4ec60eff2640",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 125,
+        "moves": 188,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-10687",
+      "originalInputs": 157,
+      "inputs": 160,
+      "checkpoints": 161,
+      "internalCheckpoints": 330,
+      "internalCheckpointsHash": "06740ac31f619308a6191955e42b21c0ad9e6dd48a2ed74d91b6461d00183a22",
+      "gameDraws": 87,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "f6a16dfd41fb9ab08306c5676fb9be0cf9cc705247f5bba9caa06f6aa3cfe69e",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 125,
+        "moves": 188,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-10c7f",
+      "originalInputs": 352,
+      "inputs": 354,
+      "checkpoints": 355,
+      "internalCheckpoints": 720,
+      "internalCheckpointsHash": "f58bbf7bc1dc0ee69446d0a6d0046fa63afaf37df46d552fff92a2d4a7da2399",
+      "gameDraws": 138,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        },
+        {
+          "input": 224,
+          "kind": "orphan-protocol",
+          "command": "take off crown",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 224,
+          "kind": "excluded-typed-input",
+          "command": "take off crown",
+          "fields": [],
+          "originalText": "That sentence isn't one I recognize.\n\n>"
+        },
+        {
+          "input": 351,
+          "kind": "canonical-actor-spelling",
+          "command": "demon, kill me",
+          "normalizedCommand": "devil, kill me",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "17a685b31f396930660ac58f8314ca3be7cc03b7190bfa259d8a7efb4a75f185",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 325,
+        "moves": 386,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-1149c",
+      "originalInputs": 34,
+      "inputs": 34,
+      "checkpoints": 35,
+      "internalCheckpoints": 68,
+      "internalCheckpointsHash": "a3b5e34e9a0d7a481313e3204b72bcefb6d0642ef20f048a66ccada44cfd8eae",
+      "gameDraws": 24,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "e630251583229645630dfb272f5e695e1c7d36a9766bbb8c016bc27dc8587562",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 20,
+        "moves": 44,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-114ae",
+      "originalInputs": 188,
+      "inputs": 191,
+      "checkpoints": 192,
+      "internalCheckpoints": 392,
+      "internalCheckpointsHash": "d746e4b8ba6914da9f1aed3000efd8811d31ee5fd0be5d64d66ce92f817c89f1",
+      "gameDraws": 103,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "c5b7046bbae05fcda07fdc13206899be83a6cae2736d6c2f07709145d5cff4c7",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 190,
+        "moves": 228,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-11a35",
+      "originalInputs": 42,
+      "inputs": 42,
+      "checkpoints": 43,
+      "internalCheckpoints": 84,
+      "internalCheckpointsHash": "6e0a52328bea91791b2c86a7fd46675603545540860a2685489b5fb0ee7ff23f",
+      "gameDraws": 36,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "2694793ea1cdec75925ccdf614a27774584e2bdb6c81e3d6cd519a5d7d662fca",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 20,
+        "moves": 68,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-11a47",
+      "originalInputs": 183,
+      "inputs": 186,
+      "checkpoints": 187,
+      "internalCheckpoints": 382,
+      "internalCheckpointsHash": "3de5cea7a2fedf47f33fe4f3e9609f71136af8657f59302a8c8eb38f6ba900a8",
+      "gameDraws": 106,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "56d3d8404715cd430eb3dd58026b14b0872381f632fb9741968e9a7b34a4bac7",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 190,
+        "moves": 216,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-11dbb",
+      "originalInputs": 56,
+      "inputs": 56,
+      "checkpoints": 57,
+      "internalCheckpoints": 114,
+      "internalCheckpointsHash": "41352c50f9f3b74e410aebd04086996c06dd41f217be92c801ee4bfb81365837",
+      "gameDraws": 39,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "98a141181121d1c9586b65b8b0734b744280edc1d878a6829e508ef708f66aa1",
+      "final": {
+        "room": "MAGNET-ROOM",
+        "winner": "ADVENTURER",
+        "score": 45,
+        "moves": 85,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "death-11e24",
+      "originalInputs": 362,
+      "inputs": 364,
+      "checkpoints": 365,
+      "internalCheckpoints": 740,
+      "internalCheckpointsHash": "7d68d9930cd9de4ab2ef8b9050e4f52b1efb414c120fc825312afe5a412c6e82",
+      "gameDraws": 146,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        },
+        {
+          "input": 224,
+          "kind": "orphan-protocol",
+          "command": "take off crown",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 224,
+          "kind": "excluded-typed-input",
+          "command": "take off crown",
+          "fields": [],
+          "originalText": "That sentence isn't one I recognize.\n\n>"
+        },
+        {
+          "input": 351,
+          "kind": "canonical-actor-spelling",
+          "command": "demon, give me wand",
+          "normalizedCommand": "devil, give me wand",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "6004ae56b5faccb93f5a0307d775a40dee1c3a9ed5a927b88d497c7e28831a67",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 355,
+        "moves": 396,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "death-11fea",
+      "originalInputs": 6,
+      "inputs": 6,
+      "checkpoints": 7,
+      "internalCheckpoints": 12,
+      "internalCheckpointsHash": "063675ff5433cc3a064b510e6358a7d4b957c70b751c28be8b8e789d57e10be8",
+      "gameDraws": 2,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "10a4a69e39c467663ce6aff9b4c09f35751e460e7801d2888311a17bb46c494d",
+      "final": {
+        "room": "DEAD-PALANTIR-1",
+        "winner": "ADVENTURER",
+        "score": 65526,
+        "moves": 6,
+        "won": false,
+        "deaths": 1
+      }
+    },
+    {
+      "id": "timer-volcano-gnome",
+      "originalInputs": 202,
+      "inputs": 205,
+      "checkpoints": 206,
+      "internalCheckpoints": 420,
+      "internalCheckpointsHash": "200e8762af36e1e00c95cfd7f2507348d9d7cf8a79735bed3d604f65dc35b7e9",
+      "gameDraws": 108,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "2a685aa25cfd4b5b725d4d506d245b0e20dbf2bf44f73c20dbd680c389b84931",
+      "final": {
+        "room": "LEDGE-1",
+        "winner": "ADVENTURER",
+        "score": 200,
+        "moves": 262,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "timer-bank-gnome",
+      "originalInputs": 261,
+      "inputs": 263,
+      "checkpoints": 264,
+      "internalCheckpoints": 536,
+      "internalCheckpointsHash": "a35cfdf2f64883a42672bc0f62b0dc62debef3e58d8e81add37670444e5f0ef9",
+      "gameDraws": 126,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        },
+        {
+          "input": 224,
+          "kind": "orphan-protocol",
+          "command": "take off crown",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 224,
+          "kind": "excluded-typed-input",
+          "command": "take off crown",
+          "fields": [],
+          "originalText": "That sentence isn't one I recognize.\n\n>"
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "e8d58b102346a7c5e52375cd16bbd3cd176ef130fb8c423cab2cd7adf46174b0",
+      "final": {
+        "room": "SMALL-ROOM",
+        "winner": "ADVENTURER",
+        "score": 290,
+        "moves": 325,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "timer-spray",
+      "originalInputs": 274,
+      "inputs": 276,
+      "checkpoints": 277,
+      "internalCheckpoints": 562,
+      "internalCheckpointsHash": "1231113f5fd555fa1a5dfccdbe7b0a0e0f803517536ec4299d203357b33e3207",
+      "gameDraws": 126,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        },
+        {
+          "input": 224,
+          "kind": "orphan-protocol",
+          "command": "take off crown",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 224,
+          "kind": "excluded-typed-input",
+          "command": "take off crown",
+          "fields": [],
+          "originalText": "That sentence isn't one I recognize.\n\n>"
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "2c127426f1f9abb4150450cad24088a8fb77af3d0af130a526adb59a435a3585",
+      "final": {
+        "room": "ROOM-8",
+        "winner": "ADVENTURER",
+        "score": 315,
+        "moves": 326,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "special-implicit-take",
+      "originalInputs": 30,
+      "inputs": 30,
+      "checkpoints": 31,
+      "internalCheckpoints": 60,
+      "internalCheckpointsHash": "aeebf07ca6adbc5836ddb5c09627ad0ecf3857f9f5671bfb520584fdd77519b6",
+      "gameDraws": 17,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "9bab11c335acd96bfd3a8d6dfc032627312f010f49bbe5aa3863dc75b84d3e34",
+      "final": {
+        "room": "POSTS-ROOM",
+        "winner": "ADVENTURER",
+        "score": 30,
+        "moves": 30,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "special-pseudo-object",
+      "originalInputs": 7,
+      "inputs": 7,
+      "checkpoints": 8,
+      "internalCheckpoints": 14,
+      "internalCheckpointsHash": "ab329349c9ed41476074feba8b0354d7427fc558338e2c147a3f1b5a79c0d694",
+      "gameDraws": 2,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "03d52aab6debbcbef147796c137f69129c891ccadcaa2d7b7908dde0f9998222",
+      "final": {
+        "room": "GREAT-CAVERN",
+        "winner": "ADVENTURER",
+        "score": 0,
+        "moves": 7,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "special-take-all",
+      "originalInputs": 2,
+      "inputs": 2,
+      "checkpoints": 3,
+      "internalCheckpoints": 4,
+      "internalCheckpointsHash": "683f512eca23e388c4377a3258bb50f6ef5ca507fe007c122a9c70bfc14a2749",
+      "gameDraws": 0,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "85f69e89261c03f66b7bd6c9b757c95255c7f92348176ed4744e0e9ade8ef1aa",
+      "final": {
+        "room": "INSIDE-BARROW",
+        "winner": "ADVENTURER",
+        "score": 0,
+        "moves": 2,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "special-quit",
+      "originalInputs": 4,
+      "inputs": 4,
+      "checkpoints": 5,
+      "internalCheckpoints": 3,
+      "internalCheckpointsHash": "33942f039d15158b2dcd998488bfee6aa90d8f1b9c2663aa0e20c27a73b6bf5e",
+      "gameDraws": 0,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "2e2a3c8ad038786612f4ed5fdb037c3362688c2cd3df09cffc9322fb1963ebad",
+      "final": {
+        "room": "INSIDE-BARROW",
+        "winner": "ADVENTURER",
+        "score": 0,
+        "moves": 0,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "special-restart",
+      "originalInputs": 6,
+      "inputs": 6,
+      "checkpoints": 7,
+      "internalCheckpoints": 7,
+      "internalCheckpointsHash": "5d4d7fcc3bae2c5fea1f5e0502c56d4d5f6e539f6f837b89e3b4147fb9c83559",
+      "gameDraws": 0,
+      "parserDraws": 0,
+      "epochs": 2,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "df67b9c656ba6f01d357c2edddf076d1151c95531c6a95ce941b1586d322eaff",
+      "final": {
+        "room": "INSIDE-BARROW",
+        "winner": "ADVENTURER",
+        "score": 0,
+        "moves": 1,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "special-save-restore",
+      "originalInputs": 5,
+      "inputs": 5,
+      "checkpoints": 6,
+      "internalCheckpoints": 10,
+      "internalCheckpointsHash": "c3485f5de24e0bea35d18d6a5711279d61a20889eef72135981ff6c952ba3a15",
+      "gameDraws": 0,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "ade79c47daa3bad0ac31b99e57f100000403893c7ee2e0106a8403eeb834d17c",
+      "final": {
+        "room": "INSIDE-BARROW",
+        "winner": "ADVENTURER",
+        "score": 0,
+        "moves": 2,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "special-restore-failure",
+      "originalInputs": 2,
+      "inputs": 2,
+      "checkpoints": 3,
+      "internalCheckpoints": 4,
+      "internalCheckpointsHash": "07791485665357f6f32d27c8297374674d6987cd7ba18dc742317891ae41250b",
+      "gameDraws": 0,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "face90ba6e7b7a50f39d880718c0b8111b047ed37317a3f54dfe67c68910dee0",
+      "final": {
+        "room": "INSIDE-BARROW",
+        "winner": "ADVENTURER",
+        "score": 0,
+        "moves": 1,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "special-reseed",
+      "originalInputs": 3,
+      "inputs": 3,
+      "checkpoints": 4,
+      "internalCheckpoints": 6,
+      "internalCheckpointsHash": "675f71b7b7bf8e4580f3d28a3d550f50c629ba3c140a699f7070dd007154e2f8",
+      "gameDraws": 2,
+      "parserDraws": 0,
+      "epochs": 1,
+      "adaptations": [],
+      "textDifferences": [],
+      "checkpointsHash": "b1addb2005e8b43935296de9391e19dc31bcbe6ae572b7797a280e00dd6e9360",
+      "final": {
+        "room": "INSIDE-BARROW",
+        "winner": "ADVENTURER",
+        "score": 0,
+        "moves": 5,
+        "won": false,
+        "deaths": 0
+      }
+    },
+    {
+      "id": "special-end-prompt",
+      "originalInputs": 389,
+      "inputs": 391,
+      "checkpoints": 392,
+      "internalCheckpoints": 789,
+      "internalCheckpointsHash": "142c4d8d5429c8eb2e5d97800b1ecf252fbb2c9f71f5647da43a4fc971003239",
+      "gameDraws": 143,
+      "parserDraws": 0,
+      "epochs": 2,
+      "adaptations": [
+        {
+          "input": 95,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with key. open door. north",
+          "fields": []
+        },
+        {
+          "input": 142,
+          "kind": "orphan-protocol",
+          "command": "take key",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.PRSA",
+            "global.P-ONEOBJ",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 142,
+          "kind": "excluded-typed-input",
+          "command": "take key",
+          "fields": [],
+          "originalText": "Which key do you mean, the delicate gold key or the rusty iron key?\n\n>"
+        },
+        {
+          "input": 143,
+          "kind": "orphan-protocol",
+          "command": "drop rose",
+          "fields": [
+            "global.P-ONEOBJ"
+          ]
+        },
+        {
+          "input": 153,
+          "kind": "separate-structured-choices",
+          "command": "unlock door with gold key. open door. south",
+          "fields": []
+        },
+        {
+          "input": 224,
+          "kind": "orphan-protocol",
+          "command": "take off crown",
+          "fields": [
+            "global.P-WALK-DIR",
+            "global.P-WON"
+          ]
+        },
+        {
+          "input": 224,
+          "kind": "excluded-typed-input",
+          "command": "take off crown",
+          "fields": [],
+          "originalText": "That sentence isn't one I recognize.\n\n>"
+        },
+        {
+          "input": 351,
+          "kind": "canonical-actor-spelling",
+          "command": "demon, give me wand",
+          "normalizedCommand": "devil, give me wand",
+          "fields": []
+        }
+      ],
+      "textDifferences": [],
+      "checkpointsHash": "cc01175cd1ee440286fa2544d1525b74781e650b246caeb9b13c15dfeb3ad502",
+      "final": {
+        "room": "INSIDE-BARROW",
+        "winner": "ADVENTURER",
+        "score": 0,
+        "moves": 1,
+        "won": false,
+        "deaths": 0
+      }
+    }
+  ]
+}

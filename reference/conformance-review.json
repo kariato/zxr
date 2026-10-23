@@ -1,0 +1,77 @@
+{
+  "format": "zxr-conformance-review-v1",
+  "reviewedOn": "2026-10-23",
+  "buildHash": "f8df5f9e0b42f524fe371e0caaec7d0e26a657b269ec7b2839735ccf0b9f4032",
+  "ledgerHash": "850cbe95f8e2518803c7140905a02ba93aa578acbd7e1703333df95b8235080c",
+  "ledgerIds": [
+    "REF-001",
+    "SRC-001",
+    "SRC-002",
+    "SRC-003",
+    "SRC-004",
+    "SRC-005",
+    "SRC-006",
+    "SRC-007",
+    "SRC-008",
+    "SRC-009",
+    "SRC-010",
+    "SRC-011",
+    "SRC-012",
+    "SRC-013",
+    "SRC-014",
+    "LANG-001",
+    "REF-003",
+    "REF-002",
+    "ADAPT-001",
+    "ADAPT-002",
+    "ADAPT-003",
+    "ADAPT-004",
+    "ADAPT-005",
+    "ADAPT-006",
+    "ADAPT-007",
+    "ADAPT-008",
+    "ADAPT-009",
+    "ADAPT-010",
+    "ADAPT-011",
+    "ADAPT-012",
+    "ADAPT-013",
+    "ADAPT-014",
+    "ADAPT-015",
+    "RNG-001",
+    "HOST-001",
+    "HOST-002"
+  ],
+  "conformanceHash": "536eadb460926ee91deb5358825cec4a2b19242082fc8ce43d72a81606b57fd1",
+  "policyHash": "ee6dbf9dbc4755b40afb0f97e96229e71f3b6c3044fc8893c8a1c5ac1cb9672a",
+  "goldenHash": "e2908bb1cb80284361c2592aee8343a66500ec027fda4d1da97df3d93424b422",
+  "sourceEvidence": [
+    {
+      "file": "reference/zork2/gverbs.zil",
+      "sha256": "d957259fccfb26fc2457b29117e6a2e0d23f3b74bcb151e903d4f593898675eb"
+    },
+    {
+      "file": "reference/zork2/gverbs.zap",
+      "sha256": "b685ef6df841f4ced05470a39d7f73f9175578f83c78efec0f7f2a4a50fb5709"
+    },
+    {
+      "file": "reference/zork2/zork2str.zap",
+      "sha256": "cf0d37b72e67bf5f9c448fab231413e3d0e28cbb135e0309cfdd8a93b364304a"
+    }
+  ],
+  "storyHash": "3ae7d5558943e9721f3e4b273c8a7faec1a03a604e1ae4ee1cde472c21cb24ac",
+  "adaptations": {
+    "ADAPT-012": 142,
+    "ADAPT-002": 44,
+    "ADAPT-015": 9
+  },
+  "exceptions": [
+    {
+      "caseId": "death-8b33",
+      "input": 38,
+      "ledger": "SRC-013",
+      "referenceHash": "34fecbc45153624072d2f0958bc8fb5f26eabd5ad3c7ea2729b9028c3c0de07e",
+      "engineHash": "75d81d355c55c714c2e4e279cd9702d3a0c300676da35ae70bae040864abee4e"
+    }
+  ],
+  "decision": "Retain SRC-013 source empty string; apply SRC-014 guarded CLIMB membership bound correction; keep REF-001 tree repair, REF-003/RNG-001 tape/native distinction and ADAPT input policies. No additional state, text or RNG tolerance."
+}

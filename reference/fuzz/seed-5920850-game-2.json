@@ -1,0 +1,237 @@
+{
+  "format": "zxr-fuzz-failure-v1",
+  "buildHash": "41ba9c8185ee8dc59af0d6f2db9f61437f73475f5fe302284bb9a2006cbae586",
+  "case": {
+    "seed": 5920850,
+    "game": 2,
+    "turns": 100
+  },
+  "gameSeed": 3634047072,
+  "chooserSeed": 3292125700,
+  "chooserState": 965085843,
+  "turn": 15,
+  "stage": "commit",
+  "attempt": {
+    "actor": "ADVENTURER",
+    "expected": {
+      "epoch": 1,
+      "revision": 16
+    },
+    "family": "CLIMB:5",
+    "operands": [
+      {
+        "noun": "SELF",
+        "object": "ME"
+      }
+    ]
+  },
+  "cause": "Memory access crosses allocation bounds",
+  "acceptedInputs": [
+    {
+      "kind": "selection",
+      "optionId": "zxr-action-v1:{\"actor\":\"ADVENTURER\",\"direction\":\"IN\",\"kind\":\"walk\"}",
+      "request": {
+        "actor": "ADVENTURER",
+        "expected": {
+          "epoch": 1,
+          "revision": 1
+        },
+        "family": "walk:IN",
+        "operands": []
+      }
+    },
+    {
+      "kind": "selection",
+      "optionId": "zxr-action-v1:{\"actor\":\"ADVENTURER\",\"kind\":\"act\",\"lexicalTable\":\"PICK\",\"prso\":{\"adjective\":\"SOUTHE\",\"noun\":\"WALL\",\"object\":\"SOUTH-WALL\"},\"syntax\":3,\"verb\":\"PICK\"}",
+      "request": {
+        "actor": "ADVENTURER",
+        "expected": {
+          "epoch": 1,
+          "revision": 2
+        },
+        "family": "PICK:3",
+        "operands": [
+          {
+            "adjective": "SOUTHE",
+            "noun": "WALL",
+            "object": "SOUTH-WALL"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "selection",
+      "optionId": "zxr-action-v1:{\"actor\":\"ADVENTURER\",\"kind\":\"act\",\"lexicalTable\":\"CLIMB\",\"prso\":\"IT\",\"syntax\":5,\"verb\":\"CLIMB-DOWN\"}",
+      "request": {
+        "actor": "ADVENTURER",
+        "expected": {
+          "epoch": 1,
+          "revision": 3
+        },
+        "family": "CLIMB:5",
+        "operands": [
+          "IT"
+        ]
+      }
+    },
+    {
+      "kind": "selection",
+      "optionId": "zxr-action-v1:{\"actor\":\"ADVENTURER\",\"kind\":\"act\",\"lexicalTable\":\"PUNCTURE\",\"prsi\":\"COMPASS\",\"prso\":{\"adjective\":\"FOREST\",\"noun\":\"TRAIL\",\"object\":\"PATHOBJ\"},\"syntax\":1,\"verb\":\"MUNG\"}",
+      "request": {
+        "actor": "ADVENTURER",
+        "expected": {
+          "epoch": 1,
+          "revision": 4
+        },
+        "family": "PUNCTURE:1",
+        "operands": [
+          "PATHOBJ",
+          "COMPASS"
+        ]
+      }
+    },
+    {
+      "kind": "selection",
+      "optionId": "zxr-action-v1:{\"actor\":\"ADVENTURER\",\"kind\":\"act\",\"lexicalTable\":\"SAVE\",\"syntax\":1,\"verb\":\"SAVE\"}",
+      "request": {
+        "actor": "ADVENTURER",
+        "expected": {
+          "epoch": 1,
+          "revision": 5
+        },
+        "family": "SAVE:1",
+        "operands": []
+      }
+    },
+    {
+      "kind": "host",
+      "result": {
+        "epoch": 1,
+        "id": "h1",
+        "kind": "SAVE",
+        "outcome": "success",
+        "revision": 6
+      }
+    },
+    {
+      "kind": "selection",
+      "optionId": "zxr-action-v1:{\"actor\":\"ADVENTURER\",\"direction\":\"NORTH\",\"kind\":\"walk\"}",
+      "request": {
+        "actor": "ADVENTURER",
+        "expected": {
+          "epoch": 1,
+          "revision": 7
+        },
+        "family": "walk:NORTH",
+        "operands": []
+      }
+    },
+    {
+      "kind": "selection",
+      "optionId": "zxr-action-v1:{\"actor\":\"ADVENTURER\",\"kind\":\"act\",\"lexicalTable\":\"STAND\",\"prso\":\"SAILOR\",\"syntax\":1,\"verb\":\"STAND\"}",
+      "request": {
+        "actor": "ADVENTURER",
+        "expected": {
+          "epoch": 1,
+          "revision": 8
+        },
+        "family": "STAND:1",
+        "operands": [
+          "SAILOR"
+        ]
+      }
+    },
+    {
+      "kind": "selection",
+      "optionId": "zxr-action-v1:{\"actor\":\"ADVENTURER\",\"direction\":\"SW\",\"kind\":\"walk\"}",
+      "request": {
+        "actor": "ADVENTURER",
+        "expected": {
+          "epoch": 1,
+          "revision": 9
+        },
+        "family": "walk:SW",
+        "operands": []
+      }
+    },
+    {
+      "kind": "selection",
+      "optionId": "zxr-action-v1:{\"actor\":\"ADVENTURER\",\"direction\":\"NW\",\"kind\":\"walk\"}",
+      "request": {
+        "actor": "ADVENTURER",
+        "expected": {
+          "epoch": 1,
+          "revision": 10
+        },
+        "family": "walk:NW",
+        "operands": []
+      }
+    },
+    {
+      "kind": "selection",
+      "optionId": "zxr-action-v1:{\"actor\":\"ADVENTURER\",\"kind\":\"act\",\"lexicalTable\":\"BOARD\",\"prso\":{\"adjective\":\"FOREST\",\"noun\":\"TRAIL\",\"object\":\"PATHOBJ\"},\"syntax\":1,\"verb\":\"BOARD\"}",
+      "request": {
+        "actor": "ADVENTURER",
+        "expected": {
+          "epoch": 1,
+          "revision": 11
+        },
+        "family": "BOARD:1",
+        "operands": [
+          "PATHOBJ"
+        ]
+      }
+    },
+    {
+      "kind": "selection",
+      "optionId": "zxr-action-v1:{\"actor\":\"ADVENTURER\",\"direction\":\"SW\",\"kind\":\"walk\"}",
+      "request": {
+        "actor": "ADVENTURER",
+        "expected": {
+          "epoch": 1,
+          "revision": 12
+        },
+        "family": "walk:SW",
+        "operands": []
+      }
+    },
+    {
+      "kind": "selection",
+      "optionId": "zxr-action-v1:{\"actor\":\"ADVENTURER\",\"kind\":\"act\",\"lexicalTable\":\"TELL\",\"prso\":{\"adjective\":\"BEAUTIFUL\",\"noun\":\"PRINCESS\",\"object\":\"GLOBAL-PRINCESS\"},\"syntax\":2,\"verb\":\"TELL\"}",
+      "request": {
+        "actor": "ADVENTURER",
+        "expected": {
+          "epoch": 1,
+          "revision": 13
+        },
+        "family": "TELL:2",
+        "operands": [
+          "GLOBAL-PRINCESS"
+        ]
+      }
+    },
+    {
+      "kind": "selection",
+      "optionId": "zxr-action-v1:{\"actor\":\"ADVENTURER\",\"kind\":\"act\",\"lexicalTable\":\"QUIT\",\"syntax\":1,\"verb\":\"QUIT\"}",
+      "request": {
+        "actor": "ADVENTURER",
+        "expected": {
+          "epoch": 1,
+          "revision": 14
+        },
+        "family": "QUIT:1",
+        "operands": []
+      }
+    },
+    {
+      "kind": "execute",
+      "request": {
+        "expected": {
+          "epoch": 1,
+          "revision": 15
+        },
+        "optionId": "DECIDE:d2:NO"
+      }
+    }
+  ]
+}

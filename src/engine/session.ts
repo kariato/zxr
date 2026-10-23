@@ -5,13 +5,13 @@ import { createLabelContext } from './labels.ts';
 import { buildActionMenu, pageSelection } from './menu.ts';
 import type { ActionMenu, MenuPolicy, PagedSelection } from './menu.ts';
 import type { LoadedGame } from './bundle-loader.ts';
-import { prepareAction } from './action-plan.ts';
-import type { GameAction } from './action-plan.ts';
-import { queryScope } from './scope.ts';
+import { prepareAction, prepareOperand } from './action-plan.ts';
+import type { GameAction, PlannedOperand } from './action-plan.ts';
+import { ScopeQuery, queryScope } from './scope.ts';
 import type { ScopeObservation } from './scope.ts';
 import { buildCandidateCatalog, generateCandidates } from './candidates.ts';
 import type { CandidateCatalog, CandidateSet } from './candidates.ts';
-import { reviewSelection, selectedAction, selectionRequestSchema } from './selection.ts';
+import { operandSpellings, reviewSelection, selectedAction, selectionRequestSchema } from './selection.ts';
 import type { SelectionRequest, SelectionView } from './selection.ts';
 import { buildWordCatalog, wordPage } from './word-picker.ts';
 import type { WordCatalog, WordPage, WordQuery } from './word-picker.ts';
@@ -23,7 +23,7 @@ import type { RandomEvent } from './random.ts';
 import { canonicalJson, hashJson } from '../zil/integrity.ts';
 import { assertSchema } from '../zil/schema.ts';
 import type { Schema } from '../zil/schema.ts';
-import { DIAGNOSTICS, SESSION_DEBUG } from './diagnostics.ts';
+import { DIAGNOSTICS, SESSION_DEBUG, SESSION_VALIDATE } from './diagnostics.ts';
 import type { ExecutionDiagnostics } from './diagnostics.ts';
 
 export interface Expected {epoch:number;revision:number}
@@ -93,6 +93,10 @@ export class GameSession {
   #pending:PendingDecision|undefined;
   #host:HostRequest|undefined;
   #candidateCache=new Map<string,CandidateSet>();
+  #matcherCache=new Map<string,ReturnType<ScopeQuery['spellingMatcher']>>();
+  #preparedSpellings=new Map<string,PlannedOperand>();
+  #lexicalSpellings=new Map<string,ReturnType<typeof operandSpellings>>();
+  #spellingCache=new Map<string,ReturnType<typeof operandSpellings>>();
   #knowledge:string[]=[];#remembered:RememberedObject[]=[];
   #log:AcceptedInput[]=[];
   readonly #opening:ActionResolution;
@@ -121,12 +125,16 @@ export class GameSession {
     const world=this.#loop.world(),player=queryScope(this.#game,world);
     const name=actor==='PLAYER'?player.candidates.actor:actor;
     if(this.#state!=='input')return {buildHash:this.#game.buildHash,actor:name,families:[],exits:[]};
-    if(name!==player.candidates.actor&&!player.observation.objects.some(o=>o.id===name&&o.visible))throw new Error('Actor is outside player scope');
+    if(name!==player.candidates.actor&&(!player.observation.objects.some(o=>o.id===name&&o.visible)||!this.#actorAddressable(name)))throw new Error('Actor is outside player scope or has an ambiguous prefix');
     const cached=this.#candidateCache.get(name);if(cached)return cached;
     const physical=name===player.candidates.actor?player.candidates:queryScope(this.#game,world,{actor:name}).candidates;
     const remembered=this.#remembered.filter(o=>!physical.operands.some(p=>typeof p==='string'&&p===o.id)).map(o=>o.id);
     const scope={...physical,operands:[...physical.operands,...remembered],remembered};
     const result=rankKnowledgeCandidates(generateCandidates(this.#game,this.#candidateCatalog,scope),this.#game.bundle.payload.gateRules,this.#knowledge);
+    // ADAPT-002: retain these rows in the static audit, but typed parser repair,
+    // numeric debug input and stream protocols have no public action contract.
+    result.families=result.families.filter(f=>!f.lexicalTable.startsWith('#')&&!['AGAIN','OOPS'].includes(f.lexicalTable));
+    for(const family of result.families)family.operands=family.operands.map((operands,index)=>operands.filter(o=>this.#spellings(result,family.id,o.operand,index).length));
     this.#candidateCache.set(name,result);return result;
   }
   /** Pure first-page/more projection. Drafts still require commit-time validation. */
@@ -136,15 +144,32 @@ export class GameSession {
     return buildActionMenu(candidates,this.#expected(),this.#game.bundle.payload.gateRules,this.#knowledge,policy,labels);
   }
   selectionMenu(request:SelectionRequest,policy:MenuPolicy={}):PagedSelection {return pageSelection(this.select(request),policy);}
+  /** Pure sentence completion: retain the chosen words/objects and use a shorter
+   * source syntax only when its verb and all selected prepositions agree. */
+  selectionCompletion(input:SelectionRequest):SelectionRequest|null {
+    if(this.select(input).ready)return own(input);
+    const families=this.#candidates(input.actor).families,current=families.find(f=>f.id===input.family);
+    if(!current)return null;
+    if(!input.operands.length&&current.slots[0]?.preposition)return null;
+    const matches=families.filter(f=>!f.shadowedBy&&f.lexicalTable===current.lexicalTable&&f.verb===current.verb&&f.preaction===current.preaction&&f.input===current.input&&f.slots.length===input.operands.length&&f.slots.every((slot,i)=>slot.preposition===current.slots[i]!.preposition));
+    if(matches.length!==1)return null;
+    const request={...own(input),family:matches[0]!.id};
+    try{return this.select(request).ready?request:null;}catch{return null;}
+  }
   actors():{actor:string;label:string;placement:'primary'|'more';gates:string[]}[] {
     if(this.#state!=='input')return [];
     const world=this.#loop.world(),perception=queryScope(this.#game,world).observation,flag=this.#game.bundle.payload.symbols.symbols.find(s=>s.name==='ACTORBIT')!.number!;
     return [{actor:'PLAYER',label:'You',...gatePlacement(this.#game.bundle.payload.gateRules,this.#knowledge,{actor:perception.actor})},
-      ...perception.objects.filter(o=>o.visible&&o.id!==perception.actor&&world.hasFlag(this.#game.bundle.payload.world.entities.find(e=>e.name===o.id)!.id,flag))
+      ...perception.objects.filter(o=>o.visible&&o.id!==perception.actor&&world.hasFlag(this.#game.bundle.payload.world.entities.find(e=>e.name===o.id)!.id,flag)&&this.#actorAddressable(o.id))
         .map(o=>({actor:o.id,label:o.name,...gatePlacement(this.#game.bundle.payload.gateRules,this.#knowledge,{actor:o.id})}))]
       .sort((a,b)=>Number(a.placement==='more')-Number(b.placement==='more'));
   }
   words(query:WordQuery={}):WordPage {return wordPage(this.#wordCatalog,query);}
+  #actorAddressable(name:string):boolean {
+    const tell=this.#candidateCatalog.families.find(f=>f.verb==='TELL'&&f.slots.length===1&&!f.slots[0]!.preposition)!;
+    let matcher=this.#matcherCache.get('actor-prefix');if(!matcher){matcher=new ScopeQuery(this.#game,this.#loop.world()).spellingMatcher();this.#matcherCache.set('actor-prefix',matcher);}
+    return matcher(prepareOperand(this.#game,name),tell.slots[0]!.scopeHints,'TELL');
+  }
   /** Stateless draft review; backing up/cancelling is entirely local to the presenter. */
   select(input:SelectionRequest):SelectionView {
     assertSchema(input,selectionRequestSchema,{},'selection');const request=own(input);
@@ -152,7 +177,7 @@ export class GameSession {
     if(this.#state!=='input')throw new Error('Session is not accepting selections');
     const candidates=this.#candidates(request.actor);
     const labels=this.#labels(candidates.actor);
-    const view=reviewSelection(this.#game,candidates,request,this.#wordCatalog,labels);
+    const view=reviewSelection(this.#game,candidates,request,this.#wordCatalog,labels,(operand,index)=>this.#spellings(candidates,request.family,operand,index));
     return rankKnowledgeSelection(view,this.#candidateCatalog.families.find(f=>f.id===view.family),candidates.actor,this.#game.bundle.payload.gateRules,this.#knowledge);
   }
   commitSelection(input:SelectionRequest):ActionResolution {
@@ -236,8 +261,11 @@ export class GameSession {
     // Protocol identities and the accepted-input history do not affect ZIL semantics.
     return hashJson({interpreter:this.#loop.checkpoint().interpreter,knowledge:this.#knowledge,remembered:this.#remembered,terminal:this.#state==='terminal'});
   }
-  acceptedInputs():AcceptedInput[] {return own(this.#log);}
+  /** Owned suffix for incremental recorders; omitting from returns the full log. */
+  acceptedInputs(from=0):AcceptedInput[] {if(!Number.isSafeInteger(from)||from<0)throw new Error('Invalid accepted-input cursor');return own(this.#log.slice(from));}
   assertReplayComplete():void {this.#loop.assertReplayComplete();}
+  /** Test-only validation of the actual continuation, RNG, memory and learned state. */
+  [SESSION_VALIDATE](){TurnLoop.restore(this.#game,this.#loop.checkpoint(),{replay:this.#replay});validateKnowledge(this.#game.bundle.payload.gateRules,this.#knowledge);validateObjectMemory(this.#game,this.#remembered);}
   /** Available only to code holding the testing capability; never a player observation. */
   [SESSION_DEBUG]() {
     if(!this.#diagnostics)throw new Error('Session diagnostics are not enabled');
@@ -263,6 +291,11 @@ export class GameSession {
     return session;
   }
   remembered():RememberedObject[] {return own(this.#remembered);}
+  #spellings(set:CandidateSet,family:string,operand:Parameters<typeof operandSpellings>[1],index:number){
+    const f=set.families.find(f=>f.id===family)!;const hints=f.slots[index]!.scopeHints;
+    const key=canonicalJson([set.actor,hints,['LOOK-INSIDE','SEARCH','EXAMINE'].includes(f.verb),operand]);
+    let result=this.#spellingCache.get(key);if(!result){let match=this.#matcherCache.get(set.actor);if(!match){match=new ScopeQuery(this.#game,this.#loop.world(),{actor:set.actor}).spellingMatcher();this.#matcherCache.set(set.actor,match);}const source=canonicalJson(operand);let lexical=this.#lexicalSpellings.get(source);if(!lexical){lexical=operandSpellings(this.#game,operand);this.#lexicalSpellings.set(source,lexical);}result=lexical.filter(o=>{const key=canonicalJson(o);let prepared=this.#preparedSpellings.get(key);if(!prepared){prepared=prepareOperand(this.#game,o);this.#preparedSpellings.set(key,prepared);}return match(prepared,hints,f.verb);});this.#spellingCache.set(key,result);}return result;
+  }
   #labels(actor:string):LabelContext {
     const world=this.#loop.world(),physical=queryScope(this.#game,world,{actor}).candidates;
     const context=createLabelContext(this.#game,world,actor,physical.operands);
@@ -312,7 +345,7 @@ export class GameSession {
     // Prepare all externally returned data before installing the staged state.
     const packet=own({...publicTurn(result),...expected,events:[],...(pending?{pending}:{}),...(host?{host}:{})}) as ActionResolution;
     const ownedEntry=entry===undefined?undefined:own(entry);
-    this.#candidateCache.clear();this.#loop=loop;this.#epoch=expected.epoch;this.#revision=expected.revision;
+    this.#candidateCache.clear();this.#spellingCache.clear();this.#matcherCache.clear();this.#loop=loop;this.#epoch=expected.epoch;this.#revision=expected.revision;
     this.#state=state;this.#pending=pending;this.#host=host;this.#knowledge=[...knowledge];this.#remembered=own(remembered);
     if(pending||host)this.#nextId++;
     if(ownedEntry)this.#log.push(ownedEntry);

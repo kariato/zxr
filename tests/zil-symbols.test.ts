@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { analyzeSymbols, loadProgram, expandMacros, head, RUNTIME_OPERATIONS } from '../src/zil/index.ts';
-import type { SymbolLayout } from '../src/zil/index.ts';
+import type { Sequence, SymbolLayout } from '../src/zil/index.ts';
 import { sourceFiles } from '../tools/zil/program.ts';
 import { referenceSymbolLayout, symbolManifest, dictionaryBytes } from '../tools/zil/symbols.ts';
 import { normalizeReferenceProgram } from '../tools/zil/reference-program.ts';
@@ -89,10 +89,12 @@ describe('reference-assisted ZIL symbol resolution',()=>{
   it('records guarded normalizations and rejects changed source before applying it',()=>{
     const p=loadProgram(sourceFiles()),e=expandMacros(p.forms,p.definitions,p.globals);
     expect(analyzeSymbols(p,e.forms,referenceSymbolLayout()).diagnostics.map(d=>d.message)).toContain('Unexpected list in expression');
-    const n=normalizeReferenceProgram(e.forms);expect(n.normalizations).toHaveLength(2);
+    const n=normalizeReferenceProgram(e.forms);expect(n.normalizations).toHaveLength(3);
     const routine=n.forms.find(f=>head(f)==='ROUTINE'&&'items' in f&&f.items[1]?.kind==='atom'&&f.items[1].value==='DREARY-ROOM-FCN');
     expect(routine&&'items' in routine?head(routine.items.at(-1)!):undefined).toBe('PROG');
     const files=sourceFiles();files.set('2actions.zil',files.get('2actions.zil')!.replace('(T <PCHECK> <RFALSE>)>','(T <OTHER> <RFALSE>)>'));
     const changed=loadProgram(files);expect(()=>normalizeReferenceProgram(expandMacros(changed.forms,changed.definitions,changed.globals).forms)).toThrow('requires the audited DREARY-ROOM-FCN source');
+    const climb=e.forms.find(f=>head(f)==='ROUTINE'&&'items' in f&&f.items[1]?.kind==='atom'&&f.items[1].value==='V-CLIMB-UP') as Sequence;
+    expect(()=>normalizeReferenceProgram([{...climb,items:climb.items.slice(0,-1)}])).toThrow('SRC-014');
   });
 });

@@ -17,7 +17,7 @@ it('checks the whole Zork II source project through the CLI',()=>{
   expect(text).toContain('Vocabulary: 269 syntax rows, 689 words');
   expect(text).toContain('Memory: 19882 bytes, 45 source tables');
   expect(text).toContain('Parser split: 42 classified, 414 retained routines plus adapter');
-  expect(text).toContain('Source maps: 26503 sites, 0 untranslated constructs');
+  expect(text).toContain('Source maps: 26507 sites, 0 untranslated constructs');
   expect(text).toContain('Logic operations: 439 routines, 0 deferred memory/address sites, 1342 strings');
 });
 it('reports symbol errors in a source copy without changing the vendored game',()=>{
@@ -66,7 +66,7 @@ it('reports symbol errors in a source copy without changing the vendored game',(
   } finally {rmSync(directory,{recursive:true,force:true});}
 });
 it('rejects unknown or repeated check flags',()=>{
-  for(const args of [['--unknown'],['--symbols','--symbols']]){
+  for(const args of [['--unknown'],['--symbols','--symbols'],['--conformance','--symbols'],['--conformance','reference/zork2'],['--conformance','--conformance']]){
     const result=spawnSync(process.execPath,['bin/zxr.ts','check',...args],{encoding:'utf8'});expect(result.status).toBe(2);expect(result.stderr).toContain('Usage: zxr check');
   }
 });

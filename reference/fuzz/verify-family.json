@@ -1,0 +1,10 @@
+{
+  "format": "zxr-fuzz-known-issue-v1",
+  "id": "verify-family-schema",
+  "status": "resolved",
+  "campaign": { "seed": 5920850, "game": 2, "input": 233 },
+  "minimal": { "request": { "actor": "PLAYER", "expected": { "epoch": 1, "revision": 1 }, "family": "$VERIFY:1", "operands": [] } },
+  "cause": "The offered $VERIFY lexical table was rejected by selection-family and action lexical-table schemas.",
+  "repair": "Accept the source $VERIFY table, while retaining exact catalogue membership checks and excluding unsupported debug stream verbs. VERIFY checks the validated semantic bundle as HOST-001 specifies.",
+  "expectedText": "The disk is correct."
+}

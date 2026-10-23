@@ -17,4 +17,14 @@ a { color: #f2d7a1; text-underline-offset: .3em; }
 .chosen-command { color: #f2d7a1; font-weight: bold; }
 .player-actions { display: flex; flex-direction: column; align-items: stretch; gap: .4rem; max-width: 42rem; }
 .player-actions h2:focus { outline: none; }
+.sentence-controls { position: sticky; top: 0; z-index: 1; padding-block: .4rem; background: #102a27; }
 footer { margin-top: 2rem; }
+.text-player select { font: inherit; min-height: 45px; max-width: 100%; }
+.text-player input[type=text] { min-height: 45px; width: 16rem; }
+.text-player nav[aria-label="Saved games"] { margin-block: .75rem; }
+.text-player details { margin-block: 1rem; }
+.text-player summary { cursor: pointer; min-height: 45px; padding-block: .6rem; }
+.text-player [data-replay-viewer] p { overflow-wrap: anywhere; }
+.text-player [data-capabilities] { overflow-wrap: anywhere; }
+.text-player [data-capabilities] dt { font-weight: bold; margin-top: .8rem; }
+.text-player [data-capabilities] dd { margin: .3rem 0 0; line-height: 1.5; }

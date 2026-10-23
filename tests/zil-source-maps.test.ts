@@ -16,7 +16,7 @@ const first=(r:SourceMapResult,op:string,name='F')=>[...mappedSites(r.referenceR
 describe('semantic source-map identities and complete translation report',()=>{
   it('maps all reference/runtime nodes deterministically and audits every macro definition',()=>{
     const audit=auditSourceMaps(result,built.logic);
-    expect(audit.checked).toEqual({routines:439,runtimeRoutines:414,sites:26503,byKind:{routine:439,binding:487,command:6487,expression:19090},stableIds:24399,ambiguousIds:1424,locations:16164,anchors:6250,macroPoints:8102,originLinks:8102,normalizations:2,generatedRestDefaults:1,implicitZeroInitializers:211,untranslated:0,replacements:25,parserConsumers:32,readSites:3,unsupportedHostSites:3});
+    expect(audit.checked).toEqual({"routines":439,"runtimeRoutines":414,"sites":26507,"byKind":{"routine":439,"binding":487,"command":6487,"expression":19094},"stableIds":24403,"ambiguousIds":1424,"locations":16164,"anchors":6250,"macroPoints":8102,"originLinks":8102,"normalizations":3,"generatedRestDefaults":1,"implicitZeroInitializers":211,"untranslated":0,"replacements":25,"parserConsumers":32,"readSites":3,"unsupportedHostSites":3});
     expect(audit).toEqual(JSON.parse(readFileSync('reference/source-map-audit.json','utf8')));
     expect(serializeSourceMap(result.sources)).toBe(readFileSync('games/zork2/source-map.zxr.json','utf8'));
     expect(result.report).toEqual(JSON.parse(readFileSync('reference/translation-report.json','utf8')));
@@ -81,7 +81,7 @@ describe('semantic source-map identities and complete translation report',()=>{
     expect(point.source.end.offset).toBe(source.lastIndexOf('>'));expect(point.source.end.column-point.source.start.column).toBe(point.text.length);
   });
   it('marks normalization provenance and generated defaults without inventing source arguments',()=>{
-    expect(result.sources.normalizations.map(n=>n.rule).sort()).toEqual(['SRC-006','SRC-011']);
+    expect(result.sources.normalizations.map(n=>n.rule).sort()).toEqual(['SRC-006','SRC-011','SRC-014']);
     expect(result.sources.entries.some(e=>e.points.some(p=>p.normalizations?.includes('SRC-006')))).toBe(true);
     const generated=result.sources.entries.find(e=>e.points.some(p=>p.generated?.startsWith('SRC-010')))!,point=generated.points.find(p=>p.generated?.startsWith('SRC-010'))!;
     const span=sourceLocationSpan(result.sources.locations.find(l=>l.id===point.location)!),text=result.sources.files.find(f=>f.file===span.file)!.text.slice(span.start.offset,span.end.offset);

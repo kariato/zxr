@@ -389,6 +389,10 @@ it('runs actor speech through TELL, refusal and the retained player command cont
   expect(reference.transcript[1]).toContain('My programming is insufficient');expect(reference.transcript[1]).toContain('Hello.');
   expect(reference.transcript[3]).toContain('The FROBOZZ Corporation');expect(reference.final).toMatchObject({room:'MAGNET-ROOM',winner:'ADVENTURER',moves:11});
 });
+it('retains the player as winner when the distant unicorn intercepts TELL without cancelling the command',()=>{
+  const {reference}=compareTurns([{...act('WAIT','WAIT'),actor:'GLOBAL-UNICORN'},act('LOOK','LOOK')],['unicorn, wait','look'],[],{room:'GARDEN-NORTH',inventory:[]});
+  expect(reference.transcript[1]).toBe('Unicorn? What unicorn?\n\nTime passes...\n\n>');expect(reference.final).toMatchObject({winner:'ADVENTURER',room:'GARDEN-NORTH',moves:4});
+});
 it.each(['SAY','ANSWER','INCANT'] as const)('runs source word and no-verb failures after robot %s without an extra clock tick',verb=>{
   const words=['XYZZYUNKNOWN','WELL','YES','OF','GREEN','NEWSPAPER','THE'];
   const {reference,vm}=compareTurns([...words.map(word=>({...say(verb,[word]),actor:'ROBOT'})),act('LOOK','LOOK')],[...words.map(word=>'robot, '+verb.toLowerCase()+' "'+word.toLowerCase()+'"'),'look'],[],{room:'MAGNET-ROOM',inventory:[]});

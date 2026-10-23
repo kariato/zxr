@@ -30,7 +30,7 @@ const name:Schema={type:'string',pattern:'^[A-Z][A-Z0-9?!.\\-]{0,63}$',minLength
 const object=(properties:Record<string,Schema>,optional:Record<string,Schema>={}):Schema=>({type:'object',properties:{...properties,...optional},required:Object.keys(properties),additionalProperties:false});
 export const operandSchema:Schema={anyOf:[name,object({object:name,noun:name},{adjective:name}),object({object:name,adjective:name}),object({pseudo:object({room:name,word:name})})]};
 export const selectionSchema:Schema={anyOf:[operandSchema,{type:'array',items:operandSchema,minItems:1,maxItems:49}]};
-const syntax={actor:name,verb:name,lexicalTable:name,syntax:{type:'integer',minimum:1,maximum:255} as Schema};
+const syntax={actor:name,verb:name,lexicalTable:{anyOf:[name,{const:'$VERIFY'}]} as Schema,syntax:{type:'integer',minimum:1,maximum:255} as Schema};
 const continuationSchema:Schema={anyOf:[object({kind:{const:'act'},...syntax,actor:{const:'PLAYER'}},{prso:selectionSchema,prsi:selectionSchema}),object({kind:{const:'walk'},actor:{const:'PLAYER'},direction:name})]};
 const actionSchema:Schema={anyOf:[object({kind:{const:'act'},...syntax},{prso:selectionSchema,prsi:selectionSchema}),object({kind:{const:'walk'},actor:name,direction:name}),object({kind:{const:'say'},...syntax,words:{type:'array',items:{type:'string',pattern:'^[A-Z0-9]{1,119}$',minLength:1},minItems:1,maxItems:57}},{prso:operandSchema,continuation:continuationSchema})]};
 /** Validate a source operand spelling without creating an action or option ID. */
@@ -63,9 +63,18 @@ export function prepareOperand(game:LoadedGame,value:Operand):PlannedOperand {
 }
 /** Prepare lexical data only. It never runs routines, resolves ALL/scope, or writes parser/world state. */
 export function prepareAction(game:LoadedGame,world:WorldState,input:unknown):ActionPlan {
-  if(world.buildHash!==game.buildHash)throw new Error('Action world belongs to another build');
   assertSchema(input,actionSchema,{},'action');
-  const action=JSON.parse(canonicalJson(input)) as GameAction,payload=game.bundle.payload;
+  return buildActionPlan(game,world,JSON.parse(canonicalJson(input)) as GameAction);
+}
+/** Internal diagnostic fixture only: public action names cannot contain '#'. */
+export function prepareRandomDiagnostic(game:LoadedGame,world:WorldState):ActionPlan {
+  const lexical=game.bundle.payload.vocabulary.verbs.find(v=>v.name==='#RANDOM'),row=lexical?.rows.find(r=>r.action.name==='RANDOM'&&r.slots.length===1);
+  if(!lexical||!row)throw new Error('Missing source debug RANDOM syntax');
+  return buildActionPlan(game,world,{kind:'act',actor:'PLAYER',verb:'RANDOM',lexicalTable:lexical.name,syntax:row.id,prso:{object:'INTNUM',noun:'INTNUM'}});
+}
+function buildActionPlan(game:LoadedGame,world:WorldState,action:GameAction):ActionPlan {
+  if(world.buildHash!==game.buildHash)throw new Error('Action world belongs to another build');
+  const payload=game.bundle.payload;
   const entity=(key:string)=>{const e=payload.world.entities.find(e=>e.name===key);if(!e)throw new Error('Unknown action entity '+key);return e;};
   const actorId=action.actor==='PLAYER'?world.global('PLAYER'):entity(action.actor).id,actor=payload.world.entities.find(e=>e.id===actorId);
   const actorFlag=payload.symbols.symbols.find(s=>s.name==='ACTORBIT')?.number;

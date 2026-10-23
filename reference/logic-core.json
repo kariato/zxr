@@ -1,7 +1,7 @@
 {
   "format": "zxr-logic-core-audit-v1",
   "stage": "core",
-  "logicSha256": "2125e7773b2037fdeff21509cda55dae9c59ab20e8aaac007b17ae5f3bf858db",
+  "logicSha256": "7118677b9ed2923bc18d1683bc9018edffe77c1ab7961c9cc10899e0ec1054ca",
   "sourceHashes": [
     {
       "file": "2actions.zil",
@@ -52,7 +52,7 @@
     "routines": 439,
     "fullyLoweredRoutines": 32,
     "maxLocalSlots": 12,
-    "expressions": 19089,
+    "expressions": 19093,
     "deferredSites": 5109
   },
   "coreOperations": [
@@ -1338,9 +1338,9 @@
       "optional": 2,
       "slots": 4,
       "fullyLowered": false,
-      "expressions": 113,
+      "expressions": 117,
       "deferred": 34,
-      "sha256": "eab3ae68f48ab2d6a4dd7af6ece190f776f45380a882afe5a9f71781f845d12a"
+      "sha256": "61e009d0a16751cce58794195a2635de71960fd025128375e201084ed76bef05"
     },
     {
       "name": "V-CLOSE",
