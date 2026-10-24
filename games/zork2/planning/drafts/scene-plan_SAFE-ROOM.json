@@ -1,0 +1,195 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "SAFE-ROOM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "50c79df7c30647bd58b333dc2682d945f663a5d0866b4e84eb05dbd7126f0d11",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "feca0fd8a0998baeb0332fac842dbcb6f867bce2605d4cdc0e320396fe4f1d8b",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_card",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_crown",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_safe",
+        "pose": {
+          "position": [
+            0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_slot",
+        "pose": {
+          "position": [
+            1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_north_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -4.5
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Dusty featureless room, north exit and separate rusty damaged safe. Blown-off-door state and crown must never be permanent shell geometry.\nDescription is routine-driven: the safe base profile above does not make guarded output unconditional.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_north_anchor",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "LEDGE-2"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          9,
+          0.2,
+          10
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            3.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_card",
+        "asset": "asset_card",
+        "object": "CARD",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_crown",
+        "asset": "asset_crown",
+        "object": "CROWN",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_safe",
+        "asset": "asset_safe",
+        "object": "SAFE",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_slot",
+        "asset": "asset_slot",
+        "object": "SLOT",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "50c79df7c30647bd58b333dc2682d945f663a5d0866b4e84eb05dbd7126f0d11"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "SAFE-ROOM",
+    "shell": "indoor",
+    "sizeMetres": [
+      9,
+      4,
+      10
+    ],
+    "spawn": "player_start"
+  }
+}

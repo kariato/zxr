@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "STAY"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "4ee426736a3e247e152bed114c70c976df34898b2578f167c5c43da6b71d2222",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "b2b6f0a6a41bb5b2b0d0f66dc1e12fc013c78d967e44e7c14551fa593fc65240",
+  "document": {
+    "entries": [
+      {
+        "family": "STAY:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Stay"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_stay",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "4ee426736a3e247e152bed114c70c976df34898b2578f167c5c43da6b71d2222"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

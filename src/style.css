@@ -19,6 +19,14 @@ a { color: #f2d7a1; text-underline-offset: .3em; }
 .player-actions h2:focus { outline: none; }
 .sentence-controls { position: sticky; top: 0; z-index: 1; padding-block: .4rem; background: #102a27; }
 footer { margin-top: 2rem; }
+.prototype { margin-block: 1rem 2rem; }
+.prototype-viewport { position: relative; overflow: hidden; border: 1px solid #658779; border-radius: .6rem; background: #070c10; }
+.prototype-viewport canvas { display: block; width: 100%; touch-action: none; }
+.prototype-info { color: #f2d7a1; }
+.prototype nav { display: flex; flex-wrap: wrap; gap: .4rem; margin-block: .5rem; }
+.prototype .prototype-pad { position: absolute; bottom: .5rem; left: .5rem; margin: 0; }
+.prototype-pad button { background: #102a27d9; border: 1px solid #658779; touch-action: none; }
+.prototype .prototype-vr { position: static !important; width: auto !important; }
 .text-player select { font: inherit; min-height: 45px; max-width: 100%; }
 .text-player input[type=text] { min-height: 45px; width: 16rem; }
 .text-player nav[aria-label="Saved games"] { margin-block: .75rem; }

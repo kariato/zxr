@@ -1,0 +1,207 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "MARBLE-HALL"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "f55298dabbfe59cd3105f3dbe5eb25afd921b8a1c81da1b0be21c7cbf8658699",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "efee8e94651295f598f487c18211a127eb1ea0a883bd729edb789e646c88f54a",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_brick",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_stream",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_north_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -8.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_east_anchor",
+        "pose": {
+          "position": [
+            4,
+            0,
+            0
+          ],
+          "yawDegrees": -90
+        }
+      },
+      {
+        "node": "exit_south_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            8.5
+          ],
+          "yawDegrees": 180
+        }
+      }
+    ],
+    "description": "Arched fine marble hall, broken and cracked at north ford; broad southern machinery-room approach. Whirring is source atmosphere, not a new actionable machine.\nStatic source description:\nThis is an arched hall of fine marble. The hall stops abruptly to the north at a ford across a stream, where the marble is cracked and broken. Perhaps a flood or collapse of the cave was responsible. To the south the hall opens into a large room. There is rather annoying whirring sound coming from that room.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_north_anchor",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DEEP-FORD"
+      },
+      {
+        "anchor": "exit_east_anchor",
+        "availability": "engine-option",
+        "direction": "EAST",
+        "node": "exit_east",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "STREAM-PATH"
+      },
+      {
+        "anchor": "exit_south_anchor",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "CAROUSEL-ROOM"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          9,
+          0.2,
+          18
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            4.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_brick",
+        "asset": "asset_brick",
+        "object": "BRICK",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_stream",
+        "asset": "asset_stream",
+        "object": "STREAM",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "f55298dabbfe59cd3105f3dbe5eb25afd921b8a1c81da1b0be21c7cbf8658699"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "MARBLE-HALL",
+    "shell": "indoor",
+    "sizeMetres": [
+      9,
+      5,
+      18
+    ],
+    "spawn": "player_start"
+  }
+}

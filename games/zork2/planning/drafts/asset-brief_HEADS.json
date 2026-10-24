@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "HEADS"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "6e28ef13c4d9036a2244fe7f5e8388d7aafe97517b9d7e45c818b2fcd81ced69",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "5f3222a19baf969a459db63dc9096776d44700a61b0bb5cd8939407b59c45acf",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed set of poled heads. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every set of poled heads into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          1.2,
+          1.2,
+          0.6
+        ]
+      }
+    ],
+    "id": "asset_heads",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "set of poled heads; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "HEADS"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "6e28ef13c4d9036a2244fe7f5e8388d7aafe97517b9d7e45c818b2fcd81ced69"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      1.2,
+      1.2,
+      0.6
+    ]
+  }
+}

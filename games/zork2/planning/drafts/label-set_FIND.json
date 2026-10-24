@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "FIND"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "b202082bb3b69affa944b8e8c9b0c43445efc09f5a237b408d45a090eaf04fe8",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "be30e93cceef2f381642179b808aca5a1cac23c5c952c8673a50d49b4a4e6949",
+  "document": {
+    "entries": [
+      {
+        "family": "FIND:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Find {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_find",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "b202082bb3b69affa944b8e8c9b0c43445efc09f5a237b408d45a090eaf04fe8"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

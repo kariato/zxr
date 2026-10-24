@@ -1,0 +1,102 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "ZORK3"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "6fc2e23290608dd7d471b0c15bae3978a6bc51cf0b3b845e3b6a3491f746f310",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "7d4e6e9d766bde49edbf4542d65181892df89a4db0f0de0576e66fecee6662ea",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Rough descending staircase landing with source magical runes and green lines. Victory hall and disappearance of lines are conditional future output, not initial shell geometry.\nDescription is routine-driven: the safe base profile above does not make guarded output unconditional.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          10,
+          0.2,
+          12
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            7.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "6fc2e23290608dd7d471b0c15bae3978a6bc51cf0b3b845e3b6a3491f746f310"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "ZORK3",
+    "shell": "indoor",
+    "sizeMetres": [
+      10,
+      8,
+      12
+    ],
+    "spawn": "player_start"
+  }
+}

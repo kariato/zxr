@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "WORKBENCH"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "07987507afdc38940efc08a469d54d7b7c77c2c1795120470e112aa0782357c5",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "bfb8178ae578597e06216eb476dd72acefb468b379ee892d8c852f18306ab703",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed Wizard's workbench. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every Wizard's workbench into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          3,
+          1.1,
+          1.4
+        ]
+      }
+    ],
+    "id": "asset_workbench",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "Wizard's workbench; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "WORKBENCH"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "07987507afdc38940efc08a469d54d7b7c77c2c1795120470e112aa0782357c5"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      3,
+      1.1,
+      1.4
+    ]
+  }
+}

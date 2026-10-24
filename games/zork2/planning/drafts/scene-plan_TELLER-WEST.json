@@ -1,0 +1,172 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "TELLER-WEST"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "f85889b1a20197b33e384e493b59be3a3f8973833b94af0e7695c62ae0f83684",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "e84c8ab58b1793746d2252735343d685811079bb8e0139a15cf74da7dc44734a",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_north_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -4
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_west_anchor",
+        "pose": {
+          "position": [
+            -3,
+            0,
+            0
+          ],
+          "yawDegrees": 90
+        }
+      },
+      {
+        "node": "exit_south_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            4
+          ],
+          "yawDegrees": 180
+        }
+      }
+    ],
+    "description": "Western bank teller room; preserve its source-specific walls and transport effects separately from eastern teller.\nDescription is routine-driven: the safe base profile above does not make guarded output unconditional.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_north_anchor",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "VIEWING-WEST"
+      },
+      {
+        "anchor": "exit_west_anchor",
+        "availability": "engine-option",
+        "direction": "WEST",
+        "node": "exit_west",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DEPOSITORY"
+      },
+      {
+        "anchor": "exit_south_anchor",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "BANK-ENTRANCE"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          7,
+          0.2,
+          9
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            3.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "f85889b1a20197b33e384e493b59be3a3f8973833b94af0e7695c62ae0f83684"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "TELLER-WEST",
+    "shell": "indoor",
+    "sizeMetres": [
+      7,
+      4,
+      9
+    ],
+    "spawn": "player_start"
+  }
+}

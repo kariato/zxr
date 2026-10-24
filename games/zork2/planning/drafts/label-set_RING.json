@@ -1,0 +1,49 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "RING"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "1ea3e4322378d1c96ab413e8684e204169f816631a2ebdb42666f9558db01c94",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "7d8e0c205302f61150e6fcc6dd2c7f808a0b4e89578cfa17ae279fda539b5b74",
+  "document": {
+    "entries": [
+      {
+        "family": "RING:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Ring {direct} with {indirect}"
+      },
+      {
+        "family": "RING:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Ring {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_ring",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "1ea3e4322378d1c96ab413e8684e204169f816631a2ebdb42666f9558db01c94"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

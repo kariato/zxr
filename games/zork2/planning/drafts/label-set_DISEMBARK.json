@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "DISEMBARK"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "ca146b7c1596b524301b5d0b529ca51b40579a2297b16868ff38989a660a526b",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "427cb99c79db36235072a634dced1ac2fc385e791cf5a98d9511c7ffea3a75d7",
+  "document": {
+    "entries": [
+      {
+        "family": "DISEMBARK:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Disembark {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_disembark",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "ca146b7c1596b524301b5d0b529ca51b40579a2297b16868ff38989a660a526b"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

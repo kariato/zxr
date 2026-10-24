@@ -1,0 +1,53 @@
+{
+  "format": "zxr-asset-brief-v1",
+  "provenance": {
+    "method": "manual",
+    "author": "ZXR contributors"
+  },
+  "review": {
+    "status": "draft"
+  },
+  "id": "brass_lamp",
+  "kind": "prop",
+  "objects": [
+    "LAMP"
+  ],
+  "description": "Portable brass lantern, with a separate emissive light surface.",
+  "sizeMetres": [
+    0.18,
+    0.35,
+    0.18
+  ],
+  "materials": [
+    {
+      "name": "main",
+      "description": "Muted low-detail draft surface; palette awaits the style bible.",
+      "colour": "#A69A78",
+      "roughness": 0.7,
+      "metalness": 0.5
+    }
+  ],
+  "requiredClips": [
+    "idle",
+    "flicker"
+  ],
+  "hotspotNodes": [
+    {
+      "node": "hs_brass_lamp",
+      "shape": "box",
+      "sizeMetres": [
+        0.18,
+        0.35,
+        0.18
+      ],
+      "pose": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "yawDegrees": 0
+      }
+    }
+  ]
+}

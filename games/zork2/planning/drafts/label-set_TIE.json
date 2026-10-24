@@ -1,0 +1,50 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "TIE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "cdfddcd31c1d985365bceb76ebc8af69d297304ca67f9677adc9add4d19f9f6d",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "a42192d33d0e8d61d1e77d650c1d3f592b6e6102d2a58093bfc358083fb5b437",
+  "document": {
+    "entries": [
+      {
+        "family": "TIE:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Tie up {direct} with {indirect}"
+      },
+      {
+        "family": "TIE:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Tie {direct} to {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_tie",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "cdfddcd31c1d985365bceb76ebc8af69d297304ca67f9677adc9add4d19f9f6d"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

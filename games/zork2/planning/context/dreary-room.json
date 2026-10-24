@@ -1,0 +1,881 @@
+{
+  "cautions": [
+    "Offline source context; never current player-visible state.",
+    "All routine text/effects are conditional possibilities, not an executed description or a reveal rule.",
+    "Potential arrivals are a conservative shared catalogue, not proven room reachability or initial scenery.",
+    "Consult routines.json for text fragments, source guards, script changes and unresolved targets/calls.",
+    "Every feature requires state review; absent literal mutation evidence does not prove a static feature. Generic handlers and raw memory writes may change computed targets.",
+    "Computed exits are not guessed; RLANDBIT means land, not outdoors."
+  ],
+  "exits": [
+    {
+      "declaration": "(SOUTH TO TINY-ROOM IF PDOOR IS OPEN)",
+      "direction": "SOUTH",
+      "geometryStatus": "conditional-blocked-or-computed",
+      "neighbour": {
+        "desc": "Tiny Room",
+        "name": "TINY-ROOM"
+      },
+      "source": {
+        "end": {
+          "column": 44,
+          "line": 1706,
+          "offset": 46859
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 1706,
+          "offset": 46822
+        }
+      },
+      "view": {
+        "door": "PDOOR",
+        "kind": "DEXIT",
+        "message": null,
+        "to": "TINY-ROOM"
+      }
+    },
+    {
+      "declaration": "(OUT TO TINY-ROOM IF PDOOR IS OPEN)",
+      "direction": "OUT",
+      "geometryStatus": "conditional-blocked-or-computed",
+      "neighbour": {
+        "desc": "Tiny Room",
+        "name": "TINY-ROOM"
+      },
+      "source": {
+        "end": {
+          "column": 42,
+          "line": 1707,
+          "offset": 46901
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 1707,
+          "offset": 46866
+        }
+      },
+      "view": {
+        "door": "PDOOR",
+        "kind": "DEXIT",
+        "message": null,
+        "to": "TINY-ROOM"
+      }
+    }
+  ],
+  "features": [
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "ONBIT",
+        "RLANDBIT"
+      ],
+      "name": "DREARY-ROOM",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [
+            "NDESCBIT"
+          ],
+          "index": 1,
+          "operation": "FSET",
+          "routine": "PCHECK"
+        },
+        {
+          "flags": [
+            "NDESCBIT"
+          ],
+          "index": 2,
+          "operation": "FCLEAR",
+          "routine": "PCHECK"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NDESCBIT",
+        "TAKEBIT",
+        "TOOLBIT",
+        "TURNBIT"
+      ],
+      "name": "KEY",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NDESCBIT",
+        "OPENBIT",
+        "SEARCHBIT"
+      ],
+      "name": "KEYHOLE-2",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "CONTBIT",
+        "NDESCBIT",
+        "OPENBIT"
+      ],
+      "name": "LID-2",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [],
+          "index": 1,
+          "operation": "REMOVE",
+          "routine": "STAND-FCN"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "STAGGERED",
+        "TAKEBIT",
+        "TRANSBIT"
+      ],
+      "name": "PALANTIR-2",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": false,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NDESCBIT"
+      ],
+      "name": "PCRACK",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "CONTBIT",
+        "DOORBIT"
+      ],
+      "name": "PDOOR",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "CONTBIT",
+        "NDESCBIT",
+        "OPENBIT",
+        "SURFACEBIT"
+      ],
+      "name": "PTABLE",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "DOORBIT"
+      ],
+      "name": "PWINDOW",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    }
+  ],
+  "format": "zxr-room-context-v1",
+  "globalObjects": [
+    "PDOOR",
+    "PWINDOW"
+  ],
+  "initialObjects": [
+    "KEY",
+    "KEYHOLE-2",
+    "LID-2",
+    "PALANTIR-2",
+    "PCRACK",
+    "PTABLE"
+  ],
+  "inputHash": "b22d91bbe9482c76b313c7817292937750a0afcf964551a9b4817905d438c14c",
+  "potentialArrivals": [
+    "ADVENTURER",
+    "ARCANA",
+    "BALLOON",
+    "BALLOON-LABEL",
+    "BANK-BROCHURE",
+    "BAT",
+    "BILLS",
+    "BLESSINGS",
+    "BLUE-BOOK",
+    "BLUE-ICING",
+    "BRAIDED-WIRE",
+    "BRICK",
+    "BRIDGE",
+    "BROKEN-CASE",
+    "BROKEN-LAMP",
+    "BUCKET",
+    "CAGE",
+    "CANDY",
+    "CARD",
+    "CERBERUS",
+    "CHASM",
+    "CHEST",
+    "CLOTH-BAG",
+    "COIN",
+    "COLLAR",
+    "COMPASS",
+    "CROWN",
+    "CRYPT-DOOR",
+    "DEAD-BALLOON",
+    "DEAD-DRAGON",
+    "DEAD-SERPENT",
+    "DEGREE",
+    "DEPOSIT-BOX",
+    "DIM-DOOR",
+    "DRAGON",
+    "DWINDOW",
+    "EAST-WALL",
+    "EAT-ME-CAKE",
+    "EXPLOSION",
+    "FLASK",
+    "FOOTPAD",
+    "FUSE",
+    "GAZEBO",
+    "GENIE",
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GLOBAL-OBJECTS",
+    "GLOBAL-PALANTIR",
+    "GLOBAL-PRINCESS",
+    "GLOBAL-UNICORN",
+    "GLOBAL-WATER",
+    "GLOBAL-WIZARD-CASE",
+    "GNOME",
+    "GNOME-OF-ZURICH",
+    "GOLD-KEY",
+    "GREEN-BOOK",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "HEADS",
+    "INTNUM",
+    "IRON-BOX",
+    "IT",
+    "KEY",
+    "LAMP",
+    "LETTER-OPENER",
+    "LOCAL-GLOBALS",
+    "LUNGS",
+    "MANGLED-CAGE",
+    "MATCH",
+    "ME",
+    "MENHIR",
+    "MOSS",
+    "NEWSPAPER",
+    "NORTH-WALL",
+    "ORANGE-ICING",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "PATHOBJ",
+    "PDOOR",
+    "PEARL",
+    "PLACE-MAT",
+    "PORTRAIT",
+    "PRINCESS",
+    "PSEUDO-OBJECT",
+    "PURPLE-BOOK",
+    "PWINDOW",
+    "RECEPTACLE",
+    "RED-ICING",
+    "REPELLENT",
+    "RIBBON",
+    "ROBOT",
+    "ROBOT-LABEL",
+    "ROSE",
+    "ROSE-BUSH",
+    "RUBY",
+    "SAILOR",
+    "SALTY-WATER",
+    "SERPENT",
+    "SEWL",
+    "SNWL",
+    "SOUTH-WALL",
+    "SSWL",
+    "STAIRS",
+    "STAMP",
+    "STAND-4",
+    "STATUETTE",
+    "STREAM",
+    "SWORD",
+    "SWWL",
+    "TEAPOT",
+    "TROPHY-BOTTLES",
+    "TROPHY-SWORD",
+    "TUNNEL",
+    "UNICORN",
+    "VIOLIN",
+    "WAND",
+    "WANDS",
+    "WATER",
+    "WELL",
+    "WEST-WALL",
+    "WHITE-BOOK",
+    "WISH",
+    "WIZ-DOOR",
+    "WIZARD",
+    "ZORKMID"
+  ],
+  "room": {
+    "desc": {
+      "source": {
+        "end": {
+          "column": 27,
+          "line": 1705,
+          "offset": 46815
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 1705,
+          "offset": 46795
+        }
+      },
+      "text": "Dreary Room"
+    },
+    "flags": [
+      "ONBIT",
+      "RLANDBIT"
+    ],
+    "id": 59,
+    "initialRoomLightFlag": true,
+    "ldesc": [
+      {
+        "byteLength": 2,
+        "kind": "text",
+        "property": {
+          "name": "LDESC",
+          "number": 13
+        },
+        "source": {
+          "end": {
+            "column": 18,
+            "line": 1704,
+            "offset": 46788
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 7,
+            "line": 1704,
+            "offset": 46777
+          }
+        },
+        "text": " "
+      }
+    ],
+    "name": "DREARY-ROOM",
+    "outdoors": "not-encoded-do-not-infer-from-RLANDBIT",
+    "source": {
+      "end": {
+        "column": 30,
+        "line": 1710,
+        "offset": 46991
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 1,
+        "line": 1702,
+        "offset": 46736
+      }
+    }
+  },
+  "routineReferencedObjects": [
+    "GOLD-KEY",
+    "KEY",
+    "KEYHOLE-1",
+    "KEYHOLE-2",
+    "LETTER-OPENER",
+    "LID-1",
+    "LID-2",
+    "NEWSPAPER",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "PDOOR",
+    "PLACE-MAT",
+    "ROBOT-LABEL"
+  ],
+  "routines": {
+    "dispatchBoundaries": [
+      "PERFORM"
+    ],
+    "missing": [],
+    "reachableHelpers": [
+      "DO-SL",
+      "DREARY-ROOM-FCN",
+      "GO&LOOK",
+      "HELD?",
+      "LIT?",
+      "OBJ-FOUND",
+      "OPEN-CLOSE",
+      "P-DOOR",
+      "PALANTIR",
+      "PALANTIR-LOOK",
+      "PCHECK",
+      "PDOOR-FCN",
+      "PKEY-FCN",
+      "PKH",
+      "PKH-FCN",
+      "PLID",
+      "PLID-FCN",
+      "PWINDOW-FCN",
+      "RANDOM-ELEMENT",
+      "SEARCH-LIST",
+      "SEE-INSIDE?",
+      "THIS-IT?",
+      "ZMEMQ",
+      "ZMEMQB"
+    ],
+    "roots": [
+      "DREARY-ROOM-FCN",
+      "PALANTIR",
+      "PDOOR-FCN",
+      "PKEY-FCN",
+      "PKH-FCN",
+      "PLID-FCN",
+      "PWINDOW-FCN"
+    ]
+  },
+  "scriptedArrivals": [],
+  "stateDependencies": [
+    {
+      "name": "ALWAYS-LIT",
+      "writers": [
+        {
+          "index": 7,
+          "routine": "I-WIZARD"
+        }
+      ]
+    },
+    {
+      "name": "DUMMY",
+      "writers": []
+    },
+    {
+      "name": "HERE",
+      "writers": [
+        {
+          "index": 9,
+          "routine": "GO"
+        },
+        {
+          "index": 0,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 3,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 2,
+          "routine": "GOTO"
+        },
+        {
+          "index": 0,
+          "routine": "IN-CAGE-FCN"
+        },
+        {
+          "index": 2,
+          "routine": "JIGS-UP"
+        },
+        {
+          "index": 1,
+          "routine": "LIT?"
+        },
+        {
+          "index": 4,
+          "routine": "LIT?"
+        },
+        {
+          "index": 1,
+          "routine": "V-TELL"
+        }
+      ]
+    },
+    {
+      "name": "LIT",
+      "writers": [
+        {
+          "index": 6,
+          "routine": "GO"
+        },
+        {
+          "index": 1,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 4,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 3,
+          "routine": "GOTO"
+        },
+        {
+          "index": 8,
+          "routine": "I-WIZARD"
+        },
+        {
+          "index": 2,
+          "routine": "REMOVE-CAREFULLY"
+        },
+        {
+          "index": 1,
+          "routine": "V-CLOSE"
+        },
+        {
+          "index": 3,
+          "routine": "V-ENCHANT"
+        },
+        {
+          "index": 1,
+          "routine": "V-LAMP-OFF"
+        },
+        {
+          "index": 1,
+          "routine": "V-LAMP-ON"
+        }
+      ]
+    },
+    {
+      "name": "MATOBJ",
+      "writers": [
+        {
+          "index": 1,
+          "routine": "PKH-FCN"
+        },
+        {
+          "index": 3,
+          "routine": "PLACE-MAT-FCN"
+        }
+      ]
+    },
+    {
+      "name": "MUD-FLAG",
+      "writers": [
+        {
+          "index": 3,
+          "routine": "PCHECK"
+        },
+        {
+          "index": 1,
+          "routine": "PLACE-MAT-FCN"
+        },
+        {
+          "index": 4,
+          "routine": "PLACE-MAT-FCN"
+        }
+      ]
+    },
+    {
+      "name": "P-ADJ",
+      "writers": []
+    },
+    {
+      "name": "P-GWIMBIT",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "LIT?"
+        },
+        {
+          "index": 5,
+          "routine": "LIT?"
+        }
+      ]
+    },
+    {
+      "name": "P-MATCHLEN",
+      "writers": []
+    },
+    {
+      "name": "P-MERGE",
+      "writers": []
+    },
+    {
+      "name": "P-NAM",
+      "writers": []
+    },
+    {
+      "name": "P-SLOCBITS",
+      "writers": [
+        {
+          "index": 1,
+          "routine": "GLOBAL-CHECK"
+        },
+        {
+          "index": 3,
+          "routine": "GLOBAL-CHECK"
+        },
+        {
+          "index": 3,
+          "routine": "LIT?"
+        }
+      ]
+    },
+    {
+      "name": "P-TABLE",
+      "writers": [
+        {
+          "index": 2,
+          "routine": "GLOBAL-CHECK"
+        },
+        {
+          "index": 2,
+          "routine": "LIT?"
+        }
+      ]
+    },
+    {
+      "name": "PLAYER",
+      "writers": [
+        {
+          "index": 8,
+          "routine": "GO"
+        }
+      ]
+    },
+    {
+      "name": "PLOOK-FLAG",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "P-DOOR"
+        },
+        {
+          "index": 0,
+          "routine": "PCHECK"
+        },
+        {
+          "index": 0,
+          "routine": "PWINDOW-FCN"
+        }
+      ]
+    },
+    {
+      "name": "PRSA",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 4,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "PRSI",
+      "writers": [
+        {
+          "index": 7,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 3,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 6,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 1,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 2,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 0,
+          "routine": "V-DIG"
+        },
+        {
+          "index": 1,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 4,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "PRSO",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "CAROUSEL-ROOM-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "CAROUSEL-ROOM-FCN"
+        },
+        {
+          "index": 17,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "ITAKE-CHECK"
+        },
+        {
+          "index": 1,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 6,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 1,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 5,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 1,
+          "routine": "V-THROUGH"
+        },
+        {
+          "index": 2,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 5,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 9,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 10,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "PUNLOCK-FLAG",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "PDOOR-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "PDOOR-FCN"
+        }
+      ]
+    },
+    {
+      "name": "WINNER",
+      "writers": [
+        {
+          "index": 16,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 7,
+          "routine": "GO"
+        },
+        {
+          "index": 1,
+          "routine": "JIGS-UP"
+        },
+        {
+          "index": 1,
+          "routine": "RANDOM-WALK"
+        },
+        {
+          "index": 0,
+          "routine": "ROBOT-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "V-TELL"
+        },
+        {
+          "index": 0,
+          "routine": "V-THROW"
+        }
+      ]
+    }
+  ],
+  "universalGlobalObjects": [
+    "BLESSINGS",
+    "COMPASS",
+    "EAST-WALL",
+    "FOOTPAD",
+    "GLOBAL-PRINCESS",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "INTNUM",
+    "IT",
+    "LUNGS",
+    "ME",
+    "NORTH-WALL",
+    "PATHOBJ",
+    "SAILOR",
+    "SOUTH-WALL",
+    "TUNNEL",
+    "WEST-WALL",
+    "WISH",
+    "ZORKMID"
+  ]
+}

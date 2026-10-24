@@ -1,0 +1,57 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "WAVE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "3074aa784b9078cad4ca4882611a60f04ed589a2ed81d7f5d94ca1623254b374",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "3975bc416679674ed28ddd93b38f4bcf495af018d624c9a66bf28858a19a45ee",
+  "document": {
+    "entries": [
+      {
+        "family": "WAVE:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Wave at {direct}"
+      },
+      {
+        "family": "WAVE:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Wave {direct} at {indirect}"
+      },
+      {
+        "family": "WAVE:3",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Wave {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_wave",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "3074aa784b9078cad4ca4882611a60f04ed589a2ed81d7f5d94ca1623254b374"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

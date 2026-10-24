@@ -1,0 +1,322 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "CAROUSEL-ROOM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "635f9a14c17a7a787a169e5fc914f412dcf06e2844a37a07b1024a2233073e8b",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "08efd23c4176c9989329f285c791fa8ad3b3f94124318b855a0d3bb460581685",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_iron-box",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_violin",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_north_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -6.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_east_anchor",
+        "pose": {
+          "position": [
+            6.5,
+            0,
+            0
+          ],
+          "yawDegrees": -90
+        }
+      },
+      {
+        "node": "exit_west_anchor",
+        "pose": {
+          "position": [
+            -6.5,
+            0,
+            0
+          ],
+          "yawDegrees": 90
+        }
+      },
+      {
+        "node": "exit_south_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            6.5
+          ],
+          "yawDegrees": 180
+        }
+      },
+      {
+        "node": "exit_ne_anchor",
+        "pose": {
+          "position": [
+            4.596,
+            0,
+            -4.596
+          ],
+          "yawDegrees": -45
+        }
+      },
+      {
+        "node": "exit_nw_anchor",
+        "pose": {
+          "position": [
+            -4.596,
+            0,
+            -4.596
+          ],
+          "yawDegrees": 45
+        }
+      },
+      {
+        "node": "exit_se_anchor",
+        "pose": {
+          "position": [
+            4.596,
+            0,
+            4.596
+          ],
+          "yawDegrees": -135
+        }
+      },
+      {
+        "node": "exit_sw_anchor",
+        "pose": {
+          "position": [
+            -4.596,
+            0,
+            4.596
+          ],
+          "yawDegrees": 135
+        }
+      }
+    ],
+    "description": "Large circular chamber, eight identical passage mouths and high ceiling in gloom; no distinctive compass markings. Disorientation and random movement remain source behaviour.\nDescription is routine-driven: the safe base profile above does not make guarded output unconditional.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_north_anchor",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "MARBLE-HALL"
+      },
+      {
+        "anchor": "exit_east_anchor",
+        "availability": "engine-option",
+        "direction": "EAST",
+        "node": "exit_east",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "TOPIARY-ROOM"
+      },
+      {
+        "anchor": "exit_west_anchor",
+        "availability": "engine-option",
+        "direction": "WEST",
+        "node": "exit_west",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "ROOM-8"
+      },
+      {
+        "anchor": "exit_south_anchor",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "MENHIR-ROOM"
+      },
+      {
+        "anchor": "exit_ne_anchor",
+        "availability": "engine-option",
+        "direction": "NE",
+        "node": "exit_ne",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "STREAM-PATH"
+      },
+      {
+        "anchor": "exit_nw_anchor",
+        "availability": "engine-option",
+        "direction": "NW",
+        "node": "exit_nw",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "COOL-ROOM"
+      },
+      {
+        "anchor": "exit_se_anchor",
+        "availability": "engine-option",
+        "direction": "SE",
+        "node": "exit_se",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "RIDDLE-ROOM"
+      },
+      {
+        "anchor": "exit_sw_anchor",
+        "availability": "engine-option",
+        "direction": "SW",
+        "node": "exit_sw",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "COBWEBBY-CORRIDOR"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          14,
+          0.2,
+          14
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            8.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_iron-box",
+        "asset": "asset_iron-box",
+        "object": "IRON-BOX",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_violin",
+        "asset": "asset_violin",
+        "object": "VIOLIN",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "635f9a14c17a7a787a169e5fc914f412dcf06e2844a37a07b1024a2233073e8b"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "CAROUSEL-ROOM",
+    "shell": "indoor",
+    "sizeMetres": [
+      14,
+      9,
+      14
+    ],
+    "spawn": "player_start"
+  }
+}

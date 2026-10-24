@@ -1,0 +1,50 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "SAILOR"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "1546372bacc0ff06198b5048b2852cd50c8e479e6f071c433920a0798febd7c9",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "9216aa0adae02b9f625b6b82191b880eacb75355591068f7c50c57cc2993e13c",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nInteraction/identity proxy: no independent physical body or selectable geometry. Keep its source menu semantics; never fabricate an actor or prop from this identity.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every sailor into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [],
+    "id": "asset_sailor",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "No rendered surface.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "SAILOR"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "1546372bacc0ff06198b5048b2852cd50c8e479e6f071c433920a0798febd7c9"
+    },
+    "requiredClips": [],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.001,
+      0.001,
+      0.001
+    ]
+  }
+}

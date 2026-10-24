@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "NEWSPAPER"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "2c6706c7b31656d34cb932f1212c664232e8a644e42259c05b0ff991ebdc7c8f",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "46558e4df727d629a16aa384e561794fbddf8b298e6647d36de507cb6f3232fd",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed newspaper. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nTEXT: ** U.S. News and Dungeon Report **\n\nFAMED ADVENTURER TO EXPLORE GREAT UNDERGROUND EMPIRE\n\nOur correspondents report that a world-famous and battle-hardened adventurer has been seen in the vicinity of the Great Underground Empire. Local grues have been reported sharpening their (slavering) fangs....\n\n\"Zork II: The Wizard of Frobozz\" was written by Dave Lebling and Marc Blank, and is (c) Copyright 1981, 1982, 1983 by Infocom, Inc.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every newspaper into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.3,
+          0.25,
+          0.2
+        ]
+      }
+    ],
+    "id": "asset_newspaper",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "newspaper; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "NEWSPAPER"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "2c6706c7b31656d34cb932f1212c664232e8a644e42259c05b0ff991ebdc7c8f"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.3,
+      0.25,
+      0.2
+    ]
+  }
+}

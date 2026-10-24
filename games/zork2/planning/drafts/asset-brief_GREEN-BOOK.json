@@ -1,0 +1,72 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "GREEN-BOOK"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "4a3bbf06a6580f6e6aacb076272a324bef934812230eb17c30d083803949714c",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "a255e020f803901857679309761257edf078683b2542fae945defaed20d87ea2",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed green book. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nFDESC: A handsome book, bound in green leather, sits in the center of the room.\nTEXT: This book is written in a tongue with which I am unfamiliar.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every green book into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.3,
+          0.25,
+          0.2
+        ]
+      }
+    ],
+    "id": "asset_green-book",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#426B46",
+        "description": "green book; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "GREEN-BOOK"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "4a3bbf06a6580f6e6aacb076272a324bef934812230eb17c30d083803949714c"
+    },
+    "requiredClips": [
+      "idle",
+      "open",
+      "closed"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.3,
+      0.25,
+      0.2
+    ]
+  }
+}

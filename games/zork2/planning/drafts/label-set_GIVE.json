@@ -1,0 +1,50 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "GIVE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "6acdf5d644cb65f7ca32f82482353a28d82a727041893c6795a9eb0f9ed1ed6a",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "2b3ab5acb1bc37c8e04e29edc03bb2761693da929f4452be30f1156d00bc51ba",
+  "document": {
+    "entries": [
+      {
+        "family": "GIVE:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Give {direct} {indirect}"
+      },
+      {
+        "family": "GIVE:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Give {direct} to {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_give",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "6acdf5d644cb65f7ca32f82482353a28d82a727041893c6795a9eb0f9ed1ed6a"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

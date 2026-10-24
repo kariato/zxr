@@ -1,0 +1,11 @@
+{
+  "format": "zxr-planner-config-v1",
+  "provider": "assistant",
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "maxTokens": 8192,
+  "promptFile": "prompts/planner-v1.md",
+  "styleFile": "style-bible.md",
+  "styleVersion": "zork2-style-v1",
+  "visualGuideFile": "visual-guides/inside-barrow-v1/guide.json"
+}

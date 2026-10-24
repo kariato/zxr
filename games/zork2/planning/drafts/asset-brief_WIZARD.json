@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "WIZARD"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "d363652973355c208d4ffac707769c7a1477f08e9395364f306a58253d8cc256",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "6f07466e323013b469ac449a22e9c4db2b7425788bf8a9e04eb333529f354daf",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nWizard of Frobozz; readable stylised human sorcerer, no invented permanent wand pose or spell indicators.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: The Wizard of Frobozz is here, eyeing you warily.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every Wizard of Frobozz into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.8,
+          1.9,
+          0.6
+        ]
+      }
+    ],
+    "id": "asset_wizard",
+    "kind": "character",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "Wizard of Frobozz; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "WIZARD"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "d363652973355c208d4ffac707769c7a1477f08e9395364f306a58253d8cc256"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.8,
+      1.9,
+      0.6
+    ]
+  }
+}

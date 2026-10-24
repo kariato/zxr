@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "ROBOT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "bc95a1267e4f0cc7dc1604567a533a609e6979e39c1b64ba56a85351846072a6",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "d994bf0ad83e85c8ea8b6d8cecc5490a8cb03cd8062742bd47798ebd46b346fc",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nReadable low-poly domestic robot, restrained metal, no invented controls or written instructions beyond source label.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a robot here.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every robot into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.8,
+          1.6,
+          0.65
+        ]
+      }
+    ],
+    "id": "asset_robot",
+    "kind": "character",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "robot; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "ROBOT"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "bc95a1267e4f0cc7dc1604567a533a609e6979e39c1b64ba56a85351846072a6"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.8,
+      1.6,
+      0.65
+    ]
+  }
+}

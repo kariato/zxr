@@ -1,0 +1,49 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "STRIKE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "0406ff344ddf1e32d4fca13a80f91947f531039c0973dd28d59d40c3a35fb5fa",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "e3f5e446dcae78465fe403d43982cf56a541dd3e279051d0cab78b58e795997c",
+  "document": {
+    "entries": [
+      {
+        "family": "STRIKE:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Strike {direct}"
+      },
+      {
+        "family": "STRIKE:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Strike {direct} with {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_strike",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "0406ff344ddf1e32d4fca13a80f91947f531039c0973dd28d59d40c3a35fb5fa"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

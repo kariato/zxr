@@ -1,0 +1,72 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "TEAPOT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "7453d79b373ba054f95a1e673b4bdbf81c6bc79e514f64d22fcbbd30c9d58509",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "9404e15c75b45259f3af5ef57d189fd06421aec485f335b99e194e155013236c",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed china teapot. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every china teapot into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.3,
+          0.25,
+          0.2
+        ]
+      }
+    ],
+    "id": "asset_teapot",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "china teapot; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "TEAPOT"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "7453d79b373ba054f95a1e673b4bdbf81c6bc79e514f64d22fcbbd30c9d58509"
+    },
+    "requiredClips": [
+      "idle",
+      "open",
+      "closed"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.3,
+      0.25,
+      0.2
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "ROBOT-LABEL"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "f38a145371d75b53a363de76f1eccc76a173b8f16292c67c7006e4bada4fa046",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "44326e7fffd9582350b2e54b6de3f3f447278412b8b1f3d9bb4a3f9b65cdfae7",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed green piece of paper. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a green piece of paper here.\nTEXT: !!  FROBOZZ MAGIC ROBOT COMPANY  !!\n\n Hello, Master!\n\n   I am a late-model robot, trained at GUE Tech to perform various simple household functions.\n\n   To activate me, say the following:\n\n        >ROBOT, <things to do>\n\nAt your service!\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every green piece of paper into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.3,
+          0.25,
+          0.2
+        ]
+      }
+    ],
+    "id": "asset_robot-label",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "green piece of paper; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "ROBOT-LABEL"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "f38a145371d75b53a363de76f1eccc76a173b8f16292c67c7006e4bada4fa046"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.3,
+      0.25,
+      0.2
+    ]
+  }
+}

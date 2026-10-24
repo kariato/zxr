@@ -1,0 +1,66 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "READ"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "6da4536422e2ade1cbb38995cd525c9004a05f1d4091df3b768574775dbb31c2",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "b790eb99dee80eaeb4d5e6c4243709b2a1b99f6c82da4df13a13251b3398165d",
+  "document": {
+    "entries": [
+      {
+        "family": "READ:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Read {direct} {indirect}"
+      },
+      {
+        "family": "READ:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Read {direct} with {indirect}"
+      },
+      {
+        "family": "READ:3",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Read from {direct}"
+      },
+      {
+        "family": "READ:4",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Read {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_read",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "6da4536422e2ade1cbb38995cd525c9004a05f1d4091df3b768574775dbb31c2"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

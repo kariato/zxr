@@ -1,7 +1,8 @@
 import { rememberObjects, validateObjectMemory } from './object-memory.ts';
 import type { RememberedObject } from './object-memory.ts';
 import type { LabelContext } from './labels.ts';
-import { createLabelContext } from './labels.ts';
+import { createLabelContext,validateLabelTemplates } from './labels.ts';
+import type { LabelTemplates } from './labels.ts';
 import { buildActionMenu, pageSelection } from './menu.ts';
 import type { ActionMenu, MenuPolicy, PagedSelection } from './menu.ts';
 import type { LoadedGame } from './bundle-loader.ts';
@@ -9,6 +10,8 @@ import { prepareAction, prepareOperand } from './action-plan.ts';
 import type { GameAction, PlannedOperand } from './action-plan.ts';
 import { ScopeQuery, queryScope } from './scope.ts';
 import type { ScopeObservation } from './scope.ts';
+import { queryAppearance } from './appearance.ts';
+import type { AppearanceObservation } from './appearance.ts';
 import { buildCandidateCatalog, generateCandidates } from './candidates.ts';
 import type { CandidateCatalog, CandidateSet } from './candidates.ts';
 import { operandSpellings, reviewSelection, selectedAction, selectionRequestSchema } from './selection.ts';
@@ -52,6 +55,7 @@ export type AcceptedInput=
   | {kind:'host';result:HostResult;saveHash?:string}
   | {kind:'import';expected:Expected;save:ZxrSave;saveHash:string};
 export interface SessionOptions {
+  labels?:LabelTemplates;
   /** Internal capability used only by the separate test/debug entry point. */
   [DIAGNOSTICS]?:ExecutionDiagnostics;
   seed?:number;limits?:Partial<ExecutionLimits>;replay?:readonly RandomEvent[];
@@ -85,6 +89,7 @@ export class GameSession {
   readonly #catalogue:GameOption[];
   readonly #candidateCatalog:CandidateCatalog;
   readonly #wordCatalog:WordCatalog;
+  readonly #labelTemplates:LabelTemplates|undefined;
   #loop:TurnLoop;
   #epoch=1;
   #revision=0;
@@ -103,6 +108,7 @@ export class GameSession {
   constructor(game:LoadedGame,options:SessionOptions={}) {
     this.#game=game;this.#replay=options.replay===undefined?undefined:own(options.replay);
     this.#candidateCatalog=buildCandidateCatalog(game);
+    this.#labelTemplates=options.labels?validateLabelTemplates(options.labels,this.#candidateCatalog.families):undefined;
     this.#wordCatalog=buildWordCatalog(game.bundle.payload.vocabulary);
     this.#diagnostics=options[DIAGNOSTICS];
     this.#loop=new TurnLoop(game,{seed:options.seed,limits:options.limits,replay:this.#replay,[DIAGNOSTICS]:this.#diagnostics});
@@ -119,6 +125,7 @@ export class GameSession {
   }
   opening():ActionResolution {return own(this.#opening);}
   observe():SessionObservation {return {...this.#expected(),state:this.#state,moves:this.#loop.world().global('MOVES'),perception:queryScope(this.#game,this.#loop.world()).observation};}
+  observeAppearance():AppearanceObservation&Expected {return {...this.#expected(),...queryAppearance(this.#game,this.#loop.world())};}
   /** Scope-backed families. No executable IDs are minted while browsing. */
   candidates(actor='PLAYER'):CandidateSet {return own(this.#candidates(actor));}
   #candidates(actor='PLAYER'):CandidateSet {
@@ -192,7 +199,7 @@ export class GameSession {
   options():GameOption[] {
     if(this.#pending)return this.#pending.choices.map((choice,rank)=>({
       id:`DECIDE:${this.#pending!.decisionId}:${choice}`,
-      action:{kind:'decide',decisionId:this.#pending!.decisionId,choice},label:choice,anchor:{menu:'decision'},rank,
+      action:{kind:'decide',decisionId:this.#pending!.decisionId,choice},label:this.#labelTemplates?.decisions[(['YES','NO'].includes(choice)?'yes-no:':'finish:')+choice.toLowerCase()]??choice,anchor:{menu:'decision'},rank,
     }));
     if(this.#state!=='input')return [];
     const world=this.#loop.world(),player=this.#game.bundle.payload.world.entities.find(e=>e.id===world.global('PLAYER'))!.name;
@@ -300,7 +307,7 @@ export class GameSession {
     const world=this.#loop.world(),physical=queryScope(this.#game,world,{actor}).candidates;
     const context=createLabelContext(this.#game,world,actor,physical.operands);
     const names={...context.names};for(const o of this.#remembered)if(!physical.operands.includes(o.id))names[o.id]=o.name+' (remembered)';
-    return {...context,names};
+    return {...context,names,...(this.#labelTemplates?{templates:this.#labelTemplates}:{})};
   }
   #expected():Expected {return {epoch:this.#epoch,revision:this.#revision};}
   #matches(expected:Expected):boolean {return expected.epoch===this.#epoch&&expected.revision===this.#revision;}

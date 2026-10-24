@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "ALICE-TABLE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "a4d1601300855eec26a47f5939fdaa76e7b87db1f9da7ec966c1a559c9032a0c",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "4c41671339940bb9dd52f2e811bee5e3210e081e73bc07baf3c2d4a5dc7db127",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed large oblong table. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every large oblong table into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          1.2,
+          1.2,
+          0.6
+        ]
+      }
+    ],
+    "id": "asset_alice-table",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "large oblong table; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "ALICE-TABLE"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "a4d1601300855eec26a47f5939fdaa76e7b87db1f9da7ec966c1a559c9032a0c"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      1.2,
+      1.2,
+      0.6
+    ]
+  }
+}

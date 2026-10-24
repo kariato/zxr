@@ -1,0 +1,41 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "POKE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "714b71e1adca42e3b2a72f6e01ee815a1dd2c32d639969b739c4cbe1aab8cb7b",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "68ffdedd9a7a12308158de99fafae71113152080e9832b7bbbfecc73ce124b20",
+  "document": {
+    "entries": [
+      {
+        "family": "POKE:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Poke {direct} with {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_poke",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "714b71e1adca42e3b2a72f6e01ee815a1dd2c32d639969b739c4cbe1aab8cb7b"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

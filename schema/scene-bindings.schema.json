@@ -1,0 +1,306 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ZXR scene bindings v1",
+  "type": "object",
+  "properties": {
+    "format": {
+      "const": "zxr-scene-bindings-v1"
+    },
+    "status": {
+      "const": "draft"
+    },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "room": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9?$!#-]*$",
+            "maxLength": 100
+          },
+          "planHash": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "group": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$",
+                "maxLength": 100
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "origin": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "minimum": -10000,
+              "maximum": 10000
+            },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "yawDegrees": {
+            "type": "number",
+            "minimum": -180,
+            "maximum": 180
+          },
+          "exits": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "direction": {
+                  "enum": [
+                    "NORTH",
+                    "NE",
+                    "EAST",
+                    "SE",
+                    "SOUTH",
+                    "SW",
+                    "WEST",
+                    "NW",
+                    "UP",
+                    "DOWN",
+                    "IN",
+                    "OUT",
+                    "LAND",
+                    "CROSS"
+                  ]
+                },
+                "mode": {
+                  "enum": [
+                    "transition",
+                    "continuous",
+                    "blocked",
+                    "alias",
+                    "menu-only"
+                  ]
+                },
+                "aliasOf": {
+                  "anyOf": [
+                    {
+                      "enum": [
+                        "NORTH",
+                        "NE",
+                        "EAST",
+                        "SE",
+                        "SOUTH",
+                        "SW",
+                        "WEST",
+                        "NW",
+                        "UP",
+                        "DOWN",
+                        "IN",
+                        "OUT",
+                        "LAND",
+                        "CROSS"
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "peer": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "room": {
+                          "type": "string",
+                          "pattern": "^[A-Z][A-Z0-9?$!#-]*$",
+                          "maxLength": 100
+                        },
+                        "direction": {
+                          "enum": [
+                            "NORTH",
+                            "NE",
+                            "EAST",
+                            "SE",
+                            "SOUTH",
+                            "SW",
+                            "WEST",
+                            "NW",
+                            "UP",
+                            "DOWN",
+                            "IN",
+                            "OUT",
+                            "LAND",
+                            "CROSS"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "room",
+                        "direction"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "direction",
+                "mode",
+                "aliasOf",
+                "peer"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 512
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "object": {
+                  "type": "string",
+                  "pattern": "^[A-Z][A-Z0-9?$!#-]*$",
+                  "maxLength": 100
+                },
+                "parent": {
+                  "type": "string",
+                  "pattern": "^[A-Z][A-Z0-9?$!#-]*$",
+                  "maxLength": 100
+                },
+                "socket": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$",
+                  "maxLength": 100
+                }
+              },
+              "required": [
+                "object",
+                "parent",
+                "socket"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 512
+          },
+          "disclosures": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "node": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$",
+                  "maxLength": 100
+                },
+                "object": {
+                  "type": "string",
+                  "pattern": "^[A-Z][A-Z0-9?$!#-]*$",
+                  "maxLength": 100
+                }
+              },
+              "required": [
+                "node",
+                "object"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 512
+          },
+          "animations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "object": {
+                  "type": "string",
+                  "pattern": "^[A-Z][A-Z0-9?$!#-]*$",
+                  "maxLength": 100
+                },
+                "property": {
+                  "enum": [
+                    "open",
+                    "on"
+                  ]
+                },
+                "whenTrue": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$",
+                  "maxLength": 100
+                },
+                "whenFalse": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$",
+                  "maxLength": 100
+                }
+              },
+              "required": [
+                "object",
+                "property",
+                "whenTrue",
+                "whenFalse"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 512
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "object": {
+                  "type": "string",
+                  "pattern": "^[A-Z][A-Z0-9?$!#-]*$",
+                  "maxLength": 100
+                },
+                "variant": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$",
+                  "maxLength": 100
+                },
+                "description": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4000
+                }
+              },
+              "required": [
+                "object",
+                "variant",
+                "description"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 512
+          }
+        },
+        "required": [
+          "room",
+          "planHash",
+          "group",
+          "origin",
+          "yawDegrees",
+          "exits",
+          "attachments",
+          "disclosures",
+          "animations",
+          "variants"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 512
+    }
+  },
+  "required": [
+    "format",
+    "status",
+    "scenes"
+  ],
+  "additionalProperties": false
+}

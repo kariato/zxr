@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "SCRIPT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "daa8f93d646564bd089aa570baf034db60d08ae15b4037f82869ad62797752b6",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "46ac31d195326152f4b99657596dbe5c187fff6e1b6c10b2ee9c2e00a034a26a",
+  "document": {
+    "entries": [
+      {
+        "family": "SCRIPT:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Start transcript"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_script",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "daa8f93d646564bd089aa570baf034db60d08ae15b4037f82869ad62797752b6"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "BOARD"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "972fdfdb247e377856f30ee4f851fe74b9388186e1a8ba4cae4803c3292ece66",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "bdfad8606c0e202ac406c6725305a34065c478f61e84e1bef0d331283a971bea",
+  "document": {
+    "entries": [
+      {
+        "family": "BOARD:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Board {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_board",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "972fdfdb247e377856f30ee4f851fe74b9388186e1a8ba4cae4803c3292ece66"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "PICK"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "9914cf28461b277cfc63f4674e1b5728e9ccb73ddd1b76a96013bf2af2664040",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "1acdc299d277fdfc9f8390aaeca33b752fd5097716a8f27845a19716ed6d3e7c",
+  "document": {
+    "entries": [
+      {
+        "family": "PICK:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Pick up {direct}"
+      },
+      {
+        "family": "PICK:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Pick {direct} with {indirect}"
+      },
+      {
+        "family": "PICK:3",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Pick {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_pick",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "9914cf28461b277cfc63f4674e1b5728e9ccb73ddd1b76a96013bf2af2664040"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

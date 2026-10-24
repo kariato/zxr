@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "DEGREE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "5440ccfa2786edf5c50d58c05ccf9e4cea2dfa16affeffa4af29f96804a4eb72",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "ab1a770ea98078fa40a9f71396e41cd48c4e3293cc054bda98553913c5012ca6",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed degree. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nTEXT: The text is in some obscure tongue. All that can be made out is a reference to \"sending in a matchbook cover.\"\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every degree into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          1.2,
+          1.2,
+          0.6
+        ]
+      }
+    ],
+    "id": "asset_degree",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "degree; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "DEGREE"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "5440ccfa2786edf5c50d58c05ccf9e4cea2dfa16affeffa4af29f96804a4eb72"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      1.2,
+      1.2,
+      0.6
+    ]
+  }
+}

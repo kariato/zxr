@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "GLOBAL-WATER"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "d0de6c5dbb95b0b4b8271e306c5f4c2f0d98e7d302c695a163aaa3295edf2b38",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "2fc6ddca4d2167060e2d705ec18addb92a49401f049c474cecdecd31298d1f81",
+  "document": {
+    "description": "Canonical source GLOBAL-WATER interaction alias. The current Shallow Ford appearance is a thin, shallow ribbon of cool water across the path, with the crossing floor readable beneath it. No invented current, treasure, stepping-stone puzzle, glass container or automatic drinking success. Origin at surface centre. Bounds are proposed for this ford only: other source uses of GLOBAL-WATER need their own reviewed appearance variants and must not inherit a ford in every room. Visibility and legal drinking/filling actions come from the engine, not the mesh.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_water",
+        "pose": {
+          "position": [
+            0,
+            0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          4,
+          0.3,
+          2
+        ]
+      }
+    ],
+    "id": "asset_global-water",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#48666B",
+        "description": "Low contrast blue-grey shallow water; no glow or written clues.",
+        "metalness": 0,
+        "name": "ford_water",
+        "roughness": 0.38
+      }
+    ],
+    "objects": [
+      "GLOBAL-WATER"
+    ],
+    "requiredClips": [
+      "idle"
+    ],
+    "sizeMetres": [
+      4,
+      0.08,
+      2
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "d0de6c5dbb95b0b4b8271e306c5f4c2f0d98e7d302c695a163aaa3295edf2b38"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

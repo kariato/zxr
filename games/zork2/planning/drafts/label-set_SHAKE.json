@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "SHAKE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "60fead0d5a2dc006d11349e79f92241d722bcc739aa0463f513ea6203043a763",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "f438980a6e7ad5f496f009826c8a6b4a73e5bb314867c132d60775937f3e5dd6",
+  "document": {
+    "entries": [
+      {
+        "family": "SHAKE:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Shake {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_shake",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "60fead0d5a2dc006d11349e79f92241d722bcc739aa0463f513ea6203043a763"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

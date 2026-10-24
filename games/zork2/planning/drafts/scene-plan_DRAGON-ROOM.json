@@ -1,0 +1,276 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "DRAGON-ROOM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "e080eec85c7c661341068e13835a959734da74824df99ec1aad7cae2b4702844",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "ced5cb0e334cde7c62e64e7b921d9ceee8f95380b4ad9b0d4636ebe0146148ea",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_dragon",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_bridge",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_north_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -10.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_east_anchor",
+        "pose": {
+          "position": [
+            10.5,
+            0,
+            0
+          ],
+          "yawDegrees": -90
+        }
+      },
+      {
+        "node": "exit_west_anchor",
+        "pose": {
+          "position": [
+            -10.5,
+            0,
+            0
+          ],
+          "yawDegrees": 90
+        }
+      },
+      {
+        "node": "exit_south_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            10.5
+          ],
+          "yawDegrees": 180
+        }
+      },
+      {
+        "node": "exit_in_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -10.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_cross_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            10.5
+          ],
+          "yawDegrees": 180
+        }
+      }
+    ],
+    "description": "Broken stone, scorched walls, scratched floor; paved west-to-south stone bridge path, small east crack and smoky north tunnel. Dragon and dead-dragon bodies are distinct source states, never static scenery.\nStatic source description:\nThe room is a large cavern full of broken stone. The walls are scorched and there are deep scratches on the floor. A sooty dry smell is very strong here. A paved path winds from a large passage to the west, through the room, and across a huge stone bridge to the south. To the east a small crack is visible. A dark and smokey tunnel leads north.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_north_anchor",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DRAGON-LAIR"
+      },
+      {
+        "anchor": "exit_east_anchor",
+        "availability": "engine-option",
+        "direction": "EAST",
+        "node": "exit_east",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "LEDGE-TUNNEL"
+      },
+      {
+        "anchor": "exit_west_anchor",
+        "availability": "engine-option",
+        "direction": "WEST",
+        "node": "exit_west",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "FRESCO-ROOM"
+      },
+      {
+        "anchor": "exit_south_anchor",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "STONE-BRIDGE"
+      },
+      {
+        "anchor": "exit_in_anchor",
+        "availability": "engine-option",
+        "direction": "IN",
+        "node": "exit_in",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DRAGON-LAIR"
+      },
+      {
+        "anchor": "exit_cross_anchor",
+        "availability": "engine-option",
+        "direction": "CROSS",
+        "node": "exit_cross",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "STONE-BRIDGE"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "rock",
+        "node": "base_floor",
+        "part": "rock_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          22,
+          0.2,
+          22
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            11.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_dragon",
+        "asset": "asset_dragon",
+        "object": "DRAGON",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_bridge",
+        "asset": "asset_bridge",
+        "object": "BRIDGE",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "e080eec85c7c661341068e13835a959734da74824df99ec1aad7cae2b4702844"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "DRAGON-ROOM",
+    "shell": "cave",
+    "sizeMetres": [
+      22,
+      12,
+      22
+    ],
+    "spawn": "player_start"
+  }
+}

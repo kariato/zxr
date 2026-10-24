@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "BRIDGE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "ff48d5498f1598ff712f6dda5a05db4e110e2e094fc226edd2bebd8d5934f77f",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "0425e9e79ca9467ab39698b90bf00527d6e6b69700c60cde6dbdf7b62fc18e7f",
+  "document": {
+    "description": "Canonical source BRIDGE alias. For Narrow Tunnel and Foot Bridge, use a crude but sturdy wooden foot bridge over the ravine, running north-south, without extra gates, treasure or an invented broken state. Six-metre length and simple timber handrails are art estimates, not guarantees of movement safety. Origin at deck centre and walking surface Y=0. Reuse this one brief in both rooms. Other source uses of BRIDGE may describe stone or other structures: their future room-specific appearance needs review rather than silently reusing this wooden mesh everywhere.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_bridge",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          2.2,
+          1.2,
+          6
+        ]
+      }
+    ],
+    "id": "asset_bridge",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#68513B",
+        "description": "Rough muted brown structural timber",
+        "metalness": 0,
+        "name": "timber",
+        "roughness": 0.92
+      }
+    ],
+    "objects": [
+      "BRIDGE"
+    ],
+    "requiredClips": [
+      "idle"
+    ],
+    "sizeMetres": [
+      2.2,
+      1.2,
+      6
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "ff48d5498f1598ff712f6dda5a05db4e110e2e094fc226edd2bebd8d5934f77f"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

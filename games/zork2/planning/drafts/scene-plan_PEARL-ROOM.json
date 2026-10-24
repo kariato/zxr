@@ -1,0 +1,167 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "PEARL-ROOM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "f8cb3fe7a35b45734fac21fa95f82664172014580726df56bdf52c8e89387e55",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "86ae26c5afe073e1018529f154d85526916fb45ac1942ec259926812057b935e",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_pearl",
+        "pose": {
+          "position": [
+            -1.25,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_east_anchor",
+        "pose": {
+          "position": [
+            2,
+            0,
+            0
+          ],
+          "yawDegrees": -90
+        }
+      },
+      {
+        "node": "exit_west_anchor",
+        "pose": {
+          "position": [
+            -2,
+            0,
+            0
+          ],
+          "yawDegrees": 90
+        }
+      }
+    ],
+    "description": "Former broom closet with east/west exits; pearl necklace remains a separate observed prop.\nStatic source description:\nThis is a former broom closet. The exits are to the east and west.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_east_anchor",
+        "availability": "engine-option",
+        "direction": "EAST",
+        "node": "exit_east",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "WELL-BOTTOM"
+      },
+      {
+        "anchor": "exit_west_anchor",
+        "availability": "engine-option",
+        "direction": "WEST",
+        "node": "exit_west",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "RIDDLE-ROOM"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          5,
+          0.2,
+          5
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            2.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_pearl",
+        "asset": "asset_pearl",
+        "object": "PEARL",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "f8cb3fe7a35b45734fac21fa95f82664172014580726df56bdf52c8e89387e55"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "PEARL-ROOM",
+    "shell": "indoor",
+    "sizeMetres": [
+      5,
+      3,
+      5
+    ],
+    "spawn": "player_start"
+  }
+}

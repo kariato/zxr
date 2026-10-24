@@ -1,0 +1,49 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "RUB"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "fda7c98a0d4753da3e84d7e6dcbbc40bf13e18090b647b2e94b98f18f71fe681",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "912357fd366180ce7078f993f2ff5f66a64b48fd2fca6eab155dfe1cce879744",
+  "document": {
+    "entries": [
+      {
+        "family": "RUB:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Rub {direct} with {indirect}"
+      },
+      {
+        "family": "RUB:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Rub {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_rub",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "fda7c98a0d4753da3e84d7e6dcbbc40bf13e18090b647b2e94b98f18f71fe681"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

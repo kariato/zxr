@@ -1,0 +1,41 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "CUT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "5153cc165ef9d8a3191bdc8021f5f21f636e9a372bc98b1995695bf25b79addf",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "7a3069443a7af9f95a608ecc742c12ca9acb06545bc35eb22c38800cb0fe8236",
+  "document": {
+    "entries": [
+      {
+        "family": "CUT:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Cut {direct} with {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_cut",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "5153cc165ef9d8a3191bdc8021f5f21f636e9a372bc98b1995695bf25b79addf"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

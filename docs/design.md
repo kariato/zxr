@@ -10,7 +10,7 @@ ZXR is a new language and runtime that keeps ZIL's world model (rooms, objects, 
 
 The core rule: **the world model stays authoritative and textual; the 3D layer is a view of it.** Every room, object and state change exists in the model first, and scenes, animations and audio react to that state. A ZXR game can therefore always run as plain text, which keeps it testable, saveable and accessible.
 
-**Scene format (decided 2026-10-21):** Mark confirmed GLB, the single-file binary form of glTF 2.0. Each room or asset is one `.glb` holding meshes, rigs and animation clips, and a thin ZXR manifest names the anchors and clips the game uses.
+**Scene format (decided 2026-10-21; grouping clarified 2026-10-23):** Mark confirmed GLB, the single-file binary form of glTF 2.0. Rooms and assets use `.glb` files holding meshes, rigs and animation clips, and a thin ZXR manifest names the roots, anchors and clips the game uses. A room normally has its own scene, but geographically compatible connected rooms may share one GLB with a separate named root per logical room. See the room-group policy below.
 
 ## The cross-compiler: ZIL in, XR out
 
@@ -210,6 +210,14 @@ Scenes are glTF 2.0 files plus a small ZXR manifest; animation is driven by worl
 - USD is the stronger choice for large film-style pipelines and Apple Vision Pro; we can add a USDZ importer later without changing the language.
 
 ### The scene manifest
+
+#### Optional room groups
+
+Connected rooms whose geography fits may share a GLB: for example, forest rooms leading to a mountain can share continuous background scenery. Logical rooms remain separate engine locations. The planned presentation manifest maps each room to a file, named root and placement transform; room-local anchors and hotspot identities remain scoped to that room. A shared file must not cause the same movable object to acquire multiple authoritative bodies.
+
+Crossing a logical boundary submits the same currently offered movement option as a menu choice, once per crossing, preserving all turn costs, checks and hazards. Unavailable crossings remain blocked. Only the active room's observed objects and available interactions are exposed; shared scenery must not reveal concealed exits, distant actors, unobserved treasures or puzzle clues. Where that visibility boundary cannot be maintained, use an opaque boundary or transition rather than showing the neighbouring content.
+
+Keep groups modest and validate their combined geometry, texture and lighting costs against phase 7.0 device measurements. Loading/disposal operates on the shared file while activation and lighting remain room-specific. Non-Euclidean, dynamic or incompatible connections retain separate scenes and transitions. This is a planned presentation capability for 6.5/7.2/8.1, not a change to the text engine or an implemented loader feature.
 
 A `SCENE` form points at a GLB and names the nodes inside it that the game cares about. Named glTF nodes become anchors; the rest is scenery.
 

@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "COIN"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "c08002ec548f45744ae2d0ada808ade0cfe40d96c9e22714194fc697545f7363",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "c6030c93925cb17a1d8132c5b68ab5d527e06f7b9c66de2bcddcc89b24cf55f7",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed priceless zorkmid. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is an engraved zorkmid here.\nFDESC: On the floor is a priceless gold zorkmid (a valuable collector's item).\nTEXT: This is a beautiful octagonal coin bearing the legends \"Ten Thousand Zorkmids\" and \"In Frobs We Trust\".\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every priceless zorkmid into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.3,
+          0.25,
+          0.2
+        ]
+      }
+    ],
+    "id": "asset_coin",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#B8994F",
+        "description": "priceless zorkmid; exact source material and colour override this placeholder swatch.",
+        "metalness": 0.5,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "COIN"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "c08002ec548f45744ae2d0ada808ade0cfe40d96c9e22714194fc697545f7363"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.3,
+      0.25,
+      0.2
+    ]
+  }
+}

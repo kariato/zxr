@@ -1,0 +1,77 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "MOSS"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "d8c0c4b5eea997ba5144817b8e96b6b1787f317b263b7576400c23a49a7eaf7c",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "a530b2a925b4570b78d23c090c90c5377d5abe84eaf1f5bfff3c729ed60abc5e",
+  "document": {
+    "description": "Overhead moss clusters for the underground formal garden, arranged in sparse low-poly patches. Dim moss illumination is justified by the source, with no sky or sun. This source-global moss representation is reused per appropriate scene, not a new portable treasure. Keep the selection region separate from visible patch detail.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "hs_moss",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          10,
+          0.25,
+          12
+        ]
+      }
+    ],
+    "id": "asset_moss",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#50634B",
+        "description": "Muted living moss",
+        "metalness": 0,
+        "name": "moss",
+        "roughness": 0.8
+      },
+      {
+        "colour": "#A3B5A0",
+        "description": "Pale dimly luminous tips",
+        "metalness": 0,
+        "name": "pale_tips",
+        "roughness": 0.8
+      }
+    ],
+    "objects": [
+      "MOSS"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "d8c0c4b5eea997ba5144817b8e96b6b1787f317b263b7576400c23a49a7eaf7c"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      10,
+      0.25,
+      12
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "STREAM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "51ffbd37b80f89db08ec89a41cebcc14bbe045dd0271e98d3d5ed88e2a216f44",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "bca9c67b66e0a33e8fc752f9718fda6bf024f3361cefa3a87dab2586d7f2969b",
+  "document": {
+    "description": "Source small flowing STREAM at the bottom of the cavern ravine. A restrained narrow ribbon of dark blue-green water, no invented waterfall or stepping stones. Origin on the water surface; place below the bank only where source context describes the stream. Do not make a stream selectable through undisclosed geometry or turn it into a traversable bridge. Its shape and distance are art estimates.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_stream",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          12,
+          0.08,
+          0.7
+        ]
+      }
+    ],
+    "id": "asset_stream",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#254A50",
+        "description": "Muted cool blue-green water",
+        "metalness": 0,
+        "name": "water",
+        "roughness": 0.92
+      }
+    ],
+    "objects": [
+      "STREAM"
+    ],
+    "requiredClips": [
+      "idle"
+    ],
+    "sizeMetres": [
+      12,
+      0.08,
+      0.7
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "51ffbd37b80f89db08ec89a41cebcc14bbe045dd0271e98d3d5ed88e2a216f44"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

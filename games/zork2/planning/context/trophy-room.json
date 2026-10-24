@@ -1,0 +1,552 @@
+{
+  "cautions": [
+    "Offline source context; never current player-visible state.",
+    "All routine text/effects are conditional possibilities, not an executed description or a reveal rule.",
+    "Potential arrivals are a conservative shared catalogue, not proven room reachability or initial scenery.",
+    "Consult routines.json for text fragments, source guards, script changes and unresolved targets/calls.",
+    "Every feature requires state review; absent literal mutation evidence does not prove a static feature. Generic handlers and raw memory writes may change computed targets.",
+    "Computed exits are not guessed; RLANDBIT means land, not outdoors."
+  ],
+  "exits": [
+    {
+      "declaration": "(NORTH TO WIZARDS-WORKSHOP)",
+      "direction": "NORTH",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Wizard's Workshop",
+        "name": "WIZARDS-WORKSHOP"
+      },
+      "source": {
+        "end": {
+          "column": 34,
+          "line": 1087,
+          "offset": 29547
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 1087,
+          "offset": 29520
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "WIZARDS-WORKSHOP"
+      }
+    }
+  ],
+  "features": [
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [],
+          "index": 1,
+          "operation": "MOVE",
+          "routine": "WIZARD-CASE-FCN"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "CONTBIT",
+        "OPENBIT"
+      ],
+      "name": "BROKEN-CASE",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NDESCBIT",
+        "READBIT",
+        "TRYTAKEBIT"
+      ],
+      "name": "DEGREE",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "name": "TROPHY-BOTTLES",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "RLANDBIT"
+      ],
+      "name": "TROPHY-ROOM",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "name": "TROPHY-SWORD",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "name": "WANDS",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    },
+    {
+      "changeable": false,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "READBIT"
+      ],
+      "name": "WARNING-LABEL",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [],
+          "index": 0,
+          "operation": "REMOVE",
+          "routine": "WIZARD-CASE-FCN"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "CONTBIT",
+        "TRANSBIT"
+      ],
+      "name": "WIZARD-CASE",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    }
+  ],
+  "format": "zxr-room-context-v1",
+  "globalObjects": [],
+  "initialObjects": [
+    "DEGREE",
+    "TROPHY-BOTTLES",
+    "TROPHY-SWORD",
+    "WANDS",
+    "WARNING-LABEL",
+    "WIZARD-CASE"
+  ],
+  "inputHash": "61da60450afbf3cffbd1ef21206664fce208b3246b05d060f2e2020c354b9e93",
+  "potentialArrivals": [
+    "ADVENTURER",
+    "ARCANA",
+    "BALLOON",
+    "BALLOON-LABEL",
+    "BANK-BROCHURE",
+    "BAT",
+    "BILLS",
+    "BLESSINGS",
+    "BLUE-BOOK",
+    "BLUE-ICING",
+    "BRAIDED-WIRE",
+    "BRICK",
+    "BRIDGE",
+    "BROKEN-CASE",
+    "BROKEN-LAMP",
+    "BUCKET",
+    "CAGE",
+    "CANDY",
+    "CARD",
+    "CERBERUS",
+    "CHASM",
+    "CHEST",
+    "CLOTH-BAG",
+    "COIN",
+    "COLLAR",
+    "COMPASS",
+    "CROWN",
+    "CRYPT-DOOR",
+    "DEAD-BALLOON",
+    "DEAD-DRAGON",
+    "DEAD-SERPENT",
+    "DEGREE",
+    "DEPOSIT-BOX",
+    "DIM-DOOR",
+    "DRAGON",
+    "DWINDOW",
+    "EAST-WALL",
+    "EAT-ME-CAKE",
+    "EXPLOSION",
+    "FLASK",
+    "FOOTPAD",
+    "FUSE",
+    "GAZEBO",
+    "GENIE",
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GLOBAL-OBJECTS",
+    "GLOBAL-PALANTIR",
+    "GLOBAL-PRINCESS",
+    "GLOBAL-UNICORN",
+    "GLOBAL-WATER",
+    "GLOBAL-WIZARD-CASE",
+    "GNOME",
+    "GNOME-OF-ZURICH",
+    "GOLD-KEY",
+    "GREEN-BOOK",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "HEADS",
+    "INTNUM",
+    "IRON-BOX",
+    "IT",
+    "KEY",
+    "LAMP",
+    "LETTER-OPENER",
+    "LOCAL-GLOBALS",
+    "LUNGS",
+    "MANGLED-CAGE",
+    "MATCH",
+    "ME",
+    "MENHIR",
+    "MOSS",
+    "NEWSPAPER",
+    "NORTH-WALL",
+    "ORANGE-ICING",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "PATHOBJ",
+    "PDOOR",
+    "PEARL",
+    "PLACE-MAT",
+    "PORTRAIT",
+    "PRINCESS",
+    "PSEUDO-OBJECT",
+    "PURPLE-BOOK",
+    "PWINDOW",
+    "RECEPTACLE",
+    "RED-ICING",
+    "REPELLENT",
+    "RIBBON",
+    "ROBOT",
+    "ROBOT-LABEL",
+    "ROSE",
+    "ROSE-BUSH",
+    "RUBY",
+    "SAILOR",
+    "SALTY-WATER",
+    "SERPENT",
+    "SEWL",
+    "SNWL",
+    "SOUTH-WALL",
+    "SSWL",
+    "STAIRS",
+    "STAMP",
+    "STAND-4",
+    "STATUETTE",
+    "STREAM",
+    "SWORD",
+    "SWWL",
+    "TEAPOT",
+    "TROPHY-BOTTLES",
+    "TROPHY-SWORD",
+    "TUNNEL",
+    "UNICORN",
+    "VIOLIN",
+    "WAND",
+    "WANDS",
+    "WATER",
+    "WELL",
+    "WEST-WALL",
+    "WHITE-BOOK",
+    "WISH",
+    "WIZ-DOOR",
+    "WIZARD",
+    "ZORKMID"
+  ],
+  "room": {
+    "desc": {
+      "source": {
+        "end": {
+          "column": 27,
+          "line": 1085,
+          "offset": 29490
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 1085,
+          "offset": 29470
+        }
+      },
+      "text": "Trophy Room"
+    },
+    "flags": [
+      "RLANDBIT"
+    ],
+    "id": 63,
+    "initialRoomLightFlag": false,
+    "ldesc": [
+      {
+        "byteLength": 2,
+        "kind": "text",
+        "property": {
+          "name": "LDESC",
+          "number": 13
+        },
+        "source": {
+          "end": {
+            "column": 60,
+            "line": 1084,
+            "offset": 29463
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 7,
+            "line": 1078,
+            "offset": 29049
+          }
+        },
+        "text": "This is the Wizard's trophy room, filled with memorabilia of various sorts. On one wall is the Wizard's D. T. (Doctor of Thaumaturgy) degree from GUE Tech. Several old magic wands are mounted on a wand rack. A collection of dull and nicked swords testify to the fate of many foolhardy adventurers. Small bottles contain discarded homunculi (a few preserved in alcohol). There is a stuffed owl on a perch."
+      }
+    ],
+    "name": "TROPHY-ROOM",
+    "outdoors": "not-encoded-do-not-infer-from-RLANDBIT",
+    "source": {
+      "end": {
+        "column": 35,
+        "line": 1090,
+        "offset": 29623
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 1,
+        "line": 1076,
+        "offset": 29008
+      }
+    }
+  },
+  "routineReferencedObjects": [
+    "BROKEN-CASE",
+    "CANDY",
+    "GENIE",
+    "GOLD-KEY",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "WIZARD-CASE"
+  ],
+  "routines": {
+    "dispatchBoundaries": [],
+    "missing": [],
+    "reachableHelpers": [
+      "RIPOFF",
+      "ROB",
+      "TROPHY-PSEUDO",
+      "WIZARD-CASE-FCN"
+    ],
+    "roots": [
+      "TROPHY-PSEUDO",
+      "WIZARD-CASE-FCN"
+    ]
+  },
+  "scriptedArrivals": [
+    {
+      "index": 1,
+      "object": "BROKEN-CASE",
+      "routine": "WIZARD-CASE-FCN"
+    }
+  ],
+  "stateDependencies": [
+    {
+      "name": "HERE",
+      "writers": [
+        {
+          "index": 9,
+          "routine": "GO"
+        },
+        {
+          "index": 0,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 3,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 2,
+          "routine": "GOTO"
+        },
+        {
+          "index": 0,
+          "routine": "IN-CAGE-FCN"
+        },
+        {
+          "index": 2,
+          "routine": "JIGS-UP"
+        },
+        {
+          "index": 1,
+          "routine": "LIT?"
+        },
+        {
+          "index": 4,
+          "routine": "LIT?"
+        },
+        {
+          "index": 1,
+          "routine": "V-TELL"
+        }
+      ]
+    },
+    {
+      "name": "PRSA",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 4,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "SPELL-HANDLED?",
+      "writers": [
+        {
+          "index": 6,
+          "routine": "CERBERUS-FCN"
+        },
+        {
+          "index": 7,
+          "routine": "CERBERUS-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "I-SPELL"
+        },
+        {
+          "index": 4,
+          "routine": "V-ENCHANT"
+        },
+        {
+          "index": 7,
+          "routine": "V-ENCHANT"
+        },
+        {
+          "index": 2,
+          "routine": "WIZARD-CASE-FCN"
+        }
+      ]
+    },
+    {
+      "name": "SPELL-USED",
+      "writers": [
+        {
+          "index": 2,
+          "routine": "I-SPELL"
+        },
+        {
+          "index": 1,
+          "routine": "V-INCANT"
+        },
+        {
+          "index": 3,
+          "routine": "WAND-FCN"
+        }
+      ]
+    },
+    {
+      "name": "WINNER",
+      "writers": [
+        {
+          "index": 16,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 7,
+          "routine": "GO"
+        },
+        {
+          "index": 1,
+          "routine": "JIGS-UP"
+        },
+        {
+          "index": 1,
+          "routine": "RANDOM-WALK"
+        },
+        {
+          "index": 0,
+          "routine": "ROBOT-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "V-TELL"
+        },
+        {
+          "index": 0,
+          "routine": "V-THROW"
+        }
+      ]
+    }
+  ],
+  "universalGlobalObjects": [
+    "BLESSINGS",
+    "COMPASS",
+    "EAST-WALL",
+    "FOOTPAD",
+    "GLOBAL-PRINCESS",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "INTNUM",
+    "IT",
+    "LUNGS",
+    "ME",
+    "NORTH-WALL",
+    "PATHOBJ",
+    "SAILOR",
+    "SOUTH-WALL",
+    "TUNNEL",
+    "WEST-WALL",
+    "WISH",
+    "ZORKMID"
+  ]
+}

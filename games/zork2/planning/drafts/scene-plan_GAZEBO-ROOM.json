@@ -1,0 +1,263 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "GAZEBO-ROOM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "1160276b6d2da08cc554c2f1971438c00b2fcedccea75ddd67031d0800cae090",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "86403bfdd7395084a94f35cf65fcf45ccb434b83910cd52feb80117fa3396662",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_gazebo-table",
+        "pose": {
+          "position": [
+            -1.5,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_letter-opener",
+        "pose": {
+          "position": [
+            -0.5,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_match",
+        "pose": {
+          "position": [
+            0.5,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_newspaper",
+        "pose": {
+          "position": [
+            1.5,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_place-mat",
+        "pose": {
+          "position": [
+            -1.5,
+            0,
+            1.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_teapot",
+        "pose": {
+          "position": [
+            -0.5,
+            0,
+            1.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_gazebo",
+        "pose": {
+          "position": [
+            0.5,
+            0,
+            1.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_rose",
+        "pose": {
+          "position": [
+            1.5,
+            0,
+            1.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_out_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            2.5
+          ],
+          "yawDegrees": 180
+        }
+      }
+    ],
+    "description": "Cool white gazebo within the cave garden, with separate tea table. No tea-table contents or unicorn unless currently observed.\nStatic source description:\nThis is a gazebo in the midst of a formal garden. It is cool and restful here. A tea table adorns the center of the gazebo.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_out_anchor",
+        "availability": "engine-option",
+        "direction": "OUT",
+        "node": "exit_out",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "GARDEN-NORTH"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "rock",
+        "node": "base_floor",
+        "part": "rock_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          6,
+          0.2,
+          6
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            3.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_gazebo-table",
+        "asset": "asset_gazebo-table",
+        "object": "GAZEBO-TABLE",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_letter-opener",
+        "asset": "asset_letter-opener",
+        "object": "LETTER-OPENER",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_match",
+        "asset": "asset_match",
+        "object": "MATCH",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_newspaper",
+        "asset": "asset_newspaper",
+        "object": "NEWSPAPER",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_place-mat",
+        "asset": "asset_place-mat",
+        "object": "PLACE-MAT",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_teapot",
+        "asset": "asset_teapot",
+        "object": "TEAPOT",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_gazebo",
+        "asset": "asset_gazebo",
+        "object": "GAZEBO",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_rose",
+        "asset": "asset_rose",
+        "object": "ROSE",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "1160276b6d2da08cc554c2f1971438c00b2fcedccea75ddd67031d0800cae090"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "GAZEBO-ROOM",
+    "shell": "cave",
+    "sizeMetres": [
+      6,
+      4,
+      6
+    ],
+    "spawn": "player_start"
+  }
+}

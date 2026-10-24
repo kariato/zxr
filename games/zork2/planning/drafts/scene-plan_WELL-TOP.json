@@ -1,0 +1,201 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "WELL-TOP"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "c728b5fbb09ec59abd2047ca1ab3948ae50eccea6791f4a8c1b19fca8f5f2d2a",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "06abd59bd423410204f3fae4bf6fd28f12e5fa7467bbf133cd7442e39a7dcf7e",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_top-etchings",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_well",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_bucket",
+        "pose": {
+          "position": [
+            0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_east_anchor",
+        "pose": {
+          "position": [
+            4,
+            0,
+            0
+          ],
+          "yawDegrees": -90
+        }
+      },
+      {
+        "node": "exit_down_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -4
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Top of well with side etchings and easily crossed floor crack at eastern room entrance. No invented fatal crack or guessed sky.\nStatic source description:\nYou are at the top of the well. Well done. There are etchings on the side of the well. There is a small crack across the floor at the entrance to a room on the east, but it can be crossed easily.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_east_anchor",
+        "availability": "engine-option",
+        "direction": "EAST",
+        "node": "exit_east",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "TEA-ROOM"
+      },
+      {
+        "anchor": "exit_down_anchor",
+        "availability": "engine-option",
+        "direction": "DOWN",
+        "node": "exit_down",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": null
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          9,
+          0.2,
+          9
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            5.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_top-etchings",
+        "asset": "asset_top-etchings",
+        "object": "TOP-ETCHINGS",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_well",
+        "asset": "asset_well",
+        "object": "WELL",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_bucket",
+        "asset": "asset_bucket",
+        "object": "BUCKET",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "c728b5fbb09ec59abd2047ca1ab3948ae50eccea6791f4a8c1b19fca8f5f2d2a"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "WELL-TOP",
+    "shell": "indoor",
+    "sizeMetres": [
+      9,
+      6,
+      9
+    ],
+    "spawn": "player_start"
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "DREARY-ROOM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "48e2f63317008009ae10206619a56dabe0bcfd5b175f09788c0a69729cc79362",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "2718294bd8afe0e8cb12d30800c4bcb75755d237456f8bf19e5e6da2c32d55aa",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_key",
+        "pose": {
+          "position": [
+            -1.25,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_keyhole-2",
+        "pose": {
+          "position": [
+            -0.417,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_lid-2",
+        "pose": {
+          "position": [
+            0.417,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_palantir-2",
+        "pose": {
+          "position": [
+            1.25,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_pcrack",
+        "pose": {
+          "position": [
+            -1.25,
+            0,
+            1.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_ptable",
+        "pose": {
+          "position": [
+            -0.417,
+            0,
+            1.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_pdoor",
+        "pose": {
+          "position": [
+            0.417,
+            0,
+            1.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_pwindow",
+        "pose": {
+          "position": [
+            1.25,
+            0,
+            1.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_south_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            2.5
+          ],
+          "yawDegrees": 180
+        }
+      },
+      {
+        "node": "exit_out_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            2.5
+          ],
+          "yawDegrees": 180
+        }
+      }
+    ],
+    "description": "Small dreary room with red wall-crack illumination and dusty central wooden table. Oak door, window, second keyhole and lid are separate on the south side.\nDescription is routine-driven: the safe base profile above does not make guarded output unconditional.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_south_anchor",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "TINY-ROOM"
+      },
+      {
+        "anchor": "exit_out_anchor",
+        "availability": "engine-option",
+        "direction": "OUT",
+        "node": "exit_out",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "TINY-ROOM"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          5,
+          0.2,
+          6
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            2.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_key",
+        "asset": "asset_key",
+        "object": "KEY",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_keyhole-2",
+        "asset": "asset_keyhole-2",
+        "object": "KEYHOLE-2",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_lid-2",
+        "asset": "asset_lid-2",
+        "object": "LID-2",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_palantir-2",
+        "asset": "asset_palantir-2",
+        "object": "PALANTIR-2",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_pcrack",
+        "asset": "asset_pcrack",
+        "object": "PCRACK",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_ptable",
+        "asset": "asset_ptable",
+        "object": "PTABLE",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_pdoor",
+        "asset": "asset_pdoor",
+        "object": "PDOOR",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_pwindow",
+        "asset": "asset_pwindow",
+        "object": "PWINDOW",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "48e2f63317008009ae10206619a56dabe0bcfd5b175f09788c0a69729cc79362"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "DREARY-ROOM",
+    "shell": "indoor",
+    "sizeMetres": [
+      5,
+      3,
+      6
+    ],
+    "spawn": "player_start"
+  }
+}

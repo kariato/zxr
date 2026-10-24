@@ -1,0 +1,84 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "SWORD"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "cf469464484b0dcd41588f9411180184fd489ae20781ed731eb4d48dd1d0cd71",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "8e8ba08d15723178398c4c380f47ccde5c3c4724fee937238139ee21e88f4be3",
+  "document": {
+    "description": "Slender ancient Elvish sword, matching the approved barrow guide: steel blade, restrained brass hilt and dark leather grip. Preserve a recognisable hand-held silhouette. No invented runes, magical glow or hidden clues. Rest pivot and interaction bounds must support lying on the ground; action clips are presentation only. Model its resting geometry flat along +X with the broad blade face upward (+Y); the bounds describe that resting orientation. The resting mesh must not stand vertically at the ground anchor. Current draft requires only the flat idle pose. Do not infer a successful swing from an attempted action; action-result animation requires a later reviewed event binding.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "hs_sword",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          1,
+          0.055,
+          0.16
+        ]
+      }
+    ],
+    "id": "asset_sword",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#AEB6B8",
+        "description": "Muted blade steel",
+        "metalness": 0.8,
+        "name": "steel",
+        "roughness": 0.35
+      },
+      {
+        "colour": "#A98A45",
+        "description": "Aged hilt brass",
+        "metalness": 0.8,
+        "name": "brass",
+        "roughness": 0.5
+      },
+      {
+        "colour": "#49382D",
+        "description": "Dark leather grip",
+        "metalness": 0,
+        "name": "grip",
+        "roughness": 0.8
+      }
+    ],
+    "objects": [
+      "SWORD"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "cf469464484b0dcd41588f9411180184fd489ae20781ed731eb4d48dd1d0cd71"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      1,
+      0.055,
+      0.16
+    ]
+  }
+}

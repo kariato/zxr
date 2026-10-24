@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "DEFLATE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "2f1e8106d3fbea32ec115186134c93f1b4d00579eaf079ca276b7f7b0d9230a4",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "babf5bb26262ca2674b943d10fcc22dcf1c7bf20f791befaaa461c1c955ab375",
+  "document": {
+    "entries": [
+      {
+        "family": "DEFLATE:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Deflate {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_deflate",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "2f1e8106d3fbea32ec115186134c93f1b4d00579eaf079ca276b7f7b0d9230a4"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

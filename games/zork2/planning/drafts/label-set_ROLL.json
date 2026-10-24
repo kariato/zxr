@@ -1,0 +1,48 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "ROLL"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "a2b555fae4e55afcaf677f48975e590099fda10c785b637a0d2d2545ed6a790c",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "6e87c3d9a5b3f5d579cc74effd5e6e420939cffd656f62fa674bab59facb381f",
+  "document": {
+    "entries": [
+      {
+        "family": "ROLL:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Roll {direct}"
+      },
+      {
+        "family": "ROLL:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Roll up {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_roll",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "a2b555fae4e55afcaf677f48975e590099fda10c785b637a0d2d2545ed6a790c"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

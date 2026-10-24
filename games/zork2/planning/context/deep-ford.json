@@ -1,0 +1,816 @@
+{
+  "cautions": [
+    "Offline source context; never current player-visible state.",
+    "All routine text/effects are conditional possibilities, not an executed description or a reveal rule.",
+    "Potential arrivals are a conservative shared catalogue, not proven room reachability or initial scenery.",
+    "Consult routines.json for text fragments, source guards, script changes and unresolved targets/calls.",
+    "Every feature requires state review; absent literal mutation evidence does not prove a static feature. Generic handlers and raw memory writes may change computed targets.",
+    "Computed exits are not guessed; RLANDBIT means land, not outdoors."
+  ],
+  "exits": [
+    {
+      "declaration": "(NORTH TO RAVINE-LEDGE)",
+      "direction": "NORTH",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Ledge in Ravine",
+        "name": "RAVINE-LEDGE"
+      },
+      "source": {
+        "end": {
+          "column": 30,
+          "line": 395,
+          "offset": 10949
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 395,
+          "offset": 10926
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "RAVINE-LEDGE"
+      }
+    },
+    {
+      "declaration": "(EAST \"The stream deepens rapidly, and you wisely return before drowning.\")",
+      "direction": "EAST",
+      "geometryStatus": "conditional-blocked-or-computed",
+      "neighbour": null,
+      "source": {
+        "end": {
+          "column": 70,
+          "line": 399,
+          "offset": 11087
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 398,
+          "offset": 11012
+        }
+      },
+      "view": {
+        "kind": "NEXIT",
+        "message": "The stream deepens rapidly, and you wisely return before drowning."
+      }
+    },
+    {
+      "declaration": "(WEST \"You notice that the ledge above would be a drier route west.\")",
+      "direction": "WEST",
+      "geometryStatus": "conditional-blocked-or-computed",
+      "neighbour": null,
+      "source": {
+        "end": {
+          "column": 64,
+          "line": 401,
+          "offset": 11163
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 400,
+          "offset": 11094
+        }
+      },
+      "view": {
+        "kind": "NEXIT",
+        "message": "You notice that the ledge above would be a drier route west."
+      }
+    },
+    {
+      "declaration": "(SOUTH TO MARBLE-HALL)",
+      "direction": "SOUTH",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Marble Hall",
+        "name": "MARBLE-HALL"
+      },
+      "source": {
+        "end": {
+          "column": 29,
+          "line": 397,
+          "offset": 11005
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 397,
+          "offset": 10983
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "MARBLE-HALL"
+      }
+    },
+    {
+      "declaration": "(UP TO RAVINE-LEDGE)",
+      "direction": "UP",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Ledge in Ravine",
+        "name": "RAVINE-LEDGE"
+      },
+      "source": {
+        "end": {
+          "column": 27,
+          "line": 396,
+          "offset": 10976
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 396,
+          "offset": 10956
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "RAVINE-LEDGE"
+      }
+    }
+  ],
+  "features": [
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NDESCBIT"
+      ],
+      "name": "CHASM",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [],
+          "index": 3,
+          "operation": "MOVE",
+          "routine": "I-DRAGON"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [],
+      "name": "DEAD-DRAGON",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": false,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "RLANDBIT"
+      ],
+      "name": "DEEP-FORD",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "DRINKBIT"
+      ],
+      "name": "GLOBAL-WATER",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NDESCBIT"
+      ],
+      "name": "STREAM",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    }
+  ],
+  "format": "zxr-room-context-v1",
+  "globalObjects": [
+    "CHASM",
+    "GLOBAL-WATER",
+    "STREAM"
+  ],
+  "initialObjects": [],
+  "inputHash": "6eebcfb7944c118bdc83e8af7ba89862e56dd0e8a064b45abe7c100c7dfafeb8",
+  "potentialArrivals": [
+    "ADVENTURER",
+    "ARCANA",
+    "BALLOON",
+    "BALLOON-LABEL",
+    "BANK-BROCHURE",
+    "BAT",
+    "BILLS",
+    "BLESSINGS",
+    "BLUE-BOOK",
+    "BLUE-ICING",
+    "BRAIDED-WIRE",
+    "BRICK",
+    "BRIDGE",
+    "BROKEN-CASE",
+    "BROKEN-LAMP",
+    "BUCKET",
+    "CAGE",
+    "CANDY",
+    "CARD",
+    "CERBERUS",
+    "CHASM",
+    "CHEST",
+    "CLOTH-BAG",
+    "COIN",
+    "COLLAR",
+    "COMPASS",
+    "CROWN",
+    "CRYPT-DOOR",
+    "DEAD-BALLOON",
+    "DEAD-DRAGON",
+    "DEAD-SERPENT",
+    "DEGREE",
+    "DEPOSIT-BOX",
+    "DIM-DOOR",
+    "DRAGON",
+    "DWINDOW",
+    "EAST-WALL",
+    "EAT-ME-CAKE",
+    "EXPLOSION",
+    "FLASK",
+    "FOOTPAD",
+    "FUSE",
+    "GAZEBO",
+    "GENIE",
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GLOBAL-OBJECTS",
+    "GLOBAL-PALANTIR",
+    "GLOBAL-PRINCESS",
+    "GLOBAL-UNICORN",
+    "GLOBAL-WATER",
+    "GLOBAL-WIZARD-CASE",
+    "GNOME",
+    "GNOME-OF-ZURICH",
+    "GOLD-KEY",
+    "GREEN-BOOK",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "HEADS",
+    "INTNUM",
+    "IRON-BOX",
+    "IT",
+    "KEY",
+    "LAMP",
+    "LETTER-OPENER",
+    "LOCAL-GLOBALS",
+    "LUNGS",
+    "MANGLED-CAGE",
+    "MATCH",
+    "ME",
+    "MENHIR",
+    "MOSS",
+    "NEWSPAPER",
+    "NORTH-WALL",
+    "ORANGE-ICING",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "PATHOBJ",
+    "PDOOR",
+    "PEARL",
+    "PLACE-MAT",
+    "PORTRAIT",
+    "PRINCESS",
+    "PSEUDO-OBJECT",
+    "PURPLE-BOOK",
+    "PWINDOW",
+    "RECEPTACLE",
+    "RED-ICING",
+    "REPELLENT",
+    "RIBBON",
+    "ROBOT",
+    "ROBOT-LABEL",
+    "ROSE",
+    "ROSE-BUSH",
+    "RUBY",
+    "SAILOR",
+    "SALTY-WATER",
+    "SERPENT",
+    "SEWL",
+    "SNWL",
+    "SOUTH-WALL",
+    "SSWL",
+    "STAIRS",
+    "STAMP",
+    "STAND-4",
+    "STATUETTE",
+    "STREAM",
+    "SWORD",
+    "SWWL",
+    "TEAPOT",
+    "TROPHY-BOTTLES",
+    "TROPHY-SWORD",
+    "TUNNEL",
+    "UNICORN",
+    "VIOLIN",
+    "WAND",
+    "WANDS",
+    "WATER",
+    "WELL",
+    "WEST-WALL",
+    "WHITE-BOOK",
+    "WISH",
+    "WIZ-DOOR",
+    "WIZARD",
+    "ZORKMID"
+  ],
+  "room": {
+    "desc": {
+      "source": {
+        "end": {
+          "column": 25,
+          "line": 393,
+          "offset": 10896
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 393,
+          "offset": 10878
+        }
+      },
+      "text": "Deep Ford"
+    },
+    "flags": [
+      "RLANDBIT"
+    ],
+    "id": 231,
+    "initialRoomLightFlag": false,
+    "ldesc": [
+      {
+        "byteLength": 2,
+        "kind": "text",
+        "property": {
+          "name": "LDESC",
+          "number": 13
+        },
+        "source": {
+          "end": {
+            "column": 66,
+            "line": 392,
+            "offset": 10871
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 7,
+            "line": 388,
+            "offset": 10593
+          }
+        },
+        "text": "You are fording the stream at a deep but not impossible spot. The water is very cold. The walls of the ravine rise to east and west. There is a small ledge along the north wall of the ravine. To the south is the entrance to a well-constructed but somewhat ruined hall."
+      }
+    ],
+    "name": "DEEP-FORD",
+    "outdoors": "not-encoded-do-not-infer-from-RLANDBIT",
+    "source": {
+      "end": {
+        "column": 42,
+        "line": 402,
+        "offset": 11205
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 1,
+        "line": 386,
+        "offset": 10554
+      }
+    }
+  },
+  "routineReferencedObjects": [
+    "CANDY",
+    "GLOBAL-WATER",
+    "GOLD-KEY",
+    "ME",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PSEUDO-OBJECT",
+    "SALTY-WATER",
+    "TEAPOT",
+    "WATER",
+    "WIZARD-CASE"
+  ],
+  "routines": {
+    "dispatchBoundaries": [
+      "PERFORM"
+    ],
+    "missing": [],
+    "reachableHelpers": [
+      "CCOUNT",
+      "CHASM-FCN",
+      "HELD?",
+      "ITAKE",
+      "NULL-F",
+      "PICK-ONE",
+      "PUDDLE",
+      "RIPOFF",
+      "SCORE-OBJ",
+      "SCORE-UPD",
+      "STREAM-FCN",
+      "WATER-FCN",
+      "WEIGHT"
+    ],
+    "roots": [
+      "CHASM-FCN",
+      "STREAM-FCN",
+      "WATER-FCN"
+    ]
+  },
+  "scriptedArrivals": [
+    {
+      "index": 3,
+      "object": "DEAD-DRAGON",
+      "routine": "I-DRAGON"
+    }
+  ],
+  "stateDependencies": [
+    {
+      "name": "BASE-SCORE",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "SCORE-UPD"
+        }
+      ]
+    },
+    {
+      "name": "FUMBLE-NUMBER",
+      "writers": [
+        {
+          "index": 2,
+          "routine": "I-WIZARD"
+        },
+        {
+          "index": 20,
+          "routine": "I-WIZARD"
+        }
+      ]
+    },
+    {
+      "name": "FUMBLE-PROB",
+      "writers": [
+        {
+          "index": 3,
+          "routine": "I-WIZARD"
+        },
+        {
+          "index": 21,
+          "routine": "I-WIZARD"
+        }
+      ]
+    },
+    {
+      "name": "HERE",
+      "writers": [
+        {
+          "index": 9,
+          "routine": "GO"
+        },
+        {
+          "index": 0,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 3,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 2,
+          "routine": "GOTO"
+        },
+        {
+          "index": 0,
+          "routine": "IN-CAGE-FCN"
+        },
+        {
+          "index": 2,
+          "routine": "JIGS-UP"
+        },
+        {
+          "index": 1,
+          "routine": "LIT?"
+        },
+        {
+          "index": 4,
+          "routine": "LIT?"
+        },
+        {
+          "index": 1,
+          "routine": "V-TELL"
+        }
+      ]
+    },
+    {
+      "name": "LOAD-ALLOWED",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "I-WIZARD"
+        },
+        {
+          "index": 18,
+          "routine": "I-WIZARD"
+        }
+      ]
+    },
+    {
+      "name": "LOAD-MAX",
+      "writers": []
+    },
+    {
+      "name": "PLAYER",
+      "writers": [
+        {
+          "index": 8,
+          "routine": "GO"
+        }
+      ]
+    },
+    {
+      "name": "PRSA",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 4,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "PRSI",
+      "writers": [
+        {
+          "index": 7,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 3,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 6,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 1,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 2,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 0,
+          "routine": "V-DIG"
+        },
+        {
+          "index": 1,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 4,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "PRSO",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "CAROUSEL-ROOM-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "CAROUSEL-ROOM-FCN"
+        },
+        {
+          "index": 17,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "ITAKE-CHECK"
+        },
+        {
+          "index": 1,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 6,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 1,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 5,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 1,
+          "routine": "V-THROUGH"
+        },
+        {
+          "index": 2,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 5,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 9,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 10,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "SCORE",
+      "writers": [
+        {
+          "index": 1,
+          "routine": "SCORE-UPD"
+        }
+      ]
+    },
+    {
+      "name": "SPELL-USED",
+      "writers": [
+        {
+          "index": 2,
+          "routine": "I-SPELL"
+        },
+        {
+          "index": 1,
+          "routine": "V-INCANT"
+        },
+        {
+          "index": 3,
+          "routine": "WAND-FCN"
+        }
+      ]
+    },
+    {
+      "name": "SPELL-VICTIM",
+      "writers": [
+        {
+          "index": 3,
+          "routine": "I-SPELL"
+        },
+        {
+          "index": 0,
+          "routine": "V-ENCHANT"
+        },
+        {
+          "index": 6,
+          "routine": "V-ENCHANT"
+        },
+        {
+          "index": 8,
+          "routine": "V-ENCHANT"
+        },
+        {
+          "index": 9,
+          "routine": "V-ENCHANT"
+        },
+        {
+          "index": 0,
+          "routine": "V-INCANT"
+        },
+        {
+          "index": 4,
+          "routine": "WAND-FCN"
+        }
+      ]
+    },
+    {
+      "name": "SPELL?",
+      "writers": [
+        {
+          "index": 5,
+          "routine": "I-WIZARD"
+        },
+        {
+          "index": 13,
+          "routine": "I-WIZARD"
+        },
+        {
+          "index": 4,
+          "routine": "JIGS-UP"
+        },
+        {
+          "index": 0,
+          "routine": "RANDOM-WALK"
+        },
+        {
+          "index": 3,
+          "routine": "RANDOM-WALK"
+        },
+        {
+          "index": 3,
+          "routine": "WIZARD-FCN"
+        }
+      ]
+    },
+    {
+      "name": "WINNER",
+      "writers": [
+        {
+          "index": 16,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 7,
+          "routine": "GO"
+        },
+        {
+          "index": 1,
+          "routine": "JIGS-UP"
+        },
+        {
+          "index": 1,
+          "routine": "RANDOM-WALK"
+        },
+        {
+          "index": 0,
+          "routine": "ROBOT-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "V-TELL"
+        },
+        {
+          "index": 0,
+          "routine": "V-THROW"
+        }
+      ]
+    },
+    {
+      "name": "YUKS",
+      "writers": []
+    }
+  ],
+  "universalGlobalObjects": [
+    "BLESSINGS",
+    "COMPASS",
+    "EAST-WALL",
+    "FOOTPAD",
+    "GLOBAL-PRINCESS",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "INTNUM",
+    "IT",
+    "LUNGS",
+    "ME",
+    "NORTH-WALL",
+    "PATHOBJ",
+    "SAILOR",
+    "SOUTH-WALL",
+    "TUNNEL",
+    "WEST-WALL",
+    "WISH",
+    "ZORKMID"
+  ]
+}

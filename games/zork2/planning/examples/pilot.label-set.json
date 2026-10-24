@@ -1,0 +1,50 @@
+{
+  "format": "zxr-label-set-v1",
+  "provenance": {
+    "method": "manual",
+    "author": "ZXR contributors"
+  },
+  "review": {
+    "status": "draft"
+  },
+  "id": "pilot_labels",
+  "language": "en",
+  "entries": [
+    {
+      "kind": "action",
+      "family": "TAKE:8",
+      "template": "Pick up {direct}",
+      "slots": [
+        "direct"
+      ]
+    },
+    {
+      "kind": "action",
+      "family": "LIGHT:2",
+      "template": "Switch on {direct}",
+      "slots": [
+        "direct"
+      ]
+    },
+    {
+      "kind": "action",
+      "family": "SAY:1",
+      "template": "Say {words}",
+      "slots": [
+        "words"
+      ]
+    },
+    {
+      "kind": "decision",
+      "context": "yes-no",
+      "choice": "yes",
+      "text": "Yes"
+    },
+    {
+      "kind": "decision",
+      "context": "finish",
+      "choice": "quit",
+      "text": "Quit this game"
+    }
+  ]
+}

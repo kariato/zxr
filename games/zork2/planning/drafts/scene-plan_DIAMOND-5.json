@@ -1,0 +1,368 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "DIAMOND-5"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "5bbbcca59181402b1d8c9ed6e7d719df5bca94bf5c6b821beeda02300dda720d",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "7495cd79444113bce4681e886c82803390c77f8657864f19df5e24db85d1e195",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_dwindow",
+        "pose": {
+          "position": [
+            -1.75,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_stairs",
+        "pose": {
+          "position": [
+            -0.583,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_north_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -3
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_east_anchor",
+        "pose": {
+          "position": [
+            3,
+            0,
+            0
+          ],
+          "yawDegrees": -90
+        }
+      },
+      {
+        "node": "exit_west_anchor",
+        "pose": {
+          "position": [
+            -3,
+            0,
+            0
+          ],
+          "yawDegrees": 90
+        }
+      },
+      {
+        "node": "exit_south_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            3
+          ],
+          "yawDegrees": 180
+        }
+      },
+      {
+        "node": "exit_ne_anchor",
+        "pose": {
+          "position": [
+            2.121,
+            0,
+            -2.121
+          ],
+          "yawDegrees": -45
+        }
+      },
+      {
+        "node": "exit_nw_anchor",
+        "pose": {
+          "position": [
+            -2.121,
+            0,
+            -2.121
+          ],
+          "yawDegrees": 45
+        }
+      },
+      {
+        "node": "exit_se_anchor",
+        "pose": {
+          "position": [
+            2.121,
+            0,
+            2.121
+          ],
+          "yawDegrees": -135
+        }
+      },
+      {
+        "node": "exit_sw_anchor",
+        "pose": {
+          "position": [
+            -2.121,
+            0,
+            2.121
+          ],
+          "yawDegrees": 135
+        }
+      },
+      {
+        "node": "exit_up_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -3
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_down_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -3
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Small diamond-maze room with oddly angled walls and similar passages. Keep its distinct logical identity and exact source directions. No unique painted markers, floor numbering or destination clues that would solve the maze visually.\nStatic source description:\nA small room with oddly angled walls and passages in all directions.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_north_anchor",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DIAMOND-2"
+      },
+      {
+        "anchor": "exit_east_anchor",
+        "availability": "engine-option",
+        "direction": "EAST",
+        "node": "exit_east",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DIAMOND-6"
+      },
+      {
+        "anchor": "exit_west_anchor",
+        "availability": "engine-option",
+        "direction": "WEST",
+        "node": "exit_west",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DIAMOND-4"
+      },
+      {
+        "anchor": "exit_south_anchor",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DIAMOND-8"
+      },
+      {
+        "anchor": "exit_ne_anchor",
+        "availability": "engine-option",
+        "direction": "NE",
+        "node": "exit_ne",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DIAMOND-3"
+      },
+      {
+        "anchor": "exit_nw_anchor",
+        "availability": "engine-option",
+        "direction": "NW",
+        "node": "exit_nw",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DIAMOND-1"
+      },
+      {
+        "anchor": "exit_se_anchor",
+        "availability": "engine-option",
+        "direction": "SE",
+        "node": "exit_se",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DIAMOND-9"
+      },
+      {
+        "anchor": "exit_sw_anchor",
+        "availability": "engine-option",
+        "direction": "SW",
+        "node": "exit_sw",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DIAMOND-7"
+      },
+      {
+        "anchor": "exit_up_anchor",
+        "availability": "engine-option",
+        "direction": "UP",
+        "node": "exit_up",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "STAIRWAY-TOP"
+      },
+      {
+        "anchor": "exit_down_anchor",
+        "availability": "engine-option",
+        "direction": "DOWN",
+        "node": "exit_down",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "CERBERUS-ROOM"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          7,
+          0.2,
+          7
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            3.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_dwindow",
+        "asset": "asset_dwindow",
+        "object": "DWINDOW",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_stairs",
+        "asset": "asset_stairs",
+        "object": "STAIRS",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "5bbbcca59181402b1d8c9ed6e7d719df5bca94bf5c6b821beeda02300dda720d"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "DIAMOND-5",
+    "shell": "indoor",
+    "sizeMetres": [
+      7,
+      4,
+      7
+    ],
+    "spawn": "player_start"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "IN-CAGE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "393400da6ab2ca1c5ab7677be9a9de9de1b18ecf74ee93da61d3483c4a4efbea",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "028f30bf32c8675dba75406b7c417fe614cdd2ff12d13f90aed723a4b08244c8",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_robot",
+        "pose": {
+          "position": [
+            -0.75,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Inside solid steel cage; bars/enclosure belong to separate observed source cage. Escape, destruction and actor size remain source decisions.\nStatic source description:\nYou are trapped inside a solid steel cage.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          3,
+          0.2,
+          3
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            2.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_robot",
+        "asset": "asset_robot",
+        "object": "ROBOT",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "393400da6ab2ca1c5ab7677be9a9de9de1b18ecf74ee93da61d3483c4a4efbea"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "IN-CAGE",
+    "shell": "indoor",
+    "sizeMetres": [
+      3,
+      3,
+      3
+    ],
+    "spawn": "player_start"
+  }
+}

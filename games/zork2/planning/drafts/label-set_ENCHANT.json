@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "ENCHANT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "c8a5f40a708bc7900751a4dc81303f1e5fc3332b1a25df612b5a300a4846dc09",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "8f9d71400f4457241bb9fe5b2b4c3427c2d3997586c493af66f120a165ed0409",
+  "document": {
+    "entries": [
+      {
+        "family": "ENCHANT:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Enchant {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_enchant",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "c8a5f40a708bc7900751a4dc81303f1e5fc3332b1a25df612b5a300a4846dc09"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

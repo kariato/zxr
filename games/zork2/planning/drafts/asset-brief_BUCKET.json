@@ -1,0 +1,72 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "BUCKET"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "b43d47049b5a1b42d64514338e5c878f3195dfc72a834a20a306cc98fd97063c",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "d58c35961a69501cbda70e062c5dbda2a2ca4cfdfa8b84c45c69f555de8ad00e",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed wooden bucket. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a wooden bucket here, 3 feet in diameter and 3 feet high.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every wooden bucket into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.9144,
+          0.9144,
+          0.9144
+        ]
+      }
+    ],
+    "id": "asset_bucket",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "wooden bucket; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "BUCKET"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "b43d47049b5a1b42d64514338e5c878f3195dfc72a834a20a306cc98fd97063c"
+    },
+    "requiredClips": [
+      "idle",
+      "open",
+      "closed"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.9144,
+      0.9144,
+      0.9144
+    ]
+  }
+}

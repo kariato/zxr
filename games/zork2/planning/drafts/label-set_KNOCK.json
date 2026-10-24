@@ -1,0 +1,56 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "KNOCK"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "e5838d86328f8e488f095874d06c71fc6d027076094ab76f254d041486dd56b1",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "7a7ea5d82403fe8ca974fcb39330e1f29dc9809e8a9ed1d795c044e5d97b35f2",
+  "document": {
+    "entries": [
+      {
+        "family": "KNOCK:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Knock down {direct}"
+      },
+      {
+        "family": "KNOCK:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Knock on {direct}"
+      },
+      {
+        "family": "KNOCK:3",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Knock at {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_knock",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "e5838d86328f8e488f095874d06c71fc6d027076094ab76f254d041486dd56b1"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

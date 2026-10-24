@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "REPENT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "33001144ad8d01060c078eb1d6186d176be83bc354a70beb58620780582eae6e",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "8ab04564103b3aae2945ffc51bef06ab9a952329734200cc51491212502de1eb",
+  "document": {
+    "entries": [
+      {
+        "family": "REPENT:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Repent"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_repent",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "33001144ad8d01060c078eb1d6186d176be83bc354a70beb58620780582eae6e"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

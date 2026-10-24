@@ -14,6 +14,11 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
       - run: npm run capabilities:check
+      - run: npm run planning:check
+      - run: npm run contexts:check
+      - run: npm run planner:check
+      - run: npm run scenes:check
+      - run: npm run phase6:check
       - run: npm test
       - run: npm run fuzz -- --games 2 --turns 16 --output out/fuzz/smoke.json
       - uses: actions/upload-artifact@v4

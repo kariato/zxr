@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "QUIT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "cfdd8513e5fd896c64d62a76ebe78914d94a0905887cf54af51f6580e6f1e382",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "6177c20a5f82eb3b89dd1546d2f029ea2989ecc0fb911ecbd1da5b73c68b373e",
+  "document": {
+    "entries": [
+      {
+        "family": "QUIT:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Quit"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_quit",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "cfdd8513e5fd896c64d62a76ebe78914d94a0905887cf54af51f6580e6f1e382"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

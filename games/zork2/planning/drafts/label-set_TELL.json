@@ -1,0 +1,49 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "TELL"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "1ec23fedb285492450a730eef1b552f133931870f925b85769785f928b97143a",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "379486123c38a8ae68852c798fda7609a7b4965e2e729d54e49ebb87a975d057",
+  "document": {
+    "entries": [
+      {
+        "family": "TELL:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Tell {direct} about {indirect}"
+      },
+      {
+        "family": "TELL:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Tell {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_tell",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "1ec23fedb285492450a730eef1b552f133931870f925b85769785f928b97143a"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

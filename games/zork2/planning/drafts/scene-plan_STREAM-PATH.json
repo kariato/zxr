@@ -1,0 +1,270 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "STREAM-PATH"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "bf232a1bc600afafb6c0ef658e1eadc7ff7dbfea4076fd4693b6b560993971e0",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "f6f9674319b17119eea57cb5811fcfe10af8161792dfb60daac74e736bce570b",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_bridge",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_chasm",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_stream",
+        "pose": {
+          "position": [
+            0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_east_anchor",
+        "pose": {
+          "position": [
+            5.5,
+            0,
+            0
+          ],
+          "yawDegrees": -90
+        }
+      },
+      {
+        "node": "exit_west_anchor",
+        "pose": {
+          "position": [
+            -5.5,
+            0,
+            0
+          ],
+          "yawDegrees": 90
+        }
+      },
+      {
+        "node": "exit_ne_anchor",
+        "pose": {
+          "position": [
+            3.889,
+            0,
+            -5.303
+          ],
+          "yawDegrees": -45
+        }
+      },
+      {
+        "node": "exit_sw_anchor",
+        "pose": {
+          "position": [
+            -3.889,
+            0,
+            5.303
+          ],
+          "yawDegrees": 135
+        }
+      },
+      {
+        "node": "exit_down_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -7.5
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "South ravine edge, northeast path, narrowing southwest crawl and vegetation-choked ruined east archway. No unobserved room contents beyond the arch.\nStatic source description:\nThe path follows the south edge of a deep ravine and heads northeast. A tunnel heads southwest, narrowing to a rather tight crawl. A faint whirring sound can be heard in that direction. On the east is a ruined archway choked with vegetation.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_east_anchor",
+        "availability": "engine-option",
+        "direction": "EAST",
+        "node": "exit_east",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "FORMAL-GARDEN"
+      },
+      {
+        "anchor": "exit_west_anchor",
+        "availability": "engine-option",
+        "direction": "WEST",
+        "node": "exit_west",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "MARBLE-HALL"
+      },
+      {
+        "anchor": "exit_ne_anchor",
+        "availability": "engine-option",
+        "direction": "NE",
+        "node": "exit_ne",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DARK-TUNNEL"
+      },
+      {
+        "anchor": "exit_sw_anchor",
+        "availability": "engine-option",
+        "direction": "SW",
+        "node": "exit_sw",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "CAROUSEL-ROOM"
+      },
+      {
+        "anchor": "exit_down_anchor",
+        "availability": "engine-option",
+        "direction": "DOWN",
+        "node": "exit_down",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": null
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "rock",
+        "node": "base_floor",
+        "part": "rock_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          12,
+          0.2,
+          16
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            7.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_bridge",
+        "asset": "asset_bridge",
+        "object": "BRIDGE",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_chasm",
+        "asset": "asset_chasm",
+        "object": "CHASM",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_stream",
+        "asset": "asset_stream",
+        "object": "STREAM",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "bf232a1bc600afafb6c0ef658e1eadc7ff7dbfea4076fd4693b6b560993971e0"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "STREAM-PATH",
+    "shell": "cave",
+    "sizeMetres": [
+      12,
+      8,
+      16
+    ],
+    "spawn": "player_start"
+  }
+}

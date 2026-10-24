@@ -1,0 +1,49 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "ATTACK"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "426a308a558c3fe8cd3bd5a60506b61b451953c4e3ab279527c963afee392a53",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "cdbdc290df2b4b270a410d60346c555984e7dc9a9dcb0ac1ec18a83425a69be7",
+  "document": {
+    "entries": [
+      {
+        "family": "ATTACK:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Attack {direct} with {indirect}"
+      },
+      {
+        "family": "ATTACK:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Attack {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_attack",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "426a308a558c3fe8cd3bd5a60506b61b451953c4e3ab279527c963afee392a53"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

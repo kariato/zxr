@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "UNSCRIPT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "f5c1a5184fdffa7bc011351a09b44d4964464edbaafdc86db0ae36abb42d9064",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "7d45e4b01ecfa42ffeab9ab5f51cf3eca37082ecaab46392f0f99c417055fa19",
+  "document": {
+    "entries": [
+      {
+        "family": "UNSCRIPT:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Stop transcript"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_unscript",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "f5c1a5184fdffa7bc011351a09b44d4964464edbaafdc86db0ae36abb42d9064"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

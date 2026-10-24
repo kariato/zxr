@@ -1,0 +1,72 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "RIDDLE-DOOR"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "02e3e628b23ae8b52bd993ed1a6dea72488f67a11c23516ca03b22745bf3803a",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "0aa9e01d9f87db9cbaaa0a50103941572e0beee3a16c039413850e2024a1bf83",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed stone door. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every stone door into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          1.4,
+          2.3,
+          0.2
+        ]
+      }
+    ],
+    "id": "asset_riddle-door",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "stone door; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "RIDDLE-DOOR"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "02e3e628b23ae8b52bd993ed1a6dea72488f67a11c23516ca03b22745bf3803a"
+    },
+    "requiredClips": [
+      "idle",
+      "open",
+      "closed"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      1.4,
+      2.3,
+      0.2
+    ]
+  }
+}

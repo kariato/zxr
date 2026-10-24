@@ -1,0 +1,76 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "MOVE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "f65f4c8948e8515e4ec9a168dcc0cfb6a85043a1b2435b56fe41571899d884d1",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "509db8826ace3bb3a385f0e846e2b4e5979b0e1207ed05ce076c57cc454cbbb2",
+  "document": {
+    "entries": [
+      {
+        "family": "MOVE:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Move {direct} with {indirect}"
+      },
+      {
+        "family": "MOVE:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Move {direct} in {indirect}"
+      },
+      {
+        "family": "MOVE:3",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Move {direct} to {indirect}"
+      },
+      {
+        "family": "MOVE:4",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Move {direct} {indirect}"
+      },
+      {
+        "family": "MOVE:5",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Move {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_move",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "f65f4c8948e8515e4ec9a168dcc0cfb6a85043a1b2435b56fe41571899d884d1"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "DEAD-PALANTIR-1"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "51dd43531a17104dd41c3023d571e418009e8b9c64742ec5a39de12670c69351",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "9bce0d61a0629aac4a96db7d4b1e66a09a7ba2452e3a6ab757b5b7ec096ed913",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_west_anchor",
+        "pose": {
+          "position": [
+            -2,
+            0,
+            0
+          ],
+          "yawDegrees": 90
+        }
+      }
+    ],
+    "description": "Source palantir death/interstitial location. No invented physical travel route or default room contents; source continuation text controls the experience. Keep the logical room identity distinct.\nDescription is routine-driven: the safe base profile above does not make guarded output unconditional.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_west_anchor",
+        "availability": "engine-option",
+        "direction": "WEST",
+        "node": "exit_west",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DEAD-PALANTIR-2"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            3.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "51dd43531a17104dd41c3023d571e418009e8b9c64742ec5a39de12670c69351"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "DEAD-PALANTIR-1",
+    "shell": "indoor",
+    "sizeMetres": [
+      5,
+      4,
+      5
+    ],
+    "spawn": "player_start"
+  }
+}

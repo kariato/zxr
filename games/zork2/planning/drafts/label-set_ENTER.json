@@ -1,0 +1,46 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "ENTER"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "8d8b76510f162bc60dd11c4857f2e21d15d702145218f63c8e34cc1b233589c1",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "ce6bec8d4c0aade88ef55e362e6e11871caf0c3c88edeccfd3f0fe44695d3c9a",
+  "document": {
+    "entries": [
+      {
+        "family": "ENTER:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Enter {direct}"
+      },
+      {
+        "family": "ENTER:2",
+        "kind": "action",
+        "slots": [],
+        "template": "Enter"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_enter",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "8d8b76510f162bc60dd11c4857f2e21d15d702145218f63c8e34cc1b233589c1"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

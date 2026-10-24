@@ -1,0 +1,513 @@
+{
+  "cautions": [
+    "Offline source context; never current player-visible state.",
+    "All routine text/effects are conditional possibilities, not an executed description or a reveal rule.",
+    "Potential arrivals are a conservative shared catalogue, not proven room reachability or initial scenery.",
+    "Consult routines.json for text fragments, source guards, script changes and unresolved targets/calls.",
+    "Every feature requires state review; absent literal mutation evidence does not prove a static feature. Generic handlers and raw memory writes may change computed targets.",
+    "Computed exits are not guessed; RLANDBIT means land, not outdoors."
+  ],
+  "exits": [
+    {
+      "declaration": "(NE TO MENHIR-ROOM IF MENHIR-POSITION ELSE \"You are trying to walk through an enormous rock.\")",
+      "direction": "NE",
+      "geometryStatus": "conditional-blocked-or-computed",
+      "neighbour": {
+        "desc": "Menhir Room",
+        "name": "MENHIR-ROOM"
+      },
+      "source": {
+        "end": {
+          "column": 65,
+          "line": 684,
+          "offset": 19179
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 682,
+          "offset": 19070
+        }
+      },
+      "view": {
+        "global": "MENHIR-POSITION",
+        "kind": "CEXIT",
+        "message": "You are trying to walk through an enormous rock.",
+        "to": "MENHIR-ROOM"
+      }
+    },
+    {
+      "declaration": "(OUT TO MENHIR-ROOM IF MENHIR-POSITION ELSE \"You are trying to walk through an enormous rock.\")",
+      "direction": "OUT",
+      "geometryStatus": "conditional-blocked-or-computed",
+      "neighbour": {
+        "desc": "Menhir Room",
+        "name": "MENHIR-ROOM"
+      },
+      "source": {
+        "end": {
+          "column": 65,
+          "line": 687,
+          "offset": 19296
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 685,
+          "offset": 19186
+        }
+      },
+      "view": {
+        "global": "MENHIR-POSITION",
+        "kind": "CEXIT",
+        "message": "You are trying to walk through an enormous rock.",
+        "to": "MENHIR-ROOM"
+      }
+    }
+  ],
+  "features": [
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [],
+          "index": 1,
+          "operation": "MOVE",
+          "routine": "CERBERUS-FCN"
+        },
+        {
+          "flags": [
+            "NDESCBIT"
+          ],
+          "index": 2,
+          "operation": "FSET",
+          "routine": "CERBERUS-FCN"
+        },
+        {
+          "flags": [
+            "TRYTAKEBIT"
+          ],
+          "index": 3,
+          "operation": "FSET",
+          "routine": "CERBERUS-FCN"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "STAGGERED",
+        "TAKEBIT"
+      ],
+      "name": "COLLAR",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": false,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "RLANDBIT"
+      ],
+      "name": "KENNEL",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [],
+          "index": 1,
+          "operation": "REMOVE",
+          "routine": "GENIE-FCN"
+        },
+        {
+          "flags": [],
+          "index": 8,
+          "operation": "MOVE",
+          "routine": "GENIE-FCN"
+        },
+        {
+          "flags": [
+            "NDESCBIT"
+          ],
+          "index": 9,
+          "operation": "FCLEAR",
+          "routine": "GENIE-FCN"
+        },
+        {
+          "flags": [
+            "TAKEBIT"
+          ],
+          "index": 10,
+          "operation": "FCLEAR",
+          "routine": "GENIE-FCN"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NDESCBIT",
+        "READBIT",
+        "TURNBIT"
+      ],
+      "name": "MENHIR",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    }
+  ],
+  "format": "zxr-room-context-v1",
+  "globalObjects": [
+    "MENHIR"
+  ],
+  "initialObjects": [
+    "COLLAR"
+  ],
+  "inputHash": "43b68ef7050d21b66cd069139367974631807438deea4830eebfc75112df827f",
+  "potentialArrivals": [
+    "ADVENTURER",
+    "ARCANA",
+    "BALLOON",
+    "BALLOON-LABEL",
+    "BANK-BROCHURE",
+    "BAT",
+    "BILLS",
+    "BLESSINGS",
+    "BLUE-BOOK",
+    "BLUE-ICING",
+    "BRAIDED-WIRE",
+    "BRICK",
+    "BRIDGE",
+    "BROKEN-CASE",
+    "BROKEN-LAMP",
+    "BUCKET",
+    "CAGE",
+    "CANDY",
+    "CARD",
+    "CERBERUS",
+    "CHASM",
+    "CHEST",
+    "CLOTH-BAG",
+    "COIN",
+    "COLLAR",
+    "COMPASS",
+    "CROWN",
+    "CRYPT-DOOR",
+    "DEAD-BALLOON",
+    "DEAD-DRAGON",
+    "DEAD-SERPENT",
+    "DEGREE",
+    "DEPOSIT-BOX",
+    "DIM-DOOR",
+    "DRAGON",
+    "DWINDOW",
+    "EAST-WALL",
+    "EAT-ME-CAKE",
+    "EXPLOSION",
+    "FLASK",
+    "FOOTPAD",
+    "FUSE",
+    "GAZEBO",
+    "GENIE",
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GLOBAL-OBJECTS",
+    "GLOBAL-PALANTIR",
+    "GLOBAL-PRINCESS",
+    "GLOBAL-UNICORN",
+    "GLOBAL-WATER",
+    "GLOBAL-WIZARD-CASE",
+    "GNOME",
+    "GNOME-OF-ZURICH",
+    "GOLD-KEY",
+    "GREEN-BOOK",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "HEADS",
+    "INTNUM",
+    "IRON-BOX",
+    "IT",
+    "KEY",
+    "LAMP",
+    "LETTER-OPENER",
+    "LOCAL-GLOBALS",
+    "LUNGS",
+    "MANGLED-CAGE",
+    "MATCH",
+    "ME",
+    "MENHIR",
+    "MOSS",
+    "NEWSPAPER",
+    "NORTH-WALL",
+    "ORANGE-ICING",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "PATHOBJ",
+    "PDOOR",
+    "PEARL",
+    "PLACE-MAT",
+    "PORTRAIT",
+    "PRINCESS",
+    "PSEUDO-OBJECT",
+    "PURPLE-BOOK",
+    "PWINDOW",
+    "RECEPTACLE",
+    "RED-ICING",
+    "REPELLENT",
+    "RIBBON",
+    "ROBOT",
+    "ROBOT-LABEL",
+    "ROSE",
+    "ROSE-BUSH",
+    "RUBY",
+    "SAILOR",
+    "SALTY-WATER",
+    "SERPENT",
+    "SEWL",
+    "SNWL",
+    "SOUTH-WALL",
+    "SSWL",
+    "STAIRS",
+    "STAMP",
+    "STAND-4",
+    "STATUETTE",
+    "STREAM",
+    "SWORD",
+    "SWWL",
+    "TEAPOT",
+    "TROPHY-BOTTLES",
+    "TROPHY-SWORD",
+    "TUNNEL",
+    "UNICORN",
+    "VIOLIN",
+    "WAND",
+    "WANDS",
+    "WATER",
+    "WELL",
+    "WEST-WALL",
+    "WHITE-BOOK",
+    "WISH",
+    "WIZ-DOOR",
+    "WIZARD",
+    "ZORKMID"
+  ],
+  "room": {
+    "desc": {
+      "source": {
+        "end": {
+          "column": 22,
+          "line": 680,
+          "offset": 19040
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 680,
+          "offset": 19025
+        }
+      },
+      "text": "Kennel"
+    },
+    "flags": [
+      "RLANDBIT"
+    ],
+    "id": 128,
+    "initialRoomLightFlag": false,
+    "ldesc": [
+      {
+        "byteLength": 2,
+        "kind": "text",
+        "property": {
+          "name": "LDESC",
+          "number": 13
+        },
+        "source": {
+          "end": {
+            "column": 21,
+            "line": 679,
+            "offset": 19018
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 7,
+            "line": 675,
+            "offset": 18790
+          }
+        },
+        "text": "This room looks like it was once a kennel for a very large dog (some of the bones would fit a dinosaur). It apparently hasn't been used for a long time, as the dust is fairly thick all over. The only exit is northeast."
+      }
+    ],
+    "name": "KENNEL",
+    "outdoors": "not-encoded-do-not-infer-from-RLANDBIT",
+    "source": {
+      "end": {
+        "column": 23,
+        "line": 688,
+        "offset": 19319
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 1,
+        "line": 673,
+        "offset": 18754
+      }
+    }
+  },
+  "routineReferencedObjects": [
+    "CERBERUS"
+  ],
+  "routines": {
+    "dispatchBoundaries": [
+      "JIGS-UP",
+      "PERFORM"
+    ],
+    "missing": [],
+    "reachableHelpers": [
+      "COLLAR-FCN",
+      "MENHIR-FCN"
+    ],
+    "roots": [
+      "COLLAR-FCN",
+      "MENHIR-FCN"
+    ]
+  },
+  "scriptedArrivals": [],
+  "stateDependencies": [
+    {
+      "name": "CERBERUS-LEASHED",
+      "writers": [
+        {
+          "index": 5,
+          "routine": "CERBERUS-FCN"
+        }
+      ]
+    },
+    {
+      "name": "HERE",
+      "writers": [
+        {
+          "index": 9,
+          "routine": "GO"
+        },
+        {
+          "index": 0,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 3,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 2,
+          "routine": "GOTO"
+        },
+        {
+          "index": 0,
+          "routine": "IN-CAGE-FCN"
+        },
+        {
+          "index": 2,
+          "routine": "JIGS-UP"
+        },
+        {
+          "index": 1,
+          "routine": "LIT?"
+        },
+        {
+          "index": 4,
+          "routine": "LIT?"
+        },
+        {
+          "index": 1,
+          "routine": "V-TELL"
+        }
+      ]
+    },
+    {
+      "name": "MENHIR-POSITION",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 2,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 11,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "MENHIR-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "MENHIR-FCN"
+        }
+      ]
+    },
+    {
+      "name": "PRSA",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 4,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "SPELL-USED",
+      "writers": [
+        {
+          "index": 2,
+          "routine": "I-SPELL"
+        },
+        {
+          "index": 1,
+          "routine": "V-INCANT"
+        },
+        {
+          "index": 3,
+          "routine": "WAND-FCN"
+        }
+      ]
+    }
+  ],
+  "universalGlobalObjects": [
+    "BLESSINGS",
+    "COMPASS",
+    "EAST-WALL",
+    "FOOTPAD",
+    "GLOBAL-PRINCESS",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "INTNUM",
+    "IT",
+    "LUNGS",
+    "ME",
+    "NORTH-WALL",
+    "PATHOBJ",
+    "SAILOR",
+    "SOUTH-WALL",
+    "TUNNEL",
+    "WEST-WALL",
+    "WISH",
+    "ZORKMID"
+  ]
+}

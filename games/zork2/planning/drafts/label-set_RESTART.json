@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "RESTART"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "965ccf2f50cc540ba70b89edccd1d068d66d835182a45728b94778a7f38d2ca7",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "98baf0b7b454d861bf5520c531b716618e0ccfc359f76d2e8bdf5177e12d4631",
+  "document": {
+    "entries": [
+      {
+        "family": "RESTART:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Restart"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_restart",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "965ccf2f50cc540ba70b89edccd1d068d66d835182a45728b94778a7f38d2ca7"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

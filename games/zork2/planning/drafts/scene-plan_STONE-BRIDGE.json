@@ -1,0 +1,211 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "STONE-BRIDGE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "df03e6a4d825ac35db7428e0adf94c7ea9a00dfa52af81451f20c7f683172bf7",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "f82a6b6eaa063158d9abb59c9fae3ca69f8bb12d3632906a828fa3ff789ecd7a",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_bridge",
+        "pose": {
+          "position": [
+            -1.75,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_chasm",
+        "pose": {
+          "position": [
+            -0.583,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_north_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -6.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_south_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            6.5
+          ],
+          "yawDegrees": 180
+        }
+      },
+      {
+        "node": "exit_down_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -6.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_cross_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            6.5
+          ],
+          "yawDegrees": 180
+        }
+      }
+    ],
+    "description": "Ruined impressive stone bridge over deep chasm, water far below, north paved approach and south misty tunnel. Do not reuse wooden footbridge appearance here.\nStatic source description:\nThis is the middle of a ruined but still impressive stone bridge spanning a deep chasm. Water flows far beneath. A paved path leads north into a large open space. To the south, the path leads into a misty tunnel.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_north_anchor",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DRAGON-ROOM"
+      },
+      {
+        "anchor": "exit_south_anchor",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "COOL-ROOM"
+      },
+      {
+        "anchor": "exit_down_anchor",
+        "availability": "engine-option",
+        "direction": "DOWN",
+        "node": "exit_down",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": null
+      },
+      {
+        "anchor": "exit_cross_anchor",
+        "availability": "engine-option",
+        "direction": "CROSS",
+        "node": "exit_cross",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": null
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            11.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_bridge",
+        "asset": "asset_bridge",
+        "object": "BRIDGE",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_chasm",
+        "asset": "asset_chasm",
+        "object": "CHASM",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "df03e6a4d825ac35db7428e0adf94c7ea9a00dfa52af81451f20c7f683172bf7"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "STONE-BRIDGE",
+    "shell": "cave",
+    "sizeMetres": [
+      7,
+      12,
+      14
+    ],
+    "spawn": "player_start"
+  }
+}

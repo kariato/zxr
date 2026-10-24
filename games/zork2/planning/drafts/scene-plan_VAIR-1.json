@@ -1,0 +1,83 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "VAIR-1"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "a64bb301d55bdb067d070567dad5d9d4ee719d95390600d4c9784f58623adc3c",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "0e12813c4b04147c4ed39be340c1b684676d627032a96a716fd8f075f955d778",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Volcano airborne band 1. No standing floor: player support comes from the source balloon, not invisible platforms. Preserve source-described elevation and ledge visibility without adding landings; only band 4 explicitly opens to sky.\nStatic source description:\nYou are about one hundred feet above the bottom of the volcano. The top of the volcano is clearly visible here.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            34.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "a64bb301d55bdb067d070567dad5d9d4ee719d95390600d4c9784f58623adc3c"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "VAIR-1",
+    "shell": "cave",
+    "sizeMetres": [
+      30,
+      35,
+      30
+    ],
+    "spawn": "player_start"
+  }
+}

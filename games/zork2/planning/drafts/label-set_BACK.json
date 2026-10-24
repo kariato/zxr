@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "BACK"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "d9db4071b2ba97ffb2d730ed5aa108e9e6c042a9fc926bb4e2ef8e90dda528ee",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "8fba559bcb206756386499ec6e9f4da5c3ab6ea0c4f87f481c2278a2b1d1ad09",
+  "document": {
+    "entries": [
+      {
+        "family": "BACK:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Back"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_back",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "d9db4071b2ba97ffb2d730ed5aa108e9e6c042a9fc926bb4e2ef8e90dda528ee"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

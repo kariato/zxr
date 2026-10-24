@@ -1,0 +1,50 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "GLOBAL-MENHIR"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "152fc504f1e85f08536650e7a9018b57de1ced8a53393696168478fe5e027d57",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "46674efff0107bda87a5bb1ce59da27a154c15926adee71da0a196e149ca7f0b",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nInteraction/identity proxy: no independent physical body or selectable geometry. Keep its source menu semantics; never fabricate an actor or prop from this identity.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every enormous menhir into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [],
+    "id": "asset_global-menhir",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "No rendered surface.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "GLOBAL-MENHIR"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "152fc504f1e85f08536650e7a9018b57de1ced8a53393696168478fe5e027d57"
+    },
+    "requiredClips": [],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.001,
+      0.001,
+      0.001
+    ]
+  }
+}

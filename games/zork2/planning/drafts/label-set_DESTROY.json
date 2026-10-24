@@ -1,0 +1,58 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "DESTROY"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "0c2e01a0b8fc9fbab73cdd7ae83b7bde48d11b2c395ce7020ccd3767adaf2d37",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "6249f541a4561f73e2d3822684b29fa778a477917f7cec0826e63eaa4a832543",
+  "document": {
+    "entries": [
+      {
+        "family": "DESTROY:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Destroy in {direct}"
+      },
+      {
+        "family": "DESTROY:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Destroy down {direct} with {indirect}"
+      },
+      {
+        "family": "DESTROY:3",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Destroy {direct} with {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_destroy",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "0c2e01a0b8fc9fbab73cdd7ae83b7bde48d11b2c395ce7020ccd3767adaf2d37"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

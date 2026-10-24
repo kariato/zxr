@@ -1,0 +1,49 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "STAB"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "d34cfbe39527a4d7325540682fd118b66e6ff6e008415f1b148b4f6e416534f3",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "e7761347d92acb4ac89897ab97ed61b56bb984b33716dd4558025d4417db3940",
+  "document": {
+    "entries": [
+      {
+        "family": "STAB:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Stab {direct} with {indirect}"
+      },
+      {
+        "family": "STAB:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Stab {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_stab",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "d34cfbe39527a4d7325540682fd118b66e6ff6e008415f1b148b4f6e416534f3"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

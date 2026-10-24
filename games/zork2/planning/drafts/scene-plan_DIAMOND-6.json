@@ -1,0 +1,190 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "DIAMOND-6"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "f90e21453dfb1a9e8580cb107fbe5335d43aeb7668d0c22839ded249909fe984",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "28e6f93aa8a9d6f0a8d67d49ab26d9670567a323549e589e3947abe520e8dbed",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_dwindow",
+        "pose": {
+          "position": [
+            -1.75,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_west_anchor",
+        "pose": {
+          "position": [
+            -3,
+            0,
+            0
+          ],
+          "yawDegrees": 90
+        }
+      },
+      {
+        "node": "exit_nw_anchor",
+        "pose": {
+          "position": [
+            -2.121,
+            0,
+            -2.121
+          ],
+          "yawDegrees": 45
+        }
+      },
+      {
+        "node": "exit_sw_anchor",
+        "pose": {
+          "position": [
+            -2.121,
+            0,
+            2.121
+          ],
+          "yawDegrees": 135
+        }
+      }
+    ],
+    "description": "Small diamond-maze room with oddly angled walls and similar passages. Keep its distinct logical identity and exact source directions. No unique painted markers, floor numbering or destination clues that would solve the maze visually.\nStatic source description:\nA small room with oddly angled walls and passages in all directions.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_west_anchor",
+        "availability": "engine-option",
+        "direction": "WEST",
+        "node": "exit_west",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DIAMOND-5"
+      },
+      {
+        "anchor": "exit_nw_anchor",
+        "availability": "engine-option",
+        "direction": "NW",
+        "node": "exit_nw",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DIAMOND-2"
+      },
+      {
+        "anchor": "exit_sw_anchor",
+        "availability": "engine-option",
+        "direction": "SW",
+        "node": "exit_sw",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DIAMOND-8"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          7,
+          0.2,
+          7
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            3.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_dwindow",
+        "asset": "asset_dwindow",
+        "object": "DWINDOW",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "f90e21453dfb1a9e8580cb107fbe5335d43aeb7668d0c22839ded249909fe984"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "DIAMOND-6",
+    "shell": "indoor",
+    "sizeMetres": [
+      7,
+      4,
+      7
+    ],
+    "spawn": "player_start"
+  }
+}

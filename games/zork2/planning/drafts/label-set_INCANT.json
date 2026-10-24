@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "INCANT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "ca52dab0ec85adb9df143ab05750bb4019ab04073830b7c21e3a39c5091cc30d",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "65167719de2efc487579d6e428e82835e51e7b80ab08a9694cfe2e1d24141ac2",
+  "document": {
+    "entries": [
+      {
+        "family": "INCANT:1",
+        "kind": "action",
+        "slots": [
+          "words"
+        ],
+        "template": "Incant {words}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_incant",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "ca52dab0ec85adb9df143ab05750bb4019ab04073830b7c21e3a39c5091cc30d"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

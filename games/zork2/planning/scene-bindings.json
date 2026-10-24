@@ -1,0 +1,3109 @@
+{
+  "format": "zxr-scene-bindings-v1",
+  "scenes": [
+    {
+      "animations": [
+        {
+          "object": "LAMP",
+          "property": "on",
+          "whenFalse": "idle",
+          "whenTrue": "flicker"
+        }
+      ],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "continuous",
+          "peer": {
+            "direction": "NORTH",
+            "room": "NARROW-TUNNEL"
+          }
+        },
+        {
+          "aliasOf": null,
+          "direction": "OUT",
+          "mode": "blocked",
+          "peer": null
+        }
+      ],
+      "group": "barrow_tunnel",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "4904b6028a7049827fe5bb58295697065d2575d496592f012e2269ca76e9843a",
+      "room": "INSIDE-BARROW",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "a376502b03d8ff36f9c5b799927c987f5f0612e2479f349aa22778daa797e184",
+      "room": "FORMAL-GARDEN",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [
+        {
+          "object": "PDOOR",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        },
+        {
+          "object": "LID-1",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        }
+      ],
+      "attachments": [
+        {
+          "object": "PWINDOW",
+          "parent": "PDOOR",
+          "socket": "window_insert"
+        },
+        {
+          "object": "KEYHOLE-1",
+          "parent": "PDOOR",
+          "socket": "keyhole_insert"
+        },
+        {
+          "object": "LID-1",
+          "parent": "PDOOR",
+          "socket": "lid_hinge"
+        }
+      ],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "DOWN",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "IN",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "3e6781adb45cc3990ae7395a73b0e5fd71cf34efd7d49f6b6d4537d2863b19a2",
+      "room": "TINY-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "continuous",
+          "peer": {
+            "direction": "SOUTH",
+            "room": "INSIDE-BARROW"
+          }
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "DOWN",
+          "mode": "blocked",
+          "peer": null
+        },
+        {
+          "aliasOf": "SOUTH",
+          "direction": "CROSS",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": "barrow_tunnel",
+      "origin": [
+        0,
+        0,
+        8.25
+      ],
+      "planHash": "f94a38be05da3712b73a5a7b1ff5573d7b7363e2c09bcd04cde7668f54291d0b",
+      "room": "NARROW-TUNNEL",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "DOWN",
+          "mode": "blocked",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "CROSS",
+          "mode": "blocked",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "02274f42430a4ef8d38c3aeb7279836c21e085f6129290e58d8477fd1c3af87e",
+      "room": "FOOT-BRIDGE",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NE",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SW",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "33dc6456439000edab6f3043baa626fe00aa544dc51cd77447d0c9b1d8394c5e",
+      "room": "GREAT-CAVERN",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "SOUTH",
+          "direction": "CROSS",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "23e864a66e36b9d1f759fc329ee141b0d84cfc3bcbfc4b6f411f40e2c7645697",
+      "room": "SHALLOW-FORD",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NE",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SE",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SW",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "c079dae2c57c8fc006e925faf38fae27f90f0d942fc0ef7132f71d0dc0bd66a8",
+      "room": "DARK-TUNNEL",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [
+        {
+          "object": "AQUARIUM",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        }
+      ],
+      "attachments": [
+        {
+          "object": "SERPENT",
+          "parent": "AQUARIUM",
+          "socket": "contents_asset_serpent"
+        }
+      ],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "IN",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "e7555567d9dac1cdff60e502ca9ba48136b1db6b9fa29af7c0c16cf492a59fcd",
+      "room": "AQUARIUM-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "NE",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "NW",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "2eccbc8570091b53368c849d0329a95df871fa8b0a346a3929ad0f696adcccd9",
+      "room": "BANK-ENTRANCE",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "OUT",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "2667f179cf3850e04fd7428fdec646a37f3d365c694f90ef78724b6e7a5d4559",
+      "room": "CAGE-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [
+        {
+          "object": "IRON-BOX",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        }
+      ],
+      "attachments": [
+        {
+          "object": "VIOLIN",
+          "parent": "IRON-BOX",
+          "socket": "contents_asset_violin"
+        }
+      ],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "NE",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "NW",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SE",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SW",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "c5e645dc70ea4e0ba4e198ce662be02c774140ebc6641695fddd5a1358822dfe",
+      "room": "CAROUSEL-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "menu-only",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "UP",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "EAST",
+          "direction": "IN",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "1cad6d7ce8ab421356e26c4f48a3518cfbcdb3f5cab5ecc3b76bb8d7ca7b7865",
+      "room": "CERBERUS-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "NE",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SW",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "UP",
+          "mode": "alias",
+          "peer": null
+        },
+        {
+          "aliasOf": "SW",
+          "direction": "DOWN",
+          "mode": "alias",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "IN",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "e8ef720ca8d9341f0e84440532c064eaea2053b814a99d1c3109c8f6b4f7cf20",
+      "room": "COBWEBBY-CORRIDOR",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SE",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "CROSS",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "aa9c7bf1efe0dbfd51bb32debdb613e26af450d20df5b32fb5fe23272e4b481c",
+      "room": "COOL-ROOM",
+      "variants": [
+        {
+          "description": "Use the source-described stone bridge appearance for this room, never the wooden footbridge. Retain one BRIDGE identity/brief and source-controlled movement; stone dimensions require room-specific mesh review.",
+          "object": "BRIDGE",
+          "variant": "stone_bridge"
+        }
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [
+        {
+          "object": "CRYPT-DOOR",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        }
+      ],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "SOUTH",
+          "direction": "IN",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "e8b71bd6df73641d5a92381c2eaf7cbb50faa2d9b4836fcd993990afb690b1ea",
+      "room": "CRYPT-ANTEROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [
+        {
+          "object": "CRYPT-DOOR",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        },
+        {
+          "object": "DIM-DOOR",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        }
+      ],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "menu-only",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "cdce6366781fa19a2d9bfc01adf6120293cbac1bccc4189c19d78dc6399219fc",
+      "room": "CRYPT-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "27d8c3f0522db152d1847eef1937984bfdb25855a2f333152601fc71f1e6c1e5",
+      "room": "DEAD-PALANTIR-1",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "c84b7647b00ff0050e2118fcc940430c8c8010f5a65d231c688dbf8306be83c2",
+      "room": "DEAD-PALANTIR-2",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "60bf48ba8a2acefdaabb4f10cbfd79a1f278fe329b6a323170917d54926836d2",
+      "room": "DEAD-PALANTIR-3",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "26cf146685967e7e1d4e24a91b3997c5dfb7775091287e140d6c506a196ddfea",
+      "room": "DEAD-PALANTIR-4",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "blocked",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "blocked",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "UP",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "87119c5250cadca3e6b1b30cc71a3e35ddeee3597ddb43b4a51a54c9cdd8ce90",
+      "room": "DEEP-FORD",
+      "variants": [
+        {
+          "description": "Water appearance follows this room’s source depth and context, not the shallow-ford prototype. No extra current, traversal route or visible hidden contents.",
+          "object": "GLOBAL-WATER",
+          "variant": "water_deep_ford"
+        }
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "blocked",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "menu-only",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "menu-only",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "db6dca134ff049a27ea9e4ae32286a90e76dbb5263ba09ec31f78270cc6a288e",
+      "room": "DEPOSITORY",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "SE",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "30bff7eaa87cf7bf1782008918ddcbad84bebd3bacb7bffa4d629cc0dd3a2301",
+      "room": "DIAMOND-1",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SE",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SW",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "95274ea909920898273b9e640f6680b1aa771b0e24cafbc67176d7e03bfe92b0",
+      "room": "DIAMOND-2",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "SW",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "d9968d089ea48920b56eb79f101af8372f4b59e89ae445e19f1561e9ea15e576",
+      "room": "DIAMOND-3",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "NE",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SE",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "9df186a79fc92e9847773e08c72ea08fe838534b6eed17bb5abb8c93852e8833",
+      "room": "DIAMOND-4",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "NE",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "NW",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SE",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SW",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "UP",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "DOWN",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "7ee20e0c3cb607d91b7820db338afb7841f1fd176537b515ee8ea424e72635e9",
+      "room": "DIAMOND-5",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "NW",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SW",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "5897749515c1dbb1b4366d349180c1ee8ece1fed7a34a1c4b0e05630ff9848bd",
+      "room": "DIAMOND-6",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NE",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "999e96a624a848ef816ed84732e786dddae26d78e7576222d40c0dec7a201fe7",
+      "room": "DIAMOND-7",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "NE",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "NW",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "7f761c61f4544ecc8437f2821bdfe5eda60e6f1d9213787b8abb5089f0a0a8de",
+      "room": "DIAMOND-8",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NW",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "6dd08b263f37a56497936df5500dbb3bc9af88d227afb5027fab4061dec72518",
+      "room": "DIAMOND-9",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [
+        {
+          "object": "CHEST",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        }
+      ],
+      "attachments": [
+        {
+          "object": "STATUETTE",
+          "parent": "CHEST",
+          "socket": "contents_asset_statuette"
+        }
+      ],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "SOUTH",
+          "direction": "OUT",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "13c59816466f1b97304373488cf0ea37123ea157300d0e08401ebc1f7a329de6",
+      "room": "DRAGON-LAIR",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "menu-only",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "IN",
+          "mode": "alias",
+          "peer": null
+        },
+        {
+          "aliasOf": "SOUTH",
+          "direction": "CROSS",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "df174c93ad298d554d6d8da717fb9bdf315f59422df4bb2b9b7d97746919d24e",
+      "room": "DRAGON-ROOM",
+      "variants": [
+        {
+          "description": "Use the source-described stone bridge appearance for this room, never the wooden footbridge. Retain one BRIDGE identity/brief and source-controlled movement; stone dimensions require room-specific mesh review.",
+          "object": "BRIDGE",
+          "variant": "stone_bridge"
+        }
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [
+        {
+          "object": "LID-2",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        },
+        {
+          "object": "PDOOR",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        }
+      ],
+      "attachments": [
+        {
+          "object": "KEY",
+          "parent": "KEYHOLE-2",
+          "socket": "contents_asset_key"
+        }
+      ],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "SOUTH",
+          "direction": "OUT",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "b694197d93791a7e7f04a30bb061e025c3b3aad8fb2929000d59da0ee09b8045",
+      "room": "DREARY-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "fc9eee08b4e0eaa8318d4874cc609bfdf932892f17308e14736dd70f540bc155",
+      "room": "FRESCO-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "IN",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "53aa5fabef154f8288e1e9bf57131290a571457eabffdb29a5c4a472fcc4ef4d",
+      "room": "GARDEN-NORTH",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [
+        {
+          "object": "TEAPOT",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        }
+      ],
+      "attachments": [
+        {
+          "object": "LETTER-OPENER",
+          "parent": "GAZEBO-TABLE",
+          "socket": "contents_asset_letter-opener"
+        },
+        {
+          "object": "MATCH",
+          "parent": "GAZEBO-TABLE",
+          "socket": "contents_asset_match"
+        },
+        {
+          "object": "NEWSPAPER",
+          "parent": "GAZEBO-TABLE",
+          "socket": "contents_asset_newspaper"
+        },
+        {
+          "object": "PLACE-MAT",
+          "parent": "GAZEBO-TABLE",
+          "socket": "contents_asset_place-mat"
+        },
+        {
+          "object": "TEAPOT",
+          "parent": "GAZEBO-TABLE",
+          "socket": "contents_asset_teapot"
+        }
+      ],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "OUT",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "cad51950438a79daf4f6ace4454515be225234bb34d036965a446cf75ea7ebf7",
+      "room": "GAZEBO-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "menu-only",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "UP",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "cee1b20e7088de8d2b8603614d43912a2ef369b86e7a79608081b86b62683d54",
+      "room": "GLACIER-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [
+        {
+          "object": "WIZ-DOOR",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        }
+      ],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "SOUTH",
+          "direction": "IN",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "57198629570634cde34b56e411c0d01e2db34e7aaef5401f6cad38dd0c4d07d1",
+      "room": "GUARDIAN-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "OUT",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "18c682bee2cd03dad1ad316c079edca883181e41dcc3276ea09ebe7a9bce6512",
+      "room": "IN-AQUARIUM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "8d653b84bf5a3f90ee59027f51681e660b6cbd0d61b48dbaa6452b67b0059c95",
+      "room": "IN-CAGE",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NE",
+          "mode": "menu-only",
+          "peer": null
+        },
+        {
+          "aliasOf": "NE",
+          "direction": "OUT",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "3ba6119e3ba7bb0c9845011ed92cbbddaf487facdff46f6128dbbdf1c1a2d020",
+      "room": "KENNEL",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "0eaf39828bc46d2df24cc9db08aceb8b9f014da5b7529517a626f36a2bc2a9d8",
+      "room": "LAVA-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "UP",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "DOWN",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "f5947e95952aa99f1d1251b0aa0e58edb7de41c132d0ef2da73f21e0243b96da",
+      "room": "LAVA-TUBE",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "menu-only",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "DOWN",
+          "mode": "blocked",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "140d2aaa39317687ef680bafb5505d83b97443635743cacf50ccfc7c435c095d",
+      "room": "LEDGE-1",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "menu-only",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "DOWN",
+          "mode": "blocked",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "d2a3765bf8e4fea0fa40fbde4f38aa964c19a4dadccf499cca475efa1ed0cbef",
+      "room": "LEDGE-2",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "DOWN",
+          "mode": "blocked",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "IN",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "f20e3aa5efc1113906e38fec9ea7b34dd9d002ac391e44cddab2c408b3fcaae9",
+      "room": "LEDGE-TUNNEL",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [
+        {
+          "object": "BLUE-BOOK",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        },
+        {
+          "object": "GREEN-BOOK",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        },
+        {
+          "object": "PURPLE-BOOK",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        },
+        {
+          "object": "WHITE-BOOK",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        }
+      ],
+      "attachments": [
+        {
+          "object": "STAMP",
+          "parent": "PURPLE-BOOK",
+          "socket": "contents_asset_stamp"
+        }
+      ],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "OUT",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "3f17a7dd3552f42a3e12c02db25f56d23e38fccff905b1746d7d9a528c279b8a",
+      "room": "LIBRARY",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "3c04f8100d6aaa4e5558ef9e7efefdc5d969baabb14948dc58d12daff861536d",
+      "room": "MACHINE-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "menu-only",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "EAST",
+          "mode": "alias",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "WEST",
+          "mode": "alias",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "SOUTH",
+          "mode": "alias",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "NE",
+          "mode": "alias",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "NW",
+          "mode": "alias",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "SE",
+          "mode": "alias",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "SW",
+          "mode": "alias",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "OUT",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "5958d40adfda64811cdf421e8c4d3f43cd29a8f17231aff23ef615f86b87797e",
+      "room": "MAGNET-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "menu-only",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "107d5acee84b78d7216d3a6ee9e1242c0d0d59344a1a03b0f8ba65d2a9ca736a",
+      "room": "MARBLE-HALL",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SW",
+          "mode": "menu-only",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "baec4eb5c55d1afcd12b84a49ae80c1179c1b16e0f6e4a55c632fb084a919bbf",
+      "room": "MENHIR-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "81b44df21a97d1aca2b32dcddef1d6e624e05f01a66ea5bbbb8f7a78ca7a3351",
+      "room": "OFFICE",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "63826887cb6d82b82b21e7418a9e60371f5e193362cc9471cdfd2ff537e87cf5",
+      "room": "PEARL-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "f03c7afd43fe1ec740c3fa49012ae822850cf67e1edd7be580e489028ff4fdcd",
+      "room": "PENTAGRAM-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "WEST",
+          "direction": "OUT",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "5918452244ea5520e98efb6c71b88da9258ff6eac056fc5a1718c53feca30e23",
+      "room": "POOL-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "blocked",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "NW",
+          "mode": "blocked",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "DOWN",
+          "mode": "blocked",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "07ba4376f18dd461d22f6c2a0a55782aa04d2151da9bdeacec0ce3ead40cf752",
+      "room": "POSTS-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "UP",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "SOUTH",
+          "direction": "DOWN",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "5cdc8e8a2f1c8111be2133cbcc1cca785f5e64cb028bdd611dbc8e975a5a8e49",
+      "room": "RAVINE-LEDGE",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [
+        {
+          "object": "RIDDLE-DOOR",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        }
+      ],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "NW",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "NW",
+          "direction": "DOWN",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "0b4fbf0e1051c1e7144ecd08b225590b5587e6140b70a63dc21643d9544bcb3b",
+      "room": "RIDDLE-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "9f1be067ff48bb8af6697f32e1c17a21d4f0d4972a3803ff2fc665fbe70b7de5",
+      "room": "ROOM-8",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [
+        {
+          "object": "SAFE",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        }
+      ],
+      "attachments": [
+        {
+          "object": "CARD",
+          "parent": "SAFE",
+          "socket": "contents_asset_card"
+        },
+        {
+          "object": "CROWN",
+          "parent": "SAFE",
+          "socket": "contents_asset_crown"
+        }
+      ],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "6dbaeb6709e86670edd6e6ccc10dd6823958fe6f59542ff9008defaf3516df40",
+      "room": "SAFE-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "84ea0c636e7ed2e2d0acfdadcb2164034812bac24b23ae268a90fe4d870b1a0e",
+      "room": "SMALL-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "DOWN",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "951942d12e624fb5523202649db34129676afa0ad4f6f7739797077721e4664d",
+      "room": "STAIRWAY-TOP",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "DOWN",
+          "mode": "blocked",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "CROSS",
+          "mode": "blocked",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "9885aacde5bd9011196e347797c5a1ed2c21ed9c0c3ca4970197d6847bf8fdc9",
+      "room": "STONE-BRIDGE",
+      "variants": [
+        {
+          "description": "Use the source-described stone bridge appearance for this room, never the wooden footbridge. Retain one BRIDGE identity/brief and source-controlled movement; stone dimensions require room-specific mesh review.",
+          "object": "BRIDGE",
+          "variant": "stone_bridge"
+        }
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "menu-only",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "NE",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SW",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "DOWN",
+          "mode": "blocked",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "e8e6189868ad8fc296f96ce414d1fac62c44921e264483779c64bb4373f77121",
+      "room": "STREAM-PATH",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [
+        {
+          "object": "BLUE-ICING",
+          "parent": "ALICE-TABLE",
+          "socket": "contents_asset_blue-icing"
+        },
+        {
+          "object": "EAT-ME-CAKE",
+          "parent": "ALICE-TABLE",
+          "socket": "contents_asset_eat-me-cake"
+        },
+        {
+          "object": "ORANGE-ICING",
+          "parent": "ALICE-TABLE",
+          "socket": "contents_asset_orange-icing"
+        },
+        {
+          "object": "RED-ICING",
+          "parent": "ALICE-TABLE",
+          "socket": "contents_asset_red-icing"
+        }
+      ],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "blocked",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "NW",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "19a7e8e2ac53dee347033c7c027bc2f37802e94b542863d227339f9bf005eaac",
+      "room": "TEA-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "c2247d5a8eb4eaf38a5d74fd9bb6c780ba7aee19aedb6bf53d19214fefca94cf",
+      "room": "TELLER-EAST",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "7171e043f996fb01921de8fcb019e2c60c2fd8e9035134e18a0c313c245eae8a",
+      "room": "TELLER-WEST",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "2bc6b95c134057a5c197d97e4fe9efdad2cc6fff38cc4b85e306fc1f03ea964f",
+      "room": "TOPIARY-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [
+        {
+          "object": "WIZARD-CASE",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        },
+        {
+          "object": "BROKEN-CASE",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        }
+      ],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "b10d9b05cfb1346544dd2526e048f136c7a5fb69034294e7a7ac0f938966a95f",
+      "room": "TROPHY-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "adfccd5499b58d8c798134bab1cf6ce18d12fe26978241fd08ed3a90a9c64ca7",
+      "room": "VAIR-1",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "WEST",
+          "direction": "LAND",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "edf37c3a45b77994c3c5bd75e343b95aee6075e92765db37daf9144c10c68e9e",
+      "room": "VAIR-2",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "cf2ba65965661eb4077c00d5a61be4d8559a71b99c71c05849fe1335c6a7c98b",
+      "room": "VAIR-3",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "WEST",
+          "direction": "LAND",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "5a2a3bd3dba891c92a200cc8bd492317f194ca87b2692652991e1ec3bfc2bc0d",
+      "room": "VAIR-4",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "4a67f70a40735620530e7a7c252f712f631d161221ddcf4552de1ea4845ed374",
+      "room": "VAULT",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "d88f6892e033c58efe78450cc9c639e31e6aef51a186d44d5f91eb486df2b8ee",
+      "room": "VIEWING-EAST",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "54d394c8d1be4d0b3bf589e4572c7990a6809aecffd52976081daf86c64b6e61",
+      "room": "VIEWING-WEST",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [
+        {
+          "object": "RECEPTACLE",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        }
+      ],
+      "attachments": [
+        {
+          "object": "BRAIDED-WIRE",
+          "parent": "BALLOON",
+          "socket": "contents_asset_braided-wire"
+        },
+        {
+          "object": "CLOTH-BAG",
+          "parent": "BALLOON",
+          "socket": "contents_asset_cloth-bag"
+        },
+        {
+          "object": "RECEPTACLE",
+          "parent": "BALLOON",
+          "socket": "contents_asset_receptacle"
+        }
+      ],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "b00baccd88f46245a69f30e4657ab2b389fae24af05a02534aaf6016096e892d",
+      "room": "VOLCANO-BOTTOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "DOWN",
+          "mode": "blocked",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "CROSS",
+          "mode": "blocked",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "cd9962ef0450fe89cfd044e5b0867e144badb5c57f7e0521d25dceccc4c0c47b",
+      "room": "VOLCANO-VIEW",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [
+        {
+          "object": "BUCKET",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        }
+      ],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "UP",
+          "mode": "blocked",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "60f3f70ca7b7d8f789db1a1d239ed7417cfbd3b05da53b5f8b1386fe742e7fae",
+      "room": "WELL-BOTTOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [
+        {
+          "object": "BUCKET",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        }
+      ],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "DOWN",
+          "mode": "blocked",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "204933645688a8f71573e773d0ceb5ab43906246a7b1dfd87ae0da92290e124a",
+      "room": "WELL-TOP",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "178af1cede877304d846e514d7ea1c1dec5ae87cf8ae820dfc187c0f08808794",
+      "room": "WIZARDS-QUARTERS",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [
+        {
+          "object": "WIZ-DOOR",
+          "property": "open",
+          "whenFalse": "closed",
+          "whenTrue": "open"
+        }
+      ],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "NORTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": "NORTH",
+          "direction": "OUT",
+          "mode": "alias",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "55f8a2e629cabc8861fa564f6e5d4e3449555cb3f06e9ab1abcc45a574e3f4fe",
+      "room": "WIZARDS-WORKSHOP",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [
+        {
+          "object": "STAND-1",
+          "parent": "WORKBENCH",
+          "socket": "contents_asset_stand-1"
+        },
+        {
+          "object": "STAND-2",
+          "parent": "WORKBENCH",
+          "socket": "contents_asset_stand-2"
+        },
+        {
+          "object": "STAND-3",
+          "parent": "WORKBENCH",
+          "socket": "contents_asset_stand-3"
+        }
+      ],
+      "disclosures": [],
+      "exits": [
+        {
+          "aliasOf": null,
+          "direction": "EAST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "WEST",
+          "mode": "transition",
+          "peer": null
+        },
+        {
+          "aliasOf": null,
+          "direction": "SOUTH",
+          "mode": "transition",
+          "peer": null
+        }
+      ],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "83d597ebcbce32f107580d50fe8547cae9f77d5b4c4f5443640197e2d2ae5066",
+      "room": "WORKBENCH-ROOM",
+      "variants": [],
+      "yawDegrees": 0
+    },
+    {
+      "animations": [],
+      "attachments": [],
+      "disclosures": [],
+      "exits": [],
+      "group": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "planHash": "c12a8a1ede234db5d9bec2e9fab11ed228ab601fa8ecf04ec43b47c506841ecf",
+      "room": "ZORK3",
+      "variants": [],
+      "yawDegrees": 0
+    }
+  ],
+  "status": "draft"
+}

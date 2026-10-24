@@ -1,0 +1,235 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "LIBRARY"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "0868a4f6befa4a136bd7a28371d5526386d6d388b013ade29004285c7eee0d88",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "93d4562efa6212b9c02b5b55fa6ebf010e7bb60ef5a0514b294c02539c50e0dc",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_blue-book",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_green-book",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_purple-book",
+        "pose": {
+          "position": [
+            0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_stamp",
+        "pose": {
+          "position": [
+            1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_white-book",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            1.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_north_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -5.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_out_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            5.5
+          ],
+          "yawDegrees": 180
+        }
+      }
+    ],
+    "description": "Royal library with shelves gnawed to pieces by gnomes and north exit. Individual coloured books are observed objects, never unreadable decorative duplicates of puzzle books.\nStatic source description:\nThis must have been a large library, probably for the royal family. All of the shelves have been gnawed to pieces by unfriendly gnomes. To the north is an exit.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_north_anchor",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "LEDGE-1"
+      },
+      {
+        "anchor": "exit_out_anchor",
+        "availability": "engine-option",
+        "direction": "OUT",
+        "node": "exit_out",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "LEDGE-1"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          14,
+          0.2,
+          12
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            4.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_blue-book",
+        "asset": "asset_blue-book",
+        "object": "BLUE-BOOK",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_green-book",
+        "asset": "asset_green-book",
+        "object": "GREEN-BOOK",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_purple-book",
+        "asset": "asset_purple-book",
+        "object": "PURPLE-BOOK",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_stamp",
+        "asset": "asset_stamp",
+        "object": "STAMP",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_white-book",
+        "asset": "asset_white-book",
+        "object": "WHITE-BOOK",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "0868a4f6befa4a136bd7a28371d5526386d6d388b013ade29004285c7eee0d88"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "LIBRARY",
+    "shell": "indoor",
+    "sizeMetres": [
+      14,
+      5,
+      12
+    ],
+    "spawn": "player_start"
+  }
+}

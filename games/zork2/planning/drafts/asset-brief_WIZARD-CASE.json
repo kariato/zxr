@@ -1,0 +1,72 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "WIZARD-CASE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "4ef2e1283a98964979402ae9dc97baa6e50b3cc5925489fe254f4273136e1c4f",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "5532e3a26da4c55af2975cfbd5a769610ede1d447d01d9c8401c58974a107411",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed Wizard's trophy cabinet. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: Imbedded in the wall is an ornate trophy cabinet.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every Wizard's trophy cabinet into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          1.2,
+          1.2,
+          0.6
+        ]
+      }
+    ],
+    "id": "asset_wizard-case",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "Wizard's trophy cabinet; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "WIZARD-CASE"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "4ef2e1283a98964979402ae9dc97baa6e50b3cc5925489fe254f4273136e1c4f"
+    },
+    "requiredClips": [
+      "idle",
+      "open",
+      "closed"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      1.2,
+      1.2,
+      0.6
+    ]
+  }
+}

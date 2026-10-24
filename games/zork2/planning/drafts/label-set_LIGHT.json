@@ -1,0 +1,49 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "LIGHT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "5ec5517e6c99a2849072a3c9c39627d8bcb5b0bc48d4e858c6b2dbdc809e38be",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "2643b44974b6d429ffb11c0ca9f0ada616596d201b054c56a44e287b5a977dcd",
+  "document": {
+    "entries": [
+      {
+        "family": "LIGHT:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Burn {direct} with {indirect}"
+      },
+      {
+        "family": "LIGHT:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Switch on {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_light",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "5ec5517e6c99a2849072a3c9c39627d8bcb5b0bc48d4e858c6b2dbdc809e38be"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

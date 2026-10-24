@@ -1,0 +1,67 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "POUR"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "ce14d36b904a4b0278059197c817b657ec75ee3aa4b7ada40dd9ed7b3e2e7281",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "8e325454f1da7bb7aea8638bd4c6e1d93c55963b33d39a60d87de68eb1605dfc",
+  "document": {
+    "entries": [
+      {
+        "family": "POUR:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Pour {direct} from {indirect}"
+      },
+      {
+        "family": "POUR:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Pour {direct} on {indirect}"
+      },
+      {
+        "family": "POUR:3",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Pour {direct} in {indirect}"
+      },
+      {
+        "family": "POUR:4",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Pour {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_pour",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "ce14d36b904a4b0278059197c817b657ec75ee3aa4b7ada40dd9ed7b3e2e7281"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

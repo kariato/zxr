@@ -1,0 +1,144 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "DIAMOND-9"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "eadbb4f77721499ed6e7fcbf9e9521442056fef86234910650bc1df979cea43e",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "91793af16cda0fcb54cf9ac55c6875fce68f21b3f9194be531df4406904d41cd",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_dwindow",
+        "pose": {
+          "position": [
+            -1.75,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_nw_anchor",
+        "pose": {
+          "position": [
+            -2.121,
+            0,
+            -2.121
+          ],
+          "yawDegrees": 45
+        }
+      }
+    ],
+    "description": "Small diamond-maze room with oddly angled walls and similar passages. Keep its distinct logical identity and exact source directions. No unique painted markers, floor numbering or destination clues that would solve the maze visually.\nStatic source description:\nA small room with oddly angled walls and passages in all directions.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_nw_anchor",
+        "availability": "engine-option",
+        "direction": "NW",
+        "node": "exit_nw",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DIAMOND-5"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          7,
+          0.2,
+          7
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            3.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_dwindow",
+        "asset": "asset_dwindow",
+        "object": "DWINDOW",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "eadbb4f77721499ed6e7fcbf9e9521442056fef86234910650bc1df979cea43e"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "DIAMOND-9",
+    "shell": "indoor",
+    "sizeMetres": [
+      7,
+      4,
+      7
+    ],
+    "spawn": "player_start"
+  }
+}

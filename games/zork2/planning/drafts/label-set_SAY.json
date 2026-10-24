@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "SAY"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "36da60a66bf99129e305be8a62841e05fe0462da3e15d82f9c8cf833edef2572",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "4de1cc58d21f77027378c699b3706c65f117921b8fca8e18ff535443a69ce8a2",
+  "document": {
+    "entries": [
+      {
+        "family": "SAY:1",
+        "kind": "action",
+        "slots": [
+          "words"
+        ],
+        "template": "Say {words}"
+      },
+      {
+        "choice": "yes",
+        "context": "yes-no",
+        "kind": "decision",
+        "text": "Yes"
+      },
+      {
+        "choice": "no",
+        "context": "yes-no",
+        "kind": "decision",
+        "text": "No"
+      },
+      {
+        "choice": "restart",
+        "context": "finish",
+        "kind": "decision",
+        "text": "Restart the game"
+      },
+      {
+        "choice": "restore",
+        "context": "finish",
+        "kind": "decision",
+        "text": "Restore the source save"
+      },
+      {
+        "choice": "quit",
+        "context": "finish",
+        "kind": "decision",
+        "text": "Quit the game"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_say",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "36da60a66bf99129e305be8a62841e05fe0462da3e15d82f9c8cf833edef2572"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "LAVA-TUBE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "45dc29675a0a53da342e9d7f5c35fb5b9c5adf83e77b7d2051b9ee442d2151cb",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "54969491ef345afe9232bf60e8f7773fb3e70ccad4e315586bcb84c61a698d16",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_south_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            2
+          ],
+          "yawDegrees": 180
+        }
+      },
+      {
+        "node": "exit_up_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -2
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_down_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -2
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Tight solidified-lava chimney extending over one hundred feet, large southern crack and room far below. Vertical movement uses source options, not gravity teleportation.\nStatic source description:\nYou are in a tight chimney of solidified lava. It extends up at least another hundred feet and down to a large room far below. A large crack opens to the south, probably the result of a shift in the rock strata.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_south_anchor",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "COBWEBBY-CORRIDOR"
+      },
+      {
+        "anchor": "exit_up_anchor",
+        "availability": "engine-option",
+        "direction": "UP",
+        "node": "exit_up",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "VOLCANO-VIEW"
+      },
+      {
+        "anchor": "exit_down_anchor",
+        "availability": "engine-option",
+        "direction": "DOWN",
+        "node": "exit_down",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "GLACIER-ROOM"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "rock",
+        "node": "base_floor",
+        "part": "rock_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          5,
+          0.2,
+          5
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            34.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "45dc29675a0a53da342e9d7f5c35fb5b9c5adf83e77b7d2051b9ee442d2151cb"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "LAVA-TUBE",
+    "shell": "cave",
+    "sizeMetres": [
+      5,
+      35,
+      5
+    ],
+    "spawn": "player_start"
+  }
+}

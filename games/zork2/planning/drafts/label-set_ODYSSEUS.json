@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "ODYSSEUS"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "e50f9a1b5ac5670e9e596872149157d975f604caa6b0454180e8d68962869541",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "479b04fed8a0c8d25a6b04484e3c4fbe3ec1212cc98c14d92599963ff96dd385",
+  "document": {
+    "entries": [
+      {
+        "family": "ODYSSEUS:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Odysseus"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_odysseus",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "e50f9a1b5ac5670e9e596872149157d975f604caa6b0454180e8d68962869541"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

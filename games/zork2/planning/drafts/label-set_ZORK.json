@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "ZORK"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "244d34529e17bcb39cc74fd9890dcc579bf76ca3b7532343e265c17ff77338f7",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "2d31267949e924e0e44caa2a43acca4fcf84061fe92693864e59f90cf1f2959a",
+  "document": {
+    "entries": [
+      {
+        "family": "ZORK:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Zork"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_zork",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "244d34529e17bcb39cc74fd9890dcc579bf76ca3b7532343e265c17ff77338f7"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

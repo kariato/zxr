@@ -1,0 +1,623 @@
+{
+  "objects": [
+    {
+      "exits": [],
+      "flags": [
+        {
+          "name": "TRYTAKEBIT",
+          "number": 13
+        },
+        {
+          "name": "TAKEBIT",
+          "number": 17
+        },
+        {
+          "name": "WEAPONBIT",
+          "number": 29
+        }
+      ],
+      "flagsSource": {
+        "end": {
+          "column": 38,
+          "line": 2634,
+          "offset": 68399
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 2,
+          "line": 2634,
+          "offset": 68363
+        }
+      },
+      "id": 223,
+      "kind": "object",
+      "name": "SWORD",
+      "parent": {
+        "id": 51,
+        "name": "INSIDE-BARROW"
+      },
+      "parentSource": {
+        "end": {
+          "column": 20,
+          "line": 2630,
+          "offset": 68265
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 2,
+          "line": 2630,
+          "offset": 68247
+        }
+      },
+      "properties": [
+        {
+          "byteLength": 8,
+          "kind": "words",
+          "property": {
+            "name": "SYNONYM",
+            "number": 17
+          },
+          "source": {
+            "end": {
+              "column": 41,
+              "line": 2631,
+              "offset": 68306
+            },
+            "file": "2dungeon.zil",
+            "start": {
+              "column": 2,
+              "line": 2631,
+              "offset": 68267
+            }
+          },
+          "words": [
+            {
+              "dictionaryIndex": 588,
+              "name": "SWORD"
+            },
+            {
+              "dictionaryIndex": 409,
+              "name": "ORCRIST"
+            },
+            {
+              "dictionaryIndex": 244,
+              "name": "GLAMDRING"
+            },
+            {
+              "dictionaryIndex": 58,
+              "name": "BLADE"
+            }
+          ]
+        },
+        {
+          "adjectives": [
+            {
+              "name": "ELVISH",
+              "number": 127
+            },
+            {
+              "name": "OLD",
+              "number": 233
+            },
+            {
+              "name": "ANTIQUE",
+              "number": 126
+            }
+          ],
+          "byteLength": 3,
+          "kind": "adjectives",
+          "property": {
+            "name": "ADJECTIVE",
+            "number": 16
+          },
+          "source": {
+            "end": {
+              "column": 32,
+              "line": 2632,
+              "offset": 68338
+            },
+            "file": "2dungeon.zil",
+            "start": {
+              "column": 2,
+              "line": 2632,
+              "offset": 68308
+            }
+          }
+        },
+        {
+          "byteLength": 2,
+          "kind": "routine",
+          "property": {
+            "name": "ACTION",
+            "number": 15
+          },
+          "routine": {
+            "id": 264,
+            "name": "SWORD-FCN"
+          },
+          "source": {
+            "end": {
+              "column": 20,
+              "line": 2635,
+              "offset": 68419
+            },
+            "file": "2dungeon.zil",
+            "start": {
+              "column": 2,
+              "line": 2635,
+              "offset": 68401
+            }
+          }
+        },
+        {
+          "byteLength": 2,
+          "kind": "number",
+          "property": {
+            "name": "SIZE",
+            "number": 14
+          },
+          "source": {
+            "end": {
+              "column": 11,
+              "line": 2638,
+              "offset": 68544
+            },
+            "file": "2dungeon.zil",
+            "start": {
+              "column": 2,
+              "line": 2638,
+              "offset": 68535
+            }
+          },
+          "value": 30
+        },
+        {
+          "byteLength": 2,
+          "kind": "text",
+          "property": {
+            "name": "LDESC",
+            "number": 13
+          },
+          "source": {
+            "end": {
+              "column": 55,
+              "line": 2636,
+              "offset": 68474
+            },
+            "file": "2dungeon.zil",
+            "start": {
+              "column": 2,
+              "line": 2636,
+              "offset": 68421
+            }
+          },
+          "text": "An Elvish sword of great antiquity is here."
+        },
+        {
+          "byteLength": 2,
+          "kind": "text",
+          "property": {
+            "name": "FDESC",
+            "number": 10
+          },
+          "source": {
+            "end": {
+              "column": 59,
+              "line": 2637,
+              "offset": 68533
+            },
+            "file": "2dungeon.zil",
+            "start": {
+              "column": 2,
+              "line": 2637,
+              "offset": 68476
+            }
+          },
+          "text": "A sword of Elvish workmanship is on the ground."
+        }
+      ],
+      "shortName": {
+        "source": {
+          "end": {
+            "column": 23,
+            "line": 2633,
+            "offset": 68361
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 2,
+            "line": 2633,
+            "offset": 68340
+          }
+        },
+        "text": "elvish sword"
+      },
+      "source": {
+        "end": {
+          "column": 12,
+          "line": 2638,
+          "offset": 68545
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 2629,
+          "offset": 68232
+        }
+      }
+    },
+    {
+      "exits": [],
+      "flags": [
+        {
+          "name": "TAKEBIT",
+          "number": 17
+        },
+        {
+          "name": "LIGHTBIT",
+          "number": 31
+        }
+      ],
+      "flagsSource": {
+        "end": {
+          "column": 26,
+          "line": 1970,
+          "offset": 52482
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 2,
+          "line": 1970,
+          "offset": 52458
+        }
+      },
+      "id": 149,
+      "kind": "object",
+      "name": "LAMP",
+      "parent": {
+        "id": 51,
+        "name": "INSIDE-BARROW"
+      },
+      "parentSource": {
+        "end": {
+          "column": 20,
+          "line": 1966,
+          "offset": 52392
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 2,
+          "line": 1966,
+          "offset": 52374
+        }
+      },
+      "properties": [
+        {
+          "byteLength": 6,
+          "kind": "words",
+          "property": {
+            "name": "SYNONYM",
+            "number": 17
+          },
+          "source": {
+            "end": {
+              "column": 30,
+              "line": 1967,
+              "offset": 52422
+            },
+            "file": "2dungeon.zil",
+            "start": {
+              "column": 2,
+              "line": 1967,
+              "offset": 52394
+            }
+          },
+          "words": [
+            {
+              "dictionaryIndex": 323,
+              "name": "LAMP"
+            },
+            {
+              "dictionaryIndex": 325,
+              "name": "LANTERN"
+            },
+            {
+              "dictionaryIndex": 336,
+              "name": "LIGHT"
+            }
+          ]
+        },
+        {
+          "adjectives": [
+            {
+              "name": "BRASS",
+              "number": 171
+            }
+          ],
+          "byteLength": 1,
+          "kind": "adjectives",
+          "property": {
+            "name": "ADJECTIVE",
+            "number": 16
+          },
+          "source": {
+            "end": {
+              "column": 19,
+              "line": 1968,
+              "offset": 52441
+            },
+            "file": "2dungeon.zil",
+            "start": {
+              "column": 2,
+              "line": 1968,
+              "offset": 52424
+            }
+          }
+        },
+        {
+          "byteLength": 2,
+          "kind": "routine",
+          "property": {
+            "name": "ACTION",
+            "number": 15
+          },
+          "routine": {
+            "id": 368,
+            "name": "LANTERN"
+          },
+          "source": {
+            "end": {
+              "column": 18,
+              "line": 1972,
+              "offset": 52570
+            },
+            "file": "2dungeon.zil",
+            "start": {
+              "column": 2,
+              "line": 1972,
+              "offset": 52554
+            }
+          }
+        },
+        {
+          "byteLength": 2,
+          "kind": "number",
+          "property": {
+            "name": "SIZE",
+            "number": 14
+          },
+          "source": {
+            "end": {
+              "column": 11,
+              "line": 1973,
+              "offset": 52581
+            },
+            "file": "2dungeon.zil",
+            "start": {
+              "column": 2,
+              "line": 1973,
+              "offset": 52572
+            }
+          },
+          "value": 15
+        },
+        {
+          "byteLength": 2,
+          "kind": "text",
+          "property": {
+            "name": "FDESC",
+            "number": 10
+          },
+          "source": {
+            "end": {
+              "column": 70,
+              "line": 1971,
+              "offset": 52552
+            },
+            "file": "2dungeon.zil",
+            "start": {
+              "column": 2,
+              "line": 1971,
+              "offset": 52484
+            }
+          },
+          "text": "A strangely familiar brass lantern is lying on the ground."
+        }
+      ],
+      "shortName": {
+        "source": {
+          "end": {
+            "column": 15,
+            "line": 1969,
+            "offset": 52456
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 2,
+            "line": 1969,
+            "offset": 52443
+          }
+        },
+        "text": "lamp"
+      },
+      "source": {
+        "end": {
+          "column": 12,
+          "line": 1973,
+          "offset": 52582
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 1965,
+          "offset": 52360
+        }
+      }
+    }
+  ],
+  "room": {
+    "exits": [
+      {
+        "byteLength": 1,
+        "bytes": [
+          168
+        ],
+        "declaration": "(SOUTH TO NARROW-TUNNEL)",
+        "property": {
+          "name": "SOUTH",
+          "number": 28
+        },
+        "relocations": [],
+        "source": {
+          "end": {
+            "column": 31,
+            "line": 186,
+            "offset": 3725
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 7,
+            "line": 186,
+            "offset": 3701
+          }
+        },
+        "view": {
+          "kind": "UEXIT",
+          "to": "NARROW-TUNNEL"
+        }
+      },
+      {
+        "byteLength": 2,
+        "bytes": [
+          0,
+          0
+        ],
+        "declaration": "(OUT \"You may not recall, but when you entered, the door of the barrow\nshut behind you. There is no way out.\")",
+        "property": {
+          "name": "OUT",
+          "number": 20
+        },
+        "relocations": [
+          {
+            "kind": "string",
+            "offset": 0,
+            "text": "You may not recall, but when you entered, the door of the barrow shut behind you. There is no way out."
+          }
+        ],
+        "source": {
+          "end": {
+            "column": 40,
+            "line": 189,
+            "offset": 3842
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 7,
+            "line": 187,
+            "offset": 3732
+          }
+        },
+        "view": {
+          "kind": "NEXIT",
+          "message": "You may not recall, but when you entered, the door of the barrow shut behind you. There is no way out."
+        }
+      }
+    ],
+    "flags": [
+      {
+        "name": "RLANDBIT",
+        "number": 12
+      },
+      {
+        "name": "ONBIT",
+        "number": 19
+      }
+    ],
+    "flagsSource": {
+      "end": {
+        "column": 29,
+        "line": 185,
+        "offset": 3694
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 7,
+        "line": 185,
+        "offset": 3672
+      }
+    },
+    "id": 51,
+    "kind": "room",
+    "name": "INSIDE-BARROW",
+    "parent": {
+      "id": 37,
+      "name": "ROOMS"
+    },
+    "parentSource": {
+      "end": {
+        "column": 17,
+        "line": 179,
+        "offset": 3449
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 7,
+        "line": 179,
+        "offset": 3439
+      }
+    },
+    "properties": [
+      {
+        "byteLength": 2,
+        "kind": "text",
+        "property": {
+          "name": "LDESC",
+          "number": 13
+        },
+        "source": {
+          "end": {
+            "column": 35,
+            "line": 183,
+            "offset": 3632
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 7,
+            "line": 180,
+            "offset": 3456
+          }
+        },
+        "text": "You are inside an ancient barrow hidden deep within a dark forest. The barrow opens into a narrow tunnel at its southern end. You can see a faint glow at the far end."
+      }
+    ],
+    "shortName": {
+      "source": {
+        "end": {
+          "column": 33,
+          "line": 184,
+          "offset": 3665
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 184,
+          "offset": 3639
+        }
+      },
+      "text": "Inside the Barrow"
+    },
+    "source": {
+      "end": {
+        "column": 41,
+        "line": 189,
+        "offset": 3843
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 1,
+        "line": 178,
+        "offset": 3413
+      }
+    }
+  }
+}

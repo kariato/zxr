@@ -1,0 +1,46 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "LEAVE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "37240930a3ef4ad5792c6ed70a4c7a0b1b12ee762eabf1db5fbc6822616f0a81",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "c6ff0042dacceed851dea2e4c70f5043779d43aa897e2394c792b11f7dfcc02d",
+  "document": {
+    "entries": [
+      {
+        "family": "LEAVE:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Leave {direct}"
+      },
+      {
+        "family": "LEAVE:2",
+        "kind": "action",
+        "slots": [],
+        "template": "Leave"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_leave",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "37240930a3ef4ad5792c6ed70a4c7a0b1b12ee762eabf1db5fbc6822616f0a81"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

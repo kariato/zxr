@@ -1,0 +1,72 @@
+{
+  "attempts": 0,
+  "document": {
+    "description": "Source small flowing STREAM at the bottom of the cavern ravine. A restrained narrow ribbon of dark blue-green water, no invented waterfall or stepping stones. Origin on the water surface; place below the bank only where source context describes the stream. Do not make a stream selectable through undisclosed geometry or turn it into a traversable bridge. Its shape and distance are art estimates.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_stream",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          12,
+          0.08,
+          0.7
+        ]
+      }
+    ],
+    "id": "asset_stream",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#254A50",
+        "description": "Muted cool blue-green water",
+        "metalness": 0,
+        "name": "water",
+        "roughness": 0.92
+      }
+    ],
+    "objects": [
+      "STREAM"
+    ],
+    "provenance": {
+      "agent": "Codex",
+      "inputHash": "51ffbd37b80f89db08ec89a41cebcc14bbe045dd0271e98d3d5ed88e2a216f44",
+      "method": "assistant",
+      "model": null,
+      "promptVersion": "zxr-planner-v1"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "reviewedOn": "2026-10-23",
+      "reviewer": "Mark",
+      "status": "approved"
+    },
+    "sizeMetres": [
+      12,
+      0.08,
+      0.7
+    ]
+  },
+  "format": "zxr-plan-record-v1",
+  "inputHash": "51ffbd37b80f89db08ec89a41cebcc14bbe045dd0271e98d3d5ed88e2a216f44",
+  "model": null,
+  "outputHash": "3cd75434659bd4e6ce05f5637d889ac868747e16c66d1d0159ed7fea8ee651d3",
+  "promptVersion": "zxr-planner-v1",
+  "provider": "assistant",
+  "requestHash": null,
+  "requestedModel": null,
+  "task": {
+    "kind": "asset-brief",
+    "subject": "STREAM"
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "CRYPT-ANTEROOM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "1e458919e2c6201a5ffafed36b77895cd6f59225cf1561cf2976fb2a217fef69",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "107b32f2b8bb2ebe60878b1cf4f4149cc1db40833593e87f539b60fa4bc9db61",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_crypt-door",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_west_anchor",
+        "pose": {
+          "position": [
+            -5.5,
+            0,
+            0
+          ],
+          "yawDegrees": 90
+        }
+      },
+      {
+        "node": "exit_south_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            5.5
+          ],
+          "yawDegrees": 180
+        }
+      },
+      {
+        "node": "exit_in_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -5.5
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Empty marble anteroom with Flathead bas reliefs and Feel Free inscription above the separate southern marble door.\nDescription is routine-driven: the safe base profile above does not make guarded output unconditional.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_west_anchor",
+        "availability": "engine-option",
+        "direction": "WEST",
+        "node": "exit_west",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "CERBERUS-ROOM"
+      },
+      {
+        "anchor": "exit_south_anchor",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "CRYPT-ROOM"
+      },
+      {
+        "anchor": "exit_in_anchor",
+        "availability": "engine-option",
+        "direction": "IN",
+        "node": "exit_in",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "CRYPT-ROOM"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          12,
+          0.2,
+          12
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            4.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_crypt-door",
+        "asset": "asset_crypt-door",
+        "object": "CRYPT-DOOR",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "1e458919e2c6201a5ffafed36b77895cd6f59225cf1561cf2976fb2a217fef69"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "CRYPT-ANTEROOM",
+    "shell": "indoor",
+    "sizeMetres": [
+      12,
+      5,
+      12
+    ],
+    "spawn": "player_start"
+  }
+}

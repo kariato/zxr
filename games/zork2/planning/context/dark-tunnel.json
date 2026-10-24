@@ -1,0 +1,331 @@
+{
+  "cautions": [
+    "Offline source context; never current player-visible state.",
+    "All routine text/effects are conditional possibilities, not an executed description or a reveal rule.",
+    "Potential arrivals are a conservative shared catalogue, not proven room reachability or initial scenery.",
+    "Consult routines.json for text fragments, source guards, script changes and unresolved targets/calls.",
+    "Every feature requires state review; absent literal mutation evidence does not prove a static feature. Generic handlers and raw memory writes may change computed targets.",
+    "Computed exits are not guessed; RLANDBIT means land, not outdoors."
+  ],
+  "exits": [
+    {
+      "declaration": "(NE TO SHALLOW-FORD)",
+      "direction": "NE",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Shallow Ford",
+        "name": "SHALLOW-FORD"
+      },
+      "source": {
+        "end": {
+          "column": 27,
+          "line": 259,
+          "offset": 6362
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 259,
+          "offset": 6342
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "SHALLOW-FORD"
+      }
+    },
+    {
+      "declaration": "(SE TO GARDEN-NORTH)",
+      "direction": "SE",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "North End of Garden",
+        "name": "GARDEN-NORTH"
+      },
+      "source": {
+        "end": {
+          "column": 27,
+          "line": 260,
+          "offset": 6389
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 260,
+          "offset": 6369
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "GARDEN-NORTH"
+      }
+    },
+    {
+      "declaration": "(SW TO STREAM-PATH)",
+      "direction": "SW",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Path Near Stream",
+        "name": "STREAM-PATH"
+      },
+      "source": {
+        "end": {
+          "column": 26,
+          "line": 261,
+          "offset": 6415
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 261,
+          "offset": 6396
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "STREAM-PATH"
+      }
+    }
+  ],
+  "features": [
+    {
+      "changeable": false,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "RLANDBIT"
+      ],
+      "name": "DARK-TUNNEL",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    }
+  ],
+  "format": "zxr-room-context-v1",
+  "globalObjects": [],
+  "initialObjects": [],
+  "inputHash": "8905de3f5662d797eaf1579a00a1b0a6cd3c26b0425968b96cd7ffabbe9eb66a",
+  "potentialArrivals": [
+    "ADVENTURER",
+    "ARCANA",
+    "BALLOON",
+    "BALLOON-LABEL",
+    "BANK-BROCHURE",
+    "BAT",
+    "BILLS",
+    "BLESSINGS",
+    "BLUE-BOOK",
+    "BLUE-ICING",
+    "BRAIDED-WIRE",
+    "BRICK",
+    "BRIDGE",
+    "BROKEN-CASE",
+    "BROKEN-LAMP",
+    "BUCKET",
+    "CAGE",
+    "CANDY",
+    "CARD",
+    "CERBERUS",
+    "CHASM",
+    "CHEST",
+    "CLOTH-BAG",
+    "COIN",
+    "COLLAR",
+    "COMPASS",
+    "CROWN",
+    "CRYPT-DOOR",
+    "DEAD-BALLOON",
+    "DEAD-DRAGON",
+    "DEAD-SERPENT",
+    "DEGREE",
+    "DEPOSIT-BOX",
+    "DIM-DOOR",
+    "DRAGON",
+    "DWINDOW",
+    "EAST-WALL",
+    "EAT-ME-CAKE",
+    "EXPLOSION",
+    "FLASK",
+    "FOOTPAD",
+    "FUSE",
+    "GAZEBO",
+    "GENIE",
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GLOBAL-OBJECTS",
+    "GLOBAL-PALANTIR",
+    "GLOBAL-PRINCESS",
+    "GLOBAL-UNICORN",
+    "GLOBAL-WATER",
+    "GLOBAL-WIZARD-CASE",
+    "GNOME",
+    "GNOME-OF-ZURICH",
+    "GOLD-KEY",
+    "GREEN-BOOK",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "HEADS",
+    "INTNUM",
+    "IRON-BOX",
+    "IT",
+    "KEY",
+    "LAMP",
+    "LETTER-OPENER",
+    "LOCAL-GLOBALS",
+    "LUNGS",
+    "MANGLED-CAGE",
+    "MATCH",
+    "ME",
+    "MENHIR",
+    "MOSS",
+    "NEWSPAPER",
+    "NORTH-WALL",
+    "ORANGE-ICING",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "PATHOBJ",
+    "PDOOR",
+    "PEARL",
+    "PLACE-MAT",
+    "PORTRAIT",
+    "PRINCESS",
+    "PSEUDO-OBJECT",
+    "PURPLE-BOOK",
+    "PWINDOW",
+    "RECEPTACLE",
+    "RED-ICING",
+    "REPELLENT",
+    "RIBBON",
+    "ROBOT",
+    "ROBOT-LABEL",
+    "ROSE",
+    "ROSE-BUSH",
+    "RUBY",
+    "SAILOR",
+    "SALTY-WATER",
+    "SERPENT",
+    "SEWL",
+    "SNWL",
+    "SOUTH-WALL",
+    "SSWL",
+    "STAIRS",
+    "STAMP",
+    "STAND-4",
+    "STATUETTE",
+    "STREAM",
+    "SWORD",
+    "SWWL",
+    "TEAPOT",
+    "TROPHY-BOTTLES",
+    "TROPHY-SWORD",
+    "TUNNEL",
+    "UNICORN",
+    "VIOLIN",
+    "WAND",
+    "WANDS",
+    "WATER",
+    "WELL",
+    "WEST-WALL",
+    "WHITE-BOOK",
+    "WISH",
+    "WIZ-DOOR",
+    "WIZARD",
+    "ZORKMID"
+  ],
+  "room": {
+    "desc": {
+      "source": {
+        "end": {
+          "column": 27,
+          "line": 257,
+          "offset": 6312
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 257,
+          "offset": 6292
+        }
+      },
+      "text": "Dark Tunnel"
+    },
+    "flags": [
+      "RLANDBIT"
+    ],
+    "id": 158,
+    "initialRoomLightFlag": false,
+    "ldesc": [
+      {
+        "byteLength": 2,
+        "kind": "text",
+        "property": {
+          "name": "LDESC",
+          "number": 13
+        },
+        "source": {
+          "end": {
+            "column": 50,
+            "line": 256,
+            "offset": 6285
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 7,
+            "line": 252,
+            "offset": 6028
+          }
+        },
+        "text": "This is a dark tunnel with dim light to the northeast. The tunnel is smooth but dusty and filled with twigs and leaves, debris which becomes deeper as the tunnel branches into a wide corridor leading southwest and a narrower one leading southeast."
+      }
+    ],
+    "name": "DARK-TUNNEL",
+    "outdoors": "not-encoded-do-not-infer-from-RLANDBIT",
+    "source": {
+      "end": {
+        "column": 27,
+        "line": 261,
+        "offset": 6416
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 1,
+        "line": 250,
+        "offset": 5987
+      }
+    }
+  },
+  "routineReferencedObjects": [],
+  "routines": {
+    "dispatchBoundaries": [],
+    "missing": [],
+    "reachableHelpers": [],
+    "roots": []
+  },
+  "scriptedArrivals": [],
+  "stateDependencies": [],
+  "universalGlobalObjects": [
+    "BLESSINGS",
+    "COMPASS",
+    "EAST-WALL",
+    "FOOTPAD",
+    "GLOBAL-PRINCESS",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "INTNUM",
+    "IT",
+    "LUNGS",
+    "ME",
+    "NORTH-WALL",
+    "PATHOBJ",
+    "SAILOR",
+    "SOUTH-WALL",
+    "TUNNEL",
+    "WEST-WALL",
+    "WISH",
+    "ZORKMID"
+  ]
+}

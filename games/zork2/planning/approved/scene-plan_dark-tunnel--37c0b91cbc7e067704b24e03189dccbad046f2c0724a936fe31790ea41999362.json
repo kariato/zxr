@@ -1,0 +1,246 @@
+{
+  "attempts": 0,
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_ne_anchor",
+        "pose": {
+          "position": [
+            3.3,
+            0,
+            -4.3
+          ],
+          "yawDegrees": -45
+        }
+      },
+      {
+        "node": "exit_se_anchor",
+        "pose": {
+          "position": [
+            3.3,
+            0,
+            4.3
+          ],
+          "yawDegrees": -135
+        }
+      },
+      {
+        "node": "exit_sw_anchor",
+        "pose": {
+          "position": [
+            -3.3,
+            0,
+            4.3
+          ],
+          "yawDegrees": 135
+        }
+      }
+    ],
+    "description": "Smooth but dusty dark tunnel, with dim light toward the northeast when the engine permits vision. Twigs and leaves lie on the ground, becoming deeper toward the southwest wide corridor and southeast narrower branch. NE leads to Shallow Ford, SW to Stream Path and SE to Garden North. This source room has no ONBIT: loading its plan never reveals its shell, debris or branch silhouettes in darkness. Portable/source light selects the lit rig; the distant glow is descriptive only and must not become an independent lamp illuminating the room. Keep non-movement source interactions in the menu; decorative leaves are not new collectible objects.",
+    "exits": [
+      {
+        "anchor": "exit_ne_anchor",
+        "availability": "engine-option",
+        "direction": "NE",
+        "node": "exit_ne",
+        "sizeMetres": [
+          1.5,
+          2.4,
+          0.35
+        ],
+        "to": "SHALLOW-FORD"
+      },
+      {
+        "anchor": "exit_se_anchor",
+        "availability": "engine-option",
+        "direction": "SE",
+        "node": "exit_se",
+        "sizeMetres": [
+          1.2,
+          2.2,
+          0.35
+        ],
+        "to": "GARDEN-NORTH"
+      },
+      {
+        "anchor": "exit_sw_anchor",
+        "availability": "engine-option",
+        "direction": "SW",
+        "node": "exit_sw",
+        "sizeMetres": [
+          2,
+          2.6,
+          0.35
+        ],
+        "to": "STREAM-PATH"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "limestone",
+        "node": "tunnel_floor",
+        "part": "smoothed_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          10,
+          0.2,
+          12
+        ]
+      },
+      {
+        "material": "limestone",
+        "node": "tunnel_roof",
+        "part": "smoothed_roof",
+        "pose": {
+          "position": [
+            0,
+            3.5,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          10,
+          0.2,
+          12
+        ]
+      },
+      {
+        "material": "dry_leaves",
+        "node": "twig_drift_ne",
+        "part": "twig_leaf_scatter",
+        "pose": {
+          "position": [
+            2.3,
+            0.02,
+            -2.6
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          1,
+          0.04,
+          1.2
+        ]
+      },
+      {
+        "material": "dry_leaves",
+        "node": "twig_drift_sw",
+        "part": "twig_leaf_scatter",
+        "pose": {
+          "position": [
+            -2.5,
+            0.04,
+            3
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          2,
+          0.08,
+          2
+        ]
+      },
+      {
+        "material": "dry_leaves",
+        "node": "twig_drift_se",
+        "part": "twig_leaf_scatter",
+        "pose": {
+          "position": [
+            2.8,
+            0.04,
+            3.2
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          1.2,
+          0.08,
+          1.8
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            4,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#D7AD73",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "portable_light_rig",
+          "position": [
+            0,
+            4,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [],
+    "provenance": {
+      "agent": "Codex",
+      "inputHash": "52d0e4586446b4a01ac4febfbc4e252a05dfdf60a66b4e0c51e9237f3c0a5e23",
+      "method": "assistant",
+      "model": null,
+      "promptVersion": "zxr-planner-v1"
+    },
+    "review": {
+      "reviewedOn": "2026-10-23",
+      "reviewer": "Mark",
+      "status": "approved"
+    },
+    "room": "DARK-TUNNEL",
+    "shell": "cave",
+    "sizeMetres": [
+      10,
+      3.5,
+      12
+    ],
+    "spawn": "player_start"
+  },
+  "format": "zxr-plan-record-v1",
+  "inputHash": "52d0e4586446b4a01ac4febfbc4e252a05dfdf60a66b4e0c51e9237f3c0a5e23",
+  "model": null,
+  "outputHash": "37c0b91cbc7e067704b24e03189dccbad046f2c0724a936fe31790ea41999362",
+  "promptVersion": "zxr-planner-v1",
+  "provider": "assistant",
+  "requestHash": null,
+  "requestedModel": null,
+  "task": {
+    "kind": "scene-plan",
+    "subject": "DARK-TUNNEL"
+  }
+}

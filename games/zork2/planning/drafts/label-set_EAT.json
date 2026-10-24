@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "EAT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "9283acef49437ad88acb3832236bd325a65751dd3d20fb1e91866da854fb9828",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "441f450f9ba9f0a8b4bbc574f1814fd156fdc5f373aebc2f683a53def06cde49",
+  "document": {
+    "entries": [
+      {
+        "family": "EAT:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Eat {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_eat",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "9283acef49437ad88acb3832236bd325a65751dd3d20fb1e91866da854fb9828"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

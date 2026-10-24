@@ -1,0 +1,166 @@
+{
+  "format": "zxr-scene-plan-v1",
+  "provenance": {
+    "method": "manual",
+    "author": "ZXR contributors"
+  },
+  "review": {
+    "status": "draft"
+  },
+  "room": "INSIDE-BARROW",
+  "description": "Draft earthen barrow with a narrow southern tunnel. The closed entrance is scenery, not a working exit.",
+  "sizeMetres": [
+    6,
+    3,
+    7
+  ],
+  "shell": "cave",
+  "spawn": "player_start",
+  "anchors": [
+    {
+      "node": "player_start",
+      "pose": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "yawDegrees": 0
+      }
+    },
+    {
+      "node": "anchor_south",
+      "pose": {
+        "position": [
+          0,
+          0,
+          3
+        ],
+        "yawDegrees": 0
+      }
+    },
+    {
+      "node": "anchor_out",
+      "pose": {
+        "position": [
+          0,
+          0,
+          -3
+        ],
+        "yawDegrees": 0
+      }
+    },
+    {
+      "node": "sword_mark",
+      "pose": {
+        "position": [
+          0.5,
+          0,
+          -1
+        ],
+        "yawDegrees": 0
+      }
+    },
+    {
+      "node": "lamp_mark",
+      "pose": {
+        "position": [
+          1.5,
+          0,
+          -1
+        ],
+        "yawDegrees": 0
+      }
+    }
+  ],
+  "exits": [
+    {
+      "direction": "SOUTH",
+      "to": "NARROW-TUNNEL",
+      "node": "exit_south",
+      "anchor": "anchor_south",
+      "sizeMetres": [
+        1.5,
+        2.3,
+        0.4
+      ],
+      "availability": "engine-option"
+    },
+    {
+      "direction": "OUT",
+      "to": null,
+      "node": "exit_out",
+      "anchor": "anchor_out",
+      "sizeMetres": [
+        1.5,
+        2.3,
+        0.4
+      ],
+      "availability": "engine-option"
+    }
+  ],
+  "objects": [
+    {
+      "object": "SWORD",
+      "asset": "elvish_sword",
+      "anchor": "sword_mark",
+      "visibility": "engine-observation"
+    },
+    {
+      "object": "LAMP",
+      "asset": "brass_lamp",
+      "anchor": "lamp_mark",
+      "visibility": "engine-observation"
+    }
+  ],
+  "features": [],
+  "lighting": {
+    "lit": [
+      {
+        "node": "light_lit",
+        "kind": "ambient",
+        "colour": "#C6AE82",
+        "intensity": 0.6,
+        "position": [
+          0,
+          2,
+          0
+        ]
+      }
+    ],
+    "dark": [
+      {
+        "node": "light_dark",
+        "kind": "ambient",
+        "colour": "#000000",
+        "intensity": 0,
+        "position": [
+          0,
+          2,
+          0
+        ]
+      }
+    ]
+  },
+  "ambient": null,
+  "kitParts": [
+    {
+      "node": "floor",
+      "part": "stone_floor",
+      "pose": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "yawDegrees": 0
+      },
+      "sizeMetres": [
+        6,
+        0.1,
+        7
+      ],
+      "material": "stone"
+    }
+  ]
+}

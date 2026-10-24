@@ -20,6 +20,21 @@ export class TextPlayer {
     this.transcript.push({...(command?{command}:{}),text:packet.text.join('')+(packet.error?'\n'+packet.error.cause:'')});
   }
   choose(key:string){const callback=this.#callbacks.get(key);if(!callback)throw new Error('Unavailable choice');this.#callbacks.clear();callback();}
+  /** Spatial targets browse the same source menus as the text presenter. */
+  openObject(id:string){
+    if(this.session.observe().state!=='input')return;
+    const menu=this.session.menu('PLAYER'),group=menu.objects.find(g=>g.operand===id);
+    if(!group)throw new Error('Object has no available actions');
+    this.#reset();this.#menu=menu;const o=this.session.observe();this.#menuKey=o.epoch+':'+o.revision+':PLAYER';
+    this.#object=operandIdentity(group.operand);this.#page='object';
+  }
+  walk(direction:string){
+    if(this.session.observe().state!=='input')return;
+    const page=this.session.menu('PLAYER').exits;
+    const choice=[...page.primary,...page.more].find(c=>c.key==='walk:'+direction);
+    if(!choice)throw new Error('Unavailable movement attempt');
+    this.#reset();this.receive(this.session.commitSelection(choice.draft),choice.label);
+  }
   #reset(){this.#menu=undefined;this.#stage=undefined;this.#stageDraft=undefined;this.#callbacks.clear();this.#actor='PLAYER';this.#draft=undefined;this.#spelling=undefined;this.#multiple=undefined;this.#page='root';this.#expanded=false;}
   importSave(save:ZxrSave){const packet=this.session.importSave(save);this.#reset();this.#actor='PLAYER';this.receive(packet,'Restore saved game');}
   completeHost(outcome:'success'|'failure'|'cancel',save?:ZxrSave){

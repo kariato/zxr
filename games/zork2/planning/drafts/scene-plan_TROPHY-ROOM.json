@@ -1,0 +1,246 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "TROPHY-ROOM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "0f2bee837efc13fb1f3fd9f8619bf0a0bc67e45787eafec04d7e47b5e3ee0e00",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "a5bcb4709b59fc17668e30809fac6a992ba2c0c5460aabf24400068aa5340eaf",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_degree",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_trophy-bottles",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_trophy-sword",
+        "pose": {
+          "position": [
+            0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_wands",
+        "pose": {
+          "position": [
+            1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_warning-label",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            1.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_wizard-case",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            1.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_broken-case",
+        "pose": {
+          "position": [
+            0.6,
+            0,
+            1.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_north_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -6.5
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Wizard memorabilia, degree, used wands, nicked swords, bottled homunculi and stuffed owl. Interactive trophies and cabinet remain separate from static display furniture.\nStatic source description:\nThis is the Wizard's trophy room, filled with memorabilia of various sorts. On one wall is the Wizard's D. T. (Doctor of Thaumaturgy) degree from GUE Tech. Several old magic wands are mounted on a wand rack. A collection of dull and nicked swords testify to the fate of many foolhardy adventurers. Small bottles contain discarded homunculi (a few preserved in alcohol). There is a stuffed owl on a perch.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_north_anchor",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "WIZARDS-WORKSHOP"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          14,
+          0.2,
+          14
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            4.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_degree",
+        "asset": "asset_degree",
+        "object": "DEGREE",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_trophy-bottles",
+        "asset": "asset_trophy-bottles",
+        "object": "TROPHY-BOTTLES",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_trophy-sword",
+        "asset": "asset_trophy-sword",
+        "object": "TROPHY-SWORD",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_wands",
+        "asset": "asset_wands",
+        "object": "WANDS",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_warning-label",
+        "asset": "asset_warning-label",
+        "object": "WARNING-LABEL",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_wizard-case",
+        "asset": "asset_wizard-case",
+        "object": "WIZARD-CASE",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_broken-case",
+        "asset": "asset_broken-case",
+        "object": "BROKEN-CASE",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "0f2bee837efc13fb1f3fd9f8619bf0a0bc67e45787eafec04d7e47b5e3ee0e00"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "TROPHY-ROOM",
+    "shell": "indoor",
+    "sizeMetres": [
+      14,
+      5,
+      14
+    ],
+    "spawn": "player_start"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "FILL"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "638e6a3228f844ecd1aae13048bf3039b4f7b9333a63d360ab2e32794eef903d",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "7cb852ddb81fe8f560951e6f2dae8065f68b35a15778d72c53c7fc41bf0421e7",
+  "document": {
+    "entries": [
+      {
+        "family": "FILL:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Fill {direct}"
+      },
+      {
+        "family": "FILL:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Fill {direct} with {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_fill",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "638e6a3228f844ecd1aae13048bf3039b4f7b9333a63d360ab2e32794eef903d"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

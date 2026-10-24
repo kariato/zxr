@@ -1,0 +1,74 @@
+{
+  "attempts": 0,
+  "document": {
+    "description": "Thin metal lid over the tiny-room keyhole, independent from the keyhole mesh. Closed state covers the keyhole; open state exposes it. Follow observed LID-1 OPENBIT through presentation bindings, with no independent game-state writes. The lid and lock inserts follow the host door panel.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "hs_lid_1",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.12,
+          0.17,
+          0.018
+        ]
+      }
+    ],
+    "id": "asset_lid-1",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#657176",
+        "description": "Thin worn iron plate",
+        "metalness": 0.7,
+        "name": "iron",
+        "roughness": 0.65
+      }
+    ],
+    "objects": [
+      "LID-1"
+    ],
+    "provenance": {
+      "agent": "Codex",
+      "inputHash": "59eab57ffed69b10bff8d9a9e84fe43572e6e88cf2bbace8882ab47fcfd36f3c",
+      "method": "assistant",
+      "model": null,
+      "promptVersion": "zxr-planner-v1"
+    },
+    "requiredClips": [
+      "idle",
+      "open",
+      "closed"
+    ],
+    "review": {
+      "reviewedOn": "2026-10-23",
+      "reviewer": "Mark",
+      "status": "approved"
+    },
+    "sizeMetres": [
+      0.12,
+      0.17,
+      0.018
+    ]
+  },
+  "format": "zxr-plan-record-v1",
+  "inputHash": "59eab57ffed69b10bff8d9a9e84fe43572e6e88cf2bbace8882ab47fcfd36f3c",
+  "model": null,
+  "outputHash": "90ed7805671f7b766a277a83ab99cdf8cf9cadfcf651369b97ab5b6fce3bdf5a",
+  "promptVersion": "zxr-planner-v1",
+  "provider": "assistant",
+  "requestHash": null,
+  "requestedModel": null,
+  "task": {
+    "kind": "asset-brief",
+    "subject": "LID-1"
+  }
+}

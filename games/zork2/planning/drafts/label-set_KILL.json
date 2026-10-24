@@ -1,0 +1,49 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "KILL"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "981979136cbce7869d6cf43ef96038ee00ec00750576fded96944a629010a319",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "a245272bb7ce1cf9aca654feef8fbb9907bab02f133287304cc4875c6da69408",
+  "document": {
+    "entries": [
+      {
+        "family": "KILL:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Kill {direct} with {indirect}"
+      },
+      {
+        "family": "KILL:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Kill {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_kill",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "981979136cbce7869d6cf43ef96038ee00ec00750576fded96944a629010a319"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

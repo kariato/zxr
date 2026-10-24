@@ -1,0 +1,48 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "RAISE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "b859093d1d71eca31e4871bd881512ad069cfb27dd5ac37cb7e80b1dd872d759",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "688b2aa8d04544e3e36179e3d52d22e872ca5e23b0bf2be75d6af41c5da1b40b",
+  "document": {
+    "entries": [
+      {
+        "family": "RAISE:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Raise up {direct}"
+      },
+      {
+        "family": "RAISE:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Raise {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_raise",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "b859093d1d71eca31e4871bd881512ad069cfb27dd5ac37cb7e80b1dd872d759"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

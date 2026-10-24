@@ -1,0 +1,84 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "PUSH"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "3833dbc84000263d7e19969a4098f192f35d8385689ef58762282e9e0c8d9f7f",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "47e0da4cf349644a02288e4ecbc0b15f5dfff2c7518449eb17e85303aa5c7afe",
+  "document": {
+    "entries": [
+      {
+        "family": "PUSH:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Push {direct} under {indirect}"
+      },
+      {
+        "family": "PUSH:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Push {direct} with {indirect}"
+      },
+      {
+        "family": "PUSH:3",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Push on {direct}"
+      },
+      {
+        "family": "PUSH:4",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Push {direct}"
+      },
+      {
+        "family": "PUSH:5",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Push {direct} to {indirect}"
+      },
+      {
+        "family": "PUSH:6",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Push {direct} {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_push",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "3833dbc84000263d7e19969a4098f192f35d8385689ef58762282e9e0c8d9f7f"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "AQUARIUM-ROOM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "19e3e2f1a97cf52b206815a4654c186d598d0acc744de515cff7e261ceeb2083",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "0ea499c49411a8088a984594ddc3d2733f2550419d767b23d545d23627588c7d",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_aquarium",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_serpent",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_east_anchor",
+        "pose": {
+          "position": [
+            3.5,
+            0,
+            0
+          ],
+          "yawDegrees": -90
+        }
+      },
+      {
+        "node": "exit_south_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            4.5
+          ],
+          "yawDegrees": 180
+        }
+      },
+      {
+        "node": "exit_in_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -4.5
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Dark corner hallway; aquarium is a separate observed object, never a baked water-filled north wall.\nStatic source description:\nHere a dark hallway turns a corner. To the south is a dark room, to the east is fitful light.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_east_anchor",
+        "availability": "engine-option",
+        "direction": "EAST",
+        "node": "exit_east",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "WORKBENCH-ROOM"
+      },
+      {
+        "anchor": "exit_south_anchor",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "WIZARDS-QUARTERS"
+      },
+      {
+        "anchor": "exit_in_anchor",
+        "availability": "engine-option",
+        "direction": "IN",
+        "node": "exit_in",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "IN-AQUARIUM"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          8,
+          0.2,
+          10
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            3,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_aquarium",
+        "asset": "asset_aquarium",
+        "object": "AQUARIUM",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_serpent",
+        "asset": "asset_serpent",
+        "object": "SERPENT",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "19e3e2f1a97cf52b206815a4654c186d598d0acc744de515cff7e261ceeb2083"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "AQUARIUM-ROOM",
+    "shell": "indoor",
+    "sizeMetres": [
+      8,
+      3.5,
+      10
+    ],
+    "spawn": "player_start"
+  }
+}

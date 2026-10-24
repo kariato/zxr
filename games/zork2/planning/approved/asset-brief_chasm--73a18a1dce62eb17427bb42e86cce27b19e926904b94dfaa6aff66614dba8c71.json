@@ -1,0 +1,72 @@
+{
+  "attempts": 0,
+  "document": {
+    "description": "Source CHASM/RAVINE environmental interaction. Separate low-poly steep crumbly rock banks with a deep unlit void between; no flat floor, traversable collision surface or reachable treasure at the bottom. Origin at the near bank at walking height; geometry extends downward. Keep a generous bank-side selection volume separate from any fall hazard. A chasm appearance does not authorize a DOWN move. Source text decides depth, access and refusals.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_chasm",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          14,
+          10,
+          6
+        ]
+      }
+    ],
+    "id": "asset_chasm",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#454947",
+        "description": "Cool grey-brown faceted rock, dark with depth",
+        "metalness": 0,
+        "name": "ravine_rock",
+        "roughness": 0.92
+      }
+    ],
+    "objects": [
+      "CHASM"
+    ],
+    "provenance": {
+      "agent": "Codex",
+      "inputHash": "4a020b7fe399553498f8060439dc5add48e304d70f4a3b731e5281625ec0700e",
+      "method": "assistant",
+      "model": null,
+      "promptVersion": "zxr-planner-v1"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "reviewedOn": "2026-10-23",
+      "reviewer": "Mark",
+      "status": "approved"
+    },
+    "sizeMetres": [
+      14,
+      10,
+      6
+    ]
+  },
+  "format": "zxr-plan-record-v1",
+  "inputHash": "4a020b7fe399553498f8060439dc5add48e304d70f4a3b731e5281625ec0700e",
+  "model": null,
+  "outputHash": "73a18a1dce62eb17427bb42e86cce27b19e926904b94dfaa6aff66614dba8c71",
+  "promptVersion": "zxr-planner-v1",
+  "provider": "assistant",
+  "requestHash": null,
+  "requestedModel": null,
+  "task": {
+    "kind": "asset-brief",
+    "subject": "CHASM"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "GLOBAL-WIZARD-CASE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "8febdf71a07087f1acc1a47e39cc0f4a29336533f2d12b09542a0e713bb34a24",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "349ec1dcd3679a07615e738e3661c29ebf944fb513a0a9dda232e70a03b138bb",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nInteraction/identity proxy: no independent physical body or selectable geometry. Keep its source menu semantics; never fabricate an actor or prop from this identity.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every Wizard's trophy cabinet into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [],
+    "id": "asset_global-wizard-case",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "No rendered surface.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "GLOBAL-WIZARD-CASE"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "8febdf71a07087f1acc1a47e39cc0f4a29336533f2d12b09542a0e713bb34a24"
+    },
+    "requiredClips": [],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.001,
+      0.001,
+      0.001
+    ]
+  }
+}

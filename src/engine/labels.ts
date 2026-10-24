@@ -5,7 +5,20 @@ import type { WorldState } from './world-state.ts';
 import { decodeZText } from './text.ts';
 
 /** Names for already scoped operands only. No descriptions or handler output. */
-export interface LabelContext {player:string;names:Readonly<Record<string,string>>}
+export interface LabelTemplates {actions:Record<string,{template:string;slots:string[]}>;decisions:Record<string,string>}
+export interface LabelContext {player:string;names:Readonly<Record<string,string>>;templates?:LabelTemplates}
+export function validateLabelTemplates(input:LabelTemplates,families:readonly ActionFamily[]):LabelTemplates {
+  const plain=(v:any)=>v&&typeof v==='object'&&!Array.isArray(v);
+  if(!plain(input)||Object.keys(input).sort().join(',')!=='actions,decisions'||!plain(input.actions)||!plain(input.decisions))throw new Error('Invalid label templates');
+  for(const [id,value] of Object.entries(input.actions)){
+    const family=families.find(f=>f.id===id&&!f.shadowedBy);if(!family||!plain(value)||Object.keys(value).sort().join(',')!=='slots,template'||typeof value.template!=='string'||!value.template.trim()||value.template.length>4000||!Array.isArray(value.slots))throw new Error('Invalid action label '+id);
+    const required=[...(family.slots.length?['direct']:[]),...(family.slots.length>1?['indirect']:[]),...(family.input==='say'?['words']:[])];
+    const placeholders=[...value.template.matchAll(/\{([^{}]+)\}/g)].map(m=>m[1]!);
+    if(/[{}]/.test(value.template.replace(/\{([^{}]+)\}/g,''))||new Set(value.slots).size!==value.slots.length||required.some(s=>!value.slots.includes(s))||value.slots.some(s=>!['actor',...required].includes(s)||!placeholders.includes(s))||placeholders.some(s=>!value.slots.includes(s)))throw new Error('Action label slots differ '+id);
+  }
+  for(const [id,text] of Object.entries(input.decisions))if(!['yes-no:yes','yes-no:no','finish:restart','finish:restore','finish:quit'].includes(id)||typeof text!=='string'||!text.trim()||text.length>4000)throw new Error('Invalid decision label');
+  return JSON.parse(JSON.stringify(input)) as LabelTemplates;
+}
 const identity=(operand:Operand)=>typeof operand==='string'?operand:'pseudo' in operand?operand.pseudo.room+'/'+operand.pseudo.word:operand.object;
 const words=(value:string)=>value.replace(/^[#$]+/,'').replace(/[-_]+/g,' ').toLowerCase();
 const title=(value:string)=>{const text=words(value);return text.charAt(0).toUpperCase()+text.slice(1);};
@@ -20,6 +33,9 @@ export function selectionLabel(selection:Selection,context:LabelContext=defaultC
 const actorPrefix=(actor:string,context:LabelContext)=>actor==='PLAYER'||actor===context.player?'':`${context.names[actor]?.trim()||words(actor)} — `;
 /** Source lexical spelling and prepositions distinguish syntax; never infer an answer. */
 export function actionLabel(family:ActionFamily,actor:string,operands:readonly Selection[]=[],selectedWords?:readonly string[],context:LabelContext=defaultContext):string {
+  const supplied=context.templates?.actions[family.id];
+  if(supplied){const values:Record<string,string>={actor:actor==='PLAYER'||actor===context.player?'You':context.names[actor]??words(actor),direct:operands[0]===undefined?'[object]':selectionLabel(operands[0],context),indirect:operands[1]===undefined?'[object]':selectionLabel(operands[1],context),words:selectedWords?.length?'“'+selectedWords.map(words).join(' ')+'”':'[words]'};
+    return (supplied.slots.includes('actor')?'':actorPrefix(actor,context))+supplied.template.replace(/\{([^{}]+)\}/g,(_match,slot:string)=>values[slot]!);}
   let head=title(family.lexicalTable),body='';
   for(const [index,slot] of family.slots.entries()){
     const prep=slot.preposition?words(slot.preposition):'';

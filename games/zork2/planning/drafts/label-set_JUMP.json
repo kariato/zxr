@@ -1,0 +1,78 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "JUMP"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "3ce049b81b3e540536c898d1f0308e730982e95a9c86f68f0f573399d1c9d4a1",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "697683b9036071bd5edc663997561e759b28a951169c865998e9c909712ab7ce",
+  "document": {
+    "entries": [
+      {
+        "family": "JUMP:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Jump off {direct}"
+      },
+      {
+        "family": "JUMP:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Jump from {direct}"
+      },
+      {
+        "family": "JUMP:3",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Jump in {direct}"
+      },
+      {
+        "family": "JUMP:4",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Jump across {direct}"
+      },
+      {
+        "family": "JUMP:5",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Jump over {direct}"
+      },
+      {
+        "family": "JUMP:6",
+        "kind": "action",
+        "slots": [],
+        "template": "Jump"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_jump",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "3ce049b81b3e540536c898d1f0308e730982e95a9c86f68f0f573399d1c9d4a1"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

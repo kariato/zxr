@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "INVENTORY"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "52ecadfaad13989c22ef245c4be7dd9b64a07308bf357bc28202d1eed78c4214",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "fb16b930be669eecddaab6b0715e003c61bd64223bceb81e5d52dc94fc05197d",
+  "document": {
+    "entries": [
+      {
+        "family": "INVENTORY:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Inventory"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_inventory",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "52ecadfaad13989c22ef245c4be7dd9b64a07308bf357bc28202d1eed78c4214"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

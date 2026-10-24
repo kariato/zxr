@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "KICK"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "33eda4fe503e81f1877a1e0321f311ef45e3b092beb424793bb9878a55a5b14c",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "56b98ca3a0f3f625e8b1e131bc8567ef1224a372db8261914e268ba5997c2c44",
+  "document": {
+    "entries": [
+      {
+        "family": "KICK:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Kick {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_kick",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "33eda4fe503e81f1877a1e0321f311ef45e3b092beb424793bb9878a55a5b14c"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

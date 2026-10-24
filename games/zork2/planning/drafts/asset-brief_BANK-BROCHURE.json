@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "BANK-BROCHURE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "cf87db5a5c89c70033ec1a1a33fc16aaf47bd4812a8697d5b2d661aad4914dad",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "b650d0b7999b0c94c60ee02e59ccf05c23a4cb2f0c564cff4ded424a0f1270ab",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed bank brochure. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nFDESC: On the ground is a small, worn piece of paper.\nTEXT: The paper is barely readable. You can only make out \"... valuables are completely safe ... advanced magic technology ... impossible to take valuables from the depository ... either teller's ... Many customers faint ... teller pops in ... seems to walk through ... walls ...\"\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every bank brochure into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.3,
+          0.25,
+          0.2
+        ]
+      }
+    ],
+    "id": "asset_bank-brochure",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "bank brochure; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "BANK-BROCHURE"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "cf87db5a5c89c70033ec1a1a33fc16aaf47bd4812a8697d5b2d661aad4914dad"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.3,
+      0.25,
+      0.2
+    ]
+  }
+}

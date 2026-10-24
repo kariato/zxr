@@ -1,0 +1,72 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "WHITE-BOOK"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "fb44df4a7f0e6d3648441fe50a6543efbc8f4c8686929b3fb2ce66266cde3421",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "64c8114caf0e424b4279994474a2adc751663f5e1a7e68372096be746d96f1ad",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed white book. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nFDESC: Right beside the purple book sits a white one.\nTEXT: It is written in an unfamiliar tongue and details the use of various magical objects, chiefly the so-called \"magic wand\". Apparently these devices work by pointing them at the object to be ensorcelled, and then chanting the appropriate magic words. (It's truly amazing how credulous these ancients were, isn't it?)\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every white book into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.3,
+          0.25,
+          0.2
+        ]
+      }
+    ],
+    "id": "asset_white-book",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#DDDDD2",
+        "description": "white book; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "WHITE-BOOK"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "fb44df4a7f0e6d3648441fe50a6543efbc8f4c8686929b3fb2ce66266cde3421"
+    },
+    "requiredClips": [
+      "idle",
+      "open",
+      "closed"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.3,
+      0.25,
+      0.2
+    ]
+  }
+}

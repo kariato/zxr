@@ -1,0 +1,48 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "DRINK"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "741c001061186d97f060af67028d462149574d4d1ee4d774ed4545bb03a0d1b1",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "2ca853573450f9677b2f7c911afdd3da27a2f1799ebcd678318b84e0c0d8c847",
+  "document": {
+    "entries": [
+      {
+        "family": "DRINK:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Drink from {direct}"
+      },
+      {
+        "family": "DRINK:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Drink {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_drink",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "741c001061186d97f060af67028d462149574d4d1ee4d774ed4545bb03a0d1b1"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

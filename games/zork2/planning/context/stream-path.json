@@ -1,0 +1,575 @@
+{
+  "cautions": [
+    "Offline source context; never current player-visible state.",
+    "All routine text/effects are conditional possibilities, not an executed description or a reveal rule.",
+    "Potential arrivals are a conservative shared catalogue, not proven room reachability or initial scenery.",
+    "Consult routines.json for text fragments, source guards, script changes and unresolved targets/calls.",
+    "Every feature requires state review; absent literal mutation evidence does not prove a static feature. Generic handlers and raw memory writes may change computed targets.",
+    "Computed exits are not guessed; RLANDBIT means land, not outdoors."
+  ],
+  "exits": [
+    {
+      "declaration": "(EAST TO FORMAL-GARDEN)",
+      "direction": "EAST",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Formal Garden",
+        "name": "FORMAL-GARDEN"
+      },
+      "source": {
+        "end": {
+          "column": 25,
+          "line": 364,
+          "offset": 9810
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 2,
+          "line": 364,
+          "offset": 9787
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "FORMAL-GARDEN"
+      }
+    },
+    {
+      "declaration": "(WEST TO MARBLE-HALL IF SECRET-DOOR)",
+      "direction": "WEST",
+      "geometryStatus": "conditional-blocked-or-computed",
+      "neighbour": {
+        "desc": "Marble Hall",
+        "name": "MARBLE-HALL"
+      },
+      "source": {
+        "end": {
+          "column": 38,
+          "line": 367,
+          "offset": 9892
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 2,
+          "line": 367,
+          "offset": 9856
+        }
+      },
+      "view": {
+        "global": "SECRET-DOOR",
+        "kind": "CEXIT",
+        "message": null,
+        "to": "MARBLE-HALL"
+      }
+    },
+    {
+      "declaration": "(NE TO DARK-TUNNEL)",
+      "direction": "NE",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Dark Tunnel",
+        "name": "DARK-TUNNEL"
+      },
+      "source": {
+        "end": {
+          "column": 21,
+          "line": 365,
+          "offset": 9831
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 2,
+          "line": 365,
+          "offset": 9812
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "DARK-TUNNEL"
+      }
+    },
+    {
+      "declaration": "(SW TO CAROUSEL-ROOM)",
+      "direction": "SW",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Carousel Room",
+        "name": "CAROUSEL-ROOM"
+      },
+      "source": {
+        "end": {
+          "column": 23,
+          "line": 366,
+          "offset": 9854
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 2,
+          "line": 366,
+          "offset": 9833
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "CAROUSEL-ROOM"
+      }
+    },
+    {
+      "declaration": "(DOWN \"The ravine is extremely deep. You would never make it.\")",
+      "direction": "DOWN",
+      "geometryStatus": "conditional-blocked-or-computed",
+      "neighbour": null,
+      "source": {
+        "end": {
+          "column": 65,
+          "line": 368,
+          "offset": 9957
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 2,
+          "line": 368,
+          "offset": 9894
+        }
+      },
+      "view": {
+        "kind": "NEXIT",
+        "message": "The ravine is extremely deep. You would never make it."
+      }
+    }
+  ],
+  "features": [
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NDESCBIT"
+      ],
+      "name": "BRIDGE",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NDESCBIT"
+      ],
+      "name": "CHASM",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NDESCBIT"
+      ],
+      "name": "STREAM",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    },
+    {
+      "changeable": false,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "RLANDBIT"
+      ],
+      "name": "STREAM-PATH",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    }
+  ],
+  "format": "zxr-room-context-v1",
+  "globalObjects": [
+    "BRIDGE",
+    "CHASM",
+    "STREAM"
+  ],
+  "initialObjects": [],
+  "inputHash": "f6d9bd6fc12258129690ee20807b2fd0287e21059f0d784dd2d7e985ce820260",
+  "potentialArrivals": [
+    "ADVENTURER",
+    "ARCANA",
+    "BALLOON",
+    "BALLOON-LABEL",
+    "BANK-BROCHURE",
+    "BAT",
+    "BILLS",
+    "BLESSINGS",
+    "BLUE-BOOK",
+    "BLUE-ICING",
+    "BRAIDED-WIRE",
+    "BRICK",
+    "BRIDGE",
+    "BROKEN-CASE",
+    "BROKEN-LAMP",
+    "BUCKET",
+    "CAGE",
+    "CANDY",
+    "CARD",
+    "CERBERUS",
+    "CHASM",
+    "CHEST",
+    "CLOTH-BAG",
+    "COIN",
+    "COLLAR",
+    "COMPASS",
+    "CROWN",
+    "CRYPT-DOOR",
+    "DEAD-BALLOON",
+    "DEAD-DRAGON",
+    "DEAD-SERPENT",
+    "DEGREE",
+    "DEPOSIT-BOX",
+    "DIM-DOOR",
+    "DRAGON",
+    "DWINDOW",
+    "EAST-WALL",
+    "EAT-ME-CAKE",
+    "EXPLOSION",
+    "FLASK",
+    "FOOTPAD",
+    "FUSE",
+    "GAZEBO",
+    "GENIE",
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GLOBAL-OBJECTS",
+    "GLOBAL-PALANTIR",
+    "GLOBAL-PRINCESS",
+    "GLOBAL-UNICORN",
+    "GLOBAL-WATER",
+    "GLOBAL-WIZARD-CASE",
+    "GNOME",
+    "GNOME-OF-ZURICH",
+    "GOLD-KEY",
+    "GREEN-BOOK",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "HEADS",
+    "INTNUM",
+    "IRON-BOX",
+    "IT",
+    "KEY",
+    "LAMP",
+    "LETTER-OPENER",
+    "LOCAL-GLOBALS",
+    "LUNGS",
+    "MANGLED-CAGE",
+    "MATCH",
+    "ME",
+    "MENHIR",
+    "MOSS",
+    "NEWSPAPER",
+    "NORTH-WALL",
+    "ORANGE-ICING",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "PATHOBJ",
+    "PDOOR",
+    "PEARL",
+    "PLACE-MAT",
+    "PORTRAIT",
+    "PRINCESS",
+    "PSEUDO-OBJECT",
+    "PURPLE-BOOK",
+    "PWINDOW",
+    "RECEPTACLE",
+    "RED-ICING",
+    "REPELLENT",
+    "RIBBON",
+    "ROBOT",
+    "ROBOT-LABEL",
+    "ROSE",
+    "ROSE-BUSH",
+    "RUBY",
+    "SAILOR",
+    "SALTY-WATER",
+    "SERPENT",
+    "SEWL",
+    "SNWL",
+    "SOUTH-WALL",
+    "SSWL",
+    "STAIRS",
+    "STAMP",
+    "STAND-4",
+    "STATUETTE",
+    "STREAM",
+    "SWORD",
+    "SWWL",
+    "TEAPOT",
+    "TROPHY-BOTTLES",
+    "TROPHY-SWORD",
+    "TUNNEL",
+    "UNICORN",
+    "VIOLIN",
+    "WAND",
+    "WANDS",
+    "WATER",
+    "WELL",
+    "WEST-WALL",
+    "WHITE-BOOK",
+    "WISH",
+    "WIZ-DOOR",
+    "WIZARD",
+    "ZORKMID"
+  ],
+  "room": {
+    "desc": {
+      "source": {
+        "end": {
+          "column": 27,
+          "line": 362,
+          "offset": 9767
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 2,
+          "line": 362,
+          "offset": 9742
+        }
+      },
+      "text": "Path Near Stream"
+    },
+    "flags": [
+      "RLANDBIT"
+    ],
+    "id": 212,
+    "initialRoomLightFlag": false,
+    "ldesc": [
+      {
+        "byteLength": 2,
+        "kind": "text",
+        "property": {
+          "name": "LDESC",
+          "number": 13
+        },
+        "source": {
+          "end": {
+            "column": 41,
+            "line": 361,
+            "offset": 9740
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 7,
+            "line": 357,
+            "offset": 9489
+          }
+        },
+        "text": "The path follows the south edge of a deep ravine and heads northeast. A tunnel heads southwest, narrowing to a rather tight crawl. A faint whirring sound can be heard in that direction. On the east is a ruined archway choked with vegetation."
+      }
+    ],
+    "name": "STREAM-PATH",
+    "outdoors": "not-encoded-do-not-infer-from-RLANDBIT",
+    "source": {
+      "end": {
+        "column": 31,
+        "line": 369,
+        "offset": 9988
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 1,
+        "line": 355,
+        "offset": 9448
+      }
+    }
+  },
+  "routineReferencedObjects": [
+    "ME",
+    "PSEUDO-OBJECT"
+  ],
+  "routines": {
+    "dispatchBoundaries": [
+      "JIGS-UP",
+      "PERFORM"
+    ],
+    "missing": [],
+    "reachableHelpers": [
+      "BRIDGE-FCN",
+      "CHASM-FCN",
+      "DO-WALK",
+      "STREAM-FCN"
+    ],
+    "roots": [
+      "BRIDGE-FCN",
+      "CHASM-FCN",
+      "STREAM-FCN"
+    ]
+  },
+  "scriptedArrivals": [],
+  "stateDependencies": [
+    {
+      "name": "P-WALK-DIR",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "DO-WALK"
+        }
+      ]
+    },
+    {
+      "name": "PRSA",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 4,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "PRSI",
+      "writers": [
+        {
+          "index": 7,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 3,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 6,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 1,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 2,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 0,
+          "routine": "V-DIG"
+        },
+        {
+          "index": 1,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 4,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "PRSO",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "CAROUSEL-ROOM-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "CAROUSEL-ROOM-FCN"
+        },
+        {
+          "index": 17,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "ITAKE-CHECK"
+        },
+        {
+          "index": 1,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 6,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 1,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 5,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 1,
+          "routine": "V-THROUGH"
+        },
+        {
+          "index": 2,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 5,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 9,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 10,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "SECRET-DOOR",
+      "writers": [
+        {
+          "index": 3,
+          "routine": "I-PRINCESS"
+        },
+        {
+          "index": 4,
+          "routine": "I-PRINCESS"
+        }
+      ]
+    }
+  ],
+  "universalGlobalObjects": [
+    "BLESSINGS",
+    "COMPASS",
+    "EAST-WALL",
+    "FOOTPAD",
+    "GLOBAL-PRINCESS",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "INTNUM",
+    "IT",
+    "LUNGS",
+    "ME",
+    "NORTH-WALL",
+    "PATHOBJ",
+    "SAILOR",
+    "SOUTH-WALL",
+    "TUNNEL",
+    "WEST-WALL",
+    "WISH",
+    "ZORKMID"
+  ]
+}

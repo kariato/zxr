@@ -1,0 +1,54 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "SWIM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "f1a30fbc920cfba0ec7094235c8af79f6e15f2e40f95a5d10181e17cba0cf445",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "40f9fbff4be33eeff5d105f4a26b399cc2544f1f5e19a983cb8c5e324988c189",
+  "document": {
+    "entries": [
+      {
+        "family": "SWIM:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Swim across {direct}"
+      },
+      {
+        "family": "SWIM:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Swim in {direct}"
+      },
+      {
+        "family": "SWIM:3",
+        "kind": "action",
+        "slots": [],
+        "template": "Swim"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_swim",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "f1a30fbc920cfba0ec7094235c8af79f6e15f2e40f95a5d10181e17cba0cf445"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

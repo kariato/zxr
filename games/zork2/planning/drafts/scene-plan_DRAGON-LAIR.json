@@ -1,0 +1,201 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "DRAGON-LAIR"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "ddfaf3e850d72f24df732803dc5e43c9324fa4097c1aebb5cc29f9303ddaf10a",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "26784812c9163822b2b5225ce06e53231ff7417f3552a200bc6d57ee350190f2",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_chest",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_princess",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_statuette",
+        "pose": {
+          "position": [
+            0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_south_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            7.5
+          ],
+          "yawDegrees": 180
+        }
+      },
+      {
+        "node": "exit_out_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            7.5
+          ],
+          "yawDegrees": 180
+        }
+      }
+    ],
+    "description": "Flame-scarred lair and blackened southern doorway; princess, treasure, chest and dragon outcomes remain separate observed objects.\nStatic source description:\nYou are in the dragon's lair, where the rock walls are scarred by flame. A blackened doorway leads to the south.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_south_anchor",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DRAGON-ROOM"
+      },
+      {
+        "anchor": "exit_out_anchor",
+        "availability": "engine-option",
+        "direction": "OUT",
+        "node": "exit_out",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DRAGON-ROOM"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "rock",
+        "node": "base_floor",
+        "part": "rock_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          14,
+          0.2,
+          16
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            6.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_chest",
+        "asset": "asset_chest",
+        "object": "CHEST",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_princess",
+        "asset": "asset_princess",
+        "object": "PRINCESS",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_statuette",
+        "asset": "asset_statuette",
+        "object": "STATUETTE",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "ddfaf3e850d72f24df732803dc5e43c9324fa4097c1aebb5cc29f9303ddaf10a"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "DRAGON-LAIR",
+    "shell": "cave",
+    "sizeMetres": [
+      14,
+      7,
+      16
+    ],
+    "spawn": "player_start"
+  }
+}

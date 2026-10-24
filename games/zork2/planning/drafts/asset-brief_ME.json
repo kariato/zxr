@@ -1,0 +1,50 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "ME"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "759f8a873fca84c1e960359654147e7b73dedd723ac9a5fdf8cbbc3e5cf99b05",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "1e4f258aed3f489d4904a0f3f6d93824d60a946d20a6928b4e5fef149d855a3c",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nInteraction/identity proxy: no independent physical body or selectable geometry. Keep its source menu semantics; never fabricate an actor or prop from this identity.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every you into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [],
+    "id": "asset_me",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "No rendered surface.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "ME"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "759f8a873fca84c1e960359654147e7b73dedd723ac9a5fdf8cbbc3e5cf99b05"
+    },
+    "requiredClips": [],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.001,
+      0.001,
+      0.001
+    ]
+  }
+}

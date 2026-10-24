@@ -1,0 +1,267 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "INSIDE-BARROW"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "e270455b0e59e5342dac3e5b2496e1a2ba1cab25edd1a78f793356bc5188e1d4",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "c1119a8bed2178f130bd4bd46d3584ea46f67d50597357bed0bf99bc434fb9f7",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -1.6
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "south_tunnel",
+        "pose": {
+          "position": [
+            0,
+            0,
+            3.25
+          ],
+          "yawDegrees": 180
+        }
+      },
+      {
+        "node": "shut_entrance",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -3.35
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "sword_mark",
+        "pose": {
+          "position": [
+            -0.9,
+            0.04,
+            0.7
+          ],
+          "yawDegrees": 65
+        }
+      },
+      {
+        "node": "lamp_mark",
+        "pose": {
+          "position": [
+            1,
+            0.02,
+            0.5
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Ancient enclosed barrow of faceted earth and cool stone, matching the approved concept image. A narrow southern tunnel recedes toward a faint distant glow. Keep one sword and one unlit brass lantern distinct on the ground; no visible forest, sky, extra treasure or invented inscriptions. The shut entrance behind the viewer is a blocked source OUT attempt, not another traversable tunnel. Dimensions and placement are art estimates. Leave central floor slots free for dropped objects.",
+    "exits": [
+      {
+        "anchor": "south_tunnel",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          1.3,
+          2.2,
+          0.3
+        ],
+        "to": "NARROW-TUNNEL"
+      },
+      {
+        "anchor": "shut_entrance",
+        "availability": "engine-option",
+        "direction": "OUT",
+        "node": "exit_out",
+        "sizeMetres": [
+          1.3,
+          2.2,
+          0.3
+        ],
+        "to": null
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "warm_earth",
+        "node": "earth_floor",
+        "part": "earth_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.06,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          6,
+          0.12,
+          7
+        ]
+      },
+      {
+        "material": "stone",
+        "node": "west_bank",
+        "part": "barrow_bank",
+        "pose": {
+          "position": [
+            -2.75,
+            1.25,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          0.7,
+          2.5,
+          7
+        ]
+      },
+      {
+        "material": "stone",
+        "node": "east_bank",
+        "part": "barrow_bank",
+        "pose": {
+          "position": [
+            2.75,
+            1.25,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          0.7,
+          2.5,
+          7
+        ]
+      },
+      {
+        "material": "stone",
+        "node": "roof",
+        "part": "low_cave_roof",
+        "pose": {
+          "position": [
+            0,
+            2.9,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          6,
+          0.6,
+          7
+        ]
+      },
+      {
+        "material": "stone",
+        "node": "closed_entrance_scenery",
+        "part": "earth_bank",
+        "pose": {
+          "position": [
+            0,
+            1.35,
+            -3.5
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          2,
+          2.7,
+          0.5
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#111C22",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C8C7B5",
+          "intensity": 0.28,
+          "kind": "ambient",
+          "node": "room_fill",
+          "position": [
+            0,
+            2.2,
+            0
+          ]
+        },
+        {
+          "colour": "#E8B66A",
+          "intensity": 0.16,
+          "kind": "point",
+          "node": "distant_glow",
+          "position": [
+            0,
+            1,
+            3.8
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "sword_mark",
+        "asset": "asset_sword",
+        "object": "SWORD",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "lamp_mark",
+        "asset": "asset_lamp",
+        "object": "LAMP",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "e270455b0e59e5342dac3e5b2496e1a2ba1cab25edd1a78f793356bc5188e1d4"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "INSIDE-BARROW",
+    "shell": "cave",
+    "sizeMetres": [
+      6,
+      3,
+      7
+    ],
+    "spawn": "player_start"
+  }
+}

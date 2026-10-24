@@ -1,0 +1,52 @@
+{
+  "format": "zxr-asset-brief-v1",
+  "provenance": {
+    "method": "manual",
+    "author": "ZXR contributors"
+  },
+  "review": {
+    "status": "draft"
+  },
+  "id": "elvish_sword",
+  "kind": "prop",
+  "objects": [
+    "SWORD"
+  ],
+  "description": "Slender Elvish sword with a simple decorated hilt.",
+  "sizeMetres": [
+    0.15,
+    0.95,
+    0.05
+  ],
+  "materials": [
+    {
+      "name": "main",
+      "description": "Muted low-detail draft surface; palette awaits the style bible.",
+      "colour": "#A69A78",
+      "roughness": 0.7,
+      "metalness": 0.5
+    }
+  ],
+  "requiredClips": [
+    "idle"
+  ],
+  "hotspotNodes": [
+    {
+      "node": "hs_elvish_sword",
+      "shape": "box",
+      "sizeMetres": [
+        0.15,
+        0.95,
+        0.05
+      ],
+      "pose": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "yawDegrees": 0
+      }
+    }
+  ]
+}

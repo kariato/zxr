@@ -1,0 +1,46 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "EXIT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "3da6dafd903d2f81048f9d93a831863228fa3d3e44eb38b36f8b6866a331a67a",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "ef96f0ef4fc58891045794fa33e950d2cb0ded9964217099fda1f260a8f8f223",
+  "document": {
+    "entries": [
+      {
+        "family": "EXIT:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Exit {direct}"
+      },
+      {
+        "family": "EXIT:2",
+        "kind": "action",
+        "slots": [],
+        "template": "Exit"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_exit",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "3da6dafd903d2f81048f9d93a831863228fa3d3e44eb38b36f8b6866a331a67a"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

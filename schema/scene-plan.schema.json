@@ -1,0 +1,551 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ZXR scene plan v1",
+  "type": "object",
+  "properties": {
+    "format": {
+      "const": "zxr-scene-plan-v1"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "review": {
+      "$ref": "#/$defs/review"
+    },
+    "room": {
+      "$ref": "#/$defs/symbol"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000
+    },
+    "sizeMetres": {
+      "$ref": "#/$defs/size"
+    },
+    "shell": {
+      "enum": [
+        "indoor",
+        "outdoor",
+        "cave"
+      ]
+    },
+    "spawn": {
+      "$ref": "#/$defs/node"
+    },
+    "anchors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "node": {
+            "$ref": "#/$defs/node"
+          },
+          "pose": {
+            "$ref": "#/$defs/pose"
+          }
+        },
+        "required": [
+          "node",
+          "pose"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 512
+    },
+    "exits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "direction": {
+            "enum": [
+              "NORTH",
+              "NE",
+              "EAST",
+              "SE",
+              "SOUTH",
+              "SW",
+              "WEST",
+              "NW",
+              "UP",
+              "DOWN",
+              "IN",
+              "OUT",
+              "LAND",
+              "CROSS"
+            ]
+          },
+          "to": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/symbol"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "node": {
+            "$ref": "#/$defs/node"
+          },
+          "anchor": {
+            "$ref": "#/$defs/node"
+          },
+          "sizeMetres": {
+            "$ref": "#/$defs/size"
+          },
+          "availability": {
+            "const": "engine-option"
+          }
+        },
+        "required": [
+          "direction",
+          "to",
+          "node",
+          "anchor",
+          "sizeMetres",
+          "availability"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 512
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "object": {
+            "$ref": "#/$defs/symbol"
+          },
+          "asset": {
+            "$ref": "#/$defs/node"
+          },
+          "anchor": {
+            "$ref": "#/$defs/node"
+          },
+          "visibility": {
+            "const": "engine-observation"
+          }
+        },
+        "required": [
+          "object",
+          "asset",
+          "anchor",
+          "visibility"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 512
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "node": {
+            "$ref": "#/$defs/node"
+          },
+          "asset": {
+            "$ref": "#/$defs/node"
+          },
+          "anchor": {
+            "$ref": "#/$defs/node"
+          },
+          "visibleWhen": {
+            "$ref": "#/$defs/condition"
+          }
+        },
+        "required": [
+          "node",
+          "asset",
+          "anchor",
+          "visibleWhen"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 512
+    },
+    "lighting": {
+      "type": "object",
+      "properties": {
+        "lit": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/light"
+          },
+          "minItems": 1,
+          "maxItems": 512
+        },
+        "dark": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/light"
+          },
+          "minItems": 1,
+          "maxItems": 512
+        }
+      },
+      "required": [
+        "lit",
+        "dark"
+      ],
+      "additionalProperties": false
+    },
+    "ambient": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "sound": {
+              "$ref": "#/$defs/node"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4000
+            },
+            "gain": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "required": [
+            "sound",
+            "description",
+            "gain"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "kitParts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "node": {
+            "$ref": "#/$defs/node"
+          },
+          "part": {
+            "$ref": "#/$defs/node"
+          },
+          "pose": {
+            "$ref": "#/$defs/pose"
+          },
+          "sizeMetres": {
+            "$ref": "#/$defs/size"
+          },
+          "material": {
+            "$ref": "#/$defs/node"
+          }
+        },
+        "required": [
+          "node",
+          "part",
+          "pose",
+          "sizeMetres",
+          "material"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 512
+    }
+  },
+  "required": [
+    "format",
+    "provenance",
+    "review",
+    "room",
+    "description",
+    "sizeMetres",
+    "shell",
+    "spawn",
+    "anchors",
+    "exits",
+    "objects",
+    "features",
+    "lighting",
+    "ambient",
+    "kitParts"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "symbol": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9?$!#-]*$",
+      "maxLength": 100
+    },
+    "node": {
+      "type": "string",
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$",
+      "maxLength": 100
+    },
+    "position": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "minimum": -10000,
+        "maximum": 10000
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "size": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "minimum": 0.001,
+        "maximum": 10000
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "pose": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "$ref": "#/$defs/position"
+        },
+        "yawDegrees": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        }
+      },
+      "required": [
+        "position",
+        "yawDegrees"
+      ],
+      "additionalProperties": false
+    },
+    "colour": {
+      "type": "string",
+      "pattern": "^#[0-9a-fA-F]{6}$"
+    },
+    "provenance": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "const": "manual"
+            },
+            "author": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4000
+            }
+          },
+          "required": [
+            "method",
+            "author"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "const": "model"
+            },
+            "model": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4000
+            },
+            "promptVersion": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4000
+            },
+            "inputHash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "method",
+            "model",
+            "promptVersion",
+            "inputHash"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "const": "assistant"
+            },
+            "agent": {
+              "const": "Codex"
+            },
+            "model": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4000
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "promptVersion": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4000
+            },
+            "inputHash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "method",
+            "agent",
+            "model",
+            "promptVersion",
+            "inputHash"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "review": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "draft"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "approved"
+            },
+            "reviewer": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4000
+            },
+            "reviewedOn": {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+            }
+          },
+          "required": [
+            "status",
+            "reviewer",
+            "reviewedOn"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "condition": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "flag"
+            },
+            "object": {
+              "$ref": "#/$defs/symbol"
+            },
+            "flag": {
+              "$ref": "#/$defs/symbol"
+            },
+            "set": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "kind",
+            "object",
+            "flag",
+            "set"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "global"
+            },
+            "name": {
+              "$ref": "#/$defs/symbol"
+            },
+            "equals": {
+              "type": "integer",
+              "minimum": -32768,
+              "maximum": 65535
+            }
+          },
+          "required": [
+            "kind",
+            "name",
+            "equals"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "light": {
+      "type": "object",
+      "properties": {
+        "node": {
+          "$ref": "#/$defs/node"
+        },
+        "kind": {
+          "enum": [
+            "ambient",
+            "point",
+            "directional"
+          ]
+        },
+        "colour": {
+          "$ref": "#/$defs/colour"
+        },
+        "intensity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1000
+        },
+        "position": {
+          "$ref": "#/$defs/position"
+        }
+      },
+      "required": [
+        "node",
+        "kind",
+        "colour",
+        "intensity",
+        "position"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "SWING"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "07aa583982c9b69ece840ab053bdb74a623507aea9a0b2d2987c362ed3df057b",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "738d5ceed08b8ddbbeb76a3afcca7e3e09f5a3a0295822022357742c5ab228d9",
+  "document": {
+    "entries": [
+      {
+        "family": "SWING:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Swing {direct} at {indirect}"
+      },
+      {
+        "family": "SWING:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Swing {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_swing",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "07aa583982c9b69ece840ab053bdb74a623507aea9a0b2d2987c362ed3df057b"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

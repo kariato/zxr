@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "CLOSE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "425b225b8aeef46d4d34e9afa66ca5706bb42246ac5fdbfcbc044fbea360ffd1",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "f41818762e37522f396ff43a4e25ed6ef540bdf77d05fb27d07842be9408f444",
+  "document": {
+    "entries": [
+      {
+        "family": "CLOSE:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Close {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_close",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "425b225b8aeef46d4d34e9afa66ca5706bb42246ac5fdbfcbc044fbea360ffd1"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "WAKE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "75c2f70069c264159a0246bca6bc7be794404a7bab61f6ababe18689f7361377",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "e1597ccbc0c1fea9a1eddbd4430324a95b18bc67098f7b7f7867e4179a8cb54c",
+  "document": {
+    "entries": [
+      {
+        "family": "WAKE:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Wake up {direct}"
+      },
+      {
+        "family": "WAKE:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Wake {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_wake",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "75c2f70069c264159a0246bca6bc7be794404a7bab61f6ababe18689f7361377"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

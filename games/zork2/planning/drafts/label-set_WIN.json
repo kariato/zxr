@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "WIN"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "efb208b3f9a33444766c46b2e0efff253618652c261db303f033ac3f6485c3ca",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "ab1e1a74294fa37409e56d9cc76db10aae9da9b0410c834d3fe15526aeb344e3",
+  "document": {
+    "entries": [
+      {
+        "family": "WIN:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Win"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_win",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "efb208b3f9a33444766c46b2e0efff253618652c261db303f033ac3f6485c3ca"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "GNOME-OF-ZURICH"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "b6af480c1e0802e66e965197526a8e3adeb78fe1098163dc12bfc1e979ed5da9",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "4803abb3f43f71393b427922028ebd755b9828a19cf38231343f2e3b136d822e",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nBank gnome, distinct from volcano gnome; no unearned visible treasure or fixed source dialogue bubbles.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a Gnome of Zurich here.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every Gnome of Zurich into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.6,
+          1.1,
+          0.5
+        ]
+      }
+    ],
+    "id": "asset_gnome-of-zurich",
+    "kind": "character",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "Gnome of Zurich; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "GNOME-OF-ZURICH"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "b6af480c1e0802e66e965197526a8e3adeb78fe1098163dc12bfc1e979ed5da9"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.6,
+      1.1,
+      0.5
+    ]
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "format": "zxr-scene-plan-v1",
+  "provenance": {
+    "method": "manual",
+    "author": "ZXR contributors"
+  },
+  "review": {
+    "status": "draft"
+  },
+  "room": "TINY-ROOM",
+  "description": "Draft small indoor chamber. Its source description changes through a routine; these dimensions are presentation estimates, not game rules.",
+  "sizeMetres": [
+    4,
+    2.5,
+    4
+  ],
+  "shell": "indoor",
+  "spawn": "player_start",
+  "anchors": [
+    {
+      "node": "player_start",
+      "pose": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "yawDegrees": 0
+      }
+    },
+    {
+      "node": "anchor_north",
+      "pose": {
+        "position": [
+          0,
+          0,
+          -2
+        ],
+        "yawDegrees": 0
+      }
+    },
+    {
+      "node": "anchor_down",
+      "pose": {
+        "position": [
+          1,
+          0,
+          1
+        ],
+        "yawDegrees": 0
+      }
+    },
+    {
+      "node": "anchor_in",
+      "pose": {
+        "position": [
+          0,
+          0,
+          -1.8
+        ],
+        "yawDegrees": 0
+      }
+    },
+    {
+      "node": "door_mark",
+      "pose": {
+        "position": [
+          0,
+          0,
+          -2
+        ],
+        "yawDegrees": 0
+      }
+    }
+  ],
+  "exits": [
+    {
+      "direction": "NORTH",
+      "to": "DREARY-ROOM",
+      "node": "exit_north",
+      "anchor": "anchor_north",
+      "sizeMetres": [
+        1.5,
+        2.3,
+        0.4
+      ],
+      "availability": "engine-option"
+    },
+    {
+      "direction": "DOWN",
+      "to": "RAVINE-LEDGE",
+      "node": "exit_down",
+      "anchor": "anchor_down",
+      "sizeMetres": [
+        1.5,
+        2.3,
+        0.4
+      ],
+      "availability": "engine-option"
+    },
+    {
+      "direction": "IN",
+      "to": "DREARY-ROOM",
+      "node": "exit_in",
+      "anchor": "anchor_in",
+      "sizeMetres": [
+        1.5,
+        2.3,
+        0.4
+      ],
+      "availability": "engine-option"
+    }
+  ],
+  "objects": [],
+  "features": [
+    {
+      "node": "door_closed",
+      "asset": "tiny_door",
+      "anchor": "door_mark",
+      "visibleWhen": {
+        "kind": "flag",
+        "object": "PDOOR",
+        "flag": "OPENBIT",
+        "set": false
+      }
+    },
+    {
+      "node": "door_open",
+      "asset": "tiny_door",
+      "anchor": "door_mark",
+      "visibleWhen": {
+        "kind": "flag",
+        "object": "PDOOR",
+        "flag": "OPENBIT",
+        "set": true
+      }
+    }
+  ],
+  "lighting": {
+    "lit": [
+      {
+        "node": "light_lit",
+        "kind": "ambient",
+        "colour": "#C6AE82",
+        "intensity": 0.6,
+        "position": [
+          0,
+          2,
+          0
+        ]
+      }
+    ],
+    "dark": [
+      {
+        "node": "light_dark",
+        "kind": "ambient",
+        "colour": "#000000",
+        "intensity": 0,
+        "position": [
+          0,
+          2,
+          0
+        ]
+      }
+    ]
+  },
+  "ambient": null,
+  "kitParts": [
+    {
+      "node": "floor",
+      "part": "stone_floor",
+      "pose": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "yawDegrees": 0
+      },
+      "sizeMetres": [
+        4,
+        0.1,
+        4
+      ],
+      "material": "stone"
+    }
+  ]
+}

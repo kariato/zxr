@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "COUNT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "d9990f58f359b350e617b75f081c9318abda6c1e5932d1057c8f939ab155c2ed",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "92fbbd23da8c1f5597709e383a87ed337e18fe19936ad16ba238bde02d46221e",
+  "document": {
+    "entries": [
+      {
+        "family": "COUNT:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Count {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_count",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "d9990f58f359b350e617b75f081c9318abda6c1e5932d1057c8f939ab155c2ed"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "CHOMP"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "8b3a7ce9af24d3330949ba73d58fa20b8c2aad899fbacadb504047ef03b3931c",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "c29d98973397f759c15b9f98aac7cc84c2fdbef63d88fffce118617acce0c4a8",
+  "document": {
+    "entries": [
+      {
+        "family": "CHOMP:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Chomp"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_chomp",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "8b3a7ce9af24d3330949ba73d58fa20b8c2aad899fbacadb504047ef03b3931c"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

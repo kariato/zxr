@@ -1,0 +1,172 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "VOLCANO-VIEW"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "daddae08e2d58e843719dd1aaf4733a03b04bea1077af44adc46a9daa1ba6a06",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "965d2b0c787d9a3d900dc55424ad614e1390c6dd85451a9e59be21b84c6be29e",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_east_anchor",
+        "pose": {
+          "position": [
+            3.5,
+            0,
+            0
+          ],
+          "yawDegrees": -90
+        }
+      },
+      {
+        "node": "exit_down_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -3
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_cross_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            3
+          ],
+          "yawDegrees": 180
+        }
+      }
+    ],
+    "description": "Intermediate viewing ledge in large volcano with east exit; distant ledges are visual background only, not new traversal routes or visible treasures.\nStatic source description:\nYou are on a ledge in the middle of a large volcano. Below you the volcano bottom can be seen and above is the rim of the volcano. A couple of ledges can be seen on the other side of the volcano; it appears that this ledge is intermediate in elevation between those on the other side. The exit from this room is to the east.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_east_anchor",
+        "availability": "engine-option",
+        "direction": "EAST",
+        "node": "exit_east",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "LAVA-TUBE"
+      },
+      {
+        "anchor": "exit_down_anchor",
+        "availability": "engine-option",
+        "direction": "DOWN",
+        "node": "exit_down",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": null
+      },
+      {
+        "anchor": "exit_cross_anchor",
+        "availability": "engine-option",
+        "direction": "CROSS",
+        "node": "exit_cross",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": null
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "rock",
+        "node": "base_floor",
+        "part": "rock_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          8,
+          0.2,
+          7
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            11.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "daddae08e2d58e843719dd1aaf4733a03b04bea1077af44adc46a9daa1ba6a06"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "VOLCANO-VIEW",
+    "shell": "cave",
+    "sizeMetres": [
+      8,
+      12,
+      7
+    ],
+    "spawn": "player_start"
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "CAGE-ROOM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "b338a2a9fd1252f68ee9bc21d77ec189f3f4740a815790f701b81c3f59dda094",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "067b186b47dc2b325c0618ccfdc1e4bd2a7db42726ec9829a9489f40966af619",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_cage",
+        "pose": {
+          "position": [
+            -1.25,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_palantir-1",
+        "pose": {
+          "position": [
+            -0.417,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_mangled-cage",
+        "pose": {
+          "position": [
+            0.417,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_robot",
+        "pose": {
+          "position": [
+            1.25,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_north_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -2
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_out_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            2
+          ],
+          "yawDegrees": 180
+        }
+      }
+    ],
+    "description": "Dingy alarm-company closet; carved warning follows source text. Steel cage is separate and initially concealed, not a permanent central cage.\nStatic source description:\nThis is a dingy closet adjacent to a larger room to the north. Chiselled into a wall are these words:\n\n     Protected by\n       FROBOZZ\n Magic Alarm Company\n  (Hello, footpad!)\n\nThere doesn't seem to be any footpad here, however.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_north_anchor",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "MACHINE-ROOM"
+      },
+      {
+        "anchor": "exit_out_anchor",
+        "availability": "engine-option",
+        "direction": "OUT",
+        "node": "exit_out",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "MACHINE-ROOM"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          5,
+          0.2,
+          5
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            2.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_cage",
+        "asset": "asset_cage",
+        "object": "CAGE",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_palantir-1",
+        "asset": "asset_palantir-1",
+        "object": "PALANTIR-1",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_mangled-cage",
+        "asset": "asset_mangled-cage",
+        "object": "MANGLED-CAGE",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_robot",
+        "asset": "asset_robot",
+        "object": "ROBOT",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "b338a2a9fd1252f68ee9bc21d77ec189f3f4740a815790f701b81c3f59dda094"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "CAGE-ROOM",
+    "shell": "indoor",
+    "sizeMetres": [
+      5,
+      3,
+      5
+    ],
+    "spawn": "player_start"
+  }
+}

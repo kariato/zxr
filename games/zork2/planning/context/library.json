@@ -1,0 +1,455 @@
+{
+  "cautions": [
+    "Offline source context; never current player-visible state.",
+    "All routine text/effects are conditional possibilities, not an executed description or a reveal rule.",
+    "Potential arrivals are a conservative shared catalogue, not proven room reachability or initial scenery.",
+    "Consult routines.json for text fragments, source guards, script changes and unresolved targets/calls.",
+    "Every feature requires state review; absent literal mutation evidence does not prove a static feature. Generic handlers and raw memory writes may change computed targets.",
+    "Computed exits are not guessed; RLANDBIT means land, not outdoors."
+  ],
+  "exits": [
+    {
+      "declaration": "(NORTH TO LEDGE-1)",
+      "direction": "NORTH",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Narrow Ledge",
+        "name": "LEDGE-1"
+      },
+      "source": {
+        "end": {
+          "column": 26,
+          "line": 1368,
+          "offset": 36806
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1368,
+          "offset": 36788
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "LEDGE-1"
+      }
+    },
+    {
+      "declaration": "(OUT TO LEDGE-1)",
+      "direction": "OUT",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Narrow Ledge",
+        "name": "LEDGE-1"
+      },
+      "source": {
+        "end": {
+          "column": 24,
+          "line": 1369,
+          "offset": 36830
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1369,
+          "offset": 36814
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "LEDGE-1"
+      }
+    }
+  ],
+  "features": [
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [
+            "TOUCHBIT"
+          ],
+          "index": 3,
+          "operation": "FSET",
+          "routine": "RANDOM-BOOK"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "BURNBIT",
+        "CONTBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "name": "BLUE-BOOK",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [
+            "TOUCHBIT"
+          ],
+          "index": 2,
+          "operation": "FSET",
+          "routine": "RANDOM-BOOK"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "BURNBIT",
+        "CONTBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "name": "GREEN-BOOK",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": false,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "RLANDBIT"
+      ],
+      "name": "LIBRARY",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [
+            "TOUCHBIT"
+          ],
+          "index": 1,
+          "operation": "FSET",
+          "routine": "RANDOM-BOOK"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "BURNBIT",
+        "CONTBIT",
+        "READBIT",
+        "SEARCHBIT",
+        "TAKEBIT"
+      ],
+      "name": "PURPLE-BOOK",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "BURNBIT",
+        "READBIT",
+        "STAGGERED",
+        "TAKEBIT"
+      ],
+      "name": "STAMP",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [
+            "TOUCHBIT"
+          ],
+          "index": 0,
+          "operation": "FSET",
+          "routine": "RANDOM-BOOK"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "BURNBIT",
+        "CONTBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "name": "WHITE-BOOK",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    }
+  ],
+  "format": "zxr-room-context-v1",
+  "globalObjects": [],
+  "initialObjects": [
+    "BLUE-BOOK",
+    "GREEN-BOOK",
+    "PURPLE-BOOK",
+    "STAMP",
+    "WHITE-BOOK"
+  ],
+  "inputHash": "0530b9244aaa1d8059cdbd6dd4d286235c362734306dc285cc21cc586312a3e5",
+  "potentialArrivals": [
+    "ADVENTURER",
+    "ARCANA",
+    "BALLOON",
+    "BALLOON-LABEL",
+    "BANK-BROCHURE",
+    "BAT",
+    "BILLS",
+    "BLESSINGS",
+    "BLUE-BOOK",
+    "BLUE-ICING",
+    "BRAIDED-WIRE",
+    "BRICK",
+    "BRIDGE",
+    "BROKEN-CASE",
+    "BROKEN-LAMP",
+    "BUCKET",
+    "CAGE",
+    "CANDY",
+    "CARD",
+    "CERBERUS",
+    "CHASM",
+    "CHEST",
+    "CLOTH-BAG",
+    "COIN",
+    "COLLAR",
+    "COMPASS",
+    "CROWN",
+    "CRYPT-DOOR",
+    "DEAD-BALLOON",
+    "DEAD-DRAGON",
+    "DEAD-SERPENT",
+    "DEGREE",
+    "DEPOSIT-BOX",
+    "DIM-DOOR",
+    "DRAGON",
+    "DWINDOW",
+    "EAST-WALL",
+    "EAT-ME-CAKE",
+    "EXPLOSION",
+    "FLASK",
+    "FOOTPAD",
+    "FUSE",
+    "GAZEBO",
+    "GENIE",
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GLOBAL-OBJECTS",
+    "GLOBAL-PALANTIR",
+    "GLOBAL-PRINCESS",
+    "GLOBAL-UNICORN",
+    "GLOBAL-WATER",
+    "GLOBAL-WIZARD-CASE",
+    "GNOME",
+    "GNOME-OF-ZURICH",
+    "GOLD-KEY",
+    "GREEN-BOOK",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "HEADS",
+    "INTNUM",
+    "IRON-BOX",
+    "IT",
+    "KEY",
+    "LAMP",
+    "LETTER-OPENER",
+    "LOCAL-GLOBALS",
+    "LUNGS",
+    "MANGLED-CAGE",
+    "MATCH",
+    "ME",
+    "MENHIR",
+    "MOSS",
+    "NEWSPAPER",
+    "NORTH-WALL",
+    "ORANGE-ICING",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "PATHOBJ",
+    "PDOOR",
+    "PEARL",
+    "PLACE-MAT",
+    "PORTRAIT",
+    "PRINCESS",
+    "PSEUDO-OBJECT",
+    "PURPLE-BOOK",
+    "PWINDOW",
+    "RECEPTACLE",
+    "RED-ICING",
+    "REPELLENT",
+    "RIBBON",
+    "ROBOT",
+    "ROBOT-LABEL",
+    "ROSE",
+    "ROSE-BUSH",
+    "RUBY",
+    "SAILOR",
+    "SALTY-WATER",
+    "SERPENT",
+    "SEWL",
+    "SNWL",
+    "SOUTH-WALL",
+    "SSWL",
+    "STAIRS",
+    "STAMP",
+    "STAND-4",
+    "STATUETTE",
+    "STREAM",
+    "SWORD",
+    "SWWL",
+    "TEAPOT",
+    "TROPHY-BOTTLES",
+    "TROPHY-SWORD",
+    "TUNNEL",
+    "UNICORN",
+    "VIOLIN",
+    "WAND",
+    "WANDS",
+    "WATER",
+    "WELL",
+    "WEST-WALL",
+    "WHITE-BOOK",
+    "WISH",
+    "WIZ-DOOR",
+    "WIZARD",
+    "ZORKMID"
+  ],
+  "room": {
+    "desc": {
+      "source": {
+        "end": {
+          "column": 24,
+          "line": 1367,
+          "offset": 36780
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1367,
+          "offset": 36764
+        }
+      },
+      "text": "Library"
+    },
+    "flags": [
+      "RLANDBIT"
+    ],
+    "id": 136,
+    "initialRoomLightFlag": false,
+    "ldesc": [
+      {
+        "byteLength": 2,
+        "kind": "text",
+        "property": {
+          "name": "LDESC",
+          "number": 13
+        },
+        "source": {
+          "end": {
+            "column": 20,
+            "line": 1366,
+            "offset": 36756
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 8,
+            "line": 1363,
+            "offset": 36586
+          }
+        },
+        "text": "This must have been a large library, probably for the royal family. All of the shelves have been gnawed to pieces by unfriendly gnomes. To the north is an exit."
+      }
+    ],
+    "name": "LIBRARY",
+    "outdoors": "not-encoded-do-not-infer-from-RLANDBIT",
+    "source": {
+      "end": {
+        "column": 25,
+        "line": 1370,
+        "offset": 36855
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 1,
+        "line": 1361,
+        "offset": 36547
+      }
+    }
+  },
+  "routineReferencedObjects": [
+    "BLUE-BOOK",
+    "GREEN-BOOK",
+    "PURPLE-BOOK",
+    "STAMP",
+    "WHITE-BOOK"
+  ],
+  "routines": {
+    "dispatchBoundaries": [
+      "PERFORM"
+    ],
+    "missing": [],
+    "reachableHelpers": [
+      "PURPLE-BOOK-FCN",
+      "RANDOM-BOOK"
+    ],
+    "roots": [
+      "PURPLE-BOOK-FCN",
+      "RANDOM-BOOK"
+    ]
+  },
+  "scriptedArrivals": [],
+  "stateDependencies": [
+    {
+      "name": "PRSA",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 4,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "WATER-FCN"
+        }
+      ]
+    }
+  ],
+  "universalGlobalObjects": [
+    "BLESSINGS",
+    "COMPASS",
+    "EAST-WALL",
+    "FOOTPAD",
+    "GLOBAL-PRINCESS",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "INTNUM",
+    "IT",
+    "LUNGS",
+    "ME",
+    "NORTH-WALL",
+    "PATHOBJ",
+    "SAILOR",
+    "SOUTH-WALL",
+    "TUNNEL",
+    "WEST-WALL",
+    "WISH",
+    "ZORKMID"
+  ]
+}

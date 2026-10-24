@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "TREASURE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "6378aabe7febdba426edf8d80f51de08ed158ad8534304c71e18c84dea246692",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "1cced5f7849e2a376deadbea4903feb89b3691f61fef0e33d917321f813ddf6e",
+  "document": {
+    "entries": [
+      {
+        "family": "TREASURE:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Treasure"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_treasure",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "6378aabe7febdba426edf8d80f51de08ed158ad8534304c71e18c84dea246692"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

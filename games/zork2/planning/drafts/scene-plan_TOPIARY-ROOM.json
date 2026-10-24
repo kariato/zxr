@@ -1,0 +1,201 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "TOPIARY-ROOM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "72bf4cc2fddb601c0d4731787ff1ac6ec152c40ccf63ba6988224cbb2446dc36",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "2a0a7c3da7a137602e2fda4af561d11b939d6bf43d51bb337dc3dcdef5327478",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_hedges",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_moss",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_rose-bush",
+        "pose": {
+          "position": [
+            0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_north_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -8.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_west_anchor",
+        "pose": {
+          "position": [
+            -8.5,
+            0,
+            0
+          ],
+          "yawDegrees": 90
+        }
+      }
+    ],
+    "description": "Moss-lit cave garden with geometrically placed overgrown bushes shaped as dragon, unicorn, serpent, huge misshapen dog and humans; west rose arbor. These silhouettes are not live actors.\nStatic source description:\nThis is the southern end of a formal garden. Hedges hide the cavern walls and mosses provide dim illumination. Fantastically shaped hedges and bushes are arrayed with geometric precision. They have not recently been clipped, but you can discern creatures in the shapes of the bushes: There is a dragon, a unicorn, a great serpent, a huge misshapen dog, and several human figures. On the west side of the garden the path leads through a rose arbor into a tunnel.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_north_anchor",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "FORMAL-GARDEN"
+      },
+      {
+        "anchor": "exit_west_anchor",
+        "availability": "engine-option",
+        "direction": "WEST",
+        "node": "exit_west",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "CAROUSEL-ROOM"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "rock",
+        "node": "base_floor",
+        "part": "rock_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          18,
+          0.2,
+          18
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            9.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_hedges",
+        "asset": "asset_hedges",
+        "object": "HEDGES",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_moss",
+        "asset": "asset_moss",
+        "object": "MOSS",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_rose-bush",
+        "asset": "asset_rose-bush",
+        "object": "ROSE-BUSH",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "72bf4cc2fddb601c0d4731787ff1ac6ec152c40ccf63ba6988224cbb2446dc36"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "TOPIARY-ROOM",
+    "shell": "cave",
+    "sizeMetres": [
+      18,
+      10,
+      18
+    ],
+    "spawn": "player_start"
+  }
+}

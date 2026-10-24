@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "EXTINGUISH"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "64a5e25210ccebfa21a68eef9c14cefe2c49a873b43e758b6bb094ecb2184439",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "7917577511ebcac840aae272d486a8a78cdda944c82a9529fc79aa9b7721cb37",
+  "document": {
+    "entries": [
+      {
+        "family": "EXTINGUISH:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Extinguish {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_extinguish",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "64a5e25210ccebfa21a68eef9c14cefe2c49a873b43e758b6bb094ecb2184439"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

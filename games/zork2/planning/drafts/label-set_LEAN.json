@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "LEAN"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "fb2fa04c098b9ce1ad5fc621a2a27632dd0bf0f06edeefa75cb3e2f0e94467b2",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "335e1b7b04bf18a831291f1a4c7adaef48aed2bf47f9c2714c0bb7fa9f4a754e",
+  "document": {
+    "entries": [
+      {
+        "family": "LEAN:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Lean on {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_lean",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "fb2fa04c098b9ce1ad5fc621a2a27632dd0bf0f06edeefa75cb3e2f0e94467b2"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "RESTORE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "453a9688679a33eba0cc76820dcedf5a21c6b5a85885c0dc6af43be826de3aa7",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "ea274840e225427bca1ded9354f965b67e4e1d59cda8ce8238cafdfc4755ea8e",
+  "document": {
+    "entries": [
+      {
+        "family": "RESTORE:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Restore"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_restore",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "453a9688679a33eba0cc76820dcedf5a21c6b5a85885c0dc6af43be826de3aa7"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

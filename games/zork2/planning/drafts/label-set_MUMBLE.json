@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "MUMBLE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "7618c4699aac37309117817c9860474e4b71cdc03ed5d41f33d44ad5093ac811",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "d83904b283476b38798bdd0de6355ac02c6013cb33f25f30361745fb388c2ca3",
+  "document": {
+    "entries": [
+      {
+        "family": "MUMBLE:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Mumble"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_mumble",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "7618c4699aac37309117817c9860474e4b71cdc03ed5d41f33d44ad5093ac811"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "STAND"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "f690161ad244bcafe98679771a5a7caf99a538ae444436b375e1dcbd3c86b3e3",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "0ceda4d36562e7e4bad7596a12724ef2d2fac7f1ea3b34df5f4e71f0d6539ded",
+  "document": {
+    "entries": [
+      {
+        "family": "STAND:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Stand up {direct}"
+      },
+      {
+        "family": "STAND:2",
+        "kind": "action",
+        "slots": [],
+        "template": "Stand"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_stand",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "f690161ad244bcafe98679771a5a7caf99a538ae444436b375e1dcbd3c86b3e3"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

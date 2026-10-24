@@ -1,0 +1,41 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "LOCK"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "b08b7f76e219f0cbb1ce5e6b04c6c276f3fedaab8fdd591f2bf00d17ca572f7d",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "366e7b02e4f473a3e19c7a9b602aa44d3ab800c08ec0b8c0899a6c433d33bb23",
+  "document": {
+    "entries": [
+      {
+        "family": "LOCK:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Lock {direct} with {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_lock",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "b08b7f76e219f0cbb1ce5e6b04c6c276f3fedaab8fdd591f2bf00d17ca572f7d"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

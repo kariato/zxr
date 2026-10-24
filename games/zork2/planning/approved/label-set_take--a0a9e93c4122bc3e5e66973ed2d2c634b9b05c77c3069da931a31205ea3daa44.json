@@ -1,0 +1,101 @@
+{
+  "attempts": 0,
+  "document": {
+    "entries": [
+      {
+        "family": "TAKE:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Take {direct} from {indirect}"
+      },
+      {
+        "family": "TAKE:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Take {direct} off {indirect}"
+      },
+      {
+        "family": "TAKE:3",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Take {direct} out of {indirect}"
+      },
+      {
+        "family": "TAKE:4",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Stand up ({direct})"
+      },
+      {
+        "family": "TAKE:5",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Climb onto {direct}"
+      },
+      {
+        "family": "TAKE:6",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Get out of {direct}"
+      },
+      {
+        "family": "TAKE:7",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Get into {direct}"
+      },
+      {
+        "family": "TAKE:8",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Pick up {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_take",
+    "language": "en",
+    "provenance": {
+      "agent": "Codex",
+      "inputHash": "bf79f2d5d3d31c92331e50ca2c97879ca81d686ce0f42ac110d21e0f09236a07",
+      "method": "assistant",
+      "model": null,
+      "promptVersion": "zxr-planner-v1"
+    },
+    "review": {
+      "reviewedOn": "2026-10-23",
+      "reviewer": "Mark",
+      "status": "approved"
+    }
+  },
+  "format": "zxr-plan-record-v1",
+  "inputHash": "bf79f2d5d3d31c92331e50ca2c97879ca81d686ce0f42ac110d21e0f09236a07",
+  "model": null,
+  "outputHash": "a0a9e93c4122bc3e5e66973ed2d2c634b9b05c77c3069da931a31205ea3daa44",
+  "promptVersion": "zxr-planner-v1",
+  "provider": "assistant",
+  "requestHash": null,
+  "requestedModel": null,
+  "task": {
+    "kind": "label-set",
+    "subject": "TAKE"
+  }
+}

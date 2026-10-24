@@ -1,0 +1,56 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "EXAMINE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "06921bc6e2b6ae125e846b2efd639a86786ffdf840c8fa0c5a8301ec62993fb0",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "920d1bc5c6d85e3b5312bd7285ccdb18a5284b1a41790cec81c05bcb44b10132",
+  "document": {
+    "entries": [
+      {
+        "family": "EXAMINE:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Examine on {direct}"
+      },
+      {
+        "family": "EXAMINE:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Examine in {direct}"
+      },
+      {
+        "family": "EXAMINE:3",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Examine {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_examine",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "06921bc6e2b6ae125e846b2efd639a86786ffdf840c8fa0c5a8301ec62993fb0"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

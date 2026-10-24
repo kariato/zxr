@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "UNICORN"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "5fc7d5b705e62e82089c2ad41af2fedf4cb67b228368c9d6964cecb57b34b82e",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "dfd47826dc139e94b648cceece0a17e39b7676740228d4d02ce3cf0759167f04",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nBeautiful white unicorn; no invented wings, magical trail or duplicate global-proxy actor.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a beautiful unicorn here cropping grass.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every unicorn into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          1,
+          2.4,
+          2.8
+        ]
+      }
+    ],
+    "id": "asset_unicorn",
+    "kind": "character",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "unicorn; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "UNICORN"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "5fc7d5b705e62e82089c2ad41af2fedf4cb67b228368c9d6964cecb57b34b82e"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      1,
+      2.4,
+      2.8
+    ]
+  }
+}

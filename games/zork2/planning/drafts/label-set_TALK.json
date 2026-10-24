@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "TALK"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "781e33ea566f7a3dba0f6b551777c9f09a91c22b85d0dc3688aac24f610c1b8c",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "ba0455e949d7da876ab4a4624a5155c7306d0f485d491e94e86042b5424616bb",
+  "document": {
+    "entries": [
+      {
+        "family": "TALK:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Talk to {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_talk",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "781e33ea566f7a3dba0f6b551777c9f09a91c22b85d0dc3688aac24f610c1b8c"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

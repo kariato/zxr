@@ -1,0 +1,618 @@
+{
+  "cautions": [
+    "Offline source context; never current player-visible state.",
+    "All routine text/effects are conditional possibilities, not an executed description or a reveal rule.",
+    "Potential arrivals are a conservative shared catalogue, not proven room reachability or initial scenery.",
+    "Consult routines.json for text fragments, source guards, script changes and unresolved targets/calls.",
+    "Every feature requires state review; absent literal mutation evidence does not prove a static feature. Generic handlers and raw memory writes may change computed targets.",
+    "Computed exits are not guessed; RLANDBIT means land, not outdoors."
+  ],
+  "exits": [
+    {
+      "declaration": "(EAST \"Only a mouse could get in there.\")",
+      "direction": "EAST",
+      "geometryStatus": "conditional-blocked-or-computed",
+      "neighbour": null,
+      "source": {
+        "end": {
+          "column": 49,
+          "line": 1514,
+          "offset": 41215
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1514,
+          "offset": 41174
+        }
+      },
+      "view": {
+        "kind": "NEXIT",
+        "message": "Only a mouse could get in there."
+      }
+    },
+    {
+      "declaration": "(WEST TO WELL-TOP)",
+      "direction": "WEST",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Top of Well",
+        "name": "WELL-TOP"
+      },
+      "source": {
+        "end": {
+          "column": 26,
+          "line": 1515,
+          "offset": 41241
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1515,
+          "offset": 41223
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "WELL-TOP"
+      }
+    },
+    {
+      "declaration": "(NW TO MAGNET-ROOM)",
+      "direction": "NW",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Low Room",
+        "name": "MAGNET-ROOM"
+      },
+      "source": {
+        "end": {
+          "column": 27,
+          "line": 1516,
+          "offset": 41268
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1516,
+          "offset": 41249
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "MAGNET-ROOM"
+      }
+    }
+  ],
+  "features": [
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [
+            "INVISIBLE"
+          ],
+          "index": 4,
+          "operation": "FCLEAR",
+          "routine": "CAKE-FCN"
+        },
+        {
+          "flags": [
+            "INVISIBLE"
+          ],
+          "index": 2,
+          "operation": "FSET",
+          "routine": "EATME-FCN"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "CONTBIT",
+        "OPENBIT",
+        "SURFACEBIT"
+      ],
+      "name": "ALICE-TABLE",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "FOODBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "name": "BLUE-ICING",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [],
+          "index": 0,
+          "operation": "REMOVE",
+          "routine": "EATME-FCN"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "FOODBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "name": "EAT-ME-CAKE",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "FOODBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "name": "ORANGE-ICING",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "FOODBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "name": "RED-ICING",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "ONBIT",
+        "RLANDBIT"
+      ],
+      "name": "TEA-ROOM",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    }
+  ],
+  "format": "zxr-room-context-v1",
+  "globalObjects": [],
+  "initialObjects": [
+    "ALICE-TABLE",
+    "BLUE-ICING",
+    "EAT-ME-CAKE",
+    "ORANGE-ICING",
+    "RED-ICING"
+  ],
+  "inputHash": "aa31bd47383014064516d0865734becac01492ab20a582f821b4ff74930ebfc9",
+  "potentialArrivals": [
+    "ADVENTURER",
+    "ARCANA",
+    "BALLOON",
+    "BALLOON-LABEL",
+    "BANK-BROCHURE",
+    "BAT",
+    "BILLS",
+    "BLESSINGS",
+    "BLUE-BOOK",
+    "BLUE-ICING",
+    "BRAIDED-WIRE",
+    "BRICK",
+    "BRIDGE",
+    "BROKEN-CASE",
+    "BROKEN-LAMP",
+    "BUCKET",
+    "CAGE",
+    "CANDY",
+    "CARD",
+    "CERBERUS",
+    "CHASM",
+    "CHEST",
+    "CLOTH-BAG",
+    "COIN",
+    "COLLAR",
+    "COMPASS",
+    "CROWN",
+    "CRYPT-DOOR",
+    "DEAD-BALLOON",
+    "DEAD-DRAGON",
+    "DEAD-SERPENT",
+    "DEGREE",
+    "DEPOSIT-BOX",
+    "DIM-DOOR",
+    "DRAGON",
+    "DWINDOW",
+    "EAST-WALL",
+    "EAT-ME-CAKE",
+    "EXPLOSION",
+    "FLASK",
+    "FOOTPAD",
+    "FUSE",
+    "GAZEBO",
+    "GENIE",
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GLOBAL-OBJECTS",
+    "GLOBAL-PALANTIR",
+    "GLOBAL-PRINCESS",
+    "GLOBAL-UNICORN",
+    "GLOBAL-WATER",
+    "GLOBAL-WIZARD-CASE",
+    "GNOME",
+    "GNOME-OF-ZURICH",
+    "GOLD-KEY",
+    "GREEN-BOOK",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "HEADS",
+    "INTNUM",
+    "IRON-BOX",
+    "IT",
+    "KEY",
+    "LAMP",
+    "LETTER-OPENER",
+    "LOCAL-GLOBALS",
+    "LUNGS",
+    "MANGLED-CAGE",
+    "MATCH",
+    "ME",
+    "MENHIR",
+    "MOSS",
+    "NEWSPAPER",
+    "NORTH-WALL",
+    "ORANGE-ICING",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "PATHOBJ",
+    "PDOOR",
+    "PEARL",
+    "PLACE-MAT",
+    "PORTRAIT",
+    "PRINCESS",
+    "PSEUDO-OBJECT",
+    "PURPLE-BOOK",
+    "PWINDOW",
+    "RECEPTACLE",
+    "RED-ICING",
+    "REPELLENT",
+    "RIBBON",
+    "ROBOT",
+    "ROBOT-LABEL",
+    "ROSE",
+    "ROSE-BUSH",
+    "RUBY",
+    "SAILOR",
+    "SALTY-WATER",
+    "SERPENT",
+    "SEWL",
+    "SNWL",
+    "SOUTH-WALL",
+    "SSWL",
+    "STAIRS",
+    "STAMP",
+    "STAND-4",
+    "STATUETTE",
+    "STREAM",
+    "SWORD",
+    "SWWL",
+    "TEAPOT",
+    "TROPHY-BOTTLES",
+    "TROPHY-SWORD",
+    "TUNNEL",
+    "UNICORN",
+    "VIOLIN",
+    "WAND",
+    "WANDS",
+    "WATER",
+    "WELL",
+    "WEST-WALL",
+    "WHITE-BOOK",
+    "WISH",
+    "WIZ-DOOR",
+    "WIZARD",
+    "ZORKMID"
+  ],
+  "room": {
+    "desc": {
+      "source": {
+        "end": {
+          "column": 25,
+          "line": 1513,
+          "offset": 41166
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1513,
+          "offset": 41149
+        }
+      },
+      "text": "Tea Room"
+    },
+    "flags": [
+      "ONBIT",
+      "RLANDBIT"
+    ],
+    "id": 190,
+    "initialRoomLightFlag": true,
+    "ldesc": [
+      {
+        "byteLength": 2,
+        "kind": "text",
+        "property": {
+          "name": "LDESC",
+          "number": 13
+        },
+        "source": {
+          "end": {
+            "column": 68,
+            "line": 1512,
+            "offset": 41141
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 8,
+            "line": 1507,
+            "offset": 40823
+          }
+        },
+        "text": "This is a small room containing a large oblong table, no doubt set for afternoon tea. It is clear from the objects on the table that the users were indeed mad. In the eastern corner of the room is a small hole (no more than four inches high). There are passageways leading away to the west and the northwest."
+      }
+    ],
+    "name": "TEA-ROOM",
+    "outdoors": "not-encoded-do-not-infer-from-RLANDBIT",
+    "source": {
+      "end": {
+        "column": 35,
+        "line": 1518,
+        "offset": 41333
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 1,
+        "line": 1505,
+        "offset": 40783
+      }
+    }
+  },
+  "routineReferencedObjects": [
+    "ADVENTURER",
+    "ALICE-TABLE",
+    "BLUE-ICING",
+    "CANDY",
+    "EAT-ME-CAKE",
+    "FLASK",
+    "ORANGE-ICING",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "POOL",
+    "POSTS",
+    "PSEUDO-OBJECT",
+    "RED-ICING",
+    "ROBOT"
+  ],
+  "routines": {
+    "dispatchBoundaries": [
+      "GOTO",
+      "JIGS-UP",
+      "PERFORM"
+    ],
+    "missing": [],
+    "reachableHelpers": [
+      "ALICE-HOLE",
+      "CAKE-CRUMBLE",
+      "CAKE-FCN",
+      "EATME-FCN",
+      "ICEBOOM",
+      "MUNG-ROOM"
+    ],
+    "roots": [
+      "ALICE-HOLE",
+      "CAKE-FCN",
+      "EATME-FCN"
+    ]
+  },
+  "scriptedArrivals": [],
+  "stateDependencies": [
+    {
+      "name": "HERE",
+      "writers": [
+        {
+          "index": 9,
+          "routine": "GO"
+        },
+        {
+          "index": 0,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 3,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 2,
+          "routine": "GOTO"
+        },
+        {
+          "index": 0,
+          "routine": "IN-CAGE-FCN"
+        },
+        {
+          "index": 2,
+          "routine": "JIGS-UP"
+        },
+        {
+          "index": 1,
+          "routine": "LIT?"
+        },
+        {
+          "index": 4,
+          "routine": "LIT?"
+        },
+        {
+          "index": 1,
+          "routine": "V-TELL"
+        }
+      ]
+    },
+    {
+      "name": "PRSA",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 4,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "PRSI",
+      "writers": [
+        {
+          "index": 7,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 3,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 6,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 1,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 2,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 0,
+          "routine": "V-DIG"
+        },
+        {
+          "index": 1,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 4,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "PRSO",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "CAROUSEL-ROOM-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "CAROUSEL-ROOM-FCN"
+        },
+        {
+          "index": 17,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "ITAKE-CHECK"
+        },
+        {
+          "index": 1,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 6,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 1,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 5,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 1,
+          "routine": "V-THROUGH"
+        },
+        {
+          "index": 2,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 5,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 9,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 10,
+          "routine": "WATER-FCN"
+        }
+      ]
+    }
+  ],
+  "universalGlobalObjects": [
+    "BLESSINGS",
+    "COMPASS",
+    "EAST-WALL",
+    "FOOTPAD",
+    "GLOBAL-PRINCESS",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "INTNUM",
+    "IT",
+    "LUNGS",
+    "ME",
+    "NORTH-WALL",
+    "PATHOBJ",
+    "SAILOR",
+    "SOUTH-WALL",
+    "TUNNEL",
+    "WEST-WALL",
+    "WISH",
+    "ZORKMID"
+  ]
+}

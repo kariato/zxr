@@ -1,0 +1,49 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "UNTIE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "fbaf023844c2e03b0c1b68cce2d9d271c98085181062c7ac683f4635a45acd7f",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "3c654c28e07c204ed549c8c7b57fe9114005218031c4b7ddf2f277477657b5ae",
+  "document": {
+    "entries": [
+      {
+        "family": "UNTIE:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Untie {direct} from {indirect}"
+      },
+      {
+        "family": "UNTIE:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Untie {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_untie",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "fbaf023844c2e03b0c1b68cce2d9d271c98085181062c7ac683f4635a45acd7f"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

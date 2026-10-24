@@ -1,0 +1,207 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "CERBERUS-ROOM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "07fb963746cf001b08b752ca04efd605de379f7f7a6eb51564a95939da048fdf",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "49ad73e0837eca76b5e3d3f11cc8e330ed44e3a32b8ac67f8340c50df569c19b",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_cerberus",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_stairs",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_east_anchor",
+        "pose": {
+          "position": [
+            5.5,
+            0,
+            0
+          ],
+          "yawDegrees": -90
+        }
+      },
+      {
+        "node": "exit_up_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -6.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_in_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -6.5
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Crypt gateway arch and descending marble stairway; observed Cerberus remains a separate actor, never a carved dog in the shell.\nStatic source description:\nThis is the entrance to a huge crypt or tomb. A marble stairway leads up from a gateway arch.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_east_anchor",
+        "availability": "engine-option",
+        "direction": "EAST",
+        "node": "exit_east",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "CRYPT-ANTEROOM"
+      },
+      {
+        "anchor": "exit_up_anchor",
+        "availability": "engine-option",
+        "direction": "UP",
+        "node": "exit_up",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "DIAMOND-5"
+      },
+      {
+        "anchor": "exit_in_anchor",
+        "availability": "engine-option",
+        "direction": "IN",
+        "node": "exit_in",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "CRYPT-ANTEROOM"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          12,
+          0.2,
+          14
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            5.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_cerberus",
+        "asset": "asset_cerberus",
+        "object": "CERBERUS",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_stairs",
+        "asset": "asset_stairs",
+        "object": "STAIRS",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "07fb963746cf001b08b752ca04efd605de379f7f7a6eb51564a95939da048fdf"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "CERBERUS-ROOM",
+    "shell": "indoor",
+    "sizeMetres": [
+      12,
+      6,
+      14
+    ],
+    "spawn": "player_start"
+  }
+}

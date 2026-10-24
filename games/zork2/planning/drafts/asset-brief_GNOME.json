@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "GNOME"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "6481fed67b5f29ff5e1c2b1dc770c90df11f487649f93518b28d2f9fa5ac6ad0",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "cc28bfbd4579b2e1a11e64ffeb14fffae1ced7cf7d9b2a3b5e286cf65be44770",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nNervous volcano gnome, no invented merchant stock.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a nervous Volcano Gnome here.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every Volcano Gnome into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.6,
+          1.1,
+          0.5
+        ]
+      }
+    ],
+    "id": "asset_gnome",
+    "kind": "character",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "Volcano Gnome; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "GNOME"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "6481fed67b5f29ff5e1c2b1dc770c90df11f487649f93518b28d2f9fa5ac6ad0"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.6,
+      1.1,
+      0.5
+    ]
+  }
+}

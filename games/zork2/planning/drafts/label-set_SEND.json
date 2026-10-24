@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "SEND"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "45bf0fc9d07b373983c3bacb38086957327a14965367cc1ff5048591d09c2401",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "0c54f43608090cb63eee4b348d61f01e8008cbbd852944d9cdf787a3b75fd8e7",
+  "document": {
+    "entries": [
+      {
+        "family": "SEND:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Send for {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_send",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "45bf0fc9d07b373983c3bacb38086957327a14965367cc1ff5048591d09c2401"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

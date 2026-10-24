@@ -1,0 +1,35 @@
+{
+  "format": "zxr-visual-guide-v1",
+  "id": "inside-barrow-v1",
+  "room": "INSIDE-BARROW",
+  "status": "approved",
+  "approval": {
+    "reviewer": "Mark",
+    "reviewedOn": "2026-10-23",
+    "method": "explicit conversation approval",
+    "imageHash": "be5cd15bf343c818d6990bc42d61975a1297ac28a3afe9f045037cb27f7d1495",
+    "scope": "Visual appearance reference for scene planning and asset briefs."
+  },
+  "provider": "OpenAI built-in image_gen",
+  "model": null,
+  "styleVersion": "zork2-style-v1",
+  "styleHash": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceInputHash": "ee0904d54b50d45ccc0a3c61817be726018ae62c2fe27a8e06acb8e71df960ac",
+  "promptHash": "7f8ca48586cac2331321398f4e296dbb48ddc8287b2c132b861715894dfaefec",
+  "promptFile": "prompt.txt",
+  "sourceContextFile": "source-context.json",
+  "imageFile": "concept.png",
+  "notes": [
+    "Model ID will only be recorded if reported by the generator.",
+    "Concept art approval does not approve dimensions, room rules or final GLB assets."
+  ],
+  "imageHash": "be5cd15bf343c818d6990bc42d61975a1297ac28a3afe9f045037cb27f7d1495",
+  "width": 1672,
+  "height": 941,
+  "generatedAt": "2026-10-23T23:52:39.643276+00:00",
+  "reviewNotes": [
+    "Checked against the prompt: one sword, one unlit brass lantern, enclosed low-poly barrow, one receding tunnel and distant faint glow.",
+    "Appearance reference only; image does not establish exact dimensions or final geometry.",
+    "Mark explicitly approved this exact concept image in conversation on 2026-10-23."
+  ]
+}

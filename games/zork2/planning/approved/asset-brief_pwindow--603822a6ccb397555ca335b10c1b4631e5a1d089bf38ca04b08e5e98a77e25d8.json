@@ -1,0 +1,72 @@
+{
+  "attempts": 0,
+  "document": {
+    "description": "Small iron-barred window insert fitted into the upper part of the massive oak door. It peers into the adjoining room, never a new outdoor vista or traversable route. The component follows the host door panel. Keep its bars sparse and readable; do not manufacture a route between them.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "hs_pwindow",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.45,
+          0.35,
+          0.09
+        ]
+      }
+    ],
+    "id": "asset_pwindow",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#444E52",
+        "description": "Dark iron bars and surround",
+        "metalness": 0.8,
+        "name": "iron",
+        "roughness": 0.65
+      }
+    ],
+    "objects": [
+      "PWINDOW"
+    ],
+    "provenance": {
+      "agent": "Codex",
+      "inputHash": "73b79dbee404ccf655507d835dbed426c949e6dd1b6075181f1012336b080f24",
+      "method": "assistant",
+      "model": null,
+      "promptVersion": "zxr-planner-v1"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "reviewedOn": "2026-10-23",
+      "reviewer": "Mark",
+      "status": "approved"
+    },
+    "sizeMetres": [
+      0.45,
+      0.35,
+      0.09
+    ]
+  },
+  "format": "zxr-plan-record-v1",
+  "inputHash": "73b79dbee404ccf655507d835dbed426c949e6dd1b6075181f1012336b080f24",
+  "model": null,
+  "outputHash": "603822a6ccb397555ca335b10c1b4631e5a1d089bf38ca04b08e5e98a77e25d8",
+  "promptVersion": "zxr-planner-v1",
+  "provider": "assistant",
+  "requestHash": null,
+  "requestedModel": null,
+  "task": {
+    "kind": "asset-brief",
+    "subject": "PWINDOW"
+  }
+}

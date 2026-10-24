@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "BRIEF"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "eba8d5ccd86b15043fceafb9a77602f8cbcc5f6ced8f36d0721851f62741d95b",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "14042235a5ee54f1c2ef191889f03dd7f71167c8ad26b5a14f6d6eaad9d76ae0",
+  "document": {
+    "entries": [
+      {
+        "family": "BRIEF:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Use brief descriptions"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_brief",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "eba8d5ccd86b15043fceafb9a77602f8cbcc5f6ced8f36d0721851f62741d95b"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

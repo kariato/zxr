@@ -1,0 +1,218 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "CRYPT-ROOM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "a8f63ffb9292afffd20f3c3fffa68ea337967529fff93c02133458723d1c5f38",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "b09c260a64f61d4bab9c74a1ec3283bc6b84c5bea55a9ec8c2aec45b461d87bc",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_crypt",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_heads",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_crypt-door",
+        "pose": {
+          "position": [
+            0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_dim-door",
+        "pose": {
+          "position": [
+            1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_north_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -6.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_south_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            6.5
+          ],
+          "yawDegrees": 180
+        }
+      }
+    ],
+    "description": "Twelve poled Flathead heads and crypt lettering are separate source-backed props. South secret-door geometry must remain fully absent while DIM-DOOR is invisible; do not bake an F outline into a wall.\nDescription is routine-driven: the safe base profile above does not make guarded output unconditional.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_north_anchor",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "CRYPT-ANTEROOM"
+      },
+      {
+        "anchor": "exit_south_anchor",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "ZORK3"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          12,
+          0.2,
+          14
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            4.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_crypt",
+        "asset": "asset_crypt",
+        "object": "CRYPT",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_heads",
+        "asset": "asset_heads",
+        "object": "HEADS",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_crypt-door",
+        "asset": "asset_crypt-door",
+        "object": "CRYPT-DOOR",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_dim-door",
+        "asset": "asset_dim-door",
+        "object": "DIM-DOOR",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "a8f63ffb9292afffd20f3c3fffa68ea337967529fff93c02133458723d1c5f38"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "CRYPT-ROOM",
+    "shell": "indoor",
+    "sizeMetres": [
+      12,
+      5,
+      14
+    ],
+    "spawn": "player_start"
+  }
+}

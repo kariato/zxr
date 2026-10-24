@@ -1,0 +1,57 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "OPEN"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "c989dd2b873ba8c645004d53b4ecd61cd7f15198d631a3e0660c49f6f21b2697",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "b2b6f84a3bcc8f08fa0f6812fde2698c18e02ed3181039dea1a3970caba4425f",
+  "document": {
+    "entries": [
+      {
+        "family": "OPEN:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Open {direct} with {indirect}"
+      },
+      {
+        "family": "OPEN:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Open up {direct}"
+      },
+      {
+        "family": "OPEN:3",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Open {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_open",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "c989dd2b873ba8c645004d53b4ecd61cd7f15198d631a3e0660c49f6f21b2697"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

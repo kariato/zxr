@@ -1,0 +1,118 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "WALK"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "51b50381ee3434052b28fd478df79b510145b2d745ab5fddc1cf17ca7d380d83",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "b0a4022763df993e586dcf027a49c688f92cf7790cccabbf91234da135bea795",
+  "document": {
+    "entries": [
+      {
+        "family": "WALK:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Walk down {direct}"
+      },
+      {
+        "family": "WALK:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Walk up {direct}"
+      },
+      {
+        "family": "WALK:3",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Walk around {direct}"
+      },
+      {
+        "family": "WALK:4",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Walk to {direct}"
+      },
+      {
+        "family": "WALK:5",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Walk over {direct}"
+      },
+      {
+        "family": "WALK:6",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Walk on {direct}"
+      },
+      {
+        "family": "WALK:7",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Walk with {direct}"
+      },
+      {
+        "family": "WALK:8",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Walk in {direct}"
+      },
+      {
+        "family": "WALK:9",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Walk away {direct}"
+      },
+      {
+        "family": "WALK:10",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Walk {direct}"
+      },
+      {
+        "family": "WALK:11",
+        "kind": "action",
+        "slots": [],
+        "template": "Walk"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_walk",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "51b50381ee3434052b28fd478df79b510145b2d745ab5fddc1cf17ca7d380d83"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

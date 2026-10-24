@@ -1,0 +1,127 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "LOOK"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "e1518e0270c42fa55284f46c3fbcdb181119409b6d47c6667b042f11a715f92d",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "0324b669941637094169b0493614e2db51a2bf00ee04e39d5d8d879ae40051e0",
+  "document": {
+    "entries": [
+      {
+        "family": "LOOK:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Look for {direct}"
+      },
+      {
+        "family": "LOOK:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Look at {direct} with {indirect}"
+      },
+      {
+        "family": "LOOK:3",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Look in {direct}"
+      },
+      {
+        "family": "LOOK:4",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Look behind {direct}"
+      },
+      {
+        "family": "LOOK:5",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Look under {direct}"
+      },
+      {
+        "family": "LOOK:6",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Look with {direct}"
+      },
+      {
+        "family": "LOOK:7",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Look on {direct}"
+      },
+      {
+        "family": "LOOK:8",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Look at {direct}"
+      },
+      {
+        "family": "LOOK:9",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Look down {direct}"
+      },
+      {
+        "family": "LOOK:10",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Look up {direct}"
+      },
+      {
+        "family": "LOOK:11",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Look around {direct}"
+      },
+      {
+        "family": "LOOK:12",
+        "kind": "action",
+        "slots": [],
+        "template": "Look"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_look",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "e1518e0270c42fa55284f46c3fbcdb181119409b6d47c6667b042f11a715f92d"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

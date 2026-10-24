@@ -1,0 +1,413 @@
+{
+  "cautions": [
+    "Offline source context; never current player-visible state.",
+    "All routine text/effects are conditional possibilities, not an executed description or a reveal rule.",
+    "Potential arrivals are a conservative shared catalogue, not proven room reachability or initial scenery.",
+    "Consult routines.json for text fragments, source guards, script changes and unresolved targets/calls.",
+    "Every feature requires state review; absent literal mutation evidence does not prove a static feature. Generic handlers and raw memory writes may change computed targets.",
+    "Computed exits are not guessed; RLANDBIT means land, not outdoors."
+  ],
+  "exits": [
+    {
+      "declaration": "(NORTH TO GARDEN-NORTH)",
+      "direction": "NORTH",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "North End of Garden",
+        "name": "GARDEN-NORTH"
+      },
+      "source": {
+        "end": {
+          "column": 30,
+          "line": 320,
+          "offset": 8341
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 320,
+          "offset": 8318
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "GARDEN-NORTH"
+      }
+    },
+    {
+      "declaration": "(WEST TO STREAM-PATH)",
+      "direction": "WEST",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Path Near Stream",
+        "name": "STREAM-PATH"
+      },
+      "source": {
+        "end": {
+          "column": 28,
+          "line": 319,
+          "offset": 8311
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 319,
+          "offset": 8290
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "STREAM-PATH"
+      }
+    },
+    {
+      "declaration": "(SOUTH TO TOPIARY-ROOM)",
+      "direction": "SOUTH",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Topiary",
+        "name": "TOPIARY-ROOM"
+      },
+      "source": {
+        "end": {
+          "column": 30,
+          "line": 321,
+          "offset": 8371
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 321,
+          "offset": 8348
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "TOPIARY-ROOM"
+      }
+    }
+  ],
+  "features": [
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "ONBIT",
+        "RLANDBIT"
+      ],
+      "name": "FORMAL-GARDEN",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "ACTORBIT"
+      ],
+      "name": "GLOBAL-UNICORN",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "name": "MOSS",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    }
+  ],
+  "format": "zxr-room-context-v1",
+  "globalObjects": [
+    "GLOBAL-UNICORN",
+    "MOSS"
+  ],
+  "initialObjects": [],
+  "inputHash": "f4e6e8b4a5e29a0dc5573ccd58f35506d275f7cd58dac08e0e33740c809d1f2a",
+  "potentialArrivals": [
+    "ADVENTURER",
+    "ARCANA",
+    "BALLOON",
+    "BALLOON-LABEL",
+    "BANK-BROCHURE",
+    "BAT",
+    "BILLS",
+    "BLESSINGS",
+    "BLUE-BOOK",
+    "BLUE-ICING",
+    "BRAIDED-WIRE",
+    "BRICK",
+    "BRIDGE",
+    "BROKEN-CASE",
+    "BROKEN-LAMP",
+    "BUCKET",
+    "CAGE",
+    "CANDY",
+    "CARD",
+    "CERBERUS",
+    "CHASM",
+    "CHEST",
+    "CLOTH-BAG",
+    "COIN",
+    "COLLAR",
+    "COMPASS",
+    "CROWN",
+    "CRYPT-DOOR",
+    "DEAD-BALLOON",
+    "DEAD-DRAGON",
+    "DEAD-SERPENT",
+    "DEGREE",
+    "DEPOSIT-BOX",
+    "DIM-DOOR",
+    "DRAGON",
+    "DWINDOW",
+    "EAST-WALL",
+    "EAT-ME-CAKE",
+    "EXPLOSION",
+    "FLASK",
+    "FOOTPAD",
+    "FUSE",
+    "GAZEBO",
+    "GENIE",
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GLOBAL-OBJECTS",
+    "GLOBAL-PALANTIR",
+    "GLOBAL-PRINCESS",
+    "GLOBAL-UNICORN",
+    "GLOBAL-WATER",
+    "GLOBAL-WIZARD-CASE",
+    "GNOME",
+    "GNOME-OF-ZURICH",
+    "GOLD-KEY",
+    "GREEN-BOOK",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "HEADS",
+    "INTNUM",
+    "IRON-BOX",
+    "IT",
+    "KEY",
+    "LAMP",
+    "LETTER-OPENER",
+    "LOCAL-GLOBALS",
+    "LUNGS",
+    "MANGLED-CAGE",
+    "MATCH",
+    "ME",
+    "MENHIR",
+    "MOSS",
+    "NEWSPAPER",
+    "NORTH-WALL",
+    "ORANGE-ICING",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "PATHOBJ",
+    "PDOOR",
+    "PEARL",
+    "PLACE-MAT",
+    "PORTRAIT",
+    "PRINCESS",
+    "PSEUDO-OBJECT",
+    "PURPLE-BOOK",
+    "PWINDOW",
+    "RECEPTACLE",
+    "RED-ICING",
+    "REPELLENT",
+    "RIBBON",
+    "ROBOT",
+    "ROBOT-LABEL",
+    "ROSE",
+    "ROSE-BUSH",
+    "RUBY",
+    "SAILOR",
+    "SALTY-WATER",
+    "SERPENT",
+    "SEWL",
+    "SNWL",
+    "SOUTH-WALL",
+    "SSWL",
+    "STAIRS",
+    "STAMP",
+    "STAND-4",
+    "STATUETTE",
+    "STREAM",
+    "SWORD",
+    "SWWL",
+    "TEAPOT",
+    "TROPHY-BOTTLES",
+    "TROPHY-SWORD",
+    "TUNNEL",
+    "UNICORN",
+    "VIOLIN",
+    "WAND",
+    "WANDS",
+    "WATER",
+    "WELL",
+    "WEST-WALL",
+    "WHITE-BOOK",
+    "WISH",
+    "WIZ-DOOR",
+    "WIZARD",
+    "ZORKMID"
+  ],
+  "room": {
+    "desc": {
+      "source": {
+        "end": {
+          "column": 29,
+          "line": 317,
+          "offset": 8254
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 317,
+          "offset": 8232
+        }
+      },
+      "text": "Formal Garden"
+    },
+    "flags": [
+      "ONBIT",
+      "RLANDBIT"
+    ],
+    "id": 157,
+    "initialRoomLightFlag": true,
+    "ldesc": [
+      {
+        "byteLength": 2,
+        "kind": "text",
+        "property": {
+          "name": "LDESC",
+          "number": 13
+        },
+        "source": {
+          "end": {
+            "column": 50,
+            "line": 316,
+            "offset": 8225
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 7,
+            "line": 310,
+            "offset": 7854
+          }
+        },
+        "text": "This is the middle part of a formal garden. Hedges hide the cavern walls and a dim illumination comes from mosses far above. The path is of small crushed white stones. It winds among bushes and flower beds from south to north. To the north a small structure can be seen. To the south are peculiarly shaped bushes. There is a small gap in the hedges to the west."
+      }
+    ],
+    "name": "FORMAL-GARDEN",
+    "outdoors": "not-encoded-do-not-infer-from-RLANDBIT",
+    "source": {
+      "end": {
+        "column": 36,
+        "line": 323,
+        "offset": 8438
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 1,
+        "line": 308,
+        "offset": 7811
+      }
+    }
+  },
+  "routineReferencedObjects": [
+    "UNICORN"
+  ],
+  "routines": {
+    "dispatchBoundaries": [],
+    "missing": [],
+    "reachableHelpers": [
+      "GARDEN-ROOM-FCN",
+      "GLOBAL-UNICORN-FCN",
+      "INT",
+      "MOSS-FCN",
+      "QUEUE"
+    ],
+    "roots": [
+      "GARDEN-ROOM-FCN",
+      "GLOBAL-UNICORN-FCN",
+      "MOSS-FCN"
+    ]
+  },
+  "scriptedArrivals": [],
+  "stateDependencies": [
+    {
+      "name": "C-DEMONS",
+      "writers": [
+        {
+          "index": 1,
+          "routine": "INT"
+        }
+      ]
+    },
+    {
+      "name": "C-INTS",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "INT"
+        }
+      ]
+    },
+    {
+      "name": "C-TABLE",
+      "writers": []
+    },
+    {
+      "name": "PRSA",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 4,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "WATER-FCN"
+        }
+      ]
+    }
+  ],
+  "universalGlobalObjects": [
+    "BLESSINGS",
+    "COMPASS",
+    "EAST-WALL",
+    "FOOTPAD",
+    "GLOBAL-PRINCESS",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "INTNUM",
+    "IT",
+    "LUNGS",
+    "ME",
+    "NORTH-WALL",
+    "PATHOBJ",
+    "SAILOR",
+    "SOUTH-WALL",
+    "TUNNEL",
+    "WEST-WALL",
+    "WISH",
+    "ZORKMID"
+  ]
+}

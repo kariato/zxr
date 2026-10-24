@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "PRAY"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "67910fcd53f2c4a190532146d878235e9e85ded16e2097e60bdedb5ee87039e5",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "689ceebdeaa40b7a2273777f3b5f8b971419775d517e05e1e575b766cad3d97c",
+  "document": {
+    "entries": [
+      {
+        "family": "PRAY:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Pray"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_pray",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "67910fcd53f2c4a190532146d878235e9e85ded16e2097e60bdedb5ee87039e5"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

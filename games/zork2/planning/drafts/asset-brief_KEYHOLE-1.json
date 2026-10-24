@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "KEYHOLE-1"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "e276b30489d440c6355b115bfee9be9864773474c493d40b22c6591464b94e14",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "198f62821197df812429309f9b997ed576846de312f1df34b931460cb80d444d",
+  "document": {
+    "description": "Small keyhole and lock-face insert for the tiny-room side of the oak door. Its opening aligns behind the separate thin metal lid and is physically occluded by that lid when shut. Keep dimensions provisional and interaction bounds generous without enlarging the visible keyhole. Do not pre-insert a key or show objects belonging to another room.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "hs_keyhole_1",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.09,
+          0.14,
+          0.03
+        ]
+      }
+    ],
+    "id": "asset_keyhole-1",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#444E52",
+        "description": "Worn dark lock face",
+        "metalness": 0.8,
+        "name": "iron",
+        "roughness": 0.6
+      }
+    ],
+    "objects": [
+      "KEYHOLE-1"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "e276b30489d440c6355b115bfee9be9864773474c493d40b22c6591464b94e14"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.09,
+      0.14,
+      0.03
+    ]
+  }
+}

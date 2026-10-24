@@ -1,0 +1,46 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "HELLO"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "3fc2f681780adf334f36e001f856bd1db680c948d0874de194da5ec95c3de9b1",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "f7fbd00be13dc947963fefafcbf509ae01170d8ce42cd4f23fde5004e8b6adc7",
+  "document": {
+    "entries": [
+      {
+        "family": "HELLO:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Hello {direct}"
+      },
+      {
+        "family": "HELLO:2",
+        "kind": "action",
+        "slots": [],
+        "template": "Hello"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_hello",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "3fc2f681780adf334f36e001f856bd1db680c948d0874de194da5ec95c3de9b1"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

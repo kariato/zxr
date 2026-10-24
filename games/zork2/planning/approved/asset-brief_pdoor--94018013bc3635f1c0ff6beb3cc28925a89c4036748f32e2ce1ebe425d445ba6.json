@@ -1,0 +1,81 @@
+{
+  "attempts": 0,
+  "document": {
+    "description": "Massive oak door assembly for the shared tiny/dreary-room doorway. Include the panel, stout frame and formidable bolt-lock housing. Reserve openings/attachment sockets for separate PWINDOW, KEYHOLE-1 and LID-1 parts; do not duplicate their geometry or bake their states into this asset. Open/closed clips move the panel and its attached components together; lock/unlock state remains source-owned. The frame remains fixed.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "hs_pdoor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          1.45,
+          2.3,
+          0.18
+        ]
+      }
+    ],
+    "id": "asset_pdoor",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#77604A",
+        "description": "Thick aged oak",
+        "metalness": 0,
+        "name": "oak",
+        "roughness": 0.8
+      },
+      {
+        "colour": "#444E52",
+        "description": "Dark bolt-lock iron",
+        "metalness": 0.8,
+        "name": "iron",
+        "roughness": 0.6
+      }
+    ],
+    "objects": [
+      "PDOOR"
+    ],
+    "provenance": {
+      "agent": "Codex",
+      "inputHash": "1f37e70ef9e92b3561f65ad356af876eb8167a71690cef47e01d39802f82ba37",
+      "method": "assistant",
+      "model": null,
+      "promptVersion": "zxr-planner-v1"
+    },
+    "requiredClips": [
+      "idle",
+      "open",
+      "closed"
+    ],
+    "review": {
+      "reviewedOn": "2026-10-23",
+      "reviewer": "Mark",
+      "status": "approved"
+    },
+    "sizeMetres": [
+      1.45,
+      2.3,
+      0.18
+    ]
+  },
+  "format": "zxr-plan-record-v1",
+  "inputHash": "1f37e70ef9e92b3561f65ad356af876eb8167a71690cef47e01d39802f82ba37",
+  "model": null,
+  "outputHash": "94018013bc3635f1c0ff6beb3cc28925a89c4036748f32e2ce1ebe425d445ba6",
+  "promptVersion": "zxr-planner-v1",
+  "provider": "assistant",
+  "requestHash": null,
+  "requestedModel": null,
+  "task": {
+    "kind": "asset-brief",
+    "subject": "PDOOR"
+  }
+}

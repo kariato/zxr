@@ -1,0 +1,365 @@
+{
+  "attempts": 0,
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            2
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "north_path",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -8.3
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "south_path",
+        "pose": {
+          "position": [
+            0,
+            0,
+            8.3
+          ],
+          "yawDegrees": 180
+        }
+      },
+      {
+        "node": "west_gap",
+        "pose": {
+          "position": [
+            -6.6,
+            0,
+            0
+          ],
+          "yawDegrees": -90
+        }
+      },
+      {
+        "node": "moss_canopy",
+        "pose": {
+          "position": [
+            0,
+            6,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Middle of a formal garden inside a cavern. Hedges conceal the cavern walls; dim moss light comes from far above. A crushed white-stone path winds through bushes and flower beds from south to north, with a small western hedge gap. A modest distant structure is visible northward. There is no sky or sunlight. Global unicorn references remain interaction aliases and must not create a permanently placed unicorn. Flowers are decorative, with no added collectible or readable clues.",
+    "exits": [
+      {
+        "anchor": "north_path",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          1.3,
+          2.2,
+          0.3
+        ],
+        "to": "GARDEN-NORTH"
+      },
+      {
+        "anchor": "west_gap",
+        "availability": "engine-option",
+        "direction": "WEST",
+        "node": "exit_west",
+        "sizeMetres": [
+          1.3,
+          2.2,
+          0.3
+        ],
+        "to": "STREAM-PATH"
+      },
+      {
+        "anchor": "south_path",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          1.3,
+          2.2,
+          0.3
+        ],
+        "to": "TOPIARY-ROOM"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "warm_earth",
+        "node": "garden_ground",
+        "part": "earth_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.05,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          14,
+          0.1,
+          18
+        ]
+      },
+      {
+        "material": "pale_mineral",
+        "node": "white_path",
+        "part": "gravel_path",
+        "pose": {
+          "position": [
+            0,
+            0.06,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          1.8,
+          0.03,
+          18
+        ]
+      },
+      {
+        "material": "pale_mineral",
+        "node": "west_path",
+        "part": "gravel_path",
+        "pose": {
+          "position": [
+            -3.2,
+            0.065,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          6.4,
+          0.03,
+          1.4
+        ]
+      },
+      {
+        "material": "moss_green",
+        "node": "east_hedge",
+        "part": "hedge",
+        "pose": {
+          "position": [
+            6.2,
+            1.4,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          1.2,
+          2.8,
+          17
+        ]
+      },
+      {
+        "material": "moss_green",
+        "node": "west_hedge_north",
+        "part": "hedge",
+        "pose": {
+          "position": [
+            -6.2,
+            1.4,
+            -5
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          1.2,
+          2.8,
+          7
+        ]
+      },
+      {
+        "material": "moss_green",
+        "node": "west_hedge_south",
+        "part": "hedge",
+        "pose": {
+          "position": [
+            -6.2,
+            1.4,
+            5
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          1.2,
+          2.8,
+          7
+        ]
+      },
+      {
+        "material": "muted_foliage",
+        "node": "flower_bed_east",
+        "part": "flower_bed",
+        "pose": {
+          "position": [
+            3,
+            0.175,
+            -2
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          3,
+          0.35,
+          4
+        ]
+      },
+      {
+        "material": "muted_foliage",
+        "node": "flower_bed_west",
+        "part": "flower_bed",
+        "pose": {
+          "position": [
+            -3,
+            0.175,
+            4
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          3,
+          0.35,
+          4
+        ]
+      },
+      {
+        "material": "stone",
+        "node": "cavern_canopy",
+        "part": "high_cave_roof",
+        "pose": {
+          "position": [
+            0,
+            7.8,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          14,
+          0.5,
+          18
+        ]
+      },
+      {
+        "material": "cool_stone",
+        "node": "north_structure_silhouette",
+        "part": "distant_garden_structure",
+        "pose": {
+          "position": [
+            0,
+            1.25,
+            -9
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          2,
+          2.5,
+          2
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#111C22",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#A3B5A0",
+          "intensity": 0.22,
+          "kind": "ambient",
+          "node": "moss_fill",
+          "position": [
+            0,
+            6,
+            0
+          ]
+        },
+        {
+          "colour": "#C8C7B5",
+          "intensity": 0.2,
+          "kind": "point",
+          "node": "moss_key",
+          "position": [
+            0,
+            6,
+            -2
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "moss_canopy",
+        "asset": "asset_moss",
+        "object": "MOSS",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "agent": "Codex",
+      "inputHash": "638ed7d11b0921adcc11ab9efc7441bfedd9d05a24dd2ffd9abbe476e0005a4e",
+      "method": "assistant",
+      "model": null,
+      "promptVersion": "zxr-planner-v1"
+    },
+    "review": {
+      "reviewedOn": "2026-10-23",
+      "reviewer": "Mark",
+      "status": "approved"
+    },
+    "room": "FORMAL-GARDEN",
+    "shell": "cave",
+    "sizeMetres": [
+      14,
+      8,
+      18
+    ],
+    "spawn": "player_start"
+  },
+  "format": "zxr-plan-record-v1",
+  "inputHash": "638ed7d11b0921adcc11ab9efc7441bfedd9d05a24dd2ffd9abbe476e0005a4e",
+  "model": null,
+  "outputHash": "94b9d231e94573eff8f91f18f300088f1d07cc4917cfb1b02e468d5107bbec79",
+  "promptVersion": "zxr-planner-v1",
+  "provider": "assistant",
+  "requestHash": null,
+  "requestedModel": null,
+  "task": {
+    "kind": "scene-plan",
+    "subject": "FORMAL-GARDEN"
+  }
+}

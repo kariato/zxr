@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "SMELL"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "b43a27813975ed446fd58ec2948e35a199c1778d72e1bcf7b9131e89d3e70b5f",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "5c9b94ffc7285680cbcae9f76e6b8c343ce321a1382df2ae664ccd070319b993",
+  "document": {
+    "entries": [
+      {
+        "family": "SMELL:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Smell {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_smell",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "b43a27813975ed446fd58ec2948e35a199c1778d72e1bcf7b9131e89d3e70b5f"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

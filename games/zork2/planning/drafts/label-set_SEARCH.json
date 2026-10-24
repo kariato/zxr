@@ -1,0 +1,56 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "SEARCH"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "da5494a5ebee06843b356ab8bed9c208234210e3bff6c563578120e188b93d50",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "c4b3f9deefce17b3a149e87423d8887b090acfbdbbf76f37b4979974f455b18f",
+  "document": {
+    "entries": [
+      {
+        "family": "SEARCH:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Search for {direct}"
+      },
+      {
+        "family": "SEARCH:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Search in {direct}"
+      },
+      {
+        "family": "SEARCH:3",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Search {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_search",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "da5494a5ebee06843b356ab8bed9c208234210e3bff6c563578120e188b93d50"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "CROSS"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "c1c20903dd3a53b359673435b401a5444c305bdb73e998d018a6c3c790516aa4",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "6851a0f1bad0e8d263587f3088f6ffaf3af0f4dd7bab49ccc5053cf05b9031a6",
+  "document": {
+    "entries": [
+      {
+        "family": "CROSS:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Cross {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_cross",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "c1c20903dd3a53b359673435b401a5444c305bdb73e998d018a6c3c790516aa4"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

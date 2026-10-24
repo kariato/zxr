@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "SERPENT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "22463d539dc8bd8886b8c905a3e6650f603de101f54d6721b9f58c20d032ca2e",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "f03021f00657b9f3133cff64a50c5274772ad5dd06be23cb7ff37a4b4167bb67",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nBaby sea serpent sized for the source aquarium, not a gigantic dragon.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a baby sea serpent swimming in the aquarium.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every baby sea serpent into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.5,
+          0.7,
+          1.8
+        ]
+      }
+    ],
+    "id": "asset_serpent",
+    "kind": "character",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "baby sea serpent; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "SERPENT"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "22463d539dc8bd8886b8c905a3e6650f603de101f54d6721b9f58c20d032ca2e"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.5,
+      0.7,
+      1.8
+    ]
+  }
+}

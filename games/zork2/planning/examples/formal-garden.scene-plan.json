@@ -1,0 +1,154 @@
+{
+  "format": "zxr-scene-plan-v1",
+  "provenance": {
+    "method": "manual",
+    "author": "ZXR contributors"
+  },
+  "review": {
+    "status": "draft"
+  },
+  "room": "FORMAL-GARDEN",
+  "description": "Draft underground garden: moss illumination above, hedges concealing cavern walls, white gravel paths. This is not an outdoor landscape.",
+  "sizeMetres": [
+    14,
+    8,
+    18
+  ],
+  "shell": "cave",
+  "spawn": "player_start",
+  "anchors": [
+    {
+      "node": "player_start",
+      "pose": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "yawDegrees": 0
+      }
+    },
+    {
+      "node": "anchor_north",
+      "pose": {
+        "position": [
+          0,
+          0,
+          -8
+        ],
+        "yawDegrees": 0
+      }
+    },
+    {
+      "node": "anchor_west",
+      "pose": {
+        "position": [
+          -6,
+          0,
+          0
+        ],
+        "yawDegrees": 0
+      }
+    },
+    {
+      "node": "anchor_south",
+      "pose": {
+        "position": [
+          0,
+          0,
+          8
+        ],
+        "yawDegrees": 0
+      }
+    }
+  ],
+  "exits": [
+    {
+      "direction": "NORTH",
+      "to": "GARDEN-NORTH",
+      "node": "exit_north",
+      "anchor": "anchor_north",
+      "sizeMetres": [
+        1.5,
+        2.3,
+        0.4
+      ],
+      "availability": "engine-option"
+    },
+    {
+      "direction": "WEST",
+      "to": "STREAM-PATH",
+      "node": "exit_west",
+      "anchor": "anchor_west",
+      "sizeMetres": [
+        1.5,
+        2.3,
+        0.4
+      ],
+      "availability": "engine-option"
+    },
+    {
+      "direction": "SOUTH",
+      "to": "TOPIARY-ROOM",
+      "node": "exit_south",
+      "anchor": "anchor_south",
+      "sizeMetres": [
+        1.5,
+        2.3,
+        0.4
+      ],
+      "availability": "engine-option"
+    }
+  ],
+  "objects": [],
+  "features": [],
+  "lighting": {
+    "lit": [
+      {
+        "node": "light_lit",
+        "kind": "ambient",
+        "colour": "#C6AE82",
+        "intensity": 0.6,
+        "position": [
+          0,
+          2,
+          0
+        ]
+      }
+    ],
+    "dark": [
+      {
+        "node": "light_dark",
+        "kind": "ambient",
+        "colour": "#000000",
+        "intensity": 0,
+        "position": [
+          0,
+          2,
+          0
+        ]
+      }
+    ]
+  },
+  "ambient": null,
+  "kitParts": [
+    {
+      "node": "floor",
+      "part": "stone_floor",
+      "pose": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "yawDegrees": 0
+      },
+      "sizeMetres": [
+        14,
+        0.1,
+        18
+      ],
+      "material": "stone"
+    }
+  ]
+}

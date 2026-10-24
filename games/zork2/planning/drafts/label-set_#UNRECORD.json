@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "#UNRECORD"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "d1f3b8a0db82330830f470edfa68fc78262856dfc76e84a92f04744a2a34e000",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "b021ee8ec0ad78723427275034f85081504b44def5dbdf0a0540d203f5aafe49",
+  "document": {
+    "entries": [
+      {
+        "family": "#UNRECORD:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Unrecord"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels__unrecord",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "d1f3b8a0db82330830f470edfa68fc78262856dfc76e84a92f04744a2a34e000"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

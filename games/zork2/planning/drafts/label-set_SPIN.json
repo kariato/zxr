@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "SPIN"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "9322ab1ae3fd661c5d587f81af72ee8461819b8200ced1b008d294781371c616",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "f9867e834c1b39f0e2349898f7860b8a3b562e7b721325a14fb234bed60679f6",
+  "document": {
+    "entries": [
+      {
+        "family": "SPIN:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Spin {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_spin",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "9322ab1ae3fd661c5d587f81af72ee8461819b8200ced1b008d294781371c616"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

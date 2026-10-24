@@ -1,0 +1,51 @@
+{
+  "attempts": 0,
+  "document": {
+    "entries": [
+      {
+        "family": "LIGHT:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Burn {direct} with {indirect}"
+      },
+      {
+        "family": "LIGHT:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Switch on {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_light",
+    "language": "en",
+    "provenance": {
+      "agent": "Codex",
+      "inputHash": "5ec5517e6c99a2849072a3c9c39627d8bcb5b0bc48d4e858c6b2dbdc809e38be",
+      "method": "assistant",
+      "model": null,
+      "promptVersion": "zxr-planner-v1"
+    },
+    "review": {
+      "reviewedOn": "2026-10-23",
+      "reviewer": "Mark",
+      "status": "approved"
+    }
+  },
+  "format": "zxr-plan-record-v1",
+  "inputHash": "5ec5517e6c99a2849072a3c9c39627d8bcb5b0bc48d4e858c6b2dbdc809e38be",
+  "model": null,
+  "outputHash": "b601a288ca804898a80062015003c82a12f436cb70952b6be1576bf9a8c4446e",
+  "promptVersion": "zxr-planner-v1",
+  "provider": "assistant",
+  "requestHash": null,
+  "requestedModel": null,
+  "task": {
+    "kind": "label-set",
+    "subject": "LIGHT"
+  }
+}

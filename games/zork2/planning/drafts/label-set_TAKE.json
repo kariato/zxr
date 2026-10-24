@@ -1,0 +1,99 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "TAKE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "bf79f2d5d3d31c92331e50ca2c97879ca81d686ce0f42ac110d21e0f09236a07",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "383fe2c3e4f98475ab2b5b553bbccc2ff6134356677563c33f65548432d26f84",
+  "document": {
+    "entries": [
+      {
+        "family": "TAKE:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Take {direct} from {indirect}"
+      },
+      {
+        "family": "TAKE:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Take {direct} off {indirect}"
+      },
+      {
+        "family": "TAKE:3",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Take {direct} out of {indirect}"
+      },
+      {
+        "family": "TAKE:4",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Stand up ({direct})"
+      },
+      {
+        "family": "TAKE:5",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Climb onto {direct}"
+      },
+      {
+        "family": "TAKE:6",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Get out of {direct}"
+      },
+      {
+        "family": "TAKE:7",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Get into {direct}"
+      },
+      {
+        "family": "TAKE:8",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Pick up {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_take",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "bf79f2d5d3d31c92331e50ca2c97879ca81d686ce0f42ac110d21e0f09236a07"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

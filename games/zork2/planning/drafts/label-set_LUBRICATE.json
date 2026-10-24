@@ -1,0 +1,41 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "LUBRICATE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "0ab4db85d44a7642442bb0f4e82c1712c5f6d1bcfb9f6ca148eac8eb6883f66b",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "c1627b06a9494e139fd9bff53ed51bf6a73cc98c0134d08d156c283797b03013",
+  "document": {
+    "entries": [
+      {
+        "family": "LUBRICATE:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Lubricate {direct} with {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_lubricate",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "0ab4db85d44a7642442bb0f4e82c1712c5f6d1bcfb9f6ca148eac8eb6883f66b"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

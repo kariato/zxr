@@ -1,0 +1,406 @@
+{
+  "cautions": [
+    "Offline source context; never current player-visible state.",
+    "All routine text/effects are conditional possibilities, not an executed description or a reveal rule.",
+    "Potential arrivals are a conservative shared catalogue, not proven room reachability or initial scenery.",
+    "Consult routines.json for text fragments, source guards, script changes and unresolved targets/calls.",
+    "Every feature requires state review; absent literal mutation evidence does not prove a static feature. Generic handlers and raw memory writes may change computed targets.",
+    "Computed exits are not guessed; RLANDBIT means land, not outdoors."
+  ],
+  "exits": [
+    {
+      "declaration": "(NORTH TO STONE-BRIDGE)",
+      "direction": "NORTH",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Stone Bridge",
+        "name": "STONE-BRIDGE"
+      },
+      "source": {
+        "end": {
+          "column": 30,
+          "line": 563,
+          "offset": 15935
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 563,
+          "offset": 15912
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "STONE-BRIDGE"
+      }
+    },
+    {
+      "declaration": "(WEST TO GLACIER-ROOM)",
+      "direction": "WEST",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Ice Room",
+        "name": "GLACIER-ROOM"
+      },
+      "source": {
+        "end": {
+          "column": 29,
+          "line": 564,
+          "offset": 15964
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 564,
+          "offset": 15942
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "GLACIER-ROOM"
+      }
+    },
+    {
+      "declaration": "(SE TO CAROUSEL-ROOM)",
+      "direction": "SE",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Carousel Room",
+        "name": "CAROUSEL-ROOM"
+      },
+      "source": {
+        "end": {
+          "column": 28,
+          "line": 562,
+          "offset": 15905
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 562,
+          "offset": 15884
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "CAROUSEL-ROOM"
+      }
+    },
+    {
+      "declaration": "(CROSS TO STONE-BRIDGE)",
+      "direction": "CROSS",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Stone Bridge",
+        "name": "STONE-BRIDGE"
+      },
+      "source": {
+        "end": {
+          "column": 30,
+          "line": 565,
+          "offset": 15994
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 565,
+          "offset": 15971
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "STONE-BRIDGE"
+      }
+    }
+  ],
+  "features": [
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NDESCBIT"
+      ],
+      "name": "BRIDGE",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    },
+    {
+      "changeable": false,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "RLANDBIT"
+      ],
+      "name": "COOL-ROOM",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    }
+  ],
+  "format": "zxr-room-context-v1",
+  "globalObjects": [
+    "BRIDGE"
+  ],
+  "initialObjects": [],
+  "inputHash": "a012b34a60ae1841f380f1ca4bf17920d53e8936f1b5e484513733bc74b0a879",
+  "potentialArrivals": [
+    "ADVENTURER",
+    "ARCANA",
+    "BALLOON",
+    "BALLOON-LABEL",
+    "BANK-BROCHURE",
+    "BAT",
+    "BILLS",
+    "BLESSINGS",
+    "BLUE-BOOK",
+    "BLUE-ICING",
+    "BRAIDED-WIRE",
+    "BRICK",
+    "BRIDGE",
+    "BROKEN-CASE",
+    "BROKEN-LAMP",
+    "BUCKET",
+    "CAGE",
+    "CANDY",
+    "CARD",
+    "CERBERUS",
+    "CHASM",
+    "CHEST",
+    "CLOTH-BAG",
+    "COIN",
+    "COLLAR",
+    "COMPASS",
+    "CROWN",
+    "CRYPT-DOOR",
+    "DEAD-BALLOON",
+    "DEAD-DRAGON",
+    "DEAD-SERPENT",
+    "DEGREE",
+    "DEPOSIT-BOX",
+    "DIM-DOOR",
+    "DRAGON",
+    "DWINDOW",
+    "EAST-WALL",
+    "EAT-ME-CAKE",
+    "EXPLOSION",
+    "FLASK",
+    "FOOTPAD",
+    "FUSE",
+    "GAZEBO",
+    "GENIE",
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GLOBAL-OBJECTS",
+    "GLOBAL-PALANTIR",
+    "GLOBAL-PRINCESS",
+    "GLOBAL-UNICORN",
+    "GLOBAL-WATER",
+    "GLOBAL-WIZARD-CASE",
+    "GNOME",
+    "GNOME-OF-ZURICH",
+    "GOLD-KEY",
+    "GREEN-BOOK",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "HEADS",
+    "INTNUM",
+    "IRON-BOX",
+    "IT",
+    "KEY",
+    "LAMP",
+    "LETTER-OPENER",
+    "LOCAL-GLOBALS",
+    "LUNGS",
+    "MANGLED-CAGE",
+    "MATCH",
+    "ME",
+    "MENHIR",
+    "MOSS",
+    "NEWSPAPER",
+    "NORTH-WALL",
+    "ORANGE-ICING",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "PATHOBJ",
+    "PDOOR",
+    "PEARL",
+    "PLACE-MAT",
+    "PORTRAIT",
+    "PRINCESS",
+    "PSEUDO-OBJECT",
+    "PURPLE-BOOK",
+    "PWINDOW",
+    "RECEPTACLE",
+    "RED-ICING",
+    "REPELLENT",
+    "RIBBON",
+    "ROBOT",
+    "ROBOT-LABEL",
+    "ROSE",
+    "ROSE-BUSH",
+    "RUBY",
+    "SAILOR",
+    "SALTY-WATER",
+    "SERPENT",
+    "SEWL",
+    "SNWL",
+    "SOUTH-WALL",
+    "SSWL",
+    "STAIRS",
+    "STAMP",
+    "STAND-4",
+    "STATUETTE",
+    "STREAM",
+    "SWORD",
+    "SWWL",
+    "TEAPOT",
+    "TROPHY-BOTTLES",
+    "TROPHY-SWORD",
+    "TUNNEL",
+    "UNICORN",
+    "VIOLIN",
+    "WAND",
+    "WANDS",
+    "WATER",
+    "WELL",
+    "WEST-WALL",
+    "WHITE-BOOK",
+    "WISH",
+    "WIZ-DOOR",
+    "WIZARD",
+    "ZORKMID"
+  ],
+  "room": {
+    "desc": {
+      "source": {
+        "end": {
+          "column": 25,
+          "line": 560,
+          "offset": 15854
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 560,
+          "offset": 15836
+        }
+      },
+      "text": "Cool Room"
+    },
+    "flags": [
+      "RLANDBIT"
+    ],
+    "id": 172,
+    "initialRoomLightFlag": false,
+    "ldesc": [
+      {
+        "byteLength": 2,
+        "kind": "text",
+        "property": {
+          "name": "LDESC",
+          "number": 13
+        },
+        "source": {
+          "end": {
+            "column": 45,
+            "line": 559,
+            "offset": 15829
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 7,
+            "line": 555,
+            "offset": 15597
+          }
+        },
+        "text": "The room is cool and damp. The air is misty. A twisty path from the southeast splits here toward a wide northerly stone bridge, and a narrow westerly tunnel. It is from the latter that the mist and chill seem to originate."
+      }
+    ],
+    "name": "COOL-ROOM",
+    "outdoors": "not-encoded-do-not-infer-from-RLANDBIT",
+    "source": {
+      "end": {
+        "column": 23,
+        "line": 566,
+        "offset": 16017
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 1,
+        "line": 553,
+        "offset": 15558
+      }
+    }
+  },
+  "routineReferencedObjects": [],
+  "routines": {
+    "dispatchBoundaries": [
+      "JIGS-UP",
+      "PERFORM"
+    ],
+    "missing": [],
+    "reachableHelpers": [
+      "BRIDGE-FCN",
+      "DO-WALK"
+    ],
+    "roots": [
+      "BRIDGE-FCN"
+    ]
+  },
+  "scriptedArrivals": [],
+  "stateDependencies": [
+    {
+      "name": "P-WALK-DIR",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "DO-WALK"
+        }
+      ]
+    },
+    {
+      "name": "PRSA",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 4,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "WATER-FCN"
+        }
+      ]
+    }
+  ],
+  "universalGlobalObjects": [
+    "BLESSINGS",
+    "COMPASS",
+    "EAST-WALL",
+    "FOOTPAD",
+    "GLOBAL-PRINCESS",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "INTNUM",
+    "IT",
+    "LUNGS",
+    "ME",
+    "NORTH-WALL",
+    "PATHOBJ",
+    "SAILOR",
+    "SOUTH-WALL",
+    "TUNNEL",
+    "WEST-WALL",
+    "WISH",
+    "ZORKMID"
+  ]
+}

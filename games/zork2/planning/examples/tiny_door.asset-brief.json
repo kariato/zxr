@@ -1,0 +1,54 @@
+{
+  "format": "zxr-asset-brief-v1",
+  "provenance": {
+    "method": "manual",
+    "author": "ZXR contributors"
+  },
+  "review": {
+    "status": "draft"
+  },
+  "id": "tiny_door",
+  "kind": "prop",
+  "objects": [
+    "PDOOR"
+  ],
+  "description": "Small wooden door with separate open and closed presentation states.",
+  "sizeMetres": [
+    0.7,
+    1.4,
+    0.1
+  ],
+  "materials": [
+    {
+      "name": "main",
+      "description": "Muted low-detail draft surface; palette awaits the style bible.",
+      "colour": "#A69A78",
+      "roughness": 0.7,
+      "metalness": 0.5
+    }
+  ],
+  "requiredClips": [
+    "idle",
+    "open",
+    "closed"
+  ],
+  "hotspotNodes": [
+    {
+      "node": "hs_tiny_door",
+      "shape": "box",
+      "sizeMetres": [
+        0.7,
+        1.4,
+        0.1
+      ],
+      "pose": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "yawDegrees": 0
+      }
+    }
+  ]
+}

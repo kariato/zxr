@@ -1,0 +1,83 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "DEAD-PALANTIR-4"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "eb039d809d1f19f43bc8c4fbb3bfb5b630e270d4e623270253fb9aaa662d2d53",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "a2173814b3e33866adf7c88a9a27eeba1e6789d5534c056d5326b17df0473932",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Source palantir death/interstitial location. No invented physical travel route or default room contents; source continuation text controls the experience. Keep the logical room identity distinct.\nDescription is routine-driven: the safe base profile above does not make guarded output unconditional.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            3.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "eb039d809d1f19f43bc8c4fbb3bfb5b630e270d4e623270253fb9aaa662d2d53"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "DEAD-PALANTIR-4",
+    "shell": "indoor",
+    "sizeMetres": [
+      5,
+      4,
+      5
+    ],
+    "spawn": "player_start"
+  }
+}

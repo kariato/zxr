@@ -1,0 +1,58 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "DIG"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "6103ce769fda207281a5965464cc4795a4ecebc07ea01926d1ca15e5c3e59f79",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "58c80845565cdddbeb9f6b1eed68fddf93410d203b1ad5125eb9acfc8dfa2f02",
+  "document": {
+    "entries": [
+      {
+        "family": "DIG:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Dig {direct} with {indirect}"
+      },
+      {
+        "family": "DIG:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Dig in {direct} with {indirect}"
+      },
+      {
+        "family": "DIG:3",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Dig in {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_dig",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "6103ce769fda207281a5965464cc4795a4ecebc07ea01926d1ca15e5c3e59f79"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

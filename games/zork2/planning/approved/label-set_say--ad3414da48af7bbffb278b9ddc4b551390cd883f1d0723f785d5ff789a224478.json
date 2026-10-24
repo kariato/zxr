@@ -1,0 +1,72 @@
+{
+  "attempts": 0,
+  "document": {
+    "entries": [
+      {
+        "family": "SAY:1",
+        "kind": "action",
+        "slots": [
+          "words"
+        ],
+        "template": "Say {words}"
+      },
+      {
+        "choice": "yes",
+        "context": "yes-no",
+        "kind": "decision",
+        "text": "Yes"
+      },
+      {
+        "choice": "no",
+        "context": "yes-no",
+        "kind": "decision",
+        "text": "No"
+      },
+      {
+        "choice": "restart",
+        "context": "finish",
+        "kind": "decision",
+        "text": "Restart the game"
+      },
+      {
+        "choice": "restore",
+        "context": "finish",
+        "kind": "decision",
+        "text": "Restore the source save"
+      },
+      {
+        "choice": "quit",
+        "context": "finish",
+        "kind": "decision",
+        "text": "Quit the game"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_say",
+    "language": "en",
+    "provenance": {
+      "agent": "Codex",
+      "inputHash": "36da60a66bf99129e305be8a62841e05fe0462da3e15d82f9c8cf833edef2572",
+      "method": "assistant",
+      "model": null,
+      "promptVersion": "zxr-planner-v1"
+    },
+    "review": {
+      "reviewedOn": "2026-10-23",
+      "reviewer": "Mark",
+      "status": "approved"
+    }
+  },
+  "format": "zxr-plan-record-v1",
+  "inputHash": "36da60a66bf99129e305be8a62841e05fe0462da3e15d82f9c8cf833edef2572",
+  "model": null,
+  "outputHash": "ad3414da48af7bbffb278b9ddc4b551390cd883f1d0723f785d5ff789a224478",
+  "promptVersion": "zxr-planner-v1",
+  "provider": "assistant",
+  "requestHash": null,
+  "requestedModel": null,
+  "task": {
+    "kind": "label-set",
+    "subject": "SAY"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "BLOW"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "064d33a903765836970cd51288af6d2e1e337f3047b01b9ea328ec8e38c25e46",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "9e2fd5a0cc033310dcb1cac234c7f2b17e67edc2c4703f13a3daeb013781fa9e",
+  "document": {
+    "entries": [
+      {
+        "family": "BLOW:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Blow in {direct}"
+      },
+      {
+        "family": "BLOW:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Blow up {direct}"
+      },
+      {
+        "family": "BLOW:3",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Blow up {direct} with {indirect}"
+      },
+      {
+        "family": "BLOW:4",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Blow out {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_blow",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "064d33a903765836970cd51288af6d2e1e337f3047b01b9ea328ec8e38c25e46"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

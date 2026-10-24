@@ -1,0 +1,275 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "GREAT-CAVERN"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "88d4aa397179e639ddaf69ef91ed3e836c23c15a69ad7b3cbaf232e3c3c7a047",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "8b434138296410efa16f03325c13ccc3d65da3b33515c106e5305a3c2394b2ef",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_ne_anchor",
+        "pose": {
+          "position": [
+            5.4,
+            0,
+            -6.4
+          ],
+          "yawDegrees": -45
+        }
+      },
+      {
+        "node": "exit_sw_anchor",
+        "pose": {
+          "position": [
+            -5.4,
+            0,
+            6.4
+          ],
+          "yawDegrees": 135
+        }
+      },
+      {
+        "node": "high_moss",
+        "pose": {
+          "position": [
+            0,
+            10.8,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Centre of the great limestone cavern. Dim phosphorescent moss light high overhead creates irregular shadows among stalactites and stalagmites of many sizes. Keep the northeast path to Foot Bridge and southwest winding path to Shallow Ford distinct, without forcing their neighbouring rooms into a straight Euclidean corridor. Stalactite/stalagmite formations are source-backed pseudo scenery: STALA-PSEUDO refuses taking or breaking off reachable pieces. Their current source menu interactions remain available; these decorative kit nodes do not invent movable objects or install physical pseudo hotspots. No open sky, crystals, treasure or additional routes.",
+    "exits": [
+      {
+        "anchor": "exit_ne_anchor",
+        "availability": "engine-option",
+        "direction": "NE",
+        "node": "exit_ne",
+        "sizeMetres": [
+          1.5,
+          2.4,
+          0.35
+        ],
+        "to": "FOOT-BRIDGE"
+      },
+      {
+        "anchor": "exit_sw_anchor",
+        "availability": "engine-option",
+        "direction": "SW",
+        "node": "exit_sw",
+        "sizeMetres": [
+          1.5,
+          2.4,
+          0.35
+        ],
+        "to": "SHALLOW-FORD"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "limestone",
+        "node": "cavern_floor",
+        "part": "limestone_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          16,
+          0.2,
+          18
+        ]
+      },
+      {
+        "material": "limestone",
+        "node": "cavern_roof",
+        "part": "limestone_roof",
+        "pose": {
+          "position": [
+            0,
+            12,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          16,
+          0.3,
+          18
+        ]
+      },
+      {
+        "material": "limestone",
+        "node": "stalagmite_west",
+        "part": "stalagmite",
+        "pose": {
+          "position": [
+            -3.5,
+            1.5,
+            -1.5
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          1.3,
+          3,
+          1.4
+        ]
+      },
+      {
+        "material": "limestone",
+        "node": "stalagmite_east",
+        "part": "stalagmite",
+        "pose": {
+          "position": [
+            3.2,
+            2,
+            2.8
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          1.6,
+          4,
+          1.2
+        ]
+      },
+      {
+        "material": "limestone",
+        "node": "stalagmite_rear",
+        "part": "stalagmite",
+        "pose": {
+          "position": [
+            2.2,
+            0.8,
+            -4
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          0.8,
+          1.6,
+          0.9
+        ]
+      },
+      {
+        "material": "limestone",
+        "node": "stalactite_west",
+        "part": "stalactite",
+        "pose": {
+          "position": [
+            -4.2,
+            10.3,
+            2
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          1.2,
+          3.1,
+          1.2
+        ]
+      },
+      {
+        "material": "limestone",
+        "node": "stalactite_east",
+        "part": "stalactite",
+        "pose": {
+          "position": [
+            4.3,
+            10,
+            -2.5
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          1.4,
+          3.5,
+          1.3
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            4,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#90A790",
+          "intensity": 0.18,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            4,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "high_moss",
+        "asset": "asset_moss",
+        "object": "MOSS",
+        "visibility": "engine-observation"
+      }
+    ],
+    "room": "GREAT-CAVERN",
+    "shell": "cave",
+    "sizeMetres": [
+      16,
+      12,
+      18
+    ],
+    "spawn": "player_start",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "88d4aa397179e639ddaf69ef91ed3e836c23c15a69ad7b3cbaf232e3c3c7a047"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

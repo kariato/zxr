@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "FROBOZZ"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "a03cd64dc222d4310778da42a084f526f1fd34310328a31256446df82e24f348",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "edac5021dc28c2973f61a3ecea14d8678add9fad7b1087522a824aa45ea7e63c",
+  "document": {
+    "entries": [
+      {
+        "family": "FROBOZZ:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Frobozz"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_frobozz",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "a03cd64dc222d4310778da42a084f526f1fd34310328a31256446df82e24f348"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

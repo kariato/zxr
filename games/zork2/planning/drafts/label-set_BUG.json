@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "BUG"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "2eff51e2fc220778af4d0ccabd5344d0a00cb555ad70ebe5712751a70e8ee356",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "eeef3c17c327f2557b3c1241339ad8d09dad60aa739fe0c11ff2c5142228d2ef",
+  "document": {
+    "entries": [
+      {
+        "family": "BUG:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Bug"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_bug",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "2eff51e2fc220778af4d0ccabd5344d0a00cb555ad70ebe5712751a70e8ee356"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

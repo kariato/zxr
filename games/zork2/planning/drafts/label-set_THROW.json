@@ -1,0 +1,95 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "THROW"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "91346de7c1819d6cd676088dbd62288f164148a0818b363dc63c1ab27fd58ec4",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "1b02367c5f99e05e3ffd42ae771156511b9a73524c90a7770a310c89fe09d9e0",
+  "document": {
+    "entries": [
+      {
+        "family": "THROW:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Throw {direct} over {indirect}"
+      },
+      {
+        "family": "THROW:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Throw {direct} off {indirect}"
+      },
+      {
+        "family": "THROW:3",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Throw {direct} on {indirect}"
+      },
+      {
+        "family": "THROW:4",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Throw {direct} in {indirect}"
+      },
+      {
+        "family": "THROW:5",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Throw {direct} {indirect}"
+      },
+      {
+        "family": "THROW:6",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Throw {direct} with {indirect}"
+      },
+      {
+        "family": "THROW:7",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Throw {direct} at {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_throw",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "91346de7c1819d6cd676088dbd62288f164148a0818b363dc63c1ab27fd58ec4"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

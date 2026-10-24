@@ -1,0 +1,203 @@
+{
+  "entries": [
+    {
+      "file": "asset-brief_bridge--b72f55800830b9c00e5eb55c0eb65dcdf8cabd7997d8a3422a18dbf18d8f52ad.json",
+      "inputHash": "ff48d5498f1598ff712f6dda5a05db4e110e2e094fc226edd2bebd8d5934f77f",
+      "outputHash": "b72f55800830b9c00e5eb55c0eb65dcdf8cabd7997d8a3422a18dbf18d8f52ad",
+      "task": {
+        "kind": "asset-brief",
+        "subject": "BRIDGE"
+      }
+    },
+    {
+      "file": "asset-brief_chasm--73a18a1dce62eb17427bb42e86cce27b19e926904b94dfaa6aff66614dba8c71.json",
+      "inputHash": "4a020b7fe399553498f8060439dc5add48e304d70f4a3b731e5281625ec0700e",
+      "outputHash": "73a18a1dce62eb17427bb42e86cce27b19e926904b94dfaa6aff66614dba8c71",
+      "task": {
+        "kind": "asset-brief",
+        "subject": "CHASM"
+      }
+    },
+    {
+      "file": "asset-brief_global-water--33a69465cb975f4456e76583c9817bf0e5efee08855b7ca83875dcae7c6adee5.json",
+      "inputHash": "d0de6c5dbb95b0b4b8271e306c5f4c2f0d98e7d302c695a163aaa3295edf2b38",
+      "outputHash": "33a69465cb975f4456e76583c9817bf0e5efee08855b7ca83875dcae7c6adee5",
+      "task": {
+        "kind": "asset-brief",
+        "subject": "GLOBAL-WATER"
+      }
+    },
+    {
+      "file": "asset-brief_keyhole-1--699854deb414a281565dafa47065eed1e745f165ba121a97f48a39a5f0561f0a.json",
+      "inputHash": "e276b30489d440c6355b115bfee9be9864773474c493d40b22c6591464b94e14",
+      "outputHash": "699854deb414a281565dafa47065eed1e745f165ba121a97f48a39a5f0561f0a",
+      "task": {
+        "kind": "asset-brief",
+        "subject": "KEYHOLE-1"
+      }
+    },
+    {
+      "file": "asset-brief_lamp--17285f4e922bd9f56e555a34bc5c3f6b6c9e45a7d7d7b4c1b732617447a9fbf2.json",
+      "inputHash": "d8e3e297fe992a38708471ca20e4e9db55e0bc947ec647fc24a6b847318cb96d",
+      "outputHash": "17285f4e922bd9f56e555a34bc5c3f6b6c9e45a7d7d7b4c1b732617447a9fbf2",
+      "task": {
+        "kind": "asset-brief",
+        "subject": "LAMP"
+      }
+    },
+    {
+      "file": "asset-brief_lid-1--90ed7805671f7b766a277a83ab99cdf8cf9cadfcf651369b97ab5b6fce3bdf5a.json",
+      "inputHash": "59eab57ffed69b10bff8d9a9e84fe43572e6e88cf2bbace8882ab47fcfd36f3c",
+      "outputHash": "90ed7805671f7b766a277a83ab99cdf8cf9cadfcf651369b97ab5b6fce3bdf5a",
+      "task": {
+        "kind": "asset-brief",
+        "subject": "LID-1"
+      }
+    },
+    {
+      "file": "asset-brief_moss--0633e26bb3a1658982bfd3f651fdf5cdca0c87866c24834d4e15db4315c457d1.json",
+      "inputHash": "d8c0c4b5eea997ba5144817b8e96b6b1787f317b263b7576400c23a49a7eaf7c",
+      "outputHash": "0633e26bb3a1658982bfd3f651fdf5cdca0c87866c24834d4e15db4315c457d1",
+      "task": {
+        "kind": "asset-brief",
+        "subject": "MOSS"
+      }
+    },
+    {
+      "file": "asset-brief_pdoor--94018013bc3635f1c0ff6beb3cc28925a89c4036748f32e2ce1ebe425d445ba6.json",
+      "inputHash": "1f37e70ef9e92b3561f65ad356af876eb8167a71690cef47e01d39802f82ba37",
+      "outputHash": "94018013bc3635f1c0ff6beb3cc28925a89c4036748f32e2ce1ebe425d445ba6",
+      "task": {
+        "kind": "asset-brief",
+        "subject": "PDOOR"
+      }
+    },
+    {
+      "file": "asset-brief_pwindow--603822a6ccb397555ca335b10c1b4631e5a1d089bf38ca04b08e5e98a77e25d8.json",
+      "inputHash": "73b79dbee404ccf655507d835dbed426c949e6dd1b6075181f1012336b080f24",
+      "outputHash": "603822a6ccb397555ca335b10c1b4631e5a1d089bf38ca04b08e5e98a77e25d8",
+      "task": {
+        "kind": "asset-brief",
+        "subject": "PWINDOW"
+      }
+    },
+    {
+      "file": "asset-brief_stream--3cd75434659bd4e6ce05f5637d889ac868747e16c66d1d0159ed7fea8ee651d3.json",
+      "inputHash": "51ffbd37b80f89db08ec89a41cebcc14bbe045dd0271e98d3d5ed88e2a216f44",
+      "outputHash": "3cd75434659bd4e6ce05f5637d889ac868747e16c66d1d0159ed7fea8ee651d3",
+      "task": {
+        "kind": "asset-brief",
+        "subject": "STREAM"
+      }
+    },
+    {
+      "file": "asset-brief_sword--7d670add03d0d2defd3c36d5425b187764b064768459504535c156d8507db24c.json",
+      "inputHash": "cf469464484b0dcd41588f9411180184fd489ae20781ed731eb4d48dd1d0cd71",
+      "outputHash": "7d670add03d0d2defd3c36d5425b187764b064768459504535c156d8507db24c",
+      "task": {
+        "kind": "asset-brief",
+        "subject": "SWORD"
+      }
+    },
+    {
+      "file": "label-set_light--b601a288ca804898a80062015003c82a12f436cb70952b6be1576bf9a8c4446e.json",
+      "inputHash": "5ec5517e6c99a2849072a3c9c39627d8bcb5b0bc48d4e858c6b2dbdc809e38be",
+      "outputHash": "b601a288ca804898a80062015003c82a12f436cb70952b6be1576bf9a8c4446e",
+      "task": {
+        "kind": "label-set",
+        "subject": "LIGHT"
+      }
+    },
+    {
+      "file": "label-set_say--ad3414da48af7bbffb278b9ddc4b551390cd883f1d0723f785d5ff789a224478.json",
+      "inputHash": "36da60a66bf99129e305be8a62841e05fe0462da3e15d82f9c8cf833edef2572",
+      "outputHash": "ad3414da48af7bbffb278b9ddc4b551390cd883f1d0723f785d5ff789a224478",
+      "task": {
+        "kind": "label-set",
+        "subject": "SAY"
+      }
+    },
+    {
+      "file": "label-set_take--a0a9e93c4122bc3e5e66973ed2d2c634b9b05c77c3069da931a31205ea3daa44.json",
+      "inputHash": "bf79f2d5d3d31c92331e50ca2c97879ca81d686ce0f42ac110d21e0f09236a07",
+      "outputHash": "a0a9e93c4122bc3e5e66973ed2d2c634b9b05c77c3069da931a31205ea3daa44",
+      "task": {
+        "kind": "label-set",
+        "subject": "TAKE"
+      }
+    },
+    {
+      "file": "scene-plan_dark-tunnel--37c0b91cbc7e067704b24e03189dccbad046f2c0724a936fe31790ea41999362.json",
+      "inputHash": "52d0e4586446b4a01ac4febfbc4e252a05dfdf60a66b4e0c51e9237f3c0a5e23",
+      "outputHash": "37c0b91cbc7e067704b24e03189dccbad046f2c0724a936fe31790ea41999362",
+      "task": {
+        "kind": "scene-plan",
+        "subject": "DARK-TUNNEL"
+      }
+    },
+    {
+      "file": "scene-plan_foot-bridge--be405903fccaf3f7b9a0ebc1f1d1ca44ecf08963f9efed357665d744b74f7963.json",
+      "inputHash": "a14935ed91d4e1c3b63612f15e8d05d6d698b4a520c16aac8c61fad6e0274480",
+      "outputHash": "be405903fccaf3f7b9a0ebc1f1d1ca44ecf08963f9efed357665d744b74f7963",
+      "task": {
+        "kind": "scene-plan",
+        "subject": "FOOT-BRIDGE"
+      }
+    },
+    {
+      "file": "scene-plan_formal-garden--94b9d231e94573eff8f91f18f300088f1d07cc4917cfb1b02e468d5107bbec79.json",
+      "inputHash": "638ed7d11b0921adcc11ab9efc7441bfedd9d05a24dd2ffd9abbe476e0005a4e",
+      "outputHash": "94b9d231e94573eff8f91f18f300088f1d07cc4917cfb1b02e468d5107bbec79",
+      "task": {
+        "kind": "scene-plan",
+        "subject": "FORMAL-GARDEN"
+      }
+    },
+    {
+      "file": "scene-plan_great-cavern--1aee7cdf894d307e6b2047da5453b67fe9f78646bdcab46fe36c55b1bf979768.json",
+      "inputHash": "88d4aa397179e639ddaf69ef91ed3e836c23c15a69ad7b3cbaf232e3c3c7a047",
+      "outputHash": "1aee7cdf894d307e6b2047da5453b67fe9f78646bdcab46fe36c55b1bf979768",
+      "task": {
+        "kind": "scene-plan",
+        "subject": "GREAT-CAVERN"
+      }
+    },
+    {
+      "file": "scene-plan_inside-barrow--1c651a9e78b9554e2cd8f2c86518eba77187ad0dc066db15312a4114b066cf46.json",
+      "inputHash": "e270455b0e59e5342dac3e5b2496e1a2ba1cab25edd1a78f793356bc5188e1d4",
+      "outputHash": "1c651a9e78b9554e2cd8f2c86518eba77187ad0dc066db15312a4114b066cf46",
+      "task": {
+        "kind": "scene-plan",
+        "subject": "INSIDE-BARROW"
+      }
+    },
+    {
+      "file": "scene-plan_narrow-tunnel--f327be8606b36e01eddee9a2b149c47994c34a11175555d8336d70ac69c976c0.json",
+      "inputHash": "f753aad7a024a0be548a5f482820c8af31723529e4d01cd826c2998c9305f5b5",
+      "outputHash": "f327be8606b36e01eddee9a2b149c47994c34a11175555d8336d70ac69c976c0",
+      "task": {
+        "kind": "scene-plan",
+        "subject": "NARROW-TUNNEL"
+      }
+    },
+    {
+      "file": "scene-plan_shallow-ford--89b9a05a5f0faa7d355e77f3e6ede31aa0d5f1d01040f914f7180c4daee18a09.json",
+      "inputHash": "4acaf5201a22389e26b5dfcd5a441d2197bd4d66546b47435caac1aa2b70c11e",
+      "outputHash": "89b9a05a5f0faa7d355e77f3e6ede31aa0d5f1d01040f914f7180c4daee18a09",
+      "task": {
+        "kind": "scene-plan",
+        "subject": "SHALLOW-FORD"
+      }
+    },
+    {
+      "file": "scene-plan_tiny-room--fed1115bb6e9f24c0bc3a428847fd166cbd7de516a6f83b1131496e735c1aa72.json",
+      "inputHash": "472b9c404baba0063f2cfba2f087d3dfc82e529352b1d36af7523162f84f99ed",
+      "outputHash": "fed1115bb6e9f24c0bc3a428847fd166cbd7de516a6f83b1131496e735c1aa72",
+      "task": {
+        "kind": "scene-plan",
+        "subject": "TINY-ROOM"
+      }
+    }
+  ],
+  "format": "zxr-approved-plans-v1"
+}

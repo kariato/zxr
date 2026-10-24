@@ -1,0 +1,41 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "PUNCTURE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "b022704ecde2be6bae4450b658a658592f3ff23236189fb36b90d8d6eaf04038",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "4b0265e534edca1d166508a7f4e13c5f2dfe21a8c1c96ad8982ad16085fb151d",
+  "document": {
+    "entries": [
+      {
+        "family": "PUNCTURE:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Puncture {direct} with {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_puncture",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "b022704ecde2be6bae4450b658a658592f3ff23236189fb36b90d8d6eaf04038"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "SUPER"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "a7deae7597a3ea582740c228035cd2f89accfe5d3a82bdd51b1a56ac5ddb8d34",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "d2105c45eb950f85fa8143cd1e5e03b2970ed822172bfb995d6df4ef3a625a67",
+  "document": {
+    "entries": [
+      {
+        "family": "SUPER:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Use minimal descriptions"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_super",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "a7deae7597a3ea582740c228035cd2f89accfe5d3a82bdd51b1a56ac5ddb8d34"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

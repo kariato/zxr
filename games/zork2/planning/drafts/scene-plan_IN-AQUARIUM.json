@@ -1,0 +1,144 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "IN-AQUARIUM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "fade7a33a7ddf81c6f069ecd9742c7bd62848965cd022649d59ed9d1572776ee",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "de1ace66f72bdb8caa1733053d860e57402b7712e84b5bb09aad54bf05fa8726",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_palantir-3",
+        "pose": {
+          "position": [
+            -1.25,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_out_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            2
+          ],
+          "yawDegrees": 180
+        }
+      }
+    ],
+    "description": "Sand underfoot; source limits what else can be seen. Do not invent a dry walkable aquarium exit, visible treasure or water level from the room name alone.\nStatic source description:\nThe floor here seems to be made of sand, but it is hard to see anything else.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_out_anchor",
+        "availability": "engine-option",
+        "direction": "OUT",
+        "node": "exit_out",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "AQUARIUM-ROOM"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          5,
+          0.2,
+          5
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            4.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_palantir-3",
+        "asset": "asset_palantir-3",
+        "object": "PALANTIR-3",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "fade7a33a7ddf81c6f069ecd9742c7bd62848965cd022649d59ed9d1572776ee"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "IN-AQUARIUM",
+    "shell": "indoor",
+    "sizeMetres": [
+      5,
+      5,
+      5
+    ],
+    "spawn": "player_start"
+  }
+}

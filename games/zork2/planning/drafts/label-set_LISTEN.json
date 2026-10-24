@@ -1,0 +1,48 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "LISTEN"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "f1557b11f4b60d8f6323b0e3287f2b86ea0c42ef7afbeeb2b0f85ebf8c886ece",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "9e3239266c1ec485d70c498ee328629b06f6cdba16b07e1fb40f08b66c6820fc",
+  "document": {
+    "entries": [
+      {
+        "family": "LISTEN:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Listen for {direct}"
+      },
+      {
+        "family": "LISTEN:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Listen to {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_listen",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "f1557b11f4b60d8f6323b0e3287f2b86ea0c42ef7afbeeb2b0f85ebf8c886ece"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

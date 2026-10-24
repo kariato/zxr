@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "HATCH"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "7936f8f061afe206118d5d7d35b480c6a77a085105494b188bb3ab3432b00da3",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "723f014e30723ea23c0d4a68acdedf44f995169d744a8f76e990c7780c806b82",
+  "document": {
+    "entries": [
+      {
+        "family": "HATCH:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Hatch {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_hatch",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "7936f8f061afe206118d5d7d35b480c6a77a085105494b188bb3ab3432b00da3"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

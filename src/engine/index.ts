@@ -11,6 +11,7 @@ export * from './turn-loop.ts';
 export * from './session.ts';
 export * from './candidates.ts';
 export * from './scope.ts';
+export * from './appearance.ts';
 export * from './selection.ts';
 export * from './word-picker.ts';
 export * from './knowledge.ts';

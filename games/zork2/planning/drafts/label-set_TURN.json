@@ -1,0 +1,84 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "TURN"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "685abfe41fd97eb454c6146fce2f7f2d3d9c0de58e9ab318f5856e32b114db99",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "c8a133ae9ca70b4638d8e25b6481877b29f259a34f67a4775127851e12b060b3",
+  "document": {
+    "entries": [
+      {
+        "family": "TURN:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Turn {direct} for {indirect}"
+      },
+      {
+        "family": "TURN:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Turn {direct} to {indirect}"
+      },
+      {
+        "family": "TURN:3",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Turn off {direct}"
+      },
+      {
+        "family": "TURN:4",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Turn on {direct} with {indirect}"
+      },
+      {
+        "family": "TURN:5",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Turn on {direct}"
+      },
+      {
+        "family": "TURN:6",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Turn {direct} with {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_turn",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "685abfe41fd97eb454c6146fce2f7f2d3d9c0de58e9ab318f5856e32b114db99"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

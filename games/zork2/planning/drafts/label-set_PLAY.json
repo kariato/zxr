@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "PLAY"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "2648b425d1cb786596c591b0182e8c89381918875fe9ad00608b73027dce8a3d",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "5d23189a4f8fb9615fcdac53d0837e5da16c08e40ddbad930ad26a1ebbdf05ab",
+  "document": {
+    "entries": [
+      {
+        "family": "PLAY:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Play {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_play",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "2648b425d1cb786596c591b0182e8c89381918875fe9ad00608b73027dce8a3d"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

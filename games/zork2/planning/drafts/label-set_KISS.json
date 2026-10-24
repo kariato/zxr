@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "KISS"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "fc76f5b0f606675ff1b53b3bb2125f35a5c5fd3e7a3c755b1a6a1c3ae67921de",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "4d59207c468d96cb567e4e1a2f3668784b875ae1e15118a303ec172bfe739c02",
+  "document": {
+    "entries": [
+      {
+        "family": "KISS:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Kiss {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_kiss",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "fc76f5b0f606675ff1b53b3bb2125f35a5c5fd3e7a3c755b1a6a1c3ae67921de"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

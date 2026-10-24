@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "COMMAND"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "5f806ac9cc9feba685db32ddae023b60ffa0f59f90fdfe44a804bcd4ef3c62f7",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "19d3a6960103c3e11c1b84fa8f28b37ce46d40c3f4dadd402b5f53b5012d3a60",
+  "document": {
+    "entries": [
+      {
+        "family": "COMMAND:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Command {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_command",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "5f806ac9cc9feba685db32ddae023b60ffa0f59f90fdfe44a804bcd4ef3c62f7"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

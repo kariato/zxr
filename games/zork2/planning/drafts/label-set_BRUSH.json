@@ -1,0 +1,49 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "BRUSH"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "99f04f88782249f5daa0e8e3ecbe5d2e6e2038afda39c3c58cc61785d06519cf",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "0ffd735904928694301cb286d57ccdf849eb833fa32140f76d40804c3be0a49b",
+  "document": {
+    "entries": [
+      {
+        "family": "BRUSH:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Brush {direct} with {indirect}"
+      },
+      {
+        "family": "BRUSH:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Brush {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_brush",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "99f04f88782249f5daa0e8e3ecbe5d2e6e2038afda39c3c58cc61785d06519cf"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

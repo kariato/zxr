@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "VERBOSE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "823ee504ab97849391b9176219bc0de2828d1e9583520454a61dc6f1e33fe339",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "f44671253cca3659c5671fdfd30ad6065907763a15cde1bd360d978788e2d16d",
+  "document": {
+    "entries": [
+      {
+        "family": "VERBOSE:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Use verbose descriptions"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_verbose",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "823ee504ab97849391b9176219bc0de2828d1e9583520454a61dc6f1e33fe339"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "DIAGNOSE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "e9f1a1081cf24c46b58923cc3362266270adb3e96b339b1783436644de0740f6",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "f584cfe4d7fb59b5e33859732386db104e8be914929111ce9b63bb666cf7c96e",
+  "document": {
+    "entries": [
+      {
+        "family": "DIAGNOSE:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Diagnose"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_diagnose",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "e9f1a1081cf24c46b58923cc3362266270adb3e96b339b1783436644de0740f6"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

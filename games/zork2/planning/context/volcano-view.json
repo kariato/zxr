@@ -1,0 +1,325 @@
+{
+  "cautions": [
+    "Offline source context; never current player-visible state.",
+    "All routine text/effects are conditional possibilities, not an executed description or a reveal rule.",
+    "Potential arrivals are a conservative shared catalogue, not proven room reachability or initial scenery.",
+    "Consult routines.json for text fragments, source guards, script changes and unresolved targets/calls.",
+    "Every feature requires state review; absent literal mutation evidence does not prove a static feature. Generic handlers and raw memory writes may change computed targets.",
+    "Computed exits are not guessed; RLANDBIT means land, not outdoors."
+  ],
+  "exits": [
+    {
+      "declaration": "(EAST TO LAVA-TUBE)",
+      "direction": "EAST",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Lava Tube",
+        "name": "LAVA-TUBE"
+      },
+      "source": {
+        "end": {
+          "column": 27,
+          "line": 1383,
+          "offset": 37386
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1383,
+          "offset": 37367
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "LAVA-TUBE"
+      }
+    },
+    {
+      "declaration": "(DOWN \"I wouldn't try that.\")",
+      "direction": "DOWN",
+      "geometryStatus": "conditional-blocked-or-computed",
+      "neighbour": null,
+      "source": {
+        "end": {
+          "column": 37,
+          "line": 1381,
+          "offset": 37301
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1381,
+          "offset": 37272
+        }
+      },
+      "view": {
+        "kind": "NEXIT",
+        "message": "I wouldn't try that."
+      }
+    },
+    {
+      "declaration": "(CROSS \"It is impossible to cross this distance.\")",
+      "direction": "CROSS",
+      "geometryStatus": "conditional-blocked-or-computed",
+      "neighbour": null,
+      "source": {
+        "end": {
+          "column": 58,
+          "line": 1382,
+          "offset": 37359
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1382,
+          "offset": 37309
+        }
+      },
+      "view": {
+        "kind": "NEXIT",
+        "message": "It is impossible to cross this distance."
+      }
+    }
+  ],
+  "features": [
+    {
+      "changeable": false,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "RLANDBIT"
+      ],
+      "name": "VOLCANO-VIEW",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    }
+  ],
+  "format": "zxr-room-context-v1",
+  "globalObjects": [],
+  "initialObjects": [],
+  "inputHash": "7306c13dd00709a75ddd335a790fd72506170c4c319096b29256156a7dce84f6",
+  "potentialArrivals": [
+    "ADVENTURER",
+    "ARCANA",
+    "BALLOON",
+    "BALLOON-LABEL",
+    "BANK-BROCHURE",
+    "BAT",
+    "BILLS",
+    "BLESSINGS",
+    "BLUE-BOOK",
+    "BLUE-ICING",
+    "BRAIDED-WIRE",
+    "BRICK",
+    "BRIDGE",
+    "BROKEN-CASE",
+    "BROKEN-LAMP",
+    "BUCKET",
+    "CAGE",
+    "CANDY",
+    "CARD",
+    "CERBERUS",
+    "CHASM",
+    "CHEST",
+    "CLOTH-BAG",
+    "COIN",
+    "COLLAR",
+    "COMPASS",
+    "CROWN",
+    "CRYPT-DOOR",
+    "DEAD-BALLOON",
+    "DEAD-DRAGON",
+    "DEAD-SERPENT",
+    "DEGREE",
+    "DEPOSIT-BOX",
+    "DIM-DOOR",
+    "DRAGON",
+    "DWINDOW",
+    "EAST-WALL",
+    "EAT-ME-CAKE",
+    "EXPLOSION",
+    "FLASK",
+    "FOOTPAD",
+    "FUSE",
+    "GAZEBO",
+    "GENIE",
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GLOBAL-OBJECTS",
+    "GLOBAL-PALANTIR",
+    "GLOBAL-PRINCESS",
+    "GLOBAL-UNICORN",
+    "GLOBAL-WATER",
+    "GLOBAL-WIZARD-CASE",
+    "GNOME",
+    "GNOME-OF-ZURICH",
+    "GOLD-KEY",
+    "GREEN-BOOK",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "HEADS",
+    "INTNUM",
+    "IRON-BOX",
+    "IT",
+    "KEY",
+    "LAMP",
+    "LETTER-OPENER",
+    "LOCAL-GLOBALS",
+    "LUNGS",
+    "MANGLED-CAGE",
+    "MATCH",
+    "ME",
+    "MENHIR",
+    "MOSS",
+    "NEWSPAPER",
+    "NORTH-WALL",
+    "ORANGE-ICING",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "PATHOBJ",
+    "PDOOR",
+    "PEARL",
+    "PLACE-MAT",
+    "PORTRAIT",
+    "PRINCESS",
+    "PSEUDO-OBJECT",
+    "PURPLE-BOOK",
+    "PWINDOW",
+    "RECEPTACLE",
+    "RED-ICING",
+    "REPELLENT",
+    "RIBBON",
+    "ROBOT",
+    "ROBOT-LABEL",
+    "ROSE",
+    "ROSE-BUSH",
+    "RUBY",
+    "SAILOR",
+    "SALTY-WATER",
+    "SERPENT",
+    "SEWL",
+    "SNWL",
+    "SOUTH-WALL",
+    "SSWL",
+    "STAIRS",
+    "STAMP",
+    "STAND-4",
+    "STATUETTE",
+    "STREAM",
+    "SWORD",
+    "SWWL",
+    "TEAPOT",
+    "TROPHY-BOTTLES",
+    "TROPHY-SWORD",
+    "TUNNEL",
+    "UNICORN",
+    "VIOLIN",
+    "WAND",
+    "WANDS",
+    "WATER",
+    "WELL",
+    "WEST-WALL",
+    "WHITE-BOOK",
+    "WISH",
+    "WIZ-DOOR",
+    "WIZARD",
+    "ZORKMID"
+  ],
+  "room": {
+    "desc": {
+      "source": {
+        "end": {
+          "column": 29,
+          "line": 1380,
+          "offset": 37264
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1380,
+          "offset": 37243
+        }
+      },
+      "text": "Volcano View"
+    },
+    "flags": [
+      "RLANDBIT"
+    ],
+    "id": 117,
+    "initialRoomLightFlag": false,
+    "ldesc": [
+      {
+        "byteLength": 2,
+        "kind": "text",
+        "property": {
+          "name": "LDESC",
+          "number": 13
+        },
+        "source": {
+          "end": {
+            "column": 67,
+            "line": 1379,
+            "offset": 37235
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 8,
+            "line": 1374,
+            "offset": 36901
+          }
+        },
+        "text": "You are on a ledge in the middle of a large volcano. Below you the volcano bottom can be seen and above is the rim of the volcano. A couple of ledges can be seen on the other side of the volcano; it appears that this ledge is intermediate in elevation between those on the other side. The exit from this room is to the east."
+      }
+    ],
+    "name": "VOLCANO-VIEW",
+    "outdoors": "not-encoded-do-not-infer-from-RLANDBIT",
+    "source": {
+      "end": {
+        "column": 25,
+        "line": 1384,
+        "offset": 37411
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 1,
+        "line": 1372,
+        "offset": 36857
+      }
+    }
+  },
+  "routineReferencedObjects": [],
+  "routines": {
+    "dispatchBoundaries": [],
+    "missing": [],
+    "reachableHelpers": [],
+    "roots": []
+  },
+  "scriptedArrivals": [],
+  "stateDependencies": [],
+  "universalGlobalObjects": [
+    "BLESSINGS",
+    "COMPASS",
+    "EAST-WALL",
+    "FOOTPAD",
+    "GLOBAL-PRINCESS",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "INTNUM",
+    "IT",
+    "LUNGS",
+    "ME",
+    "NORTH-WALL",
+    "PATHOBJ",
+    "SAILOR",
+    "SOUTH-WALL",
+    "TUNNEL",
+    "WEST-WALL",
+    "WISH",
+    "ZORKMID"
+  ]
+}

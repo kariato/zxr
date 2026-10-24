@@ -1,0 +1,80 @@
+{
+  "attempts": 0,
+  "document": {
+    "description": "Portable familiar brass lantern matching the approved visual guide, with clear body silhouette and handle. The starting lantern is OFF. Emissive glass, light and flicker are activated only from observed engine ONBIT state; no permanently baked warm light. The idle clip must be unlit.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "hs_lamp",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.18,
+          0.35,
+          0.18
+        ]
+      }
+    ],
+    "id": "asset_lamp",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#A98A45",
+        "description": "Worn matte brass",
+        "metalness": 0.8,
+        "name": "brass",
+        "roughness": 0.5
+      },
+      {
+        "colour": "#657176",
+        "description": "Restrained unlit lamp panes",
+        "metalness": 0,
+        "name": "glass",
+        "roughness": 0.25
+      }
+    ],
+    "objects": [
+      "LAMP"
+    ],
+    "provenance": {
+      "agent": "Codex",
+      "inputHash": "d8e3e297fe992a38708471ca20e4e9db55e0bc947ec647fc24a6b847318cb96d",
+      "method": "assistant",
+      "model": null,
+      "promptVersion": "zxr-planner-v1"
+    },
+    "requiredClips": [
+      "idle",
+      "flicker"
+    ],
+    "review": {
+      "reviewedOn": "2026-10-23",
+      "reviewer": "Mark",
+      "status": "approved"
+    },
+    "sizeMetres": [
+      0.18,
+      0.35,
+      0.18
+    ]
+  },
+  "format": "zxr-plan-record-v1",
+  "inputHash": "d8e3e297fe992a38708471ca20e4e9db55e0bc947ec647fc24a6b847318cb96d",
+  "model": null,
+  "outputHash": "17285f4e922bd9f56e555a34bc5c3f6b6c9e45a7d7d7b4c1b732617447a9fbf2",
+  "promptVersion": "zxr-planner-v1",
+  "provider": "assistant",
+  "requestHash": null,
+  "requestedModel": null,
+  "task": {
+    "kind": "asset-brief",
+    "subject": "LAMP"
+  }
+}

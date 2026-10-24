@@ -1,0 +1,50 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "SPRAY"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "d73ebbb7c5b6456bbd99a4857360dfe686b3d01372189e1c4c418943724a565e",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "62ce1b174158bacedf609ab97357e1a8170590c98fe42ef73c73f39df2c5fe78",
+  "document": {
+    "entries": [
+      {
+        "family": "SPRAY:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Spray {direct} with {indirect}"
+      },
+      {
+        "family": "SPRAY:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Spray {direct} on {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_spray",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "d73ebbb7c5b6456bbd99a4857360dfe686b3d01372189e1c4c418943724a565e"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

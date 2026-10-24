@@ -1,0 +1,59 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "SLIDE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "18497bba0bed9508d352a38f0400795b9a757a613d6f675ae77a306f369ff6dd",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "04efb57f48fe2fb870f6c12e27e88d5f294aa30051623bc622341a6b302f8bda",
+  "document": {
+    "entries": [
+      {
+        "family": "SLIDE:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Slide {direct} to {indirect}"
+      },
+      {
+        "family": "SLIDE:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Slide {direct} {indirect}"
+      },
+      {
+        "family": "SLIDE:3",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Slide {direct} under {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_slide",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "18497bba0bed9508d352a38f0400795b9a757a613d6f675ae77a306f369ff6dd"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

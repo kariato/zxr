@@ -1,0 +1,7 @@
+{
+  "format": "zxr-gate-review-v1",
+  "status": "no-new-rules-proposed",
+  "existingRuleIds": ["riddle-well", "robot-instructions", "balloon-land", "cerberus-collar", "repellent-instructions", "wizard-float"],
+  "proposals": [],
+  "reason": "The six existing phase-4 knowledge rules already cover the identified source instruction and answer disclosures. Phase 6 adds presentation labels only. No additional gates are needed to author room plans or asset briefs; new rules would need a separate human review and the phase-4/5 suites."
+}

@@ -1,0 +1,354 @@
+{
+  "cautions": [
+    "Offline source context; never current player-visible state.",
+    "All routine text/effects are conditional possibilities, not an executed description or a reveal rule.",
+    "Potential arrivals are a conservative shared catalogue, not proven room reachability or initial scenery.",
+    "Consult routines.json for text fragments, source guards, script changes and unresolved targets/calls.",
+    "Every feature requires state review; absent literal mutation evidence does not prove a static feature. Generic handlers and raw memory writes may change computed targets.",
+    "Computed exits are not guessed; RLANDBIT means land, not outdoors."
+  ],
+  "exits": [
+    {
+      "declaration": "(NORTH TO DRAGON-ROOM)",
+      "direction": "NORTH",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Dragon Room",
+        "name": "DRAGON-ROOM"
+      },
+      "source": {
+        "end": {
+          "column": 29,
+          "line": 428,
+          "offset": 11971
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 428,
+          "offset": 11949
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "DRAGON-ROOM"
+      }
+    },
+    {
+      "declaration": "(EAST TO RAVINE-LEDGE)",
+      "direction": "EAST",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Ledge in Ravine",
+        "name": "RAVINE-LEDGE"
+      },
+      "source": {
+        "end": {
+          "column": 29,
+          "line": 426,
+          "offset": 11916
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 426,
+          "offset": 11894
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "RAVINE-LEDGE"
+      }
+    },
+    {
+      "declaration": "(DOWN \"There are a lot of sharp rocks down there.\")",
+      "direction": "DOWN",
+      "geometryStatus": "conditional-blocked-or-computed",
+      "neighbour": null,
+      "source": {
+        "end": {
+          "column": 58,
+          "line": 429,
+          "offset": 12029
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 429,
+          "offset": 11978
+        }
+      },
+      "view": {
+        "kind": "NEXIT",
+        "message": "There are a lot of sharp rocks down there."
+      }
+    },
+    {
+      "declaration": "(IN TO DRAGON-ROOM)",
+      "direction": "IN",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Dragon Room",
+        "name": "DRAGON-ROOM"
+      },
+      "source": {
+        "end": {
+          "column": 26,
+          "line": 427,
+          "offset": 11942
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 427,
+          "offset": 11923
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "DRAGON-ROOM"
+      }
+    }
+  ],
+  "features": [
+    {
+      "changeable": false,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "RLANDBIT"
+      ],
+      "name": "LEDGE-TUNNEL",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    }
+  ],
+  "format": "zxr-room-context-v1",
+  "globalObjects": [],
+  "initialObjects": [],
+  "inputHash": "9070c2ac2aa07d4b9bd0d11ebf6929b3977e251806d1758cb51be30ccb853bb0",
+  "potentialArrivals": [
+    "ADVENTURER",
+    "ARCANA",
+    "BALLOON",
+    "BALLOON-LABEL",
+    "BANK-BROCHURE",
+    "BAT",
+    "BILLS",
+    "BLESSINGS",
+    "BLUE-BOOK",
+    "BLUE-ICING",
+    "BRAIDED-WIRE",
+    "BRICK",
+    "BRIDGE",
+    "BROKEN-CASE",
+    "BROKEN-LAMP",
+    "BUCKET",
+    "CAGE",
+    "CANDY",
+    "CARD",
+    "CERBERUS",
+    "CHASM",
+    "CHEST",
+    "CLOTH-BAG",
+    "COIN",
+    "COLLAR",
+    "COMPASS",
+    "CROWN",
+    "CRYPT-DOOR",
+    "DEAD-BALLOON",
+    "DEAD-DRAGON",
+    "DEAD-SERPENT",
+    "DEGREE",
+    "DEPOSIT-BOX",
+    "DIM-DOOR",
+    "DRAGON",
+    "DWINDOW",
+    "EAST-WALL",
+    "EAT-ME-CAKE",
+    "EXPLOSION",
+    "FLASK",
+    "FOOTPAD",
+    "FUSE",
+    "GAZEBO",
+    "GENIE",
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GLOBAL-OBJECTS",
+    "GLOBAL-PALANTIR",
+    "GLOBAL-PRINCESS",
+    "GLOBAL-UNICORN",
+    "GLOBAL-WATER",
+    "GLOBAL-WIZARD-CASE",
+    "GNOME",
+    "GNOME-OF-ZURICH",
+    "GOLD-KEY",
+    "GREEN-BOOK",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "HEADS",
+    "INTNUM",
+    "IRON-BOX",
+    "IT",
+    "KEY",
+    "LAMP",
+    "LETTER-OPENER",
+    "LOCAL-GLOBALS",
+    "LUNGS",
+    "MANGLED-CAGE",
+    "MATCH",
+    "ME",
+    "MENHIR",
+    "MOSS",
+    "NEWSPAPER",
+    "NORTH-WALL",
+    "ORANGE-ICING",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "PATHOBJ",
+    "PDOOR",
+    "PEARL",
+    "PLACE-MAT",
+    "PORTRAIT",
+    "PRINCESS",
+    "PSEUDO-OBJECT",
+    "PURPLE-BOOK",
+    "PWINDOW",
+    "RECEPTACLE",
+    "RED-ICING",
+    "REPELLENT",
+    "RIBBON",
+    "ROBOT",
+    "ROBOT-LABEL",
+    "ROSE",
+    "ROSE-BUSH",
+    "RUBY",
+    "SAILOR",
+    "SALTY-WATER",
+    "SERPENT",
+    "SEWL",
+    "SNWL",
+    "SOUTH-WALL",
+    "SSWL",
+    "STAIRS",
+    "STAMP",
+    "STAND-4",
+    "STATUETTE",
+    "STREAM",
+    "SWORD",
+    "SWWL",
+    "TEAPOT",
+    "TROPHY-BOTTLES",
+    "TROPHY-SWORD",
+    "TUNNEL",
+    "UNICORN",
+    "VIOLIN",
+    "WAND",
+    "WANDS",
+    "WATER",
+    "WELL",
+    "WEST-WALL",
+    "WHITE-BOOK",
+    "WISH",
+    "WIZ-DOOR",
+    "WIZARD",
+    "ZORKMID"
+  ],
+  "room": {
+    "desc": {
+      "source": {
+        "end": {
+          "column": 28,
+          "line": 424,
+          "offset": 11864
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 424,
+          "offset": 11843
+        }
+      },
+      "text": "End of Ledge"
+    },
+    "flags": [
+      "RLANDBIT"
+    ],
+    "id": 171,
+    "initialRoomLightFlag": false,
+    "ldesc": [
+      {
+        "byteLength": 2,
+        "kind": "text",
+        "property": {
+          "name": "LDESC",
+          "number": 13
+        },
+        "source": {
+          "end": {
+            "column": 67,
+            "line": 423,
+            "offset": 11836
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 7,
+            "line": 421,
+            "offset": 11689
+          }
+        },
+        "text": "A ledge from the east ends here, and a tunnel leads north into the wall. There is a rather odd smokey odor in the warm air of the tunnel."
+      }
+    ],
+    "name": "LEDGE-TUNNEL",
+    "outdoors": "not-encoded-do-not-infer-from-RLANDBIT",
+    "source": {
+      "end": {
+        "column": 59,
+        "line": 429,
+        "offset": 12030
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 1,
+        "line": 419,
+        "offset": 11647
+      }
+    }
+  },
+  "routineReferencedObjects": [],
+  "routines": {
+    "dispatchBoundaries": [],
+    "missing": [],
+    "reachableHelpers": [],
+    "roots": []
+  },
+  "scriptedArrivals": [],
+  "stateDependencies": [],
+  "universalGlobalObjects": [
+    "BLESSINGS",
+    "COMPASS",
+    "EAST-WALL",
+    "FOOTPAD",
+    "GLOBAL-PRINCESS",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "INTNUM",
+    "IT",
+    "LUNGS",
+    "ME",
+    "NORTH-WALL",
+    "PATHOBJ",
+    "SAILOR",
+    "SOUTH-WALL",
+    "TUNNEL",
+    "WEST-WALL",
+    "WISH",
+    "ZORKMID"
+  ]
+}

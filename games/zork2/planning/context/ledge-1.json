@@ -1,0 +1,376 @@
+{
+  "cautions": [
+    "Offline source context; never current player-visible state.",
+    "All routine text/effects are conditional possibilities, not an executed description or a reveal rule.",
+    "Potential arrivals are a conservative shared catalogue, not proven room reachability or initial scenery.",
+    "Consult routines.json for text fragments, source guards, script changes and unresolved targets/calls.",
+    "Every feature requires state review; absent literal mutation evidence does not prove a static feature. Generic handlers and raw memory writes may change computed targets.",
+    "Computed exits are not guessed; RLANDBIT means land, not outdoors."
+  ],
+  "exits": [
+    {
+      "declaration": "(WEST TO VOLCANO-BOTTOM IF GNOME-DOOR-FLAG)",
+      "direction": "WEST",
+      "geometryStatus": "conditional-blocked-or-computed",
+      "neighbour": {
+        "desc": "Volcano Bottom",
+        "name": "VOLCANO-BOTTOM"
+      },
+      "source": {
+        "end": {
+          "column": 51,
+          "line": 1357,
+          "offset": 36483
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1357,
+          "offset": 36440
+        }
+      },
+      "view": {
+        "global": "GNOME-DOOR-FLAG",
+        "kind": "CEXIT",
+        "message": null,
+        "to": "VOLCANO-BOTTOM"
+      }
+    },
+    {
+      "declaration": "(SOUTH TO LIBRARY)",
+      "direction": "SOUTH",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Library",
+        "name": "LIBRARY"
+      },
+      "source": {
+        "end": {
+          "column": 26,
+          "line": 1358,
+          "offset": 36509
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1358,
+          "offset": 36491
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "LIBRARY"
+      }
+    },
+    {
+      "declaration": "(DOWN \"I wouldn't jump from here.\")",
+      "direction": "DOWN",
+      "geometryStatus": "conditional-blocked-or-computed",
+      "neighbour": null,
+      "source": {
+        "end": {
+          "column": 43,
+          "line": 1356,
+          "offset": 36432
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1356,
+          "offset": 36397
+        }
+      },
+      "view": {
+        "kind": "NEXIT",
+        "message": "I wouldn't jump from here."
+      }
+    }
+  ],
+  "features": [
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [],
+          "index": 0,
+          "operation": "REMOVE",
+          "routine": "WISH-FCN"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "READBIT",
+        "STAGGERED",
+        "TAKEBIT"
+      ],
+      "name": "COIN",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": false,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [],
+      "name": "HOOK-1",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": false,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NONLANDBIT",
+        "RLANDBIT"
+      ],
+      "name": "LEDGE-1",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    }
+  ],
+  "format": "zxr-room-context-v1",
+  "globalObjects": [],
+  "initialObjects": [
+    "COIN",
+    "HOOK-1"
+  ],
+  "inputHash": "96b71999a505d537b56c690334cfb66aabfcad2afb964560b213c310423fb4d5",
+  "potentialArrivals": [
+    "ADVENTURER",
+    "ARCANA",
+    "BALLOON",
+    "BALLOON-LABEL",
+    "BANK-BROCHURE",
+    "BAT",
+    "BILLS",
+    "BLESSINGS",
+    "BLUE-BOOK",
+    "BLUE-ICING",
+    "BRAIDED-WIRE",
+    "BRICK",
+    "BRIDGE",
+    "BROKEN-CASE",
+    "BROKEN-LAMP",
+    "BUCKET",
+    "CAGE",
+    "CANDY",
+    "CARD",
+    "CERBERUS",
+    "CHASM",
+    "CHEST",
+    "CLOTH-BAG",
+    "COIN",
+    "COLLAR",
+    "COMPASS",
+    "CROWN",
+    "CRYPT-DOOR",
+    "DEAD-BALLOON",
+    "DEAD-DRAGON",
+    "DEAD-SERPENT",
+    "DEGREE",
+    "DEPOSIT-BOX",
+    "DIM-DOOR",
+    "DRAGON",
+    "DWINDOW",
+    "EAST-WALL",
+    "EAT-ME-CAKE",
+    "EXPLOSION",
+    "FLASK",
+    "FOOTPAD",
+    "FUSE",
+    "GAZEBO",
+    "GENIE",
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GLOBAL-OBJECTS",
+    "GLOBAL-PALANTIR",
+    "GLOBAL-PRINCESS",
+    "GLOBAL-UNICORN",
+    "GLOBAL-WATER",
+    "GLOBAL-WIZARD-CASE",
+    "GNOME",
+    "GNOME-OF-ZURICH",
+    "GOLD-KEY",
+    "GREEN-BOOK",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "HEADS",
+    "INTNUM",
+    "IRON-BOX",
+    "IT",
+    "KEY",
+    "LAMP",
+    "LETTER-OPENER",
+    "LOCAL-GLOBALS",
+    "LUNGS",
+    "MANGLED-CAGE",
+    "MATCH",
+    "ME",
+    "MENHIR",
+    "MOSS",
+    "NEWSPAPER",
+    "NORTH-WALL",
+    "ORANGE-ICING",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "PATHOBJ",
+    "PDOOR",
+    "PEARL",
+    "PLACE-MAT",
+    "PORTRAIT",
+    "PRINCESS",
+    "PSEUDO-OBJECT",
+    "PURPLE-BOOK",
+    "PWINDOW",
+    "RECEPTACLE",
+    "RED-ICING",
+    "REPELLENT",
+    "RIBBON",
+    "ROBOT",
+    "ROBOT-LABEL",
+    "ROSE",
+    "ROSE-BUSH",
+    "RUBY",
+    "SAILOR",
+    "SALTY-WATER",
+    "SERPENT",
+    "SEWL",
+    "SNWL",
+    "SOUTH-WALL",
+    "SSWL",
+    "STAIRS",
+    "STAMP",
+    "STAND-4",
+    "STATUETTE",
+    "STREAM",
+    "SWORD",
+    "SWWL",
+    "TEAPOT",
+    "TROPHY-BOTTLES",
+    "TROPHY-SWORD",
+    "TUNNEL",
+    "UNICORN",
+    "VIOLIN",
+    "WAND",
+    "WANDS",
+    "WATER",
+    "WELL",
+    "WEST-WALL",
+    "WHITE-BOOK",
+    "WISH",
+    "WIZ-DOOR",
+    "WIZARD",
+    "ZORKMID"
+  ],
+  "room": {
+    "desc": {
+      "source": {
+        "end": {
+          "column": 29,
+          "line": 1355,
+          "offset": 36389
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1355,
+          "offset": 36368
+        }
+      },
+      "text": "Narrow Ledge"
+    },
+    "flags": [
+      "NONLANDBIT",
+      "RLANDBIT"
+    ],
+    "id": 13,
+    "initialRoomLightFlag": false,
+    "ldesc": [
+      {
+        "byteLength": 2,
+        "kind": "text",
+        "property": {
+          "name": "LDESC",
+          "number": 13
+        },
+        "source": {
+          "end": {
+            "column": 16,
+            "line": 1354,
+            "offset": 36360
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 8,
+            "line": 1351,
+            "offset": 36192
+          }
+        },
+        "text": "You are on a narrow ledge within an old dormant volcano. This ledge is about halfway between the floor below and the rim above. There is an exit to the south."
+      }
+    ],
+    "name": "LEDGE-1",
+    "outdoors": "not-encoded-do-not-infer-from-RLANDBIT",
+    "source": {
+      "end": {
+        "column": 36,
+        "line": 1359,
+        "offset": 36545
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 1,
+        "line": 1349,
+        "offset": 36153
+      }
+    }
+  },
+  "routineReferencedObjects": [],
+  "routines": {
+    "dispatchBoundaries": [],
+    "missing": [],
+    "reachableHelpers": [],
+    "roots": []
+  },
+  "scriptedArrivals": [],
+  "stateDependencies": [
+    {
+      "name": "GNOME-DOOR-FLAG",
+      "writers": [
+        {
+          "index": 5,
+          "routine": "GNOME-FCN"
+        }
+      ]
+    }
+  ],
+  "universalGlobalObjects": [
+    "BLESSINGS",
+    "COMPASS",
+    "EAST-WALL",
+    "FOOTPAD",
+    "GLOBAL-PRINCESS",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "INTNUM",
+    "IT",
+    "LUNGS",
+    "ME",
+    "NORTH-WALL",
+    "PATHOBJ",
+    "SAILOR",
+    "SOUTH-WALL",
+    "TUNNEL",
+    "WEST-WALL",
+    "WISH",
+    "ZORKMID"
+  ]
+}

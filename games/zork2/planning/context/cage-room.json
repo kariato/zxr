@@ -1,0 +1,883 @@
+{
+  "cautions": [
+    "Offline source context; never current player-visible state.",
+    "All routine text/effects are conditional possibilities, not an executed description or a reveal rule.",
+    "Potential arrivals are a conservative shared catalogue, not proven room reachability or initial scenery.",
+    "Consult routines.json for text fragments, source guards, script changes and unresolved targets/calls.",
+    "Every feature requires state review; absent literal mutation evidence does not prove a static feature. Generic handlers and raw memory writes may change computed targets.",
+    "Computed exits are not guessed; RLANDBIT means land, not outdoors."
+  ],
+  "exits": [
+    {
+      "declaration": "(NORTH TO MACHINE-ROOM)",
+      "direction": "NORTH",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Machine Room",
+        "name": "MACHINE-ROOM"
+      },
+      "source": {
+        "end": {
+          "column": 31,
+          "line": 1464,
+          "offset": 39580
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1464,
+          "offset": 39557
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "MACHINE-ROOM"
+      }
+    },
+    {
+      "declaration": "(OUT TO MACHINE-ROOM)",
+      "direction": "OUT",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Machine Room",
+        "name": "MACHINE-ROOM"
+      },
+      "source": {
+        "end": {
+          "column": 29,
+          "line": 1463,
+          "offset": 39549
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1463,
+          "offset": 39528
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "MACHINE-ROOM"
+      }
+    }
+  ],
+  "features": [
+    {
+      "changeable": true,
+      "concealedByDeclaration": true,
+      "evidence": [
+        {
+          "flags": [],
+          "index": 2,
+          "operation": "MOVE",
+          "routine": "SPHERE-FCN"
+        },
+        {
+          "flags": [
+            "NDESCBIT"
+          ],
+          "index": 3,
+          "operation": "FSET",
+          "routine": "SPHERE-FCN"
+        },
+        {
+          "flags": [
+            "INVISIBLE"
+          ],
+          "index": 4,
+          "operation": "FCLEAR",
+          "routine": "SPHERE-FCN"
+        },
+        {
+          "flags": [],
+          "index": 8,
+          "operation": "MOVE",
+          "routine": "SPHERE-FCN"
+        },
+        {
+          "flags": [
+            "INVISIBLE"
+          ],
+          "index": 9,
+          "operation": "FCLEAR",
+          "routine": "SPHERE-FCN"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "INVISIBLE"
+      ],
+      "name": "CAGE",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": false,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "ONBIT",
+        "RLANDBIT"
+      ],
+      "name": "CAGE-ROOM",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [],
+          "index": 1,
+          "operation": "MOVE",
+          "routine": "ROBOT-FCN"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "TAKEBIT"
+      ],
+      "name": "MANGLED-CAGE",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [
+            "INVISIBLE"
+          ],
+          "index": 0,
+          "operation": "FSET",
+          "routine": "I-SPHERE"
+        },
+        {
+          "flags": [
+            "TAKEBIT"
+          ],
+          "index": 3,
+          "operation": "FSET",
+          "routine": "ROBOT-FCN"
+        },
+        {
+          "flags": [
+            "INVISIBLE"
+          ],
+          "index": 5,
+          "operation": "FSET",
+          "routine": "SPHERE-FCN"
+        },
+        {
+          "flags": [],
+          "index": 0,
+          "operation": "REMOVE",
+          "routine": "STAND-FCN"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "STAGGERED",
+        "TAKEBIT",
+        "TRANSBIT",
+        "TRYTAKEBIT"
+      ],
+      "name": "PALANTIR-1",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [
+            "INVISIBLE"
+          ],
+          "index": 3,
+          "operation": "FCLEAR",
+          "routine": "CAKE-FCN"
+        },
+        {
+          "flags": [
+            "INVISIBLE"
+          ],
+          "index": 1,
+          "operation": "FSET",
+          "routine": "EATME-FCN"
+        },
+        {
+          "flags": [
+            "NDESCBIT"
+          ],
+          "index": 2,
+          "operation": "FCLEAR",
+          "routine": "ROBOT-FCN"
+        },
+        {
+          "flags": [],
+          "index": 4,
+          "operation": "MOVE",
+          "routine": "ROBOT-FCN"
+        },
+        {
+          "flags": [],
+          "index": 0,
+          "operation": "MOVE",
+          "routine": "SPHERE-FCN"
+        },
+        {
+          "flags": [
+            "NDESCBIT"
+          ],
+          "index": 1,
+          "operation": "FSET",
+          "routine": "SPHERE-FCN"
+        },
+        {
+          "flags": [],
+          "index": 6,
+          "operation": "REMOVE",
+          "routine": "SPHERE-FCN"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "ACTORBIT",
+        "CONTBIT",
+        "OPENBIT"
+      ],
+      "name": "ROBOT",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    }
+  ],
+  "format": "zxr-room-context-v1",
+  "globalObjects": [],
+  "initialObjects": [
+    "CAGE",
+    "PALANTIR-1"
+  ],
+  "inputHash": "94c1205a3dbe8e88db7482e2bd2ac996c90da61969b34d5c6fb4640bfb011933",
+  "potentialArrivals": [
+    "ADVENTURER",
+    "ARCANA",
+    "BALLOON",
+    "BALLOON-LABEL",
+    "BANK-BROCHURE",
+    "BAT",
+    "BILLS",
+    "BLESSINGS",
+    "BLUE-BOOK",
+    "BLUE-ICING",
+    "BRAIDED-WIRE",
+    "BRICK",
+    "BRIDGE",
+    "BROKEN-CASE",
+    "BROKEN-LAMP",
+    "BUCKET",
+    "CAGE",
+    "CANDY",
+    "CARD",
+    "CERBERUS",
+    "CHASM",
+    "CHEST",
+    "CLOTH-BAG",
+    "COIN",
+    "COLLAR",
+    "COMPASS",
+    "CROWN",
+    "CRYPT-DOOR",
+    "DEAD-BALLOON",
+    "DEAD-DRAGON",
+    "DEAD-SERPENT",
+    "DEGREE",
+    "DEPOSIT-BOX",
+    "DIM-DOOR",
+    "DRAGON",
+    "DWINDOW",
+    "EAST-WALL",
+    "EAT-ME-CAKE",
+    "EXPLOSION",
+    "FLASK",
+    "FOOTPAD",
+    "FUSE",
+    "GAZEBO",
+    "GENIE",
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GLOBAL-OBJECTS",
+    "GLOBAL-PALANTIR",
+    "GLOBAL-PRINCESS",
+    "GLOBAL-UNICORN",
+    "GLOBAL-WATER",
+    "GLOBAL-WIZARD-CASE",
+    "GNOME",
+    "GNOME-OF-ZURICH",
+    "GOLD-KEY",
+    "GREEN-BOOK",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "HEADS",
+    "INTNUM",
+    "IRON-BOX",
+    "IT",
+    "KEY",
+    "LAMP",
+    "LETTER-OPENER",
+    "LOCAL-GLOBALS",
+    "LUNGS",
+    "MANGLED-CAGE",
+    "MATCH",
+    "ME",
+    "MENHIR",
+    "MOSS",
+    "NEWSPAPER",
+    "NORTH-WALL",
+    "ORANGE-ICING",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "PATHOBJ",
+    "PDOOR",
+    "PEARL",
+    "PLACE-MAT",
+    "PORTRAIT",
+    "PRINCESS",
+    "PSEUDO-OBJECT",
+    "PURPLE-BOOK",
+    "PWINDOW",
+    "RECEPTACLE",
+    "RED-ICING",
+    "REPELLENT",
+    "RIBBON",
+    "ROBOT",
+    "ROBOT-LABEL",
+    "ROSE",
+    "ROSE-BUSH",
+    "RUBY",
+    "SAILOR",
+    "SALTY-WATER",
+    "SERPENT",
+    "SEWL",
+    "SNWL",
+    "SOUTH-WALL",
+    "SSWL",
+    "STAIRS",
+    "STAMP",
+    "STAND-4",
+    "STATUETTE",
+    "STREAM",
+    "SWORD",
+    "SWWL",
+    "TEAPOT",
+    "TROPHY-BOTTLES",
+    "TROPHY-SWORD",
+    "TUNNEL",
+    "UNICORN",
+    "VIOLIN",
+    "WAND",
+    "WANDS",
+    "WATER",
+    "WELL",
+    "WEST-WALL",
+    "WHITE-BOOK",
+    "WISH",
+    "WIZ-DOOR",
+    "WIZARD",
+    "ZORKMID"
+  ],
+  "room": {
+    "desc": {
+      "source": {
+        "end": {
+          "column": 29,
+          "line": 1462,
+          "offset": 39520
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 8,
+          "line": 1462,
+          "offset": 39499
+        }
+      },
+      "text": "Dingy Closet"
+    },
+    "flags": [
+      "ONBIT",
+      "RLANDBIT"
+    ],
+    "id": 54,
+    "initialRoomLightFlag": true,
+    "ldesc": [
+      {
+        "byteLength": 2,
+        "kind": "text",
+        "property": {
+          "name": "LDESC",
+          "number": 13
+        },
+        "source": {
+          "end": {
+            "column": 54,
+            "line": 1461,
+            "offset": 39491
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 8,
+            "line": 1453,
+            "offset": 39246
+          }
+        },
+        "text": "This is a dingy closet adjacent to a larger room to the north. Chiselled into a wall are these words:\n\n     Protected by\n       FROBOZZ\n Magic Alarm Company\n  (Hello, footpad!)\n\nThere doesn't seem to be any footpad here, however."
+      }
+    ],
+    "name": "CAGE-ROOM",
+    "outdoors": "not-encoded-do-not-infer-from-RLANDBIT",
+    "source": {
+      "end": {
+        "column": 31,
+        "line": 1465,
+        "offset": 39611
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 1,
+        "line": 1451,
+        "offset": 39205
+      }
+    }
+  },
+  "routineReferencedObjects": [
+    "ADVENTURER",
+    "CAGE",
+    "GLOBAL-OBJECTS",
+    "MANGLED-CAGE",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "ROBOT",
+    "ROOMS"
+  ],
+  "routines": {
+    "dispatchBoundaries": [
+      "GOTO",
+      "JIGS-UP",
+      "PERFORM"
+    ],
+    "missing": [],
+    "reachableHelpers": [
+      "DO-SL",
+      "GO&LOOK",
+      "INT",
+      "LIT?",
+      "META-LOC",
+      "OBJ-FOUND",
+      "PALANTIR",
+      "PALANTIR-LOOK",
+      "QUEUE",
+      "ROBOT-FCN",
+      "SEARCH-LIST",
+      "SEE-INSIDE?",
+      "SPHERE-FCN",
+      "THIS-IT?",
+      "ZMEMQ",
+      "ZMEMQB"
+    ],
+    "roots": [
+      "ROBOT-FCN",
+      "SPHERE-FCN"
+    ]
+  },
+  "scriptedArrivals": [
+    {
+      "index": 1,
+      "object": "MANGLED-CAGE",
+      "routine": "ROBOT-FCN"
+    },
+    {
+      "index": 4,
+      "object": "ROBOT",
+      "routine": "ROBOT-FCN"
+    },
+    {
+      "index": 8,
+      "object": "CAGE",
+      "routine": "SPHERE-FCN"
+    }
+  ],
+  "stateDependencies": [
+    {
+      "name": "ALWAYS-LIT",
+      "writers": [
+        {
+          "index": 7,
+          "routine": "I-WIZARD"
+        }
+      ]
+    },
+    {
+      "name": "C-DEMONS",
+      "writers": [
+        {
+          "index": 1,
+          "routine": "INT"
+        }
+      ]
+    },
+    {
+      "name": "C-INTS",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "INT"
+        }
+      ]
+    },
+    {
+      "name": "C-TABLE",
+      "writers": []
+    },
+    {
+      "name": "CAGE-SOLVE-FLAG",
+      "writers": [
+        {
+          "index": 5,
+          "routine": "ROBOT-FCN"
+        }
+      ]
+    },
+    {
+      "name": "HERE",
+      "writers": [
+        {
+          "index": 9,
+          "routine": "GO"
+        },
+        {
+          "index": 0,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 3,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 2,
+          "routine": "GOTO"
+        },
+        {
+          "index": 0,
+          "routine": "IN-CAGE-FCN"
+        },
+        {
+          "index": 2,
+          "routine": "JIGS-UP"
+        },
+        {
+          "index": 1,
+          "routine": "LIT?"
+        },
+        {
+          "index": 4,
+          "routine": "LIT?"
+        },
+        {
+          "index": 1,
+          "routine": "V-TELL"
+        }
+      ]
+    },
+    {
+      "name": "LIT",
+      "writers": [
+        {
+          "index": 6,
+          "routine": "GO"
+        },
+        {
+          "index": 1,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 4,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 3,
+          "routine": "GOTO"
+        },
+        {
+          "index": 8,
+          "routine": "I-WIZARD"
+        },
+        {
+          "index": 2,
+          "routine": "REMOVE-CAREFULLY"
+        },
+        {
+          "index": 1,
+          "routine": "V-CLOSE"
+        },
+        {
+          "index": 3,
+          "routine": "V-ENCHANT"
+        },
+        {
+          "index": 1,
+          "routine": "V-LAMP-OFF"
+        },
+        {
+          "index": 1,
+          "routine": "V-LAMP-ON"
+        }
+      ]
+    },
+    {
+      "name": "P-ADJ",
+      "writers": []
+    },
+    {
+      "name": "P-GWIMBIT",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "LIT?"
+        },
+        {
+          "index": 5,
+          "routine": "LIT?"
+        }
+      ]
+    },
+    {
+      "name": "P-MATCHLEN",
+      "writers": []
+    },
+    {
+      "name": "P-MERGE",
+      "writers": []
+    },
+    {
+      "name": "P-NAM",
+      "writers": []
+    },
+    {
+      "name": "P-SLOCBITS",
+      "writers": [
+        {
+          "index": 1,
+          "routine": "GLOBAL-CHECK"
+        },
+        {
+          "index": 3,
+          "routine": "GLOBAL-CHECK"
+        },
+        {
+          "index": 3,
+          "routine": "LIT?"
+        }
+      ]
+    },
+    {
+      "name": "P-TABLE",
+      "writers": [
+        {
+          "index": 2,
+          "routine": "GLOBAL-CHECK"
+        },
+        {
+          "index": 2,
+          "routine": "LIT?"
+        }
+      ]
+    },
+    {
+      "name": "PLAYER",
+      "writers": [
+        {
+          "index": 8,
+          "routine": "GO"
+        }
+      ]
+    },
+    {
+      "name": "PRSA",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 4,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "PRSI",
+      "writers": [
+        {
+          "index": 7,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 3,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 6,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 1,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 2,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 0,
+          "routine": "V-DIG"
+        },
+        {
+          "index": 1,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 4,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "PRSO",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "CAROUSEL-ROOM-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "CAROUSEL-ROOM-FCN"
+        },
+        {
+          "index": 17,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "ITAKE-CHECK"
+        },
+        {
+          "index": 1,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 6,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 1,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 5,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 1,
+          "routine": "V-THROUGH"
+        },
+        {
+          "index": 2,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 5,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 9,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 10,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "WINNER",
+      "writers": [
+        {
+          "index": 16,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 7,
+          "routine": "GO"
+        },
+        {
+          "index": 1,
+          "routine": "JIGS-UP"
+        },
+        {
+          "index": 1,
+          "routine": "RANDOM-WALK"
+        },
+        {
+          "index": 0,
+          "routine": "ROBOT-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "V-TELL"
+        },
+        {
+          "index": 0,
+          "routine": "V-THROW"
+        }
+      ]
+    }
+  ],
+  "universalGlobalObjects": [
+    "BLESSINGS",
+    "COMPASS",
+    "EAST-WALL",
+    "FOOTPAD",
+    "GLOBAL-PRINCESS",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "INTNUM",
+    "IT",
+    "LUNGS",
+    "ME",
+    "NORTH-WALL",
+    "PATHOBJ",
+    "SAILOR",
+    "SOUTH-WALL",
+    "TUNNEL",
+    "WEST-WALL",
+    "WISH",
+    "ZORKMID"
+  ]
+}

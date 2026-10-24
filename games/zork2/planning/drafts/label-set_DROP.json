@@ -1,0 +1,67 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "DROP"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "91ba0b192b09b522afb81774bc5e55afcce506084c1aa17680a3bc2421727767",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "a799c1c945e7faea8b57ab54aaf0a8115be42cff6ba3dd8911fc1faee9b8ecb3",
+  "document": {
+    "entries": [
+      {
+        "family": "DROP:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Drop {direct} on {indirect}"
+      },
+      {
+        "family": "DROP:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Drop {direct} in {indirect}"
+      },
+      {
+        "family": "DROP:3",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Drop {direct} down {indirect}"
+      },
+      {
+        "family": "DROP:4",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Drop {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_drop",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "91ba0b192b09b522afb81774bc5e55afcce506084c1aa17680a3bc2421727767"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

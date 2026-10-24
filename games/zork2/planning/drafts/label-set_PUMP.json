@@ -1,0 +1,49 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "PUMP"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "b20b31cd43363c8e75b5e745e1c23460c85bf8afc154315ad4e9d2f80e5e8507",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "41b62c6ce646283da46eb5401c6fa76556026b8b3cd0be0f3d0f37505a56a98b",
+  "document": {
+    "entries": [
+      {
+        "family": "PUMP:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Pump up {direct} with {indirect}"
+      },
+      {
+        "family": "PUMP:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Pump up {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_pump",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "b20b31cd43363c8e75b5e745e1c23460c85bf8afc154315ad4e9d2f80e5e8507"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

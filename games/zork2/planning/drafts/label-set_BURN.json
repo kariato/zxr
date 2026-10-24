@@ -1,0 +1,50 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "BURN"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "ba66313c7fcd0a89aeae18e9d28a301bfd5c575284dc5aaed0767f01cbb518cb",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "5b73ad151a9eacc6360207ff06c1ff83aa9dbfa752d9ba94d52ef6835c3d4a34",
+  "document": {
+    "entries": [
+      {
+        "family": "BURN:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Burn down {direct} with {indirect}"
+      },
+      {
+        "family": "BURN:2",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Burn {direct} with {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_burn",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "ba66313c7fcd0a89aeae18e9d28a301bfd5c575284dc5aaed0767f01cbb518cb"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

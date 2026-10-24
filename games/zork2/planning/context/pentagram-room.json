@@ -1,0 +1,1240 @@
+{
+  "cautions": [
+    "Offline source context; never current player-visible state.",
+    "All routine text/effects are conditional possibilities, not an executed description or a reveal rule.",
+    "Potential arrivals are a conservative shared catalogue, not proven room reachability or initial scenery.",
+    "Consult routines.json for text fragments, source guards, script changes and unresolved targets/calls.",
+    "Every feature requires state review; absent literal mutation evidence does not prove a static feature. Generic handlers and raw memory writes may change computed targets.",
+    "Computed exits are not guessed; RLANDBIT means land, not outdoors."
+  ],
+  "exits": [
+    {
+      "declaration": "(NORTH TO WORKBENCH-ROOM)",
+      "direction": "NORTH",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Wizard's Workroom",
+        "name": "WORKBENCH-ROOM"
+      },
+      "source": {
+        "end": {
+          "column": 32,
+          "line": 1174,
+          "offset": 31681
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 1174,
+          "offset": 31656
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "WORKBENCH-ROOM"
+      }
+    }
+  ],
+  "features": [
+    {
+      "changeable": true,
+      "concealedByDeclaration": true,
+      "evidence": [
+        {
+          "flags": [
+            "INVISIBLE"
+          ],
+          "index": 0,
+          "operation": "FSET",
+          "routine": "GENIE-LEAVES"
+        },
+        {
+          "flags": [
+            "INVISIBLE"
+          ],
+          "index": 1,
+          "operation": "FCLEAR",
+          "routine": "PENTAGRAM-FCN"
+        },
+        {
+          "flags": [],
+          "index": 2,
+          "operation": "MOVE",
+          "routine": "PENTAGRAM-FCN"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "ACTORBIT",
+        "INVISIBLE"
+      ],
+      "name": "GENIE",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [],
+      "name": "GLOBAL-CERBERUS",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NDESCBIT",
+        "READBIT"
+      ],
+      "name": "GLOBAL-MENHIR",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [],
+      "name": "GLOBAL-WIZARD-CASE",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [],
+          "index": 1,
+          "operation": "REMOVE",
+          "routine": "GENIE-FCN"
+        },
+        {
+          "flags": [],
+          "index": 8,
+          "operation": "MOVE",
+          "routine": "GENIE-FCN"
+        },
+        {
+          "flags": [
+            "NDESCBIT"
+          ],
+          "index": 9,
+          "operation": "FCLEAR",
+          "routine": "GENIE-FCN"
+        },
+        {
+          "flags": [
+            "TAKEBIT"
+          ],
+          "index": 10,
+          "operation": "FCLEAR",
+          "routine": "GENIE-FCN"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "NDESCBIT",
+        "READBIT",
+        "TURNBIT"
+      ],
+      "name": "MENHIR",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "CONTBIT",
+        "NDESCBIT",
+        "OPENBIT",
+        "SURFACEBIT"
+      ],
+      "name": "PENTAGRAM",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    },
+    {
+      "changeable": false,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "ONBIT",
+        "RLANDBIT"
+      ],
+      "name": "PENTAGRAM-ROOM",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [],
+          "index": 5,
+          "operation": "REMOVE",
+          "routine": "GENIE-FCN"
+        },
+        {
+          "flags": [],
+          "index": 13,
+          "operation": "REMOVE",
+          "routine": "GENIE-FCN"
+        },
+        {
+          "flags": [],
+          "index": 20,
+          "operation": "PUTP",
+          "routine": "GENIE-FCN"
+        },
+        {
+          "flags": [],
+          "index": 6,
+          "operation": "MOVE",
+          "routine": "I-WIZARD"
+        },
+        {
+          "flags": [],
+          "index": 9,
+          "operation": "REMOVE",
+          "routine": "I-WIZARD"
+        },
+        {
+          "flags": [],
+          "index": 10,
+          "operation": "REMOVE",
+          "routine": "I-WIZARD"
+        },
+        {
+          "flags": [],
+          "index": 11,
+          "operation": "REMOVE",
+          "routine": "I-WIZARD"
+        },
+        {
+          "flags": [],
+          "index": 12,
+          "operation": "MOVE",
+          "routine": "I-WIZARD"
+        },
+        {
+          "flags": [],
+          "index": 15,
+          "operation": "REMOVE",
+          "routine": "I-WIZARD"
+        },
+        {
+          "flags": [],
+          "index": 23,
+          "operation": "REMOVE",
+          "routine": "I-WIZARD"
+        },
+        {
+          "flags": [],
+          "index": 24,
+          "operation": "REMOVE",
+          "routine": "I-WIZARD"
+        },
+        {
+          "flags": [],
+          "index": 25,
+          "operation": "MOVE",
+          "routine": "I-WIZARD"
+        },
+        {
+          "flags": [],
+          "index": 1,
+          "operation": "REMOVE",
+          "routine": "WIZARD-FCN"
+        },
+        {
+          "flags": [],
+          "index": 2,
+          "operation": "REMOVE",
+          "routine": "WIZARD-FCN"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "ACTORBIT",
+        "CONTBIT",
+        "OPENBIT"
+      ],
+      "name": "WIZARD",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    }
+  ],
+  "format": "zxr-room-context-v1",
+  "globalObjects": [
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GLOBAL-WIZARD-CASE"
+  ],
+  "initialObjects": [
+    "PENTAGRAM"
+  ],
+  "inputHash": "91632a059c728f7cf1a8a99c2050dc6f22a64064d241dd39f276f1bb22978e10",
+  "potentialArrivals": [
+    "ADVENTURER",
+    "ARCANA",
+    "BALLOON",
+    "BALLOON-LABEL",
+    "BANK-BROCHURE",
+    "BAT",
+    "BILLS",
+    "BLESSINGS",
+    "BLUE-BOOK",
+    "BLUE-ICING",
+    "BRAIDED-WIRE",
+    "BRICK",
+    "BRIDGE",
+    "BROKEN-CASE",
+    "BROKEN-LAMP",
+    "BUCKET",
+    "CAGE",
+    "CANDY",
+    "CARD",
+    "CERBERUS",
+    "CHASM",
+    "CHEST",
+    "CLOTH-BAG",
+    "COIN",
+    "COLLAR",
+    "COMPASS",
+    "CROWN",
+    "CRYPT-DOOR",
+    "DEAD-BALLOON",
+    "DEAD-DRAGON",
+    "DEAD-SERPENT",
+    "DEGREE",
+    "DEPOSIT-BOX",
+    "DIM-DOOR",
+    "DRAGON",
+    "DWINDOW",
+    "EAST-WALL",
+    "EAT-ME-CAKE",
+    "EXPLOSION",
+    "FLASK",
+    "FOOTPAD",
+    "FUSE",
+    "GAZEBO",
+    "GENIE",
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GLOBAL-OBJECTS",
+    "GLOBAL-PALANTIR",
+    "GLOBAL-PRINCESS",
+    "GLOBAL-UNICORN",
+    "GLOBAL-WATER",
+    "GLOBAL-WIZARD-CASE",
+    "GNOME",
+    "GNOME-OF-ZURICH",
+    "GOLD-KEY",
+    "GREEN-BOOK",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "HEADS",
+    "INTNUM",
+    "IRON-BOX",
+    "IT",
+    "KEY",
+    "LAMP",
+    "LETTER-OPENER",
+    "LOCAL-GLOBALS",
+    "LUNGS",
+    "MANGLED-CAGE",
+    "MATCH",
+    "ME",
+    "MENHIR",
+    "MOSS",
+    "NEWSPAPER",
+    "NORTH-WALL",
+    "ORANGE-ICING",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "PATHOBJ",
+    "PDOOR",
+    "PEARL",
+    "PLACE-MAT",
+    "PORTRAIT",
+    "PRINCESS",
+    "PSEUDO-OBJECT",
+    "PURPLE-BOOK",
+    "PWINDOW",
+    "RECEPTACLE",
+    "RED-ICING",
+    "REPELLENT",
+    "RIBBON",
+    "ROBOT",
+    "ROBOT-LABEL",
+    "ROSE",
+    "ROSE-BUSH",
+    "RUBY",
+    "SAILOR",
+    "SALTY-WATER",
+    "SERPENT",
+    "SEWL",
+    "SNWL",
+    "SOUTH-WALL",
+    "SSWL",
+    "STAIRS",
+    "STAMP",
+    "STAND-4",
+    "STATUETTE",
+    "STREAM",
+    "SWORD",
+    "SWWL",
+    "TEAPOT",
+    "TROPHY-BOTTLES",
+    "TROPHY-SWORD",
+    "TUNNEL",
+    "UNICORN",
+    "VIOLIN",
+    "WAND",
+    "WANDS",
+    "WATER",
+    "WELL",
+    "WEST-WALL",
+    "WHITE-BOOK",
+    "WISH",
+    "WIZ-DOOR",
+    "WIZARD",
+    "ZORKMID"
+  ],
+  "room": {
+    "desc": {
+      "source": {
+        "end": {
+          "column": 30,
+          "line": 1172,
+          "offset": 31620
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 1172,
+          "offset": 31597
+        }
+      },
+      "text": "Pentagram Room"
+    },
+    "flags": [
+      "ONBIT",
+      "RLANDBIT"
+    ],
+    "id": 91,
+    "initialRoomLightFlag": true,
+    "ldesc": [
+      {
+        "byteLength": 2,
+        "kind": "text",
+        "property": {
+          "name": "LDESC",
+          "number": 13
+        },
+        "source": {
+          "end": {
+            "column": 48,
+            "line": 1171,
+            "offset": 31590
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 7,
+            "line": 1169,
+            "offset": 31465
+          }
+        },
+        "text": "In this room, inscribed on the floor, is a great pentagram drawn with black chalk. In its center is a black circle."
+      }
+    ],
+    "name": "PENTAGRAM-ROOM",
+    "outdoors": "not-encoded-do-not-infer-from-RLANDBIT",
+    "source": {
+      "end": {
+        "column": 65,
+        "line": 1175,
+        "offset": 31746
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 1,
+        "line": 1167,
+        "offset": 31421
+      }
+    }
+  },
+  "routineReferencedObjects": [
+    "ADVENTURER",
+    "BRICK",
+    "BROKEN-CASE",
+    "CANDY",
+    "FUSE",
+    "GENIE",
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GOLD-KEY",
+    "IRON-BOX",
+    "ME",
+    "MENHIR",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "SWORD",
+    "VIOLIN",
+    "WAND",
+    "WIZARD",
+    "WIZARD-CASE"
+  ],
+  "routines": {
+    "dispatchBoundaries": [
+      "JIGS-UP",
+      "PERFORM"
+    ],
+    "missing": [],
+    "reachableHelpers": [
+      "BOMB?",
+      "CASE-WORTH",
+      "DO-SL",
+      "DO-WALK",
+      "GENIE-FCN",
+      "GENIE-LEAVES",
+      "GLOBAL-CERBERUS-F",
+      "GLOBAL-MENHIR-F",
+      "HELLO?",
+      "INT",
+      "LIT?",
+      "MENHIR-FCN",
+      "NULL-F",
+      "OBJ-FOUND",
+      "PENTAGRAM-FCN",
+      "QUEUE",
+      "RANDOM-WALK",
+      "REMOVE-CAREFULLY",
+      "RIPOFF",
+      "ROB",
+      "SCORE-UPD",
+      "SEARCH-LIST",
+      "THIS-IT?",
+      "WIZARD-CASE-FCN",
+      "WIZARD-FCN",
+      "ZMEMQ",
+      "ZMEMQB"
+    ],
+    "roots": [
+      "GENIE-FCN",
+      "GLOBAL-CERBERUS-F",
+      "GLOBAL-MENHIR-F",
+      "MENHIR-FCN",
+      "PENTAGRAM-FCN",
+      "WIZARD-CASE-FCN",
+      "WIZARD-FCN"
+    ]
+  },
+  "scriptedArrivals": [
+    {
+      "index": 8,
+      "object": "MENHIR",
+      "routine": "GENIE-FCN"
+    },
+    {
+      "index": 6,
+      "object": "WIZARD",
+      "routine": "I-WIZARD"
+    },
+    {
+      "index": 2,
+      "object": "GENIE",
+      "routine": "PENTAGRAM-FCN"
+    }
+  ],
+  "stateDependencies": [
+    {
+      "name": "ALWAYS-LIT",
+      "writers": [
+        {
+          "index": 7,
+          "routine": "I-WIZARD"
+        }
+      ]
+    },
+    {
+      "name": "BASE-SCORE",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "SCORE-UPD"
+        }
+      ]
+    },
+    {
+      "name": "C-DEMONS",
+      "writers": [
+        {
+          "index": 1,
+          "routine": "INT"
+        }
+      ]
+    },
+    {
+      "name": "C-INTS",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "INT"
+        }
+      ]
+    },
+    {
+      "name": "C-TABLE",
+      "writers": []
+    },
+    {
+      "name": "GENIE-HOARD",
+      "writers": [
+        {
+          "index": 18,
+          "routine": "GENIE-FCN"
+        }
+      ]
+    },
+    {
+      "name": "GENIE-READY?",
+      "writers": [
+        {
+          "index": 19,
+          "routine": "GENIE-FCN"
+        }
+      ]
+    },
+    {
+      "name": "GENIE-THANKS",
+      "writers": []
+    },
+    {
+      "name": "HERE",
+      "writers": [
+        {
+          "index": 9,
+          "routine": "GO"
+        },
+        {
+          "index": 0,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 3,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 2,
+          "routine": "GOTO"
+        },
+        {
+          "index": 0,
+          "routine": "IN-CAGE-FCN"
+        },
+        {
+          "index": 2,
+          "routine": "JIGS-UP"
+        },
+        {
+          "index": 1,
+          "routine": "LIT?"
+        },
+        {
+          "index": 4,
+          "routine": "LIT?"
+        },
+        {
+          "index": 1,
+          "routine": "V-TELL"
+        }
+      ]
+    },
+    {
+      "name": "LIT",
+      "writers": [
+        {
+          "index": 6,
+          "routine": "GO"
+        },
+        {
+          "index": 1,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 4,
+          "routine": "GO&LOOK"
+        },
+        {
+          "index": 3,
+          "routine": "GOTO"
+        },
+        {
+          "index": 8,
+          "routine": "I-WIZARD"
+        },
+        {
+          "index": 2,
+          "routine": "REMOVE-CAREFULLY"
+        },
+        {
+          "index": 1,
+          "routine": "V-CLOSE"
+        },
+        {
+          "index": 3,
+          "routine": "V-ENCHANT"
+        },
+        {
+          "index": 1,
+          "routine": "V-LAMP-OFF"
+        },
+        {
+          "index": 1,
+          "routine": "V-LAMP-ON"
+        }
+      ]
+    },
+    {
+      "name": "MENHIR-POSITION",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 2,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 11,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "MENHIR-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "MENHIR-FCN"
+        }
+      ]
+    },
+    {
+      "name": "P-ADJ",
+      "writers": []
+    },
+    {
+      "name": "P-CONT",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "CRETIN-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "GENIE-LEAVES"
+        },
+        {
+          "index": 0,
+          "routine": "GNOME-FCN"
+        },
+        {
+          "index": 4,
+          "routine": "GOTO"
+        },
+        {
+          "index": 0,
+          "routine": "HELLO?"
+        },
+        {
+          "index": 11,
+          "routine": "JIGS-UP"
+        },
+        {
+          "index": 8,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 9,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 0,
+          "routine": "NOT-HERE-OBJECT-F"
+        },
+        {
+          "index": 1,
+          "routine": "RIDDLE-ROOM-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "SAILOR-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "V-ANSWER"
+        },
+        {
+          "index": 4,
+          "routine": "V-INCANT"
+        },
+        {
+          "index": 0,
+          "routine": "V-REPLY"
+        },
+        {
+          "index": 1,
+          "routine": "V-SAY"
+        },
+        {
+          "index": 2,
+          "routine": "V-SAY"
+        },
+        {
+          "index": 3,
+          "routine": "V-TELL"
+        },
+        {
+          "index": 0,
+          "routine": "ZGNOME-FCN"
+        }
+      ]
+    },
+    {
+      "name": "P-GWIMBIT",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "LIT?"
+        },
+        {
+          "index": 5,
+          "routine": "LIT?"
+        }
+      ]
+    },
+    {
+      "name": "P-IT-OBJECT",
+      "writers": [
+        {
+          "index": 10,
+          "routine": "GO"
+        },
+        {
+          "index": 2,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "REMOVE-CAREFULLY"
+        },
+        {
+          "index": 0,
+          "routine": "THIS-IS-IT"
+        }
+      ]
+    },
+    {
+      "name": "P-MATCHLEN",
+      "writers": []
+    },
+    {
+      "name": "P-MERGE",
+      "writers": []
+    },
+    {
+      "name": "P-NAM",
+      "writers": []
+    },
+    {
+      "name": "P-PRSI",
+      "writers": []
+    },
+    {
+      "name": "P-PRSO",
+      "writers": []
+    },
+    {
+      "name": "P-SLOCBITS",
+      "writers": [
+        {
+          "index": 1,
+          "routine": "GLOBAL-CHECK"
+        },
+        {
+          "index": 3,
+          "routine": "GLOBAL-CHECK"
+        },
+        {
+          "index": 3,
+          "routine": "LIT?"
+        }
+      ]
+    },
+    {
+      "name": "P-TABLE",
+      "writers": [
+        {
+          "index": 2,
+          "routine": "GLOBAL-CHECK"
+        },
+        {
+          "index": 2,
+          "routine": "LIT?"
+        }
+      ]
+    },
+    {
+      "name": "P-WALK-DIR",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "DO-WALK"
+        }
+      ]
+    },
+    {
+      "name": "PLAYER",
+      "writers": [
+        {
+          "index": 8,
+          "routine": "GO"
+        }
+      ]
+    },
+    {
+      "name": "PRSA",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 4,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "PRSI",
+      "writers": [
+        {
+          "index": 7,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 3,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 6,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 1,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 2,
+          "routine": "PRE-TAKE"
+        },
+        {
+          "index": 0,
+          "routine": "V-DIG"
+        },
+        {
+          "index": 1,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 4,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "PRSO",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "CAROUSEL-ROOM-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "CAROUSEL-ROOM-FCN"
+        },
+        {
+          "index": 17,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "ITAKE-CHECK"
+        },
+        {
+          "index": 1,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 6,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 1,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 5,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 1,
+          "routine": "V-THROUGH"
+        },
+        {
+          "index": 2,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 5,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 9,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 10,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "QUOTE-FLAG",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "CANT-USE"
+        },
+        {
+          "index": 1,
+          "routine": "CRETIN-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "GNOME-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "HELLO?"
+        },
+        {
+          "index": 1,
+          "routine": "NOT-HERE-OBJECT-F"
+        },
+        {
+          "index": 2,
+          "routine": "RIDDLE-ROOM-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "SAILOR-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "UNKNOWN-WORD"
+        },
+        {
+          "index": 1,
+          "routine": "V-ANSWER"
+        },
+        {
+          "index": 3,
+          "routine": "V-INCANT"
+        },
+        {
+          "index": 1,
+          "routine": "V-REPLY"
+        },
+        {
+          "index": 0,
+          "routine": "V-SAY"
+        },
+        {
+          "index": 2,
+          "routine": "V-TELL"
+        },
+        {
+          "index": 1,
+          "routine": "ZGNOME-FCN"
+        }
+      ]
+    },
+    {
+      "name": "SCORE",
+      "writers": [
+        {
+          "index": 1,
+          "routine": "SCORE-UPD"
+        }
+      ]
+    },
+    {
+      "name": "SPELL-HANDLED?",
+      "writers": [
+        {
+          "index": 6,
+          "routine": "CERBERUS-FCN"
+        },
+        {
+          "index": 7,
+          "routine": "CERBERUS-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "I-SPELL"
+        },
+        {
+          "index": 4,
+          "routine": "V-ENCHANT"
+        },
+        {
+          "index": 7,
+          "routine": "V-ENCHANT"
+        },
+        {
+          "index": 2,
+          "routine": "WIZARD-CASE-FCN"
+        }
+      ]
+    },
+    {
+      "name": "SPELL-USED",
+      "writers": [
+        {
+          "index": 2,
+          "routine": "I-SPELL"
+        },
+        {
+          "index": 1,
+          "routine": "V-INCANT"
+        },
+        {
+          "index": 3,
+          "routine": "WAND-FCN"
+        }
+      ]
+    },
+    {
+      "name": "SPELL?",
+      "writers": [
+        {
+          "index": 5,
+          "routine": "I-WIZARD"
+        },
+        {
+          "index": 13,
+          "routine": "I-WIZARD"
+        },
+        {
+          "index": 4,
+          "routine": "JIGS-UP"
+        },
+        {
+          "index": 0,
+          "routine": "RANDOM-WALK"
+        },
+        {
+          "index": 3,
+          "routine": "RANDOM-WALK"
+        },
+        {
+          "index": 3,
+          "routine": "WIZARD-FCN"
+        }
+      ]
+    },
+    {
+      "name": "WINNER",
+      "writers": [
+        {
+          "index": 16,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 7,
+          "routine": "GO"
+        },
+        {
+          "index": 1,
+          "routine": "JIGS-UP"
+        },
+        {
+          "index": 1,
+          "routine": "RANDOM-WALK"
+        },
+        {
+          "index": 0,
+          "routine": "ROBOT-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "V-TELL"
+        },
+        {
+          "index": 0,
+          "routine": "V-THROW"
+        }
+      ]
+    }
+  ],
+  "universalGlobalObjects": [
+    "BLESSINGS",
+    "COMPASS",
+    "EAST-WALL",
+    "FOOTPAD",
+    "GLOBAL-PRINCESS",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "INTNUM",
+    "IT",
+    "LUNGS",
+    "ME",
+    "NORTH-WALL",
+    "PATHOBJ",
+    "SAILOR",
+    "SOUTH-WALL",
+    "TUNNEL",
+    "WEST-WALL",
+    "WISH",
+    "ZORKMID"
+  ]
+}

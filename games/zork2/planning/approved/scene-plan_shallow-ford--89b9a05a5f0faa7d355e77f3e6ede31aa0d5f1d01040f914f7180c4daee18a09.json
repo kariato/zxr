@@ -1,0 +1,300 @@
+{
+  "attempts": 0,
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_north_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -4.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_south_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            4.5
+          ],
+          "yawDegrees": 180
+        }
+      },
+      {
+        "node": "exit_cross_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            4.5
+          ],
+          "yawDegrees": 180
+        }
+      },
+      {
+        "node": "ford_surface",
+        "pose": {
+          "position": [
+            0,
+            0.03,
+            1.8
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Southern edge of the great cavern, still dimly illuminated. A shallow ford crosses the route south into a dark tunnel whose entrance looks enlarged and smoothed. North, a narrow path winds among stalagmites. SOUTH and CROSS name the same ford crossing, not two bridges or tunnels. The source GLOBAL-WATER alias supplies the water interaction; do not instantiate STREAM as a second object here. The dark tunnel beyond must not expose its unobserved contents. No stepping-stone puzzle, deep chasm or invented fatal current.",
+    "exits": [
+      {
+        "anchor": "exit_north_anchor",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          1.5,
+          2.4,
+          0.35
+        ],
+        "to": "GREAT-CAVERN"
+      },
+      {
+        "anchor": "exit_south_anchor",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          1.5,
+          2.4,
+          0.35
+        ],
+        "to": "DARK-TUNNEL"
+      },
+      {
+        "anchor": "exit_cross_anchor",
+        "availability": "engine-option",
+        "direction": "CROSS",
+        "node": "exit_cross",
+        "sizeMetres": [
+          1.5,
+          2.4,
+          0.35
+        ],
+        "to": "DARK-TUNNEL"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "limestone",
+        "node": "north_bank",
+        "part": "limestone_bank",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            -1.6
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          7,
+          0.2,
+          5.2
+        ]
+      },
+      {
+        "material": "limestone",
+        "node": "ford_bed",
+        "part": "shallow_stone_bed",
+        "pose": {
+          "position": [
+            0,
+            -0.12,
+            1.8
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          4,
+          0.16,
+          2
+        ]
+      },
+      {
+        "material": "limestone",
+        "node": "south_bank",
+        "part": "limestone_bank",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            3.8
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          5,
+          0.2,
+          2
+        ]
+      },
+      {
+        "material": "limestone",
+        "node": "entrance_left",
+        "part": "smoothed_stone_wall",
+        "pose": {
+          "position": [
+            -1.1,
+            1.3,
+            4.3
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          0.4,
+          2.6,
+          1
+        ]
+      },
+      {
+        "material": "limestone",
+        "node": "entrance_right",
+        "part": "smoothed_stone_wall",
+        "pose": {
+          "position": [
+            1.1,
+            1.3,
+            4.3
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          0.4,
+          2.6,
+          1
+        ]
+      },
+      {
+        "material": "limestone",
+        "node": "entrance_lintel",
+        "part": "smoothed_stone_roof",
+        "pose": {
+          "position": [
+            0,
+            2.7,
+            4.3
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          2.6,
+          0.3,
+          1
+        ]
+      },
+      {
+        "material": "limestone",
+        "node": "north_formation",
+        "part": "stalagmite",
+        "pose": {
+          "position": [
+            -3,
+            1,
+            -3.3
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          1,
+          2,
+          1
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            4,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#90A790",
+          "intensity": 0.18,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            4,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "ford_surface",
+        "asset": "asset_global-water",
+        "object": "GLOBAL-WATER",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "agent": "Codex",
+      "inputHash": "4acaf5201a22389e26b5dfcd5a441d2197bd4d66546b47435caac1aa2b70c11e",
+      "method": "assistant",
+      "model": null,
+      "promptVersion": "zxr-planner-v1"
+    },
+    "review": {
+      "reviewedOn": "2026-10-23",
+      "reviewer": "Mark",
+      "status": "approved"
+    },
+    "room": "SHALLOW-FORD",
+    "shell": "cave",
+    "sizeMetres": [
+      10,
+      6,
+      10
+    ],
+    "spawn": "player_start"
+  },
+  "format": "zxr-plan-record-v1",
+  "inputHash": "4acaf5201a22389e26b5dfcd5a441d2197bd4d66546b47435caac1aa2b70c11e",
+  "model": null,
+  "outputHash": "89b9a05a5f0faa7d355e77f3e6ede31aa0d5f1d01040f914f7180c4daee18a09",
+  "promptVersion": "zxr-planner-v1",
+  "provider": "assistant",
+  "requestHash": null,
+  "requestedModel": null,
+  "task": {
+    "kind": "scene-plan",
+    "subject": "SHALLOW-FORD"
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "TEA-ROOM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "3bf306ada9fb1067a62470f228e30a79b68d0e21302e08b64bb508ea1b6bb7b9",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "5008c177940e6f7d373b37fcc8f8d40bb65ba584218e4781e2c2285832ec7c76",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_alice-table",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_blue-icing",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_eat-me-cake",
+        "pose": {
+          "position": [
+            0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_orange-icing",
+        "pose": {
+          "position": [
+            1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_red-icing",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            1.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_east_anchor",
+        "pose": {
+          "position": [
+            4.5,
+            0,
+            0
+          ],
+          "yawDegrees": -90
+        }
+      },
+      {
+        "node": "exit_west_anchor",
+        "pose": {
+          "position": [
+            -4.5,
+            0,
+            0
+          ],
+          "yawDegrees": 90
+        }
+      },
+      {
+        "node": "exit_nw_anchor",
+        "pose": {
+          "position": [
+            -3.182,
+            0,
+            -3.889
+          ],
+          "yawDegrees": 45
+        }
+      }
+    ],
+    "description": "Large oblong tea table and absurd tea setting; eastern hole no more than four inches high, west/northwest passages. Scale-dependent traversal is a menu action, not a normal doorway.\nStatic source description:\nThis is a small room containing a large oblong table, no doubt set for afternoon tea. It is clear from the objects on the table that the users were indeed mad. In the eastern corner of the room is a small hole (no more than four inches high). There are passageways leading away to the west and the northwest.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_east_anchor",
+        "availability": "engine-option",
+        "direction": "EAST",
+        "node": "exit_east",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": null
+      },
+      {
+        "anchor": "exit_west_anchor",
+        "availability": "engine-option",
+        "direction": "WEST",
+        "node": "exit_west",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "WELL-TOP"
+      },
+      {
+        "anchor": "exit_nw_anchor",
+        "availability": "engine-option",
+        "direction": "NW",
+        "node": "exit_nw",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "MAGNET-ROOM"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          10,
+          0.2,
+          12
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            3.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_alice-table",
+        "asset": "asset_alice-table",
+        "object": "ALICE-TABLE",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_blue-icing",
+        "asset": "asset_blue-icing",
+        "object": "BLUE-ICING",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_eat-me-cake",
+        "asset": "asset_eat-me-cake",
+        "object": "EAT-ME-CAKE",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_orange-icing",
+        "asset": "asset_orange-icing",
+        "object": "ORANGE-ICING",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_red-icing",
+        "asset": "asset_red-icing",
+        "object": "RED-ICING",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "3bf306ada9fb1067a62470f228e30a79b68d0e21302e08b64bb508ea1b6bb7b9"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "TEA-ROOM",
+    "shell": "indoor",
+    "sizeMetres": [
+      10,
+      4,
+      12
+    ],
+    "spawn": "player_start"
+  }
+}

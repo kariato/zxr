@@ -1,0 +1,56 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "PULL"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "19cf21021887aa68dcdccb9b6968af3eea504b88a3a2ef077bc3b6eaa23565be",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "ee2efa7a193b68c3614eb1800b7b7d3b63453f4fdd90aecee506d0952fc195b9",
+  "document": {
+    "entries": [
+      {
+        "family": "PULL:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Pull up {direct}"
+      },
+      {
+        "family": "PULL:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Pull on {direct}"
+      },
+      {
+        "family": "PULL:3",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Pull {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_pull",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "19cf21021887aa68dcdccb9b6968af3eea504b88a3a2ef077bc3b6eaa23565be"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

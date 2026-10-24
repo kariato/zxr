@@ -1,0 +1,188 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "VAULT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "69da4e5954e4218d64fb4be2585fffbc478235086e8a63af27a1635deec10215",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "3513c80f3acaeec741c1ae46ee665c6e875dcf6bd84eac2719af1d3da18eb073",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_bills",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_sewl",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_snwl",
+        "pose": {
+          "position": [
+            0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_sswl",
+        "pose": {
+          "position": [
+            1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_swwl",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            1.5
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Bank vault with no doors. Do not invent a visible exit for magical travel.\nStatic source description:\nThis is the Vault of the Bank of Zork, in which there are no doors.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          9,
+          0.2,
+          9
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            3.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_bills",
+        "asset": "asset_bills",
+        "object": "BILLS",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_sewl",
+        "asset": "asset_sewl",
+        "object": "SEWL",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_snwl",
+        "asset": "asset_snwl",
+        "object": "SNWL",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_sswl",
+        "asset": "asset_sswl",
+        "object": "SSWL",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_swwl",
+        "asset": "asset_swwl",
+        "object": "SWWL",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "69da4e5954e4218d64fb4be2585fffbc478235086e8a63af27a1635deec10215"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "VAULT",
+    "shell": "indoor",
+    "sizeMetres": [
+      9,
+      4,
+      9
+    ],
+    "spawn": "player_start"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "SQUEEZE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "45438cff3549792ea34528aad629e02db748bf5f9afd8a102e69976b28c88e97",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "c045875a9a675372c315197ebc34886c2b4825234805f553cb3c87c7f7292cb4",
+  "document": {
+    "entries": [
+      {
+        "family": "SQUEEZE:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Squeeze {direct} on {indirect}"
+      },
+      {
+        "family": "SQUEEZE:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Squeeze {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_squeeze",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "45438cff3549792ea34528aad629e02db748bf5f9afd8a102e69976b28c88e97"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

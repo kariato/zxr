@@ -1,0 +1,320 @@
+{
+  "attempts": 0,
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -1
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_north_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_south_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            5
+          ],
+          "yawDegrees": 180
+        }
+      },
+      {
+        "node": "exit_down_anchor",
+        "pose": {
+          "position": [
+            2,
+            0,
+            3
+          ],
+          "yawDegrees": 90
+        }
+      },
+      {
+        "node": "exit_cross_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            5
+          ],
+          "yawDegrees": 180
+        }
+      },
+      {
+        "node": "ceiling_moss",
+        "pose": {
+          "position": [
+            0,
+            8,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "bridge_ahead",
+        "pose": {
+          "position": [
+            0,
+            0,
+            8
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "ravine_edge",
+        "pose": {
+          "position": [
+            0,
+            0,
+            5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "stream_below",
+        "pose": {
+          "position": [
+            0,
+            -8,
+            8
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Southern end of a narrow tunnel opening into a wide dim cavern. High phosphorescent mosses, steep crumbly ravine walls, a small stream below and a crude wooden foot bridge to the south follow the source. The northern passage leads back to the barrow; SOUTH and CROSS are the same bridge approach. DOWN remains a refused attempt, with no ladder or navigable path into the ravine. The view ahead shows only locally observed environmental objects, never the contents or actors of the next room. Art dimensions and bank/deck positions await mesh review.",
+    "exits": [
+      {
+        "anchor": "exit_north_anchor",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          1.3,
+          2.2,
+          0.3
+        ],
+        "to": "INSIDE-BARROW"
+      },
+      {
+        "anchor": "exit_south_anchor",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          2.2,
+          2.2,
+          0.3
+        ],
+        "to": "FOOT-BRIDGE"
+      },
+      {
+        "anchor": "exit_down_anchor",
+        "availability": "engine-option",
+        "direction": "DOWN",
+        "node": "exit_down",
+        "sizeMetres": [
+          1.3,
+          2.2,
+          0.3
+        ],
+        "to": null
+      },
+      {
+        "anchor": "exit_cross_anchor",
+        "availability": "engine-option",
+        "direction": "CROSS",
+        "node": "exit_cross",
+        "sizeMetres": [
+          2.2,
+          2.2,
+          0.3
+        ],
+        "to": "FOOT-BRIDGE"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "limestone",
+        "node": "tunnel_shelf",
+        "part": "stone_shelf",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            -2.5
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          4,
+          0.2,
+          5
+        ]
+      },
+      {
+        "material": "limestone",
+        "node": "tunnel_west",
+        "part": "stone_wall",
+        "pose": {
+          "position": [
+            -1.8,
+            1.3,
+            -4.4
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          0.3,
+          2.6,
+          1.8
+        ]
+      },
+      {
+        "material": "limestone",
+        "node": "tunnel_east",
+        "part": "stone_wall",
+        "pose": {
+          "position": [
+            1.8,
+            1.3,
+            -4.4
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          0.3,
+          2.6,
+          1.8
+        ]
+      },
+      {
+        "material": "limestone",
+        "node": "tunnel_roof",
+        "part": "stone_roof",
+        "pose": {
+          "position": [
+            0,
+            2.5,
+            -4.4
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          3.8,
+          0.3,
+          1.8
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            8,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#90A790",
+          "intensity": 0.18,
+          "kind": "ambient",
+          "node": "moss_rig",
+          "position": [
+            0,
+            8,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "ceiling_moss",
+        "asset": "asset_moss",
+        "object": "MOSS",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "bridge_ahead",
+        "asset": "asset_bridge",
+        "object": "BRIDGE",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "ravine_edge",
+        "asset": "asset_chasm",
+        "object": "CHASM",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "stream_below",
+        "asset": "asset_stream",
+        "object": "STREAM",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "agent": "Codex",
+      "inputHash": "f753aad7a024a0be548a5f482820c8af31723529e4d01cd826c2998c9305f5b5",
+      "method": "assistant",
+      "model": null,
+      "promptVersion": "zxr-planner-v1"
+    },
+    "review": {
+      "reviewedOn": "2026-10-23",
+      "reviewer": "Mark",
+      "status": "approved"
+    },
+    "room": "NARROW-TUNNEL",
+    "shell": "cave",
+    "sizeMetres": [
+      14,
+      10,
+      16
+    ],
+    "spawn": "player_start"
+  },
+  "format": "zxr-plan-record-v1",
+  "inputHash": "f753aad7a024a0be548a5f482820c8af31723529e4d01cd826c2998c9305f5b5",
+  "model": null,
+  "outputHash": "f327be8606b36e01eddee9a2b149c47994c34a11175555d8336d70ac69c976c0",
+  "promptVersion": "zxr-planner-v1",
+  "provider": "assistant",
+  "requestHash": null,
+  "requestedModel": null,
+  "task": {
+    "kind": "scene-plan",
+    "subject": "NARROW-TUNNEL"
+  }
+}

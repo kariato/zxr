@@ -1,0 +1,92 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "PUT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "3297d531a520d13ab644808a0e5a79fa4d688307b5a6e10fab78a6a72aeb5462",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "5fc20fa67edca3fef4633f2513867c301dcf99052389bab8a9260aae83047098",
+  "document": {
+    "entries": [
+      {
+        "family": "PUT:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Put {direct} behind {indirect}"
+      },
+      {
+        "family": "PUT:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Put on {direct}"
+      },
+      {
+        "family": "PUT:3",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Put out {direct}"
+      },
+      {
+        "family": "PUT:4",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Put {direct} under {indirect}"
+      },
+      {
+        "family": "PUT:5",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Put down {direct}"
+      },
+      {
+        "family": "PUT:6",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Put {direct} on {indirect}"
+      },
+      {
+        "family": "PUT:7",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Put {direct} in {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_put",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "3297d531a520d13ab644808a0e5a79fa4d688307b5a6e10fab78a6a72aeb5462"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

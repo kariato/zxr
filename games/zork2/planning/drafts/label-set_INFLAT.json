@@ -1,0 +1,41 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "INFLAT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "6b729f7d78f1412def755aa9c54d530cb5dbca752748709fa360efeee33158ba",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "5d281cb5f7bfc5439893771a3e09d135d028a931e1c3110bc174688ec45314ec",
+  "document": {
+    "entries": [
+      {
+        "family": "INFLAT:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Inflate {direct} with {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_inflat",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "6b729f7d78f1412def755aa9c54d530cb5dbca752748709fa360efeee33158ba"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "CUBE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "5fdf3ef2dcbecb0b7ae8c3332a8b58d2e546bf117ccc9cb1d315a5cecd0e610d",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "2e4e648ad403bf9ebbc1965e21b14ede64647d276a7822717ed763626176cb5b",
+  "document": {
+    "description": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed large stone cube. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every large stone cube into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "select_body",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          3.048,
+          3.048,
+          3.048
+        ]
+      }
+    ],
+    "id": "asset_cube",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#82786B",
+        "description": "large stone cube; exact source material and colour override this placeholder swatch.",
+        "metalness": 0,
+        "name": "source_material",
+        "roughness": 0.85
+      }
+    ],
+    "objects": [
+      "CUBE"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "5fdf3ef2dcbecb0b7ae8c3332a8b58d2e546bf117ccc9cb1d315a5cecd0e610d"
+    },
+    "requiredClips": [
+      "idle"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      3.048,
+      3.048,
+      3.048
+    ]
+  }
+}

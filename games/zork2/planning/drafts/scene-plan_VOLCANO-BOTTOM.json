@@ -1,0 +1,212 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "VOLCANO-BOTTOM"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "7f7b630364a617867978bdad3be473ac343733f483a27060c10015f50facb1d5",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "9ccbff599e50b1473a3c592e1d4ec47cef6672cbc8c5df40de6ab24bcdd10213",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_balloon",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_braided-wire",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_cloth-bag",
+        "pose": {
+          "position": [
+            0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_receptacle",
+        "pose": {
+          "position": [
+            1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_dead-balloon",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            1.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_north_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -14.5
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Bottom of dormant volcano, cone light high above and north exit. Balloon is separate; no permanent basket, floating platform or open lava pool.\nStatic source description:\nYou are at the bottom of a large dormant volcano. High above you light enters from the cone of the volcano. The only exit is to the north.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_north_anchor",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "LAVA-ROOM"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "rock",
+        "node": "base_floor",
+        "part": "rock_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          30,
+          0.2,
+          30
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            39.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_balloon",
+        "asset": "asset_balloon",
+        "object": "BALLOON",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_braided-wire",
+        "asset": "asset_braided-wire",
+        "object": "BRAIDED-WIRE",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_cloth-bag",
+        "asset": "asset_cloth-bag",
+        "object": "CLOTH-BAG",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_receptacle",
+        "asset": "asset_receptacle",
+        "object": "RECEPTACLE",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_dead-balloon",
+        "asset": "asset_dead-balloon",
+        "object": "DEAD-BALLOON",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "7f7b630364a617867978bdad3be473ac343733f483a27060c10015f50facb1d5"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "VOLCANO-BOTTOM",
+    "shell": "cave",
+    "sizeMetres": [
+      30,
+      40,
+      30
+    ],
+    "spawn": "player_start"
+  }
+}

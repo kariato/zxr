@@ -1,0 +1,80 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "CLIMB"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "787c5abe950759513f8dd42ce58cc49d04a81af5881bb8b880698340ce9ac412",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "2db60e141f1df7f9009ef1faf96bd961b9caaae44a897cd5f3a6ef570ed7df2d",
+  "document": {
+    "entries": [
+      {
+        "family": "CLIMB:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Climb with {direct}"
+      },
+      {
+        "family": "CLIMB:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Climb on {direct}"
+      },
+      {
+        "family": "CLIMB:3",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Climb in {direct}"
+      },
+      {
+        "family": "CLIMB:4",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Climb {direct}"
+      },
+      {
+        "family": "CLIMB:5",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Climb down {direct}"
+      },
+      {
+        "family": "CLIMB:7",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Climb up {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_climb",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "787c5abe950759513f8dd42ce58cc49d04a81af5881bb8b880698340ce9ac412"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

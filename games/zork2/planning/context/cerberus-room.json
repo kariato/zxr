@@ -1,0 +1,739 @@
+{
+  "cautions": [
+    "Offline source context; never current player-visible state.",
+    "All routine text/effects are conditional possibilities, not an executed description or a reveal rule.",
+    "Potential arrivals are a conservative shared catalogue, not proven room reachability or initial scenery.",
+    "Consult routines.json for text fragments, source guards, script changes and unresolved targets/calls.",
+    "Every feature requires state review; absent literal mutation evidence does not prove a static feature. Generic handlers and raw memory writes may change computed targets.",
+    "Computed exits are not guessed; RLANDBIT means land, not outdoors."
+  ],
+  "exits": [
+    {
+      "declaration": "(EAST TO CRYPT-ANTEROOM IF CERBERUS-LEASHED ELSE \"The huge dog snaps nastily at you.\")",
+      "direction": "EAST",
+      "geometryStatus": "conditional-blocked-or-computed",
+      "neighbour": {
+        "desc": "Crypt Anteroom",
+        "name": "CRYPT-ANTEROOM"
+      },
+      "source": {
+        "end": {
+          "column": 70,
+          "line": 859,
+          "offset": 23399
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 858,
+          "offset": 23306
+        }
+      },
+      "view": {
+        "global": "CERBERUS-LEASHED",
+        "kind": "CEXIT",
+        "message": "The huge dog snaps nastily at you.",
+        "to": "CRYPT-ANTEROOM"
+      }
+    },
+    {
+      "declaration": "(UP TO DIAMOND-5)",
+      "direction": "UP",
+      "geometryStatus": "requires-review",
+      "neighbour": {
+        "desc": "Oddly-angled Room",
+        "name": "DIAMOND-5"
+      },
+      "source": {
+        "end": {
+          "column": 24,
+          "line": 862,
+          "offset": 23521
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 862,
+          "offset": 23504
+        }
+      },
+      "view": {
+        "kind": "UEXIT",
+        "to": "DIAMOND-5"
+      }
+    },
+    {
+      "declaration": "(IN TO CRYPT-ANTEROOM IF CERBERUS-LEASHED ELSE \"The huge dog snaps nastily at you.\")",
+      "direction": "IN",
+      "geometryStatus": "conditional-blocked-or-computed",
+      "neighbour": {
+        "desc": "Crypt Anteroom",
+        "name": "CRYPT-ANTEROOM"
+      },
+      "source": {
+        "end": {
+          "column": 70,
+          "line": 861,
+          "offset": 23497
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 860,
+          "offset": 23406
+        }
+      },
+      "view": {
+        "global": "CERBERUS-LEASHED",
+        "kind": "CEXIT",
+        "message": "The huge dog snaps nastily at you.",
+        "to": "CRYPT-ANTEROOM"
+      }
+    }
+  ],
+  "features": [
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [
+        {
+          "flags": [],
+          "index": 0,
+          "operation": "REMOVE",
+          "routine": "CERBERUS-FCN"
+        },
+        {
+          "flags": [],
+          "index": 4,
+          "operation": "PUTP",
+          "routine": "CERBERUS-FCN"
+        }
+      ],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "ACTORBIT",
+        "CONTBIT",
+        "OPENBIT"
+      ],
+      "name": "CERBERUS",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "RLANDBIT"
+      ],
+      "name": "CERBERUS-ROOM",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": false
+    },
+    {
+      "changeable": true,
+      "concealedByDeclaration": false,
+      "evidence": [],
+      "handling": "engine-controlled-separate-node",
+      "initialFlags": [
+        "CLIMBBIT",
+        "NDESCBIT"
+      ],
+      "name": "STAIRS",
+      "stateReviewRequired": true,
+      "unlistedByDeclaration": true
+    }
+  ],
+  "format": "zxr-room-context-v1",
+  "globalObjects": [
+    "STAIRS"
+  ],
+  "initialObjects": [
+    "CERBERUS"
+  ],
+  "inputHash": "d73ff5795ef737332f17776c348a20cf1681a68e47a11799555cb29d68e83f5b",
+  "potentialArrivals": [
+    "ADVENTURER",
+    "ARCANA",
+    "BALLOON",
+    "BALLOON-LABEL",
+    "BANK-BROCHURE",
+    "BAT",
+    "BILLS",
+    "BLESSINGS",
+    "BLUE-BOOK",
+    "BLUE-ICING",
+    "BRAIDED-WIRE",
+    "BRICK",
+    "BRIDGE",
+    "BROKEN-CASE",
+    "BROKEN-LAMP",
+    "BUCKET",
+    "CAGE",
+    "CANDY",
+    "CARD",
+    "CERBERUS",
+    "CHASM",
+    "CHEST",
+    "CLOTH-BAG",
+    "COIN",
+    "COLLAR",
+    "COMPASS",
+    "CROWN",
+    "CRYPT-DOOR",
+    "DEAD-BALLOON",
+    "DEAD-DRAGON",
+    "DEAD-SERPENT",
+    "DEGREE",
+    "DEPOSIT-BOX",
+    "DIM-DOOR",
+    "DRAGON",
+    "DWINDOW",
+    "EAST-WALL",
+    "EAT-ME-CAKE",
+    "EXPLOSION",
+    "FLASK",
+    "FOOTPAD",
+    "FUSE",
+    "GAZEBO",
+    "GENIE",
+    "GLOBAL-CERBERUS",
+    "GLOBAL-MENHIR",
+    "GLOBAL-OBJECTS",
+    "GLOBAL-PALANTIR",
+    "GLOBAL-PRINCESS",
+    "GLOBAL-UNICORN",
+    "GLOBAL-WATER",
+    "GLOBAL-WIZARD-CASE",
+    "GNOME",
+    "GNOME-OF-ZURICH",
+    "GOLD-KEY",
+    "GREEN-BOOK",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "HEADS",
+    "INTNUM",
+    "IRON-BOX",
+    "IT",
+    "KEY",
+    "LAMP",
+    "LETTER-OPENER",
+    "LOCAL-GLOBALS",
+    "LUNGS",
+    "MANGLED-CAGE",
+    "MATCH",
+    "ME",
+    "MENHIR",
+    "MOSS",
+    "NEWSPAPER",
+    "NORTH-WALL",
+    "ORANGE-ICING",
+    "PALANTIR-1",
+    "PALANTIR-2",
+    "PALANTIR-3",
+    "PALANTIR-4",
+    "PATHOBJ",
+    "PDOOR",
+    "PEARL",
+    "PLACE-MAT",
+    "PORTRAIT",
+    "PRINCESS",
+    "PSEUDO-OBJECT",
+    "PURPLE-BOOK",
+    "PWINDOW",
+    "RECEPTACLE",
+    "RED-ICING",
+    "REPELLENT",
+    "RIBBON",
+    "ROBOT",
+    "ROBOT-LABEL",
+    "ROSE",
+    "ROSE-BUSH",
+    "RUBY",
+    "SAILOR",
+    "SALTY-WATER",
+    "SERPENT",
+    "SEWL",
+    "SNWL",
+    "SOUTH-WALL",
+    "SSWL",
+    "STAIRS",
+    "STAMP",
+    "STAND-4",
+    "STATUETTE",
+    "STREAM",
+    "SWORD",
+    "SWWL",
+    "TEAPOT",
+    "TROPHY-BOTTLES",
+    "TROPHY-SWORD",
+    "TUNNEL",
+    "UNICORN",
+    "VIOLIN",
+    "WAND",
+    "WANDS",
+    "WATER",
+    "WELL",
+    "WEST-WALL",
+    "WHITE-BOOK",
+    "WISH",
+    "WIZ-DOOR",
+    "WIZARD",
+    "ZORKMID"
+  ],
+  "room": {
+    "desc": {
+      "source": {
+        "end": {
+          "column": 29,
+          "line": 856,
+          "offset": 23276
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 7,
+          "line": 856,
+          "offset": 23254
+        }
+      },
+      "text": "Cerberus Room"
+    },
+    "flags": [
+      "RLANDBIT"
+    ],
+    "id": 162,
+    "initialRoomLightFlag": false,
+    "ldesc": [
+      {
+        "byteLength": 2,
+        "kind": "text",
+        "property": {
+          "name": "LDESC",
+          "number": 13
+        },
+        "source": {
+          "end": {
+            "column": 26,
+            "line": 855,
+            "offset": 23247
+          },
+          "file": "2dungeon.zil",
+          "start": {
+            "column": 7,
+            "line": 853,
+            "offset": 23144
+          }
+        },
+        "text": "This is the entrance to a huge crypt or tomb. A marble stairway leads up from a gateway arch."
+      }
+    ],
+    "name": "CERBERUS-ROOM",
+    "outdoors": "not-encoded-do-not-infer-from-RLANDBIT",
+    "source": {
+      "end": {
+        "column": 55,
+        "line": 865,
+        "offset": 23615
+      },
+      "file": "2dungeon.zil",
+      "start": {
+        "column": 1,
+        "line": 851,
+        "offset": 23101
+      }
+    }
+  },
+  "routineReferencedObjects": [
+    "CERBERUS",
+    "COLLAR",
+    "WAND"
+  ],
+  "routines": {
+    "dispatchBoundaries": [
+      "JIGS-UP",
+      "PERFORM"
+    ],
+    "missing": [],
+    "reachableHelpers": [
+      "CERBERUS-FCN",
+      "DO-WALK",
+      "HELLO?",
+      "STAIRS-F",
+      "TOMB-PSEUDO"
+    ],
+    "roots": [
+      "CERBERUS-FCN",
+      "STAIRS-F",
+      "TOMB-PSEUDO"
+    ]
+  },
+  "scriptedArrivals": [],
+  "stateDependencies": [
+    {
+      "name": "CERBERUS-LEASHED",
+      "writers": [
+        {
+          "index": 5,
+          "routine": "CERBERUS-FCN"
+        }
+      ]
+    },
+    {
+      "name": "P-CONT",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "CRETIN-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "GENIE-LEAVES"
+        },
+        {
+          "index": 0,
+          "routine": "GNOME-FCN"
+        },
+        {
+          "index": 4,
+          "routine": "GOTO"
+        },
+        {
+          "index": 0,
+          "routine": "HELLO?"
+        },
+        {
+          "index": 11,
+          "routine": "JIGS-UP"
+        },
+        {
+          "index": 8,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 9,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 0,
+          "routine": "NOT-HERE-OBJECT-F"
+        },
+        {
+          "index": 1,
+          "routine": "RIDDLE-ROOM-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "SAILOR-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "V-ANSWER"
+        },
+        {
+          "index": 4,
+          "routine": "V-INCANT"
+        },
+        {
+          "index": 0,
+          "routine": "V-REPLY"
+        },
+        {
+          "index": 1,
+          "routine": "V-SAY"
+        },
+        {
+          "index": 2,
+          "routine": "V-SAY"
+        },
+        {
+          "index": 3,
+          "routine": "V-TELL"
+        },
+        {
+          "index": 0,
+          "routine": "ZGNOME-FCN"
+        }
+      ]
+    },
+    {
+      "name": "P-WALK-DIR",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "DO-WALK"
+        }
+      ]
+    },
+    {
+      "name": "PRSA",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 4,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 0,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "PRSO",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "CAROUSEL-ROOM-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "CAROUSEL-ROOM-FCN"
+        },
+        {
+          "index": 17,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "ITAKE-CHECK"
+        },
+        {
+          "index": 1,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 6,
+          "routine": "MAIN-LOOP-1"
+        },
+        {
+          "index": 1,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 5,
+          "routine": "PERFORM"
+        },
+        {
+          "index": 1,
+          "routine": "V-THROUGH"
+        },
+        {
+          "index": 2,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 5,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 9,
+          "routine": "WATER-FCN"
+        },
+        {
+          "index": 10,
+          "routine": "WATER-FCN"
+        }
+      ]
+    },
+    {
+      "name": "QUOTE-FLAG",
+      "writers": [
+        {
+          "index": 0,
+          "routine": "CANT-USE"
+        },
+        {
+          "index": 1,
+          "routine": "CRETIN-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "GNOME-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "HELLO?"
+        },
+        {
+          "index": 1,
+          "routine": "NOT-HERE-OBJECT-F"
+        },
+        {
+          "index": 2,
+          "routine": "RIDDLE-ROOM-FCN"
+        },
+        {
+          "index": 1,
+          "routine": "SAILOR-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "UNKNOWN-WORD"
+        },
+        {
+          "index": 1,
+          "routine": "V-ANSWER"
+        },
+        {
+          "index": 3,
+          "routine": "V-INCANT"
+        },
+        {
+          "index": 1,
+          "routine": "V-REPLY"
+        },
+        {
+          "index": 0,
+          "routine": "V-SAY"
+        },
+        {
+          "index": 2,
+          "routine": "V-TELL"
+        },
+        {
+          "index": 1,
+          "routine": "ZGNOME-FCN"
+        }
+      ]
+    },
+    {
+      "name": "SPELL-HANDLED?",
+      "writers": [
+        {
+          "index": 6,
+          "routine": "CERBERUS-FCN"
+        },
+        {
+          "index": 7,
+          "routine": "CERBERUS-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "I-SPELL"
+        },
+        {
+          "index": 4,
+          "routine": "V-ENCHANT"
+        },
+        {
+          "index": 7,
+          "routine": "V-ENCHANT"
+        },
+        {
+          "index": 2,
+          "routine": "WIZARD-CASE-FCN"
+        }
+      ]
+    },
+    {
+      "name": "SPELL-USED",
+      "writers": [
+        {
+          "index": 2,
+          "routine": "I-SPELL"
+        },
+        {
+          "index": 1,
+          "routine": "V-INCANT"
+        },
+        {
+          "index": 3,
+          "routine": "WAND-FCN"
+        }
+      ]
+    },
+    {
+      "name": "WAND-ON",
+      "writers": [
+        {
+          "index": 1,
+          "routine": "I-SPELL"
+        },
+        {
+          "index": 0,
+          "routine": "I-WAND"
+        },
+        {
+          "index": 1,
+          "routine": "I-WAND"
+        },
+        {
+          "index": 2,
+          "routine": "V-INCANT"
+        },
+        {
+          "index": 0,
+          "routine": "WAND-FCN"
+        },
+        {
+          "index": 2,
+          "routine": "WAND-FCN"
+        },
+        {
+          "index": 5,
+          "routine": "WAND-FCN"
+        }
+      ]
+    },
+    {
+      "name": "WINNER",
+      "writers": [
+        {
+          "index": 16,
+          "routine": "GENIE-FCN"
+        },
+        {
+          "index": 7,
+          "routine": "GO"
+        },
+        {
+          "index": 1,
+          "routine": "JIGS-UP"
+        },
+        {
+          "index": 1,
+          "routine": "RANDOM-WALK"
+        },
+        {
+          "index": 0,
+          "routine": "ROBOT-FCN"
+        },
+        {
+          "index": 0,
+          "routine": "V-TELL"
+        },
+        {
+          "index": 0,
+          "routine": "V-THROW"
+        }
+      ]
+    }
+  ],
+  "universalGlobalObjects": [
+    "BLESSINGS",
+    "COMPASS",
+    "EAST-WALL",
+    "FOOTPAD",
+    "GLOBAL-PRINCESS",
+    "GROUND",
+    "GRUE",
+    "HANDS",
+    "INTNUM",
+    "IT",
+    "LUNGS",
+    "ME",
+    "NORTH-WALL",
+    "PATHOBJ",
+    "SAILOR",
+    "SOUTH-WALL",
+    "TUNNEL",
+    "WEST-WALL",
+    "WISH",
+    "ZORKMID"
+  ]
+}

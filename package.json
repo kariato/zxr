@@ -58,7 +58,14 @@
     "fuzz": "node tools/engine/fuzz-cli.ts",
     "fuzz:keys": "node tools/engine/key-order-cli.ts",
     "capabilities:check": "node tools/capabilities.ts check",
-    "capabilities:record": "node tools/capabilities.ts record"
+    "capabilities:record": "node tools/capabilities.ts record",
+    "planning:check": "node tools/planning/check.ts",
+    "contexts:check": "node tools/planning/context-cli.ts check",
+    "contexts:record": "node tools/planning/context-cli.ts record",
+    "planner": "node tools/planning/planner-cli.ts",
+    "planner:check": "node tools/planning/planner-cli.ts check",
+    "scenes:check": "node tools/planning/consistency-cli.ts",
+    "phase6:check": "node tools/planning/phase-check.ts"
   },
   "dependencies": {
     "three": "0.186.0"

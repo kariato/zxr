@@ -1,0 +1,46 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "FOLLOW"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "c8b4eb26a85263fca6eacfe7ada87bfb17149703a54564fbe876189c20c19b0a",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "30e546adbe6f9d8517f62e7093e78ebc9e3c27d5f54d712e381165d23742ced3",
+  "document": {
+    "entries": [
+      {
+        "family": "FOLLOW:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Follow {direct}"
+      },
+      {
+        "family": "FOLLOW:2",
+        "kind": "action",
+        "slots": [],
+        "template": "Follow"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_follow",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "c8b4eb26a85263fca6eacfe7ada87bfb17149703a54564fbe876189c20c19b0a"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

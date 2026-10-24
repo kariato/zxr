@@ -1,0 +1,144 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "ROOM-8"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "4ffb04c7ecd6d8fb1c1c7722d833c5b488833a5e7a1543fe2b47cb9e5ece808c",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "f5ab7ff600ff102036deed02ada3e70704d7a70a94e1d247b99e22fbfeeca645",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_repellent",
+        "pose": {
+          "position": [
+            -1.25,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_east_anchor",
+        "pose": {
+          "position": [
+            2,
+            0,
+            0
+          ],
+          "yawDegrees": -90
+        }
+      }
+    ],
+    "description": "Small rock chamber at end of short crawl, crudely chiselled number 8. No other puzzle numbers or symbols.\nStatic source description:\nThis is a small chamber carved out of the rock at the end of a short crawl. On the wall is crudely chiseled the number \"8\".\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_east_anchor",
+        "availability": "engine-option",
+        "direction": "EAST",
+        "node": "exit_east",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "CAROUSEL-ROOM"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "rock",
+        "node": "base_floor",
+        "part": "rock_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          5,
+          0.2,
+          6
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            2.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_repellent",
+        "asset": "asset_repellent",
+        "object": "REPELLENT",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "4ffb04c7ecd6d8fb1c1c7722d833c5b488833a5e7a1543fe2b47cb9e5ece808c"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "ROOM-8",
+    "shell": "cave",
+    "sizeMetres": [
+      5,
+      3,
+      6
+    ],
+    "spawn": "player_start"
+  }
+}

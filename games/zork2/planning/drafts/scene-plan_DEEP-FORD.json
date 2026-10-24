@@ -1,0 +1,287 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "DEEP-FORD"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "b0c33d38a928e3b787123e23ce5939de5a2363536dbb16c8a5c6c1e2f1668998",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "4cdacbb8afab1b61af7d9262f7aabf2ad977224c842f954746ec7c4974121077",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_chasm",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_global-water",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_stream",
+        "pose": {
+          "position": [
+            0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_dead-dragon",
+        "pose": {
+          "position": [
+            1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_north_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -5.5
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_east_anchor",
+        "pose": {
+          "position": [
+            4.5,
+            0,
+            0
+          ],
+          "yawDegrees": -90
+        }
+      },
+      {
+        "node": "exit_west_anchor",
+        "pose": {
+          "position": [
+            -4.5,
+            0,
+            0
+          ],
+          "yawDegrees": 90
+        }
+      },
+      {
+        "node": "exit_south_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            5.5
+          ],
+          "yawDegrees": 180
+        }
+      },
+      {
+        "node": "exit_up_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -5.5
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "Very cold deep ford, steep east/west ravine walls, northern ledge and ruined hall entrance south; no invented easy crossing or safety railing.\nStatic source description:\nYou are fording the stream at a deep but not impossible spot. The water is very cold. The walls of the ravine rise to east and west. There is a small ledge along the north wall of the ravine. To the south is the entrance to a well-constructed but somewhat ruined hall.\nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_north_anchor",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "RAVINE-LEDGE"
+      },
+      {
+        "anchor": "exit_east_anchor",
+        "availability": "engine-option",
+        "direction": "EAST",
+        "node": "exit_east",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": null
+      },
+      {
+        "anchor": "exit_west_anchor",
+        "availability": "engine-option",
+        "direction": "WEST",
+        "node": "exit_west",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": null
+      },
+      {
+        "anchor": "exit_south_anchor",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "MARBLE-HALL"
+      },
+      {
+        "anchor": "exit_up_anchor",
+        "availability": "engine-option",
+        "direction": "UP",
+        "node": "exit_up",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "RAVINE-LEDGE"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "rock",
+        "node": "base_floor",
+        "part": "rock_floor",
+        "pose": {
+          "position": [
+            0,
+            -1.4,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          10,
+          0.2,
+          12
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            9.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_chasm",
+        "asset": "asset_chasm",
+        "object": "CHASM",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_global-water",
+        "asset": "asset_global-water",
+        "object": "GLOBAL-WATER",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_stream",
+        "asset": "asset_stream",
+        "object": "STREAM",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_dead-dragon",
+        "asset": "asset_dead-dragon",
+        "object": "DEAD-DRAGON",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "b0c33d38a928e3b787123e23ce5939de5a2363536dbb16c8a5c6c1e2f1668998"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "DEEP-FORD",
+    "shell": "cave",
+    "sizeMetres": [
+      10,
+      10,
+      12
+    ],
+    "spawn": "player_start"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "RAPE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "d73b428f314654f66393312fc3df78744e99ed1cb30eee2e5768100f84cccd6f",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "607bd207ab23bafc36fd6e0517dc059079d1f3a6b230b15e8c0bb0c45b929138",
+  "document": {
+    "entries": [
+      {
+        "family": "RAPE:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Rape {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_rape",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "d73b428f314654f66393312fc3df78744e99ed1cb30eee2e5768100f84cccd6f"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

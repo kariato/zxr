@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "DISENCHANT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "87e53b688cc7580cd5ae1a8c043f44e1067f6ae4903d6ba7601723eedc336438",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "4aa111c0eef802dea69d7b53b9dbe0967cdadacb0fc42a5bb38832a5fe54c91b",
+  "document": {
+    "entries": [
+      {
+        "family": "DISENCHANT:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Disenchant {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_disenchant",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "87e53b688cc7580cd5ae1a8c043f44e1067f6ae4903d6ba7601723eedc336438"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

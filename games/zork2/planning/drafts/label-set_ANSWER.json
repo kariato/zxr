@@ -1,0 +1,48 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "ANSWER"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "1799133fb75a144b8c4a66db690959574a813dbd1b4bbdc3b6bbf4e9705ec0d9",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "43e1071e04e10335961113cb8de431672ad290692c81e150cbdafb2e04cc807e",
+  "document": {
+    "entries": [
+      {
+        "family": "ANSWER:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Answer {direct}"
+      },
+      {
+        "family": "ANSWER:2",
+        "kind": "action",
+        "slots": [
+          "words"
+        ],
+        "template": "Answer {words}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_answer",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "1799133fb75a144b8c4a66db690959574a813dbd1b4bbdc3b6bbf4e9705ec0d9"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "MAKE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "685bd19fe028668d1702464a3af21178f6b3e6166085ec70d4da06f68828d871",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "cd98d066e24351e55ae9cf49a0745984d2514cbdd87031fe75c643a163848ca6",
+  "document": {
+    "entries": [
+      {
+        "family": "MAKE:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Make {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_make",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "685bd19fe028668d1702464a3af21178f6b3e6166085ec70d4da06f68828d871"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "FOOT-BRIDGE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "a14935ed91d4e1c3b63612f15e8d05d6d698b4a520c16aac8c61fad6e0274480",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "6392c0d74c2613146e1979fa668b29cd8f7431ec484ba3d84b1dc1e13b036abf",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -1
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_north_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -3
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_south_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            3
+          ],
+          "yawDegrees": 180
+        }
+      },
+      {
+        "node": "exit_down_anchor",
+        "pose": {
+          "position": [
+            2,
+            0,
+            0
+          ],
+          "yawDegrees": 90
+        }
+      },
+      {
+        "node": "exit_cross_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "bridge_deck",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "ravine_edge",
+        "pose": {
+          "position": [
+            0,
+            0,
+            -3
+          ],
+          "yawDegrees": 0
+        }
+      }
+    ],
+    "description": "On a crude but sturdy wooden foot bridge crossing the deep ravine inside the cavern. The path runs north and south. NORTH returns to Narrow Tunnel; SOUTH leads to Great Cavern. DOWN is a fatal-drop refusal, and CROSS is a request to specify a direction, not a third route. Keep the bridge deck in its separate source BRIDGE asset; do not duplicate it in the static shell. No daylight, added doors, collectible planks or invented collapse state. Moss-lit cavern ambience is an art continuation of the adjacent cavern; source room lighting remains authoritative.",
+    "exits": [
+      {
+        "anchor": "exit_north_anchor",
+        "availability": "engine-option",
+        "direction": "NORTH",
+        "node": "exit_north",
+        "sizeMetres": [
+          2.2,
+          2.2,
+          0.3
+        ],
+        "to": "NARROW-TUNNEL"
+      },
+      {
+        "anchor": "exit_south_anchor",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          2.2,
+          2.2,
+          0.3
+        ],
+        "to": "GREAT-CAVERN"
+      },
+      {
+        "anchor": "exit_down_anchor",
+        "availability": "engine-option",
+        "direction": "DOWN",
+        "node": "exit_down",
+        "sizeMetres": [
+          1.3,
+          2.2,
+          0.3
+        ],
+        "to": null
+      },
+      {
+        "anchor": "exit_cross_anchor",
+        "availability": "engine-option",
+        "direction": "CROSS",
+        "node": "exit_cross",
+        "sizeMetres": [
+          1.3,
+          2.2,
+          0.3
+        ],
+        "to": null
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            8,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#90A790",
+          "intensity": 0.18,
+          "kind": "ambient",
+          "node": "moss_rig",
+          "position": [
+            0,
+            8,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "bridge_deck",
+        "asset": "asset_bridge",
+        "object": "BRIDGE",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "ravine_edge",
+        "asset": "asset_chasm",
+        "object": "CHASM",
+        "visibility": "engine-observation"
+      }
+    ],
+    "room": "FOOT-BRIDGE",
+    "shell": "cave",
+    "sizeMetres": [
+      6,
+      10,
+      6
+    ],
+    "spawn": "player_start",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "a14935ed91d4e1c3b63612f15e8d05d6d698b4a520c16aac8c61fad6e0274480"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

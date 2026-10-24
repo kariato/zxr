@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "LOWER"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "42973b8c09c49b032118a1cf457b16484144ed609fe023b0394b01b021c0b344",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "5d08ac7f89ad00c7645768c770a420d9838543e7666a9d716f6c7d5025acd671",
+  "document": {
+    "entries": [
+      {
+        "family": "LOWER:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Lower {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_lower",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "42973b8c09c49b032118a1cf457b16484144ed609fe023b0394b01b021c0b344"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

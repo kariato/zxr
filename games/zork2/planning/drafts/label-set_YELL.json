@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "YELL"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "bdfc87da2d5843fe8103928eb253774284bb1d3edb8d8fddd82580701ef23a45",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "d9722ab692c9307f10a0c180559dc3eba5edbe938b475a53a884256f9c58ef60",
+  "document": {
+    "entries": [
+      {
+        "family": "YELL:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Yell"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_yell",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "bdfc87da2d5843fe8103928eb253774284bb1d3edb8d8fddd82580701ef23a45"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "format": "zxr-asset-brief-v1",
+  "provenance": {
+    "method": "manual",
+    "author": "ZXR contributors"
+  },
+  "review": {
+    "status": "draft"
+  },
+  "id": "robot",
+  "kind": "character",
+  "objects": [
+    "ROBOT"
+  ],
+  "description": "Compact articulated mechanical robot. Draft proportions pending art review.",
+  "sizeMetres": [
+    0.7,
+    1.6,
+    0.6
+  ],
+  "materials": [
+    {
+      "name": "main",
+      "description": "Muted low-detail draft surface; palette awaits the style bible.",
+      "colour": "#A69A78",
+      "roughness": 0.7,
+      "metalness": 0.5
+    }
+  ],
+  "requiredClips": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death",
+    "talk"
+  ],
+  "hotspotNodes": [
+    {
+      "node": "hs_robot",
+      "shape": "box",
+      "sizeMetres": [
+        0.7,
+        1.6,
+        0.6
+      ],
+      "pose": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "yawDegrees": 0
+      }
+    }
+  ]
+}

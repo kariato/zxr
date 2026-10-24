@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "BLAST"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "395a908dc89c2bed99b62cde5fcdf045505fe1ab11f2407856051dcf87e36d95",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "ce663223eee34b0aa80a2d199b4c7c783fbc78834386098e988988a803b5a645",
+  "document": {
+    "entries": [
+      {
+        "family": "BLAST:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Blast"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_blast",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "395a908dc89c2bed99b62cde5fcdf045505fe1ab11f2407856051dcf87e36d95"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

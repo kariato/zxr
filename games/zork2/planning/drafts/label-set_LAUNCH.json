@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "LAUNCH"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "310d1471f7edab366873f7a2d6f24de7f6731352b1a2f69b49770c3492568988",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "3e38767fa5edc7f3af7868686e56e97ee59fb1d890b0a08c3810b73b75e5e54f",
+  "document": {
+    "entries": [
+      {
+        "family": "LAUNCH:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Launch {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_launch",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "310d1471f7edab366873f7a2d6f24de7f6731352b1a2f69b49770c3492568988"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

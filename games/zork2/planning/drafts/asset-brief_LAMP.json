@@ -1,0 +1,78 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "asset-brief",
+    "subject": "LAMP"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "d8e3e297fe992a38708471ca20e4e9db55e0bc947ec647fc24a6b847318cb96d",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "0380d62298f41a3514ac5a17d31396f9790c42176ef797a0696b330978f9ac12",
+  "document": {
+    "description": "Portable familiar brass lantern matching the approved visual guide, with clear body silhouette and handle. The starting lantern is OFF. Emissive glass, light and flicker are activated only from observed engine ONBIT state; no permanently baked warm light. The idle clip must be unlit.",
+    "format": "zxr-asset-brief-v1",
+    "hotspotNodes": [
+      {
+        "node": "hs_lamp",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "shape": "box",
+        "sizeMetres": [
+          0.18,
+          0.35,
+          0.18
+        ]
+      }
+    ],
+    "id": "asset_lamp",
+    "kind": "prop",
+    "materials": [
+      {
+        "colour": "#A98A45",
+        "description": "Worn matte brass",
+        "metalness": 0.8,
+        "name": "brass",
+        "roughness": 0.5
+      },
+      {
+        "colour": "#657176",
+        "description": "Restrained unlit lamp panes",
+        "metalness": 0,
+        "name": "glass",
+        "roughness": 0.25
+      }
+    ],
+    "objects": [
+      "LAMP"
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "d8e3e297fe992a38708471ca20e4e9db55e0bc947ec647fc24a6b847318cb96d"
+    },
+    "requiredClips": [
+      "idle",
+      "flicker"
+    ],
+    "review": {
+      "status": "draft"
+    },
+    "sizeMetres": [
+      0.18,
+      0.35,
+      0.18
+    ]
+  }
+}

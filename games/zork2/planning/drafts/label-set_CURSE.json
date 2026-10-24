@@ -1,0 +1,46 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "CURSE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "5a73f5811f470d4efa88a6552509f4435211c55258cb227495c6226dfeddb8a5",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "ee8faba62e2a840fd414ac6504b9d30b527ecca9deff2015cdd6cda79fbfcd0b",
+  "document": {
+    "entries": [
+      {
+        "family": "CURSE:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Curse {direct}"
+      },
+      {
+        "family": "CURSE:2",
+        "kind": "action",
+        "slots": [],
+        "template": "Curse"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_curse",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "5a73f5811f470d4efa88a6552509f4435211c55258cb227495c6226dfeddb8a5"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

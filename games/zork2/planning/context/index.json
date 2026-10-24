@@ -1,0 +1,453 @@
+{
+  "builder": "zxr-room-context-v1",
+  "catalog": {
+    "objects": {
+      "file": "objects.json",
+      "hash": "bdd6fc3b2b577fac2a6917477bbf19fbce8be9ed31045345f9fcf6345d8257aa"
+    },
+    "routines": {
+      "file": "routines.json",
+      "hash": "7f22bc8068d6ab1314b0c43ff9f2726091e009651e008d3250a861ac9599f306"
+    }
+  },
+  "counts": {
+    "objects": 165,
+    "potentialArrivals": 128,
+    "rooms": 86,
+    "routines": 414
+  },
+  "format": "zxr-context-index-v1",
+  "rooms": [
+    {
+      "file": "aquarium-room.json",
+      "inputHash": "2d8f9f8df27e75f3d701068f55bca2b4d1e0cbf59707fbad3360e241f7d8785f",
+      "room": "AQUARIUM-ROOM"
+    },
+    {
+      "file": "bank-entrance.json",
+      "inputHash": "b13ce468ceeaeec728be02e8a52538ad3106146ca128875c4cc350820a2c4d2a",
+      "room": "BANK-ENTRANCE"
+    },
+    {
+      "file": "cage-room.json",
+      "inputHash": "94c1205a3dbe8e88db7482e2bd2ac996c90da61969b34d5c6fb4640bfb011933",
+      "room": "CAGE-ROOM"
+    },
+    {
+      "file": "carousel-room.json",
+      "inputHash": "daab3c43d4689a27cc9591ed183f25e242a9e4bdccce75a423069929f0285043",
+      "room": "CAROUSEL-ROOM"
+    },
+    {
+      "file": "cerberus-room.json",
+      "inputHash": "d73ff5795ef737332f17776c348a20cf1681a68e47a11799555cb29d68e83f5b",
+      "room": "CERBERUS-ROOM"
+    },
+    {
+      "file": "cobwebby-corridor.json",
+      "inputHash": "58fa992f738c502b0d12c348970509b74567fe5c60b959a3d170e72104356483",
+      "room": "COBWEBBY-CORRIDOR"
+    },
+    {
+      "file": "cool-room.json",
+      "inputHash": "a012b34a60ae1841f380f1ca4bf17920d53e8936f1b5e484513733bc74b0a879",
+      "room": "COOL-ROOM"
+    },
+    {
+      "file": "crypt-anteroom.json",
+      "inputHash": "6ff023d1842a1c3d364e2cb37a5c98ed1f43f3ab9d4be7e0765a7aa7a83e81c8",
+      "room": "CRYPT-ANTEROOM"
+    },
+    {
+      "file": "crypt-room.json",
+      "inputHash": "eb243a4a78584e0f630ba29b9f15128191982ed9154e3e267ca0713774461a6a",
+      "room": "CRYPT-ROOM"
+    },
+    {
+      "file": "dark-tunnel.json",
+      "inputHash": "8905de3f5662d797eaf1579a00a1b0a6cd3c26b0425968b96cd7ffabbe9eb66a",
+      "room": "DARK-TUNNEL"
+    },
+    {
+      "file": "dead-palantir-1.json",
+      "inputHash": "ebb7d127e350c2caea22a31f44ab9e3ac7f90fec16f5671ab36c956719efc2bf",
+      "room": "DEAD-PALANTIR-1"
+    },
+    {
+      "file": "dead-palantir-2.json",
+      "inputHash": "593a300399fdc1a0a6c7988c1404c94c802fec8b2aaf7bbb9d10bee677956056",
+      "room": "DEAD-PALANTIR-2"
+    },
+    {
+      "file": "dead-palantir-3.json",
+      "inputHash": "e6301b0a46410835e383838f9f992e1afabf6918df720e35c348404368098de2",
+      "room": "DEAD-PALANTIR-3"
+    },
+    {
+      "file": "dead-palantir-4.json",
+      "inputHash": "a2c9a4134b2c0aafd89884138762fbf6282159e7a7bf713788d96d9e195c94d0",
+      "room": "DEAD-PALANTIR-4"
+    },
+    {
+      "file": "deep-ford.json",
+      "inputHash": "6eebcfb7944c118bdc83e8af7ba89862e56dd0e8a064b45abe7c100c7dfafeb8",
+      "room": "DEEP-FORD"
+    },
+    {
+      "file": "depository.json",
+      "inputHash": "6b0563c2025653dbec9a32daf06c31697c2120e91c68c4b8907b4f80f7f0585b",
+      "room": "DEPOSITORY"
+    },
+    {
+      "file": "diamond-1.json",
+      "inputHash": "21f329a413f08ece5f7d53fe65729af91f13bb4b042aee640e2cb1dd1b1b3e7c",
+      "room": "DIAMOND-1"
+    },
+    {
+      "file": "diamond-2.json",
+      "inputHash": "325234cf02e5b9143e2cfebbf18d81944736ff8a0695ca521b8e612efbd94147",
+      "room": "DIAMOND-2"
+    },
+    {
+      "file": "diamond-3.json",
+      "inputHash": "bcc06a0bbf13f2b0ed9bfa407f74a29bbc11c3911638da2c0e0158df86b9279c",
+      "room": "DIAMOND-3"
+    },
+    {
+      "file": "diamond-4.json",
+      "inputHash": "4c23af40923a657e0c1b4538ef0891a35f80536a25ad98b613f094ab417db5d5",
+      "room": "DIAMOND-4"
+    },
+    {
+      "file": "diamond-5.json",
+      "inputHash": "eb104baefbb9d3460b2026bcbce71dfa810cc8c0b3bebe227780a1c5768bed07",
+      "room": "DIAMOND-5"
+    },
+    {
+      "file": "diamond-6.json",
+      "inputHash": "4104a81d6b4d0e7662df91de4a425483f1b1787169eceacaa8111398eeca8716",
+      "room": "DIAMOND-6"
+    },
+    {
+      "file": "diamond-7.json",
+      "inputHash": "4365643bbaff6f8e547ca315a192bfe8358f8a5981d72d1fdd6e3ffaf4f3d818",
+      "room": "DIAMOND-7"
+    },
+    {
+      "file": "diamond-8.json",
+      "inputHash": "c4e0624d0075bc852cc8ba93a276d4ac679142ef1026234c0b036e66cafdb82b",
+      "room": "DIAMOND-8"
+    },
+    {
+      "file": "diamond-9.json",
+      "inputHash": "ce7aa013d2ea2b3e418d6bdabc5742ba324c2f7eefdfce9cf00478c416a9249f",
+      "room": "DIAMOND-9"
+    },
+    {
+      "file": "dragon-lair.json",
+      "inputHash": "f00234d0d5e62fe776720beb8dbd849f44abd5ed4eeb8907a3b2ccb7a0561cc8",
+      "room": "DRAGON-LAIR"
+    },
+    {
+      "file": "dragon-room.json",
+      "inputHash": "f81db6dfce930c5c36739642007116797825b95d0d88f9d97330477f048a3d0c",
+      "room": "DRAGON-ROOM"
+    },
+    {
+      "file": "dreary-room.json",
+      "inputHash": "b22d91bbe9482c76b313c7817292937750a0afcf964551a9b4817905d438c14c",
+      "room": "DREARY-ROOM"
+    },
+    {
+      "file": "foot-bridge.json",
+      "inputHash": "4cab585047bc956e15bd80540ae13e0f8310023ed8e5b0c942ad87913ee107d4",
+      "room": "FOOT-BRIDGE"
+    },
+    {
+      "file": "formal-garden.json",
+      "inputHash": "f4e6e8b4a5e29a0dc5573ccd58f35506d275f7cd58dac08e0e33740c809d1f2a",
+      "room": "FORMAL-GARDEN"
+    },
+    {
+      "file": "fresco-room.json",
+      "inputHash": "8f2e4be6950f853a754a5f5f3383a191d6fab7a77244d87f17b31e73c08b4f63",
+      "room": "FRESCO-ROOM"
+    },
+    {
+      "file": "garden-north.json",
+      "inputHash": "69ad56385f5c87a8b5188b594de6e9e3b676b6663da4ec0efc42bcc10f2201eb",
+      "room": "GARDEN-NORTH"
+    },
+    {
+      "file": "gazebo-room.json",
+      "inputHash": "a4f70a84197a3698a0c4afc2efbd16c786b79700780f0abcd06efb3bc7f0c405",
+      "room": "GAZEBO-ROOM"
+    },
+    {
+      "file": "glacier-room.json",
+      "inputHash": "42ada7f163e14c27efb096d66d9d8db5152538cf072dd19cbf2fa18e4e655a74",
+      "room": "GLACIER-ROOM"
+    },
+    {
+      "file": "great-cavern.json",
+      "inputHash": "c9749b6c68d4525e5b8b9b39f87c814a24a0babbe90770394fe918524f35bc04",
+      "room": "GREAT-CAVERN"
+    },
+    {
+      "file": "guardian-room.json",
+      "inputHash": "5297aa4bb027fc3a51aa323399062736c401519630aac10d65bb5f6db231d33d",
+      "room": "GUARDIAN-ROOM"
+    },
+    {
+      "file": "in-aquarium.json",
+      "inputHash": "90af3d388ad5ec2ae97f7b94bdaa8b53d5dc8e0479925eafcb5e2c9ce8d1c4e4",
+      "room": "IN-AQUARIUM"
+    },
+    {
+      "file": "in-cage.json",
+      "inputHash": "5ed3c93f885431924fb671262e9f634d848826b9121c2cb0a968004c49789c54",
+      "room": "IN-CAGE"
+    },
+    {
+      "file": "inside-barrow.json",
+      "inputHash": "4be78d1e7eb98121799f54f058619f7b994de3ad03cbb76442db4161c34660b8",
+      "room": "INSIDE-BARROW"
+    },
+    {
+      "file": "kennel.json",
+      "inputHash": "43b68ef7050d21b66cd069139367974631807438deea4830eebfc75112df827f",
+      "room": "KENNEL"
+    },
+    {
+      "file": "lava-room.json",
+      "inputHash": "f9901125613770b07da1a31f096373179b32ac9ed9003e3be98b8cb5ec395d47",
+      "room": "LAVA-ROOM"
+    },
+    {
+      "file": "lava-tube.json",
+      "inputHash": "0c4053c01bd07b0b49d5fd75b0d43a0d4f0a3e6b0f0ed5c07b9b7b4e9b44e694",
+      "room": "LAVA-TUBE"
+    },
+    {
+      "file": "ledge-1.json",
+      "inputHash": "96b71999a505d537b56c690334cfb66aabfcad2afb964560b213c310423fb4d5",
+      "room": "LEDGE-1"
+    },
+    {
+      "file": "ledge-2.json",
+      "inputHash": "29f675ad254f0c00ea73033800dd5a7133da878d75c1a923713ef21270947392",
+      "room": "LEDGE-2"
+    },
+    {
+      "file": "ledge-tunnel.json",
+      "inputHash": "9070c2ac2aa07d4b9bd0d11ebf6929b3977e251806d1758cb51be30ccb853bb0",
+      "room": "LEDGE-TUNNEL"
+    },
+    {
+      "file": "library.json",
+      "inputHash": "0530b9244aaa1d8059cdbd6dd4d286235c362734306dc285cc21cc586312a3e5",
+      "room": "LIBRARY"
+    },
+    {
+      "file": "machine-room.json",
+      "inputHash": "52d5ef5028f8b6bacaecbfe1da649abd2632b3ced9f5fa7306fb4d422e482f81",
+      "room": "MACHINE-ROOM"
+    },
+    {
+      "file": "magnet-room.json",
+      "inputHash": "1e8882b9e3c45be722893f1e4aceb86eb045f3e3db3e1f45241fa10b3c02fd1f",
+      "room": "MAGNET-ROOM"
+    },
+    {
+      "file": "marble-hall.json",
+      "inputHash": "5835f032c37915e5acc3151d7b55c3bee09b3d45dafcdb91f420d34ae90bdc08",
+      "room": "MARBLE-HALL"
+    },
+    {
+      "file": "menhir-room.json",
+      "inputHash": "f627038f32fce48e434b92eeb37b6e57c1d67f90133a716b3c3664f8041e7478",
+      "room": "MENHIR-ROOM"
+    },
+    {
+      "file": "narrow-tunnel.json",
+      "inputHash": "30b6c3a0e94e1239d4e959957542e97dbd7dc4b4a1e39b9d74cf8111aa68ff6f",
+      "room": "NARROW-TUNNEL"
+    },
+    {
+      "file": "office.json",
+      "inputHash": "3c1ae14bd632472ca699d0f148397e4fda296a41444cf8ac7ab8a6549ab5227b",
+      "room": "OFFICE"
+    },
+    {
+      "file": "pearl-room.json",
+      "inputHash": "9419b45e112b1a90590488ab65a89c1f7e84ff9ed39ac7a6b7e7d07b2e447934",
+      "room": "PEARL-ROOM"
+    },
+    {
+      "file": "pentagram-room.json",
+      "inputHash": "91632a059c728f7cf1a8a99c2050dc6f22a64064d241dd39f276f1bb22978e10",
+      "room": "PENTAGRAM-ROOM"
+    },
+    {
+      "file": "pool-room.json",
+      "inputHash": "fae40c5843ee40434d57e7ed287ad1aca87426ea87e4662e0c964dc6e912921f",
+      "room": "POOL-ROOM"
+    },
+    {
+      "file": "posts-room.json",
+      "inputHash": "e5ba0fc3fee2738437d03ca6039debe180078e5302ff6aeada101fd2e99e74f8",
+      "room": "POSTS-ROOM"
+    },
+    {
+      "file": "ravine-ledge.json",
+      "inputHash": "5921a6725a14d9262e21612f52568ef802e6d0690578afee2839a18763bc9da4",
+      "room": "RAVINE-LEDGE"
+    },
+    {
+      "file": "riddle-room.json",
+      "inputHash": "f0fc9c24bdf2e96a247961ace5133f25af17453173a4df3e10e6d7ce9c4666c2",
+      "room": "RIDDLE-ROOM"
+    },
+    {
+      "file": "room-8.json",
+      "inputHash": "f4005ea2ec9730caca0135592bb460dbb7350bb5a665567cb9ef599b64d49742",
+      "room": "ROOM-8"
+    },
+    {
+      "file": "safe-room.json",
+      "inputHash": "e446a22732dbee01c167136d2aa3807ce8acf22782412e1457eb20fc66f4668f",
+      "room": "SAFE-ROOM"
+    },
+    {
+      "file": "shallow-ford.json",
+      "inputHash": "eb62f4c3371db53b0ad253f8ad2fcebdeaee1e1c14b2c757b8d9edfe27ad065d",
+      "room": "SHALLOW-FORD"
+    },
+    {
+      "file": "small-room.json",
+      "inputHash": "74eb7e52c599045eb9dff8ed9fda7dd87989fc14d8c991a03b159db9a642c08d",
+      "room": "SMALL-ROOM"
+    },
+    {
+      "file": "stairway-top.json",
+      "inputHash": "e758afe2d5135ef9f9d7c0166819eedac7e30e1b41421b6c5143f6e9a19b70ad",
+      "room": "STAIRWAY-TOP"
+    },
+    {
+      "file": "stone-bridge.json",
+      "inputHash": "2b572ec1821b542a8edb3360cd27ad56789a0c9753a7718b240c5a5f98a4a23b",
+      "room": "STONE-BRIDGE"
+    },
+    {
+      "file": "stream-path.json",
+      "inputHash": "f6d9bd6fc12258129690ee20807b2fd0287e21059f0d784dd2d7e985ce820260",
+      "room": "STREAM-PATH"
+    },
+    {
+      "file": "tea-room.json",
+      "inputHash": "aa31bd47383014064516d0865734becac01492ab20a582f821b4ff74930ebfc9",
+      "room": "TEA-ROOM"
+    },
+    {
+      "file": "teller-east.json",
+      "inputHash": "17ad49c011b2100cdbf93f3fe906dc00f0183242db216466625042088c61e7f6",
+      "room": "TELLER-EAST"
+    },
+    {
+      "file": "teller-west.json",
+      "inputHash": "521eac258704769d6985892afe857e0a6bd0c4c765b71afaadb385117b95c7d2",
+      "room": "TELLER-WEST"
+    },
+    {
+      "file": "tiny-room.json",
+      "inputHash": "81d93c25973942de66de3cab105bdc5a6d697c02853ce2dcbfe90335e754f0f3",
+      "room": "TINY-ROOM"
+    },
+    {
+      "file": "topiary-room.json",
+      "inputHash": "b4c680e7e2e1fe118e21d1a060bb2171e72a0d1982705b59dc40211022074651",
+      "room": "TOPIARY-ROOM"
+    },
+    {
+      "file": "trophy-room.json",
+      "inputHash": "61da60450afbf3cffbd1ef21206664fce208b3246b05d060f2e2020c354b9e93",
+      "room": "TROPHY-ROOM"
+    },
+    {
+      "file": "vair-1.json",
+      "inputHash": "c7a386188cd6085e32fe6d78d7f74da66801bd768588381a6d947ab7e2c6ed10",
+      "room": "VAIR-1"
+    },
+    {
+      "file": "vair-2.json",
+      "inputHash": "b1574631dbf0dca61bbc5dfa709ec20e212e37cdabda7624d11bde5243dbef24",
+      "room": "VAIR-2"
+    },
+    {
+      "file": "vair-3.json",
+      "inputHash": "7af89a477d427aa896a107bf57002f710b73edf1465e12b88984d55bdfc61dcf",
+      "room": "VAIR-3"
+    },
+    {
+      "file": "vair-4.json",
+      "inputHash": "ec06474308b3da1140c8f4065f3f11499e570bfcb22d5cf91e90ad251e712acd",
+      "room": "VAIR-4"
+    },
+    {
+      "file": "vault.json",
+      "inputHash": "a4d3cd0599cf40862ad44f6053c020cca0b547f844e85d85906e1fcc21dcfbd9",
+      "room": "VAULT"
+    },
+    {
+      "file": "viewing-east.json",
+      "inputHash": "302c35d3ce661ed202b1d4bae14510b0f7e9afca48bb99b4f27f81094acff21c",
+      "room": "VIEWING-EAST"
+    },
+    {
+      "file": "viewing-west.json",
+      "inputHash": "64b7164011ab93846f50dd10378183f6de446fa96ee57c4ceccfc8d06f5bf9a9",
+      "room": "VIEWING-WEST"
+    },
+    {
+      "file": "volcano-bottom.json",
+      "inputHash": "84b282338df8fa7bada6edfac37b19a4f76ea0698c9259dd1a8d2ea9293cbb42",
+      "room": "VOLCANO-BOTTOM"
+    },
+    {
+      "file": "volcano-view.json",
+      "inputHash": "7306c13dd00709a75ddd335a790fd72506170c4c319096b29256156a7dce84f6",
+      "room": "VOLCANO-VIEW"
+    },
+    {
+      "file": "well-bottom.json",
+      "inputHash": "96ea202f65e6ba8f5391b7f5956f11bc3b6e7c0d87d539b4c98e868871a12265",
+      "room": "WELL-BOTTOM"
+    },
+    {
+      "file": "well-top.json",
+      "inputHash": "8c114e43230e90754348c1ea9a228173418c7bc1a359125471a69665c7713192",
+      "room": "WELL-TOP"
+    },
+    {
+      "file": "wizards-quarters.json",
+      "inputHash": "bcba9a040758dc30b713c1f03372501b6366433734f44df2be4e03b55af45d1f",
+      "room": "WIZARDS-QUARTERS"
+    },
+    {
+      "file": "wizards-workshop.json",
+      "inputHash": "5b12dc1f70d1207d099125fb06488667144e95707d77807f18aacff0d15295f1",
+      "room": "WIZARDS-WORKSHOP"
+    },
+    {
+      "file": "workbench-room.json",
+      "inputHash": "d8577e54fa7d04594123cc3421c24776e7f810c5d202d1f4a7101ba51f1cb30b",
+      "room": "WORKBENCH-ROOM"
+    },
+    {
+      "file": "zork3.json",
+      "inputHash": "4abb2040132dd0b16246475c7e0c084865559e34e6424bd3de704000f5a8679c",
+      "room": "ZORK3"
+    }
+  ],
+  "semanticBuildHash": "f8df5f9e0b42f524fe371e0caaec7d0e26a657b269ec7b2839735ccf0b9f4032"
+}

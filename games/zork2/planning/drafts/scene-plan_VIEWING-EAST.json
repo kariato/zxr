@@ -1,0 +1,195 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "scene-plan",
+    "subject": "VIEWING-EAST"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "ddd19a6ebadfb458aae2319b80ecf041364f7d692f3834c402d46ccfa16ebf4f",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "e6b5fd15c0011b1c8ccbadaa40316e7ae58f79eea21c8abee052fe8a83241d7b",
+  "document": {
+    "ambient": null,
+    "anchors": [
+      {
+        "node": "player_start",
+        "pose": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_sewl",
+        "pose": {
+          "position": [
+            -1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_snwl",
+        "pose": {
+          "position": [
+            -0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_sswl",
+        "pose": {
+          "position": [
+            0.6,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "place_asset_swwl",
+        "pose": {
+          "position": [
+            1.8,
+            0,
+            0.75
+          ],
+          "yawDegrees": 0
+        }
+      },
+      {
+        "node": "exit_south_anchor",
+        "pose": {
+          "position": [
+            0,
+            0,
+            4.5
+          ],
+          "yawDegrees": 180
+        }
+      }
+    ],
+    "description": "Eastern deposit-box viewing room; preserve source sign wording, north-side placement and southern exit. No actual deposit boxes unless observed.\nStatic source description:\nThis room was used by holders of safety deposit boxes to view their contents. On the north side of the room is a sign which says\n\n\"Remain here while the teller retrieves your safety deposit box. When you are finished, leave the box, and exit to the south. Safety deposit boxes cannot be removed from this room!\n\nThank You for Banking at the Zork!\" \nLocal positions are reviewable staging estimates. Preserve source nesting through separate visual attachments; hidden/absent actors and container contents render only from current observations. Dynamic/computed exits use menu-only transitions and never cut a concealed opening in the static shell. Source routine text remains authoritative for state-dependent appearances.",
+    "exits": [
+      {
+        "anchor": "exit_south_anchor",
+        "availability": "engine-option",
+        "direction": "SOUTH",
+        "node": "exit_south",
+        "sizeMetres": [
+          1.4,
+          2.2,
+          0.3
+        ],
+        "to": "BANK-ENTRANCE"
+      }
+    ],
+    "features": [],
+    "format": "zxr-scene-plan-v1",
+    "kitParts": [
+      {
+        "material": "aged_stone",
+        "node": "base_floor",
+        "part": "room_floor",
+        "pose": {
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "yawDegrees": 0
+        },
+        "sizeMetres": [
+          8,
+          0.2,
+          10
+        ]
+      }
+    ],
+    "lighting": {
+      "dark": [
+        {
+          "colour": "#101A20",
+          "intensity": 0,
+          "kind": "ambient",
+          "node": "dark_rig",
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lit": [
+        {
+          "colour": "#C3B99E",
+          "intensity": 0.16,
+          "kind": "ambient",
+          "node": "lit_rig",
+          "position": [
+            0,
+            3.5,
+            0
+          ]
+        }
+      ]
+    },
+    "objects": [
+      {
+        "anchor": "place_asset_sewl",
+        "asset": "asset_sewl",
+        "object": "SEWL",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_snwl",
+        "asset": "asset_snwl",
+        "object": "SNWL",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_sswl",
+        "asset": "asset_sswl",
+        "object": "SSWL",
+        "visibility": "engine-observation"
+      },
+      {
+        "anchor": "place_asset_swwl",
+        "asset": "asset_swwl",
+        "object": "SWWL",
+        "visibility": "engine-observation"
+      }
+    ],
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "ddd19a6ebadfb458aae2319b80ecf041364f7d692f3834c402d46ccfa16ebf4f"
+    },
+    "review": {
+      "status": "draft"
+    },
+    "room": "VIEWING-EAST",
+    "shell": "indoor",
+    "sizeMetres": [
+      8,
+      4,
+      10
+    ],
+    "spawn": "player_start"
+  }
+}

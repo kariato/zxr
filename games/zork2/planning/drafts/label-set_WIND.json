@@ -1,0 +1,48 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "WIND"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "fd72a3984240b1ff94a9ebec028ac89b447bcc3710071b328a68df06be872e46",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "006ca42ce18245e7aa5bc0f160f3fbd4b0b4383b36036d8c66218a3535ec2f6d",
+  "document": {
+    "entries": [
+      {
+        "family": "WIND:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Wind up {direct}"
+      },
+      {
+        "family": "WIND:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Wind {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_wind",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "fd72a3984240b1ff94a9ebec028ac89b447bcc3710071b328a68df06be872e46"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "EXORCISE"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "4bc5d47c12533f07b933694aec7d98574bbd4f67bb4d23f991479cd4c5852012",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "c49c7faf726def181b607beb10b92a8dac989383a00bd60673b9da3f340b4a4d",
+  "document": {
+    "entries": [
+      {
+        "family": "EXORCISE:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Exorcise away {direct}"
+      },
+      {
+        "family": "EXORCISE:2",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Exorcise out {direct}"
+      },
+      {
+        "family": "EXORCISE:3",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Exorcise {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_exorcise",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "4bc5d47c12533f07b933694aec7d98574bbd4f67bb4d23f991479cd4c5852012"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

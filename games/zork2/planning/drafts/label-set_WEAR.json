@@ -1,0 +1,40 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "WEAR"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "f2ac137b8d3235bb04bbd65e29d4dc1be310af034b204051b9b76437a41573cd",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "6b17742644b63ad463983313319177a483401752da2a87d1d2a1ea184701e3dd",
+  "document": {
+    "entries": [
+      {
+        "family": "WEAR:1",
+        "kind": "action",
+        "slots": [
+          "direct"
+        ],
+        "template": "Wear {direct}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_wear",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "f2ac137b8d3235bb04bbd65e29d4dc1be310af034b204051b9b76437a41573cd"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

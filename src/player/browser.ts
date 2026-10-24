@@ -8,8 +8,10 @@ import { GameSaves, MAX_SAVE_BYTES } from '../persistence/saves.ts';
 import { IndexedDbSaveStore } from '../persistence/indexed-db-save-store.ts';
 import { checkpointStamp } from '../persistence/checkpoint-name.ts';
 import { TextPlayer } from './controller.ts';
+import type { PlayerView } from './controller.ts';
 import { resolveHostAsync } from './host.ts';
 export function mountBrowserPlayer(container:HTMLElement,game:LoadedGame,session:GameSession,saves=new GameSaves(game,new IndexedDbSaveStore(),()=>localStorage.getItem('zxr-save:'+game.buildHash))){
+  const listeners=new Set<(view:PlayerView,busy:boolean)=>void>();
   const player=new TextPlayer(session),catalog=buildWordCatalog(game.bundle.payload.vocabulary);let shown=0,busy=true,initialising=true,disposed=false,fontSize=18;let recorder:ReplayRecorder|undefined;
   const element=<K extends keyof HTMLElementTagNameMap>(tag:K,text?:string)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n;};
   const button=(label:string,action:()=>void)=>{const b=element('button',label);b.type='button';b.addEventListener('click',action);return b;};
@@ -76,6 +78,7 @@ export function mountBrowserPlayer(container:HTMLElement,game:LoadedGame,session
     }
     if(view.words){const words=element('div');actions.append(words);picker=mountWordPicker(words,catalog,word=>{if(!busy)void run(()=>player.addWord(word.dictionaryIndex));});for(const b of words.querySelectorAll('button'))b.disabled ||=busy;}
     if(focus)heading.focus({preventScroll:true});
+    for(const listener of listeners)listener(view,busy);
   }
   const shortcut=(event:KeyboardEvent)=>{
     if(busy||event.repeat||event.altKey||event.ctrlKey||event.metaKey||(event.target instanceof Element&&event.target.closest('input,textarea,select,[data-replay-viewer],[data-capabilities]')))return;
@@ -93,5 +96,11 @@ export function mountBrowserPlayer(container:HTMLElement,game:LoadedGame,session
     try{recorder=new ReplayRecorder(game,session);}catch(cause){messages.textContent=[messages.textContent,'Replay recording unavailable: '+error(cause)].filter(Boolean).join(' ');}
     busy=false;initialising=false;render();
   })();
-  return {player,ready,destroy(){disposed=true;viewer.destroy();picker?.destroy();root.removeEventListener('keydown',shortcut);root.remove();}};
+  return {player,ready,
+    subscribe(listener:(view:PlayerView,busy:boolean)=>void){listeners.add(listener);listener(player.view(),busy);return ()=>{listeners.delete(listener);};},
+    choose(key:string){return run(()=>player.choose(key));},
+    finish(){return run(()=>{player.finish();});},cancel(){return run(()=>{player.cancel();});},
+    openObject(id:string){return run(()=>player.openObject(id));},walk(direction:string){return run(()=>player.walk(direction));},
+    destroy(){disposed=true;listeners.clear();viewer.destroy();picker?.destroy();root.removeEventListener('keydown',shortcut);root.remove();}};
 }
+export type BrowserPlayer=ReturnType<typeof mountBrowserPlayer>;

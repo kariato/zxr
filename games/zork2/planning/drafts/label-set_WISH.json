@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "WISH"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "191f87c4e31844e2ae4fbd811c3b6fa52eb88348347b043c06f9692185274bc2",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "b4e615b55ad9f72cb7f9c16831641c54e9d7c3d35b7867e157058efdd95d7e10",
+  "document": {
+    "entries": [
+      {
+        "family": "WISH:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Wish"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_wish",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "191f87c4e31844e2ae4fbd811c3b6fa52eb88348347b043c06f9692185274bc2"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

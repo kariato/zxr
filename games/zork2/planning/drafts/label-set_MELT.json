@@ -1,0 +1,41 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "MELT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "7f369e442cbfd78fa14e56c945eb8097ee1aea87588c2e6303f7a5c9dde1a861",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "98e59d090d525e77452aba60054c8fcdea98a6fc0e2bd947018dcd5769b2ea3a",
+  "document": {
+    "entries": [
+      {
+        "family": "MELT:1",
+        "kind": "action",
+        "slots": [
+          "direct",
+          "indirect"
+        ],
+        "template": "Melt {direct} with {indirect}"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_melt",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "7f369e442cbfd78fa14e56c945eb8097ee1aea87588c2e6303f7a5c9dde1a861"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

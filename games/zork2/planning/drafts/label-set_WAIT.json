@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "WAIT"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "1ef436807ad5b16a836d3569a560df4aba92385a57e922ff7b4d0d003a54349c",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "dccad44b5bbc5a159517c22311630e4dc100873a9fc31e238b873ab61501a0fa",
+  "document": {
+    "entries": [
+      {
+        "family": "WAIT:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Wait"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_wait",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "1ef436807ad5b16a836d3569a560df4aba92385a57e922ff7b4d0d003a54349c"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}

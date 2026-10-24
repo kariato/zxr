@@ -1,0 +1,38 @@
+{
+  "format": "zxr-plan-record-v1",
+  "task": {
+    "kind": "label-set",
+    "subject": "SKIP"
+  },
+  "provider": "assistant",
+  "requestedModel": null,
+  "model": null,
+  "promptVersion": "zxr-planner-v1",
+  "inputHash": "f4bfe5a142729930130e41acaae7fadcdc8c56f9ee6ecfdfd54d4b05b109d2c6",
+  "requestHash": null,
+  "attempts": 0,
+  "outputHash": "74ee635f819440d1bbb90c5c7f84429ec1bc169547319dacabd661a79eb8124f",
+  "document": {
+    "entries": [
+      {
+        "family": "SKIP:1",
+        "kind": "action",
+        "slots": [],
+        "template": "Skip"
+      }
+    ],
+    "format": "zxr-label-set-v1",
+    "id": "labels_skip",
+    "language": "en",
+    "provenance": {
+      "method": "assistant",
+      "agent": "Codex",
+      "model": null,
+      "promptVersion": "zxr-planner-v1",
+      "inputHash": "f4bfe5a142729930130e41acaae7fadcdc8c56f9ee6ecfdfd54d4b05b109d2c6"
+    },
+    "review": {
+      "status": "draft"
+    }
+  }
+}
