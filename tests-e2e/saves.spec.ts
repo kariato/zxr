@@ -43,7 +43,7 @@ test('source SAVE/RESTORE uses its own continuation and pending or terminal deci
   await look(page,1);await special(page,'Restore');await expect(page.getByRole('button',{name:'Export save',exact:true})).toBeEnabled();
   const restored=await exported(page);for(const field of ['checkpoint','knowledge','remembered'])expect(restored[field]).toEqual(saved[field]);
   const autoKey=saved.buildHash+':auto',before=await record(page,autoKey);await special(page,'Quit');await expect(choices.getByRole('heading')).toHaveText('Choose a response');expect(await record(page,autoKey)).toBe(before);
-  await choices.getByRole('button',{name:/^1\. YES$/}).click();await expect(choices.getByRole('heading')).toHaveText('Game ended');expect(await record(page,autoKey)).toBe(before);
+  await choices.getByRole('button',{name:'1. Yes',exact:true}).click();await expect(choices.getByRole('heading')).toHaveText('Game ended');expect(await record(page,autoKey)).toBe(before);
 });
 test('unavailable storage leaves the player and portable save files usable',async({page})=>{
   test.setTimeout(120000);await page.addInitScript(()=>Object.defineProperty(globalThis,'indexedDB',{get:()=>{throw new DOMException('Blocked','SecurityError');}}));await start(page);
