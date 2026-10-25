@@ -3,10 +3,11 @@ import {GLTFLoader,type GLTF} from 'three/addons/loaders/GLTFLoader.js';
 import type {ObjectAction} from '../player/object-actions.ts';
 
 export type CavernStatus='loading'|'ready'|'failed';
-/** Room origins in one shared environment: the tunnel shelf and the bridge deck. */
+/** Room origins in one shared environment: the tunnel shelf, bridge deck and far bank. */
 const origins:Record<string,readonly [number,number,number]>={
   'NARROW-TUNNEL':[0,0,0],
   'FOOT-BRIDGE':[0,-.69,-6.9],
+  'GREAT-CAVERN':[0,-1,-12],
 };
 export function cavernSceneOffset(room:string|null){return room?origins[room]:undefined;}
 type Load=(url:string,ready:(gltf:GLTF)=>void,failed:()=>void)=>void;

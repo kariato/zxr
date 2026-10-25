@@ -1,6 +1,6 @@
 import {expect,test} from '@playwright/test';
 
-test('shares one cavern model between the tunnel and Foot Bridge with source-controlled routes',async({page})=>{
+test('shares one cavern model across the tunnel, Foot Bridge and Great Cavern with source-controlled routes',async({page})=>{
   test.setTimeout(120000);
   const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
   const modelRequests:string[]=[];page.on('request',request=>{if(request.url().includes('narrow-tunnel-room-v1')&&request.url().endsWith('.glb'))modelRequests.push(request.url());});
@@ -29,7 +29,15 @@ test('shares one cavern model between the tunnel and Foot Bridge with source-con
   await expect(viewport).toHaveAttribute('data-cavern-scene','ready');expect(modelRequests).toHaveLength(1);
   await page.screenshot({path:test.info().outputPath('narrow-tunnel.png'),fullPage:true});
   await walk('south');await walk('south');await expect(prototype.locator('.prototype-info')).toContainText('Great Cavern');
+  await expect(viewport).toHaveAttribute('data-cavern-scene','ready');
+  await expect(viewport).toHaveAttribute('data-cavern-room','GREAT-CAVERN');
+  expect(modelRequests).toHaveLength(1);
+  await page.screenshot({path:test.info().outputPath('great-cavern.png'),fullPage:true});
+  await walk('sw');await expect(prototype.locator('.prototype-info')).toContainText('Shallow Ford');
   await expect(viewport).not.toHaveAttribute('data-cavern-scene','ready');
+  await walk('north');await expect(prototype.locator('.prototype-info')).toContainText('Great Cavern');
+  await expect(viewport).toHaveAttribute('data-cavern-scene','ready',{timeout:60000});
+  expect(modelRequests).toHaveLength(2);
   await walk('ne');await expect(prototype.locator('.prototype-info')).toContainText('Foot Bridge');
   await expect(viewport).toHaveAttribute('data-cavern-scene','ready',{timeout:60000});
   expect(modelRequests).toHaveLength(2);

@@ -9,7 +9,7 @@ import { mountCavernBackdrop } from './cavern-backdrop.ts';
 import { addPrincess,addLairChest,addLairDoorway } from './lair.ts';
 import { addBarrowTunnel } from './barrow-tunnel.ts';
 import { ObjectHold,objectIntent } from './object-gesture.ts';
-import { addCavernRocks,addBarrowGuardrails } from './cavern-rocks.ts';
+import { addCavernRocks,addBarrowGuardrails,addGreatCavern } from './cavern-rocks.ts';
 import { mountPrincessActor,type PrincessStatus } from './princess-actor.ts';
 import { mountBarrowDressing } from './barrow-dressing.ts';
 import { mountCavernScene,addCavernTargets,cavernSceneOffset,type CavernStatus } from './cavern-scene.ts';
@@ -39,7 +39,7 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
   const targets:THREE.Object3D[]=[];let width=2,depth=2,room:string|null=null,identity='',busy=true,disposed=false,yaw=Math.PI,pitch=-.1;
   const actors:ReturnType<typeof mountPrincessActor>[]=[];
   const dressings:ReturnType<typeof mountBarrowDressing>[]=[];
-  // GLB-backed actors and dressing outlive per-turn rebuilds. The two cavern
+  // GLB-backed actors and dressing outlive per-turn rebuilds. The three cavern
   // rooms also retain one model while changing their origin within that scene.
   const propMounts:{dispose():void}[]=[];
   const persistent=new THREE.Group();scene.add(persistent);let persistentKey='',dressingState:'loading'|'ready'|'failed'='loading',baseFloor:THREE.Mesh|undefined,cavernFallback:THREE.Group|undefined;
@@ -62,7 +62,7 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
     group.traverse(node=>{if(node.userData.shared)return;if(node instanceof THREE.Mesh){if(node instanceof THREE.InstancedMesh)node.dispose();node.geometry.dispose();for(const mat of Array.isArray(node.material)?node.material:[node.material])if(![stone,floor,wood,brass,steel].includes(mat as THREE.MeshStandardMaterial))mat.dispose();}if(node instanceof THREE.Sprite){node.material.map?.dispose();node.material.dispose();}});group.clear();
   };
   const aim=()=>{camera.rotation.set(pitch,yaw,0,'YXZ');};
-  const recenter=()=>{rig.position.set(0,0,0);rig.rotation.set(0,0,0);camera.position.set(0,1.6,room==='NARROW-TUNNEL'?1.1:-Math.max(0,depth/2-1.4));yaw=Math.PI;pitch=-.1;aim();};
+  const recenter=()=>{rig.position.set(0,0,0);rig.rotation.set(0,0,0);camera.position.set(0,1.6,room==='NARROW-TUNNEL'?1.1:-Math.max(0,depth/2-1.4));if(room==='GREAT-CAVERN')camera.position.z=1.2;yaw=room==='GREAT-CAVERN'?0:Math.PI;pitch=-.1;aim();};
   const build=()=>{
     const observation=session.observeAppearance(),model=prototypeModel(observation),changed=room!==model.room;room=model.room;
     backdrop.update(observation.perception);
@@ -75,7 +75,7 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
     const layout=model.layout;hasLayout=!!layout;width=layout?.width??8;depth=layout?.depth??8;
     if(changed){recenter();menuPage=textPage=0;}
     if(!layout&&!model.props.length)return;
-    const lair=room==='DRAGON-LAIR',barrow=room==='INSIDE-BARROW',cavern=room==='NARROW-TUNNEL'||room==='FOOT-BRIDGE';
+    const lair=room==='DRAGON-LAIR',barrow=room==='INSIDE-BARROW',cavern=!!cavernSceneOffset(room);
     scene.fog=new THREE.Fog(cavern?0x172126:0x070c10,cavern?12:(barrow||lair)?15:6,cavern?48:(barrow||lair)?45:22);
     scene.add(roomGroup);
     roomGroup.add(new THREE.HemisphereLight(cavern?0x91abb5:0xc5d4c1,cavern?0x38434b:0x303025,2));
@@ -95,6 +95,8 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
     if(!layout){
       // Object-only staging for rooms awaiting environment geometry. Do not
       // invent walls, doors, routes or traversable floor from the object art.
+    }else if(room==='GREAT-CAVERN'){
+      addGreatCavern(roomGroup);
     }else if(room==='FOOT-BRIDGE'){
       const bridge=new THREE.Group();environment.add(bridge);
       for(let z=-depth/2+.15;z<depth/2;z+=.3)box(bridge,[2.2,.12,.27],[0,-.08,z],wood);

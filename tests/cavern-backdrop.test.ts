@@ -14,6 +14,7 @@ it('loads lazily, reuses one texture across caverns and clears it outside the vi
   f.backdrop.update(view('NARROW-TUNNEL'));expect(f.load).toHaveBeenCalledTimes(1);const texture=new THREE.Texture();f.ready(texture);
   expect(f.scene.background).toBe(texture);expect(texture.mapping).toBe(THREE.EquirectangularReflectionMapping);expect(texture.colorSpace).toBe(THREE.SRGBColorSpace);
   f.backdrop.update(view('FOOT-BRIDGE'));expect(f.scene.background).toBe(texture);expect(f.load).toHaveBeenCalledTimes(1);
+  f.backdrop.update(view('GREAT-CAVERN'));expect(f.scene.background).toBe(texture);expect(f.load).toHaveBeenCalledTimes(1);
   for(const v of [view('FOOT-BRIDGE',false),{lit:false,room:null},view('CRYPT-ROOM'),view('CRYPT-ROOM')]){f.backdrop.update(v);expect(f.scene.background).toBeNull();}
   f.backdrop.dispose();
 });

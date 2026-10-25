@@ -46,6 +46,13 @@ describe('shared cavern lifecycle',()=>{
     const ray=new THREE.Raycaster(new THREE.Vector3(0,1.6,0),new THREE.Vector3(0,-1,0));
     const hit=ray.intersectObjects(targets)[0];
     expect(hit?.object.userData.object).toBe('BRIDGE');expect(hit?.point.y).toBeCloseTo(.21);
-    expect(cavernSceneOffset('GREAT-CAVERN')).toBeUndefined();
+    expect(cavernSceneOffset('SHALLOW-FORD')).toBeUndefined();
   });
+});
+
+it('keeps only the observed moss target when viewing the shared model from Great Cavern',()=>{
+  const parent=new THREE.Group();parent.position.set(...cavernSceneOffset('GREAT-CAVERN')!);
+  const targets=addCavernTargets(parent,new Set(['MOSS']),[]);parent.updateMatrixWorld(true);
+  expect(targets.map(target=>target.userData.object)).toEqual(['MOSS']);
+  expect(targets[0]!.getWorldPosition(new THREE.Vector3()).z).toBe(0);
 });

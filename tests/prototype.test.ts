@@ -41,12 +41,12 @@ it('the renderer model discards hidden, contained and dark-room props on every o
   o.perception.lit=true;o.perception.room={id:'CRYPT-ROOM',name:'Crypt'};
   expect(prototypeModel(o).layout).toBeNull();expect(prototypeModel(o).props).toEqual([]);
 });
-it('carries the same sword into unmodeled rooms and shows it only in its current source location after dropping',()=>{
+it('carries the same sword across shared cavern rooms and shows it only in its current source location after dropping',()=>{
   const s=new GameSession(game),p=new TextPlayer(s);
   p.openObject('SWORD');choose(p,'Take: elvish sword');
   for(const direction of ['SOUTH','SOUTH','SOUTH'])p.walk(direction);
   expect(s.observe().perception.room?.id).toBe('GREAT-CAVERN');
-  expect(prototypeModel(s.observeAppearance()).layout).toBeNull();
+  expect(prototypeModel(s.observeAppearance()).layout?.routes.map(r=>r.direction)).toEqual(['NE','SW']);
   expect(prototypeModel(s.observeAppearance()).props.find(o=>o.id==='SWORD')?.held).toBe(true);
   const save=s.exportSave();
   p.openObject('SWORD');choose(p,'Drop: elvish sword');
@@ -60,8 +60,8 @@ it('presents observed movable identities outside the environment slice while hid
   const s=new GameSession(game);s.opening();const save=s.exportSave();
   const world=WorldState.restore(game,save.checkpoint.interpreter.world);
   const id=(name:string)=>game.bundle.payload.world.entities.find(e=>e.name===name)!.id;
-  world.move(world.global('PLAYER'),id('GREAT-CAVERN'));world.setGlobal('HERE',id('GREAT-CAVERN'));
-  world.move(id('ROSE'),id('GREAT-CAVERN'));world.move(id('GOLD-KEY'),id('CHEST'));
+  world.move(world.global('PLAYER'),id('SHALLOW-FORD'));world.setGlobal('HERE',id('SHALLOW-FORD'));
+  world.move(id('ROSE'),id('SHALLOW-FORD'));world.move(id('GOLD-KEY'),id('CHEST'));
   save.checkpoint.interpreter.world=world.snapshot();s.importSave(save);
   const observation=s.observeAppearance();
   expect(prototypeModel(observation).props.some(o=>o.id==='ROSE')).toBe(true);
