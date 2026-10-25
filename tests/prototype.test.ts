@@ -4,6 +4,7 @@ import type { LoadedGame } from '../src/engine/index.ts';
 import { packBundle } from '../src/zil/bundle.ts';
 import { compileSourcePath } from '../tools/zil/compile.ts';
 import { TextPlayer } from '../src/player/controller.ts';
+import {buildObjectActionCatalog} from '../src/player/object-actions.ts';
 import { prototypeModel } from '../src/prototype/model.ts';
 let game:LoadedGame;
 beforeAll(()=>{game=loadGame(packBundle(compileSourcePath('reference/zork2')));},60000);
@@ -60,8 +61,8 @@ it('presents observed movable identities outside the environment slice while hid
   const s=new GameSession(game);s.opening();const save=s.exportSave();
   const world=WorldState.restore(game,save.checkpoint.interpreter.world);
   const id=(name:string)=>game.bundle.payload.world.entities.find(e=>e.name===name)!.id;
-  world.move(world.global('PLAYER'),id('SHALLOW-FORD'));world.setGlobal('HERE',id('SHALLOW-FORD'));
-  world.move(id('ROSE'),id('SHALLOW-FORD'));world.move(id('GOLD-KEY'),id('CHEST'));
+  world.move(world.global('PLAYER'),id('GARDEN-NORTH'));world.setGlobal('HERE',id('GARDEN-NORTH'));
+  world.move(id('ROSE'),id('GARDEN-NORTH'));world.move(id('GOLD-KEY'),id('CHEST'));
   save.checkpoint.interpreter.world=world.snapshot();s.importSave(save);
   const observation=s.observeAppearance();
   expect(prototypeModel(observation).props.some(o=>o.id==='ROSE')).toBe(true);
@@ -79,4 +80,23 @@ it('shows the princess and chest only when observed, and keeps unseen chest cont
   expect(model.props.some(p=>p.id==='PRINCESS')).toBe(true);expect(model.props.find(p=>p.id==='CHEST')?.open).toBe(false);expect(model.props.some(p=>p.id==='STATUETTE')).toBe(false);
   observation.perception.objects.find(o=>o.id==='PRINCESS')!.visible=false;expect(prototypeModel(observation).props.some(p=>p.id==='PRINCESS')).toBe(false);
   observation.perception.lit=false;expect(prototypeModel(observation).props).toEqual([]);
+});
+
+it('reveals Dark Tunnel only with source light and follows both junction branches',()=>{
+  const s=new GameSession(game),p=new TextPlayer(s,buildObjectActionCatalog(game));
+  // Carry the unlit lamp so it can be lit without a speculative move in darkness.
+  p.activateObject(p.objectActions().find(a=>a.object==='LAMP')!);
+  for(const d of ['SOUTH','SOUTH','SOUTH','SW'])p.walk(d);
+  expect(prototypeModel(s.observeAppearance()).room).toBe('SHALLOW-FORD');
+  expect(p.objectActions().some(a=>a.object==='GLOBAL-WATER')).toBe(true);
+  expect(p.objectActions().some(a=>a.object==='STREAM'||a.object==='CHASM')).toBe(false);
+  const ford=s.exportSave();
+  p.walk('CROSS');expect(s.observe().perception.lit).toBe(false);
+  expect(prototypeModel(s.observeAppearance())).toEqual({room:null,layout:null,props:[]});
+  p.importSave(ford);p.activateObject(p.objectActions().find(a=>a.object==='LAMP')!);
+  p.walk('SOUTH');expect(prototypeModel(s.observeAppearance()).room).toBe('DARK-TUNNEL');
+  expect(prototypeModel(s.observeAppearance()).layout?.routes.map(r=>r.direction)).toEqual(['NE','SW','SE']);
+  const junction=s.exportSave();p.walk('SE');expect(s.observe().perception.room?.id).toBe('GARDEN-NORTH');
+  p.importSave(junction);p.walk('SW');expect(s.observe().perception.room?.id).toBe('STREAM-PATH');
+  p.importSave(junction);p.walk('NE');expect(s.observe().perception.room?.id).toBe('SHALLOW-FORD');
 });

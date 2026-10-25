@@ -16,4 +16,4 @@ Verify inventory, full PNG decoding, dimensions, unique selected images and imag
 out/asset-tools/shape-env/bin/python tools/assets/verify-room-references.py --package
 ```
 
-Run that command from the repository root. Delivery files are under `out/asset-production/room-reference-verification/`: `verification.json`, `package-manifest.json` and `all-room-references.zip`. The ZIP includes the gallery, selected and retained image revisions, exact prompts, provenance, source packets, style guide and contact sheets. No room images were integrated into gameplay.
+Run that command from the repository root. Delivery files are under `out/asset-production/room-reference-verification/`: `verification.json`, `package-manifest.json` and `all-room-references.zip`. The ZIP includes the gallery, selected and retained image revisions, exact prompts, provenance, source packets, style guide and contact sheets. The original batch did not integrate images into gameplay. Shallow Ford and Dark Tunnel now supply material-colour patches for the [Opening Cavern extensions](../../planning/scenes/opening-cavern/README.md); the original generation records are preserved.

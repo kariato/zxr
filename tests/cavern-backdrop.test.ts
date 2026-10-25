@@ -15,7 +15,8 @@ it('loads lazily, reuses one texture across caverns and clears it outside the vi
   expect(f.scene.background).toBe(texture);expect(texture.mapping).toBe(THREE.EquirectangularReflectionMapping);expect(texture.colorSpace).toBe(THREE.SRGBColorSpace);
   f.backdrop.update(view('FOOT-BRIDGE'));expect(f.scene.background).toBe(texture);expect(f.load).toHaveBeenCalledTimes(1);
   f.backdrop.update(view('GREAT-CAVERN'));expect(f.scene.background).toBe(texture);expect(f.load).toHaveBeenCalledTimes(1);
-  for(const v of [view('FOOT-BRIDGE',false),{lit:false,room:null},view('CRYPT-ROOM'),view('CRYPT-ROOM')]){f.backdrop.update(v);expect(f.scene.background).toBeNull();}
+  f.backdrop.update(view('SHALLOW-FORD'));expect(f.scene.background).toBe(texture);expect(f.load).toHaveBeenCalledTimes(1);
+  for(const v of [view('DARK-TUNNEL'),view('DARK-TUNNEL',false),view('FOOT-BRIDGE',false),{lit:false,room:null},view('CRYPT-ROOM'),view('CRYPT-ROOM')]){f.backdrop.update(v);expect(f.scene.background).toBeNull();}
   f.backdrop.dispose();
 });
 it('late image loads cannot reveal a dark room or replace another room background',()=>{

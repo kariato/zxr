@@ -46,7 +46,7 @@ describe('shared cavern lifecycle',()=>{
     const ray=new THREE.Raycaster(new THREE.Vector3(0,1.6,0),new THREE.Vector3(0,-1,0));
     const hit=ray.intersectObjects(targets)[0];
     expect(hit?.object.userData.object).toBe('BRIDGE');expect(hit?.point.y).toBeCloseTo(.21);
-    expect(cavernSceneOffset('SHALLOW-FORD')).toBeUndefined();
+    expect(cavernSceneOffset('GARDEN-NORTH')).toBeUndefined();
   });
 });
 

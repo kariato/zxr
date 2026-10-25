@@ -1,0 +1,21 @@
+{
+  "format": "zxr-scene-reference-use-v1",
+  "scene": "opening-cavern",
+  "references": [
+    {
+      "room": "SHALLOW-FORD",
+      "path": "games/zork2/assets/rooms/shallow-ford/reference-v1.png",
+      "sha256": "388affd94d6067ea07f4e57ea9d0756a79455fa1dc97196a926f026ccc9b33e7"
+    },
+    {
+      "room": "DARK-TUNNEL",
+      "path": "games/zork2/assets/rooms/dark-tunnel/reference-v1.png",
+      "sha256": "c832812036756895ac36f8035b1bc40046959d49a7c19b51723fde9774506b9a"
+    }
+  ],
+  "geometry": "src/prototype/opening-cavern.ts",
+  "existingModel": "src/prototype/assets/narrow-tunnel-room-v1.glb",
+  "method": "Authored open 3D passages, rock walls, ford bed, water, pebbles, path, leaves and twigs; reference-image UV patches supply material colour. Existing Hunyuan cavern mesh is retained unchanged.",
+  "visibility": "Lit source observations only; source room identities, exits and object aliases stay authoritative.",
+  "acceptance": "Desktop visual review and automated geometry/source/browser checks; headset review outstanding."
+}

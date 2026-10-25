@@ -1,15 +1,14 @@
 import * as THREE from 'three';
 import {GLTFLoader,type GLTF} from 'three/addons/loaders/GLTFLoader.js';
+import {openingCavernOrigins} from './opening-cavern.ts';
 import type {ObjectAction} from '../player/object-actions.ts';
 
 export type CavernStatus='loading'|'ready'|'failed';
-/** Room origins in one shared environment: the tunnel shelf, bridge deck and far bank. */
-const origins:Record<string,readonly [number,number,number]>={
-  'NARROW-TUNNEL':[0,0,0],
-  'FOOT-BRIDGE':[0,-.69,-6.9],
-  'GREAT-CAVERN':[0,-1,-12],
-};
-export function cavernSceneOffset(room:string|null){return room?origins[room]:undefined;}
+/** Convert the authored room origin into a translation of the shared world. */
+export function cavernSceneOffset(room:string|null){
+  const origin=room?openingCavernOrigins[room]:undefined;
+  return origin?[-origin[0],-origin[1],-origin[2]] as const:undefined;
+}
 type Load=(url:string,ready:(gltf:GLTF)=>void,failed:()=>void)=>void;
 function release(root:THREE.Object3D){
   const geometries=new Set<THREE.BufferGeometry>(),materials=new Set<THREE.Material>(),textures=new Set<THREE.Texture>();
@@ -35,6 +34,7 @@ export function addCavernTargets(parent:THREE.Group,visible:ReadonlySet<string>,
     ['CHASM',[9,2,7],[0,-1.6,7]],
     ['STREAM',[1.5,.35,8],[0,-4.3,7]],
     ['MOSS',[10,2.2,1],[0,5.4,12]],
+    ['GLOBAL-WATER',[10,.2,2.8],[-12,1.035,20.7]],
   ];
   for(const [id,size,position] of definitions){
     if(!visible.has(id))continue;

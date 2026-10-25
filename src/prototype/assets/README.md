@@ -48,3 +48,7 @@ Mark chose on 2026-10-24 to ship these draft Hunyuan3D candidates in the public 
 Seven portable identities still have no generated export: ruby, stamp, statuette, teapot, violin, wand and white book. These keep simple temporary shapes. Most containers have static generated exteriors; only the finished chest has its source-controlled hinge binding. The registry does not invent new lid animations or reveal concealed contents. The original source actions and text remain authoritative.
 
 All four remain `draft` review records with front-projected colour and approximate backs/sides. The princess is a standing pose, whereas the source opening has her seated.
+
+## Opening Cavern extensions
+
+The five-room Opening Cavern environment retains the existing GLB and adds authored geometry in `opening-cavern.ts`. The Shallow Ford and Dark Tunnel reference PNGs supply selected UV patches for rock, ground and dusty floor materials. The ford has a shallow water plane over a pebbled bed; the tunnel has open 3D passages, enclosing rock walls, decorative leaves and twigs. These are authored extensions, not newly inferred Hunyuan meshes. Reference inputs and hashes, room origins and source connections are recorded in the [scene directory](../../../games/zork2/planning/scenes/opening-cavern/README.md). Extensions, textures and instancing buffers are disposed with the shared model when leaving the family or entering darkness. Dark Tunnel uses no cavern panorama and appears only when the source observation is lit.

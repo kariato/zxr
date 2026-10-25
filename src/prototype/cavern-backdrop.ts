@@ -7,7 +7,7 @@ type View={lit:boolean;room:{id:string}|null};
 type Key='cavern'|'barrow'|'lair';
 type Load=(ready:(texture:THREE.Texture)=>void,failed:()=>void,key:Key)=>void;
 const keyFor=(view:View):Key|null=>!view.lit?null:view.room?.id==='DRAGON-LAIR'?'lair':view.room?.id==='INSIDE-BARROW'?'barrow':
-  ['NARROW-TUNNEL','FOOT-BRIDGE','GREAT-CAVERN'].includes(view.room?.id??'')?'cavern':null;
+  ['NARROW-TUNNEL','FOOT-BRIDGE','GREAT-CAVERN','SHALLOW-FORD'].includes(view.room?.id??'')?'cavern':null;
 /** Distant painted shells only; never add interaction targets or lighting. */
 export function mountCavernBackdrop(scene:THREE.Scene,load:Load=(ready,failed,key)=>{
   new THREE.TextureLoader().load(key==='barrow'?barrowUrl:key==='lair'?lairUrl:cavernUrl,ready,undefined,failed);
