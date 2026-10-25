@@ -1,8 +1,9 @@
 import {expect,test} from '@playwright/test';
 
-test('loads the generated room, preserves refusal and reattaches on return',async({page})=>{
+test('shares one cavern model between the tunnel and Foot Bridge with source-controlled routes',async({page})=>{
   test.setTimeout(120000);
   const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
+  const modelRequests:string[]=[];page.on('request',request=>{if(request.url().includes('narrow-tunnel-room-v1')&&request.url().endsWith('.glb'))modelRequests.push(request.url());});
   await page.goto('./');await page.getByRole('button',{name:'Start Zork II',exact:true}).click();
   const prototype=page.getByRole('region',{name:'3D prototype',exact:true});
   await expect(prototype).toBeVisible({timeout:60000});
@@ -12,15 +13,28 @@ test('loads the generated room, preserves refusal and reattaches on return',asyn
   await walk('south');
   const viewport=prototype.locator('.prototype-viewport');
   await expect(prototype.locator('.prototype-info')).toContainText('Narrow Tunnel');
-  await expect(viewport).toHaveAttribute('data-narrow-tunnel','ready',{timeout:60000});
+  await expect(viewport).toHaveAttribute('data-cavern-scene','ready',{timeout:60000});
+  await expect(viewport).toHaveAttribute('data-cavern-room','NARROW-TUNNEL');
   await walk('down');
   await expect(prototype.locator('.prototype-feedback')).toContainText('crumbling rocks');
-  await expect(viewport).toHaveAttribute('data-narrow-tunnel','ready');
+  await expect(viewport).toHaveAttribute('data-cavern-scene','ready');
   await walk('south');await expect(prototype.locator('.prototype-info')).toContainText('Foot Bridge');
-  await expect(viewport).not.toHaveAttribute('data-narrow-tunnel','ready');
+  await expect(viewport).toHaveAttribute('data-cavern-scene','ready');
+  await expect(viewport).toHaveAttribute('data-cavern-room','FOOT-BRIDGE');
+  expect(modelRequests).toHaveLength(1);
+  await walk('down');await expect(prototype.locator('.prototype-feedback')).toContainText('The drop would be fatal.');
+  await walk('cross');await expect(prototype.locator('.prototype-feedback')).toContainText("You'll have to specify a direction.");
+  await expect(prototype.locator('.prototype-info')).toContainText('Foot Bridge');
   await walk('north');await expect(prototype.locator('.prototype-info')).toContainText('Narrow Tunnel');
-  await expect(viewport).toHaveAttribute('data-narrow-tunnel','ready',{timeout:60000});
+  await expect(viewport).toHaveAttribute('data-cavern-scene','ready');expect(modelRequests).toHaveLength(1);
   await page.screenshot({path:test.info().outputPath('narrow-tunnel.png'),fullPage:true});
+  await walk('south');await walk('south');await expect(prototype.locator('.prototype-info')).toContainText('Great Cavern');
+  await expect(viewport).not.toHaveAttribute('data-cavern-scene','ready');
+  await walk('ne');await expect(prototype.locator('.prototype-info')).toContainText('Foot Bridge');
+  await expect(viewport).toHaveAttribute('data-cavern-scene','ready',{timeout:60000});
+  expect(modelRequests).toHaveLength(2);
+  await page.screenshot({path:test.info().outputPath('foot-bridge.png'),fullPage:true});
+  await walk('north');
   await walk('north');await expect(prototype.locator('.prototype-info')).toContainText('Inside the Barrow');
   expect(errors).toEqual([]);
 });

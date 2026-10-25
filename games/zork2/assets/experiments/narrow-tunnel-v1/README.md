@@ -35,6 +35,8 @@ The generator retains the existing Hunyuan custom licence recorded in `docs/imag
 
 Walking stays inside a 2.4 × 5 metre near-bank area; the arrival camera stands at its southern end. Nine longitudinal clearance rays sample three widths/heights, and a separate eye-height ray checks the view toward the bridge. These are geometry checks, not a headset acceptance test. North/south/cross/down remain source-engine movement attempts. The fused scenery is not the object authority: hit targets exist only for currently observed bridge, chasm, stream and moss identities. The old environment is the loading/failure fallback, and model resources are released when leaving the room or entering darkness.
 
+The same finished GLB is also used for FOOT-BRIDGE, following Mark's room-sharing request. The presenter retains one loaded environment across the tunnel/bridge transition and positions the bridge-room origin on the existing deck. Source room identities and exits remain separate. The GLB bytes and generation provenance are unchanged by this reuse.
+
 Finished authoring files, arrival render, GLB audit and assembly measurements are in `out/asset-production/narrow-tunnel-room-v1/`. Regenerate with the existing Blender Python environment:
 
 ```sh
