@@ -20,7 +20,7 @@ function release(root:THREE.Object3D){
   geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());skeletons.forEach(s=>s.dispose());root.clear();root.removeFromParent();
 }
 
-/** URL is supplied explicitly by the local preview; restricted assets are never bundled. */
+/** URL is supplied explicitly by the caller; the procedural princess is the fallback. */
 export function mountPrincessActor(parent:THREE.Group,url:string,status:(state:PrincessStatus)=>void=()=>{},load:Load=(url,ready,failed)=>{
   new GLTFLoader().load(url,ready,undefined,failed);
 }){

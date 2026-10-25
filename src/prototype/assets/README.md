@@ -19,3 +19,16 @@ It depicts a warm underground stone chamber with no props, characters, doors, tu
 ## Barrow dressing v2
 
 `barrow-natural-v2.glb` is the blended barrow entrance, cave floor and rock assembly from `out/asset-production/barrow-natural-v2/`, copied unmodified (6.3 MB, 40,751 triangles). SHA-256: `5cad8e7826c394769da53f57016aeca6a54dbd192a286479127fedd11869fff8`. Rock meshes were generated locally with Hunyuan3D 2.0 turbo weights from built-in ImageGen references; see [the experiment](../../../games/zork2/assets/experiments/barrow-natural-v1/README.md) and [blending review](../../../docs/barrow-blend-review.md). Mark chose to ship it on the public prototype on 2026-10-24 despite the Hunyuan licence's US-only prototype scope; revisit before any wider release. It loads only on lit barrow visits; the procedural barrow remains the loading and failure fallback.
+
+## Generated princess and props v1
+
+Mark chose on 2026-10-24 to ship these draft Hunyuan3D candidates in the public prototype, under the same licence caveat as the barrow dressing. Each is copied unmodified from ignored `out/`; the procedural shape remains the loading/failure fallback and automated browsers keep the procedural shapes.
+
+| File | Source | SHA-256 |
+|---|---|---|
+| `princess-v1.glb` | `out/asset-tools/princess/princess-v1.glb`; 9,960 triangles, `Idle`/`Talk` clips. See [princess notes](../../../games/zork2/assets/characters/princess/README.md). | `a0b4ca75d85c6ae020b942eaf7f878c9c428df06177e38431faf933ec8c30c6c` |
+| `chest-v1.glb` | `out/asset-production/asset_chest/animated.glb`; split body and hinged lid. The lid follows the engine's open state; contents remain separate objects. | `c7a5fe28f8b4a6f6f8fabbb0ea1a7a0461dea6be12906defc3cc4a58dca906a8` |
+| `lamp-v1.glb` | `out/asset-production/asset_lamp/candidate.glb`; the engine's on state still supplies the light. | `3e0172ea267a69507ec65e836e87f7975743ed6e1b85a613d1bd4a956fc79ed6` |
+| `sword-v1.glb` | `out/asset-production/asset_sword/candidate.glb`. | `176f0ef5693c0afce3f473b46f9ba888d3a3e036c29c471c7f4696bc3cbccae5` |
+
+All four remain `draft` review records with front-projected colour and approximate backs/sides. The princess is a standing pose, whereas the source opening has her seated.

@@ -12,9 +12,10 @@ import { ObjectHold,objectIntent } from './object-gesture.ts';
 import { addCavernRocks,addBarrowGuardrails } from './cavern-rocks.ts';
 import { mountPrincessActor,type PrincessStatus } from './princess-actor.ts';
 import { mountBarrowDressing } from './barrow-dressing.ts';
+import { mountPropModel,posePropModel,releasePropModels } from './prop-model.ts';
 
 /** Disposable spatial presenter over the existing shared browser controller. */
-export function mountPrototype(host:HTMLElement,session:GameSession,player:BrowserPlayer,options:{princessModelUrl?:string;onPrincessStatus?:(status:PrincessStatus)=>void;barrowDressingUrl?:string;onBarrowStatus?:(status:'loading'|'ready'|'failed')=>void}={}){
+export function mountPrototype(host:HTMLElement,session:GameSession,player:BrowserPlayer,options:{princessModelUrl?:string;onPrincessStatus?:(status:PrincessStatus)=>void;barrowDressingUrl?:string;onBarrowStatus?:(status:'loading'|'ready'|'failed')=>void;propModelUrls?:Partial<Record<string,string>>}={}){
   const root=document.createElement('section');root.className='prototype';root.setAttribute('aria-label','3D prototype');host.prepend(root);
   const heading=document.createElement('h2');heading.textContent='Zork II in 3D';root.append(heading);
   const info=document.createElement('p');info.className='prototype-info';root.append(info);
@@ -38,6 +39,7 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
   const dressings:ReturnType<typeof mountBarrowDressing>[]=[];
   // GLB-backed actors and dressing outlive per-turn rebuilds within one room, so
   // a turn does not refetch the model or restart its animation.
+  const propMounts:{dispose():void}[]=[];
   const persistent=new THREE.Group();scene.add(persistent);let persistentKey='',dressingState:'loading'|'ready'|'failed'='loading',baseFloor:THREE.Mesh|undefined;
   const clearActors=()=>{actors.forEach(actor=>actor.dispose());actors.length=0;dressings.forEach(d=>d.dispose());dressings.length=0;persistent.clear();persistentKey='';dressingState='loading';};
   let view:PlayerView=player.player.view(),menuPage=0,textPage=0,lastText='',hasLayout=false,nearby=false;
@@ -54,7 +56,7 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
     const sprite=new THREE.Sprite(new THREE.SpriteMaterial({map:texture,depthTest:false}));sprite.scale.set(1.3,.244,1);return sprite;
   };
   const clear=(group:THREE.Group)=>{
-    group.traverse(node=>{if(node instanceof THREE.Mesh){if(node instanceof THREE.InstancedMesh)node.dispose();node.geometry.dispose();for(const mat of Array.isArray(node.material)?node.material:[node.material])if(![stone,floor,wood,brass,steel].includes(mat as THREE.MeshStandardMaterial))mat.dispose();}if(node instanceof THREE.Sprite){node.material.map?.dispose();node.material.dispose();}});group.clear();
+    group.traverse(node=>{if(node.userData.shared)return;if(node instanceof THREE.Mesh){if(node instanceof THREE.InstancedMesh)node.dispose();node.geometry.dispose();for(const mat of Array.isArray(node.material)?node.material:[node.material])if(![stone,floor,wood,brass,steel].includes(mat as THREE.MeshStandardMaterial))mat.dispose();}if(node instanceof THREE.Sprite){node.material.map?.dispose();node.material.dispose();}});group.clear();
   };
   const aim=()=>{camera.rotation.set(pitch,yaw,0,'YXZ');};
   const recenter=()=>{rig.position.set(0,0,0);rig.rotation.set(0,0,0);camera.position.set(0,1.6,-Math.max(0,depth/2-1.4));yaw=Math.PI;pitch=-.1;aim();};
@@ -64,7 +66,7 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
     const princess=!!options.princessModelUrl&&model.props.some(p=>p.id==='PRINCESS'&&!p.held);
     const nextKey=model.layout&&model.room?model.room+(princess?':princess':''):'';
     if(nextKey!==persistentKey)clearActors();persistentKey=nextKey;baseFloor=undefined;
-    clear(roomGroup);clear(hand);targets.length=0;
+    propMounts.forEach(m=>m.dispose());propMounts.length=0;clear(roomGroup);clear(hand);targets.length=0;
     const layout=model.layout;hasLayout=!!layout;width=layout?.width??2;depth=layout?.depth??2;
     if(changed){recenter();menuPage=textPage=0;}
     if(!layout)return;
@@ -133,17 +135,21 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
           const faceLight=new THREE.PointLight(0xffe0bc,3,5,2);faceLight.position.set(0,2,-1);group.add(faceLight);
         }else addPrincess(group);
       }
-      else if(prop.id==='CHEST'){addLairChest(group,prop.open);}
-      else if(prop.id==='STATUETTE'){const gold=material(0xc3973f);box(group,[.15,.3,.12],[0,.15,0],gold);}
+      // Procedural shapes form the body that a generated model replaces once loaded.
+      const body=new THREE.Group();group.add(body);
+      if(prop.id==='CHEST'){addLairChest(body,prop.open);}
+      else if(prop.id==='STATUETTE'){const gold=material(0xc3973f);box(body,[.15,.3,.12],[0,.15,0],gold);}
       else if(prop.id==='SWORD'){
-        box(group,[.75,.04,.1],[0,.025,0],steel);box(group,[.06,.06,.3],[-.4,.04,0],brass);box(group,[.22,.065,.065],[-.54,.04,0],wood);
+        box(body,[.75,.04,.1],[0,.025,0],steel);box(body,[.06,.06,.3],[-.4,.04,0],brass);box(body,[.22,.065,.065],[-.54,.04,0],wood);
         group.rotation.y=1.1;
-      }else{
-        box(group,[.2,.08,.2],[0,.04,0],brass);box(group,[.14,.24,.14],[0,.19,0],brass);
-        const glass=new THREE.MeshBasicMaterial({color:prop.on?0xffdb8a:0x59605a});box(group,[.15,.1,.15],[0,.2,0],glass);
-        box(group,[.22,.05,.22],[0,.34,0],brass);
+      }else if(prop.id==='LAMP'){
+        box(body,[.2,.08,.2],[0,.04,0],brass);box(body,[.14,.24,.14],[0,.19,0],brass);
+        const glass=new THREE.MeshBasicMaterial({color:prop.on?0xffdb8a:0x59605a});box(body,[.15,.1,.15],[0,.2,0],glass);
+        box(body,[.22,.05,.22],[0,.34,0],brass);
         if(prop.on){const lamp=new THREE.PointLight(0xffc87b,.5,8,2);lamp.position.set(0,1.05,-.2);group.add(lamp);}
       }
+      const modelUrl=prop.id==='PRINCESS'?undefined:options.propModelUrls?.[prop.id];
+      if(modelUrl)propMounts.push(mountPropModel(body,modelUrl,model=>posePropModel(prop.id,model,prop)));
       const action=objectActions.find(a=>a.object===prop.id);
       const label=textureLabel(action?.label??prop.name);label.position.set(0,prop.held ? .25 : prop.id==='PRINCESS'?2.05:.8,0);if(prop.held)label.scale.set(.38,.071,1);group.add(label);
       label.userData.action=action;label.userData.object=prop.id;targets.push(label);
@@ -289,5 +295,5 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
     }
     if(!viewport.hidden||renderer.xr.isPresenting){actors.forEach(actor=>actor.update(dt));renderer.render(scene,camera);}
   });
-  return {destroy(){disposed=true;cancel();unsubscribe();observer.disconnect();window.removeEventListener('blur',cancel);renderer.setAnimationLoop(null);void renderer.xr.getSession()?.end();backdrop.dispose();clearActors();clear(roomGroup);clear(hand);panel.geometry.dispose();menuTexture.dispose();menuMaterial.dispose();controllers.forEach(c=>c.traverse(n=>{if(n instanceof THREE.Line){n.geometry.dispose();(n.material as THREE.Material).dispose();}}));[stone,floor,wood,brass,steel].forEach(m=>m.dispose());renderer.dispose();root.remove();}};
+  return {destroy(){disposed=true;cancel();unsubscribe();observer.disconnect();window.removeEventListener('blur',cancel);renderer.setAnimationLoop(null);void renderer.xr.getSession()?.end();backdrop.dispose();clearActors();propMounts.forEach(m=>m.dispose());releasePropModels();clear(roomGroup);clear(hand);panel.geometry.dispose();menuTexture.dispose();menuMaterial.dispose();controllers.forEach(c=>c.traverse(n=>{if(n instanceof THREE.Line){n.geometry.dispose();(n.material as THREE.Material).dispose();}}));[stone,floor,wood,brass,steel].forEach(m=>m.dispose());renderer.dispose();root.remove();}};
 }

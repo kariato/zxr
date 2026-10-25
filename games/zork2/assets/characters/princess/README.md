@@ -4,7 +4,7 @@ Created 2026-10-24 on the 24 GB Apple M4 Mac mini.
 
 - `reference-v1.png`: generated full-body A-pose reference, with alpha.
 - `reference-v1.prompt.txt`: exact image-generation prompt. Generated using the built-in image tool, not a local image model.
-- No generated 3D model in this directory is approved for distribution or integrated into the game.
+- The draft `princess-v1.glb` candidate ships in the public prototype by Mark's decision on 2026-10-24 (see `src/prototype/assets/README.md`); it remains an unapproved draft.
 
 The local candidate is `out/asset-tools/princess/princess-v1.glb` (ignored by Git). View it while the development server is running at `/tests-e2e/fixtures/princess-model.html`. The GLB is self-contained and can also be opened in Blender or another glTF viewer. A fresh checkout will not contain this local candidate.
 
@@ -38,7 +38,7 @@ Binary audit checked finite positions, weights and animation values; nonnegative
 ## Sources and licence boundary
 
 - [Hunyuan3D-Swift](https://github.com/ZimengXiong/Hunyuan3D-Swift), code revision `292331f4d26ddb80b9dcea6bcb5629ff82f12b82`, MIT runtime.
-- [Hunyuan3D-2 weights](https://huggingface.co/tencent/Hunyuan3D-2), **custom Tencent community licence**, not an unrestricted open-source licence. Its [licence](https://huggingface.co/tencent/Hunyuan3D-2/blob/main/LICENSE) restricts use/display of outputs outside its defined territory, which excludes the EU, UK and South Korea. Consequently this candidate stays local and is **not a default worldwide-distributable ZXR asset**. Do not bundle it into GitHub Pages or copy it into published game assets without resolving this limitation or regenerating with a suitable model.
+- [Hunyuan3D-2 weights](https://huggingface.co/tencent/Hunyuan3D-2), **custom Tencent community licence**, not an unrestricted open-source licence. Its [licence](https://huggingface.co/tencent/Hunyuan3D-2/blob/main/LICENSE) restricts use/display of outputs outside its defined territory, which excludes the EU, UK and South Korea. Consequently this candidate stays local and is **not a default worldwide-distributable ZXR asset**. Mark chose on 2026-10-24 to publish it on GitHub Pages anyway; resolve this limitation or regenerate before any wider release.
 - [SkinTokens](https://github.com/VAST-AI-Research/SkinTokens), MIT, code revision `273b691d35989d71cd17ff2895fdc735097b92d1`; checkpoints from `VAST-AI/SkinTokens`, revision `79736cad0fd84de384d5eede659b4ebd24effe33`.
 - [AssetFurnace](https://github.com/Bingeljell/image-to-3dlab), code revision `418f63274d2fd03bc177ec75dd52b75dd31858e2`, portable SkinTokens patch. Its local Blender service was changed to bind to `127.0.0.1` only and stopped after inference.
 

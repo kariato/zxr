@@ -3,6 +3,9 @@ import { GameSession,loadGame,WorldState } from '../../src/engine/index.ts';
 import { mountBrowserPlayer } from '../../src/player/browser.ts';
 import { mountPrototype } from '../../src/prototype/view.ts';
 import { GameSaves } from '../../src/persistence/saves.ts';
+import princessModelUrl from '../../src/prototype/assets/princess-v1.glb?url';
+import chestModelUrl from '../../src/prototype/assets/chest-v1.glb?url';
+import lampModelUrl from '../../src/prototype/assets/lamp-v1.glb?url';
 const start=document.querySelector<HTMLButtonElement>('#start')!,status=document.querySelector<HTMLElement>('#loading')!;
 start.addEventListener('click',async()=>{
   start.disabled=true;status.textContent='Loading the lair…';
@@ -24,7 +27,7 @@ start.addEventListener('click',async()=>{
     const animated=new URLSearchParams(location.search).get('princess')==='animated';
     status.textContent=animated?'Loading the animated princess…':'Temporary preview ready. Left-click the princess or chest for source actions.';
     mountPrototype(host,session,player,animated?{
-      princessModelUrl:'/out/asset-tools/princess/princess-v1.glb',
+      princessModelUrl,propModelUrls:{CHEST:chestModelUrl,LAMP:lampModelUrl},
       onPrincessStatus(state){status.textContent=state==='ready'?'Animated princess ready: idle plays automatically. Use “Preview princess gesture” or “Princess close-up”. Local standing-pose audition; no seated/walking clip yet.':state==='failed'?'Local model unavailable; showing the procedural princess instead.':'Loading the animated princess…';},
     }:{});start.hidden=true;
   }catch(error){status.textContent=error instanceof Error?error.message:String(error);start.disabled=false;}
