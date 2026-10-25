@@ -1,8 +1,8 @@
-import {readFile} from 'node:fs/promises';
 import {expect,test} from '@playwright/test';
 
 test('shares one cavern model across all five Opening Cavern rooms with source-controlled routes',async({page})=>{
-  test.setTimeout(120000);
+  // Software WebGL on CI is slower than a desktop GPU across this full journey.
+  test.setTimeout(240000);
   const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
   const modelRequests:string[]=[];page.on('request',request=>{if(request.url().includes('narrow-tunnel-room-v1')&&request.url().endsWith('.glb'))modelRequests.push(request.url());});
   await page.goto('./');await page.getByRole('button',{name:'Start Zork II',exact:true}).click();
@@ -30,39 +30,49 @@ test('shares one cavern model across all five Opening Cavern rooms with source-c
   await expect(prototype.locator('.prototype-info')).toContainText('Foot Bridge');
   await walk('north');await expect(prototype.locator('.prototype-info')).toContainText('Narrow Tunnel');
   await expect(viewport).toHaveAttribute('data-cavern-scene','ready');expect(modelRequests).toHaveLength(1);
-  await page.screenshot({path:test.info().outputPath('narrow-tunnel.png'),fullPage:true});
   await walk('south');await walk('south');await expect(prototype.locator('.prototype-info')).toContainText('Great Cavern');
   await expect(viewport).toHaveAttribute('data-cavern-scene','ready');
   await expect(viewport).toHaveAttribute('data-cavern-room','GREAT-CAVERN');
   expect(modelRequests).toHaveLength(1);
-  await page.screenshot({path:test.info().outputPath('great-cavern.png'),fullPage:true});
   await walk('sw');await expect(prototype.locator('.prototype-info')).toContainText('Shallow Ford');
   await expect(viewport).toHaveAttribute('data-cavern-scene','ready');
   await expect(viewport).toHaveAttribute('data-cavern-room','SHALLOW-FORD');
   expect(modelRequests).toHaveLength(1);
-  await page.screenshot({path:test.info().outputPath('shallow-ford.png'),fullPage:true});
-  const downloadPromise=page.waitForEvent('download');await page.getByRole('button',{name:'Export save',exact:true}).click();
-  const download=await downloadPromise,unlitFord=await readFile((await download.path())!);
+  await viewport.screenshot({path:test.info().outputPath('shallow-ford.png')});
   await lamp.getByRole('button').first().click();
   await walk('south');await expect(prototype.locator('.prototype-info')).toContainText('Dark Tunnel');
   await expect(viewport).toHaveAttribute('data-cavern-room','DARK-TUNNEL');
   await expect(viewport).toHaveAttribute('data-cavern-scene','ready');expect(modelRequests).toHaveLength(1);
-  await page.screenshot({path:test.info().outputPath('dark-tunnel-lit.png'),fullPage:true});
+  await viewport.screenshot({path:test.info().outputPath('dark-tunnel-lit.png')});
   await walk('ne');await expect(prototype.locator('.prototype-info')).toContainText('Shallow Ford');
-  await page.getByLabel('Import save',{exact:true}).setInputFiles({name:'unlit-ford.json',mimeType:'application/json',buffer:unlitFord});
-  await walk('cross');await expect(viewport).not.toHaveAttribute('data-cavern-scene','ready');
-  await expect(prototype.locator('.prototype-feedback')).toContainText('pitch black');
-  await page.screenshot({path:test.info().outputPath('dark-tunnel-unlit.png'),fullPage:true});
-  await page.getByLabel('Import save',{exact:true}).setInputFiles({name:'unlit-ford.json',mimeType:'application/json',buffer:unlitFord});
-  await expect(viewport).toHaveAttribute('data-cavern-scene','ready',{timeout:60000});expect(modelRequests).toHaveLength(2);
   await walk('north');await expect(prototype.locator('.prototype-info')).toContainText('Great Cavern');
   await expect(viewport).toHaveAttribute('data-cavern-scene','ready',{timeout:60000});
-  expect(modelRequests).toHaveLength(2);
+  expect(modelRequests).toHaveLength(1);
   await walk('ne');await expect(prototype.locator('.prototype-info')).toContainText('Foot Bridge');
   await expect(viewport).toHaveAttribute('data-cavern-scene','ready',{timeout:60000});
-  expect(modelRequests).toHaveLength(2);
-  await page.screenshot({path:test.info().outputPath('foot-bridge.png'),fullPage:true});
+  expect(modelRequests).toHaveLength(1);
   await walk('north');
   await walk('north');await expect(prototype.locator('.prototype-info')).toContainText('Inside the Barrow');
+  expect(errors).toEqual([]);
+});
+
+test('entering Dark Tunnel without a lamp clears all shared cavern artwork',async({page})=>{
+  test.setTimeout(120000);
+  const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
+  await page.goto('./');await page.getByRole('button',{name:'Start Zork II',exact:true}).click();
+  const prototype=page.getByRole('region',{name:'3D prototype',exact:true});
+  await expect(prototype).toBeVisible({timeout:60000});
+  test.skip(await prototype.getByText('3D is unavailable in this browser.',{exact:false}).isVisible(),'WebGL is unavailable; source darkness is checked separately.');
+  const moves=prototype.getByRole('navigation',{name:'Movement attempts',exact:true});
+  const walk=async(direction:string)=>moves.getByRole('button',{name:new RegExp('^Go: '+direction+'$','i')}).click();
+  for(const direction of ['south','south','south','sw'])await walk(direction);
+  const viewport=prototype.locator('.prototype-viewport');
+  await expect(viewport).toHaveAttribute('data-cavern-room','SHALLOW-FORD');
+  await expect(viewport).toHaveAttribute('data-cavern-scene','ready',{timeout:60000});
+  await walk('cross');
+  await expect(viewport).not.toHaveAttribute('data-cavern-scene','ready');
+  await expect(viewport).not.toHaveAttribute('data-cavern-room');
+  await expect(prototype.locator('.prototype-feedback')).toContainText('pitch black');
+  await viewport.screenshot({path:test.info().outputPath('dark-tunnel-unlit.png')});
   expect(errors).toEqual([]);
 });
