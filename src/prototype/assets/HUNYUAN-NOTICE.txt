@@ -5,6 +5,7 @@ GENERATED 3D MODELS: AVAILABILITY AND USE RESTRICTIONS
 The following ZXR files are machine-generated outputs of Tencent Hunyuan 3D 2.0:
 
   barrow-natural-v2.glb  (generated rock forms, assembled in Blender)
+  narrow-tunnel-room-v1.glb (generated cavern rocks, finished with a clear near bank and authored bridge, stream and moss)
   princess-v1.glb        (generated mesh; rigged and animated afterwards)
   chest-v1.glb           (generated exterior; split into body and hinged lid afterwards)
   lamp-v1.glb

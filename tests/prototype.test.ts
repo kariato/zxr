@@ -25,7 +25,9 @@ it('source movement controls room changes, refusals, darkness and save restorati
   p.walk('NORTH');expect(s.observe().moves).toBe(1);expect(s.observe().perception.room?.id).toBe('INSIDE-BARROW');
   p.walk('SOUTH');expect(s.observe().moves).toBe(2);expect(s.observe().perception.room?.id).toBe('NARROW-TUNNEL');
   expect(prototypeModel(s.observeAppearance()).layout).not.toBeNull();
-  p.walk('SOUTH');expect(s.observe().moves).toBe(3);expect(s.observe().perception.room?.id).toBe('FOOT-BRIDGE');
+  p.walk('DOWN');expect(s.observe().moves).toBe(3);expect(s.observe().perception.room?.id).toBe('NARROW-TUNNEL');
+  expect(p.transcript.at(-1)?.text).toContain('crumbling rocks');
+  p.walk('CROSS');expect(s.observe().moves).toBe(4);expect(s.observe().perception.room?.id).toBe('FOOT-BRIDGE');
   p.walk('NORTH');expect(s.observe().perception.room?.id).toBe('NARROW-TUNNEL');
   p.importSave(save);expect(s.observe().perception.room?.id).toBe('INSIDE-BARROW');expect(s.observe().moves).toBe(0);
 });

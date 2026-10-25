@@ -1,0 +1,64 @@
+{
+  "sourceRoom": "NARROW-TUNNEL",
+  "sourceCandidateSha256": "78c6353daac4b6cb5006f155dc77605c88196508f4622d5540d6373d9f5d8e69",
+  "sha256": "975601012fcca29e5e2741aafca355778c8e96553f4787ece13329fcc140a080",
+  "bytes": 1197532,
+  "clearance": [
+    {
+      "x": -0.84,
+      "height": 0.3,
+      "clear": true
+    },
+    {
+      "x": -0.84,
+      "height": 1.6,
+      "clear": true
+    },
+    {
+      "x": -0.84,
+      "height": 2.1,
+      "clear": true
+    },
+    {
+      "x": 0,
+      "height": 0.3,
+      "clear": true
+    },
+    {
+      "x": 0,
+      "height": 1.6,
+      "clear": true
+    },
+    {
+      "x": 0,
+      "height": 2.1,
+      "clear": true
+    },
+    {
+      "x": 0.84,
+      "height": 0.3,
+      "clear": true
+    },
+    {
+      "x": 0.84,
+      "height": 1.6,
+      "clear": true
+    },
+    {
+      "x": 0.84,
+      "height": 2.1,
+      "clear": true
+    }
+  ],
+  "arrivalSightlineClear": true,
+  "walkingBounds": {
+    "width": 2.4,
+    "depth": 5
+  },
+  "removedRavineFaces": 4749,
+  "textureMethod": "reference stone tile with planar UVs; authored wooden bridge",
+  "limitations": [
+    "Generated scenery remains fused; source interactions use separate observation-bound hit targets.",
+    "Not a headset clearance or performance acceptance test."
+  ]
+}

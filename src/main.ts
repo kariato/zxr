@@ -3,11 +3,12 @@ import { GameSession, loadGame } from './engine/index.ts';
 import { mountRoomNarration,unlockNarrationAudio } from './presentation/audio/browser.ts';
 import { mountBrowserPlayer } from './player/browser.ts';
 import barrowDressingUrl from './prototype/assets/barrow-natural-v2.glb?url';
+import narrowTunnelUrl from './prototype/assets/narrow-tunnel-room-v1.glb?url';
 import princessModelUrl from './prototype/assets/princess-v1.glb?url';
 import { movablePropUrls } from './prototype/movable-props.ts';
 // The large animated actor and environment keep software-renderer fallbacks.
 // Movable models use the same registry in normal and automated browsers.
-const generatedModels={...(navigator.webdriver?{}:{barrowDressingUrl,princessModelUrl}),propModelUrls:movablePropUrls};
+const generatedModels={...(navigator.webdriver?{}:{barrowDressingUrl,princessModelUrl}),narrowTunnelUrl,propModelUrls:movablePropUrls};
 const start=document.querySelector<HTMLButtonElement>('#start')!,status=document.querySelector<HTMLElement>('#loading')!,target=document.querySelector<HTMLElement>('#player')!;
 start.addEventListener('click',async()=>{
   const narrationAudio=unlockNarrationAudio();

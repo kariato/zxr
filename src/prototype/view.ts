@@ -12,11 +12,12 @@ import { ObjectHold,objectIntent } from './object-gesture.ts';
 import { addCavernRocks,addBarrowGuardrails } from './cavern-rocks.ts';
 import { mountPrincessActor,type PrincessStatus } from './princess-actor.ts';
 import { mountBarrowDressing } from './barrow-dressing.ts';
+import { mountNarrowTunnel,addNarrowTunnelTargets,type TunnelStatus } from './narrow-tunnel.ts';
 import { mountPropModel,posePropModel,releasePropModels } from './prop-model.ts';
 import { movablePropDefinitions } from './movable-props.generated.ts';
 
 /** Disposable spatial presenter over the existing shared browser controller. */
-export function mountPrototype(host:HTMLElement,session:GameSession,player:BrowserPlayer,options:{princessModelUrl?:string;onPrincessStatus?:(status:PrincessStatus)=>void;barrowDressingUrl?:string;onBarrowStatus?:(status:'loading'|'ready'|'failed')=>void;propModelUrls?:Partial<Record<string,string>>}={}){
+export function mountPrototype(host:HTMLElement,session:GameSession,player:BrowserPlayer,options:{princessModelUrl?:string;onPrincessStatus?:(status:PrincessStatus)=>void;barrowDressingUrl?:string;onBarrowStatus?:(status:'loading'|'ready'|'failed')=>void;narrowTunnelUrl?:string;onNarrowTunnelStatus?:(status:TunnelStatus)=>void;propModelUrls?:Partial<Record<string,string>>}={}){
   const root=document.createElement('section');root.className='prototype';root.setAttribute('aria-label','3D prototype');host.prepend(root);
   const heading=document.createElement('h2');heading.textContent='Zork II in 3D';root.append(heading);
   const info=document.createElement('p');info.className='prototype-info';root.append(info);
@@ -41,8 +42,8 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
   // GLB-backed actors and dressing outlive per-turn rebuilds within one room, so
   // a turn does not refetch the model or restart its animation.
   const propMounts:{dispose():void}[]=[];
-  const persistent=new THREE.Group();scene.add(persistent);let persistentKey='',dressingState:'loading'|'ready'|'failed'='loading',baseFloor:THREE.Mesh|undefined;
-  const clearActors=()=>{actors.forEach(actor=>actor.dispose());actors.length=0;dressings.forEach(d=>d.dispose());dressings.length=0;persistent.clear();persistentKey='';dressingState='loading';};
+  const persistent=new THREE.Group();scene.add(persistent);let persistentKey='',dressingState:'loading'|'ready'|'failed'='loading',baseFloor:THREE.Mesh|undefined,tunnelFallback:THREE.Group|undefined;
+  const clearActors=()=>{actors.forEach(actor=>actor.dispose());actors.length=0;dressings.forEach(d=>d.dispose());dressings.length=0;persistent.clear();persistentKey='';dressingState='loading';delete viewport.dataset.narrowTunnel;};
   let view:PlayerView=player.player.view(),menuPage=0,textPage=0,lastText='',hasLayout=false,nearby=false;
   let objectActions:ObjectAction[]=[];
   const material=(colour:number)=>new THREE.MeshStandardMaterial({color:colour,roughness:.95,flatShading:true});
@@ -61,13 +62,13 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
     group.traverse(node=>{if(node.userData.shared)return;if(node instanceof THREE.Mesh){if(node instanceof THREE.InstancedMesh)node.dispose();node.geometry.dispose();for(const mat of Array.isArray(node.material)?node.material:[node.material])if(![stone,floor,wood,brass,steel].includes(mat as THREE.MeshStandardMaterial))mat.dispose();}if(node instanceof THREE.Sprite){node.material.map?.dispose();node.material.dispose();}});group.clear();
   };
   const aim=()=>{camera.rotation.set(pitch,yaw,0,'YXZ');};
-  const recenter=()=>{rig.position.set(0,0,0);rig.rotation.set(0,0,0);camera.position.set(0,1.6,-Math.max(0,depth/2-1.4));yaw=Math.PI;pitch=-.1;aim();};
+  const recenter=()=>{rig.position.set(0,0,0);rig.rotation.set(0,0,0);camera.position.set(0,1.6,room==='NARROW-TUNNEL'?1.1:-Math.max(0,depth/2-1.4));yaw=Math.PI;pitch=-.1;aim();};
   const build=()=>{
     const observation=session.observeAppearance(),model=prototypeModel(observation),changed=room!==model.room;room=model.room;
     backdrop.update(observation.perception);
     const princess=!!options.princessModelUrl&&model.props.some(p=>p.id==='PRINCESS'&&!p.held);
     const nextKey=model.room&&(model.layout||princess)?model.room+(princess?':princess':''):'';
-    if(nextKey!==persistentKey)clearActors();persistentKey=nextKey;baseFloor=undefined;
+    if(nextKey!==persistentKey)clearActors();persistentKey=nextKey;baseFloor=undefined;tunnelFallback=undefined;
     propMounts.forEach(m=>m.dispose());propMounts.length=0;clear(roomGroup);clear(hand);targets.length=0;
     const layout=model.layout;hasLayout=!!layout;width=layout?.width??8;depth=layout?.depth??8;
     if(changed){recenter();menuPage=textPage=0;}
@@ -77,7 +78,17 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
     scene.add(roomGroup);
     roomGroup.add(new THREE.HemisphereLight(cavern?0x91abb5:0xc5d4c1,cavern?0x38434b:0x303025,2));
     const light=new THREE.PointLight(cavern?0xb0c8b5:0xf6cb83,cavern?12:(barrow||lair)?4:18,cavern?20:14,2);light.position.set(.7,cavern?4:(barrow||lair)?3.2:2,-1);roomGroup.add(light);
-    if(cavern)addCavernRocks(roomGroup);
+    const generatedTunnel=room==='NARROW-TUNNEL'&&!!options.narrowTunnelUrl;
+    const environment=new THREE.Group();roomGroup.add(environment);
+    if(generatedTunnel){
+      tunnelFallback=environment;
+      if(!dressings.length)dressings.push(mountNarrowTunnel(persistent,options.narrowTunnelUrl!,state=>{
+        dressingState=state;if(tunnelFallback)tunnelFallback.visible=state!=='ready';viewport.dataset.narrowTunnel=state;options.onNarrowTunnelStatus?.(state);
+      }));
+      environment.visible=dressingState!=='ready';
+      targets.push(...addNarrowTunnelTargets(roomGroup,new Set(observation.perception.objects.filter(o=>o.visible).map(o=>o.id)),objectActions));
+    }
+    if(cavern)addCavernRocks(environment);
     if(!layout){
       // Object-only staging for rooms awaiting environment geometry. Do not
       // invent walls, doors, routes or traversable floor from the object art.
@@ -111,21 +122,22 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
         targets.push(...addBarrowTunnel(roomGroup,depth/2));
       }
     }else{
-      box(roomGroup,[width,.25,depth],[0,-.15,0],floor);
+      box(environment,[width,.25,depth],[0,-.15,0],floor);
       const shellEnd=cavern ? .6 : depth/2,ceilingDepth=cavern?depth/2+.6:depth+.4;
-      box(roomGroup,[width+.4,.4,ceilingDepth],[0,layout.height+.2,cavern?(shellEnd-depth/2)/2:0],stone);
+      box(environment,[width+.4,.4,ceilingDepth],[0,layout.height+.2,cavern?(shellEnd-depth/2)/2:0],stone);
       for(const side of [-1,1])for(let z=-depth/2;z<shellEnd;z+=.75){
         const rock=new THREE.Mesh(new THREE.DodecahedronGeometry(.9,0),stone);
-        rock.position.set(side*(width/2+.35),1.35,z);rock.scale.set(.75,1.8,1);roomGroup.add(rock);
+        rock.position.set(side*(width/2+.35),1.35,z);rock.scale.set(.75,1.8,1);environment.add(rock);
       }
       for(const z of [-depth/2,depth/2])for(let x=-width/2;x<=width/2;x+=.65){
         if(cavern&&z>0)continue; // The source tunnel opens south into the cavern.
         const opening=layout.routes.some(r=>Math.sign(r.z)===Math.sign(z))&&Math.abs(x)<.85;
-        if(!opening){const rock=new THREE.Mesh(new THREE.DodecahedronGeometry(.8,0),stone);rock.position.set(x,1.3,z+.15*Math.sign(z));rock.scale.y=1.9;roomGroup.add(rock);}
+        if(!opening){const rock=new THREE.Mesh(new THREE.DodecahedronGeometry(.8,0),stone);rock.position.set(x,1.3,z+.15*Math.sign(z));rock.scale.y=1.9;environment.add(rock);}
       }
     }
     for(const route of layout?.routes??[]){
       const label=textureLabel('Go '+route.direction.toLowerCase());label.position.set(route.x,1.45,route.z);label.userData.direction=route.direction;roomGroup.add(label);targets.push(label);
+      if(room==='NARROW-TUNNEL'&&route.direction==='SOUTH'){label.position.set(.65,1.05,route.z);label.scale.set(.45,.0845,1);}
     }
     let roomSlot=0,heldSlot=0;
     for(const prop of model.props){
@@ -139,7 +151,7 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
       }else{
         roomGroup.add(group);
         if(['PRINCESS','CHEST','STATUETTE','SWORD','LAMP'].includes(prop.id))group.position.set(prop.id==='PRINCESS'?-2:(prop.id==='CHEST'||prop.id==='STATUETTE')?2:prop.id==='SWORD'?-.9:1,prop.id==='STATUETTE'?.1:.03,prop.id==='PRINCESS'||prop.id==='CHEST'||prop.id==='STATUETTE'?1.3:room==='INSIDE-BARROW'?.6:0);
-        else{const slot=roomSlot++;group.position.set((slot%5-2)*1.15,.03,Math.floor(slot/5)*1.2);}
+        else{const slot=roomSlot++;group.position.set((slot%5-2)*(room==='NARROW-TUNNEL'?.4:1.15),.03,room==='NARROW-TUNNEL'?-1.8+Math.floor(slot/5)*.45:Math.floor(slot/5)*1.2);}
       }
       if(prop.id==='PRINCESS'){
         if(options.princessModelUrl){
