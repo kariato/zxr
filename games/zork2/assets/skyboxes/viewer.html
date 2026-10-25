@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zork II skybox review</title>
+<style>
+body{margin:24px;background:#142026;color:#ecede7;font:16px system-ui}a{color:#d8bb7b}select,button{font:inherit;background:#253239;color:inherit;border:1px solid #657176;padding:8px;border-radius:6px}canvas{display:block;width:100%;height:min(65vh,650px);margin:16px 0;touch-action:none;cursor:grab;background:#111c22}p{max-width:95ch}nav{display:flex;flex-wrap:wrap;gap:12px;align-items:center}#status{min-height:1.5em}
+</style>
+<h1>Skybox review</h1>
+<p><a href="index.html">Gallery</a> · <a href="manifest.json">Room assignments</a>. Drag to look around. Use the arrow keys to turn; Page Up and Page Down look vertically. This preview shows only the painted background.</p>
+<nav><label>Environment <select id="family"></select></label><button id="reset">Reset view</button><button id="up">Look up</button><button id="down">Look down</button><a id="original">Original PNG</a></nav>
+<p id="status" role="status">Loading inventory…</p>
+<canvas tabindex="0" aria-label="Interactive spherical panorama. Drag or use arrow keys to look around."></canvas>
+<p id="rooms"></p>
+<script type="module">
+const canvas=document.querySelector('canvas'),status=document.querySelector('#status'),select=document.querySelector('#family');
+const gl=canvas.getContext('webgl');
+async function start(){
+ if(!gl)throw Error('WebGL is unavailable. Open a PNG from the gallery instead.');
+ const compile=(type,source)=>{const shader=gl.createShader(type);gl.shaderSource(shader,source);gl.compileShader(shader);if(!gl.getShaderParameter(shader,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(shader));return shader;};
+ const program=gl.createProgram();
+ gl.attachShader(program,compile(gl.VERTEX_SHADER,'attribute vec2 position;varying vec2 p;void main(){p=position;gl_Position=vec4(position,0.,1.);}'));
+ gl.attachShader(program,compile(gl.FRAGMENT_SHADER,`precision highp float;varying vec2 p;uniform sampler2D panorama;uniform float yaw;uniform float pitch;uniform float aspect;
+ void main(){vec3 d=normalize(vec3(p.x*aspect,p.y,1.2));float c=cos(pitch),s=sin(pitch);d=vec3(d.x,c*d.y+s*d.z,-s*d.y+c*d.z);c=cos(yaw);s=sin(yaw);d=vec3(c*d.x+s*d.z,d.y,-s*d.x+c*d.z);vec2 uv=vec2(fract(atan(d.x,d.z)/6.28318530718+0.5),0.5-asin(clamp(d.y,-1.,1.))/3.14159265359);gl_FragColor=texture2D(panorama,uv);}`));
+ gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(program));gl.useProgram(program);
+ const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
+ const position=gl.getAttribLocation(program,'position');gl.enableVertexAttribArray(position);gl.vertexAttribPointer(position,2,gl.FLOAT,false,0,0);
+ const texture=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,texture);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+ let yaw=0,pitch=0,ready=false,request=0;
+ const draw=()=>{if(!ready)return;const scale=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(canvas.clientWidth*scale);canvas.height=Math.round(canvas.clientHeight*scale);gl.viewport(0,0,canvas.width,canvas.height);gl.uniform1f(gl.getUniformLocation(program,'aspect'),canvas.width/canvas.height);gl.uniform1f(gl.getUniformLocation(program,'yaw'),yaw);gl.uniform1f(gl.getUniformLocation(program,'pitch'),pitch);gl.drawArrays(gl.TRIANGLES,0,6);canvas.dataset.yaw=String(yaw);canvas.dataset.pitch=String(pitch);};
+ const manifest=await fetch('manifest.json').then(r=>{if(!r.ok)throw Error('Could not load inventory');return r.json();});
+ const prefix='../../../../';
+ for(const asset of manifest.assets){const option=document.createElement('option');option.value=asset.id;option.textContent=asset.label||asset.id;select.append(option);}
+ const load=()=>{const asset=manifest.assets.find(a=>a.id===select.value),ticket=++request;ready=false;canvas.dataset.ready='false';gl.clearColor(.067,.11,.133,1);gl.clear(gl.COLOR_BUFFER_BIT);status.textContent='Loading '+(asset.label||asset.id)+'…';document.querySelector('#rooms').textContent='Rooms: '+manifest.rooms.filter(r=>r.skybox===asset.id).map(r=>r.identity).join(', ');const img=new Image();img.onload=()=>{if(ticket!==request)return;gl.bindTexture(gl.TEXTURE_2D,texture);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);ready=true;yaw=0;pitch=0;draw();canvas.dataset.ready='true';status.textContent=(asset.label||asset.id)+' · '+img.width+' × '+img.height+' · draft background';};img.onerror=()=>{if(ticket===request)status.textContent='Image could not be loaded. Try the original PNG.';};img.src=prefix+asset.image;document.querySelector('#original').href=img.src;history.replaceState(null,'','#'+asset.id);};
+ select.value=manifest.assets.some(a=>a.id===location.hash.slice(1))?location.hash.slice(1):manifest.assets[0].id;select.addEventListener('change',load);
+ let previous=null;canvas.addEventListener('pointerdown',e=>{canvas.setPointerCapture(e.pointerId);previous=[e.clientX,e.clientY];});canvas.addEventListener('pointermove',e=>{if(!previous)return;yaw-=(e.clientX-previous[0])*.006;pitch=Math.max(-Math.PI/2,Math.min(Math.PI/2,pitch+(e.clientY-previous[1])*.006));previous=[e.clientX,e.clientY];draw();});for(const event of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(event,()=>{previous=null;});
+ canvas.addEventListener('keydown',e=>{const moves={ArrowLeft:[-.15,0],ArrowRight:[.15,0],ArrowUp:[0,.15],ArrowDown:[0,-.15],PageUp:[0,.5],PageDown:[0,-.5]};if(!moves[e.key])return;e.preventDefault();yaw+=moves[e.key][0];pitch=Math.max(-Math.PI/2,Math.min(Math.PI/2,pitch+moves[e.key][1]));draw();});
+ document.querySelector('#reset').onclick=()=>{yaw=pitch=0;draw();};document.querySelector('#up').onclick=()=>{pitch=Math.PI/2;draw();};document.querySelector('#down').onclick=()=>{pitch=-Math.PI/2;draw();};new ResizeObserver(draw).observe(canvas);load();
+}
+start().catch(error=>{status.textContent=error.message;console.error(error);});
+</script>
+</html>

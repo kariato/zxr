@@ -1,0 +1,1382 @@
+[
+  {
+    "room": "BANK-ENTRANCE",
+    "label": "Bank Entrance",
+    "literalRoomDescription": [
+      "This is the entrance hall of the Bank of Zork, the largest banking institution of the Great Underground Empire. A partial account of its history is in \"The Lives of the Twelve Flatheads,\" in the chapter on J. Pierpont Flathead. A more detailed history (albeit less objective) may be found in Flathead's outrageous autobiography \"I'm Rich and You Aren't - So There!\". Most of the furniture has been ravaged by passing scavengers. All that remains are two signs at the northwest and northeast corners of the room, which say:\n\n    <--  VIEWING ROOMS  -->\n\nThe way out (ornate but tasteful) is to the east. "
+    ],
+    "safeSceneProfile": "Vandalised bank entrance, tasteful ornate east doorway and northwest/northeast viewing-room signs; no replacement furniture.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "EAST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "FRESCO-ROOM"
+        }
+      },
+      {
+        "direction": "NE",
+        "view": {
+          "kind": "UEXIT",
+          "to": "TELLER-EAST"
+        }
+      },
+      {
+        "direction": "NW",
+        "view": {
+          "kind": "UEXIT",
+          "to": "TELLER-WEST"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "b13ce468ceeaeec728be02e8a52538ad3106146ca128875c4cc350820a2c4d2a"
+  },
+  {
+    "room": "CAGE-ROOM",
+    "label": "Dingy Closet",
+    "literalRoomDescription": [
+      "This is a dingy closet adjacent to a larger room to the north. Chiselled into a wall are these words:\n\n     Protected by\n       FROBOZZ\n Magic Alarm Company\n  (Hello, footpad!)\n\nThere doesn't seem to be any footpad here, however."
+    ],
+    "safeSceneProfile": "Dingy alarm-company closet; carved warning follows source text. Steel cage is separate and initially concealed, not a permanent central cage.",
+    "visibleInitialObjects": [
+      {
+        "identity": "PALANTIR-1",
+        "label": "red crystal sphere",
+        "parent": "CAGE-ROOM",
+        "flags": [
+          "STAGGERED",
+          "TAKEBIT",
+          "TRANSBIT",
+          "TRYTAKEBIT"
+        ],
+        "sourceText": [
+          "There is a beautiful red crystal sphere here."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed red crystal sphere. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a beautiful red crystal sphere here.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every red crystal sphere into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [
+      {
+        "identity": "CAGE",
+        "reason": "initially concealed"
+      }
+    ],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "MACHINE-ROOM"
+        }
+      },
+      {
+        "direction": "OUT",
+        "view": {
+          "kind": "UEXIT",
+          "to": "MACHINE-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": true,
+    "sourceHash": "94c1205a3dbe8e88db7482e2bd2ac996c90da61969b34d5c6fb4640bfb011933"
+  },
+  {
+    "room": "DEPOSITORY",
+    "label": "Safety Depository",
+    "literalRoomDescription": [
+      "This is a large rectangular room. The east and west walls were used for storing safety deposit boxes, but all have been carefully removed by evil persons. To the east, west, and south of the room are large doorways. The northern \"wall\" of the room is a shimmering curtain of light. In the center of the room is a large stone cube, about 10 feet on a side. Engraved on the side of the cube is some lettering."
+    ],
+    "safeSceneProfile": "Rectangular bank room with removed deposit boxes, three broad doorways, separate northern light curtain and approximately ten-foot stone cube. Lettering belongs to observed cube, not an answer sign.",
+    "visibleInitialObjects": [
+      {
+        "identity": "BANK-BROCHURE",
+        "label": "bank brochure",
+        "parent": "DEPOSITORY",
+        "flags": [
+          "BURNBIT",
+          "READBIT",
+          "TAKEBIT"
+        ],
+        "sourceText": [
+          "On the ground is a small, worn piece of paper.",
+          "The paper is barely readable. You can only make out \"... valuables are completely safe ... advanced magic technology ... impossible to take valuables from the depository ... either teller's ... Many customers faint ... teller pops in ... seems to walk through ... walls ...\""
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed bank brochure. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nFDESC: On the ground is a small, worn piece of paper.\nTEXT: The paper is barely readable. You can only make out \"... valuables are completely safe ... advanced magic technology ... impossible to take valuables from the depository ... either teller's ... Many customers faint ... teller pops in ... seems to walk through ... walls ...\"\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every bank brochure into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "CUBE",
+        "label": "large stone cube",
+        "parent": "DEPOSITORY",
+        "flags": [
+          "NDESCBIT",
+          "READBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed large stone cube. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every large stone cube into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "CURTAIN",
+        "label": "shimmering curtain of light",
+        "parent": "DEPOSITORY",
+        "flags": [
+          "NDESCBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed shimmering curtain of light. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every shimmering curtain of light into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "kind": "NEXIT",
+          "message": "There is a curtain of light there."
+        }
+      },
+      {
+        "direction": "EAST",
+        "view": {
+          "kind": "FEXIT",
+          "routine": "BKLEAVEE"
+        }
+      },
+      {
+        "direction": "WEST",
+        "view": {
+          "kind": "FEXIT",
+          "routine": "BKLEAVEW"
+        }
+      },
+      {
+        "direction": "SOUTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "OFFICE"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "DEPOSITORY-FCN",
+        "sourceText": "<ROUTINE DEPOSITORY-FCN (RARG)\n\t<COND (<EQUAL? .RARG ,M-ENTER>\n\t       <SETG SCOL-ROOM <LKP ,PRSO ,SCOL-ROOMS>>)>>"
+      }
+    ],
+    "sourceLightFlag": true,
+    "sourceHash": "6b0563c2025653dbec9a32daf06c31697c2120e91c68c4b8907b4f80f7f0585b"
+  },
+  {
+    "room": "DREARY-ROOM",
+    "label": "Dreary Room",
+    "literalRoomDescription": [
+      " "
+    ],
+    "safeSceneProfile": "Small dreary room with red wall-crack illumination and dusty central wooden table. Oak door, window, second keyhole and lid are separate on the south side.",
+    "visibleInitialObjects": [
+      {
+        "identity": "KEY",
+        "label": "rusty iron key",
+        "parent": "KEYHOLE-2",
+        "flags": [
+          "NDESCBIT",
+          "TAKEBIT",
+          "TOOLBIT",
+          "TURNBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed rusty iron key. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every rusty iron key into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "KEYHOLE-2",
+        "label": "keyhole",
+        "parent": "DREARY-ROOM",
+        "flags": [
+          "NDESCBIT",
+          "OPENBIT",
+          "SEARCHBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed keyhole. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every keyhole into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "LID-2",
+        "label": "metal lid",
+        "parent": "DREARY-ROOM",
+        "flags": [
+          "CONTBIT",
+          "NDESCBIT",
+          "OPENBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed metal lid. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every metal lid into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "PALANTIR-2",
+        "label": "blue crystal sphere",
+        "parent": "DREARY-ROOM",
+        "flags": [
+          "STAGGERED",
+          "TAKEBIT",
+          "TRANSBIT"
+        ],
+        "sourceText": [
+          "In the center of the table sits a blue crystal sphere."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed blue crystal sphere. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nFDESC: In the center of the table sits a blue crystal sphere.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every blue crystal sphere into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "PCRACK",
+        "label": "narrow crack",
+        "parent": "DREARY-ROOM",
+        "flags": [
+          "NDESCBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed narrow crack. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every narrow crack into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "PTABLE",
+        "label": "table",
+        "parent": "DREARY-ROOM",
+        "flags": [
+          "CONTBIT",
+          "NDESCBIT",
+          "OPENBIT",
+          "SURFACEBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed table. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every table into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "SOUTH",
+        "view": {
+          "door": "PDOOR",
+          "kind": "DEXIT",
+          "message": null,
+          "to": "TINY-ROOM"
+        }
+      },
+      {
+        "direction": "OUT",
+        "view": {
+          "door": "PDOOR",
+          "kind": "DEXIT",
+          "message": null,
+          "to": "TINY-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "DREARY-ROOM-FCN",
+        "sourceText": "<ROUTINE DREARY-ROOM-FCN (RARG)\n    #DECL ((RARG) <OR FIX FALSE>)\n    <COND (<EQUAL? .RARG ,M-LOOK>\n\t   <TELL\n\"This is a small and rather dreary room, eerily illuminated by a red glow\nemanating from a crack in one wall. The light falls upon a dusty wooden table\nin the center of the room. \">\n\t   <P-DOOR \"south\" ,LID-2 ,KEYHOLE-2>\n\t   <RTRUE>)>\n          (T <PCHECK> <RFALSE>)>"
+      }
+    ],
+    "sourceLightFlag": true,
+    "sourceHash": "b22d91bbe9482c76b313c7817292937750a0afcf964551a9b4817905d438c14c"
+  },
+  {
+    "room": "IN-CAGE",
+    "label": "Cage",
+    "literalRoomDescription": [
+      "You are trapped inside a solid steel cage."
+    ],
+    "safeSceneProfile": "Inside solid steel cage; bars/enclosure belong to separate observed source cage. Escape, destruction and actor size remain source decisions.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [],
+    "sourceExits": [],
+    "guardedRoomSource": [
+      {
+        "routine": "IN-CAGE-FCN",
+        "sourceText": "<ROUTINE IN-CAGE-FCN (RARG)\n    <COND (,CAGE-SOLVE-FLAG <SETG HERE ,CAGE-ROOM>)>>"
+      }
+    ],
+    "sourceLightFlag": true,
+    "sourceHash": "5ed3c93f885431924fb671262e9f634d848826b9121c2cb0a968004c49789c54"
+  },
+  {
+    "room": "KENNEL",
+    "label": "Kennel",
+    "literalRoomDescription": [
+      "This room looks like it was once a kennel for a very large dog (some of the bones would fit a dinosaur). It apparently hasn't been used for a long time, as the dust is fairly thick all over. The only exit is northeast."
+    ],
+    "safeSceneProfile": "Long-disused giant-dog kennel with thick dust and dinosaur-sized old bones; only northeast exit. No new dog actor or collectible bones.",
+    "visibleInitialObjects": [
+      {
+        "identity": "COLLAR",
+        "label": "gigantic dog collar",
+        "parent": "KENNEL",
+        "flags": [
+          "STAGGERED",
+          "TAKEBIT"
+        ],
+        "sourceText": [
+          "A gigantic dog collar, large enough for three rhinoceros-sized dogs, is lying amidst the debris."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed gigantic dog collar. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nFDESC: A gigantic dog collar, large enough for three rhinoceros-sized dogs, is lying amidst the debris.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every gigantic dog collar into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "NE",
+        "view": {
+          "global": "MENHIR-POSITION",
+          "kind": "CEXIT",
+          "message": "You are trying to walk through an enormous rock.",
+          "to": "MENHIR-ROOM"
+        }
+      },
+      {
+        "direction": "OUT",
+        "view": {
+          "global": "MENHIR-POSITION",
+          "kind": "CEXIT",
+          "message": "You are trying to walk through an enormous rock.",
+          "to": "MENHIR-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "43b68ef7050d21b66cd069139367974631807438deea4830eebfc75112df827f"
+  },
+  {
+    "room": "LIBRARY",
+    "label": "Library",
+    "literalRoomDescription": [
+      "This must have been a large library, probably for the royal family. All of the shelves have been gnawed to pieces by unfriendly gnomes. To the north is an exit."
+    ],
+    "safeSceneProfile": "Royal library with shelves gnawed to pieces by gnomes and north exit. Individual coloured books are observed objects, never unreadable decorative duplicates of puzzle books.",
+    "visibleInitialObjects": [
+      {
+        "identity": "BLUE-BOOK",
+        "label": "blue book",
+        "parent": "LIBRARY",
+        "flags": [
+          "BURNBIT",
+          "CONTBIT",
+          "READBIT",
+          "TAKEBIT"
+        ],
+        "sourceText": [
+          "Worn and battered in one corner of the room is a blue book.",
+          "This book is written in a tongue with which I am unfamiliar."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed blue book. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nFDESC: Worn and battered in one corner of the room is a blue book.\nTEXT: This book is written in a tongue with which I am unfamiliar.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every blue book into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "GREEN-BOOK",
+        "label": "green book",
+        "parent": "LIBRARY",
+        "flags": [
+          "BURNBIT",
+          "CONTBIT",
+          "READBIT",
+          "TAKEBIT"
+        ],
+        "sourceText": [
+          "A handsome book, bound in green leather, sits in the center of the room.",
+          "This book is written in a tongue with which I am unfamiliar."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed green book. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nFDESC: A handsome book, bound in green leather, sits in the center of the room.\nTEXT: This book is written in a tongue with which I am unfamiliar.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every green book into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "PURPLE-BOOK",
+        "label": "purple book",
+        "parent": "LIBRARY",
+        "flags": [
+          "BURNBIT",
+          "CONTBIT",
+          "READBIT",
+          "SEARCHBIT",
+          "TAKEBIT"
+        ],
+        "sourceText": [
+          "Lying in the dust, and covered with mold, is a purple book.",
+          "This book is written in a tongue with which I am unfamiliar. Assuming that one can indeed tell a book by its cover, it is likely filled with purple prose, the like of which is rarely seen outside the Great Underground Empire."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed purple book. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: Lying in the dust, and covered with mold, is a purple book.\nTEXT: This book is written in a tongue with which I am unfamiliar. Assuming that one can indeed tell a book by its cover, it is likely filled with purple prose, the like of which is rarely seen outside the Great Underground Empire.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every purple book into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "WHITE-BOOK",
+        "label": "white book",
+        "parent": "LIBRARY",
+        "flags": [
+          "BURNBIT",
+          "CONTBIT",
+          "READBIT",
+          "TAKEBIT"
+        ],
+        "sourceText": [
+          "Right beside the purple book sits a white one.",
+          "It is written in an unfamiliar tongue and details the use of various magical objects, chiefly the so-called \"magic wand\". Apparently these devices work by pointing them at the object to be ensorcelled, and then chanting the appropriate magic words. (It's truly amazing how credulous these ancients were, isn't it?)"
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed white book. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nFDESC: Right beside the purple book sits a white one.\nTEXT: It is written in an unfamiliar tongue and details the use of various magical objects, chiefly the so-called \"magic wand\". Apparently these devices work by pointing them at the object to be ensorcelled, and then chanting the appropriate magic words. (It's truly amazing how credulous these ancients were, isn't it?)\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every white book into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [
+      {
+        "identity": "STAMP",
+        "reason": "inside a closed opaque container"
+      }
+    ],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "LEDGE-1"
+        }
+      },
+      {
+        "direction": "OUT",
+        "view": {
+          "kind": "UEXIT",
+          "to": "LEDGE-1"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "0530b9244aaa1d8059cdbd6dd4d286235c362734306dc285cc21cc586312a3e5"
+  },
+  {
+    "room": "MACHINE-ROOM",
+    "label": "Machine Room",
+    "literalRoomDescription": [
+      "This is a large room full of assorted heavy machinery, whirring noisily. The room smells of burned resistors. Along one wall are three buttons which are, respectively, round, triangular, and square. Naturally, above these buttons are instructions written in EBCDIC. A large sign in English above all the buttons says\n       \"DANGER -- HIGH VOLTAGE\"\nThere are exits to the west and the south."
+    ],
+    "safeSceneProfile": "Heavy machinery and burned-resistor atmosphere. Separate round, triangular and square buttons preserve shapes; EBCDIC instructions are not translated into new hints. Preserve English high-voltage warning.",
+    "visibleInitialObjects": [
+      {
+        "identity": "ROUND-BUTTON",
+        "label": "round button",
+        "parent": "MACHINE-ROOM",
+        "flags": [
+          "NDESCBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed round button. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every round button into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "SQUARE-BUTTON",
+        "label": "square button",
+        "parent": "MACHINE-ROOM",
+        "flags": [
+          "NDESCBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed square button. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every square button into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "TRIANGULAR-BUTTON",
+        "label": "triangular button",
+        "parent": "MACHINE-ROOM",
+        "flags": [
+          "NDESCBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed triangular button. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every triangular button into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "WEST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "MAGNET-ROOM"
+        }
+      },
+      {
+        "direction": "SOUTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "CAGE-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": true,
+    "sourceHash": "52d5ef5028f8b6bacaecbfe1da649abd2632b3ced9f5fa7306fb4d422e482f81"
+  },
+  {
+    "room": "OFFICE",
+    "label": "Chairman's Office",
+    "literalRoomDescription": [
+      "This room was the office of the Chairman of the Bank of Zork. Like the other rooms here, it has been extensively vandalized. The lone exit is to the north."
+    ],
+    "safeSceneProfile": "Vandalised bank chairman office, lone north exit; no invented desk drawers or administrative documents.",
+    "visibleInitialObjects": [
+      {
+        "identity": "PORTRAIT",
+        "label": "portrait of J. Pierpont Flathead",
+        "parent": "OFFICE",
+        "flags": [
+          "BURNBIT",
+          "STAGGERED",
+          "TAKEBIT"
+        ],
+        "sourceText": [
+          "The portrait of J. Pierpont Flathead is here.",
+          "A portrait of J. Pierpont Flathead hangs on the wall."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed portrait of J. Pierpont Flathead. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: The portrait of J. Pierpont Flathead is here.\nFDESC: A portrait of J. Pierpont Flathead hangs on the wall.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every portrait of J. Pierpont Flathead into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "DEPOSITORY"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "3c1ae14bd632472ca699d0f148397e4fda296a41444cf8ac7ab8a6549ab5227b"
+  },
+  {
+    "room": "PEARL-ROOM",
+    "label": "Pearl Room",
+    "literalRoomDescription": [
+      "This is a former broom closet. The exits are to the east and west."
+    ],
+    "safeSceneProfile": "Former broom closet with east/west exits; pearl necklace remains a separate observed prop.",
+    "visibleInitialObjects": [
+      {
+        "identity": "PEARL",
+        "label": "pearl necklace",
+        "parent": "PEARL-ROOM",
+        "flags": [
+          "STAGGERED",
+          "TAKEBIT"
+        ],
+        "sourceText": [
+          "There is a pearl necklace here with hundreds of large pearls."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed pearl necklace. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a pearl necklace here with hundreds of large pearls.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every pearl necklace into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "EAST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "WELL-BOTTOM"
+        }
+      },
+      {
+        "direction": "WEST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "RIDDLE-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "9419b45e112b1a90590488ab65a89c1f7e84ff9ed39ac7a6b7e7d07b2e447934"
+  },
+  {
+    "room": "PENTAGRAM-ROOM",
+    "label": "Pentagram Room",
+    "literalRoomDescription": [
+      "In this room, inscribed on the floor, is a great pentagram drawn with black chalk. In its center is a black circle."
+    ],
+    "safeSceneProfile": "Black-chalk pentagram and black central circle use their separate source identity; demon is never pre-instantiated as permanent decor.",
+    "visibleInitialObjects": [
+      {
+        "identity": "PENTAGRAM",
+        "label": "pentagram",
+        "parent": "PENTAGRAM-ROOM",
+        "flags": [
+          "CONTBIT",
+          "NDESCBIT",
+          "OPENBIT",
+          "SURFACEBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed pentagram. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every pentagram into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "WORKBENCH-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "PENTAGRAM-FCN",
+        "sourceText": "<ROUTINE PENTAGRAM-FCN (\"OPTIONAL\" (RARG ,M-BEG))\n\t <COND (<EQUAL? .RARG ,M-BEG>\n\t\t<COND (<VERB? THROUGH BOARD>\n\t\t       <TELL\n\"You try to enter the pentagram, but are forced back by an invisible\npower.\" CR>)\n\t              (<AND <VERB? PUT PUT-ON> <EQUAL? ,PRSO ,PALANTIR-4>>\n\t\t       <REMOVE ,PALANTIR-4>\n\t\t       <FCLEAR ,GENIE ,INVISIBLE>\n\t\t       <MOVE ,GENIE ,PENTAGRAM-ROOM>\n\t\t       <TELL\n\"A cold wind blows outward from the sphere. The candles flicker, and a\nlow moan, almost inaudible, is heard. It rises in volume and pitch\nuntil it becomes a high-pitched keening. A dim shape becomes visible in\nthe air above the sphere. The shape resolves into a large and somewhat\nformidable looking demon. He looks around, tests the walls of the\npentagram experimentally, then sees you! \\\"Hmm, a new master...\\\" he\nsays under his breath. \\\"Greetings, oh master! Wouldst desire a\nservice, as our contract stateth? For some pittance of wealth, some\ntrifle, I will gratify thy desires to the utmost limit of my powers, and\nthey are not inconsiderable.\\\" He makes a pass with his massive arms and\nthe walls begin to shake a little. Another pass and the shaking stops.\n\\\"A nice effect... I find it makes for a better relationship to give\nsuch a demonstration early on.\\\" He grins vilely.\" CR>)>)>>"
+      }
+    ],
+    "sourceLightFlag": true,
+    "sourceHash": "91632a059c728f7cf1a8a99c2050dc6f22a64064d241dd39f276f1bb22978e10"
+  },
+  {
+    "room": "POOL-ROOM",
+    "label": "Pool Room",
+    "literalRoomDescription": [
+      "This is a large room, one half of which is depressed. Salty water flows from a large leak in the ceiling. The only exit is to the west."
+    ],
+    "safeSceneProfile": "Half-depressed floor, separate ceiling leak and salty pool. Hidden candy must not become a visible floor sparkle through opaque water.",
+    "visibleInitialObjects": [
+      {
+        "identity": "FLASK",
+        "label": "stoppered glass flask filled with liquid",
+        "parent": "POOL-ROOM",
+        "flags": [
+          "READBIT",
+          "TAKEBIT",
+          "TRANSBIT"
+        ],
+        "sourceText": [
+          "A stoppered glass flask with a skull-and-crossbones marking is here. The flask is filled with some clear liquid.",
+          "There is a skull-and-crossbones engraved on the glass."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed stoppered glass flask filled with liquid. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: A stoppered glass flask with a skull-and-crossbones marking is here. The flask is filled with some clear liquid.\nTEXT: There is a skull-and-crossbones engraved on the glass.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every stoppered glass flask filled with liquid into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "LEAK",
+        "label": "leak",
+        "parent": "POOL-ROOM",
+        "flags": [
+          "NDESCBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed leak. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every leak into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "POOL",
+        "label": "pool of tears",
+        "parent": "POOL-ROOM",
+        "flags": [],
+        "sourceText": [
+          "The leak has submerged the depressed area in a pool of tears. There is a hazy something at the deepest part of the pool."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed pool of tears. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: The leak has submerged the depressed area in a pool of tears. There is a hazy something at the deepest part of the pool.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every pool of tears into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [
+      {
+        "identity": "CANDY",
+        "reason": "initially concealed"
+      }
+    ],
+    "sourceExits": [
+      {
+        "direction": "WEST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "POSTS-ROOM"
+        }
+      },
+      {
+        "direction": "OUT",
+        "view": {
+          "kind": "UEXIT",
+          "to": "POSTS-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "POOL-FCN",
+        "sourceText": "<ROUTINE POOL-FCN ()\n\t <COND (<VERB? DRINK>\n\t\t<TELL\n\"The water is extremely salty.\" CR>)\n\t       (<VERB? LOOK-UNDER>\n\t\t<TELL\n\"You'd probably have to enter the pool to see what's below the surface.\" CR>)\n\t       (<VERB? THROUGH>\n\t\t<JIGS-UP\n\"You enter the pool, thrash around for a good while, and then drown.\nSad, but true.\">)>>"
+      }
+    ],
+    "sourceLightFlag": false,
+    "sourceHash": "fae40c5843ee40434d57e7ed287ad1aca87426ea87e4662e0c964dc6e912921f"
+  },
+  {
+    "room": "RIDDLE-ROOM",
+    "label": "Riddle Room",
+    "literalRoomDescription": [
+      " "
+    ],
+    "safeSceneProfile": "Bare room, northwest descending exit and separate eastern stone door. Source riddle text stays exact; no highlighted answer or open-door view before source state permits it.",
+    "visibleInitialObjects": [
+      {
+        "identity": "RIDDLE-DOOR",
+        "label": "stone door",
+        "parent": "RIDDLE-ROOM",
+        "flags": [
+          "CONTBIT",
+          "DOORBIT",
+          "NDESCBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed stone door. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every stone door into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "EAST",
+        "view": {
+          "door": "RIDDLE-DOOR",
+          "kind": "DEXIT",
+          "message": null,
+          "to": "PEARL-ROOM"
+        }
+      },
+      {
+        "direction": "NW",
+        "view": {
+          "kind": "UEXIT",
+          "to": "CAROUSEL-ROOM"
+        }
+      },
+      {
+        "direction": "DOWN",
+        "view": {
+          "kind": "UEXIT",
+          "to": "CAROUSEL-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "RIDDLE-DOOR-FCN",
+        "sourceText": "<ROUTINE RIDDLE-DOOR-FCN ()\n\t <COND (<VERB? OPEN>\n\t\t<COND (<FSET? ,RIDDLE-DOOR ,OPENBIT>\n\t\t       <TELL \"It is open!\" CR>)\n\t\t      (T\n\t\t       <TELL\n\"The door can only be opened by answering the riddle.\" CR>)>)\n\t       (<VERB? CLOSE>\n\t\t<COND (<FSET? ,RIDDLE-DOOR ,OPENBIT>\n\t\t       <TELL \"Not a chance. The door weighs many tons.\" CR>)\n\t\t      (T\n\t\t       <TELL \"It is closed!\" CR>)>)>>"
+      },
+      {
+        "routine": "RIDDLE-PSEUDO",
+        "sourceText": "<ROUTINE RIDDLE-PSEUDO ()\n\t <COND (<VERB? EXAMINE>\n\t\t<TELL \"Use the \\\"Look\\\" command.\" CR>)>>"
+      },
+      {
+        "routine": "RIDDLE-ROOM-FCN",
+        "sourceText": "<ROUTINE RIDDLE-ROOM-FCN (RARG)\n\t <COND (<EQUAL? .RARG ,M-LOOK>\n\t\t<TELL\n\"This is a room which is bare on all sides. There is an exit down in\nthe northwest corner of the room. To the east is a great \">\n\t\t<COND (<FSET? ,RIDDLE-DOOR ,OPENBIT>\n\t\t       <TELL \"open\">)\n\t\t      (T\n\t\t       <TELL \"closed\">)>\n\t\t<TELL \" door made of\nstone. Above the stone, the following words are written: \\\"No man shall\npass this door without solving this riddle:|\n|\n  What is tall as a house,|\n    round as a cup,|\n      and all the king's horses|\n        can't draw it up?\\\"|\n\">)\n\t       (<EQUAL? .RARG ,M-BEG>\n\t\t<COND (<VERB? ANSWER SAY>\n\t\t       <COND (<FSET? ,RIDDLE-DOOR ,OPENBIT>\n\t\t\t      <RFALSE>)\n\t\t\t     (<OR <EQUAL? <GET ,P-LEXV ,P-CONT> ,W?WELL>\n\t\t\t\t  <EQUAL? <GET ,P-LEXV <+ ,P-CONT 2>> ,W?WELL>>\n\t\t\t      <TELL\n\"There is a deafening clap of thunder and the stone door\nquietly swings open to reveal a passageway beyond.\" CR>\n\t\t\t      <SCORE-UPD 5>\n\t\t\t      <FSET ,RIDDLE-DOOR ,OPENBIT>)\n\t\t\t     (T\n\t\t\t      <TELL\n\"A hollow laugh seems to come from the stone door.\" CR>)>\n\t\t      <SETG P-CONT <>>\n\t\t      <SETG QUOTE-FLAG <>>\n\t\t      <RTRUE>)>)>>"
+      }
+    ],
+    "sourceLightFlag": false,
+    "sourceHash": "f0fc9c24bdf2e96a247961ace5133f25af17453173a4df3e10e6d7ce9c4666c2"
+  },
+  {
+    "room": "SAFE-ROOM",
+    "label": "Dusty Room",
+    "literalRoomDescription": [
+      " "
+    ],
+    "safeSceneProfile": "Dusty featureless room, north exit and separate rusty damaged safe. Blown-off-door state and crown must never be permanent shell geometry.",
+    "visibleInitialObjects": [
+      {
+        "identity": "SAFE",
+        "label": "box",
+        "parent": "SAFE-ROOM",
+        "flags": [
+          "CONTBIT",
+          "NDESCBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed box. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every box into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "SLOT",
+        "label": "hole",
+        "parent": "SAFE-ROOM",
+        "flags": [
+          "NDESCBIT",
+          "OPENBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed hole. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every hole into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [
+      {
+        "identity": "CARD",
+        "reason": "inside a closed opaque container"
+      },
+      {
+        "identity": "CROWN",
+        "reason": "inside a closed opaque container"
+      }
+    ],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "LEDGE-2"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "SAFE-FCN",
+        "sourceText": "<ROUTINE SAFE-FCN ()\n\t<COND (<AND <VERB? TAKE> <EQUAL? ,PRSO ,SAFE>>\n\t       <TELL \"The box is imbedded in the wall.\" CR>)\n\t      (<VERB? OPEN>\n\t       <COND (,SAFE-FLAG <TELL \"The box has no door!\" CR>)\n\t\t     (T <TELL \"The box is rusted and will not open.\" CR>)>)\n\t      (<VERB? CLOSE>\n\t       <COND (,SAFE-FLAG <TELL \"The box has no door!\" CR>)\n\t\t     (T <TELL \"The box isn't open!\" CR>)>)>>"
+      },
+      {
+        "routine": "SAFE-ROOM-FCN",
+        "sourceText": "<ROUTINE SAFE-ROOM-FCN (RARG)\n\t <COND (<EQUAL? .RARG ,M-LOOK>\n\t\t<TELL\n\"You are in a dusty old room which is featureless, except\nfor an exit on the north side.\" CR>\n\t\t<COND (<NOT ,SAFE-FLAG>\n\t\t       <TELL\n\"Imbedded in the far wall is a rusty box. It appears to be somewhat\ndamaged, since an oblong hole has been chipped out of the front of it.\" CR>)\n\t\t      (T\n\t\t       <TELL\n\"On the far wall is a rusty box, whose door has been blown off.\" CR>)>)>>"
+      }
+    ],
+    "sourceLightFlag": true,
+    "sourceHash": "e446a22732dbee01c167136d2aa3807ce8acf22782412e1457eb20fc66f4668f"
+  },
+  {
+    "room": "SMALL-ROOM",
+    "label": "Small Room",
+    "literalRoomDescription": [
+      "This is a small, bare room with no distinguishing features. There are no exits from this room."
+    ],
+    "safeSceneProfile": "Bare bank room without distinguishing features or doors. Magical transport is not a physical doorway.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [],
+    "sourceExits": [],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "74eb7e52c599045eb9dff8ed9fda7dd87989fc14d8c991a03b159db9a642c08d"
+  },
+  {
+    "room": "TEA-ROOM",
+    "label": "Tea Room",
+    "literalRoomDescription": [
+      "This is a small room containing a large oblong table, no doubt set for afternoon tea. It is clear from the objects on the table that the users were indeed mad. In the eastern corner of the room is a small hole (no more than four inches high). There are passageways leading away to the west and the northwest."
+    ],
+    "safeSceneProfile": "Large oblong tea table and absurd tea setting; eastern hole no more than four inches high, west/northwest passages. Scale-dependent traversal is a menu action, not a normal doorway.",
+    "visibleInitialObjects": [
+      {
+        "identity": "ALICE-TABLE",
+        "label": "large oblong table",
+        "parent": "TEA-ROOM",
+        "flags": [
+          "CONTBIT",
+          "OPENBIT",
+          "SURFACEBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed large oblong table. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every large oblong table into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "BLUE-ICING",
+        "label": "cake frosted with blue letters",
+        "parent": "ALICE-TABLE",
+        "flags": [
+          "FOODBIT",
+          "READBIT",
+          "TAKEBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed cake frosted with blue letters. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every cake frosted with blue letters into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "EAT-ME-CAKE",
+        "label": "cake frosted with green letters",
+        "parent": "ALICE-TABLE",
+        "flags": [
+          "FOODBIT",
+          "READBIT",
+          "TAKEBIT"
+        ],
+        "sourceText": [
+          "The icing spells out \"Eat Me.\""
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed cake frosted with green letters. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nTEXT: The icing spells out \"Eat Me.\"\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every cake frosted with green letters into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "ORANGE-ICING",
+        "label": "cake frosted with orange letters",
+        "parent": "ALICE-TABLE",
+        "flags": [
+          "FOODBIT",
+          "READBIT",
+          "TAKEBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed cake frosted with orange letters. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every cake frosted with orange letters into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "RED-ICING",
+        "label": "cake frosted with red letters",
+        "parent": "ALICE-TABLE",
+        "flags": [
+          "FOODBIT",
+          "READBIT",
+          "TAKEBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed cake frosted with red letters. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every cake frosted with red letters into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "EAST",
+        "view": {
+          "kind": "NEXIT",
+          "message": "Only a mouse could get in there."
+        }
+      },
+      {
+        "direction": "WEST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "WELL-TOP"
+        }
+      },
+      {
+        "direction": "NW",
+        "view": {
+          "kind": "UEXIT",
+          "to": "MAGNET-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": true,
+    "sourceHash": "aa31bd47383014064516d0865734becac01492ab20a582f821b4ff74930ebfc9"
+  },
+  {
+    "room": "TELLER-EAST",
+    "label": "East Teller's Room",
+    "literalRoomDescription": [
+      " "
+    ],
+    "safeSceneProfile": "Eastern bank teller room; source guarded description and curtain/transport behaviour retain authority. No mirrored directional assumptions about destinations.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "VIEWING-EAST"
+        }
+      },
+      {
+        "direction": "EAST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "DEPOSITORY"
+        }
+      },
+      {
+        "direction": "SOUTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "BANK-ENTRANCE"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "TELLER-ROOM",
+        "sourceText": "<ROUTINE TELLER-ROOM (RARG)\n    <COND (<EQUAL? .RARG ,M-LOOK>\n\t   <TELL\n\"You are in a small room, which was used by a bank officer who retrieved\nsafety deposit boxes for the customer. On the north side of the room is a\nsign which reads  \\\"Viewing Room\\\". On the \">\n\t   <COND (<EQUAL? ,HERE ,TELLER-WEST> <TELL \"west\">)\n\t\t (T <TELL \"east\">)>\n\t   <TELL \" side of the room, above an open door, is a sign reading:|\n|\n          BANK PERSONNEL ONLY|\n\" CR>)>>"
+      }
+    ],
+    "sourceLightFlag": false,
+    "sourceHash": "17ad49c011b2100cdbf93f3fe906dc00f0183242db216466625042088c61e7f6"
+  },
+  {
+    "room": "TELLER-WEST",
+    "label": "West Teller's Room",
+    "literalRoomDescription": [
+      " "
+    ],
+    "safeSceneProfile": "Western bank teller room; preserve its source-specific walls and transport effects separately from eastern teller.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "VIEWING-WEST"
+        }
+      },
+      {
+        "direction": "WEST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "DEPOSITORY"
+        }
+      },
+      {
+        "direction": "SOUTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "BANK-ENTRANCE"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "TELLER-ROOM",
+        "sourceText": "<ROUTINE TELLER-ROOM (RARG)\n    <COND (<EQUAL? .RARG ,M-LOOK>\n\t   <TELL\n\"You are in a small room, which was used by a bank officer who retrieved\nsafety deposit boxes for the customer. On the north side of the room is a\nsign which reads  \\\"Viewing Room\\\". On the \">\n\t   <COND (<EQUAL? ,HERE ,TELLER-WEST> <TELL \"west\">)\n\t\t (T <TELL \"east\">)>\n\t   <TELL \" side of the room, above an open door, is a sign reading:|\n|\n          BANK PERSONNEL ONLY|\n\" CR>)>>"
+      }
+    ],
+    "sourceLightFlag": false,
+    "sourceHash": "521eac258704769d6985892afe857e0a6bd0c4c765b71afaadb385117b95c7d2"
+  },
+  {
+    "room": "TROPHY-ROOM",
+    "label": "Trophy Room",
+    "literalRoomDescription": [
+      "This is the Wizard's trophy room, filled with memorabilia of various sorts. On one wall is the Wizard's D. T. (Doctor of Thaumaturgy) degree from GUE Tech. Several old magic wands are mounted on a wand rack. A collection of dull and nicked swords testify to the fate of many foolhardy adventurers. Small bottles contain discarded homunculi (a few preserved in alcohol). There is a stuffed owl on a perch."
+    ],
+    "safeSceneProfile": "Wizard memorabilia, degree, used wands, nicked swords, bottled homunculi and stuffed owl. Interactive trophies and cabinet remain separate from static display furniture.",
+    "visibleInitialObjects": [
+      {
+        "identity": "DEGREE",
+        "label": "degree",
+        "parent": "TROPHY-ROOM",
+        "flags": [
+          "NDESCBIT",
+          "READBIT",
+          "TRYTAKEBIT"
+        ],
+        "sourceText": [
+          "The text is in some obscure tongue. All that can be made out is a reference to \"sending in a matchbook cover.\""
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed degree. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nTEXT: The text is in some obscure tongue. All that can be made out is a reference to \"sending in a matchbook cover.\"\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every degree into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "TROPHY-BOTTLES",
+        "label": "small bottles",
+        "parent": "TROPHY-ROOM",
+        "flags": [
+          "NDESCBIT",
+          "TRYTAKEBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed small bottles. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every small bottles into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "TROPHY-SWORD",
+        "label": "nicked swords",
+        "parent": "TROPHY-ROOM",
+        "flags": [
+          "NDESCBIT",
+          "TRYTAKEBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed nicked swords. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every nicked swords into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "WANDS",
+        "label": "set of used wands",
+        "parent": "TROPHY-ROOM",
+        "flags": [
+          "NDESCBIT",
+          "TRYTAKEBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed set of used wands. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every set of used wands into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "WARNING-LABEL",
+        "label": "warning label",
+        "parent": "TROPHY-ROOM",
+        "flags": [
+          "READBIT"
+        ],
+        "sourceText": [
+          "A hand-lettered label is affixed to the wall.",
+          "Warning!\n\nThe exhibits in this room are the property of the mighty Wizard of Frobozz (me), and are the fruits of diligent labor and study over many years. He who touches anything will regret it.\n\n(signed)\nFrobozz\n"
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed warning label. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: A hand-lettered label is affixed to the wall.\nTEXT: Warning!\n\nThe exhibits in this room are the property of the mighty Wizard of Frobozz (me), and are the fruits of diligent labor and study over many years. He who touches anything will regret it.\n\n(signed)\nFrobozz\n\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every warning label into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "WIZARD-CASE",
+        "label": "Wizard's trophy cabinet",
+        "parent": "TROPHY-ROOM",
+        "flags": [
+          "CONTBIT",
+          "TRANSBIT"
+        ],
+        "sourceText": [
+          "Imbedded in the wall is an ornate trophy cabinet."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed Wizard's trophy cabinet. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: Imbedded in the wall is an ornate trophy cabinet.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every Wizard's trophy cabinet into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "WIZARDS-WORKSHOP"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "TROPHY-PSEUDO",
+        "sourceText": "<ROUTINE TROPHY-PSEUDO ()\n\t <COND (<VERB? READ> <RFALSE>)\n\t       (<VERB? TAKE RUB>\n\t\t<TELL\n\"As your fingers near it, you get a nasty shock (but fortunately not a fatal\none).\" CR>)>>"
+      }
+    ],
+    "sourceLightFlag": false,
+    "sourceHash": "61da60450afbf3cffbd1ef21206664fce208b3246b05d060f2e2020c354b9e93"
+  },
+  {
+    "room": "VAULT",
+    "label": "Vault",
+    "literalRoomDescription": [
+      "This is the Vault of the Bank of Zork, in which there are no doors."
+    ],
+    "safeSceneProfile": "Bank vault with no doors. Do not invent a visible exit for magical travel.",
+    "visibleInitialObjects": [
+      {
+        "identity": "BILLS",
+        "label": "stack of zorkmid bills",
+        "parent": "VAULT",
+        "flags": [
+          "BURNBIT",
+          "READBIT",
+          "STAGGERED",
+          "TAKEBIT"
+        ],
+        "sourceText": [
+          "200 neatly stacked zorkmid bills are here.",
+          "On the floor sit 200 neatly stacked zorkmid bills.",
+          "Each bill is worth 100 zorkmids, and bears the legend \"In Frobs We Trust\"."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed stack of zorkmid bills. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: 200 neatly stacked zorkmid bills are here.\nFDESC: On the floor sit 200 neatly stacked zorkmid bills.\nTEXT: Each bill is worth 100 zorkmids, and bears the legend \"In Frobs We Trust\".\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every stack of zorkmid bills into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "a4d3cd0599cf40862ad44f6053c020cca0b547f844e85d85906e1fcc21dcfbd9"
+  },
+  {
+    "room": "VIEWING-EAST",
+    "label": "East Viewing Room",
+    "literalRoomDescription": [
+      "This room was used by holders of safety deposit boxes to view their contents. On the north side of the room is a sign which says\n\n\"Remain here while the teller retrieves your safety deposit box. When you are finished, leave the box, and exit to the south. Safety deposit boxes cannot be removed from this room!\n\nThank You for Banking at the Zork!\" "
+    ],
+    "safeSceneProfile": "Eastern deposit-box viewing room; preserve source sign wording, north-side placement and southern exit. No actual deposit boxes unless observed.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "SOUTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "BANK-ENTRANCE"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "302c35d3ce661ed202b1d4bae14510b0f7e9afca48bb99b4f27f81094acff21c"
+  },
+  {
+    "room": "VIEWING-WEST",
+    "label": "West Viewing Room",
+    "literalRoomDescription": [
+      "This room was used by holders of safety deposit boxes to view their contents. On the north side of the room is a sign which says:\n\n\"Remain here while the teller retrieves your safety deposit box. When you are finished, leave the box, and exit to the south. Safety deposit boxes cannot be removed from this room!\n\nThank You for Banking at the Zork!\" "
+    ],
+    "safeSceneProfile": "Western deposit-box viewing room; preserve its own source sign and southern exit, without inventing a shared continuous room with the east.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "SOUTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "BANK-ENTRANCE"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "64b7164011ab93846f50dd10378183f6de446fa96ee57c4ceccfc8d06f5bf9a9"
+  },
+  {
+    "room": "WIZARDS-QUARTERS",
+    "label": "Wizard's Quarters",
+    "literalRoomDescription": [
+      " "
+    ],
+    "safeSceneProfile": "Wizard's private quarters; use guarded room text and separate furnishings/actors, without inventing readable spell answers.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "AQUARIUM-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "WIZARD-QUARTERS-FCN",
+        "sourceText": "<ROUTINE WIZARD-QUARTERS-FCN (RARG \"AUX\" PICK L)\n\t <COND (<EQUAL? .RARG ,M-LOOK ,M-FLASH>\n\t\t<TELL\n\"This is where the Wizard of Frobozz lives. The room is \">\n\t\t<SET L <GET ,WIZQDESCS 0>>\n\t\t<SET PICK <RANDOM .L>>\n\t\t<COND (<EQUAL? .PICK ,WIZQLAST>\n\t\t       <COND (<EQUAL? .PICK .L>\n\t\t\t      <SET PICK <- .PICK 1>>)\n\t\t\t     (T\n\t\t\t      <SET PICK <+ .PICK 1>>)>)>\n\t\t<SETG WIZQLAST .PICK>\n\t\t<TELL <GET ,WIZQDESCS .PICK> CR>)>>"
+      }
+    ],
+    "sourceLightFlag": false,
+    "sourceHash": "bcba9a040758dc30b713c1f03372501b6366433734f44df2be4e03b55af45d1f"
+  },
+  {
+    "room": "WIZARDS-WORKSHOP",
+    "label": "Wizard's Workshop",
+    "literalRoomDescription": [
+      "This is the workshop of the Wizard of Frobozz."
+    ],
+    "safeSceneProfile": "Workshop of Wizard of Frobozz; source objects define contents. Avoid generic new alchemical interactables.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "door": "WIZ-DOOR",
+          "kind": "DEXIT",
+          "message": null,
+          "to": "GUARDIAN-ROOM"
+        }
+      },
+      {
+        "direction": "WEST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "WORKBENCH-ROOM"
+        }
+      },
+      {
+        "direction": "SOUTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "TROPHY-ROOM"
+        }
+      },
+      {
+        "direction": "OUT",
+        "view": {
+          "door": "WIZ-DOOR",
+          "kind": "DEXIT",
+          "message": null,
+          "to": "GUARDIAN-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "5b12dc1f70d1207d099125fb06488667144e95707d77807f18aacff0d15295f1"
+  },
+  {
+    "room": "WORKBENCH-ROOM",
+    "label": "Wizard's Workroom",
+    "literalRoomDescription": [
+      "This room is the Wizard's workroom. A hall continues east and west, and a larger room lies to the south. There are many shelves and racks on the walls, but the Wizard's workbench dominates the room. It is made of dark, heavy wood bound with iron. The workbench is stained from many years of use, and is deeply gouged as though some huge clawed animal was imprisoned on it. There are burn marks and even notes written in a crabbed hand. Many arcane items are scattered about the bench; alembics, mortar and pestle, small knives of various sizes, odd scraps of vellum, wax candles, and much more. In the center of a relatively clear area of the bench are affixed three stands - ruby, sapphire, and diamond - which form a triangle."
+    ],
+    "safeSceneProfile": "East/west workroom, south larger room, racks and shelves. Separate dark iron-bound gouged workbench and ruby/sapphire/diamond stands preserve puzzle colours and source inscriptions.",
+    "visibleInitialObjects": [
+      {
+        "identity": "ARCANA",
+        "label": "arcane item",
+        "parent": "WORKBENCH-ROOM",
+        "flags": [
+          "NDESCBIT",
+          "TRYTAKEBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed arcane item. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every arcane item into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "STAND-1",
+        "label": "ruby stand",
+        "parent": "WORKBENCH",
+        "flags": [
+          "CONTBIT",
+          "NDESCBIT",
+          "OPENBIT",
+          "SURFACEBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed ruby stand. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every ruby stand into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "STAND-2",
+        "label": "sapphire stand",
+        "parent": "WORKBENCH",
+        "flags": [
+          "CONTBIT",
+          "NDESCBIT",
+          "OPENBIT",
+          "SURFACEBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed sapphire stand. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every sapphire stand into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "STAND-3",
+        "label": "diamond stand",
+        "parent": "WORKBENCH",
+        "flags": [
+          "CONTBIT",
+          "NDESCBIT",
+          "OPENBIT",
+          "SURFACEBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed diamond stand. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every diamond stand into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "WORKBENCH",
+        "label": "Wizard's workbench",
+        "parent": "WORKBENCH-ROOM",
+        "flags": [
+          "CONTBIT",
+          "NDESCBIT",
+          "OPENBIT",
+          "SURFACEBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed Wizard's workbench. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every Wizard's workbench into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "EAST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "WIZARDS-WORKSHOP"
+        }
+      },
+      {
+        "direction": "WEST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "AQUARIUM-ROOM"
+        }
+      },
+      {
+        "direction": "SOUTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "PENTAGRAM-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": true,
+    "sourceHash": "d8577e54fa7d04594123cc3421c24776e7f810c5d202d1f4a7101ba51f1cb30b"
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "room": "CAROUSEL-ROOM",
+    "label": "Carousel Room",
+    "literalRoomDescription": [
+      " "
+    ],
+    "safeSceneProfile": "Large circular chamber, eight identical passage mouths and high ceiling in gloom; no distinctive compass markings. Disorientation and random movement remain source behaviour.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [
+      {
+        "identity": "IRON-BOX",
+        "reason": "initially concealed"
+      },
+      {
+        "identity": "VIOLIN",
+        "reason": "inside a closed opaque container"
+      }
+    ],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "MARBLE-HALL"
+        }
+      },
+      {
+        "direction": "EAST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "TOPIARY-ROOM"
+        }
+      },
+      {
+        "direction": "WEST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "ROOM-8"
+        }
+      },
+      {
+        "direction": "SOUTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "MENHIR-ROOM"
+        }
+      },
+      {
+        "direction": "NE",
+        "view": {
+          "kind": "UEXIT",
+          "to": "STREAM-PATH"
+        }
+      },
+      {
+        "direction": "NW",
+        "view": {
+          "kind": "UEXIT",
+          "to": "COOL-ROOM"
+        }
+      },
+      {
+        "direction": "SE",
+        "view": {
+          "kind": "UEXIT",
+          "to": "RIDDLE-ROOM"
+        }
+      },
+      {
+        "direction": "SW",
+        "view": {
+          "kind": "UEXIT",
+          "to": "COBWEBBY-CORRIDOR"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "CAROUSEL-ROOM-FCN",
+        "sourceText": "<ROUTINE CAROUSEL-ROOM-FCN (RARG)\n\t <COND (<EQUAL? .RARG ,M-LOOK>\n\t\t<TELL\n\"You are in a large circular room whose high ceiling is lost in gloom. Eight\nidentical passages leave the room.\" CR>\n\t\t<COND (<NOT ,CAROUSEL-FLIP-FLAG>\n\t\t       <TELL\n\"A loud whirring sound comes from all around, and you feel\nsort of disoriented in here.\" CR>)>\n\t\t<RTRUE>)\n\t       (<AND <NOT ,CAROUSEL-FLIP-FLAG>\n\t\t     <EQUAL? .RARG ,M-BEG>\n\t\t     <VERB? WALK>>\n\t\t<COND (<EQUAL? ,PRSO ,P?UP ,P?DOWN>\n\t\t       <RFALSE>)>\n\t\t<COND (<EQUAL? ,PRSO ,P?OUT>\n\t\t       <TELL\n\"Feeling dizzy, you pick a direction at random.\" CR CR>\n\t\t       <SETG PRSO ,P?EAST>)\n\t\t      (T\n\t\t       <TELL\n\"You're not sure which direction is which. This\nroom is very disorienting.\" CR CR>)>\n\t\t<COND (<OR <EQUAL? ,PRSO ,P?WEST> <PROB 80>>\n\t\t       <SETG PRSO <GET ,EIGHT-DIRECTIONS <- <RANDOM 7> 1>>>)>\n\t\t<V-WALK>\n\t\t<RTRUE>)>>"
+      }
+    ],
+    "sourceLightFlag": false,
+    "sourceHash": "daab3c43d4689a27cc9591ed183f25e242a9e4bdccce75a423069929f0285043"
+  }
+]

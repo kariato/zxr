@@ -1,0 +1,19 @@
+{
+  "id": "lava-chimney",
+  "label": "Vertical lava chimney",
+  "status": "generated",
+  "image": "games/zork2/assets/skyboxes/lava-chimney/reference-v1.png",
+  "prompt": "games/zork2/assets/skyboxes/lava-chimney/reference-v1.prompt.txt",
+  "promptSha256": "1c064ebc774a36b8b35c3d1e6d06b1c672ac1db5b8efe53ca1c689935e108039",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceContextSha256": "b5075012dc4cfce7773319736d060d58486f7e592e05be066fec8bba5cdf8412",
+  "imageSha256": "d79574b7d275557eea18f128b97f67ba3c727f9f716a452713d194504acfece1",
+  "dimensions": [
+    1774,
+    887
+  ],
+  "mode": "built-in-imagegen",
+  "generatedFile": "/Users/kariatoo/.codex/generated_images/01a17380-5c0a-78c3-a81f-c727c4167e35/exec-42bc01c4-1eed-44c7-b405-a97daaca1d0d.png",
+  "retainedAt": "2026-10-25T15:16:22.643207+00:00",
+  "unmodified": true
+}

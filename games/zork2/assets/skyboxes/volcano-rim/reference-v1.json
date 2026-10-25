@@ -1,0 +1,19 @@
+{
+  "id": "volcano-rim",
+  "label": "Dormant volcano rim view",
+  "status": "generated",
+  "image": "games/zork2/assets/skyboxes/volcano-rim/reference-v1.png",
+  "prompt": "games/zork2/assets/skyboxes/volcano-rim/reference-v1.prompt.txt",
+  "promptSha256": "ad30f4348bbb7080a4a07df526ba6453000edd99cd2c6865bc256e19ee786526",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceContextSha256": "cddc7413ba52002e2de651974280cbf07dedc05a37cd8e67c960d99071c75cff",
+  "imageSha256": "462d6ed34c78562ea717696d898fa2510c3463cb4cda145e8751dc97b55c1155",
+  "dimensions": [
+    1774,
+    887
+  ],
+  "mode": "built-in-imagegen",
+  "generatedFile": "/Users/kariatoo/.codex/generated_images/01a17380-5c0a-78c3-a81f-c727c4167e35/exec-efb6d83e-f3e4-4f30-b0ca-37997a75c9c4.png",
+  "retainedAt": "2026-10-25T15:18:58.389141+00:00",
+  "unmodified": true
+}

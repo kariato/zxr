@@ -1,0 +1,104 @@
+[
+  {
+    "room": "GLACIER-ROOM",
+    "label": "Ice Room",
+    "literalRoomDescription": [
+      " "
+    ],
+    "safeSceneProfile": "Ancient lava hall worn smooth by ice, eastern passage and upward lava tube above rubble. Glacier and melt-dependent west passage must not be baked into the shell.",
+    "visibleInitialObjects": [
+      {
+        "identity": "ICE",
+        "label": "glacier",
+        "parent": "GLACIER-ROOM",
+        "flags": [],
+        "sourceText": [
+          "A mass of ice fills the western half of the room."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed glacier. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: A mass of ice fills the western half of the room.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every glacier into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "EAST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "COOL-ROOM"
+        }
+      },
+      {
+        "direction": "WEST",
+        "view": {
+          "global": "ICE-MELTED",
+          "kind": "CEXIT",
+          "message": "You don't even have an ice-pick.",
+          "to": "LAVA-ROOM"
+        }
+      },
+      {
+        "direction": "UP",
+        "view": {
+          "kind": "UEXIT",
+          "to": "LAVA-TUBE"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "GLACIER-FCN",
+        "sourceText": "<ROUTINE GLACIER-FCN ()\n\t <COND (<VERB? MELT>\n\t\t<TELL\n\"This is a big glacier; you'll need a lot of heat.\" CR>)>>"
+      },
+      {
+        "routine": "GLACIER-ROOM-FCN",
+        "sourceText": "<ROUTINE GLACIER-ROOM-FCN (RARG)\n\t <COND (<EQUAL? .RARG ,M-LOOK>\n\t\t<TELL\n\"This is a large hall of ancient lava, since worn smooth by the movement\nof a glacier. A large passage exits to the east and an upward lava tube\nis at the top of a jumble of fallen rocks.\" CR>\n\t\t<COND (,ICE-MELTED\n\t\t       <TELL\n\"A damp and scorched passage leads west. It is still partly full of\nsteam.\" CR>)>\n\t\t<RTRUE>)>>"
+      }
+    ],
+    "sourceLightFlag": false,
+    "sourceHash": "42ada7f163e14c27efb096d66d9d8db5152538cf072dd19cbf2fa18e4e655a74"
+  },
+  {
+    "room": "LAVA-ROOM",
+    "label": "Lava Room",
+    "literalRoomDescription": [
+      "This is a small room, whose walls are formed by an old lava flow. There are exits here to the east and the south."
+    ],
+    "safeSceneProfile": "Small old lava-flow chamber with east and south exits; ruby is separate, not an emissive wall clue.",
+    "visibleInitialObjects": [
+      {
+        "identity": "RUBY",
+        "label": "ruby",
+        "parent": "LAVA-ROOM",
+        "flags": [
+          "STAGGERED",
+          "TAKEBIT"
+        ],
+        "sourceText": [
+          "There is a moby ruby lying here.",
+          "On the floor lies a moby ruby."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed ruby. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a moby ruby lying here.\nFDESC: On the floor lies a moby ruby.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every ruby into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "EAST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "GLACIER-ROOM"
+        }
+      },
+      {
+        "direction": "SOUTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "VOLCANO-BOTTOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "f9901125613770b07da1a31f096373179b32ac9ed9003e3be98b8cb5ec395d47"
+  }
+]

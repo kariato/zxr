@@ -1,0 +1,19 @@
+{
+  "id": "circular-high",
+  "label": "High circular stone chamber",
+  "status": "generated",
+  "image": "games/zork2/assets/skyboxes/circular-high/reference-v1.png",
+  "prompt": "games/zork2/assets/skyboxes/circular-high/reference-v1.prompt.txt",
+  "promptSha256": "9490887034674df6a3e402f8e34e303b699855d88171254ca1acf53032984cc1",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceContextSha256": "10307b8a4f7590e8191862d8f362e324533173b50337fc53067ce21553779788",
+  "imageSha256": "e07873b98594ca0daa30e13d41a33a1bf7eeff5412903ab05ceb1dbe1814246f",
+  "dimensions": [
+    1774,
+    887
+  ],
+  "mode": "built-in-imagegen",
+  "generatedFile": "/Users/kariatoo/.codex/generated_images/01a17380-5c0a-78c3-a81f-c727c4167e35/exec-27b8c433-ce2b-4558-ba14-6b0edef7f81e.png",
+  "retainedAt": "2026-10-25T15:20:16.077315+00:00",
+  "unmodified": true
+}

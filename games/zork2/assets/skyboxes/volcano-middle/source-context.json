@@ -1,0 +1,229 @@
+[
+  {
+    "room": "VAIR-2",
+    "label": "Volcano Near Small Ledge",
+    "literalRoomDescription": [
+      "You are about two hundred feet above the volcano floor. Looming above is the rim of the volcano. There is a small ledge on the west side."
+    ],
+    "safeSceneProfile": "Volcano airborne band 2. No standing floor: player support comes from the source balloon, not invisible platforms. Preserve source-described elevation and ledge visibility without adding landings; only band 4 explicitly opens to sky.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "WEST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "LEDGE-1"
+        }
+      },
+      {
+        "direction": "LAND",
+        "view": {
+          "kind": "UEXIT",
+          "to": "LEDGE-1"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "b1574631dbf0dca61bbc5dfa709ec20e212e37cdabda7624d11bde5243dbef24"
+  },
+  {
+    "room": "LEDGE-1",
+    "label": "Narrow Ledge",
+    "literalRoomDescription": [
+      "You are on a narrow ledge within an old dormant volcano. This ledge is about halfway between the floor below and the rim above. There is an exit to the south."
+    ],
+    "safeSceneProfile": "Narrow ledge halfway up dormant volcano with southern exit and separate hook. No walkable floor across the volcanic void.",
+    "visibleInitialObjects": [
+      {
+        "identity": "COIN",
+        "label": "priceless zorkmid",
+        "parent": "LEDGE-1",
+        "flags": [
+          "READBIT",
+          "STAGGERED",
+          "TAKEBIT"
+        ],
+        "sourceText": [
+          "There is an engraved zorkmid here.",
+          "On the floor is a priceless gold zorkmid (a valuable collector's item).",
+          "This is a beautiful octagonal coin bearing the legends \"Ten Thousand Zorkmids\" and \"In Frobs We Trust\"."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed priceless zorkmid. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is an engraved zorkmid here.\nFDESC: On the floor is a priceless gold zorkmid (a valuable collector's item).\nTEXT: This is a beautiful octagonal coin bearing the legends \"Ten Thousand Zorkmids\" and \"In Frobs We Trust\".\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every priceless zorkmid into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "HOOK-1",
+        "label": "hook",
+        "parent": "LEDGE-1",
+        "flags": [],
+        "sourceText": [
+          "There is a small hook attached to the rock here."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed hook. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a small hook attached to the rock here.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every hook into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "WEST",
+        "view": {
+          "global": "GNOME-DOOR-FLAG",
+          "kind": "CEXIT",
+          "message": null,
+          "to": "VOLCANO-BOTTOM"
+        }
+      },
+      {
+        "direction": "SOUTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "LIBRARY"
+        }
+      },
+      {
+        "direction": "DOWN",
+        "view": {
+          "kind": "NEXIT",
+          "message": "I wouldn't jump from here."
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "96b71999a505d537b56c690334cfb66aabfcad2afb964560b213c310423fb4d5"
+  },
+  {
+    "room": "LEDGE-2",
+    "label": "Wide Ledge",
+    "literalRoomDescription": [
+      " "
+    ],
+    "safeSceneProfile": "Volcano landing ledge; retain source safe-room connection and hook, with no invented stairway joining elevation bands.",
+    "visibleInitialObjects": [
+      {
+        "identity": "HOOK-2",
+        "label": "hook",
+        "parent": "LEDGE-2",
+        "flags": [],
+        "sourceText": [
+          "There is a small hook attached to the rock here."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed hook. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a small hook attached to the rock here.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every hook into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "WEST",
+        "view": {
+          "global": "GNOME-DOOR-FLAG",
+          "kind": "CEXIT",
+          "message": null,
+          "to": "VOLCANO-BOTTOM"
+        }
+      },
+      {
+        "direction": "SOUTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "SAFE-ROOM"
+        }
+      },
+      {
+        "direction": "DOWN",
+        "view": {
+          "kind": "NEXIT",
+          "message": "It's a long way down."
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "LEDGE-FCN",
+        "sourceText": "<ROUTINE LEDGE-FCN (RARG)\n    <COND (<EQUAL? .RARG ,M-LOOK>\n\t   <TELL\n\"You are on a wide ledge high in the volcano. The rim of the volcano is\nabout 200 feet above and there is a precipitous drop to the bottom.\">\n\t   <COND (<FSET? ,SAFE-ROOM ,RMUNGBIT>\n\t\t  <TELL \" The way to the south is blocked by rubble.\" CR>)\n\t\t (T <TELL \" There is a small door to the south.\" CR>)>)>>"
+      }
+    ],
+    "sourceLightFlag": false,
+    "sourceHash": "29f675ad254f0c00ea73033800dd5a7133da878d75c1a923713ef21270947392"
+  },
+  {
+    "room": "LEDGE-TUNNEL",
+    "label": "End of Ledge",
+    "literalRoomDescription": [
+      "A ledge from the east ends here, and a tunnel leads north into the wall. There is a rather odd smokey odor in the warm air of the tunnel."
+    ],
+    "safeSceneProfile": "Eastern ledge ends at warm smoky north tunnel into the rock; no invented fresh-air skylight.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "DRAGON-ROOM"
+        }
+      },
+      {
+        "direction": "EAST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "RAVINE-LEDGE"
+        }
+      },
+      {
+        "direction": "DOWN",
+        "view": {
+          "kind": "NEXIT",
+          "message": "There are a lot of sharp rocks down there."
+        }
+      },
+      {
+        "direction": "IN",
+        "view": {
+          "kind": "UEXIT",
+          "to": "DRAGON-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "9070c2ac2aa07d4b9bd0d11ebf6929b3977e251806d1758cb51be30ccb853bb0"
+  },
+  {
+    "room": "VOLCANO-VIEW",
+    "label": "Volcano View",
+    "literalRoomDescription": [
+      "You are on a ledge in the middle of a large volcano. Below you the volcano bottom can be seen and above is the rim of the volcano. A couple of ledges can be seen on the other side of the volcano; it appears that this ledge is intermediate in elevation between those on the other side. The exit from this room is to the east."
+    ],
+    "safeSceneProfile": "Intermediate viewing ledge in large volcano with east exit; distant ledges are visual background only, not new traversal routes or visible treasures.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "EAST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "LAVA-TUBE"
+        }
+      },
+      {
+        "direction": "DOWN",
+        "view": {
+          "kind": "NEXIT",
+          "message": "I wouldn't try that."
+        }
+      },
+      {
+        "direction": "CROSS",
+        "view": {
+          "kind": "NEXIT",
+          "message": "It is impossible to cross this distance."
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "7306c13dd00709a75ddd335a790fd72506170c4c319096b29256156a7dce84f6"
+  }
+]

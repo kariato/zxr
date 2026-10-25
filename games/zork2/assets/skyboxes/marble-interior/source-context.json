@@ -1,0 +1,265 @@
+[
+  {
+    "room": "CERBERUS-ROOM",
+    "label": "Cerberus Room",
+    "literalRoomDescription": [
+      "This is the entrance to a huge crypt or tomb. A marble stairway leads up from a gateway arch."
+    ],
+    "safeSceneProfile": "Crypt gateway arch and descending marble stairway; observed Cerberus remains a separate actor, never a carved dog in the shell.",
+    "visibleInitialObjects": [
+      {
+        "identity": "CERBERUS",
+        "label": "three-headed dog",
+        "parent": "CERBERUS-ROOM",
+        "flags": [
+          "ACTORBIT",
+          "CONTBIT",
+          "OPENBIT"
+        ],
+        "sourceText": [
+          "There is a vicious-looking dog guarding the entrance. It is more or less your usual dog, except that it has three heads and is the size of an elephant."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nElephant-sized three-headed dog, exactly three distinct heads and space for the source collar.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a vicious-looking dog guarding the entrance. It is more or less your usual dog, except that it has three heads and is the size of an elephant.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every three-headed dog into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "EAST",
+        "view": {
+          "global": "CERBERUS-LEASHED",
+          "kind": "CEXIT",
+          "message": "The huge dog snaps nastily at you.",
+          "to": "CRYPT-ANTEROOM"
+        }
+      },
+      {
+        "direction": "UP",
+        "view": {
+          "kind": "UEXIT",
+          "to": "DIAMOND-5"
+        }
+      },
+      {
+        "direction": "IN",
+        "view": {
+          "global": "CERBERUS-LEASHED",
+          "kind": "CEXIT",
+          "message": "The huge dog snaps nastily at you.",
+          "to": "CRYPT-ANTEROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "CERBERUS-FCN",
+        "sourceText": "<ROUTINE CERBERUS-FCN ()\n\t <COND (<AND <VERB? WAVE RUB RAISE> <EQUAL? ,PRSO ,WAND>>\n\t\t<TELL \"The dog looks puzzled.\" CR>\n\t\t<RFALSE>)\n\t       (<AND ,WAND-ON <VERB? SAY INCANT>> <RFALSE>)\n\t       (<HELLO? ,CERBERUS>\n\t\t<COND (,CERBERUS-LEASHED <TELL \"\\\"Arf! Arf! Arf!\\\"\" CR>)\n\t\t      (T <TELL \"\\\"Grrrr!\\\"\" CR>)>)\n\t       (<VERB? ATTACK MUNG STAB>\n\t\t<COND (,CERBERUS-LEASHED\n\t\t       <REMOVE ,CERBERUS>\n\t\t       <TELL\n\"With a quiet bark of disappointment, the creature expires.\nIts six eyes look at you reproachfully. As it dies, it collapses\ninto a small pile of dust which blows away into nothing.\" CR>)\n\t\t      (<PROB 50>\n\t\t       <JIGS-UP\n\"The dog-thing snaps at you viciously, and succeeds. Your head, it seems,\nis only a small mouthful for the poor animal, who is just as hungry\nafterward.\">)\n\t\t      (T\n\t\t       <TELL\n\"The maddened dog-thing snaps viciously at you.\" CR>)>)\n\t       (<AND <VERB? PUT PUT-ON> <EQUAL? ,PRSO ,COLLAR>>\n\t\t<MOVE ,COLLAR ,CERBERUS>\n\t\t<FSET ,COLLAR ,NDESCBIT>\n\t\t<FSET ,COLLAR ,TRYTAKEBIT>\n\t\t<PUTP ,CERBERUS ,P?LDESC\n\"An insipidly grinning three-headed dog is wagging its tail here.\nIt is wearing a huge dog collar.\">\n\t\t<SETG CERBERUS-LEASHED T>\n\t\t<TELL\n\"The creature whines happily, then the center head\nlicks your face (which is roughly like experiencing a sandpaper\nwashcloth). The other two heads look about, as though the\nmonster felt a sudden need to find a pair of slippers somewhere.\nIts huge tail wags enthusiastically, knocking small rocks\naround and almost blowing you over from the breeze it creates.\" CR>)\n\t       (<VERB? ENCHANT>\n\t\t<COND (<EQUAL? ,SPELL-USED ,W?FLOAT>\n\t\t       <SETG SPELL-HANDLED? T>\n\t\t       <TELL\n\"The huge dog rises about an inch off the ground, for a moment.\" CR>)\n\t\t      (<EQUAL? ,SPELL-USED ,W?FIERCE>\n\t\t       <SETG SPELL-HANDLED? T>\n\t\t       <JIGS-UP\n\"Cerberus tears you limb from limb! What ferocity!\">)\n\t\t      (<EQUAL? ,SPELL-USED ,W?FEEBLE>\n\t\t       <TELL\n\"What an effect! He now has the strength of just one elephant, rather\nthan ten!\" CR>)>)\n\t       (<NOT ,CERBERUS-LEASHED>\n\t\t<TELL \"The three-headed dog snaps at you viciously!\" CR>)\n\t       (<AND ,CERBERUS-LEASHED <VERB? RUB>>\n\t\t<TELL\n\"The dog is now insanely happy, slobbering all over the place and\nwhining with uncontained doggish joy.\" CR>)>>"
+      }
+    ],
+    "sourceLightFlag": false,
+    "sourceHash": "d73ff5795ef737332f17776c348a20cf1681a68e47a11799555cb29d68e83f5b"
+  },
+  {
+    "room": "CRYPT-ANTEROOM",
+    "label": "Crypt Anteroom",
+    "literalRoomDescription": [
+      " "
+    ],
+    "safeSceneProfile": "Empty marble anteroom with Flathead bas reliefs and Feel Free inscription above the separate southern marble door.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "WEST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "CERBERUS-ROOM"
+        }
+      },
+      {
+        "direction": "SOUTH",
+        "view": {
+          "door": "CRYPT-DOOR",
+          "kind": "DEXIT",
+          "message": null,
+          "to": "CRYPT-ROOM"
+        }
+      },
+      {
+        "direction": "IN",
+        "view": {
+          "door": "CRYPT-DOOR",
+          "kind": "DEXIT",
+          "message": null,
+          "to": "CRYPT-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "CRYPT-ANTEROOM-FCN",
+        "sourceText": "<ROUTINE CRYPT-ANTEROOM-FCN (RARG)\n\t <COND (<EQUAL? .RARG ,M-LOOK>\n\t\t<TELL\n\"The anteroom is large and empty. Marble bas reliefs depict the stirring\ntimes and afterlife of the Flatheads (the latter a bit optimistically).\nThe exit is to the west. A huge marble door stands to the south. \">\n\t\t<TELL \"The door is \">\n\t\t<COND (<FSET? ,CRYPT-DOOR ,OPENBIT>\n\t\t       <TELL \"open.\">)\n\t\t      (T <TELL \"closed.\">)>\n\t\t<TELL\n\" Above the door is the cryptic inscription: \\\"Feel Free\\\".\" CR>)>>"
+      },
+      {
+        "routine": "CRYPT-DOOR-FCN",
+        "sourceText": "<ROUTINE CRYPT-DOOR-FCN ()\n\t <COND (<VERB? OPEN CLOSE>\n\t\t<OPEN-CLOSE ,PRSO\n\t\t\t    \"The crypt door squeaks open.\"\n\t\t\t    \"The crypt door squeaks closed.\">)>>"
+      }
+    ],
+    "sourceLightFlag": false,
+    "sourceHash": "6ff023d1842a1c3d364e2cb37a5c98ed1f43f3ab9d4be7e0765a7aa7a83e81c8"
+  },
+  {
+    "room": "CRYPT-ROOM",
+    "label": "Crypt",
+    "literalRoomDescription": [
+      " "
+    ],
+    "safeSceneProfile": "Twelve poled Flathead heads and crypt lettering are separate source-backed props. South secret-door geometry must remain fully absent while DIM-DOOR is invisible; do not bake an F outline into a wall.",
+    "visibleInitialObjects": [
+      {
+        "identity": "CRYPT",
+        "label": "marble crypt",
+        "parent": "CRYPT-ROOM",
+        "flags": [
+          "NDESCBIT",
+          "READBIT"
+        ],
+        "sourceText": [
+          "\"Here lie the Flatheads, whose heads were placed on poles by the Keeper of the Dungeon for amazing untastefulness.\""
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed marble crypt. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nTEXT: \"Here lie the Flatheads, whose heads were placed on poles by the Keeper of the Dungeon for amazing untastefulness.\"\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every marble crypt into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "HEADS",
+        "label": "set of poled heads",
+        "parent": "CRYPT-ROOM",
+        "flags": [
+          "NDESCBIT",
+          "TRYTAKEBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed set of poled heads. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every set of poled heads into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "door": "CRYPT-DOOR",
+          "kind": "DEXIT",
+          "message": null,
+          "to": "CRYPT-ANTEROOM"
+        }
+      },
+      {
+        "direction": "SOUTH",
+        "view": {
+          "global": "DIM-DOOR-FLAG",
+          "kind": "CEXIT",
+          "message": null,
+          "to": "ZORK3"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "CRYPT-DOOR-FCN",
+        "sourceText": "<ROUTINE CRYPT-DOOR-FCN ()\n\t <COND (<VERB? OPEN CLOSE>\n\t\t<OPEN-CLOSE ,PRSO\n\t\t\t    \"The crypt door squeaks open.\"\n\t\t\t    \"The crypt door squeaks closed.\">)>>"
+      },
+      {
+        "routine": "CRYPT-OBJECT",
+        "sourceText": "<ROUTINE CRYPT-OBJECT ()\n\t <COND (<VERB? OPEN> <TELL \"The crypt is sealed for all time.\" CR>)\n\t       (<VERB? RUB> <TELL \"The marble is cool.\" CR>)>>"
+      },
+      {
+        "routine": "CRYPT-ROOM-FCN",
+        "sourceText": "<ROUTINE CRYPT-ROOM-FCN (RARG \"AUX\" CLIT?)\n\t <COND (<EQUAL? .RARG ,M-LOOK>\n\t\t<FCLEAR ,HERE ,ONBIT>\n\t\t<COND (<LIT? ,HERE>\n\t\t       <TELL\n\"The room contains the earthly remains of the mighty Flatheads, twelve\nsomewhat flat heads mounted securely on poles. While the room might be\nexpected to contain funerary urns or other evidence of the ritual\npractices of the ancient Zorkers, it is empty of all such objects. There\nis writing carved on the crypt. The only apparent exit is to the north\nthrough the door to the anteroom. The door is \">\n\t\t       <COND (<FSET? ,CRYPT-DOOR ,OPENBIT>\n\t\t\t      <TELL \"open.\">)\n\t\t\t     (T <TELL \"closed.\">)>\n\t\t       <CRLF>\n\t\t       <COND (<NOT <FSET? ,DIM-DOOR ,INVISIBLE>>\n\t\t\t      <TELL\n\"Looking closely at the south wall, you can see the dim outline of\na secret door labelled with the letter \\\"F\\\".\" CR>)>)\n\t\t      (T\n\t\t       <DIM-DOOR-APPEARS>)>\n\t\t<FSET ,HERE ,ONBIT>\n\t\t<RTRUE>)\n\t       (<EQUAL? .RARG ,M-END>\n\t\t<SET CLIT? ,CRYPT-LIT?>\n\t\t<FCLEAR ,CRYPT-ROOM ,ONBIT>\n\t\t<SETG CRYPT-LIT? <LIT? ,CRYPT-ROOM>>\n\t\t<COND (<AND .CLIT?\n\t\t\t    <NOT ,CRYPT-LIT?>>\n\t\t       <DIM-DOOR-APPEARS>)>\n\t\t<FSET ,CRYPT-ROOM ,ONBIT>)>>"
+      }
+    ],
+    "sourceLightFlag": false,
+    "sourceHash": "eb243a4a78584e0f630ba29b9f15128191982ed9154e3e267ca0713774461a6a"
+  },
+  {
+    "room": "MARBLE-HALL",
+    "label": "Marble Hall",
+    "literalRoomDescription": [
+      "This is an arched hall of fine marble. The hall stops abruptly to the north at a ford across a stream, where the marble is cracked and broken. Perhaps a flood or collapse of the cave was responsible. To the south the hall opens into a large room. There is rather annoying whirring sound coming from that room."
+    ],
+    "safeSceneProfile": "Arched fine marble hall, broken and cracked at north ford; broad southern machinery-room approach. Whirring is source atmosphere, not a new actionable machine.",
+    "visibleInitialObjects": [
+      {
+        "identity": "BRICK",
+        "label": "brick",
+        "parent": "MARBLE-HALL",
+        "flags": [
+          "BURNBIT",
+          "OPENBIT",
+          "SEARCHBIT",
+          "TAKEBIT"
+        ],
+        "sourceText": [
+          "There is a square brick here which feels like clay."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed brick. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a square brick here which feels like clay.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every brick into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "DEEP-FORD"
+        }
+      },
+      {
+        "direction": "EAST",
+        "view": {
+          "global": "SECRET-DOOR",
+          "kind": "CEXIT",
+          "message": "That's a wall there.",
+          "to": "STREAM-PATH"
+        }
+      },
+      {
+        "direction": "SOUTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "CAROUSEL-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "5835f032c37915e5acc3151d7b55c3bee09b3d45dafcdb91f420d34ae90bdc08"
+  },
+  {
+    "room": "STAIRWAY-TOP",
+    "label": "Stairway",
+    "literalRoomDescription": [
+      "A marble stairway leads down into the gloom and a passage leads north."
+    ],
+    "safeSceneProfile": "Marble stairway descending into gloom and north passage; stairs do not disclose crypt actors below.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "MENHIR-ROOM"
+        }
+      },
+      {
+        "direction": "DOWN",
+        "view": {
+          "kind": "UEXIT",
+          "to": "DIAMOND-5"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "e758afe2d5135ef9f9d7c0166819eedac7e30e1b41421b6c5143f6e9a19b70ad"
+  }
+]

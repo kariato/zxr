@@ -1,0 +1,285 @@
+{
+  "checkedAt": "2026-10-25T15:47:41.580420+00:00",
+  "rooms": 86,
+  "assignedRooms": 80,
+  "deliberatelyWithoutSkybox": [
+    "DEAD-PALANTIR-1",
+    "DEAD-PALANTIR-2",
+    "DEAD-PALANTIR-3",
+    "DEAD-PALANTIR-4",
+    "IN-AQUARIUM",
+    "IN-CAGE"
+  ],
+  "newSkyboxes": 16,
+  "existingSkyboxes": 3,
+  "failed": 0,
+  "assets": [
+    {
+      "id": "barrow",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "src/prototype/assets/barrow-skybox-v1.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        15.17,
+        13.26,
+        11.2
+      ]
+    },
+    {
+      "id": "cavern",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "src/prototype/assets/cavern-skybox-v1.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        6.86,
+        5.96,
+        5.3
+      ]
+    },
+    {
+      "id": "lair",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "src/prototype/assets/lair-skybox-v1.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        15.24,
+        12.41,
+        10.09
+      ]
+    },
+    {
+      "id": "bare-stone",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "games/zork2/assets/skyboxes/bare-stone/reference-v1.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        10.52,
+        7.49,
+        4.18
+      ]
+    },
+    {
+      "id": "dusty-corridor",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "games/zork2/assets/skyboxes/dusty-corridor/reference-v2.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        7.84,
+        7.33,
+        7.84
+      ]
+    },
+    {
+      "id": "marble-interior",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "games/zork2/assets/skyboxes/marble-interior/reference-v1.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        5.26,
+        4.67,
+        4.51
+      ]
+    },
+    {
+      "id": "diamond-maze",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "games/zork2/assets/skyboxes/diamond-maze/reference-v1.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        5.76,
+        5.21,
+        4.71
+      ]
+    },
+    {
+      "id": "cave-garden",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "games/zork2/assets/skyboxes/cave-garden/reference-v1.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        4.28,
+        3.86,
+        3.02
+      ]
+    },
+    {
+      "id": "ancient-lava",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "games/zork2/assets/skyboxes/ancient-lava/reference-v2.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        5.72,
+        5.58,
+        5.6
+      ]
+    },
+    {
+      "id": "lava-chimney",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "games/zork2/assets/skyboxes/lava-chimney/reference-v1.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        6.95,
+        5.7,
+        4.95
+      ]
+    },
+    {
+      "id": "volcano-bottom",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "games/zork2/assets/skyboxes/volcano-bottom/reference-v1.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        4.61,
+        3.71,
+        3.25
+      ]
+    },
+    {
+      "id": "volcano-lower",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "games/zork2/assets/skyboxes/volcano-lower/reference-v1.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        2.75,
+        2.37,
+        2.44
+      ]
+    },
+    {
+      "id": "volcano-middle",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "games/zork2/assets/skyboxes/volcano-middle/reference-v2.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        5.04,
+        4.75,
+        5.24
+      ]
+    },
+    {
+      "id": "volcano-upper",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "games/zork2/assets/skyboxes/volcano-upper/reference-v2.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        3.56,
+        3.01,
+        2.69
+      ]
+    },
+    {
+      "id": "volcano-rim",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "games/zork2/assets/skyboxes/volcano-rim/reference-v1.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        3.83,
+        3.67,
+        3.67
+      ]
+    },
+    {
+      "id": "brick-well",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "games/zork2/assets/skyboxes/brick-well/reference-v1.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        7.91,
+        6.5,
+        5.01
+      ]
+    },
+    {
+      "id": "circular-high",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "games/zork2/assets/skyboxes/circular-high/reference-v1.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        4.37,
+        3.55,
+        3.08
+      ]
+    },
+    {
+      "id": "circular-low",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "games/zork2/assets/skyboxes/circular-low/reference-v1.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        3.8,
+        3.55,
+        3.62
+      ]
+    },
+    {
+      "id": "giant-room",
+      "status": "pass",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "image": "games/zork2/assets/skyboxes/giant-room/reference-v1.png",
+      "edgeMeanAbsoluteDifferenceRGB": [
+        3.52,
+        3.03,
+        3.31
+      ]
+    }
+  ],
+  "limits": "Edge values are diagnostic only; file checks do not certify seamless poles, geometry, parallax, gameplay integration or headset quality."
+}

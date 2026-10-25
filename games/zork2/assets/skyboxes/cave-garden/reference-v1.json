@@ -1,0 +1,19 @@
+{
+  "id": "cave-garden",
+  "label": "Moss-lit cavern garden",
+  "status": "generated",
+  "image": "games/zork2/assets/skyboxes/cave-garden/reference-v1.png",
+  "prompt": "games/zork2/assets/skyboxes/cave-garden/reference-v1.prompt.txt",
+  "promptSha256": "fb5885cfce6a9d71f952a9e7e9e4f8c5829aa88241b320d0a46ec2cfdb575a15",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceContextSha256": "d59a4d4c60e19cd029b7da28b26cb498e7788cc102596e3b7fb3233399db18c9",
+  "imageSha256": "fa297f8b0c13037a5860b896990223da584e3957cffd98451a601a85c3fbd244",
+  "dimensions": [
+    1774,
+    887
+  ],
+  "mode": "built-in-imagegen",
+  "generatedFile": "/Users/kariatoo/.codex/generated_images/01a17380-5c0a-78c3-a81f-c727c4167e35/exec-50fa81a7-e82a-4c0e-8eba-8522e80fba9e.png",
+  "retainedAt": "2026-10-25T15:16:22.435818+00:00",
+  "unmodified": true
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "room": "LAVA-TUBE",
+    "label": "Lava Tube",
+    "literalRoomDescription": [
+      "You are in a tight chimney of solidified lava. It extends up at least another hundred feet and down to a large room far below. A large crack opens to the south, probably the result of a shift in the rock strata."
+    ],
+    "safeSceneProfile": "Tight solidified-lava chimney extending over one hundred feet, large southern crack and room far below. Vertical movement uses source options, not gravity teleportation.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "SOUTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "COBWEBBY-CORRIDOR"
+        }
+      },
+      {
+        "direction": "UP",
+        "view": {
+          "kind": "UEXIT",
+          "to": "VOLCANO-VIEW"
+        }
+      },
+      {
+        "direction": "DOWN",
+        "view": {
+          "kind": "UEXIT",
+          "to": "GLACIER-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": false,
+    "sourceHash": "0c4053c01bd07b0b49d5fd75b0d43a0d4f0a3e6b0f0ed5c07b9b7b4e9b44e694"
+  }
+]

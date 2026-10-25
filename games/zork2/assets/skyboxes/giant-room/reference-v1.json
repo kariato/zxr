@@ -1,0 +1,19 @@
+{
+  "id": "giant-room",
+  "label": "Enormous stone room",
+  "status": "generated",
+  "image": "games/zork2/assets/skyboxes/giant-room/reference-v1.png",
+  "prompt": "games/zork2/assets/skyboxes/giant-room/reference-v1.prompt.txt",
+  "promptSha256": "d3173a646bf9ea83a263e4127ea95cc66b1014cb98d7cba43c18628acf4aa7c7",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceContextSha256": "a0a2eca0e1db03678e2b1dd9f5a85df89850334eefb0c4f6cd7dc63ff6296032",
+  "imageSha256": "fdc356fdcdeaf6b8f9f45755fe024fc7c5178ca96eeed19f9ad034fd0285457f",
+  "dimensions": [
+    1774,
+    887
+  ],
+  "mode": "built-in-imagegen",
+  "generatedFile": "/Users/kariatoo/.codex/generated_images/01a17380-5c0a-78c3-a81f-c727c4167e35/exec-23c5067c-a045-4d3a-a4a6-9e689a68e919.png",
+  "retainedAt": "2026-10-25T15:20:16.283624+00:00",
+  "unmodified": true
+}

@@ -1,0 +1,19 @@
+{
+  "id": "volcano-lower",
+  "label": "Dormant volcano lower airborne view",
+  "status": "generated",
+  "image": "games/zork2/assets/skyboxes/volcano-lower/reference-v1.png",
+  "prompt": "games/zork2/assets/skyboxes/volcano-lower/reference-v1.prompt.txt",
+  "promptSha256": "a57daf6d996508cdce77819208b9c34a3c35a7419fd8a7e1c90a038f91f921cb",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceContextSha256": "fdd4c9e401c5e6fb5e4c0e983defdd1deab9996b5578c2d642ac84c679eea9ff",
+  "imageSha256": "b90200e3581772598b8a1fec4c48b079ab6395bb097ff0c9dc020c808fdbcb5c",
+  "dimensions": [
+    1774,
+    887
+  ],
+  "mode": "built-in-imagegen",
+  "generatedFile": "/Users/kariatoo/.codex/generated_images/01a17380-5c0a-78c3-a81f-c727c4167e35/exec-451ee0b9-0b9d-4740-9295-cc496cc22aac.png",
+  "retainedAt": "2026-10-25T15:17:34.971369+00:00",
+  "unmodified": true
+}

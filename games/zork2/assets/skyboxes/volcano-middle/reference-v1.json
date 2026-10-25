@@ -1,0 +1,19 @@
+{
+  "id": "volcano-middle",
+  "label": "Dormant volcano middle view",
+  "status": "generated",
+  "image": "games/zork2/assets/skyboxes/volcano-middle/reference-v1.png",
+  "prompt": "games/zork2/assets/skyboxes/volcano-middle/reference-v1.prompt.txt",
+  "promptSha256": "bc5c463cfbb5e733a8f2a398ec0d3ead80e9fa0a207c949dc1da253e6c3e24be",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceContextSha256": "ee73458827cd45937d94e96f896a21df0f076a85a0cddf9a8497f16d40e39588",
+  "imageSha256": "e6a49dd29b004ea953a43a7f334becd904db93e9dc6593962b51e42c02edbc17",
+  "dimensions": [
+    1774,
+    887
+  ],
+  "mode": "built-in-imagegen",
+  "generatedFile": "/Users/kariatoo/.codex/generated_images/01a17380-5c0a-78c3-a81f-c727c4167e35/exec-af888ada-8279-4047-9158-ceb8d305f255.png",
+  "retainedAt": "2026-10-25T15:17:35.083479+00:00",
+  "unmodified": true
+}

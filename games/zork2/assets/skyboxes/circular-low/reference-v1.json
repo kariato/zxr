@@ -1,0 +1,19 @@
+{
+  "id": "circular-low",
+  "label": "Low circular stone chamber",
+  "status": "generated",
+  "image": "games/zork2/assets/skyboxes/circular-low/reference-v1.png",
+  "prompt": "games/zork2/assets/skyboxes/circular-low/reference-v1.prompt.txt",
+  "promptSha256": "6a86d08592f3dc9170e6e25f9bc0842b8ff1ab82c0836c428cddbc2accd4bf40",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceContextSha256": "6c722dd11262d2212db233ae14e841e7012def60cdb29a4d06dc25b071c0d39e",
+  "imageSha256": "41409daa592229017ba7f1c7568decdffd65acbf7121e4be91c1f312370897d5",
+  "dimensions": [
+    1774,
+    887
+  ],
+  "mode": "built-in-imagegen",
+  "generatedFile": "/Users/kariatoo/.codex/generated_images/01a17380-5c0a-78c3-a81f-c727c4167e35/exec-d7fe4292-7bc1-48f5-abbe-e48c7328607e.png",
+  "retainedAt": "2026-10-25T15:20:16.180414+00:00",
+  "unmodified": true
+}

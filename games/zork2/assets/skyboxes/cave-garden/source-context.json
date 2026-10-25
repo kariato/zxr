@@ -1,0 +1,225 @@
+[
+  {
+    "room": "FORMAL-GARDEN",
+    "label": "Formal Garden",
+    "literalRoomDescription": [
+      "This is the middle part of a formal garden. Hedges hide the cavern walls and a dim illumination comes from mosses far above. The path is of small crushed white stones. It winds among bushes and flower beds from south to north. To the north a small structure can be seen. To the south are peculiarly shaped bushes. There is a small gap in the hedges to the west."
+    ],
+    "safeSceneProfile": "Middle of a formal garden inside a cavern. Hedges conceal the cavern walls; dim moss light comes from far above. A crushed white-stone path winds through bushes and flower beds from south to north, with a small western hedge gap. A modest distant structure is visible northward. There is no sky or sunlight. Global unicorn references remain interaction aliases and must not create a permanently placed unicorn. Flowers are decorative, with no added collectible or readable clues.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "GARDEN-NORTH"
+        }
+      },
+      {
+        "direction": "WEST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "STREAM-PATH"
+        }
+      },
+      {
+        "direction": "SOUTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "TOPIARY-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": true,
+    "sourceHash": "f4e6e8b4a5e29a0dc5573ccd58f35506d275f7cd58dac08e0e33740c809d1f2a"
+  },
+  {
+    "room": "GARDEN-NORTH",
+    "label": "North End of Garden",
+    "literalRoomDescription": [
+      "This is the northern end of a formal garden. Hedges hide the cavern walls, and if you don't look up, the illusion is of a cloudy day outside. The light comes from a large growth of glowing mosses on the roof of the cave. A break in the hedge is almost overgrown to the north. A carefully manicured path leads south. In the center of a rosebed is a small open structure, painted white. It appears to be a gazebo."
+    ],
+    "safeSceneProfile": "Cave-roof moss creates cloudy-day illusion above hedges; white gazebo in central rosebed, overgrown northern hedge gap and manicured southern path. No actual sky.",
+    "visibleInitialObjects": [],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "DARK-TUNNEL"
+        }
+      },
+      {
+        "direction": "SOUTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "FORMAL-GARDEN"
+        }
+      },
+      {
+        "direction": "IN",
+        "view": {
+          "kind": "UEXIT",
+          "to": "GAZEBO-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "GARDEN-ROOM-FCN",
+        "sourceText": "<ROUTINE GARDEN-ROOM-FCN (RARG)\n\t <COND (<EQUAL? .RARG ,M-ENTER>\n\t\t<ENABLE <QUEUE I-GARDEN -1>>)>>"
+      }
+    ],
+    "sourceLightFlag": true,
+    "sourceHash": "69ad56385f5c87a8b5188b594de6e9e3b676b6663da4ec0efc42bcc10f2201eb"
+  },
+  {
+    "room": "GAZEBO-ROOM",
+    "label": "Gazebo",
+    "literalRoomDescription": [
+      "This is a gazebo in the midst of a formal garden. It is cool and restful here. A tea table adorns the center of the gazebo."
+    ],
+    "safeSceneProfile": "Cool white gazebo within the cave garden, with separate tea table. No tea-table contents or unicorn unless currently observed.",
+    "visibleInitialObjects": [
+      {
+        "identity": "GAZEBO-TABLE",
+        "label": "table",
+        "parent": "GAZEBO-ROOM",
+        "flags": [
+          "CONTBIT",
+          "NDESCBIT",
+          "OPENBIT",
+          "SURFACEBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed table. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every table into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "LETTER-OPENER",
+        "label": "letter opener",
+        "parent": "GAZEBO-TABLE",
+        "flags": [
+          "TAKEBIT",
+          "TOOLBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed letter opener. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every letter opener into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "MATCH",
+        "label": "matchbook",
+        "parent": "GAZEBO-TABLE",
+        "flags": [
+          "READBIT",
+          "TAKEBIT"
+        ],
+        "sourceText": [
+          "There is a matchbook saying \"Visit ZORK I\" here.",
+          "\">> Visit Exotic ZORK I <<\n\nConsult the Frobozz Magic Travel Agency, or visit your local computer store for more details.\""
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed matchbook. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a matchbook saying \"Visit ZORK I\" here.\nTEXT: \">> Visit Exotic ZORK I <<\n\nConsult the Frobozz Magic Travel Agency, or visit your local computer store for more details.\"\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every matchbook into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "NEWSPAPER",
+        "label": "newspaper",
+        "parent": "GAZEBO-TABLE",
+        "flags": [
+          "BURNBIT",
+          "READBIT",
+          "TAKEBIT"
+        ],
+        "sourceText": [
+          "** U.S. News and Dungeon Report **\n\nFAMED ADVENTURER TO EXPLORE GREAT UNDERGROUND EMPIRE\n\nOur correspondents report that a world-famous and battle-hardened adventurer has been seen in the vicinity of the Great Underground Empire. Local grues have been reported sharpening their (slavering) fangs....\n\n\"Zork II: The Wizard of Frobozz\" was written by Dave Lebling and Marc Blank, and is (c) Copyright 1981, 1982, 1983 by Infocom, Inc."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed newspaper. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nTEXT: ** U.S. News and Dungeon Report **\n\nFAMED ADVENTURER TO EXPLORE GREAT UNDERGROUND EMPIRE\n\nOur correspondents report that a world-famous and battle-hardened adventurer has been seen in the vicinity of the Great Underground Empire. Local grues have been reported sharpening their (slavering) fangs....\n\n\"Zork II: The Wizard of Frobozz\" was written by Dave Lebling and Marc Blank, and is (c) Copyright 1981, 1982, 1983 by Infocom, Inc.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every newspaper into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "PLACE-MAT",
+        "label": "place mat",
+        "parent": "GAZEBO-TABLE",
+        "flags": [
+          "CONTBIT",
+          "OPENBIT",
+          "SURFACEBIT",
+          "TAKEBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed place mat. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every place mat into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "TEAPOT",
+        "label": "china teapot",
+        "parent": "GAZEBO-TABLE",
+        "flags": [
+          "CONTBIT",
+          "OPENBIT",
+          "TAKEBIT",
+          "TRANSBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed china teapot. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every china teapot into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "OUT",
+        "view": {
+          "kind": "UEXIT",
+          "to": "GARDEN-NORTH"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "GAZEBO-FCN",
+        "sourceText": "<ROUTINE GAZEBO-FCN ()\n\t <COND (<AND <EQUAL? ,HERE ,GARDEN-NORTH> <VERB? THROUGH>>\n\t\t<DO-WALK ,P?IN> <RTRUE>)\n\t       (<AND <EQUAL? ,HERE ,GAZEBO-ROOM>\n\t\t     <VERB? THROUGH>>\n\t\t<TELL \"You're already in it.\" CR>)\n\t       (<AND <EQUAL? ,HERE ,GAZEBO-ROOM> <VERB? LEAVE EXIT>>\n\t\t<DO-WALK ,P?OUT> <RTRUE>)>>"
+      }
+    ],
+    "sourceLightFlag": true,
+    "sourceHash": "a4f70a84197a3698a0c4afc2efbd16c786b79700780f0abcd06efb3bc7f0c405"
+  },
+  {
+    "room": "TOPIARY-ROOM",
+    "label": "Topiary",
+    "literalRoomDescription": [
+      "This is the southern end of a formal garden. Hedges hide the cavern walls and mosses provide dim illumination. Fantastically shaped hedges and bushes are arrayed with geometric precision. They have not recently been clipped, but you can discern creatures in the shapes of the bushes: There is a dragon, a unicorn, a great serpent, a huge misshapen dog, and several human figures. On the west side of the garden the path leads through a rose arbor into a tunnel."
+    ],
+    "safeSceneProfile": "Moss-lit cave garden with geometrically placed overgrown bushes shaped as dragon, unicorn, serpent, huge misshapen dog and humans; west rose arbor. These silhouettes are not live actors.",
+    "visibleInitialObjects": [
+      {
+        "identity": "HEDGES",
+        "label": "hedge",
+        "parent": "TOPIARY-ROOM",
+        "flags": [
+          "NDESCBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed hedge. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every hedge into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "NORTH",
+        "view": {
+          "kind": "UEXIT",
+          "to": "FORMAL-GARDEN"
+        }
+      },
+      {
+        "direction": "WEST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "CAROUSEL-ROOM"
+        }
+      }
+    ],
+    "guardedRoomSource": [],
+    "sourceLightFlag": true,
+    "sourceHash": "b4c680e7e2e1fe118e21d1a060bb2171e72a0d1982705b59dc40211022074651"
+  }
+]

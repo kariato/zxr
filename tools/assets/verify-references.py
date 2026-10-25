@@ -49,9 +49,10 @@ def references():
                      'record': f'out/asset-production/foot-bridge-rocks-v1/version{version}/candidate.json',
                      'kind': 'scene-piece', 'selected': version == 2})
     known = {row['reference'] for row in rows}
-    # Room illustrations have their own generation manifest and are not
+    # Room illustrations and skyboxes have separate generation manifests and are not
     # standalone object-to-GLB conversion inputs.
-    discovered = {str(path.relative_to(ROOT)) for path in BASE.rglob('*.png') if not path.is_relative_to(BASE/'rooms')}
+    discovered = {str(path.relative_to(ROOT)) for path in BASE.rglob('*.png')
+                  if not any(path.is_relative_to(BASE/folder) for folder in ['rooms', 'skyboxes'])}
     assert known == discovered, {'unmappedImages': sorted(discovered-known), 'missingImages': sorted(known-discovered)}
     return rows
 

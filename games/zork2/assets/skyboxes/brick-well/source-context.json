@@ -1,0 +1,108 @@
+[
+  {
+    "room": "WELL-BOTTOM",
+    "label": "Circular Room",
+    "literalRoomDescription": [
+      "This is a damp circular room, whose walls are made of brick and mortar. The roof of this room is not visible, but there appear to be some etchings on the walls. There is a passageway to the west."
+    ],
+    "safeSceneProfile": "Damp circular brick-and-mortar chamber with roof out of sight and separate wall etchings; west passage. Bucket movement is source-controlled.",
+    "visibleInitialObjects": [
+      {
+        "identity": "BOTTOM-ETCHINGS",
+        "label": "wall with etchings",
+        "parent": "WELL-BOTTOM",
+        "flags": [
+          "NDESCBIT",
+          "READBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed wall with etchings. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every wall with etchings into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      },
+      {
+        "identity": "BUCKET",
+        "label": "wooden bucket",
+        "parent": "WELL-BOTTOM",
+        "flags": [
+          "CONTBIT",
+          "OPENBIT",
+          "VEHBIT"
+        ],
+        "sourceText": [
+          "There is a wooden bucket here, 3 feet in diameter and 3 feet high."
+        ],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed wooden bucket. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a wooden bucket here, 3 feet in diameter and 3 feet high.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every wooden bucket into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "WEST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "PEARL-ROOM"
+        }
+      },
+      {
+        "direction": "UP",
+        "view": {
+          "kind": "NEXIT",
+          "message": "The walls cannot be climbed."
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "WELL-FCN",
+        "sourceText": "<ROUTINE WELL-FCN ()\n    \t<COND (<AND <FSET? ,PRSO ,TAKEBIT> <VERB? THROW PUT DROP>>\n\t       <TELL \"The \" D ,PRSO\n\t\t     \" is now sitting at the bottom of the well.\" CR>\n\t       <MOVE ,PRSO ,WELL-BOTTOM>)\n\t      (<VERB? CLIMB-UP CLIMB-DOWN CLIMB-FOO>\n\t       <TELL \"You can't climb the well.\" CR>)>>"
+      }
+    ],
+    "sourceLightFlag": false,
+    "sourceHash": "96ea202f65e6ba8f5391b7f5956f11bc3b6e7c0d87d539b4c98e868871a12265"
+  },
+  {
+    "room": "WELL-TOP",
+    "label": "Top of Well",
+    "literalRoomDescription": [
+      "You are at the top of the well. Well done. There are etchings on the side of the well. There is a small crack across the floor at the entrance to a room on the east, but it can be crossed easily."
+    ],
+    "safeSceneProfile": "Top of well with side etchings and easily crossed floor crack at eastern room entrance. No invented fatal crack or guessed sky.",
+    "visibleInitialObjects": [
+      {
+        "identity": "TOP-ETCHINGS",
+        "label": "wall with etchings",
+        "parent": "WELL-TOP",
+        "flags": [
+          "NDESCBIT",
+          "READBIT"
+        ],
+        "sourceText": [],
+        "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed wall with etchings. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every wall with etchings into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+      }
+    ],
+    "excludedObjects": [],
+    "sourceExits": [
+      {
+        "direction": "EAST",
+        "view": {
+          "kind": "UEXIT",
+          "to": "TEA-ROOM"
+        }
+      },
+      {
+        "direction": "DOWN",
+        "view": {
+          "kind": "NEXIT",
+          "message": "It's a long way down!"
+        }
+      }
+    ],
+    "guardedRoomSource": [
+      {
+        "routine": "WELL-FCN",
+        "sourceText": "<ROUTINE WELL-FCN ()\n    \t<COND (<AND <FSET? ,PRSO ,TAKEBIT> <VERB? THROW PUT DROP>>\n\t       <TELL \"The \" D ,PRSO\n\t\t     \" is now sitting at the bottom of the well.\" CR>\n\t       <MOVE ,PRSO ,WELL-BOTTOM>)\n\t      (<VERB? CLIMB-UP CLIMB-DOWN CLIMB-FOO>\n\t       <TELL \"You can't climb the well.\" CR>)>>"
+      }
+    ],
+    "sourceLightFlag": false,
+    "sourceHash": "8c114e43230e90754348c1ea9a228173418c7bc1a359125471a69665c7713192"
+  }
+]

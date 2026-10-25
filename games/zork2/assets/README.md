@@ -32,6 +32,8 @@ The existing-reference conversion batch is complete: 88 object references, three
 
 The user subsequently requested one built-in ImageGen image per logical room. The separate 86-room reference batch lives in `rooms/`, with a gallery, exact prompts, source context and image provenance. Room references are draft offline artwork; they have not been converted to GLBs or integrated into gameplay.
 
+Shared skybox artwork is under [`skyboxes/`](skyboxes/README.md): 16 new panoramas plus 3 existing backgrounds, with explicit assignments for all 86 rooms and an interactive spherical review viewer. Eighty rooms have a selected background; six deliberately retain no surrounding vista. These are draft authoring assets, with polar-stretching limitations recorded in the batch notes, and are not yet wired into gameplay.
+
 Object production directories retain `reference-v1.prompt.txt` and `reference-v1.json` with exact prompt/image hashes. Their generated `prompt.txt` files are full source/style production briefs, distinct from the exact prompts used for a given image revision.
 
 **Pipeline decision, 2026-10-24:** the user explicitly chose Hunyuan for a US-only prototype. Continue with that route; do not reopen this choice for each batch. `pipeline.json` records the decision. Its custom licence restrictions remain relevant to any later distribution change; this does not authorize worldwide publication. See [model research](../../../docs/image-to-3d-review.md) and the [princess experiment](characters/princess/README.md).

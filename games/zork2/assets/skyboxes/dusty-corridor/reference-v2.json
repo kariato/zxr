@@ -1,0 +1,31 @@
+{
+  "id": "dusty-corridor",
+  "label": "Dusty stone corridor",
+  "status": "generated",
+  "image": "games/zork2/assets/skyboxes/dusty-corridor/reference-v2.png",
+  "prompt": "games/zork2/assets/skyboxes/dusty-corridor/reference-v2.prompt.txt",
+  "promptSha256": "109a1c308c8e8a2e03ec5862b5d111fc411cd00ffb0a8f9e6e354cbd7f4294de",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceContextSha256": "20f3304cb9391669b57b6ddcee2e0c73fe0abe92a1a378af5d1308b84b18a504",
+  "imageSha256": "781e7b7dfd36010b8a29f8ebc180568f56d5dc6ff4df01f495b0880c88933d2b",
+  "dimensions": [
+    1774,
+    887
+  ],
+  "previousRevisions": [
+    {
+      "image": "games/zork2/assets/skyboxes/dusty-corridor/reference-v1.png",
+      "imageSha256": "9cc10cb900d7aed5f447d49de9df083ae75eb961010da68bfe456817c144af44",
+      "prompt": "games/zork2/assets/skyboxes/dusty-corridor/reference-v1.prompt.txt",
+      "promptSha256": "3d1e6b32951c4bc4e69511b3a468e1e1558be39cd1beb335a6fdf597d6946d25",
+      "dimensions": [
+        1774,
+        887
+      ]
+    }
+  ],
+  "mode": "built-in-imagegen",
+  "generatedFile": "/Users/kariatoo/.codex/generated_images/01a17380-5c0a-78c3-a81f-c727c4167e35/exec-93a50378-4eb3-43fa-8027-c3a324afa3be.png",
+  "retainedAt": "2026-10-25T15:21:53.543851+00:00",
+  "unmodified": true
+}

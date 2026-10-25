@@ -1,0 +1,31 @@
+{
+  "id": "ancient-lava",
+  "label": "Cold ancient lava stone",
+  "status": "generated",
+  "image": "games/zork2/assets/skyboxes/ancient-lava/reference-v2.png",
+  "prompt": "games/zork2/assets/skyboxes/ancient-lava/reference-v2.prompt.txt",
+  "promptSha256": "3cd59ac989c61b557222c09afdc8452d2c275d15ae596c16baf452396fa115c7",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceContextSha256": "75eff87c421fc648b7aea9db5ab1764f6e1bc44429b24beb878c141c7e18ca51",
+  "imageSha256": "8e98cc81acc5a8f46096c02a582a44eb4faa53eb0bc2fab6b69a23641c9f8af8",
+  "dimensions": [
+    1774,
+    887
+  ],
+  "previousRevisions": [
+    {
+      "image": "games/zork2/assets/skyboxes/ancient-lava/reference-v1.png",
+      "imageSha256": "e81c0e370eb0e86b72d100ab94513ed6aa2c180e0bc907d2a6778d154d9cb30d",
+      "prompt": "games/zork2/assets/skyboxes/ancient-lava/reference-v1.prompt.txt",
+      "promptSha256": "bb41715ba8fef6af3d68fba35f1e9c5138ef8c02cd9cae0d7331676ae0146f21",
+      "dimensions": [
+        1774,
+        887
+      ]
+    }
+  ],
+  "mode": "built-in-imagegen",
+  "generatedFile": "/Users/kariatoo/.codex/generated_images/01a17380-5c0a-78c3-a81f-c727c4167e35/exec-80b6a81d-285c-4940-ad72-16d6b74c095c.png",
+  "retainedAt": "2026-10-25T15:21:53.648288+00:00",
+  "unmodified": true
+}

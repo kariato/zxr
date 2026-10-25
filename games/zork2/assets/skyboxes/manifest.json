@@ -1,0 +1,832 @@
+{
+  "format": "zxr-shared-skyboxes-v1",
+  "review": "draft",
+  "mode": "built-in-imagegen",
+  "runtimeIntegrated": false,
+  "assets": [
+    {
+      "id": "barrow",
+      "status": "existing",
+      "image": "src/prototype/assets/barrow-skybox-v1.png",
+      "imageSha256": "6e9170a01abb1861954718f451e884925344c7ebf5506c0004d02f8da8b98931"
+    },
+    {
+      "id": "cavern",
+      "status": "existing",
+      "image": "src/prototype/assets/cavern-skybox-v1.png",
+      "imageSha256": "51744b1ba72e65729a7d4353771819eea522e1e642308c82f09b370a031c6438"
+    },
+    {
+      "id": "lair",
+      "status": "existing",
+      "image": "src/prototype/assets/lair-skybox-v1.png",
+      "imageSha256": "0effface58434010b02def1a64d300315124bc16f8434cbba4a7ce66a2fdd8b6"
+    },
+    {
+      "id": "bare-stone",
+      "label": "Bare stone interior",
+      "status": "generated",
+      "image": "games/zork2/assets/skyboxes/bare-stone/reference-v1.png",
+      "prompt": "games/zork2/assets/skyboxes/bare-stone/reference-v1.prompt.txt",
+      "promptSha256": "0f0bef57ac58954d6de45523e08af61746e85e9bbcddaa28f632f9e55b362585",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceContextSha256": "cb399d8ab9900e72ee6ae523ac96f0571bb66ba7c12c0b6e063f08abf6f8da46",
+      "imageSha256": "0cdbba88db0bafd8519f6af093ed8886f866b2c81c0c4a0a8a7c2e6bd4e5b3a8",
+      "dimensions": [
+        1774,
+        887
+      ]
+    },
+    {
+      "id": "dusty-corridor",
+      "label": "Dusty stone corridor",
+      "status": "generated",
+      "image": "games/zork2/assets/skyboxes/dusty-corridor/reference-v2.png",
+      "prompt": "games/zork2/assets/skyboxes/dusty-corridor/reference-v2.prompt.txt",
+      "promptSha256": "109a1c308c8e8a2e03ec5862b5d111fc411cd00ffb0a8f9e6e354cbd7f4294de",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceContextSha256": "20f3304cb9391669b57b6ddcee2e0c73fe0abe92a1a378af5d1308b84b18a504",
+      "imageSha256": "781e7b7dfd36010b8a29f8ebc180568f56d5dc6ff4df01f495b0880c88933d2b",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "previousRevisions": [
+        {
+          "image": "games/zork2/assets/skyboxes/dusty-corridor/reference-v1.png",
+          "imageSha256": "9cc10cb900d7aed5f447d49de9df083ae75eb961010da68bfe456817c144af44",
+          "prompt": "games/zork2/assets/skyboxes/dusty-corridor/reference-v1.prompt.txt",
+          "promptSha256": "3d1e6b32951c4bc4e69511b3a468e1e1558be39cd1beb335a6fdf597d6946d25",
+          "dimensions": [
+            1774,
+            887
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marble-interior",
+      "label": "Ancient marble interior",
+      "status": "generated",
+      "image": "games/zork2/assets/skyboxes/marble-interior/reference-v1.png",
+      "prompt": "games/zork2/assets/skyboxes/marble-interior/reference-v1.prompt.txt",
+      "promptSha256": "242818dfb4c57a4e54f17a5c8a31c24613d22b39d3b3ada15d85f6cbb3f7cfbc",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceContextSha256": "37ac219fa0356cb5902e4654b0eeb3b2ba7af8a54b936187c4d36121f749829d",
+      "imageSha256": "3b501ba879758faee41257e717909e37eec1ed31f21ca51de79d9605f0be8034",
+      "dimensions": [
+        1774,
+        887
+      ]
+    },
+    {
+      "id": "diamond-maze",
+      "label": "Angled maze stone",
+      "status": "generated",
+      "image": "games/zork2/assets/skyboxes/diamond-maze/reference-v1.png",
+      "prompt": "games/zork2/assets/skyboxes/diamond-maze/reference-v1.prompt.txt",
+      "promptSha256": "6b2d82fdb1b681844b7cc994b0c777982ad924af0506298010919ba09c247c0d",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceContextSha256": "d082f0755811263acc5aa3dde5ef72bef8c1ef41e9df558e0813d92d0e20f6cc",
+      "imageSha256": "ef17ff3e8d2598aa389abd0b0d7e7ca0f3adacb657f9813ca9f45b5d71cdc5f5",
+      "dimensions": [
+        1774,
+        887
+      ]
+    },
+    {
+      "id": "cave-garden",
+      "label": "Moss-lit cavern garden",
+      "status": "generated",
+      "image": "games/zork2/assets/skyboxes/cave-garden/reference-v1.png",
+      "prompt": "games/zork2/assets/skyboxes/cave-garden/reference-v1.prompt.txt",
+      "promptSha256": "fb5885cfce6a9d71f952a9e7e9e4f8c5829aa88241b320d0a46ec2cfdb575a15",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceContextSha256": "d59a4d4c60e19cd029b7da28b26cb498e7788cc102596e3b7fb3233399db18c9",
+      "imageSha256": "fa297f8b0c13037a5860b896990223da584e3957cffd98451a601a85c3fbd244",
+      "dimensions": [
+        1774,
+        887
+      ]
+    },
+    {
+      "id": "ancient-lava",
+      "label": "Cold ancient lava stone",
+      "status": "generated",
+      "image": "games/zork2/assets/skyboxes/ancient-lava/reference-v2.png",
+      "prompt": "games/zork2/assets/skyboxes/ancient-lava/reference-v2.prompt.txt",
+      "promptSha256": "3cd59ac989c61b557222c09afdc8452d2c275d15ae596c16baf452396fa115c7",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceContextSha256": "75eff87c421fc648b7aea9db5ab1764f6e1bc44429b24beb878c141c7e18ca51",
+      "imageSha256": "8e98cc81acc5a8f46096c02a582a44eb4faa53eb0bc2fab6b69a23641c9f8af8",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "previousRevisions": [
+        {
+          "image": "games/zork2/assets/skyboxes/ancient-lava/reference-v1.png",
+          "imageSha256": "e81c0e370eb0e86b72d100ab94513ed6aa2c180e0bc907d2a6778d154d9cb30d",
+          "prompt": "games/zork2/assets/skyboxes/ancient-lava/reference-v1.prompt.txt",
+          "promptSha256": "bb41715ba8fef6af3d68fba35f1e9c5138ef8c02cd9cae0d7331676ae0146f21",
+          "dimensions": [
+            1774,
+            887
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lava-chimney",
+      "label": "Vertical lava chimney",
+      "status": "generated",
+      "image": "games/zork2/assets/skyboxes/lava-chimney/reference-v1.png",
+      "prompt": "games/zork2/assets/skyboxes/lava-chimney/reference-v1.prompt.txt",
+      "promptSha256": "1c064ebc774a36b8b35c3d1e6d06b1c672ac1db5b8efe53ca1c689935e108039",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceContextSha256": "b5075012dc4cfce7773319736d060d58486f7e592e05be066fec8bba5cdf8412",
+      "imageSha256": "d79574b7d275557eea18f128b97f67ba3c727f9f716a452713d194504acfece1",
+      "dimensions": [
+        1774,
+        887
+      ]
+    },
+    {
+      "id": "volcano-bottom",
+      "label": "Dormant volcano floor view",
+      "status": "generated",
+      "image": "games/zork2/assets/skyboxes/volcano-bottom/reference-v1.png",
+      "prompt": "games/zork2/assets/skyboxes/volcano-bottom/reference-v1.prompt.txt",
+      "promptSha256": "19c2683373b4eb8e8facccd6ed3b951fd8260040755b83a2c83a9e431ef78ecb",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceContextSha256": "4f6312f95bde5c431a6b5bac6aa66a83e379de716c2c7cead3a7061b1767455f",
+      "imageSha256": "8728a2c4a78a74a5f02d0067a9f3cf02456aec37a5b3a01f459080aecea33365",
+      "dimensions": [
+        1774,
+        887
+      ]
+    },
+    {
+      "id": "volcano-lower",
+      "label": "Dormant volcano lower airborne view",
+      "status": "generated",
+      "image": "games/zork2/assets/skyboxes/volcano-lower/reference-v1.png",
+      "prompt": "games/zork2/assets/skyboxes/volcano-lower/reference-v1.prompt.txt",
+      "promptSha256": "a57daf6d996508cdce77819208b9c34a3c35a7419fd8a7e1c90a038f91f921cb",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceContextSha256": "fdd4c9e401c5e6fb5e4c0e983defdd1deab9996b5578c2d642ac84c679eea9ff",
+      "imageSha256": "b90200e3581772598b8a1fec4c48b079ab6395bb097ff0c9dc020c808fdbcb5c",
+      "dimensions": [
+        1774,
+        887
+      ]
+    },
+    {
+      "id": "volcano-middle",
+      "label": "Dormant volcano middle view",
+      "status": "generated",
+      "image": "games/zork2/assets/skyboxes/volcano-middle/reference-v2.png",
+      "prompt": "games/zork2/assets/skyboxes/volcano-middle/reference-v2.prompt.txt",
+      "promptSha256": "957f513e65fd01c333f2d1b0db3ecda8d8053803f367d00de7f645aac0f36679",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceContextSha256": "ee73458827cd45937d94e96f896a21df0f076a85a0cddf9a8497f16d40e39588",
+      "imageSha256": "22868444bf642e4d73ce7b69293cd3f60b6b2bbdf88aa5ca2b675b04ee553379",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "previousRevisions": [
+        {
+          "image": "games/zork2/assets/skyboxes/volcano-middle/reference-v1.png",
+          "imageSha256": "e6a49dd29b004ea953a43a7f334becd904db93e9dc6593962b51e42c02edbc17",
+          "prompt": "games/zork2/assets/skyboxes/volcano-middle/reference-v1.prompt.txt",
+          "promptSha256": "bc5c463cfbb5e733a8f2a398ec0d3ead80e9fa0a207c949dc1da253e6c3e24be",
+          "dimensions": [
+            1774,
+            887
+          ]
+        }
+      ]
+    },
+    {
+      "id": "volcano-upper",
+      "label": "Dormant volcano upper airborne view",
+      "status": "generated",
+      "image": "games/zork2/assets/skyboxes/volcano-upper/reference-v2.png",
+      "prompt": "games/zork2/assets/skyboxes/volcano-upper/reference-v2.prompt.txt",
+      "promptSha256": "66286ad81b3e9add2c16476ebde35f2b2e57482da4c63c0beb249c71a46dc36c",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceContextSha256": "92d883a3f03bdfa1a755193fd6ad8aa1ebeb3a38bef09d249196bec345154966",
+      "imageSha256": "c439ff99c08e321f066c34cad2b261a2c927e39ec04ed5c62235a48b5d819efa",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "previousRevisions": [
+        {
+          "image": "games/zork2/assets/skyboxes/volcano-upper/reference-v1.png",
+          "imageSha256": "bc61650e978f35ccc30a5cc99ab2844329e5ce1ef31b29ddab758a9db3d46db7",
+          "prompt": "games/zork2/assets/skyboxes/volcano-upper/reference-v1.prompt.txt",
+          "promptSha256": "d960fff903ae0e5e605c161ec39edfbc0c00b387c5dd787a3a9e8ca5d1aa98d1",
+          "dimensions": [
+            1774,
+            887
+          ]
+        }
+      ]
+    },
+    {
+      "id": "volcano-rim",
+      "label": "Dormant volcano rim view",
+      "status": "generated",
+      "image": "games/zork2/assets/skyboxes/volcano-rim/reference-v1.png",
+      "prompt": "games/zork2/assets/skyboxes/volcano-rim/reference-v1.prompt.txt",
+      "promptSha256": "ad30f4348bbb7080a4a07df526ba6453000edd99cd2c6865bc256e19ee786526",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceContextSha256": "cddc7413ba52002e2de651974280cbf07dedc05a37cd8e67c960d99071c75cff",
+      "imageSha256": "462d6ed34c78562ea717696d898fa2510c3463cb4cda145e8751dc97b55c1155",
+      "dimensions": [
+        1774,
+        887
+      ]
+    },
+    {
+      "id": "brick-well",
+      "label": "Damp brick well",
+      "status": "generated",
+      "image": "games/zork2/assets/skyboxes/brick-well/reference-v1.png",
+      "prompt": "games/zork2/assets/skyboxes/brick-well/reference-v1.prompt.txt",
+      "promptSha256": "686e12599ff8fb0262146b4740a1662c3b54b21e4cbe3c6ccda7dfd5ab04755d",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceContextSha256": "54cd8501baeaff0ee876490cbe152562b6af8792d828456bccab38b1bc86f81d",
+      "imageSha256": "da7a4fc8ae289111c330fb2db4fa3d78f89b9846fec83f54a0925636f157b199",
+      "dimensions": [
+        1774,
+        887
+      ]
+    },
+    {
+      "id": "circular-high",
+      "label": "High circular stone chamber",
+      "status": "generated",
+      "image": "games/zork2/assets/skyboxes/circular-high/reference-v1.png",
+      "prompt": "games/zork2/assets/skyboxes/circular-high/reference-v1.prompt.txt",
+      "promptSha256": "9490887034674df6a3e402f8e34e303b699855d88171254ca1acf53032984cc1",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceContextSha256": "10307b8a4f7590e8191862d8f362e324533173b50337fc53067ce21553779788",
+      "imageSha256": "e07873b98594ca0daa30e13d41a33a1bf7eeff5412903ab05ceb1dbe1814246f",
+      "dimensions": [
+        1774,
+        887
+      ]
+    },
+    {
+      "id": "circular-low",
+      "label": "Low circular stone chamber",
+      "status": "generated",
+      "image": "games/zork2/assets/skyboxes/circular-low/reference-v1.png",
+      "prompt": "games/zork2/assets/skyboxes/circular-low/reference-v1.prompt.txt",
+      "promptSha256": "6a86d08592f3dc9170e6e25f9bc0842b8ff1ab82c0836c428cddbc2accd4bf40",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceContextSha256": "6c722dd11262d2212db233ae14e841e7012def60cdb29a4d06dc25b071c0d39e",
+      "imageSha256": "41409daa592229017ba7f1c7568decdffd65acbf7121e4be91c1f312370897d5",
+      "dimensions": [
+        1774,
+        887
+      ]
+    },
+    {
+      "id": "giant-room",
+      "label": "Enormous stone room",
+      "status": "generated",
+      "image": "games/zork2/assets/skyboxes/giant-room/reference-v1.png",
+      "prompt": "games/zork2/assets/skyboxes/giant-room/reference-v1.prompt.txt",
+      "promptSha256": "d3173a646bf9ea83a263e4127ea95cc66b1014cb98d7cba43c18628acf4aa7c7",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceContextSha256": "a0a2eca0e1db03678e2b1dd9f5a85df89850334eefb0c4f6cd7dc63ff6296032",
+      "imageSha256": "fdc356fdcdeaf6b8f9f45755fe024fc7c5178ca96eeed19f9ad034fd0285457f",
+      "dimensions": [
+        1774,
+        887
+      ]
+    }
+  ],
+  "rooms": [
+    {
+      "identity": "AQUARIUM-ROOM",
+      "sourceHash": "2d8f9f8df27e75f3d701068f55bca2b4d1e0cbf59707fbad3360e241f7d8785f",
+      "skybox": "dusty-corridor",
+      "reason": "Shares compatible dusty stone corridor distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "BANK-ENTRANCE",
+      "sourceHash": "b13ce468ceeaeec728be02e8a52538ad3106146ca128875c4cc350820a2c4d2a",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "CAGE-ROOM",
+      "sourceHash": "94c1205a3dbe8e88db7482e2bd2ac996c90da61969b34d5c6fb4640bfb011933",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "CAROUSEL-ROOM",
+      "sourceHash": "daab3c43d4689a27cc9591ed183f25e242a9e4bdccce75a423069929f0285043",
+      "skybox": "circular-high",
+      "reason": "Shares compatible high circular stone chamber distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "CERBERUS-ROOM",
+      "sourceHash": "d73ff5795ef737332f17776c348a20cf1681a68e47a11799555cb29d68e83f5b",
+      "skybox": "marble-interior",
+      "reason": "Shares compatible ancient marble interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "COBWEBBY-CORRIDOR",
+      "sourceHash": "58fa992f738c502b0d12c348970509b74567fe5c60b959a3d170e72104356483",
+      "skybox": "dusty-corridor",
+      "reason": "Shares compatible dusty stone corridor distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "COOL-ROOM",
+      "sourceHash": "a012b34a60ae1841f380f1ca4bf17920d53e8936f1b5e484513733bc74b0a879",
+      "skybox": "cavern",
+      "reason": "Compatible existing distant rock shell; room-specific floor, exits, features and effects remain separate geometry."
+    },
+    {
+      "identity": "CRYPT-ANTEROOM",
+      "sourceHash": "6ff023d1842a1c3d364e2cb37a5c98ed1f43f3ab9d4be7e0765a7aa7a83e81c8",
+      "skybox": "marble-interior",
+      "reason": "Shares compatible ancient marble interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "CRYPT-ROOM",
+      "sourceHash": "eb243a4a78584e0f630ba29b9f15128191982ed9154e3e267ca0713774461a6a",
+      "skybox": "marble-interior",
+      "reason": "Shares compatible ancient marble interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "DARK-TUNNEL",
+      "sourceHash": "8905de3f5662d797eaf1579a00a1b0a6cd3c26b0425968b96cd7ffabbe9eb66a",
+      "skybox": "dusty-corridor",
+      "reason": "Shares compatible dusty stone corridor distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "DEAD-PALANTIR-1",
+      "sourceHash": "ebb7d127e350c2caea22a31f44ab9e3ac7f90fec16f5671ab36c956719efc2bf",
+      "skybox": null,
+      "reason": "Nonphysical palantir interlude; no invented environment."
+    },
+    {
+      "identity": "DEAD-PALANTIR-2",
+      "sourceHash": "593a300399fdc1a0a6c7988c1404c94c802fec8b2aaf7bbb9d10bee677956056",
+      "skybox": null,
+      "reason": "Nonphysical palantir interlude; no invented environment."
+    },
+    {
+      "identity": "DEAD-PALANTIR-3",
+      "sourceHash": "e6301b0a46410835e383838f9f992e1afabf6918df720e35c348404368098de2",
+      "skybox": null,
+      "reason": "Nonphysical palantir interlude; no invented environment."
+    },
+    {
+      "identity": "DEAD-PALANTIR-4",
+      "sourceHash": "a2c9a4134b2c0aafd89884138762fbf6282159e7a7bf713788d96d9e195c94d0",
+      "skybox": null,
+      "reason": "Nonphysical palantir interlude; no invented environment."
+    },
+    {
+      "identity": "DEEP-FORD",
+      "sourceHash": "6eebcfb7944c118bdc83e8af7ba89862e56dd0e8a064b45abe7c100c7dfafeb8",
+      "skybox": "cavern",
+      "reason": "Compatible existing distant rock shell; room-specific floor, exits, features and effects remain separate geometry."
+    },
+    {
+      "identity": "DEPOSITORY",
+      "sourceHash": "6b0563c2025653dbec9a32daf06c31697c2120e91c68c4b8907b4f80f7f0585b",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "DIAMOND-1",
+      "sourceHash": "21f329a413f08ece5f7d53fe65729af91f13bb4b042aee640e2cb1dd1b1b3e7c",
+      "skybox": "diamond-maze",
+      "reason": "Shares compatible angled maze stone distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "DIAMOND-2",
+      "sourceHash": "325234cf02e5b9143e2cfebbf18d81944736ff8a0695ca521b8e612efbd94147",
+      "skybox": "diamond-maze",
+      "reason": "Shares compatible angled maze stone distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "DIAMOND-3",
+      "sourceHash": "bcc06a0bbf13f2b0ed9bfa407f74a29bbc11c3911638da2c0e0158df86b9279c",
+      "skybox": "diamond-maze",
+      "reason": "Shares compatible angled maze stone distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "DIAMOND-4",
+      "sourceHash": "4c23af40923a657e0c1b4538ef0891a35f80536a25ad98b613f094ab417db5d5",
+      "skybox": "diamond-maze",
+      "reason": "Shares compatible angled maze stone distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "DIAMOND-5",
+      "sourceHash": "eb104baefbb9d3460b2026bcbce71dfa810cc8c0b3bebe227780a1c5768bed07",
+      "skybox": "diamond-maze",
+      "reason": "Shares compatible angled maze stone distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "DIAMOND-6",
+      "sourceHash": "4104a81d6b4d0e7662df91de4a425483f1b1787169eceacaa8111398eeca8716",
+      "skybox": "diamond-maze",
+      "reason": "Shares compatible angled maze stone distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "DIAMOND-7",
+      "sourceHash": "4365643bbaff6f8e547ca315a192bfe8358f8a5981d72d1fdd6e3ffaf4f3d818",
+      "skybox": "diamond-maze",
+      "reason": "Shares compatible angled maze stone distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "DIAMOND-8",
+      "sourceHash": "c4e0624d0075bc852cc8ba93a276d4ac679142ef1026234c0b036e66cafdb82b",
+      "skybox": "diamond-maze",
+      "reason": "Shares compatible angled maze stone distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "DIAMOND-9",
+      "sourceHash": "ce7aa013d2ea2b3e418d6bdabc5742ba324c2f7eefdfce9cf00478c416a9249f",
+      "skybox": "diamond-maze",
+      "reason": "Shares compatible angled maze stone distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "DRAGON-LAIR",
+      "sourceHash": "f00234d0d5e62fe776720beb8dbd849f44abd5ed4eeb8907a3b2ccb7a0561cc8",
+      "skybox": "lair",
+      "reason": "Compatible existing distant rock shell; room-specific floor, exits, features and effects remain separate geometry."
+    },
+    {
+      "identity": "DRAGON-ROOM",
+      "sourceHash": "f81db6dfce930c5c36739642007116797825b95d0d88f9d97330477f048a3d0c",
+      "skybox": "lair",
+      "reason": "Compatible existing distant rock shell; room-specific floor, exits, features and effects remain separate geometry."
+    },
+    {
+      "identity": "DREARY-ROOM",
+      "sourceHash": "b22d91bbe9482c76b313c7817292937750a0afcf964551a9b4817905d438c14c",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "FOOT-BRIDGE",
+      "sourceHash": "4cab585047bc956e15bd80540ae13e0f8310023ed8e5b0c942ad87913ee107d4",
+      "skybox": "cavern",
+      "reason": "Compatible existing distant rock shell; room-specific floor, exits, features and effects remain separate geometry."
+    },
+    {
+      "identity": "FORMAL-GARDEN",
+      "sourceHash": "f4e6e8b4a5e29a0dc5573ccd58f35506d275f7cd58dac08e0e33740c809d1f2a",
+      "skybox": "cave-garden",
+      "reason": "Shares compatible moss-lit cavern garden distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "FRESCO-ROOM",
+      "sourceHash": "8f2e4be6950f853a754a5f5f3383a191d6fab7a77244d87f17b31e73c08b4f63",
+      "skybox": "lair",
+      "reason": "Compatible existing distant rock shell; room-specific floor, exits, features and effects remain separate geometry."
+    },
+    {
+      "identity": "GARDEN-NORTH",
+      "sourceHash": "69ad56385f5c87a8b5188b594de6e9e3b676b6663da4ec0efc42bcc10f2201eb",
+      "skybox": "cave-garden",
+      "reason": "Shares compatible moss-lit cavern garden distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "GAZEBO-ROOM",
+      "sourceHash": "a4f70a84197a3698a0c4afc2efbd16c786b79700780f0abcd06efb3bc7f0c405",
+      "skybox": "cave-garden",
+      "reason": "Shares compatible moss-lit cavern garden distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "GLACIER-ROOM",
+      "sourceHash": "42ada7f163e14c27efb096d66d9d8db5152538cf072dd19cbf2fa18e4e655a74",
+      "skybox": "ancient-lava",
+      "reason": "Shares compatible cold ancient lava stone distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "GREAT-CAVERN",
+      "sourceHash": "c9749b6c68d4525e5b8b9b39f87c814a24a0babbe90770394fe918524f35bc04",
+      "skybox": "cavern",
+      "reason": "Compatible existing distant rock shell; room-specific floor, exits, features and effects remain separate geometry."
+    },
+    {
+      "identity": "GUARDIAN-ROOM",
+      "sourceHash": "5297aa4bb027fc3a51aa323399062736c401519630aac10d65bb5f6db231d33d",
+      "skybox": "dusty-corridor",
+      "reason": "Shares compatible dusty stone corridor distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "IN-AQUARIUM",
+      "sourceHash": "90af3d388ad5ec2ae97f7b94bdaa8b53d5dc8e0479925eafcb5e2c9ce8d1c4e4",
+      "skybox": null,
+      "reason": "Source says other surroundings cannot be seen. Use darkness and separate observed sand; no invented aquarium vista."
+    },
+    {
+      "identity": "IN-CAGE",
+      "sourceHash": "5ed3c93f885431924fb671262e9f634d848826b9121c2cb0a968004c49789c54",
+      "skybox": null,
+      "reason": "Source discloses only a steel cage, not its surroundings. Keep cage geometry separate and do not invent a room vista."
+    },
+    {
+      "identity": "INSIDE-BARROW",
+      "sourceHash": "4be78d1e7eb98121799f54f058619f7b994de3ad03cbb76442db4161c34660b8",
+      "skybox": "barrow",
+      "reason": "Compatible existing distant rock shell; room-specific floor, exits, features and effects remain separate geometry."
+    },
+    {
+      "identity": "KENNEL",
+      "sourceHash": "43b68ef7050d21b66cd069139367974631807438deea4830eebfc75112df827f",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "LAVA-ROOM",
+      "sourceHash": "f9901125613770b07da1a31f096373179b32ac9ed9003e3be98b8cb5ec395d47",
+      "skybox": "ancient-lava",
+      "reason": "Shares compatible cold ancient lava stone distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "LAVA-TUBE",
+      "sourceHash": "0c4053c01bd07b0b49d5fd75b0d43a0d4f0a3e6b0f0ed5c07b9b7b4e9b44e694",
+      "skybox": "lava-chimney",
+      "reason": "Shares compatible vertical lava chimney distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "LEDGE-1",
+      "sourceHash": "96b71999a505d537b56c690334cfb66aabfcad2afb964560b213c310423fb4d5",
+      "skybox": "volcano-middle",
+      "reason": "Shares compatible dormant volcano middle view distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "LEDGE-2",
+      "sourceHash": "29f675ad254f0c00ea73033800dd5a7133da878d75c1a923713ef21270947392",
+      "skybox": "volcano-middle",
+      "reason": "Shares compatible dormant volcano middle view distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "LEDGE-TUNNEL",
+      "sourceHash": "9070c2ac2aa07d4b9bd0d11ebf6929b3977e251806d1758cb51be30ccb853bb0",
+      "skybox": "volcano-middle",
+      "reason": "Shares compatible dormant volcano middle view distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "LIBRARY",
+      "sourceHash": "0530b9244aaa1d8059cdbd6dd4d286235c362734306dc285cc21cc586312a3e5",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "MACHINE-ROOM",
+      "sourceHash": "52d5ef5028f8b6bacaecbfe1da649abd2632b3ced9f5fa7306fb4d422e482f81",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "MAGNET-ROOM",
+      "sourceHash": "1e8882b9e3c45be722893f1e4aceb86eb045f3e3db3e1f45241fa10b3c02fd1f",
+      "skybox": "circular-low",
+      "reason": "Shares compatible low circular stone chamber distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "MARBLE-HALL",
+      "sourceHash": "5835f032c37915e5acc3151d7b55c3bee09b3d45dafcdb91f420d34ae90bdc08",
+      "skybox": "marble-interior",
+      "reason": "Shares compatible ancient marble interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "MENHIR-ROOM",
+      "sourceHash": "f627038f32fce48e434b92eeb37b6e57c1d67f90133a716b3c3664f8041e7478",
+      "skybox": "cavern",
+      "reason": "Compatible existing distant rock shell; room-specific floor, exits, features and effects remain separate geometry."
+    },
+    {
+      "identity": "NARROW-TUNNEL",
+      "sourceHash": "30b6c3a0e94e1239d4e959957542e97dbd7dc4b4a1e39b9d74cf8111aa68ff6f",
+      "skybox": "cavern",
+      "reason": "Compatible existing distant rock shell; room-specific floor, exits, features and effects remain separate geometry."
+    },
+    {
+      "identity": "OFFICE",
+      "sourceHash": "3c1ae14bd632472ca699d0f148397e4fda296a41444cf8ac7ab8a6549ab5227b",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "PEARL-ROOM",
+      "sourceHash": "9419b45e112b1a90590488ab65a89c1f7e84ff9ed39ac7a6b7e7d07b2e447934",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "PENTAGRAM-ROOM",
+      "sourceHash": "91632a059c728f7cf1a8a99c2050dc6f22a64064d241dd39f276f1bb22978e10",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "POOL-ROOM",
+      "sourceHash": "fae40c5843ee40434d57e7ed287ad1aca87426ea87e4662e0c964dc6e912921f",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "POSTS-ROOM",
+      "sourceHash": "e5ba0fc3fee2738437d03ca6039debe180078e5302ff6aeada101fd2e99e74f8",
+      "skybox": "giant-room",
+      "reason": "Shares compatible enormous stone room distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "RAVINE-LEDGE",
+      "sourceHash": "5921a6725a14d9262e21612f52568ef802e6d0690578afee2839a18763bc9da4",
+      "skybox": "cavern",
+      "reason": "Compatible existing distant rock shell; room-specific floor, exits, features and effects remain separate geometry."
+    },
+    {
+      "identity": "RIDDLE-ROOM",
+      "sourceHash": "f0fc9c24bdf2e96a247961ace5133f25af17453173a4df3e10e6d7ce9c4666c2",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "ROOM-8",
+      "sourceHash": "f4005ea2ec9730caca0135592bb460dbb7350bb5a665567cb9ef599b64d49742",
+      "skybox": "barrow",
+      "reason": "Compatible existing distant rock shell; room-specific floor, exits, features and effects remain separate geometry."
+    },
+    {
+      "identity": "SAFE-ROOM",
+      "sourceHash": "e446a22732dbee01c167136d2aa3807ce8acf22782412e1457eb20fc66f4668f",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "SHALLOW-FORD",
+      "sourceHash": "eb62f4c3371db53b0ad253f8ad2fcebdeaee1e1c14b2c757b8d9edfe27ad065d",
+      "skybox": "cavern",
+      "reason": "Compatible existing distant rock shell; room-specific floor, exits, features and effects remain separate geometry."
+    },
+    {
+      "identity": "SMALL-ROOM",
+      "sourceHash": "74eb7e52c599045eb9dff8ed9fda7dd87989fc14d8c991a03b159db9a642c08d",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "STAIRWAY-TOP",
+      "sourceHash": "e758afe2d5135ef9f9d7c0166819eedac7e30e1b41421b6c5143f6e9a19b70ad",
+      "skybox": "marble-interior",
+      "reason": "Shares compatible ancient marble interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "STONE-BRIDGE",
+      "sourceHash": "2b572ec1821b542a8edb3360cd27ad56789a0c9753a7718b240c5a5f98a4a23b",
+      "skybox": "cavern",
+      "reason": "Compatible existing distant rock shell; room-specific floor, exits, features and effects remain separate geometry."
+    },
+    {
+      "identity": "STREAM-PATH",
+      "sourceHash": "f6d9bd6fc12258129690ee20807b2fd0287e21059f0d784dd2d7e985ce820260",
+      "skybox": "cavern",
+      "reason": "Compatible existing distant rock shell; room-specific floor, exits, features and effects remain separate geometry."
+    },
+    {
+      "identity": "TEA-ROOM",
+      "sourceHash": "aa31bd47383014064516d0865734becac01492ab20a582f821b4ff74930ebfc9",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "TELLER-EAST",
+      "sourceHash": "17ad49c011b2100cdbf93f3fe906dc00f0183242db216466625042088c61e7f6",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "TELLER-WEST",
+      "sourceHash": "521eac258704769d6985892afe857e0a6bd0c4c765b71afaadb385117b95c7d2",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "TINY-ROOM",
+      "sourceHash": "81d93c25973942de66de3cab105bdc5a6d697c02853ce2dcbfe90335e754f0f3",
+      "skybox": "barrow",
+      "reason": "Compatible existing distant rock shell; room-specific floor, exits, features and effects remain separate geometry."
+    },
+    {
+      "identity": "TOPIARY-ROOM",
+      "sourceHash": "b4c680e7e2e1fe118e21d1a060bb2171e72a0d1982705b59dc40211022074651",
+      "skybox": "cave-garden",
+      "reason": "Shares compatible moss-lit cavern garden distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "TROPHY-ROOM",
+      "sourceHash": "61da60450afbf3cffbd1ef21206664fce208b3246b05d060f2e2020c354b9e93",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "VAIR-1",
+      "sourceHash": "c7a386188cd6085e32fe6d78d7f74da66801bd768588381a6d947ab7e2c6ed10",
+      "skybox": "volcano-lower",
+      "reason": "Shares compatible dormant volcano lower airborne view distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "VAIR-2",
+      "sourceHash": "b1574631dbf0dca61bbc5dfa709ec20e212e37cdabda7624d11bde5243dbef24",
+      "skybox": "volcano-middle",
+      "reason": "Shares compatible dormant volcano middle view distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "VAIR-3",
+      "sourceHash": "7af89a477d427aa896a107bf57002f710b73edf1465e12b88984d55bdfc61dcf",
+      "skybox": "volcano-upper",
+      "reason": "Shares compatible dormant volcano upper airborne view distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "VAIR-4",
+      "sourceHash": "ec06474308b3da1140c8f4065f3f11499e570bfcb22d5cf91e90ad251e712acd",
+      "skybox": "volcano-rim",
+      "reason": "Shares compatible dormant volcano rim view distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "VAULT",
+      "sourceHash": "a4d3cd0599cf40862ad44f6053c020cca0b547f844e85d85906e1fcc21dcfbd9",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "VIEWING-EAST",
+      "sourceHash": "302c35d3ce661ed202b1d4bae14510b0f7e9afca48bb99b4f27f81094acff21c",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "VIEWING-WEST",
+      "sourceHash": "64b7164011ab93846f50dd10378183f6de446fa96ee57c4ceccfc8d06f5bf9a9",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "VOLCANO-BOTTOM",
+      "sourceHash": "84b282338df8fa7bada6edfac37b19a4f76ea0698c9259dd1a8d2ea9293cbb42",
+      "skybox": "volcano-bottom",
+      "reason": "Shares compatible dormant volcano floor view distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "VOLCANO-VIEW",
+      "sourceHash": "7306c13dd00709a75ddd335a790fd72506170c4c319096b29256156a7dce84f6",
+      "skybox": "volcano-middle",
+      "reason": "Shares compatible dormant volcano middle view distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "WELL-BOTTOM",
+      "sourceHash": "96ea202f65e6ba8f5391b7f5956f11bc3b6e7c0d87d539b4c98e868871a12265",
+      "skybox": "brick-well",
+      "reason": "Shares compatible damp brick well distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "WELL-TOP",
+      "sourceHash": "8c114e43230e90754348c1ea9a228173418c7bc1a359125471a69665c7713192",
+      "skybox": "brick-well",
+      "reason": "Shares compatible damp brick well distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "WIZARDS-QUARTERS",
+      "sourceHash": "bcba9a040758dc30b713c1f03372501b6366433734f44df2be4e03b55af45d1f",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "WIZARDS-WORKSHOP",
+      "sourceHash": "5b12dc1f70d1207d099125fb06488667144e95707d77807f18aacff0d15295f1",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "WORKBENCH-ROOM",
+      "sourceHash": "d8577e54fa7d04594123cc3421c24776e7f810c5d202d1f4a7101ba51f1cb30b",
+      "skybox": "bare-stone",
+      "reason": "Shares compatible bare stone interior distant surfaces. Distinctive room features, exits, scale, light and changing state remain separate geometry."
+    },
+    {
+      "identity": "ZORK3",
+      "sourceHash": "4abb2040132dd0b16246475c7e0c084865559e34e6424bd3de704000f5a8679c",
+      "skybox": "barrow",
+      "reason": "Compatible existing distant rock shell; room-specific floor, exits, features and effects remain separate geometry."
+    }
+  ]
+}
