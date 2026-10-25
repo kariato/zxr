@@ -12,7 +12,7 @@ import type { PlayerView } from './controller.ts';
 import { resolveHostAsync } from './host.ts';
 import { buildObjectActionCatalog } from './object-actions.ts';
 import type { ObjectAction } from './object-actions.ts';
-export function mountBrowserPlayer(container:HTMLElement,game:LoadedGame,session:GameSession,saves=new GameSaves(game,new IndexedDbSaveStore(),()=>localStorage.getItem('zxr-save:'+game.buildHash))){
+export function mountBrowserPlayer(container:HTMLElement,game:LoadedGame,session:GameSession,saves=new GameSaves(game,new IndexedDbSaveStore(),()=>localStorage.getItem('zxr-save:'+game.buildHash)),options:{restoreAutosave?:boolean}={}){
   const listeners=new Set<(view:PlayerView,busy:boolean)=>void>();
   const player=new TextPlayer(session,buildObjectActionCatalog(game)),catalog=buildWordCatalog(game.bundle.payload.vocabulary);let shown=0,busy=true,initialising=true,disposed=false,fontSize=18;let recorder:ReplayRecorder|undefined;
   const element=<K extends keyof HTMLElementTagNameMap>(tag:K,text?:string)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n;};
@@ -92,7 +92,7 @@ export function mountBrowserPlayer(container:HTMLElement,game:LoadedGame,session
     const control=actions.querySelectorAll<HTMLButtonElement>(':scope > button')[Number(event.key)-1];if(control&&!control.disabled){event.preventDefault();control.click();}
   };root.addEventListener('keydown',shortcut);render(false);
   const ready=(async()=>{
-    try{const saved=await saves.readAutosave();if(disposed)return;if(saved){player.importSave(saved);player.transcript.splice(0,1);transcript.replaceChildren();shown=0;messages.textContent='Autosave restored.';}await auto();}
+    try{const saved=options.restoreAutosave===false?null:await saves.readAutosave();if(disposed)return;if(saved){player.importSave(saved);player.transcript.splice(0,1);transcript.replaceChildren();shown=0;messages.textContent='Autosave restored.';}await auto();}
     catch(cause){messages.textContent='Autosave could not be loaded: '+error(cause);}
     try{await refresh();}catch(cause){messages.textContent=[messages.textContent,'Saved games unavailable: '+error(cause)].filter(Boolean).join(' ');}
     try{recorder=new ReplayRecorder(game,session);}catch(cause){messages.textContent=[messages.textContent,'Replay recording unavailable: '+error(cause)].filter(Boolean).join(' ');}
