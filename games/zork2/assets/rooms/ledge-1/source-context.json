@@ -1,0 +1,65 @@
+{
+  "room": "LEDGE-1",
+  "label": "Narrow Ledge",
+  "literalRoomDescription": [
+    "You are on a narrow ledge within an old dormant volcano. This ledge is about halfway between the floor below and the rim above. There is an exit to the south."
+  ],
+  "safeSceneProfile": "Narrow ledge halfway up dormant volcano with southern exit and separate hook. No walkable floor across the volcanic void.",
+  "visibleInitialObjects": [
+    {
+      "identity": "COIN",
+      "label": "priceless zorkmid",
+      "parent": "LEDGE-1",
+      "flags": [
+        "READBIT",
+        "STAGGERED",
+        "TAKEBIT"
+      ],
+      "sourceText": [
+        "There is an engraved zorkmid here.",
+        "On the floor is a priceless gold zorkmid (a valuable collector's item).",
+        "This is a beautiful octagonal coin bearing the legends \"Ten Thousand Zorkmids\" and \"In Frobs We Trust\"."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed priceless zorkmid. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is an engraved zorkmid here.\nFDESC: On the floor is a priceless gold zorkmid (a valuable collector's item).\nTEXT: This is a beautiful octagonal coin bearing the legends \"Ten Thousand Zorkmids\" and \"In Frobs We Trust\".\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every priceless zorkmid into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "HOOK-1",
+      "label": "hook",
+      "parent": "LEDGE-1",
+      "flags": [],
+      "sourceText": [
+        "There is a small hook attached to the rock here."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed hook. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a small hook attached to the rock here.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every hook into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "WEST",
+      "view": {
+        "global": "GNOME-DOOR-FLAG",
+        "kind": "CEXIT",
+        "message": null,
+        "to": "VOLCANO-BOTTOM"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "LIBRARY"
+      }
+    },
+    {
+      "direction": "DOWN",
+      "view": {
+        "kind": "NEXIT",
+        "message": "I wouldn't jump from here."
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "96b71999a505d537b56c690334cfb66aabfcad2afb964560b213c310423fb4d5"
+}

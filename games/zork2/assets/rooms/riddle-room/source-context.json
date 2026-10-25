@@ -1,0 +1,64 @@
+{
+  "room": "RIDDLE-ROOM",
+  "label": "Riddle Room",
+  "literalRoomDescription": [
+    " "
+  ],
+  "safeSceneProfile": "Bare room, northwest descending exit and separate eastern stone door. Source riddle text stays exact; no highlighted answer or open-door view before source state permits it.",
+  "visibleInitialObjects": [
+    {
+      "identity": "RIDDLE-DOOR",
+      "label": "stone door",
+      "parent": "RIDDLE-ROOM",
+      "flags": [
+        "CONTBIT",
+        "DOORBIT",
+        "NDESCBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed stone door. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every stone door into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "EAST",
+      "view": {
+        "door": "RIDDLE-DOOR",
+        "kind": "DEXIT",
+        "message": null,
+        "to": "PEARL-ROOM"
+      }
+    },
+    {
+      "direction": "NW",
+      "view": {
+        "kind": "UEXIT",
+        "to": "CAROUSEL-ROOM"
+      }
+    },
+    {
+      "direction": "DOWN",
+      "view": {
+        "kind": "UEXIT",
+        "to": "CAROUSEL-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "RIDDLE-DOOR-FCN",
+      "sourceText": "<ROUTINE RIDDLE-DOOR-FCN ()\n\t <COND (<VERB? OPEN>\n\t\t<COND (<FSET? ,RIDDLE-DOOR ,OPENBIT>\n\t\t       <TELL \"It is open!\" CR>)\n\t\t      (T\n\t\t       <TELL\n\"The door can only be opened by answering the riddle.\" CR>)>)\n\t       (<VERB? CLOSE>\n\t\t<COND (<FSET? ,RIDDLE-DOOR ,OPENBIT>\n\t\t       <TELL \"Not a chance. The door weighs many tons.\" CR>)\n\t\t      (T\n\t\t       <TELL \"It is closed!\" CR>)>)>>"
+    },
+    {
+      "routine": "RIDDLE-PSEUDO",
+      "sourceText": "<ROUTINE RIDDLE-PSEUDO ()\n\t <COND (<VERB? EXAMINE>\n\t\t<TELL \"Use the \\\"Look\\\" command.\" CR>)>>"
+    },
+    {
+      "routine": "RIDDLE-ROOM-FCN",
+      "sourceText": "<ROUTINE RIDDLE-ROOM-FCN (RARG)\n\t <COND (<EQUAL? .RARG ,M-LOOK>\n\t\t<TELL\n\"This is a room which is bare on all sides. There is an exit down in\nthe northwest corner of the room. To the east is a great \">\n\t\t<COND (<FSET? ,RIDDLE-DOOR ,OPENBIT>\n\t\t       <TELL \"open\">)\n\t\t      (T\n\t\t       <TELL \"closed\">)>\n\t\t<TELL \" door made of\nstone. Above the stone, the following words are written: \\\"No man shall\npass this door without solving this riddle:|\n|\n  What is tall as a house,|\n    round as a cup,|\n      and all the king's horses|\n        can't draw it up?\\\"|\n\">)\n\t       (<EQUAL? .RARG ,M-BEG>\n\t\t<COND (<VERB? ANSWER SAY>\n\t\t       <COND (<FSET? ,RIDDLE-DOOR ,OPENBIT>\n\t\t\t      <RFALSE>)\n\t\t\t     (<OR <EQUAL? <GET ,P-LEXV ,P-CONT> ,W?WELL>\n\t\t\t\t  <EQUAL? <GET ,P-LEXV <+ ,P-CONT 2>> ,W?WELL>>\n\t\t\t      <TELL\n\"There is a deafening clap of thunder and the stone door\nquietly swings open to reveal a passageway beyond.\" CR>\n\t\t\t      <SCORE-UPD 5>\n\t\t\t      <FSET ,RIDDLE-DOOR ,OPENBIT>)\n\t\t\t     (T\n\t\t\t      <TELL\n\"A hollow laugh seems to come from the stone door.\" CR>)>\n\t\t      <SETG P-CONT <>>\n\t\t      <SETG QUOTE-FLAG <>>\n\t\t      <RTRUE>)>)>>"
+    }
+  ],
+  "sourceLightFlag": false,
+  "sourceHash": "f0fc9c24bdf2e96a247961ace5133f25af17453173a4df3e10e6d7ce9c4666c2"
+}

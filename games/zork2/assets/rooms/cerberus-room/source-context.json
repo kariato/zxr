@@ -1,0 +1,60 @@
+{
+  "room": "CERBERUS-ROOM",
+  "label": "Cerberus Room",
+  "literalRoomDescription": [
+    "This is the entrance to a huge crypt or tomb. A marble stairway leads up from a gateway arch."
+  ],
+  "safeSceneProfile": "Crypt gateway arch and descending marble stairway; observed Cerberus remains a separate actor, never a carved dog in the shell.",
+  "visibleInitialObjects": [
+    {
+      "identity": "CERBERUS",
+      "label": "three-headed dog",
+      "parent": "CERBERUS-ROOM",
+      "flags": [
+        "ACTORBIT",
+        "CONTBIT",
+        "OPENBIT"
+      ],
+      "sourceText": [
+        "There is a vicious-looking dog guarding the entrance. It is more or less your usual dog, except that it has three heads and is the size of an elephant."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nElephant-sized three-headed dog, exactly three distinct heads and space for the source collar.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a vicious-looking dog guarding the entrance. It is more or less your usual dog, except that it has three heads and is the size of an elephant.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every three-headed dog into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "EAST",
+      "view": {
+        "global": "CERBERUS-LEASHED",
+        "kind": "CEXIT",
+        "message": "The huge dog snaps nastily at you.",
+        "to": "CRYPT-ANTEROOM"
+      }
+    },
+    {
+      "direction": "UP",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DIAMOND-5"
+      }
+    },
+    {
+      "direction": "IN",
+      "view": {
+        "global": "CERBERUS-LEASHED",
+        "kind": "CEXIT",
+        "message": "The huge dog snaps nastily at you.",
+        "to": "CRYPT-ANTEROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "CERBERUS-FCN",
+      "sourceText": "<ROUTINE CERBERUS-FCN ()\n\t <COND (<AND <VERB? WAVE RUB RAISE> <EQUAL? ,PRSO ,WAND>>\n\t\t<TELL \"The dog looks puzzled.\" CR>\n\t\t<RFALSE>)\n\t       (<AND ,WAND-ON <VERB? SAY INCANT>> <RFALSE>)\n\t       (<HELLO? ,CERBERUS>\n\t\t<COND (,CERBERUS-LEASHED <TELL \"\\\"Arf! Arf! Arf!\\\"\" CR>)\n\t\t      (T <TELL \"\\\"Grrrr!\\\"\" CR>)>)\n\t       (<VERB? ATTACK MUNG STAB>\n\t\t<COND (,CERBERUS-LEASHED\n\t\t       <REMOVE ,CERBERUS>\n\t\t       <TELL\n\"With a quiet bark of disappointment, the creature expires.\nIts six eyes look at you reproachfully. As it dies, it collapses\ninto a small pile of dust which blows away into nothing.\" CR>)\n\t\t      (<PROB 50>\n\t\t       <JIGS-UP\n\"The dog-thing snaps at you viciously, and succeeds. Your head, it seems,\nis only a small mouthful for the poor animal, who is just as hungry\nafterward.\">)\n\t\t      (T\n\t\t       <TELL\n\"The maddened dog-thing snaps viciously at you.\" CR>)>)\n\t       (<AND <VERB? PUT PUT-ON> <EQUAL? ,PRSO ,COLLAR>>\n\t\t<MOVE ,COLLAR ,CERBERUS>\n\t\t<FSET ,COLLAR ,NDESCBIT>\n\t\t<FSET ,COLLAR ,TRYTAKEBIT>\n\t\t<PUTP ,CERBERUS ,P?LDESC\n\"An insipidly grinning three-headed dog is wagging its tail here.\nIt is wearing a huge dog collar.\">\n\t\t<SETG CERBERUS-LEASHED T>\n\t\t<TELL\n\"The creature whines happily, then the center head\nlicks your face (which is roughly like experiencing a sandpaper\nwashcloth). The other two heads look about, as though the\nmonster felt a sudden need to find a pair of slippers somewhere.\nIts huge tail wags enthusiastically, knocking small rocks\naround and almost blowing you over from the breeze it creates.\" CR>)\n\t       (<VERB? ENCHANT>\n\t\t<COND (<EQUAL? ,SPELL-USED ,W?FLOAT>\n\t\t       <SETG SPELL-HANDLED? T>\n\t\t       <TELL\n\"The huge dog rises about an inch off the ground, for a moment.\" CR>)\n\t\t      (<EQUAL? ,SPELL-USED ,W?FIERCE>\n\t\t       <SETG SPELL-HANDLED? T>\n\t\t       <JIGS-UP\n\"Cerberus tears you limb from limb! What ferocity!\">)\n\t\t      (<EQUAL? ,SPELL-USED ,W?FEEBLE>\n\t\t       <TELL\n\"What an effect! He now has the strength of just one elephant, rather\nthan ten!\" CR>)>)\n\t       (<NOT ,CERBERUS-LEASHED>\n\t\t<TELL \"The three-headed dog snaps at you viciously!\" CR>)\n\t       (<AND ,CERBERUS-LEASHED <VERB? RUB>>\n\t\t<TELL\n\"The dog is now insanely happy, slobbering all over the place and\nwhining with uncontained doggish joy.\" CR>)>>"
+    }
+  ],
+  "sourceLightFlag": false,
+  "sourceHash": "d73ff5795ef737332f17776c348a20cf1681a68e47a11799555cb29d68e83f5b"
+}

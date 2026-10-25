@@ -1,0 +1,19 @@
+{
+  "room": "IN-CAGE",
+  "label": "Cage",
+  "literalRoomDescription": [
+    "You are trapped inside a solid steel cage."
+  ],
+  "safeSceneProfile": "Inside solid steel cage; bars/enclosure belong to separate observed source cage. Escape, destruction and actor size remain source decisions.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [],
+  "guardedRoomSource": [
+    {
+      "routine": "IN-CAGE-FCN",
+      "sourceText": "<ROUTINE IN-CAGE-FCN (RARG)\n    <COND (,CAGE-SOLVE-FLAG <SETG HERE ,CAGE-ROOM>)>>"
+    }
+  ],
+  "sourceLightFlag": true,
+  "sourceHash": "5ed3c93f885431924fb671262e9f634d848826b9121c2cb0a968004c49789c54"
+}

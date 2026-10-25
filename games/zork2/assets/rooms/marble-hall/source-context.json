@@ -1,0 +1,54 @@
+{
+  "room": "MARBLE-HALL",
+  "label": "Marble Hall",
+  "literalRoomDescription": [
+    "This is an arched hall of fine marble. The hall stops abruptly to the north at a ford across a stream, where the marble is cracked and broken. Perhaps a flood or collapse of the cave was responsible. To the south the hall opens into a large room. There is rather annoying whirring sound coming from that room."
+  ],
+  "safeSceneProfile": "Arched fine marble hall, broken and cracked at north ford; broad southern machinery-room approach. Whirring is source atmosphere, not a new actionable machine.",
+  "visibleInitialObjects": [
+    {
+      "identity": "BRICK",
+      "label": "brick",
+      "parent": "MARBLE-HALL",
+      "flags": [
+        "BURNBIT",
+        "OPENBIT",
+        "SEARCHBIT",
+        "TAKEBIT"
+      ],
+      "sourceText": [
+        "There is a square brick here which feels like clay."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed brick. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a square brick here which feels like clay.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every brick into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DEEP-FORD"
+      }
+    },
+    {
+      "direction": "EAST",
+      "view": {
+        "global": "SECRET-DOOR",
+        "kind": "CEXIT",
+        "message": "That's a wall there.",
+        "to": "STREAM-PATH"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "CAROUSEL-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "5835f032c37915e5acc3151d7b55c3bee09b3d45dafcdb91f420d34ae90bdc08"
+}

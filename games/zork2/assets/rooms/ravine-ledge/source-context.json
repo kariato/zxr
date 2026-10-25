@@ -1,0 +1,43 @@
+{
+  "room": "RAVINE-LEDGE",
+  "label": "Ledge in Ravine",
+  "literalRoomDescription": [
+    "You are on a narrow ledge near the bottom of a deep ravine. The ledge continues to the west. A precarious climb up to another tiny ledge is possible. A short scramble down the rock face leads to a stream."
+  ],
+  "safeSceneProfile": "Narrow near-bottom ravine ledge, west continuation, precarious upward climb and short scramble to stream below; no invented ladder.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "LEDGE-TUNNEL"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DEEP-FORD"
+      }
+    },
+    {
+      "direction": "UP",
+      "view": {
+        "kind": "UEXIT",
+        "to": "TINY-ROOM"
+      }
+    },
+    {
+      "direction": "DOWN",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DEEP-FORD"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "5921a6725a14d9262e21612f52568ef802e6d0690578afee2839a18763bc9da4"
+}

@@ -1,0 +1,47 @@
+{
+  "room": "WIZARDS-WORKSHOP",
+  "label": "Wizard's Workshop",
+  "literalRoomDescription": [
+    "This is the workshop of the Wizard of Frobozz."
+  ],
+  "safeSceneProfile": "Workshop of Wizard of Frobozz; source objects define contents. Avoid generic new alchemical interactables.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "door": "WIZ-DOOR",
+        "kind": "DEXIT",
+        "message": null,
+        "to": "GUARDIAN-ROOM"
+      }
+    },
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "WORKBENCH-ROOM"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "TROPHY-ROOM"
+      }
+    },
+    {
+      "direction": "OUT",
+      "view": {
+        "door": "WIZ-DOOR",
+        "kind": "DEXIT",
+        "message": null,
+        "to": "GUARDIAN-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "5b12dc1f70d1207d099125fb06488667144e95707d77807f18aacff0d15295f1"
+}

@@ -1,0 +1,32 @@
+{
+  "room": "VAULT",
+  "label": "Vault",
+  "literalRoomDescription": [
+    "This is the Vault of the Bank of Zork, in which there are no doors."
+  ],
+  "safeSceneProfile": "Bank vault with no doors. Do not invent a visible exit for magical travel.",
+  "visibleInitialObjects": [
+    {
+      "identity": "BILLS",
+      "label": "stack of zorkmid bills",
+      "parent": "VAULT",
+      "flags": [
+        "BURNBIT",
+        "READBIT",
+        "STAGGERED",
+        "TAKEBIT"
+      ],
+      "sourceText": [
+        "200 neatly stacked zorkmid bills are here.",
+        "On the floor sit 200 neatly stacked zorkmid bills.",
+        "Each bill is worth 100 zorkmids, and bears the legend \"In Frobs We Trust\"."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed stack of zorkmid bills. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: 200 neatly stacked zorkmid bills are here.\nFDESC: On the floor sit 200 neatly stacked zorkmid bills.\nTEXT: Each bill is worth 100 zorkmids, and bears the legend \"In Frobs We Trust\".\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every stack of zorkmid bills into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "a4d3cd0599cf40862ad44f6053c020cca0b547f844e85d85906e1fcc21dcfbd9"
+}

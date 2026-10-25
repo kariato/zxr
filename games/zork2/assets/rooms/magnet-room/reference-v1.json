@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "MAGNET-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "cec30b69a82e3536e43378d81b9c5fa50fc5f4438cc8611fb43e6fd5de568fee",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-4a936f43-ed0b-4561-9ade-eb2423a6785e.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "1e8882b9e3c45be722893f1e4aceb86eb045f3e3db3e1f45241fa10b3c02fd1f",
+  "promptSha256": "023434edf246923b4c8cef4ef8049d76daa236162d00ba03e584a5f38ca2596b",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

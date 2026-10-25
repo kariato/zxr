@@ -1,0 +1,41 @@
+{
+  "room": "PENTAGRAM-ROOM",
+  "label": "Pentagram Room",
+  "literalRoomDescription": [
+    "In this room, inscribed on the floor, is a great pentagram drawn with black chalk. In its center is a black circle."
+  ],
+  "safeSceneProfile": "Black-chalk pentagram and black central circle use their separate source identity; demon is never pre-instantiated as permanent decor.",
+  "visibleInitialObjects": [
+    {
+      "identity": "PENTAGRAM",
+      "label": "pentagram",
+      "parent": "PENTAGRAM-ROOM",
+      "flags": [
+        "CONTBIT",
+        "NDESCBIT",
+        "OPENBIT",
+        "SURFACEBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed pentagram. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every pentagram into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "WORKBENCH-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "PENTAGRAM-FCN",
+      "sourceText": "<ROUTINE PENTAGRAM-FCN (\"OPTIONAL\" (RARG ,M-BEG))\n\t <COND (<EQUAL? .RARG ,M-BEG>\n\t\t<COND (<VERB? THROUGH BOARD>\n\t\t       <TELL\n\"You try to enter the pentagram, but are forced back by an invisible\npower.\" CR>)\n\t              (<AND <VERB? PUT PUT-ON> <EQUAL? ,PRSO ,PALANTIR-4>>\n\t\t       <REMOVE ,PALANTIR-4>\n\t\t       <FCLEAR ,GENIE ,INVISIBLE>\n\t\t       <MOVE ,GENIE ,PENTAGRAM-ROOM>\n\t\t       <TELL\n\"A cold wind blows outward from the sphere. The candles flicker, and a\nlow moan, almost inaudible, is heard. It rises in volume and pitch\nuntil it becomes a high-pitched keening. A dim shape becomes visible in\nthe air above the sphere. The shape resolves into a large and somewhat\nformidable looking demon. He looks around, tests the walls of the\npentagram experimentally, then sees you! \\\"Hmm, a new master...\\\" he\nsays under his breath. \\\"Greetings, oh master! Wouldst desire a\nservice, as our contract stateth? For some pittance of wealth, some\ntrifle, I will gratify thy desires to the utmost limit of my powers, and\nthey are not inconsiderable.\\\" He makes a pass with his massive arms and\nthe walls begin to shake a little. Another pass and the shaking stops.\n\\\"A nice effect... I find it makes for a better relationship to give\nsuch a demonstration early on.\\\" He grins vilely.\" CR>)>)>>"
+    }
+  ],
+  "sourceLightFlag": true,
+  "sourceHash": "91632a059c728f7cf1a8a99c2050dc6f22a64064d241dd39f276f1bb22978e10"
+}

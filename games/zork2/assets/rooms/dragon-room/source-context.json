@@ -1,0 +1,80 @@
+{
+  "room": "DRAGON-ROOM",
+  "label": "Dragon Room",
+  "literalRoomDescription": [
+    "The room is a large cavern full of broken stone. The walls are scorched and there are deep scratches on the floor. A sooty dry smell is very strong here. A paved path winds from a large passage to the west, through the room, and across a huge stone bridge to the south. To the east a small crack is visible. A dark and smokey tunnel leads north."
+  ],
+  "safeSceneProfile": "Broken stone, scorched walls, scratched floor; paved west-to-south stone bridge path, small east crack and smoky north tunnel. Dragon and dead-dragon bodies are distinct source states, never static scenery.",
+  "visibleInitialObjects": [
+    {
+      "identity": "DRAGON",
+      "label": "huge red dragon",
+      "parent": "DRAGON-ROOM",
+      "flags": [
+        "ACTORBIT"
+      ],
+      "sourceText": [
+        "A huge red dragon is lying on the rocks here, watching.",
+        "A huge red dragon is lying here, blocking the entrance to a tunnel leading north. Smoke curls from his nostrils and out between his teeth."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nHuge red dragon with smoke at nostrils, soot and source-proportioned body; not an ordinary red lizard.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: A huge red dragon is lying on the rocks here, watching.\nFDESC: A huge red dragon is lying here, blocking the entrance to a tunnel leading north. Smoke curls from his nostrils and out between his teeth.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every huge red dragon into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "global": "ICE-MELTED",
+        "kind": "CEXIT",
+        "message": "The dragon hisses at you and blocks your way.",
+        "to": "DRAGON-LAIR"
+      }
+    },
+    {
+      "direction": "EAST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "LEDGE-TUNNEL"
+      }
+    },
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "FRESCO-ROOM"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "STONE-BRIDGE"
+      }
+    },
+    {
+      "direction": "IN",
+      "view": {
+        "global": "ICE-MELTED",
+        "kind": "CEXIT",
+        "message": "The dragon hisses at you and blocks your way.",
+        "to": "DRAGON-LAIR"
+      }
+    },
+    {
+      "direction": "CROSS",
+      "view": {
+        "kind": "UEXIT",
+        "to": "STONE-BRIDGE"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "DRAGON-FCN",
+      "sourceText": "<ROUTINE DRAGON-FCN ()\n\t <ENABLE <QUEUE I-DRAGON -1>>\n\t <COND (<HELLO? ,DRAGON>\n\t\t<TELL\n\"The dragon looks amused. He speaks in a voice so deep you feel it\nrather than hear it, but the tongue is unknown to you. You find\nyourself almost hypnotized.\" CR>\n\t\t<SETG DRAGON-ANGER <+ ,DRAGON-ANGER 2>>)\n\t       (<VERB? EXAMINE>\n\t\t<TELL\n\"He turns and looks back at you, his cat's eyes yellow in the gloom.\nYou start to feel weak, and quickly turn away.\" CR>\n\t\t<SETG DRAGON-ANGER <+ ,DRAGON-ANGER 1>>)\n\t       (<VERB? ATTACK MUNG KICK LAMP-ON>\n\t\t<COND (<OR <VERB? LAMP-ON>\n\t\t\t   <AND <VERB? ATTACK> <NOT ,PRSI>>>\n\t\t       <TELL\n\"With your bare hands? I doubt the dragon even noticed.\" CR>)\n\t\t      (T\n\t\t<TELL <RANDOM-ELEMENT ,DRAGON-ATTACKS> CR>)>\n\t\t<SETG DRAGON-ANGER <+ ,DRAGON-ANGER 4>>)\n\t       (<AND <VERB? GIVE> <EQUAL? ,PRSI ,DRAGON>>\n\t\t<SETG DRAGON-ANGER <+ ,DRAGON-ANGER 1>>\n\t\t<COND (<GETPT ,PRSO ,P?VALUE>\n\t\t       <MOVE ,PRSO ,CHEST>\n\t\t       <TELL\n\"The dragon is pleased by your gift, excuses himself for a moment,\nand returns without it.\" CR>)\n\t\t      (<BOMB? ,PRSO>\n\t\t       <SETG DRAGON-ANGER <+ ,DRAGON-ANGER 2>>\n\t\t       <REMOVE ,BRICK>\n\t\t       <TELL\n\"The dragon snakes his long red tongue around the bomb and politely\nswallows it. A few moments later he belches and smoke curls out of\nhis nostrils.\" CR>)\n\t\t      (T\n\t\t       <TELL \"The dragon refuses your gift.\" CR>)>)\n\t       (<AND <VERB? WALK>\n\t\t     <EQUAL? ,HERE ,DRAGON-ROOM>\n\t\t     <EQUAL? ,PRSO ,P?NORTH>>\n\t\t<SETG DRAGON-ANGER <+ ,DRAGON-ANGER 3>>\n\t\t<TELL\n\"The dragon puts out a claw, grins (all of his sword-sharp teeth\nglinting in the light), and blocks your way.\" CR>)>>"
+    }
+  ],
+  "sourceLightFlag": false,
+  "sourceHash": "f81db6dfce930c5c36739642007116797825b95d0d88f9d97330477f048a3d0c"
+}

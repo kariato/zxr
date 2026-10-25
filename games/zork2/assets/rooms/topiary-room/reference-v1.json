@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "TOPIARY-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "9f0da6f652a2979e5b7e61495dd89428640ccb8c32e4a8ec49eccf10abc0c933",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-6efedb97-a9fe-4708-80ca-8568a417ed8c.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "b4c680e7e2e1fe118e21d1a060bb2171e72a0d1982705b59dc40211022074651",
+  "promptSha256": "b4daeb3d9a2fb62d63f45633f4061d8d7e9132b5ed04cc1c7fb8c30ecce3d990",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

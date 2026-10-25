@@ -1,0 +1,38 @@
+{
+  "room": "OFFICE",
+  "label": "Chairman's Office",
+  "literalRoomDescription": [
+    "This room was the office of the Chairman of the Bank of Zork. Like the other rooms here, it has been extensively vandalized. The lone exit is to the north."
+  ],
+  "safeSceneProfile": "Vandalised bank chairman office, lone north exit; no invented desk drawers or administrative documents.",
+  "visibleInitialObjects": [
+    {
+      "identity": "PORTRAIT",
+      "label": "portrait of J. Pierpont Flathead",
+      "parent": "OFFICE",
+      "flags": [
+        "BURNBIT",
+        "STAGGERED",
+        "TAKEBIT"
+      ],
+      "sourceText": [
+        "The portrait of J. Pierpont Flathead is here.",
+        "A portrait of J. Pierpont Flathead hangs on the wall."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed portrait of J. Pierpont Flathead. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: The portrait of J. Pierpont Flathead is here.\nFDESC: A portrait of J. Pierpont Flathead hangs on the wall.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every portrait of J. Pierpont Flathead into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DEPOSITORY"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "3c1ae14bd632472ca699d0f148397e4fda296a41444cf8ac7ab8a6549ab5227b"
+}

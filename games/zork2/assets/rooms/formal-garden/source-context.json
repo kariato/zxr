@@ -1,0 +1,36 @@
+{
+  "room": "FORMAL-GARDEN",
+  "label": "Formal Garden",
+  "literalRoomDescription": [
+    "This is the middle part of a formal garden. Hedges hide the cavern walls and a dim illumination comes from mosses far above. The path is of small crushed white stones. It winds among bushes and flower beds from south to north. To the north a small structure can be seen. To the south are peculiarly shaped bushes. There is a small gap in the hedges to the west."
+  ],
+  "safeSceneProfile": "Middle of a formal garden inside a cavern. Hedges conceal the cavern walls; dim moss light comes from far above. A crushed white-stone path winds through bushes and flower beds from south to north, with a small western hedge gap. A modest distant structure is visible northward. There is no sky or sunlight. Global unicorn references remain interaction aliases and must not create a permanently placed unicorn. Flowers are decorative, with no added collectible or readable clues.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "GARDEN-NORTH"
+      }
+    },
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "STREAM-PATH"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "TOPIARY-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": true,
+  "sourceHash": "f4e6e8b4a5e29a0dc5573ccd58f35506d275f7cd58dac08e0e33740c809d1f2a"
+}

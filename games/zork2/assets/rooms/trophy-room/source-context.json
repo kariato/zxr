@@ -1,0 +1,101 @@
+{
+  "room": "TROPHY-ROOM",
+  "label": "Trophy Room",
+  "literalRoomDescription": [
+    "This is the Wizard's trophy room, filled with memorabilia of various sorts. On one wall is the Wizard's D. T. (Doctor of Thaumaturgy) degree from GUE Tech. Several old magic wands are mounted on a wand rack. A collection of dull and nicked swords testify to the fate of many foolhardy adventurers. Small bottles contain discarded homunculi (a few preserved in alcohol). There is a stuffed owl on a perch."
+  ],
+  "safeSceneProfile": "Wizard memorabilia, degree, used wands, nicked swords, bottled homunculi and stuffed owl. Interactive trophies and cabinet remain separate from static display furniture.",
+  "visibleInitialObjects": [
+    {
+      "identity": "DEGREE",
+      "label": "degree",
+      "parent": "TROPHY-ROOM",
+      "flags": [
+        "NDESCBIT",
+        "READBIT",
+        "TRYTAKEBIT"
+      ],
+      "sourceText": [
+        "The text is in some obscure tongue. All that can be made out is a reference to \"sending in a matchbook cover.\""
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed degree. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nTEXT: The text is in some obscure tongue. All that can be made out is a reference to \"sending in a matchbook cover.\"\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every degree into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "TROPHY-BOTTLES",
+      "label": "small bottles",
+      "parent": "TROPHY-ROOM",
+      "flags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed small bottles. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every small bottles into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "TROPHY-SWORD",
+      "label": "nicked swords",
+      "parent": "TROPHY-ROOM",
+      "flags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed nicked swords. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every nicked swords into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "WANDS",
+      "label": "set of used wands",
+      "parent": "TROPHY-ROOM",
+      "flags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed set of used wands. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every set of used wands into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "WARNING-LABEL",
+      "label": "warning label",
+      "parent": "TROPHY-ROOM",
+      "flags": [
+        "READBIT"
+      ],
+      "sourceText": [
+        "A hand-lettered label is affixed to the wall.",
+        "Warning!\n\nThe exhibits in this room are the property of the mighty Wizard of Frobozz (me), and are the fruits of diligent labor and study over many years. He who touches anything will regret it.\n\n(signed)\nFrobozz\n"
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed warning label. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: A hand-lettered label is affixed to the wall.\nTEXT: Warning!\n\nThe exhibits in this room are the property of the mighty Wizard of Frobozz (me), and are the fruits of diligent labor and study over many years. He who touches anything will regret it.\n\n(signed)\nFrobozz\n\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every warning label into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "WIZARD-CASE",
+      "label": "Wizard's trophy cabinet",
+      "parent": "TROPHY-ROOM",
+      "flags": [
+        "CONTBIT",
+        "TRANSBIT"
+      ],
+      "sourceText": [
+        "Imbedded in the wall is an ornate trophy cabinet."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed Wizard's trophy cabinet. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: Imbedded in the wall is an ornate trophy cabinet.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every Wizard's trophy cabinet into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "WIZARDS-WORKSHOP"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "TROPHY-PSEUDO",
+      "sourceText": "<ROUTINE TROPHY-PSEUDO ()\n\t <COND (<VERB? READ> <RFALSE>)\n\t       (<VERB? TAKE RUB>\n\t\t<TELL\n\"As your fingers near it, you get a nasty shock (but fortunately not a fatal\none).\" CR>)>>"
+    }
+  ],
+  "sourceLightFlag": false,
+  "sourceHash": "61da60450afbf3cffbd1ef21206664fce208b3246b05d060f2e2020c354b9e93"
+}

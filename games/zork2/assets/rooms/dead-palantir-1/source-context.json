@@ -1,0 +1,27 @@
+{
+  "room": "DEAD-PALANTIR-1",
+  "label": "Room of Red Mist",
+  "literalRoomDescription": [
+    " "
+  ],
+  "safeSceneProfile": "Source palantir death/interstitial location. No invented physical travel route or default room contents; source continuation text controls the experience. Keep the logical room identity distinct.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DEAD-PALANTIR-2"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "DEAD-PALANTIR",
+      "sourceText": "<ROUTINE DEAD-PALANTIR (RARG \"AUX\" P)\n\t <COND (<EQUAL? .RARG ,M-LOOK>\n\t\t<TELL\n\"You are inside a huge crystalline sphere filled with thin \"\n\t\t<COND (<EQUAL? ,HERE ,DEAD-PALANTIR-1>\n\t\t       <SET P ,PALANTIR-1>\n\t\t       \"red\")\n\t\t      (<EQUAL? ,HERE ,DEAD-PALANTIR-2>\n\t\t       <SET P ,PALANTIR-2>\n\t\t       \"blue\")\n\t\t      (T <SET P ,PALANTIR-3> \"white\")>\n\" mist. The mist becomes \"\n\t\t<COND (<EQUAL? ,HERE ,DEAD-PALANTIR-1> \"blue\")\n\t\t      (<EQUAL? ,HERE ,DEAD-PALANTIR-2> \"white\")\n\t\t      (T \"black\")>\n\" to the west.\" CR>\n\t\t<TELL \"You strain to look out through the mist... \" CR>\n\t\t<COND (<FSET? .P ,TOUCHBIT>\n\t\t       <PALANTIR-LOOK .P T>)\n\t\t      (<EQUAL? .P ,PALANTIR-1>\n\t\t       <TELL\n\"You see a small room with a sign on the wall, but it is too blurry to\nread.\" CR>)\n\t\t      (<EQUAL? .P ,PALANTIR-2>\n\t\t       <TELL\n\"You look out into a large, dreary room with a great door and a huge table.\nThere is an odd glow to the mist.\" CR>)\n\t\t      (<EQUAL? .P ,PALANTIR-3>\n\t\t       <TELL\n\"A strange blurry room is barely visible.\">\n\t\t       <COND (<AND <IN? ,SERPENT ,AQUARIUM> <PROB 25>>\n\t\t\t      <TELL\n\" An odd sinuous shadow crosses the mist as you look.\">)>\n\t\t       <CRLF>)>\n\t\t<RTRUE>)\n\t       (<AND <EQUAL? .RARG ,M-ENTER> <EQUAL? ,HERE ,DEAD-PALANTIR-4>>\n\t\t<TELL\n\"You follow a corridor of black mist into a black walled spherical\nroom.\">\n\t\t<COND (<IN? ,GENIE ,PENTAGRAM-ROOM>\n\t\t       <TELL\n\" The room is empty. A huge face looks down on you from outside and\nlaughs sardonically. It doesn't look like you're getting out of this\npredicament!\" CR>\n\t\t       <FINISH>)>\n\t\t<TELL\n\" As you enter, a huge and horrible face materializes out of the\nmist.|\n|\n\\\"What brings you here to trouble my imprisonment, wanderer?\\\"\nit asks. Hearing no immediate answer, it studies you for a moment.\" CR>\n\n\t\t<COND (<NOT <L? ,DEATHS 3>>\n\t\t       <TELL\n\"\\\"Not you again! This is getting tedious. You'll obviously never\nbe much help to me. Better luck next time, oh wondrous\nadventurer.\\\" The face disappears and everything goes black.\" CR>\n\t\t       <FINISH>)\n\t\t      (T\n\t\t       <TELL\n\"\\\"Perhaps you may be of some use to me in gaining my freedom from\nthis place. Return to your foolish quest! I shall not destroy you\nthis time. Mayhap you will repay this favor in kind someday.\\\" The\nface vanishes and the mist begins to swirl. When it clears you are\nreturned to the world of life.\" CR>\n\t\t<SETG DEAD <>>\n\t\t<GOTO ,INSIDE-BARROW>\n\t\t;<GOTO ,INSIDE-BARROW <>>\n\t\t;<TELL CR \"Inside the Barrow\" CR>\n\t\t<RTRUE>)>)>>"
+    }
+  ],
+  "sourceLightFlag": true,
+  "sourceHash": "ebb7d127e350c2caea22a31f44ab9e3ac7f90fec16f5671ab36c956719efc2bf"
+}

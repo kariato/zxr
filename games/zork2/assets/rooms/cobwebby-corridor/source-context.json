@@ -1,0 +1,71 @@
+{
+  "room": "COBWEBBY-CORRIDOR",
+  "label": "Cobwebby Corridor",
+  "literalRoomDescription": [
+    "A winding corridor is filled with cobwebs. Some are broken and the dust on the floor is disturbed. The trend of the twists and turns is northeast to southwest. On the north side of one twist, high up, is a narrow crack."
+  ],
+  "safeSceneProfile": "Twisting NE/SW corridor, broken cobwebs and disturbed dust; high northern crack remains a source-backed narrow opening, not a full-height doorway.",
+  "visibleInitialObjects": [
+    {
+      "identity": "FUSE",
+      "label": "black string",
+      "parent": "COBWEBBY-CORRIDOR",
+      "flags": [
+        "BURNBIT",
+        "TAKEBIT"
+      ],
+      "sourceText": [
+        "There is a coil of black, braided string here."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed black string. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a coil of black, braided string here.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every black string into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "LAVA-TUBE"
+      }
+    },
+    {
+      "direction": "NE",
+      "view": {
+        "kind": "UEXIT",
+        "to": "CAROUSEL-ROOM"
+      }
+    },
+    {
+      "direction": "SW",
+      "view": {
+        "kind": "UEXIT",
+        "to": "GUARDIAN-ROOM"
+      }
+    },
+    {
+      "direction": "UP",
+      "view": {
+        "kind": "UEXIT",
+        "to": "LAVA-TUBE"
+      }
+    },
+    {
+      "direction": "DOWN",
+      "view": {
+        "kind": "UEXIT",
+        "to": "GUARDIAN-ROOM"
+      }
+    },
+    {
+      "direction": "IN",
+      "view": {
+        "kind": "UEXIT",
+        "to": "LAVA-TUBE"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "58fa992f738c502b0d12c348970509b74567fe5c60b959a3d170e72104356483"
+}

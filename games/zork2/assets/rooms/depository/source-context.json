@@ -1,0 +1,85 @@
+{
+  "room": "DEPOSITORY",
+  "label": "Safety Depository",
+  "literalRoomDescription": [
+    "This is a large rectangular room. The east and west walls were used for storing safety deposit boxes, but all have been carefully removed by evil persons. To the east, west, and south of the room are large doorways. The northern \"wall\" of the room is a shimmering curtain of light. In the center of the room is a large stone cube, about 10 feet on a side. Engraved on the side of the cube is some lettering."
+  ],
+  "safeSceneProfile": "Rectangular bank room with removed deposit boxes, three broad doorways, separate northern light curtain and approximately ten-foot stone cube. Lettering belongs to observed cube, not an answer sign.",
+  "visibleInitialObjects": [
+    {
+      "identity": "BANK-BROCHURE",
+      "label": "bank brochure",
+      "parent": "DEPOSITORY",
+      "flags": [
+        "BURNBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "sourceText": [
+        "On the ground is a small, worn piece of paper.",
+        "The paper is barely readable. You can only make out \"... valuables are completely safe ... advanced magic technology ... impossible to take valuables from the depository ... either teller's ... Many customers faint ... teller pops in ... seems to walk through ... walls ...\""
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed bank brochure. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nFDESC: On the ground is a small, worn piece of paper.\nTEXT: The paper is barely readable. You can only make out \"... valuables are completely safe ... advanced magic technology ... impossible to take valuables from the depository ... either teller's ... Many customers faint ... teller pops in ... seems to walk through ... walls ...\"\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every bank brochure into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "CUBE",
+      "label": "large stone cube",
+      "parent": "DEPOSITORY",
+      "flags": [
+        "NDESCBIT",
+        "READBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed large stone cube. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every large stone cube into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "CURTAIN",
+      "label": "shimmering curtain of light",
+      "parent": "DEPOSITORY",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed shimmering curtain of light. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every shimmering curtain of light into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "NEXIT",
+        "message": "There is a curtain of light there."
+      }
+    },
+    {
+      "direction": "EAST",
+      "view": {
+        "kind": "FEXIT",
+        "routine": "BKLEAVEE"
+      }
+    },
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "FEXIT",
+        "routine": "BKLEAVEW"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "OFFICE"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "DEPOSITORY-FCN",
+      "sourceText": "<ROUTINE DEPOSITORY-FCN (RARG)\n\t<COND (<EQUAL? .RARG ,M-ENTER>\n\t       <SETG SCOL-ROOM <LKP ,PRSO ,SCOL-ROOMS>>)>>"
+    }
+  ],
+  "sourceLightFlag": true,
+  "sourceHash": "6b0563c2025653dbec9a32daf06c31697c2120e91c68c4b8907b4f80f7f0585b"
+}

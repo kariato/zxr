@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "DEEP-FORD",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "6dfadbb3f3757c6a64ff55e66ccf03166d8f0cf76ebbe41e1e3909b8f2385f41",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-d88c62af-6f24-481e-8f4b-3c854028536f.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "6eebcfb7944c118bdc83e8af7ba89862e56dd0e8a064b45abe7c100c7dfafeb8",
+  "promptSha256": "cd916bdcc72bc17e94f9e45829268c062ac2102947a12d5c43e2f55841bb8225",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

@@ -1,0 +1,43 @@
+{
+  "room": "FOOT-BRIDGE",
+  "label": "Foot Bridge",
+  "literalRoomDescription": [
+    "You are standing on a crude but sturdy wooden foot bridge crossing a deep ravine. The path runs north and south from here."
+  ],
+  "safeSceneProfile": "On a crude but sturdy wooden foot bridge crossing the deep ravine inside the cavern. The path runs north and south. NORTH returns to Narrow Tunnel; SOUTH leads to Great Cavern. DOWN is a fatal-drop refusal, and CROSS is a request to specify a direction, not a third route. Keep the bridge deck in its separate source BRIDGE asset; do not duplicate it in the static shell. No daylight, added doors, collectible planks or invented collapse state. Moss-lit cavern ambience is an art continuation of the adjacent cavern; source room lighting remains authoritative.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "NARROW-TUNNEL"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "GREAT-CAVERN"
+      }
+    },
+    {
+      "direction": "DOWN",
+      "view": {
+        "kind": "NEXIT",
+        "message": "The drop would be fatal."
+      }
+    },
+    {
+      "direction": "CROSS",
+      "view": {
+        "kind": "NEXIT",
+        "message": "You'll have to specify a direction."
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": true,
+  "sourceHash": "4cab585047bc956e15bd80540ae13e0f8310023ed8e5b0c942ad87913ee107d4"
+}

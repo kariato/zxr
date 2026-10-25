@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "DIAMOND-4",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "8a68b55fb547d65e94af3029ccddab3dc57d38d48045598081ce73c9263880cd",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-ae85c207-1f14-4dc6-b90a-99036087c395.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "4c23af40923a657e0c1b4538ef0891a35f80536a25ad98b613f094ab417db5d5",
+  "promptSha256": "d57e5713cf13aeac628fb3a2715c37e47ded91d466b6e16b7568e4ab6c79662f",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

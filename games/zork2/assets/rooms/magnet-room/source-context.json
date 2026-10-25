@@ -1,0 +1,117 @@
+{
+  "room": "MAGNET-ROOM",
+  "label": "Low Room",
+  "literalRoomDescription": [
+    " "
+  ],
+  "safeSceneProfile": "Low circular room with east and southeast exits. Do not reveal magnetic danger, robot failure or carousel state through invented indicator lights.",
+  "visibleInitialObjects": [
+    {
+      "identity": "ROBOT",
+      "label": "robot",
+      "parent": "MAGNET-ROOM",
+      "flags": [
+        "ACTORBIT",
+        "CONTBIT",
+        "OPENBIT"
+      ],
+      "sourceText": [
+        "There is a robot here."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nReadable low-poly domestic robot, restrained metal, no invented controls or written instructions beyond source label.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a robot here.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every robot into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "ROBOT-LABEL",
+      "label": "green piece of paper",
+      "parent": "MAGNET-ROOM",
+      "flags": [
+        "BURNBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "sourceText": [
+        "There is a green piece of paper here.",
+        "!!  FROBOZZ MAGIC ROBOT COMPANY  !!\n\n Hello, Master!\n\n   I am a late-model robot, trained at GUE Tech to perform various simple household functions.\n\n   To activate me, say the following:\n\n        >ROBOT, <things to do>\n\nAt your service!"
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed green piece of paper. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a green piece of paper here.\nTEXT: !!  FROBOZZ MAGIC ROBOT COMPANY  !!\n\n Hello, Master!\n\n   I am a late-model robot, trained at GUE Tech to perform various simple household functions.\n\n   To activate me, say the following:\n\n        >ROBOT, <things to do>\n\nAt your service!\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every green piece of paper into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "FEXIT",
+        "routine": "MAGNET-ROOM-EXIT"
+      }
+    },
+    {
+      "direction": "EAST",
+      "view": {
+        "kind": "FEXIT",
+        "routine": "MAGNET-ROOM-EXIT"
+      }
+    },
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "FEXIT",
+        "routine": "MAGNET-ROOM-EXIT"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "FEXIT",
+        "routine": "MAGNET-ROOM-EXIT"
+      }
+    },
+    {
+      "direction": "NE",
+      "view": {
+        "kind": "FEXIT",
+        "routine": "MAGNET-ROOM-EXIT"
+      }
+    },
+    {
+      "direction": "NW",
+      "view": {
+        "kind": "FEXIT",
+        "routine": "MAGNET-ROOM-EXIT"
+      }
+    },
+    {
+      "direction": "SE",
+      "view": {
+        "kind": "FEXIT",
+        "routine": "MAGNET-ROOM-EXIT"
+      }
+    },
+    {
+      "direction": "SW",
+      "view": {
+        "kind": "FEXIT",
+        "routine": "MAGNET-ROOM-EXIT"
+      }
+    },
+    {
+      "direction": "OUT",
+      "view": {
+        "kind": "FEXIT",
+        "routine": "MAGNET-ROOM-EXIT"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "MAGNET-ROOM-EXIT",
+      "sourceText": "<ROUTINE MAGNET-ROOM-EXIT ()\n\t<COND (<AND ,CAROUSEL-FLIP-FLAG <EQUAL? ,WINNER ,ADVENTURER>>\n\t       <TELL \"You cannot get your bearings...\" CR CR>\n\t       <COND (<PROB 50>\n\t\t      ,MACHINE-ROOM)\n\t\t     (T\n\t\t      ,TEA-ROOM)>)\n\t      (<EQUAL? ,PRSO ,P?EAST>\n\t       ,MACHINE-ROOM)\n\t      (<OR <EQUAL? ,PRSO ,P?SE>\n\t\t   <EQUAL? ,PRSO ,P?OUT>>\n\t       ,TEA-ROOM)\n\t      (T\n\t       <TELL \"You can't go that way.\" CR>\n\t       <RFALSE>)>>"
+    },
+    {
+      "routine": "MAGNET-ROOM-FCN",
+      "sourceText": "<ROUTINE MAGNET-ROOM-FCN (RARG)\n\t<COND (<EQUAL? .RARG ,M-LOOK>\n\t       <TELL\n\"You are in a circular room with a low ceiling. There are exits to\nthe east and southeast.\" CR>)\n\t      (<AND <EQUAL? .RARG ,M-ENTER>\n\t\t    ,CAROUSEL-FLIP-FLAG>\n\t       <COND (,CAROUSEL-ZOOM-FLAG\n\t\t      <JIGS-UP <COND (<EQUAL? ,ADVENTURER ,WINNER>\n\"According to Prof. TAA of GUE Tech, the rapidly changing magnetic\nfields in the room are intense enough to electrocute you.\nI really don't know, but in any event, something just killed you.\" )\n\t\t\t\t     (T\n\"According to Prof. TAA of GUE Tech, the magnetic fields in the room are\nintense enough to fry the delicate innards of the robot. I really don't\nknow, but in any event, smoke pours from its ears and it has stopped moving.\")>>)\n\t\t     (<EQUAL? ,WINNER ,ADVENTURER>\n\t\t      <TELL\n\"As you enter, your compass starts spinning wildly.\" CR>\n\t\t      <COND (<NOT ,COMPASS-KLUDGE>\n\t\t\t     <TELL\n\"What compass, you ask? The one which allows you to specify compass directions\nfor movement.\">\n\t\t\t     <SETG COMPASS-KLUDGE T>)>\n\t\t      <CRLF>)>)>>"
+    }
+  ],
+  "sourceLightFlag": true,
+  "sourceHash": "1e8882b9e3c45be722893f1e4aceb86eb045f3e3db3e1f45241fa10b3c02fd1f"
+}

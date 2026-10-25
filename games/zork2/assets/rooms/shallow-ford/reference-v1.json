@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "SHALLOW-FORD",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "388affd94d6067ea07f4e57ea9d0756a79455fa1dc97196a926f026ccc9b33e7",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-4397c542-0241-47ee-a7d7-c6191834003a.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "eb62f4c3371db53b0ad253f8ad2fcebdeaee1e1c14b2c757b8d9edfe27ad065d",
+  "promptSha256": "484463385c2aac1bf8ea57fb8bda4a353059c4722c1678eee2ebc5238a722c50",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

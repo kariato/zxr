@@ -1,0 +1,66 @@
+{
+  "room": "VOLCANO-BOTTOM",
+  "label": "Volcano Bottom",
+  "literalRoomDescription": [
+    "You are at the bottom of a large dormant volcano. High above you light enters from the cone of the volcano. The only exit is to the north."
+  ],
+  "safeSceneProfile": "Bottom of dormant volcano, cone light high above and north exit. Balloon is separate; no permanent basket, floating platform or open lava pool.",
+  "visibleInitialObjects": [
+    {
+      "identity": "BALLOON",
+      "label": "basket",
+      "parent": "VOLCANO-BOTTOM",
+      "flags": [
+        "OPENBIT",
+        "VEHBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed basket. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every basket into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "BRAIDED-WIRE",
+      "label": "braided wire",
+      "parent": "BALLOON",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed braided wire. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every braided wire into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "CLOTH-BAG",
+      "label": "cloth bag",
+      "parent": "BALLOON",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed cloth bag. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every cloth bag into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "RECEPTACLE",
+      "label": "receptacle",
+      "parent": "BALLOON",
+      "flags": [
+        "CONTBIT",
+        "NDESCBIT",
+        "SEARCHBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed receptacle. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every receptacle into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "LAVA-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "84b282338df8fa7bada6edfac37b19a4f76ea0698c9259dd1a8d2ea9293cbb42"
+}

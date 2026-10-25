@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "LAVA-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "170cf2b792c6fa458a6efa9c077ebe7bab66862e966ce0dfba52690ca7fa793c",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-ecc2e2b3-e73b-4684-9f00-f6de946e0fd2.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "f9901125613770b07da1a31f096373179b32ac9ed9003e3be98b8cb5ec395d47",
+  "promptSha256": "f18c30e66d18a557af63df678d796b5caba73db4f0dc9e3472af44b0d1610fb6",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

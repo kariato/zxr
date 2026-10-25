@@ -1,0 +1,99 @@
+{
+  "room": "TEA-ROOM",
+  "label": "Tea Room",
+  "literalRoomDescription": [
+    "This is a small room containing a large oblong table, no doubt set for afternoon tea. It is clear from the objects on the table that the users were indeed mad. In the eastern corner of the room is a small hole (no more than four inches high). There are passageways leading away to the west and the northwest."
+  ],
+  "safeSceneProfile": "Large oblong tea table and absurd tea setting; eastern hole no more than four inches high, west/northwest passages. Scale-dependent traversal is a menu action, not a normal doorway.",
+  "visibleInitialObjects": [
+    {
+      "identity": "ALICE-TABLE",
+      "label": "large oblong table",
+      "parent": "TEA-ROOM",
+      "flags": [
+        "CONTBIT",
+        "OPENBIT",
+        "SURFACEBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed large oblong table. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every large oblong table into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "BLUE-ICING",
+      "label": "cake frosted with blue letters",
+      "parent": "ALICE-TABLE",
+      "flags": [
+        "FOODBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed cake frosted with blue letters. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every cake frosted with blue letters into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "EAT-ME-CAKE",
+      "label": "cake frosted with green letters",
+      "parent": "ALICE-TABLE",
+      "flags": [
+        "FOODBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "sourceText": [
+        "The icing spells out \"Eat Me.\""
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed cake frosted with green letters. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nTEXT: The icing spells out \"Eat Me.\"\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every cake frosted with green letters into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "ORANGE-ICING",
+      "label": "cake frosted with orange letters",
+      "parent": "ALICE-TABLE",
+      "flags": [
+        "FOODBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed cake frosted with orange letters. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every cake frosted with orange letters into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "RED-ICING",
+      "label": "cake frosted with red letters",
+      "parent": "ALICE-TABLE",
+      "flags": [
+        "FOODBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed cake frosted with red letters. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every cake frosted with red letters into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "EAST",
+      "view": {
+        "kind": "NEXIT",
+        "message": "Only a mouse could get in there."
+      }
+    },
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "WELL-TOP"
+      }
+    },
+    {
+      "direction": "NW",
+      "view": {
+        "kind": "UEXIT",
+        "to": "MAGNET-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": true,
+  "sourceHash": "aa31bd47383014064516d0865734becac01492ab20a582f821b4ff74930ebfc9"
+}

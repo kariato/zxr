@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "DARK-TUNNEL",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "c832812036756895ac36f8035b1bc40046959d49a7c19b51723fde9774506b9a",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-25c07b14-eb23-42e9-b722-2ad3b3f42754.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "8905de3f5662d797eaf1579a00a1b0a6cd3c26b0425968b96cd7ffabbe9eb66a",
+  "promptSha256": "bd68b21d147646278d502fd018dfe676de5a8a47fbd70eef85714754c4f222ad",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

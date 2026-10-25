@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "GUARDIAN-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "f1dc50c541cfbf5e80cab433c556bc0a5173c33c0b8dddf264828bc50fadb110",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-128f7c04-6df9-4251-9af7-ce305899eb7c.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "5297aa4bb027fc3a51aa323399062736c401519630aac10d65bb5f6db231d33d",
+  "promptSha256": "3f571e82f29a7c41b9aefd72b26456f5f1c834f5042fa1e298ce9598173e45f9",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

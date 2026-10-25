@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "COBWEBBY-CORRIDOR",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "113b5262c9f44ffc4df7edeefbe2b5cebc68730fe408b1056605fb687cb51a1b",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-f5f52f46-baa8-4e3b-9b48-3f1fae7b1ee8.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "58fa992f738c502b0d12c348970509b74567fe5c60b959a3d170e72104356483",
+  "promptSha256": "742c4dda7f8d21ab1670e49f7d82028bfa4b275d39e6b63912ac8fc62b8147ec",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

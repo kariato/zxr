@@ -1,0 +1,47 @@
+{
+  "room": "MENHIR-ROOM",
+  "label": "Menhir Room",
+  "literalRoomDescription": [
+    " "
+  ],
+  "safeSceneProfile": "Limestone quarry with rough and finished chunks, standing-stone work and north/south passages. Central menhir and any passage it conceals are separate state-controlled geometry.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "CAROUSEL-ROOM"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "STAIRWAY-TOP"
+      }
+    },
+    {
+      "direction": "SW",
+      "view": {
+        "global": "MENHIR-POSITION",
+        "kind": "CEXIT",
+        "message": "You are trying to walk through an enormous rock.",
+        "to": "KENNEL"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "MENHIR-FCN",
+      "sourceText": "<ROUTINE MENHIR-FCN ()\n\t <COND (<VERB? LOOK-UNDER LOOK-BEHIND>\n\t\t<COND (,MENHIR-POSITION\n\t\t       <TELL\n\"Behind the menhir is some air and then a wall.\" CR>)\n\t\t      (T\n\t\t       <TELL\n\"The gap between the menhir and the wall is very narrow, but it is clear\nthat there is a sizeable room in there. Your light only reveals a part of\nthe far wall.\" CR>)>)\n\t       (<VERB? TAKE MOVE TURN>\n\t\t<TELL\n\"The menhir weighs many tons and is eight feet wide. You can't even get\na grip on it, much less move it.\" CR>)\n\t       (<VERB? READ> <TELL \"\\\"F\\\"\" CR>)\n\t       (<VERB? EXAMINE>\n\t\t<TELL\n\"It is nicely finished, and the letter \\\"F\\\" on it is particularly well\ncarved.\" CR>)\n\t       (<AND <VERB? ENCHANT> <EQUAL? ,SPELL-USED ,W?FLOAT>>\n\t\t<TELL\n\"The menhir floats majestically into the air, rising about ten feet.\nThe passage beneath it beckons invitingly.\" CR>\n\t\t<SETG MENHIR-POSITION 3>)\n\t       (<AND <VERB? DISENCHANT>\n\t\t     <EQUAL? ,SPELL-USED ,W?FLOAT>>\n\t\t<SETG MENHIR-POSITION <>>\n\t\t<COND (<EQUAL? ,HERE ,MENHIR-ROOM ,KENNEL>\n\t\t       <TELL\n\"The menhir sinks to the ground.\" CR>)>)>>"
+    },
+    {
+      "routine": "MENHIR-ROOM-FCN",
+      "sourceText": "<ROUTINE MENHIR-ROOM-FCN (RARG)\n\t <COND (<AND <EQUAL? .RARG ,M-FLASH> ,MENHIR-POSITION>\n\t\t<DESCRIBE-MENHIR>)\n\t       (<EQUAL? .RARG ,M-LOOK>\n\t\t<TELL\n\"This is a large room which was evidently used once as a quarry. Many\nlarge limestone chunks lie helter-skelter around the room. Some are\nrough-hewn and unworked, others smooth and well-finished. One side of\nthe room appears to have been used to quarry building blocks, the other\nto produce menhirs (standing stones). Obvious passages lead north and\nsouth.\" CR>\n\t\t<COND (<IN? ,MENHIR ,LOCAL-GLOBALS>\n\t\t       <DESCRIBE-MENHIR>)>\n\t\tT)>>"
+    }
+  ],
+  "sourceLightFlag": false,
+  "sourceHash": "f627038f32fce48e434b92eeb37b6e57c1d67f90133a716b3c3664f8041e7478"
+}

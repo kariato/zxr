@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "MARBLE-HALL",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "389b7851e17052a448ee131a55bc82c46a49858736ba65112aaba0320ba8c9c4",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-1818d933-400f-4aa0-b1df-921d4fea14f3.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "5835f032c37915e5acc3151d7b55c3bee09b3d45dafcdb91f420d34ae90bdc08",
+  "promptSha256": "14d30245898679e20cbd33471e7be027e482af8ecde053495e66849966e0f719",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

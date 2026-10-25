@@ -1,0 +1,44 @@
+{
+  "room": "LAVA-ROOM",
+  "label": "Lava Room",
+  "literalRoomDescription": [
+    "This is a small room, whose walls are formed by an old lava flow. There are exits here to the east and the south."
+  ],
+  "safeSceneProfile": "Small old lava-flow chamber with east and south exits; ruby is separate, not an emissive wall clue.",
+  "visibleInitialObjects": [
+    {
+      "identity": "RUBY",
+      "label": "ruby",
+      "parent": "LAVA-ROOM",
+      "flags": [
+        "STAGGERED",
+        "TAKEBIT"
+      ],
+      "sourceText": [
+        "There is a moby ruby lying here.",
+        "On the floor lies a moby ruby."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed ruby. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a moby ruby lying here.\nFDESC: On the floor lies a moby ruby.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every ruby into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "EAST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "GLACIER-ROOM"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "VOLCANO-BOTTOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "f9901125613770b07da1a31f096373179b32ac9ed9003e3be98b8cb5ec395d47"
+}

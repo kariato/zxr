@@ -1,0 +1,43 @@
+{
+  "room": "IN-AQUARIUM",
+  "label": "Murky Room",
+  "literalRoomDescription": [
+    "The floor here seems to be made of sand, but it is hard to see anything else."
+  ],
+  "safeSceneProfile": "Sand underfoot; source limits what else can be seen. Do not invent a dry walkable aquarium exit, visible treasure or water level from the room name alone.",
+  "visibleInitialObjects": [
+    {
+      "identity": "PALANTIR-3",
+      "label": "clear crystal sphere",
+      "parent": "IN-AQUARIUM",
+      "flags": [
+        "NDESCBIT",
+        "STAGGERED",
+        "TAKEBIT",
+        "TRANSBIT"
+      ],
+      "sourceText": [
+        "There is a clear crystal sphere lying in the sand."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed clear crystal sphere. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a clear crystal sphere lying in the sand.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every clear crystal sphere into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "OUT",
+      "view": {
+        "kind": "UEXIT",
+        "to": "AQUARIUM-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "IN-AQUARIUM-FCN",
+      "sourceText": "<ROUTINE IN-AQUARIUM-FCN (RARG)\n\t <COND (<EQUAL? .RARG ,M-LOOK>\n\t\t<TELL\n\"There is a sandy floor here, and your vision seems murky and blurred.\nThe wall you are looking at is nicely dressed stone.\" CR>\n\t\t<COND (<IN? ,SERPENT ,AQUARIUM>\n\t\t       <COND (<PROB 25>\n\t\t\t      <TELL\n\"While you watch a shadow seems to pass overhead.\" CR>)\n\t\t\t     (<PROB 5>\n\t\t\t      <TELL\n\"The head of some horrible serpent pokes into view, its beady green eyes\nalmost seeming to see you.\" CR>)>)>\n\t\t<RTRUE>)\n\t       (<EQUAL? .RARG ,M-ENTER>\n\t\t<COND (<IN? ,SERPENT ,AQUARIUM>\n\t\t       <JIGS-UP\n\"You drop into the aquarium with a splash (which attracts the serpent).\nHe greedily eats you. He's just a baby, after all, and needs all the\nfood he can get.\">)\n\t\t      (T <JIGS-UP\n\"Oh dear, you have cut yourself severely on the broken glass. I'm afraid\nyou've bled to death.\">)>)>>"
+    }
+  ],
+  "sourceLightFlag": true,
+  "sourceHash": "90af3d388ad5ec2ae97f7b94bdaa8b53d5dc8e0479925eafcb5e2c9ce8d1c4e4"
+}

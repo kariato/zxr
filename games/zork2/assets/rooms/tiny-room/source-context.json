@@ -1,0 +1,69 @@
+{
+  "room": "TINY-ROOM",
+  "label": "Tiny Room",
+  "literalRoomDescription": [
+    " "
+  ],
+  "safeSceneProfile": "A tiny stone room carved into a ravine wall. A precarious downward climb provides the DOWN exit. On the north side stands a massive oak door with a small iron-barred window and a formidable bolt lock; a thin metal lid covers the keyhole when closed. The window belongs to the door and looks into the adjoining room, not outside. NORTH and IN name the same source doorway and must not become two physical doors. Keep door, window, lid and keyhole out of the static shell; their assembly follows the door animation. Do not pre-place the mat, key or other puzzle outcomes. Lighting here depends on engine state, not a permanently lit room.",
+  "visibleInitialObjects": [
+    {
+      "identity": "KEYHOLE-1",
+      "label": "keyhole",
+      "parent": "TINY-ROOM",
+      "flags": [
+        "NDESCBIT",
+        "OPENBIT",
+        "SEARCHBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Small keyhole and lock-face insert for the tiny-room side of the oak door. Its opening aligns behind the separate thin metal lid and is physically occluded by that lid when shut. Keep dimensions provisional and interaction bounds generous without enlarging the visible keyhole. Do not pre-insert a key or show objects belonging to another room."
+    },
+    {
+      "identity": "LID-1",
+      "label": "metal lid",
+      "parent": "TINY-ROOM",
+      "flags": [
+        "CONTBIT",
+        "NDESCBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Thin metal lid over the tiny-room keyhole, independent from the keyhole mesh. Closed state covers the keyhole; open state exposes it. Follow observed LID-1 OPENBIT through presentation bindings, with no independent game-state writes. The lid and lock inserts follow the host door panel."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "door": "PDOOR",
+        "kind": "DEXIT",
+        "message": null,
+        "to": "DREARY-ROOM"
+      }
+    },
+    {
+      "direction": "DOWN",
+      "view": {
+        "kind": "UEXIT",
+        "to": "RAVINE-LEDGE"
+      }
+    },
+    {
+      "direction": "IN",
+      "view": {
+        "door": "PDOOR",
+        "kind": "DEXIT",
+        "message": null,
+        "to": "DREARY-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "TINY-ROOM-FCN",
+      "sourceText": "<ROUTINE TINY-ROOM-FCN (RARG)\n    #DECL ((RARG) <OR FIX FALSE>)\n    <COND (<EQUAL? .RARG ,M-LOOK>\n\t   <TELL\n\"This is a tiny room carved out of the wall of the ravine. There is\nan exit down a precarious climb. \">\n\t   <P-DOOR \"north\" ,LID-1 ,KEYHOLE-1>\n\t   <RTRUE>)\n\t  (<NOT <VERB? LOOK>> <PCHECK> <RFALSE>)>>"
+    }
+  ],
+  "sourceLightFlag": false,
+  "sourceHash": "81d93c25973942de66de3cab105bdc5a6d697c02853ce2dcbfe90335e754f0f3"
+}

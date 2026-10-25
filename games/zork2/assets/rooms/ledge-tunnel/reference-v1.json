@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "LEDGE-TUNNEL",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "b35c0cf40fab0d8e9103b6ff414aa73161e5f6b5afe7fc8ab1a2ca613bda3d7d",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-e19ed362-5910-4f3d-bc70-c0f6bfa46f1a.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "9070c2ac2aa07d4b9bd0d11ebf6929b3977e251806d1758cb51be30ccb853bb0",
+  "promptSha256": "6e9d64c451a33ea0dae32fcd01d05a01fd30d0fe378dae23dfb6afc7ffa8f917",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

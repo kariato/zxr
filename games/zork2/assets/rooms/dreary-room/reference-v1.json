@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "DREARY-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "ccb46fcde04ec5be64bd716dccf26a9c4ca06d419fa48e1c3a51c46bf8eec595",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-2a3223c0-54ce-41be-9072-502e0386ddfc.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "b22d91bbe9482c76b313c7817292937750a0afcf964551a9b4817905d438c14c",
+  "promptSha256": "43a8c8f131dfb64ffcd7a52baa8556ab87d7b78a8e9d338248e0351bebf81656",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

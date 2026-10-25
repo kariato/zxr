@@ -1,0 +1,16 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "WIZARDS-WORKSHOP",
+  "mode": "built-in-imagegen",
+  "operation": "targeted-edit",
+  "image": "reference-v2.png",
+  "imageSha256": "2ace63cddae9a467e7487ab9a5b04df33c10fcf2292254b778b1bddfe7c51b5c",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-551b14b7-4b3f-4d39-a891-40ba8afd3b94.png",
+  "referenceImage": "wizards-workshop/reference-v1.png",
+  "referenceImageSha256": "a2e074b937cd96f986d2816b84dd82c5c7ccc4352a8758c97085eccb79bb5715",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "5b12dc1f70d1207d099125fb06488667144e95707d77807f18aacff0d15295f1",
+  "promptSha256": "d0570b524fe953ad3cae8ecf2d5f0d7c8351f53b42c924c9a937601d619d247d",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

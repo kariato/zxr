@@ -1,0 +1,22 @@
+{
+  "room": "VIEWING-EAST",
+  "label": "East Viewing Room",
+  "literalRoomDescription": [
+    "This room was used by holders of safety deposit boxes to view their contents. On the north side of the room is a sign which says\n\n\"Remain here while the teller retrieves your safety deposit box. When you are finished, leave the box, and exit to the south. Safety deposit boxes cannot be removed from this room!\n\nThank You for Banking at the Zork!\" "
+  ],
+  "safeSceneProfile": "Eastern deposit-box viewing room; preserve source sign wording, north-side placement and southern exit. No actual deposit boxes unless observed.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "BANK-ENTRANCE"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "302c35d3ce661ed202b1d4bae14510b0f7e9afca48bb99b4f27f81094acff21c"
+}

@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "GREAT-CAVERN",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "6a08f583671c17d94d590220909b4bd905f3f6f38516a500a88f2cf0b97f7564",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-ac7d9861-7f4c-4c46-8ad8-9e2b1649ea1f.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "c9749b6c68d4525e5b8b9b39f87c814a24a0babbe90770394fe918524f35bc04",
+  "promptSha256": "d7cc02d7acda2edb42b650887a64accc780349bfedfb04e152ce7338ceeb0455",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

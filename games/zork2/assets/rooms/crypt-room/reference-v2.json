@@ -1,0 +1,16 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "CRYPT-ROOM",
+  "mode": "built-in-imagegen",
+  "operation": "targeted-edit",
+  "image": "reference-v2.png",
+  "imageSha256": "55abdad79ff9e2e1a50f0e9d2640e4bed899f77585402dcda9102296cf4b3b94",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-0ec49aba-247d-49ef-914e-bfee2020cb11.png",
+  "referenceImage": "crypt-room/reference-v1.png",
+  "referenceImageSha256": "fc58eb87cc1b45943a5e36b79292ef4608f6fd20d26a9ddb817755e7bd02d13b",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "eb243a4a78584e0f630ba29b9f15128191982ed9154e3e267ca0713774461a6a",
+  "promptSha256": "7fe2876f655cf4b7cf5948fb7df1bc1a59057748188ccfff87bb166122995514",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

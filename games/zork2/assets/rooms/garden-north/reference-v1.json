@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "GARDEN-NORTH",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "80a0e99744fb473b50898c0a385c2dd7d9c0c7a2fdfe5ef0c8828f07df1be7e2",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-eb068538-ba97-40a7-a7c8-3dadfd735e45.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "69ad56385f5c87a8b5188b594de6e9e3b676b6663da4ec0efc42bcc10f2201eb",
+  "promptSha256": "a430ab4bbfc87b728d91ba33dc1c45e692af244a95c99217b53a7f16cc6b242b",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

@@ -1,0 +1,19 @@
+{
+  "room": "ZORK3",
+  "label": "Landing",
+  "literalRoomDescription": [
+    " "
+  ],
+  "safeSceneProfile": "Rough descending staircase landing with source magical runes and green lines. Victory hall and disappearance of lines are conditional future output, not initial shell geometry.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [],
+  "guardedRoomSource": [
+    {
+      "routine": "ZORK3-FCN",
+      "sourceText": "<ROUTINE ZORK3-FCN (RARG)\n\t <COND (<EQUAL? .RARG ,M-LOOK>\n\t\t<TELL\n\"Beyond the door is a roughly hewn staircase leading down into darkness.\nThe landing on which you stand is covered with carefully drawn magical runes\nlike those sketched upon the workbench of the Wizard of Frobozz.\nThese have been overlaid with sweeping green lines of enormous power, which\nundulate back and forth across the landing. \">\n\t\t<COND (<IN? ,WAND ,WINNER>\n\t\t       <TELL\n\"The wand begins to vibrate in harmony with the motion of the lines.\nYou feel yourself compelled downward, and you yield, stepping onto the\nstaircase. As you pass the green lines, they flare and disappear with a\nburst of light, and you tumble down the staircase!|\n|\nAt the bottom, a vast red-lit hall stretches off into the distance.\nSinister statues guard the entrance to a dimly visible room far ahead.\nWith courage and cunning you have conquered the Wizard of Frobozz and\nbecome the master of his domain, but the final challenge awaits!|\n|\n(The ultimate adventure concludes in \\\"Zork III: The Dungeon Master\\\".)|\n|\n\" CR>\n\t\t<SETG WON-FLAG T>\n\t\t<FINISH>)\n\t\t      (T\n\t\t       <JIGS-UP\n\"The green curves begin to vibrate toward you, as if searching for\nsomething. One by one your possessions glow bright green. Finally, you\nare attacked by these magical wardens, and destroyed!\">)>)>>"
+    }
+  ],
+  "sourceLightFlag": true,
+  "sourceHash": "4abb2040132dd0b16246475c7e0c084865559e34e6424bd3de704000f5a8679c"
+}

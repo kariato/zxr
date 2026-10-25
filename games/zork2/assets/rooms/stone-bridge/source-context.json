@@ -1,0 +1,43 @@
+{
+  "room": "STONE-BRIDGE",
+  "label": "Stone Bridge",
+  "literalRoomDescription": [
+    "This is the middle of a ruined but still impressive stone bridge spanning a deep chasm. Water flows far beneath. A paved path leads north into a large open space. To the south, the path leads into a misty tunnel."
+  ],
+  "safeSceneProfile": "Ruined impressive stone bridge over deep chasm, water far below, north paved approach and south misty tunnel. Do not reuse wooden footbridge appearance here.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DRAGON-ROOM"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "COOL-ROOM"
+      }
+    },
+    {
+      "direction": "DOWN",
+      "view": {
+        "kind": "NEXIT",
+        "message": "It's a long way down."
+      }
+    },
+    {
+      "direction": "CROSS",
+      "view": {
+        "kind": "NEXIT",
+        "message": "You'll have to specify a direction."
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "2b572ec1821b542a8edb3360cd27ad56789a0c9753a7718b240c5a5f98a4a23b"
+}

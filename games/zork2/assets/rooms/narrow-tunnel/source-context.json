@@ -1,0 +1,43 @@
+{
+  "room": "NARROW-TUNNEL",
+  "label": "Narrow Tunnel",
+  "literalRoomDescription": [
+    "You are standing at the southern end of a narrow tunnel where it opens into a wide cavern. The cavern is dimly illuminated by phosphorescent mosses clinging to its high ceiling. A deep ravine winds through the cavern, with a small stream at the bottom. The walls of the ravine are steep and crumbly. A foot bridge crosses the ravine to the south."
+  ],
+  "safeSceneProfile": "Southern end of a narrow tunnel opening into a wide dim cavern. High phosphorescent mosses, steep crumbly ravine walls, a small stream below and a crude wooden foot bridge to the south follow the source. The northern passage leads back to the barrow; SOUTH and CROSS are the same bridge approach. DOWN remains a refused attempt, with no ladder or navigable path into the ravine. The view ahead shows only locally observed environmental objects, never the contents or actors of the next room. Art dimensions and bank/deck positions await mesh review.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "INSIDE-BARROW"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "FOOT-BRIDGE"
+      }
+    },
+    {
+      "direction": "DOWN",
+      "view": {
+        "kind": "NEXIT",
+        "message": "As you start down, you slip on the crumbling rocks and pull back, narrowly averting a fatal fall."
+      }
+    },
+    {
+      "direction": "CROSS",
+      "view": {
+        "kind": "UEXIT",
+        "to": "FOOT-BRIDGE"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": true,
+  "sourceHash": "30b6c3a0e94e1239d4e959957542e97dbd7dc4b4a1e39b9d74cf8111aa68ff6f"
+}

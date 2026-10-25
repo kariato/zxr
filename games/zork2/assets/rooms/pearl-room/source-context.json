@@ -1,0 +1,43 @@
+{
+  "room": "PEARL-ROOM",
+  "label": "Pearl Room",
+  "literalRoomDescription": [
+    "This is a former broom closet. The exits are to the east and west."
+  ],
+  "safeSceneProfile": "Former broom closet with east/west exits; pearl necklace remains a separate observed prop.",
+  "visibleInitialObjects": [
+    {
+      "identity": "PEARL",
+      "label": "pearl necklace",
+      "parent": "PEARL-ROOM",
+      "flags": [
+        "STAGGERED",
+        "TAKEBIT"
+      ],
+      "sourceText": [
+        "There is a pearl necklace here with hundreds of large pearls."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed pearl necklace. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a pearl necklace here with hundreds of large pearls.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every pearl necklace into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "EAST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "WELL-BOTTOM"
+      }
+    },
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "RIDDLE-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "9419b45e112b1a90590488ab65a89c1f7e84ff9ed39ac7a6b7e7d07b2e447934"
+}

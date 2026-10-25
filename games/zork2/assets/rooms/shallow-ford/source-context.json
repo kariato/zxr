@@ -1,0 +1,36 @@
+{
+  "room": "SHALLOW-FORD",
+  "label": "Shallow Ford",
+  "literalRoomDescription": [
+    "You are at the southern edge of a great cavern. To the south across a shallow ford is a dark tunnel which looks like it was once enlarged and smoothed. To the north a narrow path winds among stalagmites. Dim light illuminates the cavern."
+  ],
+  "safeSceneProfile": "Southern edge of the great cavern, still dimly illuminated. A shallow ford crosses the route south into a dark tunnel whose entrance looks enlarged and smoothed. North, a narrow path winds among stalagmites. SOUTH and CROSS name the same ford crossing, not two bridges or tunnels. The source GLOBAL-WATER alias supplies the water interaction; do not instantiate STREAM as a second object here. The dark tunnel beyond must not expose its unobserved contents. No stepping-stone puzzle, deep chasm or invented fatal current.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "GREAT-CAVERN"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DARK-TUNNEL"
+      }
+    },
+    {
+      "direction": "CROSS",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DARK-TUNNEL"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": true,
+  "sourceHash": "eb62f4c3371db53b0ad253f8ad2fcebdeaee1e1c14b2c757b8d9edfe27ad065d"
+}

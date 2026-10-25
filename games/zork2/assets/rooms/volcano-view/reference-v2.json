@@ -1,0 +1,16 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "VOLCANO-VIEW",
+  "mode": "built-in-imagegen",
+  "operation": "targeted-edit",
+  "image": "reference-v2.png",
+  "imageSha256": "60e5f2f624b7d40dcc6c3505aba1edebd42bbac2b232955ffebf397f9edeb9fd",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-446199b5-cecf-4e0d-9438-3e89f6f8a4ae.png",
+  "referenceImage": "volcano-view/reference-v1.png",
+  "referenceImageSha256": "9f161c6b6c0caed24df43bbae46531752042dbc01e80eaf67099d98e263b0b60",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "7306c13dd00709a75ddd335a790fd72506170c4c319096b29256156a7dce84f6",
+  "promptSha256": "e295958caf953be3318077343d1c24e125bea3cb54482e7750585a2a754877b5",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

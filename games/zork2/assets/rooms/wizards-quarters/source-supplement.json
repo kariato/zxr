@@ -1,0 +1,9 @@
+{
+  "format": "zxr-room-source-supplement-v1",
+  "room": "WIZARDS-QUARTERS",
+  "sourceFile": "reference/zork2/2actions.zil",
+  "sourceFileSha256": "fef6f717e3c336edd39178ba35f09617a9d7347068022efc6233ab56cb2dacbe",
+  "sourceTable": "<GLOBAL WIZQDESCS\n\t<LTABLE\n\"sparsely furnished and almost monkish in its austerity.\"\n\"an opulently furnished seraglio out of an Arabian folktale.\"\n\"decorated in the Louis XIV style.\"\n\"overhung with palm-trees and lianas. The only furniture is a hammock.\"\n\"constructed of delicate and wispy cloud-stuffs.\"\n\"furnished in plastic and metal and looks like the control deck of a\nspaceship.\"\n\"a suburban bedroom out of the 1950's, complete with bunk beds.\"\n\"a dank and dimly lighted cave, its floor piled with furs and old bones.\">>",
+  "chosenVariant": "sparsely furnished and almost monkish in its austerity.",
+  "reason": "One image represents one of the source routine's eight changing descriptions; variants are not combined."
+}

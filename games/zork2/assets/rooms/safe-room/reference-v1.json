@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "SAFE-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "e6a9334a0a9b1b0b2ae5d17455f2ed33e020f16816a1ba6e298c675f1fff7d1a",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-d14e44a6-cbbb-4866-9a6b-166814cfa6cf.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "e446a22732dbee01c167136d2aa3807ce8acf22782412e1457eb20fc66f4668f",
+  "promptSha256": "0a87a65c4ab3464f4878d5b23e0747052e09e28f8efd5f82d5b42529d6d0f42c",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

@@ -1,0 +1,37 @@
+{
+  "room": "ROOM-8",
+  "label": "Room 8",
+  "literalRoomDescription": [
+    "This is a small chamber carved out of the rock at the end of a short crawl. On the wall is crudely chiseled the number \"8\"."
+  ],
+  "safeSceneProfile": "Small rock chamber at end of short crawl, crudely chiselled number 8. No other puzzle numbers or symbols.",
+  "visibleInitialObjects": [
+    {
+      "identity": "REPELLENT",
+      "label": "Frobozz Magic Grue Repellent",
+      "parent": "ROOM-8",
+      "flags": [
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "sourceText": [
+        "A spray can is in the corner. In large type is the legend \"Frobozz Magic Grue Repellent\".",
+        "!!! FROBOZZ MAGIC GRUE REPELLENT !!!\n\nInstructions for use: Apply liberally to creature to be protected. Duration of effect is unpredictable. Use only in place of death!\n\n(No warranty expressed or implied)"
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed Frobozz Magic Grue Repellent. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nFDESC: A spray can is in the corner. In large type is the legend \"Frobozz Magic Grue Repellent\".\nTEXT: !!! FROBOZZ MAGIC GRUE REPELLENT !!!\n\nInstructions for use: Apply liberally to creature to be protected. Duration of effect is unpredictable. Use only in place of death!\n\n(No warranty expressed or implied)\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every Frobozz Magic Grue Repellent into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "EAST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "CAROUSEL-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "f4005ea2ec9730caca0135592bb460dbb7350bb5a665567cb9ef599b64d49742"
+}

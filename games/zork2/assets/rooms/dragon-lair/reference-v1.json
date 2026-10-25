@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "DRAGON-LAIR",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "ffead666e37e485b21d0c2ab11e905caae694771e9ae0095009cac1d85a17b51",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-68370caa-d35b-4315-a97e-829ef99b2db8.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "f00234d0d5e62fe776720beb8dbd849f44abd5ed4eeb8907a3b2ccb7a0561cc8",
+  "promptSha256": "28ab5054ad050e46794313176b3617fb073bd94f001c7e202bc407b3539eb037",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

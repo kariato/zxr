@@ -1,0 +1,16 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "TINY-ROOM",
+  "mode": "built-in-imagegen",
+  "operation": "targeted-edit",
+  "image": "reference-v2.png",
+  "imageSha256": "392cbfc305cb48e6ab6e6f002429e9dc7f3c6b3d940731fcf3f10402c0181a2b",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-a2b0de76-d2da-4339-a5d8-2db002cb311a.png",
+  "referenceImage": "tiny-room/reference-v1.png",
+  "referenceImageSha256": "9e13518d084f0a32dea08636a1dbeb3a0560544d04a1bb36b0f9f85ce8f9c80b",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "81d93c25973942de66de3cab105bdc5a6d697c02853ce2dcbfe90335e754f0f3",
+  "promptSha256": "e343497e47707e35430529a0dbedb902b079ea952a2c40bb88f8cd502b9017fb",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

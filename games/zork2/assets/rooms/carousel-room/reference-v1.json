@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "CAROUSEL-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "41e716ecc17e55878106135de8d3aa42a54bf8bea1ce2dc920da4b81baf4d685",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-058571ca-2496-4cce-8feb-b008e68c98c5.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "daab3c43d4689a27cc9591ed183f25e242a9e4bdccce75a423069929f0285043",
+  "promptSha256": "27d1087dcece627bf9575f6076e47906607a28b2ce988b0c8ea472ca6b65f535",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

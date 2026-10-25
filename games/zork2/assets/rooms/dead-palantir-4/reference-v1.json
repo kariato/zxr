@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "DEAD-PALANTIR-4",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "47c3844fbbc77e02ed2b42de3113ce7d265165bbfdb096f9b1a296da78ef5dc7",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-77c4099f-9fb2-45fc-bf0b-ea96434f51d0.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "a2c9a4134b2c0aafd89884138762fbf6282159e7a7bf713788d96d9e195c94d0",
+  "promptSha256": "602e82b9e56bdf4400b8a9f91469bcbab506d300a270e808c8fb6e441095e42a",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

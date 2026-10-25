@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "COOL-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "86859bbb5e0fc162437ed1d4c1f6abc68b2d6bf18f59a207c9b8cdd6f563f92e",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-04d98607-4cab-4eb4-b5bb-bf44b7e6e8ef.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "a012b34a60ae1841f380f1ca4bf17920d53e8936f1b5e484513733bc74b0a879",
+  "promptSha256": "c385ef55ebc44afc548798e08564461fdacb501bf452190cfdedc72e2134c64e",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

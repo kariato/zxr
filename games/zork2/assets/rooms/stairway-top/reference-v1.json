@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "STAIRWAY-TOP",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "b87d500119e767222322a00bf1d80f0c2ae09085939a2569fcfe18d84d14b82a",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-0eec8974-33e6-478b-a8c7-02a635fb3749.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "e758afe2d5135ef9f9d7c0166819eedac7e30e1b41421b6c5143f6e9a19b70ad",
+  "promptSha256": "10292345dfb598803018d92b1431eed58091f85ecb866931ba24d8e953c24389",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

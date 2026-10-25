@@ -1,0 +1,56 @@
+{
+  "room": "GUARDIAN-ROOM",
+  "label": "Guarded Room",
+  "literalRoomDescription": [
+    " "
+  ],
+  "safeSceneProfile": "Musty cobwebby corridor with disturbed dust, northern corridor and battered strong southern door. Lizard and its fed expression remain separate presentation state.",
+  "visibleInitialObjects": [
+    {
+      "identity": "DOOR-KEEPER",
+      "label": "lizard",
+      "parent": "GUARDIAN-ROOM",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed lizard. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every lizard into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "COBWEBBY-CORRIDOR"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "door": "WIZ-DOOR",
+        "kind": "DEXIT",
+        "message": null,
+        "to": "WIZARDS-WORKSHOP"
+      }
+    },
+    {
+      "direction": "IN",
+      "view": {
+        "door": "WIZ-DOOR",
+        "kind": "DEXIT",
+        "message": null,
+        "to": "WIZARDS-WORKSHOP"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "GUARDIAN-ROOM-FCN",
+      "sourceText": "<ROUTINE GUARDIAN-ROOM-FCN (RARG)\n\t <COND (<EQUAL? .RARG ,M-LOOK>\n\t\t<TELL\n\"This room is cobwebby and musty, but tracks in the dust show that it has\nseen visitors recently. At the south end of the room is a stained and\nbattered (but very strong-looking) door. To the north, a corridor exits.\" CR>\n\t\t<COND (<FSET? ,WIZ-DOOR ,OPENBIT>\n\t\t       <TELL \"The door is open.\" CR>)>\n\t\t<COND (<NOT ,GUARDIAN-FED>\n\t\t       <TELL\n\"Imbedded in the door is a nasty-looking lizard head, with sharp\nteeth and beady eyes. \">\n\t\t       <COND (<IN? ,CANDY ,WINNER>\n\t\t\t      <TELL \"The lizard is sniffing at you.\" CR>)\n\t\t\t     (T\n\t\t\t      <TELL\n\"The eyes move to watch you approach.\" CR>)>)\n\t\t      (T\n\t\t       <TELL\n\"A sleepy-looking lizard head is mounted on the door.\" CR>)>)>>"
+    }
+  ],
+  "sourceLightFlag": false,
+  "sourceHash": "5297aa4bb027fc3a51aa323399062736c401519630aac10d65bb5f6db231d33d"
+}

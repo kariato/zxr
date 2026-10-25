@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "STONE-BRIDGE",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "2ddea7d7909f1644d287332764dfa99dfbda15143a58e5e277fdfe1c1f26b7c0",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-48a26069-e1e5-43a7-bc08-c9f45d41635d.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "2b572ec1821b542a8edb3360cd27ad56789a0c9753a7718b240c5a5f98a4a23b",
+  "promptSha256": "90104a94b052c7ff2cc25ac836d189723ef0b7dd3c05e3ce4f149d29081d2771",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

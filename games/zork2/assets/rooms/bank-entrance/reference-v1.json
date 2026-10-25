@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "BANK-ENTRANCE",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "660210b1a4a55fe7a6bdd42ccd53ab731f589e6fa92ea3c82b9d551de0a450dd",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-a7365fb3-ffe2-48cb-83cd-69b295f78bb0.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "b13ce468ceeaeec728be02e8a52538ad3106146ca128875c4cc350820a2c4d2a",
+  "promptSha256": "df49609beda2d39b918492f2d69f6974720e7457fa21ab4e2a446dda85d1e2c5",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

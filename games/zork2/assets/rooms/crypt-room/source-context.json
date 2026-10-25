@@ -1,0 +1,71 @@
+{
+  "room": "CRYPT-ROOM",
+  "label": "Crypt",
+  "literalRoomDescription": [
+    " "
+  ],
+  "safeSceneProfile": "Twelve poled Flathead heads and crypt lettering are separate source-backed props. South secret-door geometry must remain fully absent while DIM-DOOR is invisible; do not bake an F outline into a wall.",
+  "visibleInitialObjects": [
+    {
+      "identity": "CRYPT",
+      "label": "marble crypt",
+      "parent": "CRYPT-ROOM",
+      "flags": [
+        "NDESCBIT",
+        "READBIT"
+      ],
+      "sourceText": [
+        "\"Here lie the Flatheads, whose heads were placed on poles by the Keeper of the Dungeon for amazing untastefulness.\""
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed marble crypt. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nTEXT: \"Here lie the Flatheads, whose heads were placed on poles by the Keeper of the Dungeon for amazing untastefulness.\"\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every marble crypt into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "HEADS",
+      "label": "set of poled heads",
+      "parent": "CRYPT-ROOM",
+      "flags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed set of poled heads. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every set of poled heads into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "door": "CRYPT-DOOR",
+        "kind": "DEXIT",
+        "message": null,
+        "to": "CRYPT-ANTEROOM"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "global": "DIM-DOOR-FLAG",
+        "kind": "CEXIT",
+        "message": null,
+        "to": "ZORK3"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "CRYPT-DOOR-FCN",
+      "sourceText": "<ROUTINE CRYPT-DOOR-FCN ()\n\t <COND (<VERB? OPEN CLOSE>\n\t\t<OPEN-CLOSE ,PRSO\n\t\t\t    \"The crypt door squeaks open.\"\n\t\t\t    \"The crypt door squeaks closed.\">)>>"
+    },
+    {
+      "routine": "CRYPT-OBJECT",
+      "sourceText": "<ROUTINE CRYPT-OBJECT ()\n\t <COND (<VERB? OPEN> <TELL \"The crypt is sealed for all time.\" CR>)\n\t       (<VERB? RUB> <TELL \"The marble is cool.\" CR>)>>"
+    },
+    {
+      "routine": "CRYPT-ROOM-FCN",
+      "sourceText": "<ROUTINE CRYPT-ROOM-FCN (RARG \"AUX\" CLIT?)\n\t <COND (<EQUAL? .RARG ,M-LOOK>\n\t\t<FCLEAR ,HERE ,ONBIT>\n\t\t<COND (<LIT? ,HERE>\n\t\t       <TELL\n\"The room contains the earthly remains of the mighty Flatheads, twelve\nsomewhat flat heads mounted securely on poles. While the room might be\nexpected to contain funerary urns or other evidence of the ritual\npractices of the ancient Zorkers, it is empty of all such objects. There\nis writing carved on the crypt. The only apparent exit is to the north\nthrough the door to the anteroom. The door is \">\n\t\t       <COND (<FSET? ,CRYPT-DOOR ,OPENBIT>\n\t\t\t      <TELL \"open.\">)\n\t\t\t     (T <TELL \"closed.\">)>\n\t\t       <CRLF>\n\t\t       <COND (<NOT <FSET? ,DIM-DOOR ,INVISIBLE>>\n\t\t\t      <TELL\n\"Looking closely at the south wall, you can see the dim outline of\na secret door labelled with the letter \\\"F\\\".\" CR>)>)\n\t\t      (T\n\t\t       <DIM-DOOR-APPEARS>)>\n\t\t<FSET ,HERE ,ONBIT>\n\t\t<RTRUE>)\n\t       (<EQUAL? .RARG ,M-END>\n\t\t<SET CLIT? ,CRYPT-LIT?>\n\t\t<FCLEAR ,CRYPT-ROOM ,ONBIT>\n\t\t<SETG CRYPT-LIT? <LIT? ,CRYPT-ROOM>>\n\t\t<COND (<AND .CLIT?\n\t\t\t    <NOT ,CRYPT-LIT?>>\n\t\t       <DIM-DOOR-APPEARS>)>\n\t\t<FSET ,CRYPT-ROOM ,ONBIT>)>>"
+    }
+  ],
+  "sourceLightFlag": false,
+  "sourceHash": "eb243a4a78584e0f630ba29b9f15128191982ed9154e3e267ca0713774461a6a"
+}

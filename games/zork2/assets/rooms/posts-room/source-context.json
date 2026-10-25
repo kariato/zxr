@@ -1,0 +1,59 @@
+{
+  "room": "POSTS-ROOM",
+  "label": "Posts Room",
+  "literalRoomDescription": [
+    "This is an enormous room, in the center of which are four wooden posts delineating a rectangular area, above which is what appears to be a wooden roof. In fact, all objects in this room appear to be abnormally large. To the east is a passageway. There are large gaping chasms to the west and northwest."
+  ],
+  "safeSceneProfile": "Abnormally large-scale room with four wooden posts and roof-like structure; east passage and west/northwest chasms. Preserve relative scale puzzle without changing player physics or source routes.",
+  "visibleInitialObjects": [
+    {
+      "identity": "POSTS",
+      "label": "group of wooden posts",
+      "parent": "POSTS-ROOM",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed group of wooden posts. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every group of wooden posts into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "EAST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "POOL-ROOM"
+      }
+    },
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "NEXIT",
+        "message": "A great chasm blocks your way."
+      }
+    },
+    {
+      "direction": "NW",
+      "view": {
+        "kind": "NEXIT",
+        "message": "A great chasm blocks your way."
+      }
+    },
+    {
+      "direction": "DOWN",
+      "view": {
+        "kind": "NEXIT",
+        "message": "A great chasm blocks your way."
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "POSTS-ROOM-FCN",
+      "sourceText": "<ROUTINE POSTS-ROOM-FCN (RARG)\n\t <COND (<EQUAL? .RARG ,M-BEG>\n\t\t<COND (<AND <VERB? TAKE> <FSET? ,PRSO ,NONLANDBIT>>\n\t\t       <TELL\n\"The \" D ,PRSO \" is now much larger than you are. You have no hope of\ntaking it.\" CR>)>)>>"
+    }
+  ],
+  "sourceLightFlag": true,
+  "sourceHash": "e5ba0fc3fee2738437d03ca6039debe180078e5302ff6aeada101fd2e99e74f8"
+}

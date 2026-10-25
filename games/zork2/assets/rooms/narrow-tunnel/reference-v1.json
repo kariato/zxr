@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "NARROW-TUNNEL",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "994ae6842b549af83ded00db873b93cbd17a63656f908eab99fe5a9f893ddf66",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-1bd8a2e0-ab1c-4d2a-ada2-bb8641aa2e07.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "30b6c3a0e94e1239d4e959957542e97dbd7dc4b4a1e39b9d74cf8111aa68ff6f",
+  "promptSha256": "2b86360ad77f5e4c985a16a12873e1eb6123a68716c63a97401b4d40538f5a5a",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

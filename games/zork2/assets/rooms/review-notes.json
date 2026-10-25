@@ -1,0 +1,169 @@
+{
+  "format": "zxr-room-reference-review-v1",
+  "status": "draft-reference-review-complete",
+  "coverage": 86,
+  "method": "Inspected each generated image as it arrived and reviewed all eight contact sheets. Compared suspected discrepancies against local source packets and original ZIL; used built-in ImageGen for targeted edits.",
+  "corrections": [
+    {
+      "room": "CRYPT-ROOM",
+      "selectedImage": "crypt-room/reference-v2.png",
+      "note": "Corrected thirteen heads to exactly twelve; visually counted the selected revision.",
+      "retainedRevisions": [
+        {
+          "image": "crypt-room/reference-v1.png",
+          "prompt": "crypt-room/reference-v1.prompt.txt",
+          "promptSha256": "f160128bf0b4dabbc3d392274b4a611c37178ff06ff259e88d5c55a20ef88f76"
+        }
+      ]
+    },
+    {
+      "room": "LEDGE-1",
+      "selectedImage": "ledge-1/reference-v2.png",
+      "note": "Replaced active lava and heat glow with cold dormant-volcano basalt; retained coin and hook.",
+      "retainedRevisions": [
+        {
+          "image": "ledge-1/reference-v1.png",
+          "prompt": "ledge-1/reference-v1.prompt.txt",
+          "promptSha256": "ec3f9cf4eede16785bd840b02ba930bdf5c3610f42b0a1a74e6ff16465bde5c9"
+        }
+      ]
+    },
+    {
+      "room": "LEDGE-2",
+      "selectedImage": "ledge-2/reference-v2.png",
+      "note": "Removed active lava and restored the original small closed door before the rubble-blocked state.",
+      "retainedRevisions": [
+        {
+          "image": "ledge-2/reference-v1.png",
+          "prompt": "ledge-2/reference-v1.prompt.txt",
+          "promptSha256": "60f626f6cd05e60db6281dd606efa957095fff32d2748e218de3e25eff547d66"
+        }
+      ]
+    },
+    {
+      "room": "TINY-ROOM",
+      "selectedImage": "tiny-room/reference-v2.png",
+      "note": "Removed invented climbing rope and closed the metal lid over the keyhole.",
+      "retainedRevisions": [
+        {
+          "image": "tiny-room/reference-v1.png",
+          "prompt": "tiny-room/reference-v1.prompt.txt",
+          "promptSha256": "1ef6b11172db3e8adbfa988a1a59f5054508cd66e30608a04dcc9c275cab774d"
+        }
+      ]
+    },
+    {
+      "room": "VAIR-1",
+      "selectedImage": "vair-1/reference-v2.png",
+      "note": "Replaced active lava with dormant cold basalt; kept suspended viewpoint and distant cone light.",
+      "retainedRevisions": [
+        {
+          "image": "vair-1/reference-v1.png",
+          "prompt": "vair-1/reference-v1.prompt.txt",
+          "promptSha256": "39f8fccf9c07453325bb0851c8cd78ec945e55df9635d18e71924c80448673cd"
+        }
+      ]
+    },
+    {
+      "room": "VAIR-2",
+      "selectedImage": "vair-2/reference-v2.png",
+      "note": "Replaced active lava with dormant basalt; retained western small ledge and airborne view.",
+      "retainedRevisions": [
+        {
+          "image": "vair-2/reference-v1.png",
+          "prompt": "vair-2/reference-v1.prompt.txt",
+          "promptSha256": "09e19c7452c722f8d90e967349ce9b0178bdb305d7390d19cb806cf3dc273dca"
+        }
+      ]
+    },
+    {
+      "room": "VAIR-3",
+      "selectedImage": "vair-3/reference-v2.png",
+      "note": "Replaced active lava with dormant basalt; removed foreground standing ledge, retained thin eastern viewing ledge.",
+      "retainedRevisions": [
+        {
+          "image": "vair-3/reference-v1.png",
+          "prompt": "vair-3/reference-v1.prompt.txt",
+          "promptSha256": "b81db20b3b1c55c4251cc5270c584d0094d8626a32601c57827bb85fbd7fdb8e"
+        }
+      ]
+    },
+    {
+      "room": "VAIR-4",
+      "selectedImage": "vair-4/reference-v2.png",
+      "note": "Replaced active lava with dormant basalt and removed foreground floor; retained western wide ledge and open sky.",
+      "retainedRevisions": [
+        {
+          "image": "vair-4/reference-v1.png",
+          "prompt": "vair-4/reference-v1.prompt.txt",
+          "promptSha256": "4833da3f009cae240d69a1255bd66a9e374a2a90f353480b4af3458103bfa7bd"
+        }
+      ]
+    },
+    {
+      "room": "VIEWING-WEST",
+      "selectedImage": "viewing-west/reference-v2.png",
+      "note": "Removed unobserved bank boxes, invented furnishings and extra visible doorway; retained northern source sign.",
+      "retainedRevisions": [
+        {
+          "image": "viewing-west/reference-v1.png",
+          "prompt": "viewing-west/reference-v1.prompt.txt",
+          "promptSha256": "ed06f5dc0eb839952f945f78edf550fbf40bbf165b67cc02d8747640f47bd00b"
+        }
+      ]
+    },
+    {
+      "room": "VOLCANO-VIEW",
+      "selectedImage": "volcano-view/reference-v2.png",
+      "note": "Replaced active lava and ash with cold basalt; preserved intermediate ledge, distant ledges and east exit.",
+      "retainedRevisions": [
+        {
+          "image": "volcano-view/reference-v1.png",
+          "prompt": "volcano-view/reference-v1.prompt.txt",
+          "promptSha256": "1e41cdc069ce80091b62ff6dd9d4706b02338a71fe09519aa4556e411aaaac3a"
+        }
+      ]
+    },
+    {
+      "room": "WIZARDS-QUARTERS",
+      "selectedImage": "wizards-quarters/reference-v2.png",
+      "note": "Added exact WIZQDESCS source table and selected its sparse, almost monkish variant rather than combining invented styles.",
+      "retainedRevisions": [
+        {
+          "image": "wizards-quarters/reference-v1.png",
+          "prompt": "wizards-quarters/reference-v1.prompt.txt",
+          "promptSha256": "bc860df38034ac8f0dde594e209611dd347d624dd825a191f159b322a975531c"
+        }
+      ]
+    },
+    {
+      "room": "WIZARDS-WORKSHOP",
+      "selectedImage": "wizards-workshop/reference-v2.png",
+      "note": "Removed invented treasure-like props and occult banner/diagram; retained incidental empty workshop furniture.",
+      "retainedRevisions": [
+        {
+          "image": "wizards-workshop/reference-v1.png",
+          "prompt": "wizards-workshop/reference-v1.prompt.txt",
+          "promptSha256": "b52fca5f82c1bc0cb93f450f5bc527199b28d15ce370e1923bc360d525d1c299"
+        }
+      ]
+    },
+    {
+      "room": "WORKBENCH-ROOM",
+      "selectedImage": "workbench-room/reference-v2.png",
+      "note": "Corrected the rear ruby-red stand to sapphire blue so the three stands are ruby, sapphire and diamond.",
+      "retainedRevisions": [
+        {
+          "image": "workbench-room/reference-v1.png",
+          "prompt": "workbench-room/reference-v1.prompt.txt",
+          "promptSha256": "7c651dbd071a0378972ec88942f59e4feaff2c16a9aeb9c0a18103658ef0379a"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Reference art is draft, not approval of runtime geometry or game-state integration.",
+    "One source-compatible state per logical room; dynamic descriptions and all puzzle outcomes are not exhaustively illustrated.",
+    "Approximate dimensions, exit composition and incidental decorative detail require reconciliation during 3D layout; runtime inscriptions must use authoritative engine text."
+  ]
+}

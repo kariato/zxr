@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "WIZARDS-WORKSHOP",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "a2e074b937cd96f986d2816b84dd82c5c7ccc4352a8758c97085eccb79bb5715",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-58f22edb-b997-4376-a589-0a1b036bb7f9.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "5b12dc1f70d1207d099125fb06488667144e95707d77807f18aacff0d15295f1",
+  "promptSha256": "b52fca5f82c1bc0cb93f450f5bc527199b28d15ce370e1923bc360d525d1c299",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

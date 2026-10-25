@@ -1,0 +1,36 @@
+{
+  "room": "DARK-TUNNEL",
+  "label": "Dark Tunnel",
+  "literalRoomDescription": [
+    "This is a dark tunnel with dim light to the northeast. The tunnel is smooth but dusty and filled with twigs and leaves, debris which becomes deeper as the tunnel branches into a wide corridor leading southwest and a narrower one leading southeast."
+  ],
+  "safeSceneProfile": "Smooth but dusty dark tunnel, with dim light toward the northeast when the engine permits vision. Twigs and leaves lie on the ground, becoming deeper toward the southwest wide corridor and southeast narrower branch. NE leads to Shallow Ford, SW to Stream Path and SE to Garden North. This source room has no ONBIT: loading its plan never reveals its shell, debris or branch silhouettes in darkness. Portable/source light selects the lit rig; the distant glow is descriptive only and must not become an independent lamp illuminating the room. Keep non-movement source interactions in the menu; decorative leaves are not new collectible objects.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NE",
+      "view": {
+        "kind": "UEXIT",
+        "to": "SHALLOW-FORD"
+      }
+    },
+    {
+      "direction": "SE",
+      "view": {
+        "kind": "UEXIT",
+        "to": "GARDEN-NORTH"
+      }
+    },
+    {
+      "direction": "SW",
+      "view": {
+        "kind": "UEXIT",
+        "to": "STREAM-PATH"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "8905de3f5662d797eaf1579a00a1b0a6cd3c26b0425968b96cd7ffabbe9eb66a"
+}

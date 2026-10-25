@@ -26,16 +26,13 @@ Current breakdown:
 5. Review in the actual scene and bind only to engine-observed state. Appearance, attempted actions and animation must not change gameplay or reveal concealed contents.
 6. Check source/model/output licences before promoting an asset into the shipped game. Keep large environments, checkpoints and restricted candidates under ignored `out/`.
 
-## Started batch
+## Reference batches
 
-The princess already has a local 9,960-triangle, 23-bone animated candidate and a lair audition. New built-in image-generation references and exact prompts have been saved for:
+The existing-reference conversion batch is complete: 88 object references, three barrow-piece references and two bridge reference versions have selected GLBs. All 93 passed structural checks and front/back/side Blender renders. The package also contains two audited barrow assemblies. See `out/asset-production/reference-verification/report.md` and `all-reference-glbs.zip` for the exact inventory and limitations. Chest and cage finishing exports are selected where they correct the generated geometry. This does not complete the full game catalogue or every character animation.
 
-- `production/asset_sword/reference-v1.png`
-- `production/asset_lamp/reference-v1.png` — unlit reference; engine state supplies light.
-- `production/asset_chest/reference-v1.png` — closed exterior; hinged lid/interior still require modeling.
-- `production/asset_robot/reference-v1.png` — neutral A-pose for a body rig.
+The user subsequently requested one built-in ImageGen image per logical room. The separate 86-room reference batch lives in `rooms/`, with a gallery, exact prompts, source context and image provenance. Room references are draft offline artwork; they have not been converted to GLBs or integrated into gameplay.
 
-Each directory contains `reference-v1.prompt.txt` and `reference-v1.json` with exact prompt/image hashes. Its generated `prompt.txt` is the full source/style production brief, distinct from the shorter prompt actually used for this first reference. Other production directories currently contain **briefs only**; their reference images and models do not yet exist.
+Object production directories retain `reference-v1.prompt.txt` and `reference-v1.json` with exact prompt/image hashes. Their generated `prompt.txt` files are full source/style production briefs, distinct from the exact prompts used for a given image revision.
 
 **Pipeline decision, 2026-10-24:** the user explicitly chose Hunyuan for a US-only prototype. Continue with that route; do not reopen this choice for each batch. `pipeline.json` records the decision. Its custom licence restrictions remain relevant to any later distribution change; this does not authorize worldwide publication. See [model research](../../../docs/image-to-3d-review.md) and the [princess experiment](characters/princess/README.md).
 

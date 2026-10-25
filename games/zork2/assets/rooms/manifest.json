@@ -1,0 +1,962 @@
+{
+  "format": "zxr-room-reference-batch-v1",
+  "mode": "built-in-imagegen",
+  "review": "draft",
+  "style": "games/zork2/planning/style-bible.md",
+  "total": 86,
+  "rooms": [
+    {
+      "identity": "AQUARIUM-ROOM",
+      "label": "Aquarium Room",
+      "image": "aquarium-room/reference-v1.png",
+      "prompt": "aquarium-room/reference-v1.prompt.txt",
+      "context": "aquarium-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "2d8f9f8df27e75f3d701068f55bca2b4d1e0cbf59707fbad3360e241f7d8785f",
+      "promptSha256": "1a39ddb6058003ef89d4282c8e4e4ff00c4db62e69973d574c02c9089ecaff2f"
+    },
+    {
+      "identity": "BANK-ENTRANCE",
+      "label": "Bank Entrance",
+      "image": "bank-entrance/reference-v1.png",
+      "prompt": "bank-entrance/reference-v1.prompt.txt",
+      "context": "bank-entrance/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "b13ce468ceeaeec728be02e8a52538ad3106146ca128875c4cc350820a2c4d2a",
+      "promptSha256": "df49609beda2d39b918492f2d69f6974720e7457fa21ab4e2a446dda85d1e2c5"
+    },
+    {
+      "identity": "CAGE-ROOM",
+      "label": "Dingy Closet",
+      "image": "cage-room/reference-v1.png",
+      "prompt": "cage-room/reference-v1.prompt.txt",
+      "context": "cage-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "94c1205a3dbe8e88db7482e2bd2ac996c90da61969b34d5c6fb4640bfb011933",
+      "promptSha256": "fb954f12889c70c53ac287436bf88be8d40d831513a6ab186a06f1996b501b05"
+    },
+    {
+      "identity": "CAROUSEL-ROOM",
+      "label": "Carousel Room",
+      "image": "carousel-room/reference-v1.png",
+      "prompt": "carousel-room/reference-v1.prompt.txt",
+      "context": "carousel-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "daab3c43d4689a27cc9591ed183f25e242a9e4bdccce75a423069929f0285043",
+      "promptSha256": "27d1087dcece627bf9575f6076e47906607a28b2ce988b0c8ea472ca6b65f535"
+    },
+    {
+      "identity": "CERBERUS-ROOM",
+      "label": "Cerberus Room",
+      "image": "cerberus-room/reference-v1.png",
+      "prompt": "cerberus-room/reference-v1.prompt.txt",
+      "context": "cerberus-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "d73ff5795ef737332f17776c348a20cf1681a68e47a11799555cb29d68e83f5b",
+      "promptSha256": "29bc38ad04ab66d2e7c96e746cb5bc925ec118d44f2f9f171bf3b3e348a8bb60"
+    },
+    {
+      "identity": "COBWEBBY-CORRIDOR",
+      "label": "Cobwebby Corridor",
+      "image": "cobwebby-corridor/reference-v1.png",
+      "prompt": "cobwebby-corridor/reference-v1.prompt.txt",
+      "context": "cobwebby-corridor/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "58fa992f738c502b0d12c348970509b74567fe5c60b959a3d170e72104356483",
+      "promptSha256": "742c4dda7f8d21ab1670e49f7d82028bfa4b275d39e6b63912ac8fc62b8147ec"
+    },
+    {
+      "identity": "COOL-ROOM",
+      "label": "Cool Room",
+      "image": "cool-room/reference-v1.png",
+      "prompt": "cool-room/reference-v1.prompt.txt",
+      "context": "cool-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "a012b34a60ae1841f380f1ca4bf17920d53e8936f1b5e484513733bc74b0a879",
+      "promptSha256": "c385ef55ebc44afc548798e08564461fdacb501bf452190cfdedc72e2134c64e"
+    },
+    {
+      "identity": "CRYPT-ANTEROOM",
+      "label": "Crypt Anteroom",
+      "image": "crypt-anteroom/reference-v1.png",
+      "prompt": "crypt-anteroom/reference-v1.prompt.txt",
+      "context": "crypt-anteroom/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "6ff023d1842a1c3d364e2cb37a5c98ed1f43f3ab9d4be7e0765a7aa7a83e81c8",
+      "promptSha256": "ad47ff59288db34c7899fd380269a6747046dfed16cce8006a28fdc75ea096b4"
+    },
+    {
+      "identity": "CRYPT-ROOM",
+      "label": "Crypt",
+      "image": "crypt-room/reference-v2.png",
+      "prompt": "crypt-room/reference-v2.prompt.txt",
+      "context": "crypt-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "eb243a4a78584e0f630ba29b9f15128191982ed9154e3e267ca0713774461a6a",
+      "promptSha256": "7fe2876f655cf4b7cf5948fb7df1bc1a59057748188ccfff87bb166122995514",
+      "previousRevisions": [
+        {
+          "image": "crypt-room/reference-v1.png",
+          "prompt": "crypt-room/reference-v1.prompt.txt",
+          "promptSha256": "f160128bf0b4dabbc3d392274b4a611c37178ff06ff259e88d5c55a20ef88f76"
+        }
+      ]
+    },
+    {
+      "identity": "DARK-TUNNEL",
+      "label": "Dark Tunnel",
+      "image": "dark-tunnel/reference-v1.png",
+      "prompt": "dark-tunnel/reference-v1.prompt.txt",
+      "context": "dark-tunnel/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "8905de3f5662d797eaf1579a00a1b0a6cd3c26b0425968b96cd7ffabbe9eb66a",
+      "promptSha256": "bd68b21d147646278d502fd018dfe676de5a8a47fbd70eef85714754c4f222ad"
+    },
+    {
+      "identity": "DEAD-PALANTIR-1",
+      "label": "Room of Red Mist",
+      "image": "dead-palantir-1/reference-v1.png",
+      "prompt": "dead-palantir-1/reference-v1.prompt.txt",
+      "context": "dead-palantir-1/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "ebb7d127e350c2caea22a31f44ab9e3ac7f90fec16f5671ab36c956719efc2bf",
+      "promptSha256": "85ee2db4698fa8dad0dd20e822f3f66b4d70cbad119453ed95ee827121690e32"
+    },
+    {
+      "identity": "DEAD-PALANTIR-2",
+      "label": "Room of Blue Mist",
+      "image": "dead-palantir-2/reference-v1.png",
+      "prompt": "dead-palantir-2/reference-v1.prompt.txt",
+      "context": "dead-palantir-2/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "593a300399fdc1a0a6c7988c1404c94c802fec8b2aaf7bbb9d10bee677956056",
+      "promptSha256": "06fb8a8ab080ab9cfa81d94c99f8367cc63169be3e381e5fc69cb62641e839c4"
+    },
+    {
+      "identity": "DEAD-PALANTIR-3",
+      "label": "Room of White Mist",
+      "image": "dead-palantir-3/reference-v1.png",
+      "prompt": "dead-palantir-3/reference-v1.prompt.txt",
+      "context": "dead-palantir-3/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "e6301b0a46410835e383838f9f992e1afabf6918df720e35c348404368098de2",
+      "promptSha256": "8c30a6654b861dc3f6a16722c1bb31db34c494eb721befef4a70a76368bd09df"
+    },
+    {
+      "identity": "DEAD-PALANTIR-4",
+      "label": "Room of Black Mist",
+      "image": "dead-palantir-4/reference-v1.png",
+      "prompt": "dead-palantir-4/reference-v1.prompt.txt",
+      "context": "dead-palantir-4/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "a2c9a4134b2c0aafd89884138762fbf6282159e7a7bf713788d96d9e195c94d0",
+      "promptSha256": "602e82b9e56bdf4400b8a9f91469bcbab506d300a270e808c8fb6e441095e42a"
+    },
+    {
+      "identity": "DEEP-FORD",
+      "label": "Deep Ford",
+      "image": "deep-ford/reference-v1.png",
+      "prompt": "deep-ford/reference-v1.prompt.txt",
+      "context": "deep-ford/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "6eebcfb7944c118bdc83e8af7ba89862e56dd0e8a064b45abe7c100c7dfafeb8",
+      "promptSha256": "cd916bdcc72bc17e94f9e45829268c062ac2102947a12d5c43e2f55841bb8225"
+    },
+    {
+      "identity": "DEPOSITORY",
+      "label": "Safety Depository",
+      "image": "depository/reference-v1.png",
+      "prompt": "depository/reference-v1.prompt.txt",
+      "context": "depository/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "6b0563c2025653dbec9a32daf06c31697c2120e91c68c4b8907b4f80f7f0585b",
+      "promptSha256": "e098b4c7a43380d04c9f84a1903f64c14403ca31576faf8a9a567fc3a05d2803"
+    },
+    {
+      "identity": "DIAMOND-1",
+      "label": "Oddly-angled Room",
+      "image": "diamond-1/reference-v1.png",
+      "prompt": "diamond-1/reference-v1.prompt.txt",
+      "context": "diamond-1/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "21f329a413f08ece5f7d53fe65729af91f13bb4b042aee640e2cb1dd1b1b3e7c",
+      "promptSha256": "b9276df29beb2abfd933a783f66675c2a86c6a8b38214cee06023a25634ca353"
+    },
+    {
+      "identity": "DIAMOND-2",
+      "label": "Oddly-angled Room",
+      "image": "diamond-2/reference-v1.png",
+      "prompt": "diamond-2/reference-v1.prompt.txt",
+      "context": "diamond-2/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "325234cf02e5b9143e2cfebbf18d81944736ff8a0695ca521b8e612efbd94147",
+      "promptSha256": "0e932bf6bec93c1bd0ada05cfbc1e30b360d4fe3ead368013897820c083e1e35"
+    },
+    {
+      "identity": "DIAMOND-3",
+      "label": "Oddly-angled Room",
+      "image": "diamond-3/reference-v1.png",
+      "prompt": "diamond-3/reference-v1.prompt.txt",
+      "context": "diamond-3/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "bcc06a0bbf13f2b0ed9bfa407f74a29bbc11c3911638da2c0e0158df86b9279c",
+      "promptSha256": "7a56080eaf889bf06f9a1da7d855982dd0a89a22078e0874f61b9ef82311f826"
+    },
+    {
+      "identity": "DIAMOND-4",
+      "label": "Oddly-angled Room",
+      "image": "diamond-4/reference-v1.png",
+      "prompt": "diamond-4/reference-v1.prompt.txt",
+      "context": "diamond-4/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "4c23af40923a657e0c1b4538ef0891a35f80536a25ad98b613f094ab417db5d5",
+      "promptSha256": "d57e5713cf13aeac628fb3a2715c37e47ded91d466b6e16b7568e4ab6c79662f"
+    },
+    {
+      "identity": "DIAMOND-5",
+      "label": "Oddly-angled Room",
+      "image": "diamond-5/reference-v1.png",
+      "prompt": "diamond-5/reference-v1.prompt.txt",
+      "context": "diamond-5/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "eb104baefbb9d3460b2026bcbce71dfa810cc8c0b3bebe227780a1c5768bed07",
+      "promptSha256": "ec17a3ae28f25cccc125a1990e36be7fa0fa978266f81ee0997ccfa5de51b960"
+    },
+    {
+      "identity": "DIAMOND-6",
+      "label": "Oddly-angled Room",
+      "image": "diamond-6/reference-v1.png",
+      "prompt": "diamond-6/reference-v1.prompt.txt",
+      "context": "diamond-6/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "4104a81d6b4d0e7662df91de4a425483f1b1787169eceacaa8111398eeca8716",
+      "promptSha256": "69fc700791dd57708c280ad9d24755bef6ed4e4bba9c494361d8f13e24e41147"
+    },
+    {
+      "identity": "DIAMOND-7",
+      "label": "Oddly-angled Room",
+      "image": "diamond-7/reference-v1.png",
+      "prompt": "diamond-7/reference-v1.prompt.txt",
+      "context": "diamond-7/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "4365643bbaff6f8e547ca315a192bfe8358f8a5981d72d1fdd6e3ffaf4f3d818",
+      "promptSha256": "2ae8168f36ddb49e71998f18e57a229b28bb32560e882eee6a522c7a47c665b9"
+    },
+    {
+      "identity": "DIAMOND-8",
+      "label": "Oddly-angled Room",
+      "image": "diamond-8/reference-v1.png",
+      "prompt": "diamond-8/reference-v1.prompt.txt",
+      "context": "diamond-8/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "c4e0624d0075bc852cc8ba93a276d4ac679142ef1026234c0b036e66cafdb82b",
+      "promptSha256": "e2849eeb579c0f6bda0af59188e97e0de5d58dc1f7fb4d00cb7308881e8d7492"
+    },
+    {
+      "identity": "DIAMOND-9",
+      "label": "Oddly-angled Room",
+      "image": "diamond-9/reference-v1.png",
+      "prompt": "diamond-9/reference-v1.prompt.txt",
+      "context": "diamond-9/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "ce7aa013d2ea2b3e418d6bdabc5742ba324c2f7eefdfce9cf00478c416a9249f",
+      "promptSha256": "592794bf8cc241f5435bea2922d073c65a547681bcf9f1d33a748a8d62753750"
+    },
+    {
+      "identity": "DRAGON-LAIR",
+      "label": "Dragon's Lair",
+      "image": "dragon-lair/reference-v1.png",
+      "prompt": "dragon-lair/reference-v1.prompt.txt",
+      "context": "dragon-lair/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "f00234d0d5e62fe776720beb8dbd849f44abd5ed4eeb8907a3b2ccb7a0561cc8",
+      "promptSha256": "28ab5054ad050e46794313176b3617fb073bd94f001c7e202bc407b3539eb037"
+    },
+    {
+      "identity": "DRAGON-ROOM",
+      "label": "Dragon Room",
+      "image": "dragon-room/reference-v1.png",
+      "prompt": "dragon-room/reference-v1.prompt.txt",
+      "context": "dragon-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "f81db6dfce930c5c36739642007116797825b95d0d88f9d97330477f048a3d0c",
+      "promptSha256": "ee97baf0639dbc54e28959c73f3d5866ae49fd65d45eac80325802d52262b51c"
+    },
+    {
+      "identity": "DREARY-ROOM",
+      "label": "Dreary Room",
+      "image": "dreary-room/reference-v1.png",
+      "prompt": "dreary-room/reference-v1.prompt.txt",
+      "context": "dreary-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "b22d91bbe9482c76b313c7817292937750a0afcf964551a9b4817905d438c14c",
+      "promptSha256": "43a8c8f131dfb64ffcd7a52baa8556ab87d7b78a8e9d338248e0351bebf81656"
+    },
+    {
+      "identity": "FOOT-BRIDGE",
+      "label": "Foot Bridge",
+      "image": "foot-bridge/reference-v1.png",
+      "prompt": "foot-bridge/reference-v1.prompt.txt",
+      "context": "foot-bridge/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "4cab585047bc956e15bd80540ae13e0f8310023ed8e5b0c942ad87913ee107d4",
+      "promptSha256": "b4f0b9754d0ed1ff982c86b3d1133c8eb8004b9ddb7cb66c93a1d9a3603d7e51"
+    },
+    {
+      "identity": "FORMAL-GARDEN",
+      "label": "Formal Garden",
+      "image": "formal-garden/reference-v1.png",
+      "prompt": "formal-garden/reference-v1.prompt.txt",
+      "context": "formal-garden/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "f4e6e8b4a5e29a0dc5573ccd58f35506d275f7cd58dac08e0e33740c809d1f2a",
+      "promptSha256": "552d0fe31233e56e1508dce3790805d6e7c00bc96e7887b86af3cd504537d5c6"
+    },
+    {
+      "identity": "FRESCO-ROOM",
+      "label": "Fresco Room",
+      "image": "fresco-room/reference-v1.png",
+      "prompt": "fresco-room/reference-v1.prompt.txt",
+      "context": "fresco-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "8f2e4be6950f853a754a5f5f3383a191d6fab7a77244d87f17b31e73c08b4f63",
+      "promptSha256": "2db622fd9e9a0fdca79903649640663038a2c56872a5c00a7ebf6e782b884381"
+    },
+    {
+      "identity": "GARDEN-NORTH",
+      "label": "North End of Garden",
+      "image": "garden-north/reference-v1.png",
+      "prompt": "garden-north/reference-v1.prompt.txt",
+      "context": "garden-north/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "69ad56385f5c87a8b5188b594de6e9e3b676b6663da4ec0efc42bcc10f2201eb",
+      "promptSha256": "a430ab4bbfc87b728d91ba33dc1c45e692af244a95c99217b53a7f16cc6b242b"
+    },
+    {
+      "identity": "GAZEBO-ROOM",
+      "label": "Gazebo",
+      "image": "gazebo-room/reference-v1.png",
+      "prompt": "gazebo-room/reference-v1.prompt.txt",
+      "context": "gazebo-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "a4f70a84197a3698a0c4afc2efbd16c786b79700780f0abcd06efb3bc7f0c405",
+      "promptSha256": "4db67810b672a8c0407471274608ac521860743625a2eeecfe5479118af498fd"
+    },
+    {
+      "identity": "GLACIER-ROOM",
+      "label": "Ice Room",
+      "image": "glacier-room/reference-v1.png",
+      "prompt": "glacier-room/reference-v1.prompt.txt",
+      "context": "glacier-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "42ada7f163e14c27efb096d66d9d8db5152538cf072dd19cbf2fa18e4e655a74",
+      "promptSha256": "d89a2983f79f0e1fe618eb1b2de4e61541d867a0912f973590ac920038210a35"
+    },
+    {
+      "identity": "GREAT-CAVERN",
+      "label": "Great Cavern",
+      "image": "great-cavern/reference-v1.png",
+      "prompt": "great-cavern/reference-v1.prompt.txt",
+      "context": "great-cavern/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "c9749b6c68d4525e5b8b9b39f87c814a24a0babbe90770394fe918524f35bc04",
+      "promptSha256": "d7cc02d7acda2edb42b650887a64accc780349bfedfb04e152ce7338ceeb0455"
+    },
+    {
+      "identity": "GUARDIAN-ROOM",
+      "label": "Guarded Room",
+      "image": "guardian-room/reference-v1.png",
+      "prompt": "guardian-room/reference-v1.prompt.txt",
+      "context": "guardian-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "5297aa4bb027fc3a51aa323399062736c401519630aac10d65bb5f6db231d33d",
+      "promptSha256": "3f571e82f29a7c41b9aefd72b26456f5f1c834f5042fa1e298ce9598173e45f9"
+    },
+    {
+      "identity": "IN-AQUARIUM",
+      "label": "Murky Room",
+      "image": "in-aquarium/reference-v1.png",
+      "prompt": "in-aquarium/reference-v1.prompt.txt",
+      "context": "in-aquarium/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "90af3d388ad5ec2ae97f7b94bdaa8b53d5dc8e0479925eafcb5e2c9ce8d1c4e4",
+      "promptSha256": "41d9c6c15d7562a21d75d9b84b6580f8fb952789a34942906faaf44589d5c33a"
+    },
+    {
+      "identity": "IN-CAGE",
+      "label": "Cage",
+      "image": "in-cage/reference-v1.png",
+      "prompt": "in-cage/reference-v1.prompt.txt",
+      "context": "in-cage/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "5ed3c93f885431924fb671262e9f634d848826b9121c2cb0a968004c49789c54",
+      "promptSha256": "6d711b4f4ab8bdeda8aef4cbdce77020f8186ee1770fb5888a8a904e8503c09e"
+    },
+    {
+      "identity": "INSIDE-BARROW",
+      "label": "Inside the Barrow",
+      "image": "inside-barrow/reference-v1.png",
+      "prompt": "inside-barrow/reference-v1.prompt.txt",
+      "context": "inside-barrow/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "4be78d1e7eb98121799f54f058619f7b994de3ad03cbb76442db4161c34660b8",
+      "promptSha256": "1607b7e1934e31f6d8ecc740ca35d7ec529a6512e419559651beedd43d10e0a9"
+    },
+    {
+      "identity": "KENNEL",
+      "label": "Kennel",
+      "image": "kennel/reference-v1.png",
+      "prompt": "kennel/reference-v1.prompt.txt",
+      "context": "kennel/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "43b68ef7050d21b66cd069139367974631807438deea4830eebfc75112df827f",
+      "promptSha256": "07bfe0c720dea9a7273f7cd65248436d4bf4502ca718659a111850babd7e6d29"
+    },
+    {
+      "identity": "LAVA-ROOM",
+      "label": "Lava Room",
+      "image": "lava-room/reference-v1.png",
+      "prompt": "lava-room/reference-v1.prompt.txt",
+      "context": "lava-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "f9901125613770b07da1a31f096373179b32ac9ed9003e3be98b8cb5ec395d47",
+      "promptSha256": "f18c30e66d18a557af63df678d796b5caba73db4f0dc9e3472af44b0d1610fb6"
+    },
+    {
+      "identity": "LAVA-TUBE",
+      "label": "Lava Tube",
+      "image": "lava-tube/reference-v1.png",
+      "prompt": "lava-tube/reference-v1.prompt.txt",
+      "context": "lava-tube/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "0c4053c01bd07b0b49d5fd75b0d43a0d4f0a3e6b0f0ed5c07b9b7b4e9b44e694",
+      "promptSha256": "4ac2581a18ae02f36d03261e22e9c886debc6540394e9e80e186a74fde15f0ed"
+    },
+    {
+      "identity": "LEDGE-1",
+      "label": "Narrow Ledge",
+      "image": "ledge-1/reference-v2.png",
+      "prompt": "ledge-1/reference-v2.prompt.txt",
+      "context": "ledge-1/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "96b71999a505d537b56c690334cfb66aabfcad2afb964560b213c310423fb4d5",
+      "promptSha256": "a93cd3dee1ff6730154bc30b164cca15470ea1e11332d41839bf7c72e59123d8",
+      "previousRevisions": [
+        {
+          "image": "ledge-1/reference-v1.png",
+          "prompt": "ledge-1/reference-v1.prompt.txt",
+          "promptSha256": "ec3f9cf4eede16785bd840b02ba930bdf5c3610f42b0a1a74e6ff16465bde5c9"
+        }
+      ]
+    },
+    {
+      "identity": "LEDGE-2",
+      "label": "Wide Ledge",
+      "image": "ledge-2/reference-v2.png",
+      "prompt": "ledge-2/reference-v2.prompt.txt",
+      "context": "ledge-2/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "29f675ad254f0c00ea73033800dd5a7133da878d75c1a923713ef21270947392",
+      "promptSha256": "14fa8fbcd54ecf9116eb8f00f4402bb2bd6f674e6f1e145d146a77348a578f2b",
+      "previousRevisions": [
+        {
+          "image": "ledge-2/reference-v1.png",
+          "prompt": "ledge-2/reference-v1.prompt.txt",
+          "promptSha256": "60f626f6cd05e60db6281dd606efa957095fff32d2748e218de3e25eff547d66"
+        }
+      ]
+    },
+    {
+      "identity": "LEDGE-TUNNEL",
+      "label": "End of Ledge",
+      "image": "ledge-tunnel/reference-v1.png",
+      "prompt": "ledge-tunnel/reference-v1.prompt.txt",
+      "context": "ledge-tunnel/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "9070c2ac2aa07d4b9bd0d11ebf6929b3977e251806d1758cb51be30ccb853bb0",
+      "promptSha256": "6e9d64c451a33ea0dae32fcd01d05a01fd30d0fe378dae23dfb6afc7ffa8f917"
+    },
+    {
+      "identity": "LIBRARY",
+      "label": "Library",
+      "image": "library/reference-v1.png",
+      "prompt": "library/reference-v1.prompt.txt",
+      "context": "library/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "0530b9244aaa1d8059cdbd6dd4d286235c362734306dc285cc21cc586312a3e5",
+      "promptSha256": "3de60162725514f16de33edd0ed795d9ee557b084da9628ce822037a6cbc7ceb"
+    },
+    {
+      "identity": "MACHINE-ROOM",
+      "label": "Machine Room",
+      "image": "machine-room/reference-v1.png",
+      "prompt": "machine-room/reference-v1.prompt.txt",
+      "context": "machine-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "52d5ef5028f8b6bacaecbfe1da649abd2632b3ced9f5fa7306fb4d422e482f81",
+      "promptSha256": "062c8e2b601700ad9a98c87628e91174366933b6837e1d44b159b2de85c41ad8"
+    },
+    {
+      "identity": "MAGNET-ROOM",
+      "label": "Low Room",
+      "image": "magnet-room/reference-v1.png",
+      "prompt": "magnet-room/reference-v1.prompt.txt",
+      "context": "magnet-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "1e8882b9e3c45be722893f1e4aceb86eb045f3e3db3e1f45241fa10b3c02fd1f",
+      "promptSha256": "023434edf246923b4c8cef4ef8049d76daa236162d00ba03e584a5f38ca2596b"
+    },
+    {
+      "identity": "MARBLE-HALL",
+      "label": "Marble Hall",
+      "image": "marble-hall/reference-v1.png",
+      "prompt": "marble-hall/reference-v1.prompt.txt",
+      "context": "marble-hall/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "5835f032c37915e5acc3151d7b55c3bee09b3d45dafcdb91f420d34ae90bdc08",
+      "promptSha256": "14d30245898679e20cbd33471e7be027e482af8ecde053495e66849966e0f719"
+    },
+    {
+      "identity": "MENHIR-ROOM",
+      "label": "Menhir Room",
+      "image": "menhir-room/reference-v1.png",
+      "prompt": "menhir-room/reference-v1.prompt.txt",
+      "context": "menhir-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "f627038f32fce48e434b92eeb37b6e57c1d67f90133a716b3c3664f8041e7478",
+      "promptSha256": "4e1c51986b50e4b650e596f96812005b3fdbd9d79508cdeba8a062cc1b8c2420"
+    },
+    {
+      "identity": "NARROW-TUNNEL",
+      "label": "Narrow Tunnel",
+      "image": "narrow-tunnel/reference-v1.png",
+      "prompt": "narrow-tunnel/reference-v1.prompt.txt",
+      "context": "narrow-tunnel/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "30b6c3a0e94e1239d4e959957542e97dbd7dc4b4a1e39b9d74cf8111aa68ff6f",
+      "promptSha256": "2b86360ad77f5e4c985a16a12873e1eb6123a68716c63a97401b4d40538f5a5a"
+    },
+    {
+      "identity": "OFFICE",
+      "label": "Chairman's Office",
+      "image": "office/reference-v1.png",
+      "prompt": "office/reference-v1.prompt.txt",
+      "context": "office/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "3c1ae14bd632472ca699d0f148397e4fda296a41444cf8ac7ab8a6549ab5227b",
+      "promptSha256": "d1e7ec1a5b86818ba3908a9cde6f390c8a74a8288b716775cd0cd5a916edd8d8"
+    },
+    {
+      "identity": "PEARL-ROOM",
+      "label": "Pearl Room",
+      "image": "pearl-room/reference-v1.png",
+      "prompt": "pearl-room/reference-v1.prompt.txt",
+      "context": "pearl-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "9419b45e112b1a90590488ab65a89c1f7e84ff9ed39ac7a6b7e7d07b2e447934",
+      "promptSha256": "8c8e27398b8b852536c7e721a4632c43ae560e17108cc96f4ec0302811bb90fc"
+    },
+    {
+      "identity": "PENTAGRAM-ROOM",
+      "label": "Pentagram Room",
+      "image": "pentagram-room/reference-v1.png",
+      "prompt": "pentagram-room/reference-v1.prompt.txt",
+      "context": "pentagram-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "91632a059c728f7cf1a8a99c2050dc6f22a64064d241dd39f276f1bb22978e10",
+      "promptSha256": "c1d6f02adc58f7225c98bab327cad265fad717aee9e7bec2d0d23695b9e5199e"
+    },
+    {
+      "identity": "POOL-ROOM",
+      "label": "Pool Room",
+      "image": "pool-room/reference-v1.png",
+      "prompt": "pool-room/reference-v1.prompt.txt",
+      "context": "pool-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "fae40c5843ee40434d57e7ed287ad1aca87426ea87e4662e0c964dc6e912921f",
+      "promptSha256": "ab9d1cb52f7a6f75ae8fd06d10f142676ff769d788766281c77ce4a403fef8aa"
+    },
+    {
+      "identity": "POSTS-ROOM",
+      "label": "Posts Room",
+      "image": "posts-room/reference-v1.png",
+      "prompt": "posts-room/reference-v1.prompt.txt",
+      "context": "posts-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "e5ba0fc3fee2738437d03ca6039debe180078e5302ff6aeada101fd2e99e74f8",
+      "promptSha256": "d9fb505db2317a1d3299d03a784067e418c861c5660dca0315c578f9346727c1"
+    },
+    {
+      "identity": "RAVINE-LEDGE",
+      "label": "Ledge in Ravine",
+      "image": "ravine-ledge/reference-v1.png",
+      "prompt": "ravine-ledge/reference-v1.prompt.txt",
+      "context": "ravine-ledge/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "5921a6725a14d9262e21612f52568ef802e6d0690578afee2839a18763bc9da4",
+      "promptSha256": "7c3b901900b5875fe43bc1460b456689d480f08cf2dc99f6b984e2bd0d711645"
+    },
+    {
+      "identity": "RIDDLE-ROOM",
+      "label": "Riddle Room",
+      "image": "riddle-room/reference-v1.png",
+      "prompt": "riddle-room/reference-v1.prompt.txt",
+      "context": "riddle-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "f0fc9c24bdf2e96a247961ace5133f25af17453173a4df3e10e6d7ce9c4666c2",
+      "promptSha256": "9bc0f5539fb4e78fe1a15dca262625c5d3ea9fd2ab2711561eb85ffe65b3b91d"
+    },
+    {
+      "identity": "ROOM-8",
+      "label": "Room 8",
+      "image": "room-8/reference-v1.png",
+      "prompt": "room-8/reference-v1.prompt.txt",
+      "context": "room-8/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "f4005ea2ec9730caca0135592bb460dbb7350bb5a665567cb9ef599b64d49742",
+      "promptSha256": "51246e58248be7a6c046d0c819ab9737702d3db4238507adfb34e4d23fdcb2ef"
+    },
+    {
+      "identity": "SAFE-ROOM",
+      "label": "Dusty Room",
+      "image": "safe-room/reference-v1.png",
+      "prompt": "safe-room/reference-v1.prompt.txt",
+      "context": "safe-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "e446a22732dbee01c167136d2aa3807ce8acf22782412e1457eb20fc66f4668f",
+      "promptSha256": "0a87a65c4ab3464f4878d5b23e0747052e09e28f8efd5f82d5b42529d6d0f42c"
+    },
+    {
+      "identity": "SHALLOW-FORD",
+      "label": "Shallow Ford",
+      "image": "shallow-ford/reference-v1.png",
+      "prompt": "shallow-ford/reference-v1.prompt.txt",
+      "context": "shallow-ford/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "eb62f4c3371db53b0ad253f8ad2fcebdeaee1e1c14b2c757b8d9edfe27ad065d",
+      "promptSha256": "484463385c2aac1bf8ea57fb8bda4a353059c4722c1678eee2ebc5238a722c50"
+    },
+    {
+      "identity": "SMALL-ROOM",
+      "label": "Small Room",
+      "image": "small-room/reference-v1.png",
+      "prompt": "small-room/reference-v1.prompt.txt",
+      "context": "small-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "74eb7e52c599045eb9dff8ed9fda7dd87989fc14d8c991a03b159db9a642c08d",
+      "promptSha256": "cad1e484a00165e8e342abcba11ef256417619deb928458b26b5e48a60033c4f"
+    },
+    {
+      "identity": "STAIRWAY-TOP",
+      "label": "Stairway",
+      "image": "stairway-top/reference-v1.png",
+      "prompt": "stairway-top/reference-v1.prompt.txt",
+      "context": "stairway-top/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "e758afe2d5135ef9f9d7c0166819eedac7e30e1b41421b6c5143f6e9a19b70ad",
+      "promptSha256": "10292345dfb598803018d92b1431eed58091f85ecb866931ba24d8e953c24389"
+    },
+    {
+      "identity": "STONE-BRIDGE",
+      "label": "Stone Bridge",
+      "image": "stone-bridge/reference-v1.png",
+      "prompt": "stone-bridge/reference-v1.prompt.txt",
+      "context": "stone-bridge/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "2b572ec1821b542a8edb3360cd27ad56789a0c9753a7718b240c5a5f98a4a23b",
+      "promptSha256": "90104a94b052c7ff2cc25ac836d189723ef0b7dd3c05e3ce4f149d29081d2771"
+    },
+    {
+      "identity": "STREAM-PATH",
+      "label": "Path Near Stream",
+      "image": "stream-path/reference-v1.png",
+      "prompt": "stream-path/reference-v1.prompt.txt",
+      "context": "stream-path/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "f6d9bd6fc12258129690ee20807b2fd0287e21059f0d784dd2d7e985ce820260",
+      "promptSha256": "1404134c930943709b877bc31114bd42b60054c6c5d8a464029cab51614ef289"
+    },
+    {
+      "identity": "TEA-ROOM",
+      "label": "Tea Room",
+      "image": "tea-room/reference-v1.png",
+      "prompt": "tea-room/reference-v1.prompt.txt",
+      "context": "tea-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "aa31bd47383014064516d0865734becac01492ab20a582f821b4ff74930ebfc9",
+      "promptSha256": "b102db423ccb9dd04afe1ede25aa837768e24a4f9d91d43e17f1bdbc4f4ca5c2"
+    },
+    {
+      "identity": "TELLER-EAST",
+      "label": "East Teller's Room",
+      "image": "teller-east/reference-v1.png",
+      "prompt": "teller-east/reference-v1.prompt.txt",
+      "context": "teller-east/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "17ad49c011b2100cdbf93f3fe906dc00f0183242db216466625042088c61e7f6",
+      "promptSha256": "1353e673ddde15a14ed3377cc4c105fa64b46c7d2911be26b2a3b871d9d603a5"
+    },
+    {
+      "identity": "TELLER-WEST",
+      "label": "West Teller's Room",
+      "image": "teller-west/reference-v1.png",
+      "prompt": "teller-west/reference-v1.prompt.txt",
+      "context": "teller-west/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "521eac258704769d6985892afe857e0a6bd0c4c765b71afaadb385117b95c7d2",
+      "promptSha256": "c5970a33b5c18ace57d4fc5c9dcd5cad21c912b06fa194f075ec7f4b35d9d3e2"
+    },
+    {
+      "identity": "TINY-ROOM",
+      "label": "Tiny Room",
+      "image": "tiny-room/reference-v2.png",
+      "prompt": "tiny-room/reference-v2.prompt.txt",
+      "context": "tiny-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "81d93c25973942de66de3cab105bdc5a6d697c02853ce2dcbfe90335e754f0f3",
+      "promptSha256": "e343497e47707e35430529a0dbedb902b079ea952a2c40bb88f8cd502b9017fb",
+      "previousRevisions": [
+        {
+          "image": "tiny-room/reference-v1.png",
+          "prompt": "tiny-room/reference-v1.prompt.txt",
+          "promptSha256": "1ef6b11172db3e8adbfa988a1a59f5054508cd66e30608a04dcc9c275cab774d"
+        }
+      ]
+    },
+    {
+      "identity": "TOPIARY-ROOM",
+      "label": "Topiary",
+      "image": "topiary-room/reference-v1.png",
+      "prompt": "topiary-room/reference-v1.prompt.txt",
+      "context": "topiary-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "b4c680e7e2e1fe118e21d1a060bb2171e72a0d1982705b59dc40211022074651",
+      "promptSha256": "b4daeb3d9a2fb62d63f45633f4061d8d7e9132b5ed04cc1c7fb8c30ecce3d990"
+    },
+    {
+      "identity": "TROPHY-ROOM",
+      "label": "Trophy Room",
+      "image": "trophy-room/reference-v1.png",
+      "prompt": "trophy-room/reference-v1.prompt.txt",
+      "context": "trophy-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "61da60450afbf3cffbd1ef21206664fce208b3246b05d060f2e2020c354b9e93",
+      "promptSha256": "693b9fb8ecb0c51724efbff1134dde92e7e1c1c6c4989f81e16ff44ef94e3f3c"
+    },
+    {
+      "identity": "VAIR-1",
+      "label": "Volcano Core",
+      "image": "vair-1/reference-v2.png",
+      "prompt": "vair-1/reference-v2.prompt.txt",
+      "context": "vair-1/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "c7a386188cd6085e32fe6d78d7f74da66801bd768588381a6d947ab7e2c6ed10",
+      "promptSha256": "20601c909f0b1b5c0fb1279218d9e22f7da750e06682b9d1bd373c275a3f57dd",
+      "previousRevisions": [
+        {
+          "image": "vair-1/reference-v1.png",
+          "prompt": "vair-1/reference-v1.prompt.txt",
+          "promptSha256": "39f8fccf9c07453325bb0851c8cd78ec945e55df9635d18e71924c80448673cd"
+        }
+      ]
+    },
+    {
+      "identity": "VAIR-2",
+      "label": "Volcano Near Small Ledge",
+      "image": "vair-2/reference-v2.png",
+      "prompt": "vair-2/reference-v2.prompt.txt",
+      "context": "vair-2/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "b1574631dbf0dca61bbc5dfa709ec20e212e37cdabda7624d11bde5243dbef24",
+      "promptSha256": "2f03ca6531bb26f50c770298eee31688c17a2d078e2ae459991404282eb6b242",
+      "previousRevisions": [
+        {
+          "image": "vair-2/reference-v1.png",
+          "prompt": "vair-2/reference-v1.prompt.txt",
+          "promptSha256": "09e19c7452c722f8d90e967349ce9b0178bdb305d7390d19cb806cf3dc273dca"
+        }
+      ]
+    },
+    {
+      "identity": "VAIR-3",
+      "label": "Volcano by Viewing Ledge",
+      "image": "vair-3/reference-v2.png",
+      "prompt": "vair-3/reference-v2.prompt.txt",
+      "context": "vair-3/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "7af89a477d427aa896a107bf57002f710b73edf1465e12b88984d55bdfc61dcf",
+      "promptSha256": "d6e437ad8ec9366e27bd9916ccca8f78862e40e1cd16ef49948421ec25e7438c",
+      "previousRevisions": [
+        {
+          "image": "vair-3/reference-v1.png",
+          "prompt": "vair-3/reference-v1.prompt.txt",
+          "promptSha256": "b81db20b3b1c55c4251cc5270c584d0094d8626a32601c57827bb85fbd7fdb8e"
+        }
+      ]
+    },
+    {
+      "identity": "VAIR-4",
+      "label": "Volcano Near Wide Ledge",
+      "image": "vair-4/reference-v2.png",
+      "prompt": "vair-4/reference-v2.prompt.txt",
+      "context": "vair-4/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "ec06474308b3da1140c8f4065f3f11499e570bfcb22d5cf91e90ad251e712acd",
+      "promptSha256": "27fb7f02c136386baa161a6c1f0e63f9bde86a7aaeef6b525bea622436dcc392",
+      "previousRevisions": [
+        {
+          "image": "vair-4/reference-v1.png",
+          "prompt": "vair-4/reference-v1.prompt.txt",
+          "promptSha256": "4833da3f009cae240d69a1255bd66a9e374a2a90f353480b4af3458103bfa7bd"
+        }
+      ]
+    },
+    {
+      "identity": "VAULT",
+      "label": "Vault",
+      "image": "vault/reference-v1.png",
+      "prompt": "vault/reference-v1.prompt.txt",
+      "context": "vault/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "a4d3cd0599cf40862ad44f6053c020cca0b547f844e85d85906e1fcc21dcfbd9",
+      "promptSha256": "60adf3485ed693406e57216349595bfd40171ddea1ff66bae7f0b9adca66f0b0"
+    },
+    {
+      "identity": "VIEWING-EAST",
+      "label": "East Viewing Room",
+      "image": "viewing-east/reference-v1.png",
+      "prompt": "viewing-east/reference-v1.prompt.txt",
+      "context": "viewing-east/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "302c35d3ce661ed202b1d4bae14510b0f7e9afca48bb99b4f27f81094acff21c",
+      "promptSha256": "32b0673de44d1583a89e467f9bdfcbdcf1bb352c12c6933547d7cf8e3afc7abe"
+    },
+    {
+      "identity": "VIEWING-WEST",
+      "label": "West Viewing Room",
+      "image": "viewing-west/reference-v2.png",
+      "prompt": "viewing-west/reference-v2.prompt.txt",
+      "context": "viewing-west/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "64b7164011ab93846f50dd10378183f6de446fa96ee57c4ceccfc8d06f5bf9a9",
+      "promptSha256": "2c5ec6f4332d477ffb5a273ee4f5714aba33fae14b12e89a2b652de229c3529a",
+      "previousRevisions": [
+        {
+          "image": "viewing-west/reference-v1.png",
+          "prompt": "viewing-west/reference-v1.prompt.txt",
+          "promptSha256": "ed06f5dc0eb839952f945f78edf550fbf40bbf165b67cc02d8747640f47bd00b"
+        }
+      ]
+    },
+    {
+      "identity": "VOLCANO-BOTTOM",
+      "label": "Volcano Bottom",
+      "image": "volcano-bottom/reference-v1.png",
+      "prompt": "volcano-bottom/reference-v1.prompt.txt",
+      "context": "volcano-bottom/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "84b282338df8fa7bada6edfac37b19a4f76ea0698c9259dd1a8d2ea9293cbb42",
+      "promptSha256": "a035c87c5074e176d7567655c58f46bf63130254770ca3348754161a953dbfd7"
+    },
+    {
+      "identity": "VOLCANO-VIEW",
+      "label": "Volcano View",
+      "image": "volcano-view/reference-v2.png",
+      "prompt": "volcano-view/reference-v2.prompt.txt",
+      "context": "volcano-view/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "7306c13dd00709a75ddd335a790fd72506170c4c319096b29256156a7dce84f6",
+      "promptSha256": "e295958caf953be3318077343d1c24e125bea3cb54482e7750585a2a754877b5",
+      "previousRevisions": [
+        {
+          "image": "volcano-view/reference-v1.png",
+          "prompt": "volcano-view/reference-v1.prompt.txt",
+          "promptSha256": "1e41cdc069ce80091b62ff6dd9d4706b02338a71fe09519aa4556e411aaaac3a"
+        }
+      ]
+    },
+    {
+      "identity": "WELL-BOTTOM",
+      "label": "Circular Room",
+      "image": "well-bottom/reference-v1.png",
+      "prompt": "well-bottom/reference-v1.prompt.txt",
+      "context": "well-bottom/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "96ea202f65e6ba8f5391b7f5956f11bc3b6e7c0d87d539b4c98e868871a12265",
+      "promptSha256": "9503475c75beaedd067a0d7ef96e73b6588af13bb924f88315c13b1a3e19ef18"
+    },
+    {
+      "identity": "WELL-TOP",
+      "label": "Top of Well",
+      "image": "well-top/reference-v1.png",
+      "prompt": "well-top/reference-v1.prompt.txt",
+      "context": "well-top/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "8c114e43230e90754348c1ea9a228173418c7bc1a359125471a69665c7713192",
+      "promptSha256": "93266f123cfde831d7c855e0f900987df894902126727ac9111bc2b3a0540c5c"
+    },
+    {
+      "identity": "WIZARDS-QUARTERS",
+      "label": "Wizard's Quarters",
+      "image": "wizards-quarters/reference-v2.png",
+      "prompt": "wizards-quarters/reference-v2.prompt.txt",
+      "context": "wizards-quarters/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "bcba9a040758dc30b713c1f03372501b6366433734f44df2be4e03b55af45d1f",
+      "promptSha256": "72a754cca499f4021d61dff07f42d45f7dccb6cb0697d5bbc267112a5eddf9e2",
+      "previousRevisions": [
+        {
+          "image": "wizards-quarters/reference-v1.png",
+          "prompt": "wizards-quarters/reference-v1.prompt.txt",
+          "promptSha256": "bc860df38034ac8f0dde594e209611dd347d624dd825a191f159b322a975531c"
+        }
+      ]
+    },
+    {
+      "identity": "WIZARDS-WORKSHOP",
+      "label": "Wizard's Workshop",
+      "image": "wizards-workshop/reference-v2.png",
+      "prompt": "wizards-workshop/reference-v2.prompt.txt",
+      "context": "wizards-workshop/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "5b12dc1f70d1207d099125fb06488667144e95707d77807f18aacff0d15295f1",
+      "promptSha256": "d0570b524fe953ad3cae8ecf2d5f0d7c8351f53b42c924c9a937601d619d247d",
+      "previousRevisions": [
+        {
+          "image": "wizards-workshop/reference-v1.png",
+          "prompt": "wizards-workshop/reference-v1.prompt.txt",
+          "promptSha256": "b52fca5f82c1bc0cb93f450f5bc527199b28d15ce370e1923bc360d525d1c299"
+        }
+      ]
+    },
+    {
+      "identity": "WORKBENCH-ROOM",
+      "label": "Wizard's Workroom",
+      "image": "workbench-room/reference-v2.png",
+      "prompt": "workbench-room/reference-v2.prompt.txt",
+      "context": "workbench-room/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "d8577e54fa7d04594123cc3421c24776e7f810c5d202d1f4a7101ba51f1cb30b",
+      "promptSha256": "5cfc2fa45bbb3c3a84f39a7326b31d9f2b04478dca95e2b449cdf553b0e43b53",
+      "previousRevisions": [
+        {
+          "image": "workbench-room/reference-v1.png",
+          "prompt": "workbench-room/reference-v1.prompt.txt",
+          "promptSha256": "7c651dbd071a0378972ec88942f59e4feaff2c16a9aeb9c0a18103658ef0379a"
+        }
+      ]
+    },
+    {
+      "identity": "ZORK3",
+      "label": "Landing",
+      "image": "zork3/reference-v1.png",
+      "prompt": "zork3/reference-v1.prompt.txt",
+      "context": "zork3/source-context.json",
+      "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+      "sourceHash": "4abb2040132dd0b16246475c7e0c084865559e34e6424bd3de704000f5a8679c",
+      "promptSha256": "5d534a26308b360e9111e263e7d2b87e1cb144b16c52b6905541ec98e0bf5902"
+    }
+  ],
+  "generated": 86,
+  "updatedAt": "2026-10-25T14:15:15.721986+00:00"
+}

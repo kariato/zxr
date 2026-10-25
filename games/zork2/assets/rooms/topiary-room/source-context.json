@@ -1,0 +1,40 @@
+{
+  "room": "TOPIARY-ROOM",
+  "label": "Topiary",
+  "literalRoomDescription": [
+    "This is the southern end of a formal garden. Hedges hide the cavern walls and mosses provide dim illumination. Fantastically shaped hedges and bushes are arrayed with geometric precision. They have not recently been clipped, but you can discern creatures in the shapes of the bushes: There is a dragon, a unicorn, a great serpent, a huge misshapen dog, and several human figures. On the west side of the garden the path leads through a rose arbor into a tunnel."
+  ],
+  "safeSceneProfile": "Moss-lit cave garden with geometrically placed overgrown bushes shaped as dragon, unicorn, serpent, huge misshapen dog and humans; west rose arbor. These silhouettes are not live actors.",
+  "visibleInitialObjects": [
+    {
+      "identity": "HEDGES",
+      "label": "hedge",
+      "parent": "TOPIARY-ROOM",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed hedge. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every hedge into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "FORMAL-GARDEN"
+      }
+    },
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "CAROUSEL-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": true,
+  "sourceHash": "b4c680e7e2e1fe118e21d1a060bb2171e72a0d1982705b59dc40211022074651"
+}

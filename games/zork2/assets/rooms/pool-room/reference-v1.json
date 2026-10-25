@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "POOL-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "17249014baf5a4b3f375d11dc2f7b77d8036f45e42a209fc082a8710f8879109",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-c76620a3-7db7-4e6e-9747-f531755adb6e.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "fae40c5843ee40434d57e7ed287ad1aca87426ea87e4662e0c964dc6e912921f",
+  "promptSha256": "ab9d1cb52f7a6f75ae8fd06d10f142676ff769d788766281c77ce4a403fef8aa",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

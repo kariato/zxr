@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "TEA-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "f57d23590dfd02df5fba28ec932cbdf78eb16c415b87b4462352c6afae3e815f",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-91e0fb11-bee0-45da-94c3-03277b331ed9.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "aa31bd47383014064516d0865734becac01492ab20a582f821b4ff74930ebfc9",
+  "promptSha256": "b102db423ccb9dd04afe1ede25aa837768e24a4f9d91d43e17f1bdbc4f4ca5c2",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

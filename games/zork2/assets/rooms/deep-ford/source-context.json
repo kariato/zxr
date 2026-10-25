@@ -1,0 +1,50 @@
+{
+  "room": "DEEP-FORD",
+  "label": "Deep Ford",
+  "literalRoomDescription": [
+    "You are fording the stream at a deep but not impossible spot. The water is very cold. The walls of the ravine rise to east and west. There is a small ledge along the north wall of the ravine. To the south is the entrance to a well-constructed but somewhat ruined hall."
+  ],
+  "safeSceneProfile": "Very cold deep ford, steep east/west ravine walls, northern ledge and ruined hall entrance south; no invented easy crossing or safety railing.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "RAVINE-LEDGE"
+      }
+    },
+    {
+      "direction": "EAST",
+      "view": {
+        "kind": "NEXIT",
+        "message": "The stream deepens rapidly, and you wisely return before drowning."
+      }
+    },
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "NEXIT",
+        "message": "You notice that the ledge above would be a drier route west."
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "MARBLE-HALL"
+      }
+    },
+    {
+      "direction": "UP",
+      "view": {
+        "kind": "UEXIT",
+        "to": "RAVINE-LEDGE"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "6eebcfb7944c118bdc83e8af7ba89862e56dd0e8a064b45abe7c100c7dfafeb8"
+}

@@ -1,0 +1,29 @@
+{
+  "room": "FRESCO-ROOM",
+  "label": "Fresco Room",
+  "literalRoomDescription": [
+    "A path leads east-west through a room decorated with beautiful frescoes of someone battling dragons and rescuing fair maidens. It is hard to tell who is doing this as those parts of the frescoes have been blackened and cracked by intense heat."
+  ],
+  "safeSceneProfile": "East/west hall with dragon-rescue frescoes; identities remain obscured by source-described heat damage. Do not repair hidden faces or add readable clues.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "EAST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DRAGON-ROOM"
+      }
+    },
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "BANK-ENTRANCE"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "8f2e4be6950f853a754a5f5f3383a191d6fab7a77244d87f17b31e73c08b4f63"
+}

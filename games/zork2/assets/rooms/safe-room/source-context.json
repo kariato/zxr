@@ -1,0 +1,63 @@
+{
+  "room": "SAFE-ROOM",
+  "label": "Dusty Room",
+  "literalRoomDescription": [
+    " "
+  ],
+  "safeSceneProfile": "Dusty featureless room, north exit and separate rusty damaged safe. Blown-off-door state and crown must never be permanent shell geometry.",
+  "visibleInitialObjects": [
+    {
+      "identity": "SAFE",
+      "label": "box",
+      "parent": "SAFE-ROOM",
+      "flags": [
+        "CONTBIT",
+        "NDESCBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed box. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every box into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "SLOT",
+      "label": "hole",
+      "parent": "SAFE-ROOM",
+      "flags": [
+        "NDESCBIT",
+        "OPENBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed hole. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every hole into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [
+    {
+      "identity": "CARD",
+      "reason": "inside a closed opaque container"
+    },
+    {
+      "identity": "CROWN",
+      "reason": "inside a closed opaque container"
+    }
+  ],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "LEDGE-2"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "SAFE-FCN",
+      "sourceText": "<ROUTINE SAFE-FCN ()\n\t<COND (<AND <VERB? TAKE> <EQUAL? ,PRSO ,SAFE>>\n\t       <TELL \"The box is imbedded in the wall.\" CR>)\n\t      (<VERB? OPEN>\n\t       <COND (,SAFE-FLAG <TELL \"The box has no door!\" CR>)\n\t\t     (T <TELL \"The box is rusted and will not open.\" CR>)>)\n\t      (<VERB? CLOSE>\n\t       <COND (,SAFE-FLAG <TELL \"The box has no door!\" CR>)\n\t\t     (T <TELL \"The box isn't open!\" CR>)>)>>"
+    },
+    {
+      "routine": "SAFE-ROOM-FCN",
+      "sourceText": "<ROUTINE SAFE-ROOM-FCN (RARG)\n\t <COND (<EQUAL? .RARG ,M-LOOK>\n\t\t<TELL\n\"You are in a dusty old room which is featureless, except\nfor an exit on the north side.\" CR>\n\t\t<COND (<NOT ,SAFE-FLAG>\n\t\t       <TELL\n\"Imbedded in the far wall is a rusty box. It appears to be somewhat\ndamaged, since an oblong hole has been chipped out of the front of it.\" CR>)\n\t\t      (T\n\t\t       <TELL\n\"On the far wall is a rusty box, whose door has been blown off.\" CR>)>)>>"
+    }
+  ],
+  "sourceLightFlag": true,
+  "sourceHash": "e446a22732dbee01c167136d2aa3807ce8acf22782412e1457eb20fc66f4668f"
+}

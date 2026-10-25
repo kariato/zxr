@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "RAVINE-LEDGE",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "99da2d55721410f26228a58fe27c7ef9cf19d69c41b0af2e610a9885a16f3f21",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-494ab33e-609c-4f79-895e-759d97cba158.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "5921a6725a14d9262e21612f52568ef802e6d0690578afee2839a18763bc9da4",
+  "promptSha256": "7c3b901900b5875fe43bc1460b456689d480f08cf2dc99f6b984e2bd0d711645",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

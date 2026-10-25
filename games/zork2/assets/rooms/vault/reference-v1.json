@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "VAULT",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "d4222065b1b6d999d3e3350aab78202207bc06b4a32bfcb218ba418f0096c1da",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-0dbb6105-62b9-4b00-adc4-8b5d5e71c07e.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "a4d3cd0599cf40862ad44f6053c020cca0b547f844e85d85906e1fcc21dcfbd9",
+  "promptSha256": "60adf3485ed693406e57216349595bfd40171ddea1ff66bae7f0b9adca66f0b0",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

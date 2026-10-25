@@ -1,0 +1,27 @@
+{
+  "room": "DIAMOND-3",
+  "label": "Oddly-angled Room",
+  "literalRoomDescription": [
+    "A small room with oddly angled walls and passages in all directions."
+  ],
+  "safeSceneProfile": "Small diamond-maze room with oddly angled walls and similar passages. Keep its distinct logical identity and exact source directions. No unique painted markers, floor numbering or destination clues that would solve the maze visually.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "SW",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DIAMOND-5"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "DIAMOND-MOTION",
+      "sourceText": "<ROUTINE DIAMOND-MOTION (RARG \"AUX\" DC DIR RM)\n\t <COND (<EQUAL? .RARG ,M-LOOK>\n\t\t<TELL\n\"This is a room with oddly angled walls and passages in all directions.\nThe walls are made of some glassy substance.\" CR>\n\t\t<COND (<EQUAL? ,HERE ,DIAMOND-5>\n\t\t       <TELL\n\"A marble stairway leads upward.\">\n\t\t       <COND (,DIAMOND-SOLVE\n\t\t\t      <TELL\n\" The floor has swung down at the end of the stairway to reveal a secret\npassage leading down into unrelieved darkness.\">)>\n\t\t       <CRLF>)\n\t\t      (T <DWINDOW-DESC>)>\n\t\t<RTRUE>)\n\t       (<EQUAL? .RARG ,M-FLASH> <DWINDOW-DESC> <RTRUE>)\n\t       (<AND <EQUAL? .RARG ,M-BEG>\n\t\t     <VERB? WALK>\n\t\t     <NOT ,DIAMOND-SOLVE>>\n\t\t<COND (<OR <EQUAL? ,HERE ,DIAMOND-2 ,DIAMOND-4>\n\t\t\t   <EQUAL? ,HERE ,DIAMOND-6 ,DIAMOND-8>>\n\t\t       <SET DIR <GET ,DIDIRS <- ,DIAMOND-COUNT 1>>>\n\t\t       <COND (<EQUAL? ,PRSO .DIR>\n\t\t\t      <SETG DIAMOND-COUNT <+ ,DIAMOND-COUNT 1>>\n\t\t\t      <COND (<G? ,DIAMOND-COUNT ,DIAMOND-BASE>\n\t\t\t\t     <SETG DIAMOND-BASE ,DIAMOND-COUNT>\n\t\t\t\t     <SETG DIAMOND-MOVES 0>)>\n\t\t\t      <COND (<EQUAL? ,DIAMOND-COUNT 5>\n\t\t\t\t     <TELL\n\"You hear a strange rusty squeal echoing in the distance.\" CR>\n\t\t\t\t     <FCLEAR ,DIAMOND-5 ,TOUCHBIT>\n\t\t\t\t     <SCORE-UPD 5>\n\t\t\t\t     <SETG DIAMOND-SOLVE T>)>\n\t\t\t      <COND (<EQUAL? ,HERE ,DIAMOND-2>\n\t\t\t\t     <SET DIR ,DIAMOND-4>)\n\t\t\t\t    (<EQUAL? ,HERE ,DIAMOND-4>\n\t\t\t\t     <SET DIR ,DIAMOND-8>)\n\t\t\t\t    (<EQUAL? ,HERE ,DIAMOND-8>\n\t\t\t\t     <SET DIR ,DIAMOND-6>)\n\t\t\t\t    (<EQUAL? ,HERE ,DIAMOND-6>\n\t\t\t\t     <SET DIR ,DIAMOND-2>)>\n\t\t\t      <GOTO .DIR>)\n\t\t\t     (T\n\t\t\t      <DIAMOND-LOSS>)>\n\t\t       <RTRUE>)\n\t\t      (<AND <EQUAL? ,HERE ,DIAMOND-5>\n\t\t\t    <EQUAL? ,PRSO ,P?UP>>\n\t\t       <RFALSE>)\n\t\t      (T\n\t\t       <SETG DIAMOND-COUNT 0>\n\t\t       <COND (<PROB 33>\n\t\t\t      <TELL\n\"There is no way to go in that direction.\" CR>\n\t\t\t      <RTRUE>)\n\t\t\t     (<PROB 25>\n\t\t\t      <DIAMOND-LOSS>\n\t\t\t      <RTRUE>)\n\t\t\t     (T\n\t\t\t      <SETG DIAMOND-COUNT 1>\n\t\t\t      <COND (<G? ,DIAMOND-COUNT ,DIAMOND-BASE>\n\t\t\t\t     <SETG DIAMOND-BASE ,DIAMOND-COUNT>\n\t\t\t\t     <SETG DIAMOND-MOVES 0>)>\n\t\t\t      <SET RM <GET ,DIAMOND-ROOMS\n\t\t\t\t\t   <- <RANDOM 4> 1>>>\n\t\t\t      <COND (<FSET? ,BAT ,INVISIBLE>\n\t\t\t\t     <FCLEAR ,BAT ,INVISIBLE>\n\t\t\t\t     <MOVE ,BAT .RM>)>\n\t\t\t      <GOTO .RM>\n\t\t\t      <RTRUE>)>)>)>>"
+    }
+  ],
+  "sourceLightFlag": false,
+  "sourceHash": "bcc06a0bbf13f2b0ed9bfa407f74a29bbc11c3911638da2c0e0158df86b9279c"
+}

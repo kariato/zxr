@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "GAZEBO-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "b9fc0a19ee3c2d40695f67a49515eee7d2406af0f222beb0d7edbcad97da59d5",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-b851d335-3171-404b-bb44-9cb762455f40.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "a4f70a84197a3698a0c4afc2efbd16c786b79700780f0abcd06efb3bc7f0c405",
+  "promptSha256": "4db67810b672a8c0407471274608ac521860743625a2eeecfe5479118af498fd",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

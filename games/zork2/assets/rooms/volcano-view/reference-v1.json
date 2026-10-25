@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "VOLCANO-VIEW",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "9f161c6b6c0caed24df43bbae46531752042dbc01e80eaf67099d98e263b0b60",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-7682a521-e784-437d-9cb7-89e98de191f4.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "7306c13dd00709a75ddd335a790fd72506170c4c319096b29256156a7dce84f6",
+  "promptSha256": "1e41cdc069ce80091b62ff6dd9d4706b02338a71fe09519aa4556e411aaaac3a",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

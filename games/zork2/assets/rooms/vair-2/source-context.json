@@ -1,0 +1,29 @@
+{
+  "room": "VAIR-2",
+  "label": "Volcano Near Small Ledge",
+  "literalRoomDescription": [
+    "You are about two hundred feet above the volcano floor. Looming above is the rim of the volcano. There is a small ledge on the west side."
+  ],
+  "safeSceneProfile": "Volcano airborne band 2. No standing floor: player support comes from the source balloon, not invisible platforms. Preserve source-described elevation and ledge visibility without adding landings; only band 4 explicitly opens to sky.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "LEDGE-1"
+      }
+    },
+    {
+      "direction": "LAND",
+      "view": {
+        "kind": "UEXIT",
+        "to": "LEDGE-1"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "b1574631dbf0dca61bbc5dfa709ec20e212e37cdabda7624d11bde5243dbef24"
+}

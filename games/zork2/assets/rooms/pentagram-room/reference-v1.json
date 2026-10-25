@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "PENTAGRAM-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "2ec3ce614606b779a2fdcbf8cfe017693f7b843ab29248ccf171e61523ad08b1",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-27086b1e-b547-4968-999a-d8fb9818be12.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "91632a059c728f7cf1a8a99c2050dc6f22a64064d241dd39f276f1bb22978e10",
+  "promptSha256": "c1d6f02adc58f7225c98bab327cad265fad717aee9e7bec2d0d23695b9e5199e",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

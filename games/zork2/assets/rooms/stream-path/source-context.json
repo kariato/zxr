@@ -1,0 +1,57 @@
+{
+  "room": "STREAM-PATH",
+  "label": "Path Near Stream",
+  "literalRoomDescription": [
+    "The path follows the south edge of a deep ravine and heads northeast. A tunnel heads southwest, narrowing to a rather tight crawl. A faint whirring sound can be heard in that direction. On the east is a ruined archway choked with vegetation."
+  ],
+  "safeSceneProfile": "South ravine edge, northeast path, narrowing southwest crawl and vegetation-choked ruined east archway. No unobserved room contents beyond the arch.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "EAST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "FORMAL-GARDEN"
+      }
+    },
+    {
+      "direction": "WEST",
+      "view": {
+        "global": "SECRET-DOOR",
+        "kind": "CEXIT",
+        "message": null,
+        "to": "MARBLE-HALL"
+      }
+    },
+    {
+      "direction": "NE",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DARK-TUNNEL"
+      }
+    },
+    {
+      "direction": "SW",
+      "view": {
+        "kind": "UEXIT",
+        "to": "CAROUSEL-ROOM"
+      }
+    },
+    {
+      "direction": "DOWN",
+      "view": {
+        "kind": "NEXIT",
+        "message": "The ravine is extremely deep. You would never make it."
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "STREAM-FCN",
+      "sourceText": "<ROUTINE STREAM-FCN ()\n\t <COND (<VERB? SWIM THROUGH>\n\t\t<TELL \"You can't swim in the stream.\" CR>)\n\t       (<VERB? CROSS>\n\t\t<TELL \"You'll have to find a ford or a bridge.\" CR>)>>"
+    }
+  ],
+  "sourceLightFlag": false,
+  "sourceHash": "f6d9bd6fc12258129690ee20807b2fd0287e21059f0d784dd2d7e985ce820260"
+}

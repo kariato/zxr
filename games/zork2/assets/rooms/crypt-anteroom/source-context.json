@@ -1,0 +1,49 @@
+{
+  "room": "CRYPT-ANTEROOM",
+  "label": "Crypt Anteroom",
+  "literalRoomDescription": [
+    " "
+  ],
+  "safeSceneProfile": "Empty marble anteroom with Flathead bas reliefs and Feel Free inscription above the separate southern marble door.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "CERBERUS-ROOM"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "door": "CRYPT-DOOR",
+        "kind": "DEXIT",
+        "message": null,
+        "to": "CRYPT-ROOM"
+      }
+    },
+    {
+      "direction": "IN",
+      "view": {
+        "door": "CRYPT-DOOR",
+        "kind": "DEXIT",
+        "message": null,
+        "to": "CRYPT-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "CRYPT-ANTEROOM-FCN",
+      "sourceText": "<ROUTINE CRYPT-ANTEROOM-FCN (RARG)\n\t <COND (<EQUAL? .RARG ,M-LOOK>\n\t\t<TELL\n\"The anteroom is large and empty. Marble bas reliefs depict the stirring\ntimes and afterlife of the Flatheads (the latter a bit optimistically).\nThe exit is to the west. A huge marble door stands to the south. \">\n\t\t<TELL \"The door is \">\n\t\t<COND (<FSET? ,CRYPT-DOOR ,OPENBIT>\n\t\t       <TELL \"open.\">)\n\t\t      (T <TELL \"closed.\">)>\n\t\t<TELL\n\" Above the door is the cryptic inscription: \\\"Feel Free\\\".\" CR>)>>"
+    },
+    {
+      "routine": "CRYPT-DOOR-FCN",
+      "sourceText": "<ROUTINE CRYPT-DOOR-FCN ()\n\t <COND (<VERB? OPEN CLOSE>\n\t\t<OPEN-CLOSE ,PRSO\n\t\t\t    \"The crypt door squeaks open.\"\n\t\t\t    \"The crypt door squeaks closed.\">)>>"
+    }
+  ],
+  "sourceLightFlag": false,
+  "sourceHash": "6ff023d1842a1c3d364e2cb37a5c98ed1f43f3ab9d4be7e0765a7aa7a83e81c8"
+}

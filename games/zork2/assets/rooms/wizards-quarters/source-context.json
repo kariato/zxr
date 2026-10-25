@@ -1,0 +1,27 @@
+{
+  "room": "WIZARDS-QUARTERS",
+  "label": "Wizard's Quarters",
+  "literalRoomDescription": [
+    " "
+  ],
+  "safeSceneProfile": "Wizard's private quarters; use guarded room text and separate furnishings/actors, without inventing readable spell answers.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "AQUARIUM-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "WIZARD-QUARTERS-FCN",
+      "sourceText": "<ROUTINE WIZARD-QUARTERS-FCN (RARG \"AUX\" PICK L)\n\t <COND (<EQUAL? .RARG ,M-LOOK ,M-FLASH>\n\t\t<TELL\n\"This is where the Wizard of Frobozz lives. The room is \">\n\t\t<SET L <GET ,WIZQDESCS 0>>\n\t\t<SET PICK <RANDOM .L>>\n\t\t<COND (<EQUAL? .PICK ,WIZQLAST>\n\t\t       <COND (<EQUAL? .PICK .L>\n\t\t\t      <SET PICK <- .PICK 1>>)\n\t\t\t     (T\n\t\t\t      <SET PICK <+ .PICK 1>>)>)>\n\t\t<SETG WIZQLAST .PICK>\n\t\t<TELL <GET ,WIZQDESCS .PICK> CR>)>>"
+    }
+  ],
+  "sourceLightFlag": false,
+  "sourceHash": "bcba9a040758dc30b713c1f03372501b6366433734f44df2be4e03b55af45d1f"
+}

@@ -1,0 +1,41 @@
+{
+  "room": "GARDEN-NORTH",
+  "label": "North End of Garden",
+  "literalRoomDescription": [
+    "This is the northern end of a formal garden. Hedges hide the cavern walls, and if you don't look up, the illusion is of a cloudy day outside. The light comes from a large growth of glowing mosses on the roof of the cave. A break in the hedge is almost overgrown to the north. A carefully manicured path leads south. In the center of a rosebed is a small open structure, painted white. It appears to be a gazebo."
+  ],
+  "safeSceneProfile": "Cave-roof moss creates cloudy-day illusion above hedges; white gazebo in central rosebed, overgrown northern hedge gap and manicured southern path. No actual sky.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DARK-TUNNEL"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "FORMAL-GARDEN"
+      }
+    },
+    {
+      "direction": "IN",
+      "view": {
+        "kind": "UEXIT",
+        "to": "GAZEBO-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "GARDEN-ROOM-FCN",
+      "sourceText": "<ROUTINE GARDEN-ROOM-FCN (RARG)\n\t <COND (<EQUAL? .RARG ,M-ENTER>\n\t\t<ENABLE <QUEUE I-GARDEN -1>>)>>"
+    }
+  ],
+  "sourceLightFlag": true,
+  "sourceHash": "69ad56385f5c87a8b5188b594de6e9e3b676b6663da4ec0efc42bcc10f2201eb"
+}

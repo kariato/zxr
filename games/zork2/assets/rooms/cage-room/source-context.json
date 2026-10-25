@@ -1,0 +1,50 @@
+{
+  "room": "CAGE-ROOM",
+  "label": "Dingy Closet",
+  "literalRoomDescription": [
+    "This is a dingy closet adjacent to a larger room to the north. Chiselled into a wall are these words:\n\n     Protected by\n       FROBOZZ\n Magic Alarm Company\n  (Hello, footpad!)\n\nThere doesn't seem to be any footpad here, however."
+  ],
+  "safeSceneProfile": "Dingy alarm-company closet; carved warning follows source text. Steel cage is separate and initially concealed, not a permanent central cage.",
+  "visibleInitialObjects": [
+    {
+      "identity": "PALANTIR-1",
+      "label": "red crystal sphere",
+      "parent": "CAGE-ROOM",
+      "flags": [
+        "STAGGERED",
+        "TAKEBIT",
+        "TRANSBIT",
+        "TRYTAKEBIT"
+      ],
+      "sourceText": [
+        "There is a beautiful red crystal sphere here."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed red crystal sphere. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a beautiful red crystal sphere here.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every red crystal sphere into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [
+    {
+      "identity": "CAGE",
+      "reason": "initially concealed"
+    }
+  ],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "MACHINE-ROOM"
+      }
+    },
+    {
+      "direction": "OUT",
+      "view": {
+        "kind": "UEXIT",
+        "to": "MACHINE-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": true,
+  "sourceHash": "94c1205a3dbe8e88db7482e2bd2ac996c90da61969b34d5c6fb4640bfb011933"
+}

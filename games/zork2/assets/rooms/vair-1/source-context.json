@@ -1,0 +1,14 @@
+{
+  "room": "VAIR-1",
+  "label": "Volcano Core",
+  "literalRoomDescription": [
+    "You are about one hundred feet above the bottom of the volcano. The top of the volcano is clearly visible here."
+  ],
+  "safeSceneProfile": "Volcano airborne band 1. No standing floor: player support comes from the source balloon, not invisible platforms. Preserve source-described elevation and ledge visibility without adding landings; only band 4 explicitly opens to sky.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "c7a386188cd6085e32fe6d78d7f74da66801bd768588381a6d947ab7e2c6ed10"
+}

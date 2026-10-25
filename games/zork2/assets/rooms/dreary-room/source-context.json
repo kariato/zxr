@@ -1,0 +1,113 @@
+{
+  "room": "DREARY-ROOM",
+  "label": "Dreary Room",
+  "literalRoomDescription": [
+    " "
+  ],
+  "safeSceneProfile": "Small dreary room with red wall-crack illumination and dusty central wooden table. Oak door, window, second keyhole and lid are separate on the south side.",
+  "visibleInitialObjects": [
+    {
+      "identity": "KEY",
+      "label": "rusty iron key",
+      "parent": "KEYHOLE-2",
+      "flags": [
+        "NDESCBIT",
+        "TAKEBIT",
+        "TOOLBIT",
+        "TURNBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed rusty iron key. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every rusty iron key into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "KEYHOLE-2",
+      "label": "keyhole",
+      "parent": "DREARY-ROOM",
+      "flags": [
+        "NDESCBIT",
+        "OPENBIT",
+        "SEARCHBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed keyhole. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every keyhole into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "LID-2",
+      "label": "metal lid",
+      "parent": "DREARY-ROOM",
+      "flags": [
+        "CONTBIT",
+        "NDESCBIT",
+        "OPENBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed metal lid. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every metal lid into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "PALANTIR-2",
+      "label": "blue crystal sphere",
+      "parent": "DREARY-ROOM",
+      "flags": [
+        "STAGGERED",
+        "TAKEBIT",
+        "TRANSBIT"
+      ],
+      "sourceText": [
+        "In the center of the table sits a blue crystal sphere."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed blue crystal sphere. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nFDESC: In the center of the table sits a blue crystal sphere.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every blue crystal sphere into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "PCRACK",
+      "label": "narrow crack",
+      "parent": "DREARY-ROOM",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed narrow crack. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every narrow crack into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "PTABLE",
+      "label": "table",
+      "parent": "DREARY-ROOM",
+      "flags": [
+        "CONTBIT",
+        "NDESCBIT",
+        "OPENBIT",
+        "SURFACEBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed table. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every table into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "SOUTH",
+      "view": {
+        "door": "PDOOR",
+        "kind": "DEXIT",
+        "message": null,
+        "to": "TINY-ROOM"
+      }
+    },
+    {
+      "direction": "OUT",
+      "view": {
+        "door": "PDOOR",
+        "kind": "DEXIT",
+        "message": null,
+        "to": "TINY-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "DREARY-ROOM-FCN",
+      "sourceText": "<ROUTINE DREARY-ROOM-FCN (RARG)\n    #DECL ((RARG) <OR FIX FALSE>)\n    <COND (<EQUAL? .RARG ,M-LOOK>\n\t   <TELL\n\"This is a small and rather dreary room, eerily illuminated by a red glow\nemanating from a crack in one wall. The light falls upon a dusty wooden table\nin the center of the room. \">\n\t   <P-DOOR \"south\" ,LID-2 ,KEYHOLE-2>\n\t   <RTRUE>)>\n          (T <PCHECK> <RFALSE>)>"
+    }
+  ],
+  "sourceLightFlag": true,
+  "sourceHash": "b22d91bbe9482c76b313c7817292937750a0afcf964551a9b4817905d438c14c"
+}

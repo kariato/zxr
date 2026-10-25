@@ -1,0 +1,43 @@
+{
+  "room": "LEDGE-TUNNEL",
+  "label": "End of Ledge",
+  "literalRoomDescription": [
+    "A ledge from the east ends here, and a tunnel leads north into the wall. There is a rather odd smokey odor in the warm air of the tunnel."
+  ],
+  "safeSceneProfile": "Eastern ledge ends at warm smoky north tunnel into the rock; no invented fresh-air skylight.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DRAGON-ROOM"
+      }
+    },
+    {
+      "direction": "EAST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "RAVINE-LEDGE"
+      }
+    },
+    {
+      "direction": "DOWN",
+      "view": {
+        "kind": "NEXIT",
+        "message": "There are a lot of sharp rocks down there."
+      }
+    },
+    {
+      "direction": "IN",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DRAGON-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "9070c2ac2aa07d4b9bd0d11ebf6929b3977e251806d1758cb51be30ccb853bb0"
+}

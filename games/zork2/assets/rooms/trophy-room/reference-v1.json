@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "TROPHY-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "b1b63847cb7d71316f788fd1ce90f7c947b6f5546f8a5e166b2b2b2d8a467dc3",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-4703abc7-2699-4cff-b9b2-196d344feb47.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "61da60450afbf3cffbd1ef21206664fce208b3246b05d060f2e2020c354b9e93",
+  "promptSha256": "693b9fb8ecb0c51724efbff1134dde92e7e1c1c6c4989f81e16ff44ef94e3f3c",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

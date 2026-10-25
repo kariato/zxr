@@ -1,0 +1,54 @@
+{
+  "room": "LEDGE-2",
+  "label": "Wide Ledge",
+  "literalRoomDescription": [
+    " "
+  ],
+  "safeSceneProfile": "Volcano landing ledge; retain source safe-room connection and hook, with no invented stairway joining elevation bands.",
+  "visibleInitialObjects": [
+    {
+      "identity": "HOOK-2",
+      "label": "hook",
+      "parent": "LEDGE-2",
+      "flags": [],
+      "sourceText": [
+        "There is a small hook attached to the rock here."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed hook. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a small hook attached to the rock here.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every hook into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "WEST",
+      "view": {
+        "global": "GNOME-DOOR-FLAG",
+        "kind": "CEXIT",
+        "message": null,
+        "to": "VOLCANO-BOTTOM"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "SAFE-ROOM"
+      }
+    },
+    {
+      "direction": "DOWN",
+      "view": {
+        "kind": "NEXIT",
+        "message": "It's a long way down."
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "LEDGE-FCN",
+      "sourceText": "<ROUTINE LEDGE-FCN (RARG)\n    <COND (<EQUAL? .RARG ,M-LOOK>\n\t   <TELL\n\"You are on a wide ledge high in the volcano. The rim of the volcano is\nabout 200 feet above and there is a precipitous drop to the bottom.\">\n\t   <COND (<FSET? ,SAFE-ROOM ,RMUNGBIT>\n\t\t  <TELL \" The way to the south is blocked by rubble.\" CR>)\n\t\t (T <TELL \" There is a small door to the south.\" CR>)>)>>"
+    }
+  ],
+  "sourceLightFlag": false,
+  "sourceHash": "29f675ad254f0c00ea73033800dd5a7133da878d75c1a923713ef21270947392"
+}

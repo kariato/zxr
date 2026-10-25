@@ -1,0 +1,29 @@
+{
+  "room": "STAIRWAY-TOP",
+  "label": "Stairway",
+  "literalRoomDescription": [
+    "A marble stairway leads down into the gloom and a passage leads north."
+  ],
+  "safeSceneProfile": "Marble stairway descending into gloom and north passage; stairs do not disclose crypt actors below.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "MENHIR-ROOM"
+      }
+    },
+    {
+      "direction": "DOWN",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DIAMOND-5"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "e758afe2d5135ef9f9d7c0166819eedac7e30e1b41421b6c5143f6e9a19b70ad"
+}

@@ -1,0 +1,16 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "LEDGE-1",
+  "mode": "built-in-imagegen",
+  "operation": "targeted-edit",
+  "image": "reference-v2.png",
+  "imageSha256": "b24794240286f3c5ef6a72e2e416718f1928a197ec524bb5bb7bab1f03125cc9",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-e384a80d-4d2b-483f-b136-e69be4372bc2.png",
+  "referenceImage": "ledge-1/reference-v1.png",
+  "referenceImageSha256": "e9ab64dbe47c8cd911b60fb44350ddef115978eb7ce2f610a72ec9c418eabe54",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "96b71999a505d537b56c690334cfb66aabfcad2afb964560b213c310423fb4d5",
+  "promptSha256": "a93cd3dee1ff6730154bc30b164cca15470ea1e11332d41839bf7c72e59123d8",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

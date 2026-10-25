@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "FRESCO-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "3eef9136c50b8a529255273b6dd01c5dd557b7caeab306f4f03c2bde935157cf",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-58eb1169-b60f-4b07-a7b9-6592e08d5bb5.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "8f2e4be6950f853a754a5f5f3383a191d6fab7a77244d87f17b31e73c08b4f63",
+  "promptSha256": "2db622fd9e9a0fdca79903649640663038a2c56872a5c00a7ebf6e782b884381",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

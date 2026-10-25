@@ -1,0 +1,16 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "WORKBENCH-ROOM",
+  "mode": "built-in-imagegen",
+  "operation": "targeted-edit",
+  "image": "reference-v2.png",
+  "imageSha256": "b58eb60436489bdabbe72a8b28382df4a8533f5b9744ed33afffc7681363a79a",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-74ce1d38-be22-4842-90de-783e21f956af.png",
+  "referenceImage": "workbench-room/reference-v1.png",
+  "referenceImageSha256": "fbf38f3de112526a13ded192518790a0987b6181715038033392205affcd77e9",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "d8577e54fa7d04594123cc3421c24776e7f810c5d202d1f4a7101ba51f1cb30b",
+  "promptSha256": "5cfc2fa45bbb3c3a84f39a7326b31d9f2b04478dca95e2b449cdf553b0e43b53",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

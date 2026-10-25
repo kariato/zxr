@@ -1,0 +1,29 @@
+{
+  "room": "GREAT-CAVERN",
+  "label": "Great Cavern",
+  "literalRoomDescription": [
+    "This is the center of the great cavern, carved out of the limestone. Stalactites and stalagmites of many sizes are everywhere. The room glows with dim light provided by phosphorescent moss, and weird shadows move all around you. A narrow path winds southwest among the stalagmites, and another leads northeast."
+  ],
+  "safeSceneProfile": "Centre of the great limestone cavern. Dim phosphorescent moss light high overhead creates irregular shadows among stalactites and stalagmites of many sizes. Keep the northeast path to Foot Bridge and southwest winding path to Shallow Ford distinct, without forcing their neighbouring rooms into a straight Euclidean corridor. Stalactite/stalagmite formations are source-backed pseudo scenery: STALA-PSEUDO refuses taking or breaking off reachable pieces. Their current source menu interactions remain available; these decorative kit nodes do not invent movable objects or install physical pseudo hotspots. No open sky, crystals, treasure or additional routes.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NE",
+      "view": {
+        "kind": "UEXIT",
+        "to": "FOOT-BRIDGE"
+      }
+    },
+    {
+      "direction": "SW",
+      "view": {
+        "kind": "UEXIT",
+        "to": "SHALLOW-FORD"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": true,
+  "sourceHash": "c9749b6c68d4525e5b8b9b39f87c814a24a0babbe90770394fe918524f35bc04"
+}

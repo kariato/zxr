@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "FORMAL-GARDEN",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "287bfbe9f6cb0524b073006b2ca14b2cec918eb2f1385cba23a08a7ea8b30771",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-3f2e34da-094f-4539-a082-a90c1651962e.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "f4e6e8b4a5e29a0dc5573ccd58f35506d275f7cd58dac08e0e33740c809d1f2a",
+  "promptSha256": "552d0fe31233e56e1508dce3790805d6e7c00bc96e7887b86af3cd504537d5c6",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

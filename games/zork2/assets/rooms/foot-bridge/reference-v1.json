@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "FOOT-BRIDGE",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "987568079a0023802be8c3665ae8942635df9e559b3f22a1e82a993de02a1d4b",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-29e84bf6-8b37-42cd-a132-f3649c9eca28.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "4cab585047bc956e15bd80540ae13e0f8310023ed8e5b0c942ad87913ee107d4",
+  "promptSha256": "b4f0b9754d0ed1ff982c86b3d1133c8eb8004b9ddb7cb66c93a1d9a3603d7e51",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

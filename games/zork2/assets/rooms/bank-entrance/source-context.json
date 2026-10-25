@@ -1,0 +1,36 @@
+{
+  "room": "BANK-ENTRANCE",
+  "label": "Bank Entrance",
+  "literalRoomDescription": [
+    "This is the entrance hall of the Bank of Zork, the largest banking institution of the Great Underground Empire. A partial account of its history is in \"The Lives of the Twelve Flatheads,\" in the chapter on J. Pierpont Flathead. A more detailed history (albeit less objective) may be found in Flathead's outrageous autobiography \"I'm Rich and You Aren't - So There!\". Most of the furniture has been ravaged by passing scavengers. All that remains are two signs at the northwest and northeast corners of the room, which say:\n\n    <--  VIEWING ROOMS  -->\n\nThe way out (ornate but tasteful) is to the east. "
+  ],
+  "safeSceneProfile": "Vandalised bank entrance, tasteful ornate east doorway and northwest/northeast viewing-room signs; no replacement furniture.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "EAST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "FRESCO-ROOM"
+      }
+    },
+    {
+      "direction": "NE",
+      "view": {
+        "kind": "UEXIT",
+        "to": "TELLER-EAST"
+      }
+    },
+    {
+      "direction": "NW",
+      "view": {
+        "kind": "UEXIT",
+        "to": "TELLER-WEST"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "b13ce468ceeaeec728be02e8a52538ad3106146ca128875c4cc350820a2c4d2a"
+}

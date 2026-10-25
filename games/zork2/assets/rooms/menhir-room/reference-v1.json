@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "MENHIR-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "a3144504b9c81a00a2cc80c535dc2e77378e11bb3e910a3624bb1e14d3c6c2cb",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-82025296-7182-41ca-a2c9-bade8e3c61d9.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "f627038f32fce48e434b92eeb37b6e57c1d67f90133a716b3c3664f8041e7478",
+  "promptSha256": "4e1c51986b50e4b650e596f96812005b3fdbd9d79508cdeba8a062cc1b8c2420",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

@@ -1,0 +1,14 @@
+{
+  "room": "SMALL-ROOM",
+  "label": "Small Room",
+  "literalRoomDescription": [
+    "This is a small, bare room with no distinguishing features. There are no exits from this room."
+  ],
+  "safeSceneProfile": "Bare bank room without distinguishing features or doors. Magical transport is not a physical doorway.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "74eb7e52c599045eb9dff8ed9fda7dd87989fc14d8c991a03b159db9a642c08d"
+}

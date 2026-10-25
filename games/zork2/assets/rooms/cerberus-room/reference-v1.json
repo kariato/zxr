@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "CERBERUS-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "10066587c58555ff0673a8e09b875a03550171f12f621060fff68314e1520be9",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-2fbf7f0e-cfa0-4c28-bc8a-02e6aea92593.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "d73ff5795ef737332f17776c348a20cf1681a68e47a11799555cb29d68e83f5b",
+  "promptSha256": "29bc38ad04ab66d2e7c96e746cb5bc925ec118d44f2f9f171bf3b3e348a8bb60",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

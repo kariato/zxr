@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "TELLER-WEST",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "da37b64d5d173da14c88b5d06a7cab87f7455b7803a22c804c511277cff457d9",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-2dec5506-4865-4415-a95f-ad786128f9c4.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "521eac258704769d6985892afe857e0a6bd0c4c765b71afaadb385117b95c7d2",
+  "promptSha256": "c5970a33b5c18ace57d4fc5c9dcd5cad21c912b06fa194f075ec7f4b35d9d3e2",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

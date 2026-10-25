@@ -1,0 +1,16 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "VAIR-2",
+  "mode": "built-in-imagegen",
+  "operation": "targeted-edit",
+  "image": "reference-v2.png",
+  "imageSha256": "60579b7854b4e1adae0ea246e78c88757c6533624abf5007fa4f2c059de9795b",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-408471c1-52c8-4d04-8222-4bbcf90f8f03.png",
+  "referenceImage": "vair-2/reference-v1.png",
+  "referenceImageSha256": "be1ccd40847de1c7e74aad0e0e9ed2216634cb82c7aa17a83f37d1c1827ecd3f",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "b1574631dbf0dca61bbc5dfa709ec20e212e37cdabda7624d11bde5243dbef24",
+  "promptSha256": "2f03ca6531bb26f50c770298eee31688c17a2d078e2ae459991404282eb6b242",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

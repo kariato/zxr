@@ -1,0 +1,16 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "VIEWING-WEST",
+  "mode": "built-in-imagegen",
+  "operation": "targeted-edit",
+  "image": "reference-v2.png",
+  "imageSha256": "43ec520ef60e658c77ffc99f3edf0cd4fdbaab1d7424fcb6f830403a3b723b40",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-1c4927d6-6dd4-4ee4-8ee6-4b1357b2d3e7.png",
+  "referenceImage": "viewing-west/reference-v1.png",
+  "referenceImageSha256": "496a990595769e120e649c190d149c601c0704290007947fe58098cd51201210",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "64b7164011ab93846f50dd10378183f6de446fa96ee57c4ceccfc8d06f5bf9a9",
+  "promptSha256": "2c5ec6f4332d477ffb5a273ee4f5714aba33fae14b12e89a2b652de229c3529a",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

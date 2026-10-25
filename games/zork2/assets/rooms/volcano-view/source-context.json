@@ -1,0 +1,36 @@
+{
+  "room": "VOLCANO-VIEW",
+  "label": "Volcano View",
+  "literalRoomDescription": [
+    "You are on a ledge in the middle of a large volcano. Below you the volcano bottom can be seen and above is the rim of the volcano. A couple of ledges can be seen on the other side of the volcano; it appears that this ledge is intermediate in elevation between those on the other side. The exit from this room is to the east."
+  ],
+  "safeSceneProfile": "Intermediate viewing ledge in large volcano with east exit; distant ledges are visual background only, not new traversal routes or visible treasures.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "EAST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "LAVA-TUBE"
+      }
+    },
+    {
+      "direction": "DOWN",
+      "view": {
+        "kind": "NEXIT",
+        "message": "I wouldn't try that."
+      }
+    },
+    {
+      "direction": "CROSS",
+      "view": {
+        "kind": "NEXIT",
+        "message": "It is impossible to cross this distance."
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "7306c13dd00709a75ddd335a790fd72506170c4c319096b29256156a7dce84f6"
+}

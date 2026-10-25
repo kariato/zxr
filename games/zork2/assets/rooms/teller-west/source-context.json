@@ -1,0 +1,41 @@
+{
+  "room": "TELLER-WEST",
+  "label": "West Teller's Room",
+  "literalRoomDescription": [
+    " "
+  ],
+  "safeSceneProfile": "Western bank teller room; preserve its source-specific walls and transport effects separately from eastern teller.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "VIEWING-WEST"
+      }
+    },
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DEPOSITORY"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "BANK-ENTRANCE"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "TELLER-ROOM",
+      "sourceText": "<ROUTINE TELLER-ROOM (RARG)\n    <COND (<EQUAL? .RARG ,M-LOOK>\n\t   <TELL\n\"You are in a small room, which was used by a bank officer who retrieved\nsafety deposit boxes for the customer. On the north side of the room is a\nsign which reads  \\\"Viewing Room\\\". On the \">\n\t   <COND (<EQUAL? ,HERE ,TELLER-WEST> <TELL \"west\">)\n\t\t (T <TELL \"east\">)>\n\t   <TELL \" side of the room, above an open door, is a sign reading:|\n|\n          BANK PERSONNEL ONLY|\n\" CR>)>>"
+    }
+  ],
+  "sourceLightFlag": false,
+  "sourceHash": "521eac258704769d6985892afe857e0a6bd0c4c765b71afaadb385117b95c7d2"
+}

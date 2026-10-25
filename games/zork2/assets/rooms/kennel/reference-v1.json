@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "KENNEL",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "58ed677924e1c1eea534e38e41967d31460fa9dbc42c1098336915b36a4fa88b",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-a3c98969-4389-490f-8d70-e496226d34e8.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "43b68ef7050d21b66cd069139367974631807438deea4830eebfc75112df827f",
+  "promptSha256": "07bfe0c720dea9a7273f7cd65248436d4bf4502ca718659a111850babd7e6d29",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

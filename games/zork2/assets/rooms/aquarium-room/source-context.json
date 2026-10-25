@@ -1,0 +1,67 @@
+{
+  "room": "AQUARIUM-ROOM",
+  "label": "Aquarium Room",
+  "literalRoomDescription": [
+    "Here a dark hallway turns a corner. To the south is a dark room, to the east is fitful light."
+  ],
+  "safeSceneProfile": "Dark corner hallway; aquarium is a separate observed object, never a baked water-filled north wall.",
+  "visibleInitialObjects": [
+    {
+      "identity": "AQUARIUM",
+      "label": "aquarium",
+      "parent": "AQUARIUM-ROOM",
+      "flags": [
+        "CONTBIT",
+        "OPENBIT"
+      ],
+      "sourceText": [
+        "Filling the northern half of the room is a huge aquarium."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed aquarium. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: Filling the northern half of the room is a huge aquarium.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every aquarium into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "SERPENT",
+      "label": "baby sea serpent",
+      "parent": "AQUARIUM",
+      "flags": [
+        "ACTORBIT"
+      ],
+      "sourceText": [
+        "There is a baby sea serpent swimming in the aquarium."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nBaby sea serpent sized for the source aquarium, not a gigantic dragon.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: There is a baby sea serpent swimming in the aquarium.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every baby sea serpent into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "EAST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "WORKBENCH-ROOM"
+      }
+    },
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "WIZARDS-QUARTERS"
+      }
+    },
+    {
+      "direction": "IN",
+      "view": {
+        "kind": "UEXIT",
+        "to": "IN-AQUARIUM"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "AQUARIUM-FCN",
+      "sourceText": "<ROUTINE AQUARIUM-FCN (\"AUX\" OBJ)\n\t <COND (<VERB? BOARD THROUGH> <DO-WALK ,P?IN> <RTRUE>)\n\t       (<AND <VERB? LOOK-INSIDE>\n\t\t     <IN? ,SERPENT ,AQUARIUM>>\n\t\t<TELL\n\"In the aquarium is a baby sea-serpent who eyes you suspiciously. His\nscaly body writhes about in the huge tank.\" CR>)\n\t       (<OR <AND <VERB? MUNG ATTACK> <EQUAL? ,PRSO ,AQUARIUM>>\n\t\t    <AND <VERB? THROW> <EQUAL? ,PRSI ,AQUARIUM>>>\n\t\t<COND (<EQUAL? ,PRSO ,AQUARIUM>\n\t\t       <COND (<NOT ,PRSI> <RFALSE>)\n\t\t\t     (T <SET OBJ ,PRSI>)>)\n\t\t      (T <SET OBJ ,PRSO>)>\n\t\t<MOVE .OBJ ,HERE>\n\t\t<COND (<IN? ,DEAD-SERPENT ,HERE>\n\t\t       <TELL\n\"The aquarium is already broken!\" CR>\n\t\t       <RTRUE>)\n\t\t      (<EQUAL? .OBJ ,FLASK>\n\t\t       <JIGS-UP\n\"The flask shatters, and poison gas fills the room!\">\n\t\t       <RTRUE>)\n\t\t      (<BOMB? .OBJ>\n\t\t       <DISABLE <INT I-FUSE>>)\n\t\t      (<OR <FSET? .OBJ ,WEAPONBIT>\n\t\t\t   <G? <GETP .OBJ ,P?SIZE> 10>>\n\t\t<REMOVE ,SERPENT>\n\t\t<MOVE ,PALANTIR-3 ,AQUARIUM>\n\t\t<FCLEAR ,PALANTIR-3 ,NDESCBIT>\n\t\t<PUTP ,AQUARIUM ,P?LDESC\n\"A shattered aquarium fills the northern half of the room.\">\n\t\t<MOVE ,DEAD-SERPENT ,HERE>\n\t\t<TELL\n\"The \" D .OBJ \" shatters the glass wall of the aquarium, spilling out\nan impressive amount of salt water and wet sand. It also spills out an\nextremely annoyed sea serpent who bites angrily at the \" D .OBJ \", and\nthen at you. He is having difficulty breathing, and he seems to hold you\nresponsible for his current problem.\">\n\t\t<COND (<VERB? MUNG>\n\t\t       <TELL\n\" He manages to rend you limb from limb before he drowns in the\nair.\" CR>\n\t\t       <JIGS-UP \"I guess you were too careless.\">)\n\t\t      (T\n\t\t       <TELL\n\" He tries to slither across the stone floor towards you. Fortunately,\nhe expires mere inches away from biting off your foot. A clear crystal\nsphere sits amid the sand and broken glass on the bottom of the\naquarium.\" CR>)>)\n\t\t      (T\n\t\t       <TELL\n\"The \" D .OBJ \" bounces harmlessly off the glass.\" CR>)>)>>"
+    }
+  ],
+  "sourceLightFlag": true,
+  "sourceHash": "2d8f9f8df27e75f3d701068f55bca2b4d1e0cbf59707fbad3360e241f7d8785f"
+}

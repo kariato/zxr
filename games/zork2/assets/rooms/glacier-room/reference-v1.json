@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "GLACIER-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "b9da2f2c663df566f7436ecfee852ca8c7eb380450948d97c4a67764a1c6c5b3",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-f5d83f2a-b502-4061-87e9-893bdf6260c5.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "42ada7f163e14c27efb096d66d9d8db5152538cf072dd19cbf2fa18e4e655a74",
+  "promptSha256": "d89a2983f79f0e1fe618eb1b2de4e61541d867a0912f973590ac920038210a35",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

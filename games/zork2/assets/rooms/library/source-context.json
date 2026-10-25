@@ -1,0 +1,100 @@
+{
+  "room": "LIBRARY",
+  "label": "Library",
+  "literalRoomDescription": [
+    "This must have been a large library, probably for the royal family. All of the shelves have been gnawed to pieces by unfriendly gnomes. To the north is an exit."
+  ],
+  "safeSceneProfile": "Royal library with shelves gnawed to pieces by gnomes and north exit. Individual coloured books are observed objects, never unreadable decorative duplicates of puzzle books.",
+  "visibleInitialObjects": [
+    {
+      "identity": "BLUE-BOOK",
+      "label": "blue book",
+      "parent": "LIBRARY",
+      "flags": [
+        "BURNBIT",
+        "CONTBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "sourceText": [
+        "Worn and battered in one corner of the room is a blue book.",
+        "This book is written in a tongue with which I am unfamiliar."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed blue book. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nFDESC: Worn and battered in one corner of the room is a blue book.\nTEXT: This book is written in a tongue with which I am unfamiliar.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every blue book into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "GREEN-BOOK",
+      "label": "green book",
+      "parent": "LIBRARY",
+      "flags": [
+        "BURNBIT",
+        "CONTBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "sourceText": [
+        "A handsome book, bound in green leather, sits in the center of the room.",
+        "This book is written in a tongue with which I am unfamiliar."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed green book. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nFDESC: A handsome book, bound in green leather, sits in the center of the room.\nTEXT: This book is written in a tongue with which I am unfamiliar.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every green book into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "PURPLE-BOOK",
+      "label": "purple book",
+      "parent": "LIBRARY",
+      "flags": [
+        "BURNBIT",
+        "CONTBIT",
+        "READBIT",
+        "SEARCHBIT",
+        "TAKEBIT"
+      ],
+      "sourceText": [
+        "Lying in the dust, and covered with mold, is a purple book.",
+        "This book is written in a tongue with which I am unfamiliar. Assuming that one can indeed tell a book by its cover, it is likely filled with purple prose, the like of which is rarely seen outside the Great Underground Empire."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed purple book. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: Lying in the dust, and covered with mold, is a purple book.\nTEXT: This book is written in a tongue with which I am unfamiliar. Assuming that one can indeed tell a book by its cover, it is likely filled with purple prose, the like of which is rarely seen outside the Great Underground Empire.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every purple book into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "WHITE-BOOK",
+      "label": "white book",
+      "parent": "LIBRARY",
+      "flags": [
+        "BURNBIT",
+        "CONTBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "sourceText": [
+        "Right beside the purple book sits a white one.",
+        "It is written in an unfamiliar tongue and details the use of various magical objects, chiefly the so-called \"magic wand\". Apparently these devices work by pointing them at the object to be ensorcelled, and then chanting the appropriate magic words. (It's truly amazing how credulous these ancients were, isn't it?)"
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed white book. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nFDESC: Right beside the purple book sits a white one.\nTEXT: It is written in an unfamiliar tongue and details the use of various magical objects, chiefly the so-called \"magic wand\". Apparently these devices work by pointing them at the object to be ensorcelled, and then chanting the appropriate magic words. (It's truly amazing how credulous these ancients were, isn't it?)\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every white book into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [
+    {
+      "identity": "STAMP",
+      "reason": "inside a closed opaque container"
+    }
+  ],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "LEDGE-1"
+      }
+    },
+    {
+      "direction": "OUT",
+      "view": {
+        "kind": "UEXIT",
+        "to": "LEDGE-1"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "0530b9244aaa1d8059cdbd6dd4d286235c362734306dc285cc21cc586312a3e5"
+}

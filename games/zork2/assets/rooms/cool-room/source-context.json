@@ -1,0 +1,43 @@
+{
+  "room": "COOL-ROOM",
+  "label": "Cool Room",
+  "literalRoomDescription": [
+    "The room is cool and damp. The air is misty. A twisty path from the southeast splits here toward a wide northerly stone bridge, and a narrow westerly tunnel. It is from the latter that the mist and chill seem to originate."
+  ],
+  "safeSceneProfile": "Cool damp misty junction, broad northerly bridge approach and narrow west tunnel. Mist must not grant light or imply outdoor sky.",
+  "visibleInitialObjects": [],
+  "excludedObjects": [],
+  "sourceExits": [
+    {
+      "direction": "NORTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "STONE-BRIDGE"
+      }
+    },
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "GLACIER-ROOM"
+      }
+    },
+    {
+      "direction": "SE",
+      "view": {
+        "kind": "UEXIT",
+        "to": "CAROUSEL-ROOM"
+      }
+    },
+    {
+      "direction": "CROSS",
+      "view": {
+        "kind": "UEXIT",
+        "to": "STONE-BRIDGE"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "a012b34a60ae1841f380f1ca4bf17920d53e8936f1b5e484513733bc74b0a879"
+}

@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "AQUARIUM-ROOM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "43a2af568191577dcb1e0d9e6ffaf4bc6a61d24106aa37a62f6723999d41113f",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-b04121b6-fe47-4b36-ad24-612abd22ba6f.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "2d8f9f8df27e75f3d701068f55bca2b4d1e0cbf59707fbad3360e241f7d8785f",
+  "promptSha256": "1a39ddb6058003ef89d4282c8e4e4ff00c4db62e69973d574c02c9089ecaff2f",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

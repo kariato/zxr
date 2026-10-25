@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "INSIDE-BARROW",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "4c8cd81cfb0a4eed6e3980eafc60101abf1644c0cbf7e1393301badd9120387a",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-f70bbfd3-a24e-49d6-a13c-fcdce90ce9da.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "4be78d1e7eb98121799f54f058619f7b994de3ad03cbb76442db4161c34660b8",
+  "promptSha256": "1607b7e1934e31f6d8ecc740ca35d7ec529a6512e419559651beedd43d10e0a9",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}

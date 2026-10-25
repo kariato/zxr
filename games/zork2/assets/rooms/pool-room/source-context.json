@@ -1,0 +1,75 @@
+{
+  "room": "POOL-ROOM",
+  "label": "Pool Room",
+  "literalRoomDescription": [
+    "This is a large room, one half of which is depressed. Salty water flows from a large leak in the ceiling. The only exit is to the west."
+  ],
+  "safeSceneProfile": "Half-depressed floor, separate ceiling leak and salty pool. Hidden candy must not become a visible floor sparkle through opaque water.",
+  "visibleInitialObjects": [
+    {
+      "identity": "FLASK",
+      "label": "stoppered glass flask filled with liquid",
+      "parent": "POOL-ROOM",
+      "flags": [
+        "READBIT",
+        "TAKEBIT",
+        "TRANSBIT"
+      ],
+      "sourceText": [
+        "A stoppered glass flask with a skull-and-crossbones marking is here. The flask is filled with some clear liquid.",
+        "There is a skull-and-crossbones engraved on the glass."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed stoppered glass flask filled with liquid. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: A stoppered glass flask with a skull-and-crossbones marking is here. The flask is filled with some clear liquid.\nTEXT: There is a skull-and-crossbones engraved on the glass.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every stoppered glass flask filled with liquid into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "LEAK",
+      "label": "leak",
+      "parent": "POOL-ROOM",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "sourceText": [],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed leak. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nNo extra readable inscription or puzzle hint.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every leak into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "POOL",
+      "label": "pool of tears",
+      "parent": "POOL-ROOM",
+      "flags": [],
+      "sourceText": [
+        "The leak has submerged the depressed area in a pool of tears. There is a hazy something at the deepest part of the pool."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed pool of tears. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: The leak has submerged the depressed area in a pool of tears. There is a hazy something at the deepest part of the pool.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every pool of tears into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [
+    {
+      "identity": "CANDY",
+      "reason": "initially concealed"
+    }
+  ],
+  "sourceExits": [
+    {
+      "direction": "WEST",
+      "view": {
+        "kind": "UEXIT",
+        "to": "POSTS-ROOM"
+      }
+    },
+    {
+      "direction": "OUT",
+      "view": {
+        "kind": "UEXIT",
+        "to": "POSTS-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [
+    {
+      "routine": "POOL-FCN",
+      "sourceText": "<ROUTINE POOL-FCN ()\n\t <COND (<VERB? DRINK>\n\t\t<TELL\n\"The water is extremely salty.\" CR>)\n\t       (<VERB? LOOK-UNDER>\n\t\t<TELL\n\"You'd probably have to enter the pool to see what's below the surface.\" CR>)\n\t       (<VERB? THROUGH>\n\t\t<JIGS-UP\n\"You enter the pool, thrash around for a good while, and then drown.\nSad, but true.\">)>>"
+    }
+  ],
+  "sourceLightFlag": false,
+  "sourceHash": "fae40c5843ee40434d57e7ed287ad1aca87426ea87e4662e0c964dc6e912921f"
+}

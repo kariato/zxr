@@ -1,0 +1,60 @@
+{
+  "room": "DRAGON-LAIR",
+  "label": "Dragon's Lair",
+  "literalRoomDescription": [
+    "You are in the dragon's lair, where the rock walls are scarred by flame. A blackened doorway leads to the south."
+  ],
+  "safeSceneProfile": "Flame-scarred lair and blackened southern doorway; princess, treasure, chest and dragon outcomes remain separate observed objects.",
+  "visibleInitialObjects": [
+    {
+      "identity": "CHEST",
+      "label": "rotten wooden chest",
+      "parent": "DRAGON-LAIR",
+      "flags": [
+        "CONTBIT",
+        "TAKEBIT"
+      ],
+      "sourceText": [
+        "A rotten old wooden chest is in one corner among the debris."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nSource-backed rotten wooden chest. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nFDESC: A rotten old wooden chest is in one corner among the debris.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every rotten wooden chest into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    },
+    {
+      "identity": "PRINCESS",
+      "label": "beautiful princess",
+      "parent": "DRAGON-LAIR",
+      "flags": [
+        "ACTORBIT"
+      ],
+      "sourceText": [
+        "A beautiful young woman, wearing a dirty and bedraggled gown, sits on a rock in the corner. Her hair is unkempt and she is oblivious to your presence, almost in a trance."
+      ],
+      "appearanceBrief": "Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.\nYoung woman in dirty bedraggled gown, unkempt hair; source pose/state controls trance or movement, no eroticisation.\nSource text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):\nLDESC: A beautiful young woman, wearing a dirty and bedraggled gown, sits on a rock in the corner. Her hair is unkempt and she is oblivious to your presence, almost in a trance.\nUse the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every beautiful princess into the same geometry. Contents, destruction, disappearance and light remain engine-controlled."
+    }
+  ],
+  "excludedObjects": [
+    {
+      "identity": "STATUETTE",
+      "reason": "inside a closed opaque container"
+    }
+  ],
+  "sourceExits": [
+    {
+      "direction": "SOUTH",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DRAGON-ROOM"
+      }
+    },
+    {
+      "direction": "OUT",
+      "view": {
+        "kind": "UEXIT",
+        "to": "DRAGON-ROOM"
+      }
+    }
+  ],
+  "guardedRoomSource": [],
+  "sourceLightFlag": false,
+  "sourceHash": "f00234d0d5e62fe776720beb8dbd849f44abd5ed4eeb8907a3b2ccb7a0561cc8"
+}

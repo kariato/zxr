@@ -1,0 +1,13 @@
+{
+  "format": "zxr-room-reference-v1",
+  "room": "WIZARDS-QUARTERS",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "0061ce2656a0459871eecb63ed07ce99f32e05e58b024684730df2cea5d1b635",
+  "sourceFile": "/Users/kariatoo/.codex/generated_images/01a1703a-6c37-7070-a81e-68885a41edf8/exec-73a0eecc-e5ca-42ea-878c-3553a888b804.png",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "sourceHash": "bcba9a040758dc30b713c1f03372501b6366433734f44df2be4e03b55af45d1f",
+  "promptSha256": "bc860df38034ac8f0dde594e209611dd347d624dd825a191f159b322a975531c",
+  "review": "draft",
+  "runtimeIntegration": "not-performed"
+}
