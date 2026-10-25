@@ -1,0 +1,17 @@
+Tencent Hunyuan 3D 2.0 is licensed under the Tencent Hunyuan 3D 2.0 Community License Agreement, Copyright © 2025 Tencent. All Rights Reserved. The trademark rights of “Tencent Hunyuan” are owned by Tencent or its affiliate.
+
+GENERATED 3D MODELS: AVAILABILITY AND USE RESTRICTIONS
+
+The following ZXR files are machine-generated outputs of Tencent Hunyuan 3D 2.0:
+
+  barrow-natural-v2.glb  (generated rock forms, assembled in Blender)
+  princess-v1.glb        (generated mesh; rigged and animated afterwards)
+  chest-v1.glb           (generated exterior; split into body and hinged lid afterwards)
+  lamp-v1.glb
+  sword-v1.glb
+
+They are made available only in the Territory defined by the Tencent Hunyuan 3D 2.0 Community License Agreement: worldwide, EXCLUDING THE EUROPEAN UNION, THE UNITED KINGDOM AND SOUTH KOREA. They are not available or licensed for use, reproduction, modification, distribution or display in the European Union, the United Kingdom or South Korea.
+
+By using these files you agree to the use restrictions of that Agreement, including its Acceptable Use Policy (Exhibit A). In particular, you must not use these files, or any output or results of Tencent Hunyuan 3D 2.0, to improve any other AI model (Agreement section 5(b)), and you must not use them outside the Territory (section 5(c)). Any further distribution must carry these same restrictions.
+
+ZXR's Apache License 2.0 covers ZXR's own code and does not apply to these generated models. A copy of the Agreement accompanies this notice as TENCENT-HUNYUAN-3D-2.0-LICENSE.txt. Tencent is not affiliated with ZXR and does not endorse it.
