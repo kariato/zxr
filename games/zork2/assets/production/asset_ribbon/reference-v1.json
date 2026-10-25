@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "RIBBON",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "1002593ad784ca6c1098e1635292bd63d75a93ee13e8d1a98afd819b1b8d61ae",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "753d5863c8580ee42a0d3cf1e3f0822dbb82b4bf3b747bc839d9e4bca71b75c9",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

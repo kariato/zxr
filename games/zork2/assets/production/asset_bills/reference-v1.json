@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "BILLS",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "4325ea01fb5cf3b3fee572903e7c3da598e407f5a6cc5c5419c722c763852b6c",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "01ab92f0c883b9bc549acd0a17ded1a6f4ecede0d77a5b599ad7f4d219f2a3cc",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "BAT",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "d01801e270c31b645d20292b4f97a5a15901f3b0d7650e73cebf49296c1de4bd",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "097bc8c1bb930dec0ba5afca158e7aed37e2f1f743cba29cd44aa55f3bbacc9c",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

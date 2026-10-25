@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "FLASK",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "aed156b22b5ad40bce3eb5ba09dac7c11441e1aa69ccb0ff72e86232a4bdfa09",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "6ae65329ad020767420c48747e9082cc0de6c70981adbedefd53fef2c6a08e6a",
+  "imageSize": [
+    1145,
+    1374
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

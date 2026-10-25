@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "FUSE",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "e6eec8270c687dbfbf621f2ed58af6176cbf30d26c714cc823bd4380f59d7eb5",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "a0738e89e015facc54e585d2a7c3e794a3d6d2735e5401fa54b2e175aa193b79",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

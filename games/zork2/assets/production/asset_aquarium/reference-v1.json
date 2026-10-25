@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "AQUARIUM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "a9eacb4dca0dbccc22328b8fe985425b3e1ce7f12cf64889a0a49e6d315733a1",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "0ed78183d84c7725b20e7798fba9c9d8fbac0135ebb2458c2300b6367764fbd0",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

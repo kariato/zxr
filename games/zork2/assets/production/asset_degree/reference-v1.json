@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "DEGREE",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "aa7aafe77c3070903d244403df06d34e07c895cbcac4f9139b1b3ecff45c63c1",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "4f2678f459fde49852a47b0d226785a3e99d8e22cec41c5475a0c1c0f32fc70c",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

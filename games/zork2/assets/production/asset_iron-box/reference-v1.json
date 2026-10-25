@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "IRON-BOX",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "05adf3dd831a4eaba6f7032d660a3cbf6b06255f143f3fede9a9b539654e0433",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "589726dca169a0049c34cc5adc6358662b86a3b9373c07d80210920d9b18ba0f",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

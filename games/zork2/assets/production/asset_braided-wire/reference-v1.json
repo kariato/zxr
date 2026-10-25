@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "BRAIDED-WIRE",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "7cf16cf8c49f384815ba83448de712063e7509c473882a6fd34a07661a1b73d7",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "fedaaa1e1bd3ae4b6402e7e4a89b9e4696961590689f9a655f36b1cba91a67fb",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

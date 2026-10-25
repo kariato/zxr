@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "ROSE-BUSH",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "48b161759c064d664ff5db549a19ff1eb99c83463ffdc4ea992183968f85c21a",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "4014b7bf0962f443bf388ad0c1db0d6f371527a636dd911c00bf854d5e7b59b6",
+  "imageSize": [
+    1302,
+    1208
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "PWINDOW",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "04e7150e322621331d8a656c5de95d13b96c6083c613bab73951c2a09495db59",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "d6ec35521e07a38fea2a5da987bcc9beb05523bb7da6072dcb3e8df49476cf25",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

@@ -1,0 +1,18 @@
+{
+  "model": "mlx-community/Qwen3-TTS-12Hz-1.7B-VoiceDesign-bf16",
+  "checkpoint": "7d3824abff87e49756bb0f83fb5411de75d160c4",
+  "runtime": "0.6.1",
+  "seed": 42,
+  "temperature": 0.65,
+  "text": "Inside the Barrow. You are inside an ancient barrow hidden deep within a dark forest. The barrow opens into a narrow tunnel at its southern end. You can see a faint glow at the far end.",
+  "instruction": "A mature male British English storyteller with a warm resonant voice. Calm, atmospheric fantasy narration with quiet curiosity and a subtle sense of mystery. Speak clearly at a measured natural pace with gentle sentence pauses. No whispering, no exaggerated theatricality, no background music or sound effects.",
+  "sample_rate": 24000,
+  "duration_seconds": 17.44,
+  "generation_seconds": 21.01812041597441,
+  "codec": "mp3",
+  "bitrate": 64000,
+  "channels": 1,
+  "loudness_target_lufs": -18,
+  "bytes": 140204,
+  "sha256": "2f7c394a21610696bf3d9dade4e908ed3f2733d8545f2495b71d2a1b7965308e"
+}

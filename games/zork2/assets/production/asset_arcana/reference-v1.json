@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "ARCANA",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "5fe2fc0fb03caecdb7da488118d2ceac24308984af25a9aba5e991ab094099c9",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "2cfdba805b23c066ef66d25642d5e14afa3eb28881974020beb2b79bc8f5b86e",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

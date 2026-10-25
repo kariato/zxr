@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "RIDDLE-DOOR",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "dbd46f2da1c88e69d83ea8dc302827bf5aabe3b183dce1eef3403031aff86dca",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "f7d672fdf0da9f8bf31dabef39d33445a127bc65e3703900192451362760628e",
+  "imageSize": [
+    1024,
+    1536
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

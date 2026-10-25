@@ -10,7 +10,11 @@ ZXR is a new language and runtime that keeps ZIL's world model (rooms, objects, 
 
 The core rule: **the world model stays authoritative and textual; the 3D layer is a view of it.** Every room, object and state change exists in the model first, and scenes, animations and audio react to that state. A ZXR game can therefore always run as plain text, which keeps it testable, saveable and accessible.
 
-**Scene format (decided 2026-10-21; grouping clarified 2026-10-23):** Mark confirmed GLB, the single-file binary form of glTF 2.0. Rooms and assets use `.glb` files holding meshes, rigs and animation clips, and a thin ZXR manifest names the roots, anchors and clips the game uses. A room normally has its own scene, but geographically compatible connected rooms may share one GLB with a separate named root per logical room. See the room-group policy below.
+**Scene format (decided 2026-10-21; grouping clarified 2026-10-23; panoramic backgrounds added 2026-10-24):** Mark confirmed GLB, the single-file binary form of glTF 2.0, for meshes, rigs and animation clips. Scenes combine that 3D foreground with an optional panoramic background image. A thin ZXR manifest names the room roots, background assets, anchors and clips the game uses. A room normally has its own scene, but geographically compatible connected rooms may share one GLB with a separate named root per logical room. See the visual-layer and room-group policies below.
+
+**Visual direction (Mark, 2026-10-24):** the cavern panorama prototype was a substantial improvement to the experience. Use panoramic scenery for distant scale and atmosphere, with real 3D geometry for nearby spaces, objects and interactions. Apply this approach where it fits each room's source description; a full detailed mesh of every distant surface is not required. The cavern prototype is the first reference for this approach, not approval of every room's proposed artwork.
+
+**Development priority (Mark, 2026-10-24):** build a playable 3D/VR adaptation of the existing Zork II game using its rules and the current engine. Editor refinement and bulk planning review can follow the working prototype. The original game's maturity does not remove the need to verify our translation, presentation and input handling. Existing source conformance and observation boundaries remain essential.
 
 ## The cross-compiler: ZIL in, XR out
 
@@ -23,12 +27,12 @@ flowchart LR
     FE["ZIL front end<br/>parses rooms, objects, syntax<br/>and routines into JSON, 1 to 1"] --> JSON["ZXR JSON<br/>world model and logic,<br/>option candidates, playable as text"]
   end
   subgraph llm["LLM-assisted: scenes, assets, option labels"]
-    PL["LLM scene planner<br/>reads room and object text;<br/>writes scene plans, asset briefs, labels"] --> AB["Asset builder<br/>Blender scripts, a kit library,<br/>text-to-3D; exports GLB files"]
+    PL["LLM scene planner<br/>reads room and object text;<br/>writes scene plans, asset briefs, labels"] --> AB["Asset builder<br/>panoramic images; Blender scripts,<br/>kit library, text-to-3D; exports GLBs"]
   end
   ZIL --> FE
   ZIL --> PL
   FE -. room and object names .-> PL
-  JSON --> BUILD["zxrc build<br/>checks every name across JSON and GLB,<br/>makes story bundle"]
+  JSON --> BUILD["zxrc build<br/>checks JSON, GLB and background refs,<br/>makes story bundle"]
   AB --> BUILD
 ```
 *Logic is translated exactly; only the 3D world is imagined by the LLM.*
@@ -38,8 +42,8 @@ flowchart LR
 **What each stage does:**
 
 1. **ZIL front end (no LLM).** Parses `ROOM`, `OBJECT`, `SYNTAX` and `ROUTINE` forms and writes them out as ZXR JSON, one ZIL form to one JSON block. The result is a playable text game, checked against the original with transcript tests.
-2. **LLM scene planner.** For each room it reads the `DESC`, `LDESC`, exits and the objects that start there, and writes a scene plan: size and style of the space, where each exit sits, anchor points for each object, lighting, sound. For each object and character it writes an asset brief ("brass lantern, hand-held, warm glow when on") and the clips it needs (`flicker`, `open`, `move`).
-3. **Asset builder.** Turns briefs into GLB files. Three sources, cheapest first: reuse a model from a kit library; have the LLM write a Blender Python script that assembles the room from kit parts; or call a text-to-3D generator for one-off props. Characters get a stock rig and a shared animation library.
+2. **LLM scene planner.** For each room it reads the `DESC`, `LDESC`, exits and the objects that start there, and writes a scene plan: size and style of the space, where each exit sits, anchor points for each object, lighting, sound, and which distant scenery can be panoramic. It keeps nearby surfaces and anything interactive or state-dependent in separate geometry. For each object and character it writes an asset brief ("brass lantern, hand-held, warm glow when on") and the clips it needs (`flicker`, `open`, `move`).
+3. **Asset builder.** Produces panoramic background images and the required foreground GLBs. For geometry, three sources are available: reuse a model from a kit library; have the LLM write a Blender Python script that assembles the room from kit parts; or call a text-to-3D generator for one-off props. Characters get a stock rig and a shared animation library. Backgrounds are generated or authored ahead of time, inspected in the running scene, and retained with their prompts, source references and versions. Image generation never runs during play.
 4. **zxrc build.** Checks that every anchor, clip, hotspot and routine named anywhere exists, then packs the story bundle.
 
 **A person stays in the loop.** The LLM's scene plans and asset briefs are JSON too, so an author can review and edit them before assets are built, and re-running the build keeps their edits. Every LLM output is cached, so the same ZIL file gives the same game on every build.
@@ -70,7 +74,7 @@ What is new: assets, scenes, timelines, spatial anchors, real-time events and mu
 
 ### Assets
 
-An asset names a glTF file and the clips inside it, so code refers to `LAMP-ASSET` and `flicker`, never to file paths. Clip names are lowercase everywhere, matching rougeXR's clip contract (`idle`, `move`, `attack`, `hurt`, `death`, plus `talk` and object clips such as `open`).
+A 3D asset names a glTF file and the clips inside it, so code refers to `LAMP-ASSET` and `flicker`, never to file paths. Background assets name image files and their projection/orientation; they do not acquire object identities, animation clips or game actions. Clip names are lowercase everywhere, matching rougeXR's clip contract (`idle`, `move`, `attack`, `hurt`, `death`, plus `talk` and object clips such as `open`).
 
 ```json
 "assets": {
@@ -200,7 +204,30 @@ An anchor is a named point in a scene (`DOORWAY-MARK`, `TABLE-TOP`). Objects, ch
 
 ## Scenes, assets and animation
 
-Scenes are glTF 2.0 files plus a small ZXR manifest; animation is driven by world state, not by hand-placed calls alone.
+Scenes combine glTF 2.0 foreground assets, optional panoramic background images and a small ZXR manifest. Animation and visibility are driven by disclosed world state, not by hand-placed calls alone. The production GLB/manifest pipeline described here is a target design; the current playable slice uses procedural geometry and a renderer-managed panorama. See [the prototype scope and verification](prototype.md).
+
+### Panoramic backgrounds and 3D foregrounds
+
+Use a layered environment to give each place detail and scale while keeping close interaction spatial and readable.
+
+| Layer | Representation | Responsibility |
+|---|---|---|
+| Distant scenery | A 360° panorama, initially a 2:1 equirectangular image | Cavern walls and high ceilings, distant terrain, or an outdoor horizon where the source supports it |
+| Nearby space | Real 3D geometry, procedural in the prototype and GLB assets in production | Walkable ground, ledges, bridge decks, nearby walls, collision boundaries and surfaces requiring convincing depth |
+| Objects and changing features | Separate 3D bodies or nodes | Props, actors, doors, containers, revealable passages, destructible features and source-controlled lights |
+| Interaction and text | Source-backed markers, action choices and captions | Select currently offered commands and preserve authoritative descriptions and outcomes |
+
+A skybox is the distant visual shell, including underground interiors; it does not imply an outdoor sky. A cavern garden remains underground if the source says so. The cavern prototype pairs painted distant rock with real bridge planks, rails and nearby rock formations. Apply the same division to other rooms where appropriate, preserving source-specific materials, colours and spatial descriptions.
+
+**Depth and navigation:** panoramic pixels have no physical depth, collision or independent object identity. Do not place a clickable object, bridge deck, reachable wall or readable clue only in the image. Nearby scenery must use geometry when walking, leaning or stereoscopic viewing would expose the lack of parallax. Tight interiors or changing spaces may need a fuller 3D shell. Looking around or walking within a room remains presentation-only; a logical room transition still requires the engine's movement action and result. A painted opening cannot establish a route or imply that a movement attempt will succeed.
+
+**State and disclosure:** use backgrounds only for scenery safe to show in the current observed room. Do not bake concealed routes, distant actors, treasure, inscriptions, puzzle answers or switchable light sources into a permanent panorama. Show changeable details through separately observed nodes, or a background variant selected from disclosed presentation state. The renderer must not inspect arbitrary hidden flags to choose an image. If the engine reports darkness, clear the background and undisclosed geometry immediately, including when an older image request finishes later. Source text and action choices remain available.
+
+**Lighting and visual continuity:** a panorama supplies background colour; it does not automatically become an environment light or override the source's illumination. Blend foreground materials and fog with the image while keeping props readable. The cavern prototype uses cooler ambient stone tones and a separate warm carried lamp. Future environmental lighting or background variants must follow the same observed light state. Inspect the horizontal seam, poles, horizon, orientation and foreground joins while turning and moving; retain the approved style without forcing every room into the same scenery.
+
+**Loading and device costs:** load the required panorama lazily, reuse compatible images, and keep background activation scoped to the active room. Late downloads must not restore a background after darkness, a room change, restore or teardown. A failed image load leaves a playable geometry/text fallback. Dispose textures, renderer-side conversions and geometry buffers when no longer needed. Measure transfer size, decoded texture memory, cube conversion/mipmap costs and frame time on actual target devices; image detail is not free merely because it uses few draw calls. The same foreground/background split serves phone, tablet, desktop and WebXR, with suitable texture resolutions and geometry variants per device.
+
+**Current evidence and next acceptance:** the tunnel and foot bridge share one roughly 2 MB generated cave panorama, with instanced foreground rocks. Mark endorsed the improved experience. Automated checks cover lazy loading/reuse, source visibility boundaries, late-load races, failure/retry and disposal; browser checks at phone dimensions cover layout, turning and room transitions. Actual phone/headset performance, stereo comfort and broader room art remain to be evaluated. Keep the generated image, prompt and provenance with the assets; this visual direction does not silently approve unrelated planning records. See [prototype notes](prototype.md#cavern-skybox-prototype) and [asset provenance](../src/prototype/assets/README.md).
 
 ### Why glTF
 
@@ -219,6 +246,8 @@ Crossing a logical boundary submits the same currently offered movement option a
 
 Keep groups modest and validate their combined geometry, texture and lighting costs against phase 7.0 device measurements. Loading/disposal operates on the shared file while activation and lighting remain room-specific. Non-Euclidean, dynamic or incompatible connections retain separate scenes and transitions. This is a planned presentation capability for 6.5/7.2/8.1, not a change to the text engine or an implemented loader feature.
 
+Rooms may also reuse a background image without sharing a GLB or becoming continuously connected. A common panorama is an art/resource choice, not evidence of a source exit or a merged logical room. Each room retains its own activation, lighting, observations and movement rules.
+
 A `SCENE` form points at a GLB and names the nodes inside it that the game cares about. Named glTF nodes become anchors; the rest is scenery.
 
 ```json
@@ -234,6 +263,8 @@ A `SCENE` form points at a GLB and names the nodes inside it that the game cares
 ```
 
 The compiler checks at build time that every named anchor, clip and light rig exists in the GLB, so a typo is a compile error, not a runtime crash.
+
+The planned manifest also references optional background assets, their projection and orientation, and any variants selected through disclosed state. The build must validate those image references and dimensions alongside the foreground references. These background fields and build checks are future schema work; the current prototype selects its two cavern backgrounds in the presenter and loads a Vite-managed image URL. This document does not introduce new fields into the existing published schemas.
 
 ### Hotspots and triggers
 
@@ -298,9 +329,23 @@ Clips can blend (`BLEND 0.3`), layer (upper-body over walk) and loop. Characters
 
 Characters are rigged people or creatures modelled and animated in Blender, exported as GLB, and played back by name. The game never edits their keyframes; it only chooses which baked clip runs and when.
 
+**VR character scope (Mark, 2026-10-24):** body animation is sufficient. Faces remain static and readable; facial rigs, expression morph targets and lip-sync are outside the current target. Prerecorded speech plays alongside modest head, torso and arm gestures. For the princess, prioritize seated idle, stand, walk and a simple body `talk` clip. Hair and clothing use the same rig or remain static; no separate simulation is required.
+
+Initial authoring targets, to be revised after the real-device measurements in phase 7.0:
+
+| Character resource | Starting target |
+|---|---|
+| Visible geometry | 5,000–10,000 triangles; a featured character may use up to 15,000 after review |
+| Materials | One atlas/material preferred, two where necessary |
+| Textures | 1K base-color atlas by default; 2K only when close inspection warrants it |
+| Skeleton | Roughly 20–35 deform bones, at most four bone influences per vertex |
+| Motion | Small reusable baked body clips, shared across compatible skeletons |
+
+These are proposed per-character targets, not tested headset acceptance limits or a total-room budget. Measure all visible characters, environment geometry, skinning, transparency, lighting and texture memory together on the chosen headset. Preserve useful facial detail in the texture and silhouette while reducing hidden geometry. Generator output must be simplified and checked in the actual GLB; a requested polygon count is not proof that the export meets the budget.
+
 **Blender to ZXR pipeline:**
 
-1. Model and rig the character in Blender (armature plus skinned mesh, optional shape keys for faces and lip sync).
+1. Model and rig the character in Blender (body armature plus skinned mesh; static face).
 2. Animate each motion as its own Blender Action: `idle`, `move`, `talk`, `roar`, `attack`, `death`.
 3. Push each Action to an NLA track and export as GLB. Every Action becomes a named glTF animation clip.
 4. The ZXR `ASSET` lists those clip names, and `zxr build` fails if a name is missing from the GLB.
@@ -309,8 +354,7 @@ Characters are rigged people or creatures modelled and animated in Blender, expo
 "assets": {
   "TROLL-ASSET": {
     "file": "characters/troll.glb",
-    "clips": ["idle", "move", "talk", "roar", "attack", "death"],
-    "face-keys": ["blink", "jaw-open", "snarl"]
+    "clips": ["idle", "move", "talk", "roar", "attack", "death"]
   }
 },
 "characters": {
@@ -333,7 +377,7 @@ Characters are rigged people or creatures modelled and animated in Blender, expo
 
 - **Crossfades:** switching clips blends over a short time (default 0.25 s) so motion never pops.
 - **Layers:** a clip can play on part of the skeleton only, for example `talk` on the upper body while `move` runs on the legs.
-- **Procedural touches on top:** `LOOK-AT` turns the head and eyes toward the player after the baked clip is applied, so characters react to where you stand.
+- **Procedural touches on top:** `LOOK-AT` turns the head toward the player after the baked clip is applied, so characters react to where you stand.
 - **Root motion:** walk clips can be baked in place (the runtime moves the character) or with root motion (the clip moves it). In-place is the default because `MOVE-TO` needs exact control.
 - **Shared animation libraries:** characters built on the same Blender skeleton can share one animation GLB, so ten villagers do not need ten copies of `WALK`.
 
@@ -343,13 +387,14 @@ Game logic advances in turns, as in ZIL. Presentation runs on a real-time clock 
 
 ## Runtime architecture
 
-The compiler turns source and glTF assets into one story bundle; on the headset, the engine owns all game state and a separate scene director turns state changes into animation.
+The target build packages source, glTF assets and panoramic images behind one checked manifest; on the device, the engine owns all game state and a separate scene director turns disclosed state changes into presentation. The prototype currently loads a semantic story bundle and separate presentation assets.
 
 ```mermaid
 flowchart LR
   SRC["ZXR source<br/>rooms, objects, routines, timelines"] --> C["zxrc compiler<br/>parse, type-check, verify asset refs"]
   GLTF["glTF assets<br/>meshes, rigs, clips, named anchors"] --> C
-  C --> B["Story bundle<br/>checked JSON, manifest, packed GLB files"]
+  BG["Panoramic images<br/>backgrounds and disclosed variants"] --> C
+  C --> B["Game package<br/>checked JSON, manifest, GLBs, images"]
   subgraph RT["Runtime on the device"]
     IN["Input mapper<br/>option picks, grabs, gestures: game actions"] --> VM["ZXR engine<br/>world model, options, turn clock, saves"]
     VM --> SD["Scene director<br/>BIND rules, clips, timelines, real time"]
@@ -360,9 +405,9 @@ flowchart LR
 ```
 *The engine owns the world; the scene director only draws it.*
 
-- **zxrc compiler:** parses ZXR source, resolves objects and syntax lines, and checks every asset, clip and anchor name against the GLB files. Output is a `.zxb` bundle: checked JSON, a scene manifest and packed assets.
+- **zxrc compiler / presentation build (target):** parses ZXR source, resolves objects and syntax lines, and checks 3D asset, clip, anchor and background references. The package holds the semantic `.zxb` bundle and versioned presentation assets behind the manifest; the renderer can fetch images and meshes as needed without making image loading part of engine execution.
 - **ZXR engine:** a headless TypeScript engine, following rougeXR's engine contract, that interprets the validated JSON directly and runs the world model, actions and turn clock. It has no rendering code and runs the same in a terminal, a browser or a headset.
-- **Scene director:** listens to disclosed presentation events (something the player can perceive moved, opened or lit; `PLAY`, `CUE`; room changed), applies `BIND` rules and runs timelines on the real-time clock. Internal changes the player cannot perceive never reach it.
+- **Scene director:** listens to disclosed presentation events (something the player can perceive moved, opened or lit; `PLAY`, `CUE`; room changed), selects the active background and foreground, applies `BIND` rules and runs timelines on the real-time clock. It clears stale or dark-room scenery even while assets load. Internal changes the player cannot perceive never reach it.
 - **Renderer adapter:** a thin interface (`load-scene`, `spawn`, `play-clip`, `move`, `caption`) so the same bundle can drive more than one engine. First target: WebXR with three.js, which runs on Quest, Vision Pro and desktop browsers with no app store step.
 - **Input mapper:** maps predefined action choices, pointing, grabs and gestures to option picks and sends them to the engine, closing the loop. It never sends anything else.
 
@@ -388,6 +433,20 @@ Players never type. Each turn the runtime offers options built from the game's o
 
 Players pick with gaze and pinch, a controller trigger, touch or keyboard. Every non-movement action has a predefined text string associated with its structured action; dialogue and puzzle answers are selected from authored choices. There is no microphone input, speech recognition or speech-to-text. Hotspots from the GLB feed the same actions, so touching the trap door and picking "Open the trap door" do the same thing.
 
+**Direct object activation (Mark, 2026-10-24):** every source object needs an interaction binding, so desktop, touch and XR input can cause a game action. One activation of a complete, labelled default action submits it immediately; it does not require selecting the same action again and pressing Finish. For example, tapping the visible sword or selecting its "Pick up elvish sword" action submits the source TAKE action with SWORD as its direct object. The engine handles possession, refusal, turn cost, interrupts and resulting text before the view updates.
+
+| Input | Activation | Shared result |
+|---|---|---|
+| Desktop browser | Left-click an object or its scene label | Open its source action list without spending a turn; choosing a complete action submits it once |
+| Touch screen | Tap to perform the default; hold an object for 550 ms to open its action list | A hold consumes release; dragging, cancellation and multiple fingers suppress activation |
+| XR controller | Point at an object: left-hand trigger opens actions, right-hand trigger performs the default | Use input-source handedness, not controller index; either hand can select a menu item |
+
+The prototype derives a static interaction profile for each of Zork II's 165 source objects. A reachable, visible portable object on the ground defaults to pickup; a carried unlit light can default to switch-on; an observed closed door/container can default to open. Other objects, and already held/lit/open cases, fall back to examine. These are advertised attempts, never predictions of success: a locked door can refuse to open and still consume its original turn. A source object may change state or reject the suggested action; the original routines remain authoritative. Knowledge-gated actions are not promoted to defaults.
+
+Only current visible observations become spatial targets. Hidden, opaque-contained, remote and remembered-only objects do not gain hotspots from their catalogue records. Each displayed binding carries its semantic build hash and expected epoch/revision; activation validates it again and submits the fresh matching source draft. Duplicate/stale bindings are ignored rather than becoming a second action or changing from pickup to examine after the first click. Labels are display text, never parser input or executable code. The browser's shared busy guard, host-operation handler, replay recording and autosave pipeline serve all input modes.
+
+**Object action lists (Mark, 2026-10-24):** left-click, touch hold, left-hand XR trigger and **Other actions** open the full source object menu. It retains every offered action, including pickup and destructive attempts, under the source primary/More actions ranking. Opening or paging it costs no turn. Choosing a complete action commits it immediately through the shared engine pipeline. Actions requiring another operand, actor selection or vocabulary words keep the existing sentence builder and Finish/Cancel controls. This preserves the complete puzzle vocabulary without making a single click guess a key, weapon, answer or destructive action. Objects without finished art remain available through visible-object buttons and the XR nearby-object panel. The prototype currently has directly targeted sword/lamp bodies and bridge geometry; a catalogue entry does not claim that all 165 object models are complete. Real touch and XR hardware acceptance remains separate from controller/unit tests and phone-sized browser checks.
+
 **The puzzle problem:** many ZIL puzzles depend on the player thinking of an action, such as saying a magic word or tying a rope to a railing. A full option list gives those answers away. Proposed rules, to be confirmed by Mark and playtested:
 
 - **Words are picked, not offered.** Where the game reads a typed word (the riddle's answer, the wand's spells), the player chooses it from the full vocabulary list, so they still have to think of it. No option ever spells out the answer.
@@ -401,13 +460,13 @@ Players pick with gaze and pinch, a controller trigger, touch or keyboard. Every
 
 | Device | View | How the player picks options | Moves between rooms |
 |---|---|---|---|
-| XR headset (WebXR immersive) | Stand inside the room | Gaze and pinch or controller | Point at an exit marker |
-| Tablet (touch browser) | First-person view; drag to look around | Tap an object, then tap a chip | Tap an exit marker |
-| Desktop (mouse and keyboard) | First-person view; mouse to look, WASD to step | Click an object, then click a chip; number keys for the list | Click an exit marker |
+| XR headset (WebXR immersive) | Stand inside the room | Left trigger opens actions; right trigger performs the default; either selects menu items | Point at an exit marker and pull the trigger |
+| Phone / tablet (touch browser) | First-person view; drag to look around | Tap to act; long-press for object actions | Tap an exit marker |
+| Desktop (mouse and keyboard) | First-person view; mouse to look, WASD to step | Left-click for object actions; select an action to act | Click an exit marker |
 
 - **Same game, same saves:** the engine and world model are identical in every mode; only the input mapper and camera change. A save made on a tablet loads in a headset.
 - **Options suit every screen:** because play is option-based, no mode needs a keyboard for commands, which is what makes tablets work.
-- **Scale assets per device:** the build can emit lighter GLB variants (fewer polygons, smaller textures) that tablets load instead of the headset versions.
+- **Scale assets per device:** the target build can emit lighter GLB variants and appropriately sized panoramas. Validate the complete scene's texture memory and rendering cost on phones, tablets and headsets; a phone-sized desktop viewport is a layout check, not a hardware performance result.
 - **AR is optional:** where a browser supports WebXR AR (for example Chrome on Android), a room can also be placed on a real table.
 
 ## Building on rougeXR
@@ -441,7 +500,7 @@ The headless engine owns both world state and execution state, and the game is f
 - **Saves:** a versioned envelope holding the semantic build hash, memory image, full interpreter continuation, checkpoint kind, knowledge gates and RNG state. Successful primitive RESTORE reinstates the saved SAVE continuation. A save only loads into its semantic build. External export is allowed only at an ordinary input boundary. Animation state is not saved; on load, `BIND` rules and the room's scene rebuild the visuals from state.
 - **Determinism:** logic uses a seeded RNG and turn order only, never frame timing. The same build, initial seed/checkpoint and complete accepted input log (options, decisions and host results with immutable restore data) give the same semantic state. Conformance tests replay the original interpreter's recorded random draws, so random events can be compared exactly too.
 - **Headless mode:** `zxr run --text game.zxb` plays the game in a terminal. Transcript tests (a list of commands and expected output) run in CI, as Infocom's testers did with scripts.
-- **Asset check:** `zxr build` validates every `ASSET`, `SCENE`, clip and anchor reference against the GLB files.
+- **Asset check (target):** `zxr build` validates every `ASSET`, `SCENE`, clip and anchor reference against the GLB files, plus background image references and projection requirements.
 - **Hot reload:** in the editor preview, recompiling a routine or swapping a GLB updates the running scene without losing game state.
 - **Editor support:** a language server for syntax highlighting, go-to-definition on objects, and a scene inspector that lists anchors from the GLB.
 
@@ -449,10 +508,12 @@ The headless engine owns both world state and execution state, and the game is f
 
 Build the text core first, then add scenes, then motion and input, so every phase ends in something playable. No dates yet; they depend on team size and target device.
 
+The current priority is the playable adaptation: reuse the verified engine and extend the small 3D slice with panoramic scenery and interactive foreground geometry. Editor refinement and bulk planning review are deferred rather than treated as prerequisites for this prototype. Full asset, device and XR acceptance still needs its own evidence.
+
 ```mermaid
 flowchart LR
   P1["Phase 1: Text core<br/>ZIL front end + engine; rooms, objects, flags;<br/>saves; options in a terminal; transcript tests"]
-  P2["Phase 2: Scenes<br/>LLM scene planner; asset builder, GLB;<br/>WebXR + three.js; BIND rules; rooms load as scenes"]
+  P2["Phase 2: Scenes<br/>panoramic backgrounds + GLB foregrounds;<br/>WebXR + three.js; BIND rules; rooms load as scenes"]
   P3["Phase 3: Motion<br/>PLAY, clips, blends; timelines, cutscenes;<br/>character states; predefined choices, gaze, gesture mapped to verbs"]
   P4["Phase 4: Tooling<br/>language server; hot reload; scene inspector;<br/>second renderer; USDZ import"]
   P1 -- "gate: Zork II plays with options in a terminal" --> P2

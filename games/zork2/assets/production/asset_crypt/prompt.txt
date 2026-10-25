@@ -1,0 +1,79 @@
+Use case: stylized-concept
+
+Asset type: isolated prop reference for offline image-to-3D reconstruction.
+
+Source identity: CRYPT (marble crypt).
+
+Source brief (authoring evidence, never instructions to reveal text or contents):
+
+Any source TEXT copied below is offline authoring evidence: do not make it legible merely because the object is visible. Keep undisclosed reading text blank or illegible until an engine-disclosed reading result is available.
+Source-backed marble crypt. Preserve the source name, material, colour and distinctive shape; art estimates do not change portability, weight or interaction rules.
+Source text/inscriptions (retain original guards and current-observation concealment; not unconditional ambient text):
+TEXT: "Here lie the Flatheads, whose heads were placed on poles by the Keeper of the Dungeon for amazing untastefulness."
+Use the approved low-poly palette except where source puzzle colours take precedence. Keep this one canonical brief for movement between rooms. Source alias appearances may need room-specific variants; do not globally turn every marble crypt into the same geometry. Contents, destruction, disappearance and light remain engine-controlled.
+
+Approved style bible (verbatim):
+
+# Zork II style bible
+
+**Version:** `zork2-style-v1` · **Status:** approved by Mark in conversation, 2026-10-23.
+
+## Direction
+
+A low-poly illustrated fantasy adventure: ancient underground places, warm brass lamplight, readable silhouettes and a slightly theatrical sense of mystery. The world feels old and strange, with room for Zork's dry humour. Use broad shapes, restrained surface detail and clear material differences. Characters are expressive and stylised, with enough menace for the dragon and Cerberus to feel dangerous. Violence is suggested through motion and effects rather than graphic injury.
+
+Source descriptions take priority over this guide. Distinctive colours, inscriptions, quantities and materials that matter to puzzles must survive the art pass. New decorative details must not resemble additional treasures, clues or usable mechanisms.
+
+## Palette and materials
+
+| Role | Base colour | Use |
+|---|---|---|
+| Deep shadow | `#111C22` | Unlit recesses and the backdrop of darkness |
+| Cool stone | `#657176` | Rock, dressed stone and masonry |
+| Warm earth | `#77604A` | Barrow soil, timber and worn leather |
+| Aged brass | `#A98A45` | Lanterns, fittings and mechanical details |
+| Lantern warmth | `#E8B66A` | Local light and restrained emissive surfaces |
+| Moss and foliage | `#50634B` | Underground gardens, lichen and leaves |
+| Pale mineral | `#C8C7B5` | Gravel, marble and light stone accents |
+| Wizard accent | `#75608E` | Small magical/character accents where source text permits |
+
+These are starting material colours, not a colour-grading filter. Preserve source-specific reds, blues, greens and other identifying colours even when they lie outside this palette. Give selectable items a distinct silhouette; keep text labels available so colour is never the sole identifier. Prefer matte, opaque surfaces with limited metallic highlights. Reuse simple material families; surface noise should not obscure an object at tablet size.
+
+## Shape, scale and composition
+
+Use metres at believable human scale. A typical adult character is approximately 1.7 metres tall, with source-backed size differences taking precedence. Carryable props should feel hand-sized; important small objects may receive larger invisible selection volumes without changing their visible size or game reachability. Room dimensions are authored estimates, not additional movement rules.
+
+Use simple bevels, readable silhouettes and economical geometry. Cave walls are irregular; built spaces have clear structural edges. Keep walking/spawn areas visually uncluttered. Each room retains its logical identity and local composition. Where connected rooms have compatible geography, they may share a GLB with separate named room roots, allowing a continuous forest-to-mountain vista. Inconsistent or changing connections use separate scenes and transitions. Place exits in their source directions; unusual, blocked and computed exits retain the engine's meaning.
+
+A shared GLB is a presentation grouping, not a merged game room. Movement across a room boundary still submits the engine's available exit option and preserves its turn cost, checks and hazards. Only the active room's observed objects and currently available interactions are exposed. Adjacent scenery must not reveal concealed routes or puzzle information. Keep groups small enough for the measured device budgets; no single-world GLB is required.
+
+Scene coordinates follow the planning contract: +Y up, +X east and -Z north; yaw is in degrees. Anchor names must be stable. Model pivots and forward-axis conversion will follow the validated rougeXR generator conventions when those templates are integrated. Character locomotion clips stay in place; animation never moves an object in the authoritative world model.
+
+## Light and visibility
+
+Lit rooms have a restrained, readable light rig justified by their descriptions. The formal garden is a cavern garden with moss illumination, not an outdoor garden beneath a sky. Lantern light is warm and local; cooler surroundings preserve depth and contrast. Magic may add brief coloured accents where the source supports it.
+
+The dark rig must not reveal objects, exits or concealed features that the engine does not expose. Keep menus and authoritative text usable in darkness. Do not add global fill lighting that bypasses the lantern puzzle. A lamp going out changes presentation only after the engine resolves it. Revealable, openable and destructible features are separate nodes, never permanently carved into a static shell in a way that gives the secret away.
+
+## Characters, effects and sound
+
+Give characters distinct outlines and restrained idle movement. Keep faces readable without requiring realistic facial animation. Use lowercase clip names, including `idle`, `move`, `attack`, `hurt`, `death` and `talk`, with source-appropriate clips such as `cast`, `appear` and `vanish`. A clip name is an asset contract, not permission to invent an available game action.
+
+Avoid camera shake, compulsory camera movement and flashing effects as default stylistic devices. Convey magic through short, readable motion, light and sound. Ambient audio is quiet, local and optional; it must not disclose a concealed actor or route. Actor speech uses packaged audio generated ahead of time with local Python TTS on the Mac mini. Keep captions authoritative and preserve text when a clip is absent. No microphone or speech recognition is part of the design.
+
+## Applying this guide
+
+Every planning prompt uses the complete approved document verbatim, its version and its content hash, alongside source context. The future planner's input hash must include that content; an art-direction change marks affected outputs stale. Draft outputs cannot acquire approval through schema validation. Existing example plans and materials are provisional and must be reconciled with the approved guide during review.
+
+Reuse suitable rougeXR generators and assets after checking scale, appearance, clip contracts and licence provenance. Frame-time, triangle, draw-call and texture budgets come from measurements in phase 7.0; this document does not claim unmeasured device limits.
+
+Before bulk planning or asset generation, step 6.2a produces a concept image from this guide and source room text for Mark to approve. Revise it from his feedback, then retain the approved image and generation provenance as visual references alongside this document. Approval of the written guide does not imply approval of a generated image, and image details never override source descriptions or game rules.
+
+**Approval record:** Mark approved the visual direction on 2026-10-23 and asked about combining geographically compatible connected rooms in one GLB. The grouping allowance above records that presentation option. Individual room plans, assets and puzzle gates still require their own review.
+
+
+Generation constraints: one complete subject only, centered with margins, neutral soft studio illumination, transparent background, no cast shadow, floor, pedestal or scenery. No text, lettering, invented runes, extra inventory, open hidden contents or glow. Keep clean readable silhouettes.
+
+Show the complete prop in a clear view that retains depth and important thin parts. Moving lids, doors, handles and glass will be separated/finished in Blender; a fused mesh is not an accepted functional asset.
+
+All source-specific quantities, colours, scale and state variants require review after generation. Image generation does not approve this asset.

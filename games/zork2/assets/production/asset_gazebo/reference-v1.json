@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "GAZEBO",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "7f79c48950f8d580fe20f0bb21e595d61bc245fd87f551e46db5070b417c2f32",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "7ff3c6c8fbdb001efdcc13e9b32539f8c8fae7f1431692644f5ecc36981bb80e",
+  "imageSize": [
+    1294,
+    1216
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "CUBE",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "2040e79eee6c7877f9de65c3014c0c54034d7633ef8bad021b0474536afae283",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "c4402b1ec105eca8fc4a94f3c458039ba4859f1cd3ab31abddb2dd0b9f96be63",
+  "imageSize": [
+    1309,
+    1201
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "PEARL",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "6aa3b7799741be6e32823a67f7ac939d1867c32caefff6d9aba9c2989afe6ea0",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "e428f19d3a2a15d4ebcba31b7aa1fa9ecb0a1bdffb46887276a398573ed547c2",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "PTABLE",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "abf00003c14102012e0be06cf7092974acfc57a53bff73f70cc8cac2bb16af34",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "3682b6aff0d828793961ee21fb52b48f1a4ee8b91c5da518b20694d7748f9c16",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

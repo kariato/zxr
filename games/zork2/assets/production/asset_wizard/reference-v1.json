@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "WIZARD",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "c15f0058e0785668829e9cbeb4290c3f48c012a4b8056acf7150ed4d04792d45",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "6f4ab4c1032758502df8cc0556984c2fb71852a633cc86059d3bcad58c7c8f54",
+  "imageSize": [
+    1024,
+    1536
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

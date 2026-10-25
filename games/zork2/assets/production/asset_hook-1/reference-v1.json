@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "HOOK-1",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "1b5c01452c7c9034ea25faac57bf2a5b43f9b830b5b5d4acfc436adb4700f65e",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "34eca6b47d9b7addc6e05f23920905a0ca751c62a60b72178485f318d32545cc",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

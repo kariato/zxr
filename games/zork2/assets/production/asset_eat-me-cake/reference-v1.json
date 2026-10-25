@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "EAT-ME-CAKE",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "27788ba91d7d9c3055f4e6f3bf21d3b4557144549a14627fe122e8e115a0e2f9",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "234e860b4a66dd2c2bfbd66e61821a4c0d5c36ce7600907fe2a7b47531d9ca06",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

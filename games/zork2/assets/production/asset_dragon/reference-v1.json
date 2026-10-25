@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "DRAGON",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "41f4e707b7efebf3db2c14a3e475606f7a38218d453f0d6f2790bfedb4550e7a",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "97901ae1188b28326220252bf172b0fa1432a5bc604d99d4209905989066f10f",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

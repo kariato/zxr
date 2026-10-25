@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "ROSE",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "fc62495f411f05a45521056e89905726845bb5a7afd6031ccd00b61fb2f4a5a1",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "0026938e68ca94affbac7ebff39d3a5b0ede77d1d7c1b9e7a152d48f476911c8",
+  "imageSize": [
+    1295,
+    1214
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

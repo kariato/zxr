@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "PORTRAIT",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "b4623035a42aa5b69c50b06d76a9bcd16bc8fd1562c16705a84d937392619953",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "e64db3bb7d6eb8b189286713e5f186013679d90b79aed3e7b9063bfbaa5a7e5d",
+  "imageSize": [
+    1145,
+    1374
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

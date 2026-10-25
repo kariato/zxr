@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "CARD",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "cb3bde7e78e3ba50320416e473f7aa277f2fd19e45b4b93e8b60859363423d5e",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "a22da44fc8546b92cabd5c191aa15d32fdf7c2e9771fa016c299d2e2b5087b8f",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

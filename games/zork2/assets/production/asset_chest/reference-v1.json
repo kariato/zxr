@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "CHEST",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "8b550b848c139086ef97dcb3d1c65a55a4816e0c14a6b40190be3a43fef5ca4e",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "2419dc8bfade1841d13922535a013d17ba9abc795b48a8cf376c4bea78884841",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

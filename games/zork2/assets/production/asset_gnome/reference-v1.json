@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "GNOME",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "9e4959548f51455c18717838f2a61b063f0ef7f3ecdd92ea4e309a94cd74be8b",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "206469ce298f5212410460800a492f261c3c9bbf9b8284f1b8b9e48166314d16",
+  "imageSize": [
+    1024,
+    1536
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "BLUE-ICING",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "522c76fe56aa02b68d70d5cc9d1d679cc8c13f757848e09ce3d0136b01dd576e",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "00f61ea233201bdcfe668aacc177cb5a498da3c91855e8b9b7865da98dd04eb3",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

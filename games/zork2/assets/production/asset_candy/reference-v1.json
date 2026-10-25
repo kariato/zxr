@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "CANDY",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "9fb13fce26bbeabcab590ceaff220f134852f9e3449d29da3945dadd5b1ca914",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "3cca473fb0af8cb7664ae3f19ddc502183d8de305707ed074a9f07f1c9d5bc7e",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "NEWSPAPER",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "9a07f6ef1976c23be95ffb1de27cd740662965d5a09e4e0866c99e0ba175bb5c",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "ee991162cd5cd4a840004fc0d1d2a7bf36870834f540e0f14fe7e1b2a7951b2f",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

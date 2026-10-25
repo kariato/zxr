@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "GENIE",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "11c3dcdcca20d6702ca67dfff1e5eabcc2775080a1c7b5dc0f9931cf59205f18",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "5c63fd616eb249c6fada0da2b0acd789fb629a1d89f0fbc4004cbc3e493995ed",
+  "imageSize": [
+    1024,
+    1536
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "GOLD-KEY",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "465a02a63ea49d3bae88776e2eb769b51c548e48662e4263dd9379513b80bd2d",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "76a6178a2badb61fe3edee101ea67ed027acf2b4ea5785969252abed228aff74",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

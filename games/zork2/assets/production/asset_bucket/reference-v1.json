@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "BUCKET",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "0a6d0eeaf879d258848a9fdfcd7de3353a8397f777d9e4591bff6890abeb3ef9",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "2115ebacec141e51dfaab6a21a7f63b7cc9d894b14d6208a81c2a1453cfc7b7b",
+  "imageSize": [
+    1297,
+    1212
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

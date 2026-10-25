@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "ROUND-BUTTON",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "40be3f0a57bca3042fe6cd7706d3a915f9bc9b99aac6bbf77e2e9589fcd33b78",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "b25536169374df0828914b8281dbd016a2df30b47929355231237a89159537ab",
+  "imageSize": [
+    1429,
+    1101
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

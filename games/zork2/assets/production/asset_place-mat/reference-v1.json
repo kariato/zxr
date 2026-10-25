@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "PLACE-MAT",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "4f7c130f6d27b82b5da23fa8047234be32705655c1dd12b97ac15b9c09d6e498",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "c7927a9e928a5d29a83f6c29c58bef50908596242adeb1aff23ce485338a5e2c",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

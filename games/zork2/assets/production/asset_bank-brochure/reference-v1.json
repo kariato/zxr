@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "BANK-BROCHURE",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "1e2d6c7757d536b1823e8ae6397f9c72317a6b6c022d7cff6ccbbc11999a7eb2",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "d86b16d04d15452f60e463be8999217766b5d624fb63041a69bf68198cedd116",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

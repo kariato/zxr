@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "BALLOON",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "54e11b8ffa67d489bd909f90139b7bfaf7ee8dca6bdc04c0fe61d46ddad0b986",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "fde5b1b743db70c1c91b14636eea383f3f6745c2da465296ef8de335327f4e7b",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

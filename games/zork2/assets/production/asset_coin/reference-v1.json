@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "COIN",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "d122e47429c2a5c42853c93c47fee93490d0a2a134c3df2466666f6d83fa67ea",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "a64a7f4747f61de0f8bc47d0f9824f9db7bedf4c0770e3d94fd061856b4515e9",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

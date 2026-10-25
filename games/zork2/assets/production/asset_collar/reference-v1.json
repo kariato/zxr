@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "COLLAR",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "481be7cc14caecdf29fabbd99c6f7ee10cc17a1e34e8233a25e63a94dfc42690",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "f8b12aaa2a241b39a520b665164fd331a289f593ae0fade0ddb74f9e496a0cf3",
+  "imageSize": [
+    1774,
+    887
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

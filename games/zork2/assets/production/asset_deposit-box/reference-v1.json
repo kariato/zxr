@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "DEPOSIT-BOX",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "3336befcee319ad4bc5330f9098bc23cd98e1ef90abf251701bbd3a612df1a49",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "067e3033a9e1ecf2536c69f9de33b52cb0e7b592e9352df35b23b9fc52330102",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "GNOME-OF-ZURICH",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "c25b21d30537b47cca7fca285018d50d2eee96c215a17ed37ade14cb6a04cb1d",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "17e110d60fbb27afff1f86bb9a72a372b57424bfd09282b32b02e073803adec3",
+  "imageSize": [
+    1024,
+    1536
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

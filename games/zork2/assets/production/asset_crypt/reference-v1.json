@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "CRYPT",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "c77a4511b80168952e737731e641b37f32bd786251a015887ddfbe73ae0e99b1",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "dc5a9a439665274a824f162a1ed7796ced7762498da1e9b245578747d5b1d278",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

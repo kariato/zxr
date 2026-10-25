@@ -1,0 +1,10 @@
+{
+  "mode": "built-in-imagegen",
+  "image": "reference.png",
+  "prompt": "prompt.txt",
+  "imageSha256": "4ab1e51f3795496655301711b909d580b40eebd6acdb936453001c7dd828257f",
+  "promptSha256": "dcc710f3610264bb883fb3c14823edecfd954962e7ee3c2902c7c8e46e0b363a",
+  "sourceRoom": "INSIDE-BARROW",
+  "role": "noninteractive-scene-dressing",
+  "review": "experiment"
+}

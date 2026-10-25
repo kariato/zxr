@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "BOTTOM-ETCHINGS",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "d1ab2f2f9ab7a3bef82c8c1375945dffe21db2708a5f53cc7425a12d77b49502",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "eb75dab08bd54f10f7aaa5e9fafef0f88453ddb7b247d9b2ac4fb05a7b12801b",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

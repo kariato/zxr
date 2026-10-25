@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "PCRACK",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "371517dc332ec3773a27a42fc35a62ca6f2d58920cac0b78df63c992987019f7",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "9358944ff5286bae87b4dcb37d4e840e4edd89d4945533a11d0444386a87f86b",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

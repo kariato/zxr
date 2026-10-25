@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "REPELLENT",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "d2eb53a6faf8afc9e16f0bcf32321cde4713221f9c4ec22750c70e5fca459d2a",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "5a877e72b4d236dc377a2214df9103cfece6487097fc54fcbdf5fb006b77da3c",
+  "imageSize": [
+    1024,
+    1536
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

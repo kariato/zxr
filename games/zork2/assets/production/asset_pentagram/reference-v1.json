@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "PENTAGRAM",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "0242ca4f73976fbf540ea1883879a40374286d78044e99e4f2cd7a8469aaf62f",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "8535e8c49d847d2ad45501cecff81ebb71d12c159bed94748f302c09c4498c70",
+  "imageSize": [
+    1375,
+    1144
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "PURPLE-BOOK",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "b8c25db335546a332333bcf6e62b440e0792b865b5b13a3234cfd50409d43ade",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "ac09cbc792a302728644308aa6d23d629b6b402f8f76c1621bb8bd8613aa8337",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

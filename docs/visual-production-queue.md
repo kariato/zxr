@@ -1,0 +1,20 @@
+# Local visual production queue
+
+User priorities recorded 2026-10-24. Hunyuan remains authorized for this US-only prototype. Generated candidates are not automatic approvals or authorization to publish.
+
+**Current request:** finish GLB conversion and verification for **all existing reference images**. The user clarified this scope explicitly; it resumes conversion of existing references ahead of the older bounded-scene queue. It does not request new references, the full room catalogue, or automatic gameplay integration. Inventory and per-file checks are at `out/asset-production/reference-verification/manifest.json`; front/back/side previews and the final package accompany that report. The selected bridge reference and retained earlier bridge version are both included.
+
+1. **Ready for review — opening barrow natural-rock experiment.** Original skybox and camera retained. Three Hunyuan pieces assembled in Blender with a real open passage and six boundary rocks. GLB and packed Blender file: `out/asset-production/barrow-natural-v1/`. Before/after screenshots: `out/prototype/barrow-natural-v1/`. Local preview: `/tests-e2e/fixtures/barrow-natural.html` on port 5181. Nine clearance rays and GLB audit pass; 17,461 rendered triangles, three 1K textures, 4.01 MB. South/north source transitions verified at one turn each. Ordinary play remains unchanged pending review.
+2. **Ready for review — wooden foot-bridge plus both rock landings reference.** Selected reference: `games/zork2/assets/experiments/foot-bridge-rocks-v1/reference-v2.png`; exact prompts and provenance alongside it. Both landing formations fit in the frame. Reference image only: no bridge mesh generation or scene replacement performed.
+3. **Queued after 1 and 2 — robot / red sphere / falling cage local puzzle preview.** Preserve the original story location, `CAGE-ROOM` and the associated `IN-CAGE` state. Inspect source routines, engine observations and existing candidate art before implementation. The requested outline is presentation intent, not a replacement puzzle state machine: player brings robot, attempts to take red sphere, cage traps player, player commands robot to raise cage, source engine resolves rescue and continuation. Preserve actual trigger, timing, commands, refusals and outcomes. Animation must not spend extra turns, run source interrupts, advance RNG or grant an unearned rescue.
+
+For item 3, inspect `reference/zork2/2dungeon.zil` and the cage/robot routines in `reference/zork2/2actions.zil`. The user accepts clearer visual hints and prioritizes a working adaptation. Keep visibility and authoritative puzzle state tied to engine observations. Do not relocate this puzzle into the bridge or invent new progression rules.
+
+Verified candidate paths (existence is not visual acceptance):
+
+- `out/asset-production/asset_cage/raw.glb` and `candidate.glb`; reference `games/zork2/assets/production/asset_cage/reference-v1.png`. Cage visual quality, interior clearance and whether the generated bars are fused remain to be checked. Animate cage translation as a rigid object; a creature rig is unnecessary.
+- `out/asset-production/asset_robot/candidate.glb`, `rigged.glb`, `animated.glb`. The current export has `idle` and `talk`, 22 joints and a static face. It does **not** supply walking or gripping/lifting clips. Review its deformation and author the missing in-place movement/lift pose for this puzzle rather than treating those clips as already completed.
+
+Item 3 acceptance: a bounded temporary-session scene preview demonstrates the source-approved trap and rescue, source refusals remain possible, saves are isolated, and source move counts/replay outcomes match equivalent nonvisual commands. Hardware performance and human visual review remain separate checks.
+
+The earlier whole-game bulk asset request remains a longer production backlog. Its background generation was paused to honor the bounded experiment priorities above; completed files are retained. Do not resume the broad image/GPU queue ahead of these three items or claim all game assets are finished.

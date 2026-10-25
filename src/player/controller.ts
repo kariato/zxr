@@ -1,6 +1,8 @@
 import type { ActionResolution, GameSession, HostRequest, OperandChoice, SelectionRequest, ZxrSave } from '../engine/index.ts';
 import { operandIdentity } from '../engine/index.ts';
 import type { ActionMenu, PagedSelection, MenuChoice, ChoicePage, Operand } from '../engine/index.ts';
+import { observeObjectActions } from './object-actions.ts';
+import type { ObjectAction,ObjectActionCatalog } from './object-actions.ts';
 export interface ChoiceTarget {family?:string;placement?:'primary'|'more';actor?:string;operand?:Operand;spelling?:Operand;all?:boolean;commit?:boolean}
 export interface PlayerChoice {key:string;label:string;target?:ChoiceTarget}
 export interface TranscriptEntry {command?:string;text:string}
@@ -8,11 +10,12 @@ export interface PlayerView {title:string;choices:PlayerChoice[];words:boolean;c
 /** Shared option-only navigation. Browsing never calls an engine commit. */
 export class TextPlayer {
   readonly session:GameSession;readonly transcript:TranscriptEntry[]=[];
-  #actor='PLAYER';#page='root';#object='';#expanded=false;#draft:SelectionRequest|undefined;
+  #spatialMenu=false;#actor='PLAYER';#page='root';#object='';#expanded=false;#draft:SelectionRequest|undefined;
   #spelling:OperandChoice|undefined;#multiple:Operand[]|undefined;#callbacks=new Map<string,()=>void>();
   #host:HostRequest|undefined;#last!:ActionResolution;
   #menuKey='';#menu:ActionMenu|undefined;#stageDraft:SelectionRequest|undefined;#stage:PagedSelection|undefined;
-  constructor(session:GameSession){this.session=session;this.receive(session.opening());}
+  #objectCatalog:ObjectActionCatalog|undefined;#objectActionKey='';#objectActions:ObjectAction[]=[];
+  constructor(session:GameSession,objectCatalog?:ObjectActionCatalog){this.session=session;this.#objectCatalog=objectCatalog?structuredClone(objectCatalog):undefined;this.receive(session.opening());}
   get host(){return this.#host;}
   get lastResult():ActionResolution {return structuredClone(this.#last);}
   receive(packet:ActionResolution,command?:string){
@@ -20,13 +23,27 @@ export class TextPlayer {
     this.transcript.push({...(command?{command}:{}),text:packet.text.join('')+(packet.error?'\n'+packet.error.cause:'')});
   }
   choose(key:string){const callback=this.#callbacks.get(key);if(!callback)throw new Error('Unavailable choice');this.#callbacks.clear();callback();}
+  objectActions():ObjectAction[]{
+    const o=this.session.observe(),key=o.epoch+':'+o.revision+':'+o.state;
+    if(key!==this.#objectActionKey){this.#objectActions=observeObjectActions(this.session,this.#objectCatalog);this.#objectActionKey=key;}
+    return structuredClone(this.#objectActions);
+  }
+  activateObject(binding:ObjectAction):boolean {
+    const current=this.session.observe(),expected=binding.draft.expected;
+    if(current.state!=='input'||expected.epoch!==current.epoch||expected.revision!==current.revision)return false;
+    const live=this.objectActions().find(a=>a.object===binding.object&&a.buildHash===binding.buildHash&&a.draft.family===binding.draft.family);
+    if(!live)return false;
+    this.#reset();this.receive(this.session.commitSelection(live.draft),live.label);return true;
+  }
   /** Spatial targets browse the same source menus as the text presenter. */
-  openObject(id:string){
-    if(this.session.observe().state!=='input')return;
+  openObject(id:string,expected?:SelectionRequest['expected']){
+    const current=this.session.observe();
+    if(current.state!=='input'||(expected&&(expected.epoch!==current.epoch||expected.revision!==current.revision)))return;
+    if(!current.perception.lit||!current.perception.objects.some(o=>o.id===id&&o.visible))return;
     const menu=this.session.menu('PLAYER'),group=menu.objects.find(g=>g.operand===id);
     if(!group)throw new Error('Object has no available actions');
     this.#reset();this.#menu=menu;const o=this.session.observe();this.#menuKey=o.epoch+':'+o.revision+':PLAYER';
-    this.#object=operandIdentity(group.operand);this.#page='object';
+    this.#object=operandIdentity(group.operand);this.#page='object';this.#spatialMenu=true;
   }
   walk(direction:string){
     if(this.session.observe().state!=='input')return;
@@ -35,7 +52,7 @@ export class TextPlayer {
     if(!choice)throw new Error('Unavailable movement attempt');
     this.#reset();this.receive(this.session.commitSelection(choice.draft),choice.label);
   }
-  #reset(){this.#menu=undefined;this.#stage=undefined;this.#stageDraft=undefined;this.#callbacks.clear();this.#actor='PLAYER';this.#draft=undefined;this.#spelling=undefined;this.#multiple=undefined;this.#page='root';this.#expanded=false;}
+  #reset(){this.#spatialMenu=false;this.#menu=undefined;this.#stage=undefined;this.#stageDraft=undefined;this.#callbacks.clear();this.#actor='PLAYER';this.#draft=undefined;this.#spelling=undefined;this.#multiple=undefined;this.#page='root';this.#expanded=false;}
   importSave(save:ZxrSave){const packet=this.session.importSave(save);this.#reset();this.#actor='PLAYER';this.receive(packet,'Restore saved game');}
   completeHost(outcome:'success'|'failure'|'cancel',save?:ZxrSave){
     const h=this.#host;if(!h)throw new Error('No host request');
@@ -107,7 +124,14 @@ export class TextPlayer {
       const {epoch,revision}=this.session.observe(),key=epoch+':'+revision+':'+this.#actor;
       if(this.#page!=='root'&&this.#page!=='actors'&&(key!==this.#menuKey||!this.#menu)){this.#menu=this.session.menu(this.#actor);this.#menuKey=key;}
       const menu=this.#menu!;
-      const select=(c:MenuChoice)=>{this.#draft=c.draft;this.#expanded=false;};
+      const select=(c:MenuChoice)=>{
+        if(this.#spatialMenu){
+          const now=this.session.observe(),expected=c.draft.expected;
+          if(now.state!=='input'||now.epoch!==expected.epoch||now.revision!==expected.revision){this.#reset();return;}
+          if(this.session.select(c.draft).ready){this.#reset();this.receive(this.session.commitSelection(c.draft),c.label);return;}
+        }
+        this.#spatialMenu=false;this.#draft=c.draft;this.#expanded=false;
+      };
       if(this.#page==='root'){
         add('Objects',()=>nav('objects'));add('Actions',()=>nav('actions'));add('Exits',()=>nav('exits'));add('Menu: look, inventory, wait, score, save',()=>nav('always'));
         if(actors.length>1)add('Change actor',()=>nav('actors'));

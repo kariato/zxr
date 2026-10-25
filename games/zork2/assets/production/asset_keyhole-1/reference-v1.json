@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "KEYHOLE-1",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "670c80c8f5f01c3b2e885fc384df31d3ca3c63bfca2a1c4e0befea4e319725d0",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "b8bd37964187dee5306a410b18da9aab7733d633dc369ffa1853403c1c17d692",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "CERBERUS",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "6e461407f252e242dbe7c74343acf2b433375142dbfb7f4a6ebecd503b85a125",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "30bff0875b14f006b0d9e4d7cecdf3cbb6d4dcb34f2dde4a9aa6c5dbf51bb59d",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

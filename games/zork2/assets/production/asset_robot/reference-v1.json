@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "ROBOT",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "efe81f9c343a9c743df9ee264317118f5b9f4b8311224aad50e2814174a28dfe",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "f96fce103caae3c9d675cafd9a5d8ac22af623eb706021c0059998bcc88af43a",
+  "imageSize": [
+    1024,
+    1536
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

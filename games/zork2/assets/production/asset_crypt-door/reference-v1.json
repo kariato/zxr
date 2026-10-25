@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "CRYPT-DOOR",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "3b02695c0e016831f75d88a673e257c8aa892aac4ac3b35ac4546e18fda34711",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "2d1f26ada23bf95aa751e014b2fe30b0478d009c176730188499d54ae838fb41",
+  "imageSize": [
+    1312,
+    1199
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

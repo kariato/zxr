@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "ORANGE-ICING",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "447a60e34d3810b222644f366afdf46c06af0546561c22a8ae929ab3161bd02a",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "ab75e5d2a69187970b03e3bf43c9e13aeada85c420cc6492ea98c4043361a89f",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

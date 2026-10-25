@@ -1,5 +1,5 @@
 import { beforeAll,expect,it } from 'vitest';
-import { GameSession,loadGame } from '../src/engine/index.ts';
+import { GameSession,loadGame,WorldState } from '../src/engine/index.ts';
 import type { LoadedGame } from '../src/engine/index.ts';
 import { packBundle } from '../src/zil/bundle.ts';
 import { compileSourcePath } from '../tools/zil/compile.ts';
@@ -14,11 +14,11 @@ const choose=(p:TextPlayer,label:string)=>{
 it('spatial object browsing is turn-free; take and drop update the observed prop presentation',()=>{
   const s=new GameSession(game),p=new TextPlayer(s),before=s.stateHash();
   p.openObject('SWORD');expect(p.view().title).toBe('elvish sword');expect(s.stateHash()).toBe(before);
-  choose(p,'Take: elvish sword');expect(p.finish()).toBe(true);
+  choose(p,'Take: elvish sword');expect(p.finish()).toBe(false);
   expect(s.observe().moves).toBe(1);expect(prototypeModel(s.observeAppearance()).props.find(o=>o.id==='SWORD')?.held).toBe(true);
-  p.openObject('SWORD');choose(p,'Drop: elvish sword');p.finish();
+  p.openObject('SWORD');choose(p,'Drop: elvish sword');expect(p.finish()).toBe(false);
   expect(prototypeModel(s.observeAppearance()).props.find(o=>o.id==='SWORD')?.held).toBe(false);
-  expect(()=>p.openObject('DRAGON')).toThrow('Object has no available actions');
+  const unchanged=s.stateHash();p.openObject('DRAGON');expect(p.view().title).toBe('Choose an action');expect(s.stateHash()).toBe(unchanged);
 });
 it('source movement controls room changes, refusals, darkness and save restoration',()=>{
   const s=new GameSession(game),p=new TextPlayer(s),save=s.exportSave();
@@ -38,4 +38,16 @@ it('the renderer model discards hidden, contained and dark-room props on every o
   o.perception.lit=false;expect(prototypeModel(o)).toEqual({room:null,layout:null,props:[]});
   o.perception.lit=true;o.perception.room={id:'CRYPT-ROOM',name:'Crypt'};
   expect(prototypeModel(o).layout).toBeNull();expect(prototypeModel(o).props).toEqual([]);
+});
+it('shows the princess and chest only when observed, and keeps unseen chest contents hidden',()=>{
+  const s=new GameSession(game);s.opening();const save=s.exportSave();
+  const world=WorldState.restore(game,save.checkpoint.interpreter.world);
+  const id=(name:string)=>game.bundle.payload.world.entities.find(e=>e.name===name)!.id;
+  const on=game.bundle.payload.symbols.symbols.find(f=>f.kind==='attribute'&&f.name==='ONBIT')!.number!;
+  world.move(world.global('PLAYER'),id('DRAGON-LAIR'));world.setGlobal('HERE',id('DRAGON-LAIR'));world.move(id('LAMP'),world.global('PLAYER'));world.setFlag(id('LAMP'),on,true);
+  save.checkpoint.interpreter.world=world.snapshot();s.importSave(save);
+  const observation=s.observeAppearance(),model=prototypeModel(observation);expect(model.layout).not.toBeNull();
+  expect(model.props.some(p=>p.id==='PRINCESS')).toBe(true);expect(model.props.find(p=>p.id==='CHEST')?.open).toBe(false);expect(model.props.some(p=>p.id==='STATUETTE')).toBe(false);
+  observation.perception.objects.find(o=>o.id==='PRINCESS')!.visible=false;expect(prototypeModel(observation).props.some(p=>p.id==='PRINCESS')).toBe(false);
+  observation.perception.lit=false;expect(prototypeModel(observation).props).toEqual([]);
 });

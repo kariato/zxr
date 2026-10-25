@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "DWINDOW",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "a48e4bc2fa62035e3a04dc7b9051b0fd539f5422af22e5e038bf798703830892",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "5924d80655678bfbcc6ed882ad5a5ee3fb05f7e9bcabad5811578b63b0fc3099",
+  "imageSize": [
+    1286,
+    1223
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

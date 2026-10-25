@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "MENHIR",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "0ee1df0f6654f5a2b586dab947e4329b274630668c4c569a9be4dbd9eefa8110",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "8c69667d81e20b291de7a69e6c38b36808f8b837103be81d7e8786d967c2e25d",
+  "imageSize": [
+    1024,
+    1536
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

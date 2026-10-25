@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "PDOOR",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "0e44d66666b40f99cf2a438761cd796c090866b0cbd512bde109e3c84babf509",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "536493e386fa61c5a0a263afa85479208916c85e592bb73c808be8d07b43f34f",
+  "imageSize": [
+    1165,
+    1350
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

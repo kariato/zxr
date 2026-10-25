@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "CLOTH-BAG",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "881781a46a073a6e36b93791ae702412fee41102bca174d494c66bf319495b74",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "efa87c86d920552b5fcfb53753429dccdc6f40af2fa7f849625333a9b7020c93",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

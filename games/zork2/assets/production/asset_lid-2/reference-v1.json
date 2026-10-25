@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "LID-2",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "331f4db997dd9448ba8e46f0b05ead8c3760154cedb62077465e3b0d91e61073",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "c74742e2ab95abd282b96ca1ad30d95ccdb8968890242d9645b89b8c24e1a46d",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

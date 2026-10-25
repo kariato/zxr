@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "DIM-DOOR",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "7f6d64254ed078cead10bf7b5c38b9ce39ba76be210521d073ada2956e937702",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "45e79439411918e799d836e242d8e06f3eaffea1228313fb24a3049365681aee",
+  "imageSize": [
+    1312,
+    1199
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

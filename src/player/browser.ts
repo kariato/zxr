@@ -10,9 +10,11 @@ import { checkpointStamp } from '../persistence/checkpoint-name.ts';
 import { TextPlayer } from './controller.ts';
 import type { PlayerView } from './controller.ts';
 import { resolveHostAsync } from './host.ts';
+import { buildObjectActionCatalog } from './object-actions.ts';
+import type { ObjectAction } from './object-actions.ts';
 export function mountBrowserPlayer(container:HTMLElement,game:LoadedGame,session:GameSession,saves=new GameSaves(game,new IndexedDbSaveStore(),()=>localStorage.getItem('zxr-save:'+game.buildHash))){
   const listeners=new Set<(view:PlayerView,busy:boolean)=>void>();
-  const player=new TextPlayer(session),catalog=buildWordCatalog(game.bundle.payload.vocabulary);let shown=0,busy=true,initialising=true,disposed=false,fontSize=18;let recorder:ReplayRecorder|undefined;
+  const player=new TextPlayer(session,buildObjectActionCatalog(game)),catalog=buildWordCatalog(game.bundle.payload.vocabulary);let shown=0,busy=true,initialising=true,disposed=false,fontSize=18;let recorder:ReplayRecorder|undefined;
   const element=<K extends keyof HTMLElementTagNameMap>(tag:K,text?:string)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n;};
   const button=(label:string,action:()=>void)=>{const b=element('button',label);b.type='button';b.addEventListener('click',action);return b;};
   const toolbar=element('nav');toolbar.setAttribute('aria-label','Player settings');
@@ -100,7 +102,8 @@ export function mountBrowserPlayer(container:HTMLElement,game:LoadedGame,session
     subscribe(listener:(view:PlayerView,busy:boolean)=>void){listeners.add(listener);listener(player.view(),busy);return ()=>{listeners.delete(listener);};},
     choose(key:string){return run(()=>player.choose(key));},
     finish(){return run(()=>{player.finish();});},cancel(){return run(()=>{player.cancel();});},
-    openObject(id:string){return run(()=>player.openObject(id));},walk(direction:string){return run(()=>player.walk(direction));},
+    activateObject(binding:ObjectAction){return run(()=>{player.activateObject(binding);});},
+    async openObject(id:string,expected?:{epoch:number;revision:number}){await run(()=>player.openObject(id,expected));actions.scrollIntoView({block:'nearest'});},walk(direction:string){return run(()=>player.walk(direction));},
     destroy(){disposed=true;listeners.clear();viewer.destroy();picker?.destroy();root.removeEventListener('keydown',shortcut);root.remove();}};
 }
 export type BrowserPlayer=ReturnType<typeof mountBrowserPlayer>;

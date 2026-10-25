@@ -1,0 +1,12 @@
+{
+  "format": "zxr-asset-pipeline-v1",
+  "scope": "US-only local prototype",
+  "generator": "Hunyuan3D-2",
+  "runtime": "Hunyuan3D-Swift/MLX",
+  "rigging": "SkinTokens with Blender finishing",
+  "referenceGenerator": "built-in image generation",
+  "decision": "User explicitly chose to retain Hunyuan for the US-only prototype on 2026-10-24.",
+  "outputDirectory": "out/asset-production",
+  "publication": "not-authorized",
+  "review": "Generated candidates require visual, functional and animation review; this pipeline choice does not approve every asset."
+}

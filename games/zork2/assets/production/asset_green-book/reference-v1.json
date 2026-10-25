@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "GREEN-BOOK",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "9f30b6565177d173be8bd152ba4eb19e178eca353ba4e3399a9890fc24242ae2",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "de1c85dc188d5c899208acaae17ba4b1ef34b0662cc5667ae3eebfa400b15515",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

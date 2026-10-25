@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "RECEPTACLE",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "2b9d6b5fd4ea64cee1b2b20bf5de968926b8313d611c543ed2871d97b6697100",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "cf3b00a13304a2ce4fe1c685c6f7d77bfdd71078b8f01995724b3f7553e48dca",
+  "imageSize": [
+    1374,
+    1145
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "PALANTIR-3",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "92c881dd89daa3c8fe1a58583365c2cdbe1ce497885edffb90e9b9a7a04bcb42",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "fed789a88e82f8df204d87f682356f1040be153b14ca6206edb89053fee043dc",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

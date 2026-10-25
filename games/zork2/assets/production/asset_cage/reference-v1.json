@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "CAGE",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "3e174490bdcd445288fd004b74d853956bef7d121847ddf896e46b61b078f4df",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "fb65b12ca4bfa52df1ad63aa1edf0bf64d91f5b4c529554ae24d97cd5cc4d135",
+  "imageSize": [
+    1402,
+    1122
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

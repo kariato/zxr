@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "BRICK",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "341c019db9ff4d057f48e1b505264c3d4e422be15101e9e9543cd88b16da9971",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "f8e82cd2d3b2814857b4f03e08696a565a3ad454422428a7cb028591b55daef3",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

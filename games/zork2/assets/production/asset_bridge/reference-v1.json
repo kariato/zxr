@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "BRIDGE",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "0a677983253543c2f6477b1ec19a38e1b256c0d78dc5d7405799e79f493c79eb",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "c55c629a2ce017b09573b4f4673cf9be49ba04ebb84652f495ea15f0e0408d42",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

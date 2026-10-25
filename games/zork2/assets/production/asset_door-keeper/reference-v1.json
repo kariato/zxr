@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "DOOR-KEEPER",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "11d7ded8471cb4c66a526fbb8660233a78be61375bc0542d3bfc616d135180a3",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "791366496fc299520c3ba6204bcf790df79992eb2187a19544ccec44ee623ab6",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

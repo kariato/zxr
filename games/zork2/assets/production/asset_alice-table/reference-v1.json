@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "ALICE-TABLE",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "153dab93df98c7841babef2932dfb07c6a4e748b2a0ff41dd520ecae0bee2bc2",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "1bc8d783af7b93c4512b013f44e620d05a624cebe81be22158042d268bfd1d49",
+  "imageSize": [
+    1774,
+    887
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

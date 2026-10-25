@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "BLUE-BOOK",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "0bfd300c0f14fc6765a991dbd0dad2116d29716c698daafc1bfef26b233dd8f8",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "3a6a0b513f10bc7fb0d49ba74b2709d89b786706f24001f933d068948a6e2f54",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}

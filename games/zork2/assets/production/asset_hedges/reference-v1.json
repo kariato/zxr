@@ -1,0 +1,15 @@
+{
+  "format": "zxr-generated-reference-v1",
+  "sourceIdentity": "HEDGES",
+  "mode": "built-in-imagegen",
+  "image": "reference-v1.png",
+  "imageSha256": "80076601fd9dfa604763bdd5d93e5b5557d6179c1b0bca55720ba46d1c5130b9",
+  "prompt": "reference-v1.prompt.txt",
+  "promptSha256": "7ac71c12cbe3dc8e8d1609e1106f6e5500d6c055853e5fcc2c8ac7b52f62792e",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "review": "draft",
+  "modelStatus": "not-started"
+}
