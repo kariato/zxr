@@ -9,6 +9,7 @@ The following ZXR files are machine-generated outputs of Tencent Hunyuan 3D 2.0:
   chest-v1.glb           (generated exterior; split into body and hinged lid afterwards)
   lamp-v1.glb
   sword-v1.glb
+  props/*.glb           (portable object exports; exact identities, sources and hashes are listed in movable-props.json)
 
 They are made available only in the Territory defined by the Tencent Hunyuan 3D 2.0 Community License Agreement: worldwide, EXCLUDING THE EUROPEAN UNION, THE UNITED KINGDOM AND SOUTH KOREA. They are not available or licensed for use, reproduction, modification, distribution or display in the European Union, the United Kingdom or South Korea.
 

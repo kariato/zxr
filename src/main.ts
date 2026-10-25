@@ -4,11 +4,10 @@ import { mountRoomNarration,unlockNarrationAudio } from './presentation/audio/br
 import { mountBrowserPlayer } from './player/browser.ts';
 import barrowDressingUrl from './prototype/assets/barrow-natural-v2.glb?url';
 import princessModelUrl from './prototype/assets/princess-v1.glb?url';
-import chestModelUrl from './prototype/assets/chest-v1.glb?url';
-import lampModelUrl from './prototype/assets/lamp-v1.glb?url';
-import swordModelUrl from './prototype/assets/sword-v1.glb?url';
-// Automated browsers keep procedural models: CI's software renderer is too slow for generated ones.
-const generatedModels=navigator.webdriver?{}:{barrowDressingUrl,princessModelUrl,propModelUrls:{CHEST:chestModelUrl,LAMP:lampModelUrl,SWORD:swordModelUrl}};
+import { movablePropUrls } from './prototype/movable-props.ts';
+// The large animated actor and environment keep software-renderer fallbacks.
+// Movable models use the same registry in normal and automated browsers.
+const generatedModels={...(navigator.webdriver?{}:{barrowDressingUrl,princessModelUrl}),propModelUrls:movablePropUrls};
 const start=document.querySelector<HTMLButtonElement>('#start')!,status=document.querySelector<HTMLElement>('#loading')!,target=document.querySelector<HTMLElement>('#player')!;
 start.addEventListener('click',async()=>{
   const narrationAudio=unlockNarrationAudio();
@@ -27,3 +26,6 @@ start.addEventListener('click',async()=>{
     target.querySelector<HTMLElement>('h2')?.focus();
   }catch(error){void narrationAudio?.close();status.textContent=error instanceof Error?error.message:String(error);start.disabled=false;}
 });
+// Imported asset URLs must be ready before a click can start the player.
+status.textContent='Ready to play.';
+start.disabled=false;

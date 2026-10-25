@@ -13,6 +13,7 @@ import { addCavernRocks,addBarrowGuardrails } from './cavern-rocks.ts';
 import { mountPrincessActor,type PrincessStatus } from './princess-actor.ts';
 import { mountBarrowDressing } from './barrow-dressing.ts';
 import { mountPropModel,posePropModel,releasePropModels } from './prop-model.ts';
+import { movablePropDefinitions } from './movable-props.generated.ts';
 
 /** Disposable spatial presenter over the existing shared browser controller. */
 export function mountPrototype(host:HTMLElement,session:GameSession,player:BrowserPlayer,options:{princessModelUrl?:string;onPrincessStatus?:(status:PrincessStatus)=>void;barrowDressingUrl?:string;onBarrowStatus?:(status:'loading'|'ready'|'failed')=>void;propModelUrls?:Partial<Record<string,string>>}={}){
@@ -46,6 +47,7 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
   let objectActions:ObjectAction[]=[];
   const material=(colour:number)=>new THREE.MeshStandardMaterial({color:colour,roughness:.95,flatShading:true});
   const stone=material(0x55594e),floor=material(0x666457),wood=material(0x65503b),brass=material(0xa68b48),steel=material(0xb0b6b4);
+  const propSizes=new Map<string,readonly number[]>(movablePropDefinitions.map(p=>[p.id,p.sizeMetres]));
   const box=(parent:THREE.Object3D,size:number[],position:number[],mat:THREE.Material)=>{
     const mesh=new THREE.Mesh(new THREE.BoxGeometry(size[0],size[1],size[2]),mat);mesh.position.set(position[0]!,position[1]!,position[2]!);parent.add(mesh);return mesh;
   };
@@ -64,19 +66,22 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
     const observation=session.observeAppearance(),model=prototypeModel(observation),changed=room!==model.room;room=model.room;
     backdrop.update(observation.perception);
     const princess=!!options.princessModelUrl&&model.props.some(p=>p.id==='PRINCESS'&&!p.held);
-    const nextKey=model.layout&&model.room?model.room+(princess?':princess':''):'';
+    const nextKey=model.room&&(model.layout||princess)?model.room+(princess?':princess':''):'';
     if(nextKey!==persistentKey)clearActors();persistentKey=nextKey;baseFloor=undefined;
     propMounts.forEach(m=>m.dispose());propMounts.length=0;clear(roomGroup);clear(hand);targets.length=0;
-    const layout=model.layout;hasLayout=!!layout;width=layout?.width??2;depth=layout?.depth??2;
+    const layout=model.layout;hasLayout=!!layout;width=layout?.width??8;depth=layout?.depth??8;
     if(changed){recenter();menuPage=textPage=0;}
-    if(!layout)return;
+    if(!layout&&!model.props.length)return;
     const lair=room==='DRAGON-LAIR',barrow=room==='INSIDE-BARROW',cavern=room==='NARROW-TUNNEL'||room==='FOOT-BRIDGE';
     scene.fog=new THREE.Fog(cavern?0x172126:0x070c10,cavern?12:(barrow||lair)?15:6,cavern?48:(barrow||lair)?45:22);
     scene.add(roomGroup);
     roomGroup.add(new THREE.HemisphereLight(cavern?0x91abb5:0xc5d4c1,cavern?0x38434b:0x303025,2));
     const light=new THREE.PointLight(cavern?0xb0c8b5:0xf6cb83,cavern?12:(barrow||lair)?4:18,cavern?20:14,2);light.position.set(.7,cavern?4:(barrow||lair)?3.2:2,-1);roomGroup.add(light);
     if(cavern)addCavernRocks(roomGroup);
-    if(room==='FOOT-BRIDGE'){
+    if(!layout){
+      // Object-only staging for rooms awaiting environment geometry. Do not
+      // invent walls, doors, routes or traversable floor from the object art.
+    }else if(room==='FOOT-BRIDGE'){
       const bridge=new THREE.Group();roomGroup.add(bridge);
       for(let z=-2.85;z<3;z+=.3)box(bridge,[2.2,.12,.27],[0,-.08,z],wood);
       for(const x of [-1.05,1.05]){
@@ -119,13 +124,23 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
         if(!opening){const rock=new THREE.Mesh(new THREE.DodecahedronGeometry(.8,0),stone);rock.position.set(x,1.3,z+.15*Math.sign(z));rock.scale.y=1.9;roomGroup.add(rock);}
       }
     }
-    for(const route of layout.routes){
+    for(const route of layout?.routes??[]){
       const label=textureLabel('Go '+route.direction.toLowerCase());label.position.set(route.x,1.45,route.z);label.userData.direction=route.direction;roomGroup.add(label);targets.push(label);
     }
+    let roomSlot=0,heldSlot=0;
     for(const prop of model.props){
       const group=new THREE.Group();group.userData.object=prop.id;
-      if(prop.held){hand.add(group);group.position.set(prop.id==='LAMP'?-.35:.35,-.4,-.65);group.scale.setScalar(.6);}
-      else{roomGroup.add(group);group.position.set(prop.id==='PRINCESS'?-2:(prop.id==='CHEST'||prop.id==='STATUETTE')?2:prop.id==='SWORD'?-.9:1,prop.id==='STATUETTE'?.1:.03,prop.id==='PRINCESS'||prop.id==='CHEST'||prop.id==='STATUETTE'?1.3:room==='INSIDE-BARROW'?.6:0);}
+      const size=propSizes.get(prop.id)??[.25,.25,.25],span=Math.max(...size);
+      if(prop.held){
+        hand.add(group);
+        if(prop.id==='LAMP'||prop.id==='SWORD')group.position.set(prop.id==='LAMP'?-.35:.35,-.4,-.65);
+        else{const slot=heldSlot++;group.position.set((slot%4-1.5)*.26,-.65-Math.floor(slot/4)*.2,-1.1);}
+        group.scale.setScalar(prop.id==='LAMP'||prop.id==='SWORD'?.6:Math.min(.6,.2/span));
+      }else{
+        roomGroup.add(group);
+        if(['PRINCESS','CHEST','STATUETTE','SWORD','LAMP'].includes(prop.id))group.position.set(prop.id==='PRINCESS'?-2:(prop.id==='CHEST'||prop.id==='STATUETTE')?2:prop.id==='SWORD'?-.9:1,prop.id==='STATUETTE'?.1:.03,prop.id==='PRINCESS'||prop.id==='CHEST'||prop.id==='STATUETTE'?1.3:room==='INSIDE-BARROW'?.6:0);
+        else{const slot=roomSlot++;group.position.set((slot%5-2)*1.15,.03,Math.floor(slot/5)*1.2);}
+      }
       if(prop.id==='PRINCESS'){
         if(options.princessModelUrl){
           if(!actors.length){
@@ -141,13 +156,17 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
       else if(prop.id==='STATUETTE'){const gold=material(0xc3973f);box(body,[.15,.3,.12],[0,.15,0],gold);}
       else if(prop.id==='SWORD'){
         box(body,[.75,.04,.1],[0,.025,0],steel);box(body,[.06,.06,.3],[-.4,.04,0],brass);box(body,[.22,.065,.065],[-.54,.04,0],wood);
-        group.rotation.y=1.1;
+        if(prop.held){
+          // The export rests flat with its blade along -X. Raise that axis
+          // toward +Y and turn its broad face toward the camera when carried.
+          group.rotation.set(Math.PI/2,0,-Math.PI/2,'ZXY');group.position.set(.35,-.05,-.75);
+        }else group.rotation.y=1.1;
       }else if(prop.id==='LAMP'){
         box(body,[.2,.08,.2],[0,.04,0],brass);box(body,[.14,.24,.14],[0,.19,0],brass);
         const glass=new THREE.MeshBasicMaterial({color:prop.on?0xffdb8a:0x59605a});box(body,[.15,.1,.15],[0,.2,0],glass);
         box(body,[.22,.05,.22],[0,.34,0],brass);
         if(prop.on){const lamp=new THREE.PointLight(0xffc87b,.5,8,2);lamp.position.set(0,1.05,-.2);group.add(lamp);}
-      }
+      }else if(prop.id!=='PRINCESS')box(body,[...size],[0,size[1]!/2,0],wood);
       const modelUrl=prop.id==='PRINCESS'?undefined:options.propModelUrls?.[prop.id];
       if(modelUrl)propMounts.push(mountPropModel(body,modelUrl,model=>posePropModel(prop.id,model,prop)));
       const action=objectActions.find(a=>a.object===prop.id);
@@ -213,7 +232,7 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
     objectActions=player.player.objectActions();
     const observation=session.observe(),key=observation.epoch+':'+observation.revision;
     if(key!==identity){identity=key;build();}
-    info.textContent=(observation.perception.room?.name??'Darkness')+' · '+observation.moves+' moves'+(room&&!prototypeModel(session.observeAppearance()).layout?' · Text view — room artwork to follow':'');
+    info.textContent=(observation.perception.room?.name??'Darkness')+' · '+observation.moves+' moves'+(room&&!prototypeModel(session.observeAppearance()).layout?' · Room environment artwork to follow':'');
     lastText=player.player.transcript.map(t=>t.text).filter(Boolean).at(-1)??'';
     feedback.textContent=lastText;
     objectControls.replaceChildren();

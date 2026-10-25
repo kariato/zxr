@@ -39,6 +39,33 @@ it('the renderer model discards hidden, contained and dark-room props on every o
   o.perception.lit=true;o.perception.room={id:'CRYPT-ROOM',name:'Crypt'};
   expect(prototypeModel(o).layout).toBeNull();expect(prototypeModel(o).props).toEqual([]);
 });
+it('carries the same sword into unmodeled rooms and shows it only in its current source location after dropping',()=>{
+  const s=new GameSession(game),p=new TextPlayer(s);
+  p.openObject('SWORD');choose(p,'Take: elvish sword');
+  for(const direction of ['SOUTH','SOUTH','SOUTH'])p.walk(direction);
+  expect(s.observe().perception.room?.id).toBe('GREAT-CAVERN');
+  expect(prototypeModel(s.observeAppearance()).layout).toBeNull();
+  expect(prototypeModel(s.observeAppearance()).props.find(o=>o.id==='SWORD')?.held).toBe(true);
+  const save=s.exportSave();
+  p.openObject('SWORD');choose(p,'Drop: elvish sword');
+  expect(prototypeModel(s.observeAppearance()).props.find(o=>o.id==='SWORD')?.held).toBe(false);
+  p.walk('NE');expect(s.observe().perception.room?.id).toBe('FOOT-BRIDGE');
+  expect(prototypeModel(s.observeAppearance()).props.some(o=>o.id==='SWORD')).toBe(false);
+  p.walk('SOUTH');expect(prototypeModel(s.observeAppearance()).props.filter(o=>o.id==='SWORD')).toHaveLength(1);
+  p.importSave(save);expect(prototypeModel(s.observeAppearance()).props.find(o=>o.id==='SWORD')?.held).toBe(true);
+});
+it('presents observed movable identities outside the environment slice while hiding container contents and dark objects',()=>{
+  const s=new GameSession(game);s.opening();const save=s.exportSave();
+  const world=WorldState.restore(game,save.checkpoint.interpreter.world);
+  const id=(name:string)=>game.bundle.payload.world.entities.find(e=>e.name===name)!.id;
+  world.move(world.global('PLAYER'),id('GREAT-CAVERN'));world.setGlobal('HERE',id('GREAT-CAVERN'));
+  world.move(id('ROSE'),id('GREAT-CAVERN'));world.move(id('GOLD-KEY'),id('CHEST'));
+  save.checkpoint.interpreter.world=world.snapshot();s.importSave(save);
+  const observation=s.observeAppearance();
+  expect(prototypeModel(observation).props.some(o=>o.id==='ROSE')).toBe(true);
+  expect(prototypeModel(observation).props.some(o=>o.id==='GOLD-KEY')).toBe(false);
+  observation.perception.lit=false;expect(prototypeModel(observation).props).toEqual([]);
+});
 it('shows the princess and chest only when observed, and keeps unseen chest contents hidden',()=>{
   const s=new GameSession(game);s.opening();const save=s.exportSave();
   const world=WorldState.restore(game,save.checkpoint.interpreter.world);

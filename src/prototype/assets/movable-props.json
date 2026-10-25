@@ -1,0 +1,1029 @@
+{
+  "format": "zxr-movable-props-v1",
+  "selection": "Current candidate hash; prefer matching finished, then animated exports. Never select raw or rejected meshes.",
+  "assets": [
+    {
+      "id": "BALLOON-LABEL",
+      "file": "props/asset_balloon-label.glb",
+      "source": "out/asset-production/asset_balloon-label/candidate.glb",
+      "sha256": "5b63cf73ae28ffb28fd3261e184aae703d63eb5c33eeef0e29ad1ae6594e8c5c",
+      "sourceHash": "1d63f97872331246d001c8d3aee23b53ee8e181786d7d0356b7f0f9c7b294d7c",
+      "briefHash": "336553fb1b592c74b7375aed1b64f27ad54f9f4ec8e41e913b1425c229f052b5",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "BANK-BROCHURE",
+      "file": "props/asset_bank-brochure.glb",
+      "source": "out/asset-production/asset_bank-brochure/candidate.glb",
+      "sha256": "a1fbb63447477f81128b15ddc13b8813b2e33681a5499cd9da8a1b3585d4b768",
+      "sourceHash": "e08c24b6190851ee617ea47af77fafcad1d9ae563636352cb22efdbb63c41863",
+      "briefHash": "b650d0b7999b0c94c60ee02e59ccf05c23a4cb2f0c564cff4ded424a0f1270ab",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "BAT",
+      "file": "props/asset_bat.glb",
+      "source": "out/asset-production/asset_bat/candidate.glb",
+      "sha256": "d362b3f0e9623be6063f39d48e8b8e11b428703a54fd9e79fcb63c788a28d1b9",
+      "sourceHash": "cca1fec4a09b13c3ec33d1c981e575013ad37019879bf9c459d82035877ca449",
+      "briefHash": "ffe59880d847136b54c46623c1498129b5e0c4dfc4fa64f7cc796da8c2700f4c",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "BILLS",
+      "file": "props/asset_bills.glb",
+      "source": "out/asset-production/asset_bills/candidate.glb",
+      "sha256": "533b9c1c8ef36bd2854f8ba08b3c6051841ad1821a272e448eab13d1d4505859",
+      "sourceHash": "b00f66dfd5f4854d8bcd758b594242a7da3c9ea5e80794e1af7fe86c4137253e",
+      "briefHash": "3bdbc48a5f6addce7e2cd036341b9ac02beb3127329bd7fea179583b02eb22c9",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "BLUE-BOOK",
+      "file": "props/asset_blue-book.glb",
+      "source": "out/asset-production/asset_blue-book/candidate.glb",
+      "sha256": "f401a845b34ac153e56632a4b1368f712978690d5a6c37b8805e76af7df67f39",
+      "sourceHash": "77b75c978db72c942852b3b94dd3a115498748b6b070d56ebf41ccbfe2cf807f",
+      "briefHash": "7c5fd1021becd518709af852e545466422d4630c3765bdf01581faacf12d3c38",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "BLUE-ICING",
+      "file": "props/asset_blue-icing.glb",
+      "source": "out/asset-production/asset_blue-icing/candidate.glb",
+      "sha256": "a3442d29e4bb11a80c2237a6ceded699bcc2bc01be28d160f08b315a4fb7c3ee",
+      "sourceHash": "a4f3640bd1dc6ecb864f38217b99123eb7585de968f40522e47e52ceea612660",
+      "briefHash": "383bff1a8d673cabc021455d633ad9423e81ce2f0d2074c3ead95393ea21cf98",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "BRICK",
+      "file": "props/asset_brick.glb",
+      "source": "out/asset-production/asset_brick/candidate.glb",
+      "sha256": "797b877c65fbb40f0cb1a27cde2a3d2fdf2eabcd183afa4ab2bb1652828476ea",
+      "sourceHash": "7d340c959486c2eb0fa427ba5e9023cc387168b4d57dc07b95ae25798d53bfb1",
+      "briefHash": "4b4bd16c582bdcc7d0091d984ca1f6e5af5e4c7be80616992be77f0be801e303",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "CANDY",
+      "file": "props/asset_candy.glb",
+      "source": "out/asset-production/asset_candy/candidate.glb",
+      "sha256": "b93ec81425bab2b0e4ed89d415a2279c0a059745d52f408abd05e1c279bf3430",
+      "sourceHash": "de8346e5c54086006afb429d2344f3a078b796da5c99133c70ad9a84cb677fb1",
+      "briefHash": "af60e150786c2cda141efd2d7a4b655fbf11c9070debcb73898d653d0a41aeb4",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "CARD",
+      "file": "props/asset_card.glb",
+      "source": "out/asset-production/asset_card/candidate.glb",
+      "sha256": "4163264e67858b84ca4fa6d9d4913c64d3b2510473a40cc61d5b3ed0783f4c50",
+      "sourceHash": "57466000a125fd820f76635d9ec75b4e481d07dd8c8cc89096474d710974f70c",
+      "briefHash": "57d5eb2194af11e03b6c06a98d6c2dba2b4128bb6b276bd9659216911290bd54",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "CHEST",
+      "file": "chest-v1.glb",
+      "source": "out/asset-production/asset_chest/animated.glb",
+      "sha256": "c7a5fe28f8b4a6f6f8fabbb0ea1a7a0461dea6be12906defc3cc4a58dca906a8",
+      "sourceHash": "843c384ebd1f51fd386eb776c402c822f0a2c9452694ac4597dc59647bc7f804",
+      "briefHash": "0dac864b237a4706725e6ff56d8a9e4df08daf4b069fe3e8f6661ff131a57939",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        1,
+        0.65,
+        0.65
+      ]
+    },
+    {
+      "id": "COIN",
+      "file": "props/asset_coin.glb",
+      "source": "out/asset-production/asset_coin/candidate.glb",
+      "sha256": "86f2a14657c5e55f0f46d117b01bd44e7a32374d9e10664d8dc8ab07a33bb8fb",
+      "sourceHash": "40dddb73f29666840ba38f36aae28f74a25f9001354c5328b9b50970c1b2fb97",
+      "briefHash": "c6030c93925cb17a1d8132c5b68ab5d527e06f7b9c66de2bcddcc89b24cf55f7",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "COLLAR",
+      "file": "props/asset_collar.glb",
+      "source": "out/asset-production/asset_collar/candidate.glb",
+      "sha256": "0346e5b6fb94c7787c047c8494ee99cd40c35bf9c9fb180a0072149c03b85e5a",
+      "sourceHash": "a786126c2b0f13f49c4e64e26bf3990f59b4506f3a5cfcd2a4fd8962e8f84cdd",
+      "briefHash": "c55aeeb6993ec92f3eba07421a1cf963a537d9987bc76f14ece1326a19f4f748",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "CROWN",
+      "file": "props/asset_crown.glb",
+      "source": "out/asset-production/asset_crown/candidate.glb",
+      "sha256": "76c0f2b0fe7067019e086020cf31a25a8812efb46aa7ebf83f9fc3ebe584c5c4",
+      "sourceHash": "159e7d57e6c30a19c95d06cca4c88c835acdffb9e029984ec40d65967e92cb1c",
+      "briefHash": "e873e83a05da7e166d4fca588c693c04f9214915e47ec20da0f276de0aa1dfdc",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "DEPOSIT-BOX",
+      "file": "props/asset_deposit-box.glb",
+      "source": "out/asset-production/asset_deposit-box/candidate.glb",
+      "sha256": "67200fbc6326debb03a1a0578526d1aed813550a962eeb44a5973e4e2933b546",
+      "sourceHash": "933972f2a41f006b532b6e57344c6a618be25181955c112b214419e25c569212",
+      "briefHash": "c777d6458eaf80d52ffac3e1afa02e36d67c4c87f4462d760853cbd5feae6271",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "EAT-ME-CAKE",
+      "file": "props/asset_eat-me-cake.glb",
+      "source": "out/asset-production/asset_eat-me-cake/candidate.glb",
+      "sha256": "8f9693d4412320d76bf43ca6a1ddc5ac998cf6b08d175b4c9a5f42443650b378",
+      "sourceHash": "d77ecdb41560337d58d5ba8a553fd7d5aa6e2ac5de29a4c99b9c2d66883c3e6d",
+      "briefHash": "fc14d79988487be59c3cdf0115c3cba5034ce1c02a643812b9ae72a817399e7b",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "FLASK",
+      "file": "props/asset_flask.glb",
+      "source": "out/asset-production/asset_flask/candidate.glb",
+      "sha256": "d24cba8a828f170ba26807540f8b8adda80736f51122f637930c130042431c33",
+      "sourceHash": "bc9713eca7493384b8af5b2a84c473f5882b8b347f154eb4e75f90ffddb1455b",
+      "briefHash": "38ba704a956a4746a4e62007767356306f438656fd75e335401844c7403f662a",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "FUSE",
+      "file": "props/asset_fuse.glb",
+      "source": "out/asset-production/asset_fuse/candidate.glb",
+      "sha256": "2ccde3dbf1801c248d20f257853fb7717ce7f6633737b7916838ab9ba14ac4b6",
+      "sourceHash": "c63abec8979937109da24fb153e50d13bc3e8e39381054bffcabc930b7ce5293",
+      "briefHash": "016f316008915b0755fd3d4a83189433fc3366c9f622acc1939db6f41ebb8c32",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "GOLD-KEY",
+      "file": "props/asset_gold-key.glb",
+      "source": "out/asset-production/asset_gold-key/candidate.glb",
+      "sha256": "de3246257ec62dbb81dd22ccc095713fd5ec56c20b1e13a5130514dfccfd41f4",
+      "sourceHash": "d7cb47b2b38e963431cc2998be72fd32a8ebfe09cb2bd2541c027ebdc3afc071",
+      "briefHash": "2e2c3b813de806c039491c5c37debb2d975f91f17defa3d673728246f69f0c7e",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "GREEN-BOOK",
+      "file": "props/asset_green-book.glb",
+      "source": "out/asset-production/asset_green-book/candidate.glb",
+      "sha256": "f14019dfed0fc0a59f590b34f0b6f266a0231e9b7cb2ae487c3e15899c952967",
+      "sourceHash": "5e5aaa310ecd38e7729b6d02eadd017287e9e538158d0fb4eb667dfa8b396ac6",
+      "briefHash": "a255e020f803901857679309761257edf078683b2542fae945defaed20d87ea2",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "IRON-BOX",
+      "file": "props/asset_iron-box.glb",
+      "source": "out/asset-production/asset_iron-box/candidate.glb",
+      "sha256": "02171cc27214ca6e4e4ea0445408b455b5a48881c711144770c68885dc0a5d0c",
+      "sourceHash": "13ce6d61cb5d879dbf12409a939dcbf17b62f05834e26fb5cc1575cf6ca4b037",
+      "briefHash": "278ddfe2193bbe3760dd03f48c38ecd4f6452b3d7ba56b9b28ad061febcc20c0",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "KEY",
+      "file": "props/asset_key.glb",
+      "source": "out/asset-production/asset_key/candidate.glb",
+      "sha256": "d605b61b50db92ad11e74fe11d543732a575bad74b2c5e9cd8ef0a7fb9a4e173",
+      "sourceHash": "e0782007d6dda23eb85e9da90fbda8352f1422d7692303d855e2c94a0641f2df",
+      "briefHash": "328622379eb31107f59626ac297e93be5d3638f9a4ba109516a7ad04c2e62aa2",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "LAMP",
+      "file": "lamp-v1.glb",
+      "source": "out/asset-production/asset_lamp/candidate.glb",
+      "sha256": "3e0172ea267a69507ec65e836e87f7975743ed6e1b85a613d1bd4a956fc79ed6",
+      "sourceHash": "1695dc5c9b0ec37c6d22e79c3fa5b212f04bad37380b5b20053ad402ff063759",
+      "briefHash": "0380d62298f41a3514ac5a17d31396f9790c42176ef797a0696b330978f9ac12",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.18,
+        0.35,
+        0.18
+      ]
+    },
+    {
+      "id": "LETTER-OPENER",
+      "file": "props/asset_letter-opener.glb",
+      "source": "out/asset-production/asset_letter-opener/candidate.glb",
+      "sha256": "5f702b96c8917ac396a7380cf1157f1845e61b1ebc951df8f4eb31cbcf149e37",
+      "sourceHash": "a34c9a227eb7d158d24df7355a1fc47613153dfa35fb641f34352400de1fa02c",
+      "briefHash": "2ae0ac73ebacfadb29f09e1c303655c99bc47b4bbcf424c0251c649492b5f12d",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "MATCH",
+      "file": "props/asset_match.glb",
+      "source": "out/asset-production/asset_match/candidate.glb",
+      "sha256": "d73314afdb2b27ee5e0076b69a6162460b434e16699d5a027ed1836d0157182e",
+      "sourceHash": "d8d42c9d0b35a03dc9456f83a5ea49265db62cdabce331bab330c9ba96ce04b7",
+      "briefHash": "dcccd06bb7867a474d6ed888bbf2b3a12ba01185bb29ab037aaebf9d9b08dc87",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "NEWSPAPER",
+      "file": "props/asset_newspaper.glb",
+      "source": "out/asset-production/asset_newspaper/candidate.glb",
+      "sha256": "a0ef7ada6c40a5be445c7959d70e451b2673b5656d370e1d7fa6a6472ea1ae43",
+      "sourceHash": "43930df69727c53db117d498baa532455b706eb5660ac69a6d1fd83fb90e3459",
+      "briefHash": "46558e4df727d629a16aa384e561794fbddf8b298e6647d36de507cb6f3232fd",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "ORANGE-ICING",
+      "file": "props/asset_orange-icing.glb",
+      "source": "out/asset-production/asset_orange-icing/candidate.glb",
+      "sha256": "0e5a094fd64a5ade0fd9ece59fb107f8a47fcba5a257932a661a63a9ea3fda62",
+      "sourceHash": "a8f73f64445a3b3efb968b47a2f9f79323b79448be9770510c6d96e3c7d91f3f",
+      "briefHash": "c56ef11102009d0eeb3079b0dfa2d8cf49101a000e0b1a0539b460a5bbc07276",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "PALANTIR-1",
+      "file": "props/asset_palantir-1.glb",
+      "source": "out/asset-production/asset_palantir-1/candidate.glb",
+      "sha256": "a632234f51234604dbcc7c95a3dc96b88a7b0fd2082c2177baea769af18acd8b",
+      "sourceHash": "3d147c1cb3b30daebd663c45661d3afc796501c31ef6b773e1dd7517de168401",
+      "briefHash": "f4fa253f5c936a79f85445193572f5ab4e4ab68432fe87a21d1fb837c2324270",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "PALANTIR-2",
+      "file": "props/asset_palantir-2.glb",
+      "source": "out/asset-production/asset_palantir-2/candidate.glb",
+      "sha256": "81dd9b5ef391ad53d44fae9d782cbdbcfcf12bbb418238b38871e434d3ad732b",
+      "sourceHash": "ccfb272608b353a35566055475f79237a675ff65d4800c5a7811b5e06690ca1f",
+      "briefHash": "a52a4ea86475f5dbd15c02965eaf78fd9a35bc575142841c590e531e7bc1d9a3",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "PALANTIR-3",
+      "file": "props/asset_palantir-3.glb",
+      "source": "out/asset-production/asset_palantir-3/candidate.glb",
+      "sha256": "b7d3e10e36b7b7a3cc1c0735bccd2b3fc7a863bfe91ac6043a03bc3ab3362395",
+      "sourceHash": "99d8b65e1f6b35a739eb4b5b8524f57b54abf8aad909ab81cd93d8776d8c5866",
+      "briefHash": "da94b32db95b7f71f14437618b9f14880bfe5d9edee9df23d16a4b183b86d64f",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "PALANTIR-4",
+      "file": "props/asset_palantir-4.glb",
+      "source": "out/asset-production/asset_palantir-4/candidate.glb",
+      "sha256": "3eb0a74df726ae9488435eb80d6b36394df84074be5a6683cc1bb7c312105950",
+      "sourceHash": "9b2cbccb5207ca89b4faaa24b3336203df2ac82521d6bddbb23e415917256469",
+      "briefHash": "d489be3cb9d9379fbc5d00e80e3419e89f8d4ec9838e7f3a001b9abc663c6769",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "PEARL",
+      "file": "props/asset_pearl.glb",
+      "source": "out/asset-production/asset_pearl/candidate.glb",
+      "sha256": "f6da29e3f3dbb30907ab24f3f654aabd0474c99a3b203accb0fa796022621243",
+      "sourceHash": "84805ff23ac5f19b4f5768cfc4c82f6c3ea4a3da0731a8721ede83425f628442",
+      "briefHash": "df1bbed6502d8555e1abe2c1c08afcada0deb3710a590814004210241b06fcd9",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "PLACE-MAT",
+      "file": "props/asset_place-mat.glb",
+      "source": "out/asset-production/asset_place-mat/candidate.glb",
+      "sha256": "dfe93ce3590b4858b31562bf4bb28cd12a495aade83c31329dfc94e6cd46e1d3",
+      "sourceHash": "4b381fc5ba83fe03f26ef361293212d970309e3949d12f50c62e05e4791341c1",
+      "briefHash": "9560ac0deb1eaae6f73e4dcd4b583f2d26e1af4f8c414831ace13fd26dea847d",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "PORTRAIT",
+      "file": "props/asset_portrait.glb",
+      "source": "out/asset-production/asset_portrait/candidate.glb",
+      "sha256": "14c03359dff5f72fa8082db5e09c21b9e5e72dab11e6b768916f2c0947b2f162",
+      "sourceHash": "5232ffa9dc394bb2c5967d704e21f13047cd3664f0385a63ca98336f051cfe3c",
+      "briefHash": "d906229d876585e2418fd48291aac58b0573dd37fd315ae4e44e5a110068923f",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "PURPLE-BOOK",
+      "file": "props/asset_purple-book.glb",
+      "source": "out/asset-production/asset_purple-book/candidate.glb",
+      "sha256": "98b069dc6aafb6b9c1396ace907783b1fc8e11fd184f2bf0c893b391eaab4c33",
+      "sourceHash": "265e4baefb782d60b5ff19376d958554a6c4fe235755d10166866db757f01ae7",
+      "briefHash": "9cd58a79587ecd3d7b64802a099e75be0acd7e9cabb7e9a03165b9283159d204",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "RED-ICING",
+      "file": "props/asset_red-icing.glb",
+      "source": "out/asset-production/asset_red-icing/candidate.glb",
+      "sha256": "45881e5ed993020964f7829050103d9c7b4d6f94951c4e406c7d988ff1ca369d",
+      "sourceHash": "546fec02c9bc73f88b5c6081ff3457d74d9128053b2d4588157a6b2406a3f7db",
+      "briefHash": "799027aa43c0c96634e2d29cbcb5a638558f57b1c989437b7eb2209e55d0e1ee",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "REPELLENT",
+      "file": "props/asset_repellent.glb",
+      "source": "out/asset-production/asset_repellent/candidate.glb",
+      "sha256": "8204b5686529a2a605974fbc68e0d856be70258b73ce54e2f6730a84f6cb16c1",
+      "sourceHash": "9172872c2a432ed16c49194daa9af49e2f703b20ca4a5d3810794272d43ca873",
+      "briefHash": "9ce112499c9853d52b75db6f393e9a980a9529decb2227e098fbf55ef81bb252",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "ROBOT-LABEL",
+      "file": "props/asset_robot-label.glb",
+      "source": "out/asset-production/asset_robot-label/candidate.glb",
+      "sha256": "d56a6ce3e3a99d5b872260ada7a3365b158c189a3d15260483c3d15ce8796912",
+      "sourceHash": "67d584472cf1685c13fb38d0517c4ee9f25c2ab126d773326136c31f5237848c",
+      "briefHash": "44326e7fffd9582350b2e54b6de3f3f447278412b8b1f3d9bb4a3f9b65cdfae7",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "ROSE",
+      "file": "props/asset_rose.glb",
+      "source": "out/asset-production/asset_rose/candidate.glb",
+      "sha256": "29e4b71ee5fd422cb7499c884e89e65fd86f773c50fe9dbdc01804a4f056845a",
+      "sourceHash": "cb748509d0bc2efdbf1af52e5fefbc295063648e269f29d2d3ee43c3d960a765",
+      "briefHash": "2714c1de14fdd67230546d91c87aeae5396aa79058f86917593b0c1c417c909b",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        0.3,
+        0.25,
+        0.2
+      ]
+    },
+    {
+      "id": "SWORD",
+      "file": "sword-v1.glb",
+      "source": "out/asset-production/asset_sword/candidate.glb",
+      "sha256": "176f0ef5693c0afce3f473b46f9ba888d3a3e036c29c471c7f4696bc3cbccae5",
+      "sourceHash": "b16bcf441f228042468e6a02da9ee85d74b350d55820a30fecef01cc16a6cb8a",
+      "briefHash": "8e8ba08d15723178398c4c380f47ccde5c3c4724fee937238139ee21e88f4be3",
+      "pipeline": {
+        "implementation": "Hunyuan3D-Swift/MLX",
+        "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+        "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+        "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+        "steps": 8,
+        "guidance": 5,
+        "octree": 256,
+        "seed": 42,
+        "quantize": 8,
+        "licence": "Tencent Hunyuan 3D 2.0 Community License",
+        "scope": "US-only local prototype"
+      },
+      "sizeMetres": [
+        1,
+        0.055,
+        0.16
+      ]
+    }
+  ],
+  "missing": [
+    "RUBY",
+    "STAMP",
+    "STATUETTE",
+    "TEAPOT",
+    "VIOLIN",
+    "WAND",
+    "WHITE-BOOK"
+  ]
+}

@@ -31,4 +31,12 @@ Mark chose on 2026-10-24 to ship these draft Hunyuan3D candidates in the public 
 | `lamp-v1.glb` | `out/asset-production/asset_lamp/candidate.glb`; the engine's on state still supplies the light. | `3e0172ea267a69507ec65e836e87f7975743ed6e1b85a613d1bd4a956fc79ed6` |
 | `sword-v1.glb` | `out/asset-production/asset_sword/candidate.glb`. | `176f0ef5693c0afce3f473b46f9ba888d3a3e036c29c471c7f4696bc3cbccae5` |
 
+## Shared movable objects
+
+`movable-props.json` records 39 current Hunyuan portable-object exports, including the three files above and 36 files in `props/`. `tools/assets/sync-movable-props.py` copies the current candidate for each source `TAKEBIT` prop, preferring a finished or animated export only when it references that candidate's hash. It validates source/brief hashes and output bytes; raw and rejected meshes are never selected. The sword already matches its latest selected candidate. Re-run with `--check` to verify the shipping files against local production outputs.
+
+`movable-props.generated.ts` and `movable-props.ts` provide one identity-to-model registry for all rooms. GLB URLs are emitted by Vite and fetched only when their objects are observed. Both automated and normal browsers use portable generated models; the larger princess and barrow keep their existing automated-renderer fallback. Source take, drop, inventory, room transitions, concealment, darkness and save restoration determine whether a model appears. No room contains a permanently baked duplicate of a portable model. Rooms without environment geometry display observed objects against the empty background, with walking disabled and the missing artwork noted; this is not a completed room scene.
+
+Seven portable identities still have no generated export: ruby, stamp, statuette, teapot, violin, wand and white book. These keep simple temporary shapes. Most containers have static generated exteriors; only the finished chest has its source-controlled hinge binding. The registry does not invent new lid animations or reveal concealed contents. The original source actions and text remain authoritative.
+
 All four remain `draft` review records with front-projected colour and approximate backs/sides. The princess is a standing pose, whereas the source opening has her seated.
