@@ -1,0 +1,24 @@
+{
+  "checks": "passed",
+  "reopenedBlend": true,
+  "rooms": [
+    "STREAM-PATH",
+    "MARBLE-HALL",
+    "DEEP-FORD",
+    "RAVINE-LEDGE",
+    "LEDGE-TUNNEL"
+  ],
+  "triangles": 60000,
+  "packedMaterialTextures": 1,
+  "renderCamera": "Overview - generated mesh",
+  "files": {
+    "lower-ravine-v2.blend": {
+      "bytes": 7550102,
+      "sha256": "e02641510b1ea4419da93438bd0e4648a30b9d0e1f7a5ba01880eff39f9daf4d"
+    },
+    "lower-ravine-v2.glb": {
+      "bytes": 9029116,
+      "sha256": "dbf528c919ce8ae7c3d3331e3d4d6da4cc28f0d37f0500252424b711f52df3fc"
+    }
+  }
+}

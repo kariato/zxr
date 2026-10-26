@@ -1,0 +1,55 @@
+{
+  "format": "zxr-shared-scene-mesh-v1",
+  "scene": "lower-ravine",
+  "rooms": [
+    "STREAM-PATH",
+    "MARBLE-HALL",
+    "DEEP-FORD",
+    "RAVINE-LEDGE",
+    "LEDGE-TUNNEL"
+  ],
+  "inputHash": "a769c3535083a45fb9442f16692a28fd6ee49cf9ca54f79bfa54c77b1b8f1e1c",
+  "pipeline": {
+    "implementation": "Hunyuan3D-Swift/MLX",
+    "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+    "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+    "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+    "steps": 8,
+    "guidance": 5,
+    "octree": 256,
+    "seed": 42,
+    "quantize": 8,
+    "licence": "Tencent Hunyuan 3D 2.0 Community License",
+    "scope": "US-only local prototype"
+  },
+  "referenceSha256": "8562ef99d863c90bd790c8331b5087c6402a0f1c7ecb68ebea229a78f67fe255",
+  "sourceReviewSha256": "a5879ac5f036e99b014622dca9827a345604d9667aaf73e0158dea12a43c2ad7",
+  "targetTriangles": 60000,
+  "heightMetres": 18,
+  "textureMethod": "front-reference-projection; row-median back",
+  "rawTriangles": 531704,
+  "triangles": 60000,
+  "componentsBeforeCleanup": 29,
+  "boundsMetres": [
+    [
+      -23.366076188870796,
+      0.0,
+      -23.358772802069648
+    ],
+    [
+      23.366076188870796,
+      18.0,
+      23.358772802069648
+    ]
+  ],
+  "sha256": "ee1b7df4b4243e2273dec68323dc77ae2edcc038d21d24439481bfd40d8d3726",
+  "bytes": 7838228,
+  "seconds": 84.23,
+  "review": "draft",
+  "limitations": [
+    "One fused inferred scene; room markers do not separate geometry.",
+    "Reference-projected colour, not learned multiview texture paint.",
+    "Single-view reconstruction cannot guarantee hidden surfaces or walkable paths.",
+    "Scale is an authoring estimate, not a source measurement."
+  ]
+}

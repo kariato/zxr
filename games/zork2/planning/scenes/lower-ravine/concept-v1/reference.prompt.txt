@@ -1,0 +1,521 @@
+Use case: stylized-concept
+Asset type: one unified environment concept for a shared Zork II 3D scene, all seven Lower Ravine rooms.
+Primary request: a coherent elevated three-quarter CUTAWAY DIORAMA of an enclosed underground ravine. One continuous landscape with clear changes of elevation, NOT seven panels, no text, no labels, no arrows. Show all seven spaces at once, suitable as a later image-to-mesh reference. Use broad matte low-poly illustrated shapes and readable architecture, not photographic noise.
+Orientation: north is toward the back/top of image, east to right, south toward foreground. View from above the south-southeast, looking northwest; omit camera-facing rock/roof only as an authoring cutaway, with substantial dark rock around the rear so this is clearly underground.
+Composition and topology:
+1. Path Near Stream: a HIGH path on the SOUTH edge of the ravine, on right foreground ledge, following the rim northeast into a dark tunnel at right rear. On its east/right a ruined arch choked with vegetation leads off-scene to the garden. A tight southwest crawl exits toward foreground. NO direct descent from this high path to water; steep dangerous drop.
+2. Marble Hall: to the WEST/left of that path and on the SOUTH bank, an arched fine pale marble hall extends toward foreground. Its cracked broken NORTH end opens directly at the deep ford. South exit disappears off-scene. The EAST wall separating hall and high path is intact, featureless masonry: NO visible secret doorway, reveal seam, lever or shortcut.
+3. Deep Ford: cold dark teal stream flows east-west across the center at the BOTTOM of a deep ravine, with a visibly fordable crossing directly north of Marble Hall. No bridge, no stepping-stone bridge, no invented waterfall. It deepens eastward and passes out of frame.
+4. Ledge in Ravine: small narrow natural ledge on NORTH wall, near bottom just above stream. A short uneven rock scramble connects DOWN/SOUTH to ford. This ledge continues WEST/left along the north wall.
+5. End of Ledge: at the western/left end of that SAME ledge, a tunnel enters the NORTH rock face. Only a very subtle haze suggests warm smoky air; no flames, no dragon, no orange magical portal. Sharp rocks below.
+6. Tiny Room: ABOVE main north-wall ledge, a precarious natural rock climb with small irregular footholds (NOT a staircase, ladder, ramp or constructed bridge) reaches another tiny shelf and a small chamber carved in ravine wall. Show its interior via cutaway. On NORTH wall one massive CLOSED wooden door, small iron-barred window IN the door, formidable bolt lock with thin metal lid CLOSED over keyhole.
+7. Dreary Room: immediately NORTH/behind Tiny Room at SAME chamber elevation, sharing the SAME single wooden door at their boundary, not two separate doors. Reveal interior only through cutaway of exterior stone: a cramped dusty chamber, a plain dusty wooden table at center and restrained eerie RED light from a crack in one wall. Do NOT place an orb, key, treasure, mat, loose paper, wall-mounted keyhole, second window or other puzzle objects. Empty table because portable objects will be separate game assets.
+Lighting: restrained cool authoring fill plus warm off-camera lantern illumination so geography can be reviewed. These six dark rooms do not gain permanent torches or glowing moss. Only Dreary Room has its source-backed red glow. No open sky, sunlight, skylight, clouds or outdoor vegetation beyond the garden arch.
+Reference images 1–7 show appearance for Stream Path, Marble Hall, Deep Ford, Ravine Ledge, End of Ledge, Tiny Room v2, Dreary Room respectively. Their differing viewpoints are NOT the combined layout. Source and topology in this prompt override reference conflicts: ignore the old Dreary image's orb, separate wall keyhole, extra window and different door; use Tiny Room v2 for the ONE shared door. Ignore permanent torch fixtures, elaborate extra scenery, and any extra paths in references.
+No characters, no animals, no captions, no game UI, no border, no unrelated rooms. Keep the full scene in frame with a little dark margin.
+
+SOURCE REVIEW AND COMPLETE APPROVED STYLE BIBLE:
+{
+  "rooms": [
+    {
+      "room": "STREAM-PATH",
+      "name": "Path Near Stream",
+      "description": [
+        "The path follows the south edge of a deep ravine and heads northeast. A tunnel heads southwest, narrowing to a rather tight crawl. A faint whirring sound can be heard in that direction. On the east is a ruined archway choked with vegetation."
+      ],
+      "source": {
+        "end": {
+          "column": 31,
+          "line": 369,
+          "offset": 9988
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 355,
+          "offset": 9448
+        }
+      },
+      "initialRoomLightFlag": false,
+      "exits": [
+        {
+          "direction": "EAST",
+          "declaration": "(EAST TO FORMAL-GARDEN)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "FORMAL-GARDEN"
+          }
+        },
+        {
+          "direction": "WEST",
+          "declaration": "(WEST TO MARBLE-HALL IF SECRET-DOOR)",
+          "view": {
+            "global": "SECRET-DOOR",
+            "kind": "CEXIT",
+            "message": null,
+            "to": "MARBLE-HALL"
+          }
+        },
+        {
+          "direction": "NE",
+          "declaration": "(NE TO DARK-TUNNEL)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "DARK-TUNNEL"
+          }
+        },
+        {
+          "direction": "SW",
+          "declaration": "(SW TO CAROUSEL-ROOM)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "CAROUSEL-ROOM"
+          }
+        },
+        {
+          "direction": "DOWN",
+          "declaration": "(DOWN \"The ravine is extremely deep. You would never make it.\")",
+          "view": {
+            "kind": "NEXIT",
+            "message": "The ravine is extremely deep. You would never make it."
+          }
+        }
+      ]
+    },
+    {
+      "room": "MARBLE-HALL",
+      "name": "Marble Hall",
+      "description": [
+        "This is an arched hall of fine marble. The hall stops abruptly to the north at a ford across a stream, where the marble is cracked and broken. Perhaps a flood or collapse of the cave was responsible. To the south the hall opens into a large room. There is rather annoying whirring sound coming from that room."
+      ],
+      "source": {
+        "end": {
+          "column": 23,
+          "line": 384,
+          "offset": 10552
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 371,
+          "offset": 9990
+        }
+      },
+      "initialRoomLightFlag": false,
+      "exits": [
+        {
+          "direction": "NORTH",
+          "declaration": "(NORTH TO DEEP-FORD)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "DEEP-FORD"
+          }
+        },
+        {
+          "direction": "EAST",
+          "declaration": "(EAST TO STREAM-PATH IF SECRET-DOOR ELSE \"That's a wall there.\")",
+          "view": {
+            "global": "SECRET-DOOR",
+            "kind": "CEXIT",
+            "message": "That's a wall there.",
+            "to": "STREAM-PATH"
+          }
+        },
+        {
+          "direction": "SOUTH",
+          "declaration": "(SOUTH TO CAROUSEL-ROOM)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "CAROUSEL-ROOM"
+          }
+        }
+      ]
+    },
+    {
+      "room": "DEEP-FORD",
+      "name": "Deep Ford",
+      "description": [
+        "You are fording the stream at a deep but not impossible spot. The water is very cold. The walls of the ravine rise to east and west. There is a small ledge along the north wall of the ravine. To the south is the entrance to a well-constructed but somewhat ruined hall."
+      ],
+      "source": {
+        "end": {
+          "column": 42,
+          "line": 402,
+          "offset": 11205
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 386,
+          "offset": 10554
+        }
+      },
+      "initialRoomLightFlag": false,
+      "exits": [
+        {
+          "direction": "NORTH",
+          "declaration": "(NORTH TO RAVINE-LEDGE)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "RAVINE-LEDGE"
+          }
+        },
+        {
+          "direction": "EAST",
+          "declaration": "(EAST \"The stream deepens rapidly, and you wisely return before drowning.\")",
+          "view": {
+            "kind": "NEXIT",
+            "message": "The stream deepens rapidly, and you wisely return before drowning."
+          }
+        },
+        {
+          "direction": "WEST",
+          "declaration": "(WEST \"You notice that the ledge above would be a drier route west.\")",
+          "view": {
+            "kind": "NEXIT",
+            "message": "You notice that the ledge above would be a drier route west."
+          }
+        },
+        {
+          "direction": "SOUTH",
+          "declaration": "(SOUTH TO MARBLE-HALL)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "MARBLE-HALL"
+          }
+        },
+        {
+          "direction": "UP",
+          "declaration": "(UP TO RAVINE-LEDGE)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "RAVINE-LEDGE"
+          }
+        }
+      ]
+    },
+    {
+      "room": "RAVINE-LEDGE",
+      "name": "Ledge in Ravine",
+      "description": [
+        "You are on a narrow ledge near the bottom of a deep ravine. The ledge continues to the west. A precarious climb up to another tiny ledge is possible. A short scramble down the rock face leads to a stream."
+      ],
+      "source": {
+        "end": {
+          "column": 22,
+          "line": 417,
+          "offset": 11645
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 404,
+          "offset": 11207
+        }
+      },
+      "initialRoomLightFlag": false,
+      "exits": [
+        {
+          "direction": "WEST",
+          "declaration": "(WEST TO LEDGE-TUNNEL)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "LEDGE-TUNNEL"
+          }
+        },
+        {
+          "direction": "SOUTH",
+          "declaration": "(SOUTH TO DEEP-FORD)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "DEEP-FORD"
+          }
+        },
+        {
+          "direction": "UP",
+          "declaration": "(UP TO TINY-ROOM)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "TINY-ROOM"
+          }
+        },
+        {
+          "direction": "DOWN",
+          "declaration": "(DOWN TO DEEP-FORD)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "DEEP-FORD"
+          }
+        }
+      ]
+    },
+    {
+      "room": "LEDGE-TUNNEL",
+      "name": "End of Ledge",
+      "description": [
+        "A ledge from the east ends here, and a tunnel leads north into the wall. There is a rather odd smokey odor in the warm air of the tunnel."
+      ],
+      "source": {
+        "end": {
+          "column": 59,
+          "line": 429,
+          "offset": 12030
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 419,
+          "offset": 11647
+        }
+      },
+      "initialRoomLightFlag": false,
+      "exits": [
+        {
+          "direction": "NORTH",
+          "declaration": "(NORTH TO DRAGON-ROOM)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "DRAGON-ROOM"
+          }
+        },
+        {
+          "direction": "EAST",
+          "declaration": "(EAST TO RAVINE-LEDGE)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "RAVINE-LEDGE"
+          }
+        },
+        {
+          "direction": "DOWN",
+          "declaration": "(DOWN \"There are a lot of sharp rocks down there.\")",
+          "view": {
+            "kind": "NEXIT",
+            "message": "There are a lot of sharp rocks down there."
+          }
+        },
+        {
+          "direction": "IN",
+          "declaration": "(IN TO DRAGON-ROOM)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "DRAGON-ROOM"
+          }
+        }
+      ]
+    },
+    {
+      "room": "TINY-ROOM",
+      "name": "Tiny Room",
+      "description": [
+        " "
+      ],
+      "source": {
+        "end": {
+          "column": 36,
+          "line": 1721,
+          "offset": 47274
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 1712,
+          "offset": 46993
+        }
+      },
+      "initialRoomLightFlag": false,
+      "exits": [
+        {
+          "direction": "NORTH",
+          "declaration": "(NORTH TO DREARY-ROOM IF PDOOR IS OPEN)",
+          "view": {
+            "door": "PDOOR",
+            "kind": "DEXIT",
+            "message": null,
+            "to": "DREARY-ROOM"
+          }
+        },
+        {
+          "direction": "DOWN",
+          "declaration": "(DOWN TO RAVINE-LEDGE)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "RAVINE-LEDGE"
+          }
+        },
+        {
+          "direction": "IN",
+          "declaration": "(IN TO DREARY-ROOM IF PDOOR IS OPEN)",
+          "view": {
+            "door": "PDOOR",
+            "kind": "DEXIT",
+            "message": null,
+            "to": "DREARY-ROOM"
+          }
+        }
+      ]
+    },
+    {
+      "room": "DREARY-ROOM",
+      "name": "Dreary Room",
+      "description": [
+        " "
+      ],
+      "source": {
+        "end": {
+          "column": 30,
+          "line": 1710,
+          "offset": 46991
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 1702,
+          "offset": 46736
+        }
+      },
+      "initialRoomLightFlag": true,
+      "exits": [
+        {
+          "direction": "SOUTH",
+          "declaration": "(SOUTH TO TINY-ROOM IF PDOOR IS OPEN)",
+          "view": {
+            "door": "PDOOR",
+            "kind": "DEXIT",
+            "message": null,
+            "to": "TINY-ROOM"
+          }
+        },
+        {
+          "direction": "OUT",
+          "declaration": "(OUT TO TINY-ROOM IF PDOOR IS OPEN)",
+          "view": {
+            "door": "PDOOR",
+            "kind": "DEXIT",
+            "message": null,
+            "to": "TINY-ROOM"
+          }
+        }
+      ]
+    }
+  ],
+  "referenceImages": [
+    {
+      "room": "STREAM-PATH",
+      "path": "games/zork2/assets/rooms/stream-path/reference-v1.png",
+      "sha256": "80f392497eda73f2cb981db656c6aae488d71cc9e0018d58268fa54e949f4270",
+      "role": "appearance reference; source descriptions override conflicts"
+    },
+    {
+      "room": "MARBLE-HALL",
+      "path": "games/zork2/assets/rooms/marble-hall/reference-v1.png",
+      "sha256": "389b7851e17052a448ee131a55bc82c46a49858736ba65112aaba0320ba8c9c4",
+      "role": "appearance reference; source descriptions override conflicts"
+    },
+    {
+      "room": "DEEP-FORD",
+      "path": "games/zork2/assets/rooms/deep-ford/reference-v1.png",
+      "sha256": "6dfadbb3f3757c6a64ff55e66ccf03166d8f0cf76ebbe41e1e3909b8f2385f41",
+      "role": "appearance reference; source descriptions override conflicts"
+    },
+    {
+      "room": "RAVINE-LEDGE",
+      "path": "games/zork2/assets/rooms/ravine-ledge/reference-v1.png",
+      "sha256": "99da2d55721410f26228a58fe27c7ef9cf19d69c41b0af2e610a9885a16f3f21",
+      "role": "appearance reference; source descriptions override conflicts"
+    },
+    {
+      "room": "LEDGE-TUNNEL",
+      "path": "games/zork2/assets/rooms/ledge-tunnel/reference-v1.png",
+      "sha256": "b35c0cf40fab0d8e9103b6ff414aa73161e5f6b5afe7fc8ab1a2ca613bda3d7d",
+      "role": "appearance reference; source descriptions override conflicts"
+    },
+    {
+      "room": "TINY-ROOM",
+      "path": "games/zork2/assets/rooms/tiny-room/reference-v2.png",
+      "sha256": "392cbfc305cb48e6ab6e6f002429e9dc7f3c6b3d940731fcf3f10402c0181a2b",
+      "role": "appearance reference; source descriptions override conflicts"
+    },
+    {
+      "room": "DREARY-ROOM",
+      "path": "games/zork2/assets/rooms/dreary-room/reference-v1.png",
+      "sha256": "ccb46fcde04ec5be64bd716dccf26a9c4ca06d419fa48e1c3a51c46bf8eec595",
+      "role": "appearance reference; source descriptions override conflicts"
+    }
+  ],
+  "dynamicSource": {
+    "file": "reference/zork2/2actions.zil",
+    "lines": [
+      1541,
+      1609
+    ],
+    "summary": "Tiny Room carved in ravine wall; down precarious climb. Dreary Room red glow from wall crack, central dusty wooden table. Same north/south massive wooden door with small iron-barred window, bolt lock and lidded keyhole. Lid/key/mat/door states are dynamic."
+  },
+  "stateConstraints": [
+    "SECRET-DOOR connection stays concealed in static shell.",
+    "PDOOR and locks must be independent state-controlled nodes in future mesh.",
+    "Portable contents omitted, including Dreary table contents.",
+    "Cutaway lighting is authoring only: source darkness and observed objects remain authoritative."
+  ],
+  "stylePath": "games/zork2/planning/style-bible.md",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "status": "draft concept; no runtime changes"
+}
+# Zork II style bible
+
+**Version:** `zork2-style-v1` · **Status:** approved by Mark in conversation, 2026-10-23.
+
+## Direction
+
+A low-poly illustrated fantasy adventure: ancient underground places, warm brass lamplight, readable silhouettes and a slightly theatrical sense of mystery. The world feels old and strange, with room for Zork's dry humour. Use broad shapes, restrained surface detail and clear material differences. Characters are expressive and stylised, with enough menace for the dragon and Cerberus to feel dangerous. Violence is suggested through motion and effects rather than graphic injury.
+
+Source descriptions take priority over this guide. Distinctive colours, inscriptions, quantities and materials that matter to puzzles must survive the art pass. New decorative details must not resemble additional treasures, clues or usable mechanisms.
+
+## Palette and materials
+
+| Role | Base colour | Use |
+|---|---|---|
+| Deep shadow | `#111C22` | Unlit recesses and the backdrop of darkness |
+| Cool stone | `#657176` | Rock, dressed stone and masonry |
+| Warm earth | `#77604A` | Barrow soil, timber and worn leather |
+| Aged brass | `#A98A45` | Lanterns, fittings and mechanical details |
+| Lantern warmth | `#E8B66A` | Local light and restrained emissive surfaces |
+| Moss and foliage | `#50634B` | Underground gardens, lichen and leaves |
+| Pale mineral | `#C8C7B5` | Gravel, marble and light stone accents |
+| Wizard accent | `#75608E` | Small magical/character accents where source text permits |
+
+These are starting material colours, not a colour-grading filter. Preserve source-specific reds, blues, greens and other identifying colours even when they lie outside this palette. Give selectable items a distinct silhouette; keep text labels available so colour is never the sole identifier. Prefer matte, opaque surfaces with limited metallic highlights. Reuse simple material families; surface noise should not obscure an object at tablet size.
+
+## Shape, scale and composition
+
+Use metres at believable human scale. A typical adult character is approximately 1.7 metres tall, with source-backed size differences taking precedence. Carryable props should feel hand-sized; important small objects may receive larger invisible selection volumes without changing their visible size or game reachability. Room dimensions are authored estimates, not additional movement rules.
+
+Use simple bevels, readable silhouettes and economical geometry. Cave walls are irregular; built spaces have clear structural edges. Keep walking/spawn areas visually uncluttered. Each room retains its logical identity and local composition. Where connected rooms have compatible geography, they may share a GLB with separate named room roots, allowing a continuous forest-to-mountain vista. Inconsistent or changing connections use separate scenes and transitions. Place exits in their source directions; unusual, blocked and computed exits retain the engine's meaning.
+
+A shared GLB is a presentation grouping, not a merged game room. Movement across a room boundary still submits the engine's available exit option and preserves its turn cost, checks and hazards. Only the active room's observed objects and currently available interactions are exposed. Adjacent scenery must not reveal concealed routes or puzzle information. Keep groups small enough for the measured device budgets; no single-world GLB is required.
+
+Scene coordinates follow the planning contract: +Y up, +X east and -Z north; yaw is in degrees. Anchor names must be stable. Model pivots and forward-axis conversion will follow the validated rougeXR generator conventions when those templates are integrated. Character locomotion clips stay in place; animation never moves an object in the authoritative world model.
+
+## Light and visibility
+
+Lit rooms have a restrained, readable light rig justified by their descriptions. The formal garden is a cavern garden with moss illumination, not an outdoor garden beneath a sky. Lantern light is warm and local; cooler surroundings preserve depth and contrast. Magic may add brief coloured accents where the source supports it.
+
+The dark rig must not reveal objects, exits or concealed features that the engine does not expose. Keep menus and authoritative text usable in darkness. Do not add global fill lighting that bypasses the lantern puzzle. A lamp going out changes presentation only after the engine resolves it. Revealable, openable and destructible features are separate nodes, never permanently carved into a static shell in a way that gives the secret away.
+
+## Characters, effects and sound
+
+Give characters distinct outlines and restrained idle movement. Keep faces readable without requiring realistic facial animation. Use lowercase clip names, including `idle`, `move`, `attack`, `hurt`, `death` and `talk`, with source-appropriate clips such as `cast`, `appear` and `vanish`. A clip name is an asset contract, not permission to invent an available game action.
+
+Avoid camera shake, compulsory camera movement and flashing effects as default stylistic devices. Convey magic through short, readable motion, light and sound. Ambient audio is quiet, local and optional; it must not disclose a concealed actor or route. Actor speech uses packaged audio generated ahead of time with local Python TTS on the Mac mini. Keep captions authoritative and preserve text when a clip is absent. No microphone or speech recognition is part of the design.
+
+## Applying this guide
+
+Every planning prompt uses the complete approved document verbatim, its version and its content hash, alongside source context. The future planner's input hash must include that content; an art-direction change marks affected outputs stale. Draft outputs cannot acquire approval through schema validation. Existing example plans and materials are provisional and must be reconciled with the approved guide during review.
+
+Reuse suitable rougeXR generators and assets after checking scale, appearance, clip contracts and licence provenance. Frame-time, triangle, draw-call and texture budgets come from measurements in phase 7.0; this document does not claim unmeasured device limits.
+
+Before bulk planning or asset generation, step 6.2a produces a concept image from this guide and source room text for Mark to approve. Revise it from his feedback, then retain the approved image and generation provenance as visual references alongside this document. Approval of the written guide does not imply approval of a generated image, and image details never override source descriptions or game rules.
+
+**Approval record:** Mark approved the visual direction on 2026-10-23 and asked about combining geographically compatible connected rooms in one GLB. The grouping allowance above records that presentation option. Individual room plans, assets and puzzle gates still require their own review.
+
+TOOL INPUT ORDER CORRECTION: Five attached references only: 1 Stream Path, 2 Marble Hall, 3 Deep Ford, 4 Tiny Room v2, 5 Dreary Room. The two ledge references were separately reviewed; follow written ledge descriptions above.

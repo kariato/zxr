@@ -1,0 +1,185 @@
+{
+  "status": "draft for visual review",
+  "geometryUnchanged": true,
+  "geometrySha256": "b137852b93bc286aadf84b05abc9ade9db3bb32ac9fead88099ab17c518aadfc",
+  "frontMaterialUVsUnchanged": true,
+  "rearFacesRepainted": 22648,
+  "viewpoints": {
+    "STREAM-PATH": {
+      "positionBlender": [
+        15.888931274414062,
+        -2.6417083740234375,
+        6.112155914306641
+      ],
+      "supportCornersBlender": [
+        [
+          15.047752380371094,
+          -2.3471603393554688,
+          6.507251739501953
+        ],
+        [
+          16.73011016845703,
+          -1.5671157836914062,
+          5.9610595703125
+        ],
+        [
+          16.73011016845703,
+          -2.9857330322265625,
+          5.7516937255859375
+        ],
+        [
+          15.047752380371094,
+          -4.011634826660156,
+          6.470039367675781
+        ]
+      ]
+    },
+    "MARBLE-HALL": {
+      "positionBlender": [
+        -6.542500972747803,
+        -17.442943572998047,
+        7.9570159912109375
+      ],
+      "supportCornersBlender": [
+        [
+          -7.3836798667907715,
+          -16.548015594482422,
+          7.931724548339844
+        ],
+        [
+          -5.701322555541992,
+          -16.426517486572266,
+          7.846649169921875
+        ],
+        [
+          -5.701322555541992,
+          -17.225719451904297,
+          7.2035675048828125
+        ],
+        [
+          -7.3836798667907715,
+          -18.288990020751953,
+          7.9480743408203125
+        ]
+      ]
+    },
+    "DEEP-FORD": {
+      "positionBlender": [
+        -1.401964545249939,
+        11.928298950195312,
+        0.9213485717773438
+      ],
+      "supportCornersBlender": [
+        [
+          -2.243143320083618,
+          12.104316711425781,
+          1.3994407653808594
+        ],
+        [
+          -0.5607858300209045,
+          12.299545288085938,
+          1.2627410888671875
+        ],
+        [
+          -0.5607858300209045,
+          10.549957275390625,
+          1.285125732421875
+        ],
+        [
+          -2.243143320083618,
+          10.189926147460938,
+          1.5372200012207031
+        ]
+      ]
+    },
+    "RAVINE-LEDGE": {
+      "positionBlender": [
+        -2.803929090499878,
+        15.228240966796875,
+        6.628650665283203
+      ],
+      "supportCornersBlender": [
+        [
+          -3.6451077461242676,
+          16.58673858642578,
+          6.278770446777344
+        ],
+        [
+          -1.9627503156661987,
+          15.798255920410156,
+          6.83087158203125
+        ],
+        [
+          -1.9627503156661987,
+          14.723518371582031,
+          6.3807220458984375
+        ],
+        [
+          -3.6451077461242676,
+          15.065696716308594,
+          6.141124725341797
+        ]
+      ]
+    },
+    "LEDGE-TUNNEL": {
+      "positionBlender": [
+        -16.356252670288086,
+        18.694725036621094,
+        8.711490631103516
+      ],
+      "supportCornersBlender": [
+        [
+          -17.197431564331055,
+          18.644500732421875,
+          9.348007202148438
+        ],
+        [
+          -15.515073776245117,
+          19.123443603515625,
+          9.012649536132812
+        ],
+        [
+          -15.515073776245117,
+          18.841323852539062,
+          8.007495880126953
+        ],
+        [
+          -17.197431564331055,
+          18.409019470214844,
+          8.310199737548828
+        ]
+      ]
+    }
+  },
+  "renderViews": [
+    "overview",
+    "stream-path",
+    "marble-hall",
+    "deep-ford",
+    "ravine-ledge",
+    "ledge-tunnel",
+    "entrance",
+    "slight-angle"
+  ],
+  "deferredInteriors": [
+    "TINY-ROOM",
+    "DREARY-ROOM"
+  ],
+  "entranceRetained": true,
+  "collisionGuides": "Non-rendered surface samples; not validated runtime collision",
+  "limitations": [
+    "Original single-view relief geometry remains; rotation can reveal reconstruction distortion.",
+    "Preview cameras use the artwork projection angle, not first-person viewpoints.",
+    "No runtime integration or publication in this visual review pass."
+  ],
+  "files": {
+    "lower-ravine-v4.blend": {
+      "bytes": 9106760,
+      "sha256": "69e7e3358ca48641162a69e866dacc1e9453587467eb442ac56f5faa8317fc83"
+    },
+    "lower-ravine-v4.glb": {
+      "bytes": 11863936,
+      "sha256": "ab24942d7c9533cd80f82ecf87c71f21ad4185293462f7cf2b8f00533911c9f9"
+    }
+  }
+}

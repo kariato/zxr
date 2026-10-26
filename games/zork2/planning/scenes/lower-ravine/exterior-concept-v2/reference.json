@@ -1,0 +1,24 @@
+{
+  "mode": "built-in-imagegen",
+  "image": "reference.png",
+  "imageSha256": "8562ef99d863c90bd790c8331b5087c6402a0f1c7ecb68ebea229a78f67fe255",
+  "prompt": "reference.prompt.txt",
+  "promptSha256": "bdab8c8c2ea17acb5b5370494ae5b9b1578dd629a9f9865b65b20d0298dc5062",
+  "sourceReviewSha256": "a5879ac5f036e99b014622dca9827a345604d9667aaf73e0158dea12a43c2ad7",
+  "generatedSource": "/Users/kariatoo/.codex/generated_images/01a17459-417b-7d73-9b2f-b96ddc3fd136/exec-c8c18983-b855-4964-b025-d4db59f09cda.png",
+  "editInput": "../exterior-concept-v1/reference.png",
+  "editInputSha256": "71ce62a5d63467467ac51887a37c75ee70dddb2d8424be42c35f50543d9bee6b",
+  "modeledRooms": [
+    "STREAM-PATH",
+    "MARBLE-HALL",
+    "DEEP-FORD",
+    "RAVINE-LEDGE",
+    "LEDGE-TUNNEL"
+  ],
+  "deferredInteriors": [
+    "TINY-ROOM",
+    "DREARY-ROOM"
+  ],
+  "includedBoundary": "Dark entrance mouth on upper exterior shelf; no interior or puzzle door",
+  "status": "draft exterior mesh reference; no runtime integration"
+}

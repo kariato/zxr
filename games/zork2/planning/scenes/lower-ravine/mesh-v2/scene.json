@@ -1,0 +1,77 @@
+{
+  "format": "zxr-blender-shared-scene-v1",
+  "blend": "lower-ravine-v2.blend",
+  "mesh": "lower-ravine-v2.glb",
+  "rooms": [
+    "STREAM-PATH",
+    "MARBLE-HALL",
+    "DEEP-FORD",
+    "RAVINE-LEDGE",
+    "LEDGE-TUNNEL"
+  ],
+  "deferredRooms": [
+    "TINY-ROOM",
+    "DREARY-ROOM"
+  ],
+  "entranceBoundary": {
+    "node": "TINY_ROOM_ENTRANCE_ONLY",
+    "destination": "TINY-ROOM",
+    "positionBlender": [
+      -0.467321515083313,
+      20.79339599609375,
+      12.754329681396484
+    ],
+    "interiorModeled": false
+  },
+  "boundsBlender": [
+    [
+      -23.36607551574707,
+      -23.35877227783203,
+      0.0
+    ],
+    [
+      23.36607551574707,
+      23.35877227783203,
+      18.0
+    ]
+  ],
+  "reviewViews": [
+    "overview",
+    "three-quarter",
+    "back"
+  ],
+  "renderer": "Blender Cycles CPU, 24 samples",
+  "markers": {
+    "STREAM-PATH": [
+      15.888931274414062,
+      -2.6417083740234375,
+      6.112155914306641
+    ],
+    "MARBLE-HALL": [
+      -6.542500972747803,
+      -17.442943572998047,
+      7.9570159912109375
+    ],
+    "DEEP-FORD": [
+      -1.401964545249939,
+      11.928298950195312,
+      0.9213485717773438
+    ],
+    "RAVINE-LEDGE": [
+      -2.803929090499878,
+      15.228240966796875,
+      6.628650665283203
+    ],
+    "LEDGE-TUNNEL": [
+      -16.356252670288086,
+      18.694725036621094,
+      8.711490631103516
+    ]
+  },
+  "textureProjection": {
+    "elevationDegrees": 35,
+    "image": "../exterior-concept-v2/reference.png",
+    "method": "Planar reference projection including depth; hidden surfaces remain approximate"
+  },
+  "note": "Renders show actual generated mesh; source concept is packed but hidden from render."
+}

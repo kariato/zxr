@@ -1,0 +1,25 @@
+[
+  {
+    "file": "games/zork2/planning/scenes/lower-ravine/mesh-v4/lower-ravine-v4.glb",
+    "sha256": "ab24942d7c9533cd80f82ecf87c71f21ad4185293462f7cf2b8f00533911c9f9",
+    "bytes": 11863936,
+    "triangles": 60000,
+    "uniqueTriangles": 60000,
+    "vertices": 180000,
+    "materials": 2,
+    "joints": 0,
+    "maxInfluences": 0,
+    "embeddedTextures": [
+      [
+        1536,
+        1024
+      ],
+      [
+        1536,
+        1024
+      ]
+    ],
+    "clips": [],
+    "checks": "passed"
+  }
+]

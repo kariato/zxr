@@ -1,0 +1,49 @@
+{
+  "format": "zxr-shared-scene-concept-v1",
+  "scene": "lower-ravine",
+  "rooms": [
+    "STREAM-PATH",
+    "MARBLE-HALL",
+    "DEEP-FORD",
+    "RAVINE-LEDGE",
+    "LEDGE-TUNNEL",
+    "TINY-ROOM",
+    "DREARY-ROOM"
+  ],
+  "mode": "built-in-imagegen",
+  "image": "reference.png",
+  "imageSha256": "c412c30a1092f17e1fb03d52705b7e719c118e287927848bbffa928c1125b1c0",
+  "width": 1536,
+  "height": 1024,
+  "prompt": "reference.prompt.txt",
+  "promptSha256": "8a44af8724298614fb2b7db84756d6a494fe1e867af8e05588e64b80bd42052e",
+  "revisionPrompt": "revision.prompt.txt",
+  "revisionPromptSha256": "01f772d5d3e22f6909c7939ebe0fdd3dcf3571ce744336897370be91e3f0423a",
+  "sourceReview": "source-review.json",
+  "sourceReviewSha256": "a5879ac5f036e99b014622dca9827a345604d9667aaf73e0158dea12a43c2ad7",
+  "generatedSource": "/Users/kariatoo/.codex/generated_images/01a17459-417b-7d73-9b2f-b96ddc3fd136/exec-fe8ae79e-2016-4328-bb55-8f215161c75e.png",
+  "initialImage": "initial.png",
+  "initialImageSha256": "d97845f8091f472fbceea5ed27a5abb9342fef16fc87b7d8425351f7f188bfaa",
+  "initialGeneratedSource": "/Users/kariatoo/.codex/generated_images/01a17459-417b-7d73-9b2f-b96ddc3fd136/exec-d6f6736f-2459-4d90-b665-f5c82cdd0a83.png",
+  "attachedReferenceRooms": [
+    "STREAM-PATH",
+    "MARBLE-HALL",
+    "DEEP-FORD",
+    "TINY-ROOM",
+    "DREARY-ROOM"
+  ],
+  "review": "assistant visual review; draft for user review",
+  "reviewChecks": [
+    "One continuous underground ravine with high path, vegetated garden arch, pale ruined hall, stream, low north ledge and western tunnel.",
+    "Upper red chamber now behind closed door instead of table beside door; no portable orb/key/mat.",
+    "Secret hall/path connection stays concealed.",
+    "Second pass removes foreground waterfall and softens regular stair shapes."
+  ],
+  "limitations": [
+    "Upper red chamber is drawn elevated behind Tiny Room; source specifies a north/south shared door, not a vertical transition. Mesh must place both floors at same height with one separating wall and door.",
+    "Climb still reads as some step-like rocks; future geometry must use precarious irregular footholds, not a staircase.",
+    "Ford-to-ledge short scramble needs explicit geometry; concept does not establish walkable collision.",
+    "Illustration lighting is authoring only; source darkness, dynamic door state and portable contents remain authoritative."
+  ],
+  "runtimeIntegration": "concept only; no GLB or runtime changes"
+}

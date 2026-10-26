@@ -1,0 +1,23 @@
+{
+  "mode": "built-in-imagegen",
+  "image": "reference.png",
+  "imageSha256": "71ce62a5d63467467ac51887a37c75ee70dddb2d8424be42c35f50543d9bee6b",
+  "prompt": "reference.prompt.txt",
+  "promptSha256": "c6658c7a92201373542ccb661fe04cf2069536f19963986204166e8033c69dfd",
+  "sourceReviewSha256": "a5879ac5f036e99b014622dca9827a345604d9667aaf73e0158dea12a43c2ad7",
+  "generatedSource": "/Users/kariatoo/.codex/generated_images/01a17459-417b-7d73-9b2f-b96ddc3fd136/exec-c80a39fe-7ed2-4336-9f7c-289f14a2d865.png",
+  "editInput": "../concept-v1/reference.png",
+  "editInputSha256": "c412c30a1092f17e1fb03d52705b7e719c118e287927848bbffa928c1125b1c0",
+  "modeledRooms": [
+    "STREAM-PATH",
+    "MARBLE-HALL",
+    "DEEP-FORD",
+    "RAVINE-LEDGE",
+    "LEDGE-TUNNEL"
+  ],
+  "deferredRooms": [
+    "TINY-ROOM",
+    "DREARY-ROOM"
+  ],
+  "status": "draft exterior mesh reference"
+}

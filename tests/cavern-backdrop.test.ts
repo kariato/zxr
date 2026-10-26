@@ -63,3 +63,12 @@ it('shares the garden panorama across all four rooms and cannot reveal a dark or
   expect(f.load).toHaveBeenCalledOnce();f.backdrop.update(view('DARK-TUNNEL'));expect(f.scene.background).toBeNull();
   const dispose=vi.spyOn(texture,'dispose');f.backdrop.dispose();expect(dispose).toHaveBeenCalledOnce();
 });
+
+it('shares the cavern backdrop with all five lit ravine exteriors while excluding deferred interiors',()=>{
+  const f=fixture();f.backdrop.update(view('STREAM-PATH',false));expect(f.load).not.toHaveBeenCalled();
+  f.backdrop.update(view('STREAM-PATH'));expect(f.load).toHaveBeenCalledWith(expect.any(Function),expect.any(Function),'cavern');
+  f.backdrop.update(view('STREAM-PATH',false));const texture=new THREE.Texture();f.ready(texture);expect(f.scene.background).toBeNull();
+  for(const id of ['STREAM-PATH','MARBLE-HALL','DEEP-FORD','RAVINE-LEDGE','LEDGE-TUNNEL']){f.backdrop.update(view(id));expect(f.scene.background).toBe(texture);}
+  for(const id of ['TINY-ROOM','DREARY-ROOM']){f.backdrop.update(view(id));expect(f.scene.background).toBeNull();}
+  f.backdrop.update(view('FOOT-BRIDGE'));expect(f.scene.background).toBe(texture);expect(f.load).toHaveBeenCalledOnce();f.backdrop.dispose();
+});

@@ -1,0 +1,446 @@
+{
+  "rooms": [
+    {
+      "room": "STREAM-PATH",
+      "name": "Path Near Stream",
+      "description": [
+        "The path follows the south edge of a deep ravine and heads northeast. A tunnel heads southwest, narrowing to a rather tight crawl. A faint whirring sound can be heard in that direction. On the east is a ruined archway choked with vegetation."
+      ],
+      "source": {
+        "end": {
+          "column": 31,
+          "line": 369,
+          "offset": 9988
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 355,
+          "offset": 9448
+        }
+      },
+      "initialRoomLightFlag": false,
+      "exits": [
+        {
+          "direction": "EAST",
+          "declaration": "(EAST TO FORMAL-GARDEN)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "FORMAL-GARDEN"
+          }
+        },
+        {
+          "direction": "WEST",
+          "declaration": "(WEST TO MARBLE-HALL IF SECRET-DOOR)",
+          "view": {
+            "global": "SECRET-DOOR",
+            "kind": "CEXIT",
+            "message": null,
+            "to": "MARBLE-HALL"
+          }
+        },
+        {
+          "direction": "NE",
+          "declaration": "(NE TO DARK-TUNNEL)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "DARK-TUNNEL"
+          }
+        },
+        {
+          "direction": "SW",
+          "declaration": "(SW TO CAROUSEL-ROOM)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "CAROUSEL-ROOM"
+          }
+        },
+        {
+          "direction": "DOWN",
+          "declaration": "(DOWN \"The ravine is extremely deep. You would never make it.\")",
+          "view": {
+            "kind": "NEXIT",
+            "message": "The ravine is extremely deep. You would never make it."
+          }
+        }
+      ]
+    },
+    {
+      "room": "MARBLE-HALL",
+      "name": "Marble Hall",
+      "description": [
+        "This is an arched hall of fine marble. The hall stops abruptly to the north at a ford across a stream, where the marble is cracked and broken. Perhaps a flood or collapse of the cave was responsible. To the south the hall opens into a large room. There is rather annoying whirring sound coming from that room."
+      ],
+      "source": {
+        "end": {
+          "column": 23,
+          "line": 384,
+          "offset": 10552
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 371,
+          "offset": 9990
+        }
+      },
+      "initialRoomLightFlag": false,
+      "exits": [
+        {
+          "direction": "NORTH",
+          "declaration": "(NORTH TO DEEP-FORD)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "DEEP-FORD"
+          }
+        },
+        {
+          "direction": "EAST",
+          "declaration": "(EAST TO STREAM-PATH IF SECRET-DOOR ELSE \"That's a wall there.\")",
+          "view": {
+            "global": "SECRET-DOOR",
+            "kind": "CEXIT",
+            "message": "That's a wall there.",
+            "to": "STREAM-PATH"
+          }
+        },
+        {
+          "direction": "SOUTH",
+          "declaration": "(SOUTH TO CAROUSEL-ROOM)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "CAROUSEL-ROOM"
+          }
+        }
+      ]
+    },
+    {
+      "room": "DEEP-FORD",
+      "name": "Deep Ford",
+      "description": [
+        "You are fording the stream at a deep but not impossible spot. The water is very cold. The walls of the ravine rise to east and west. There is a small ledge along the north wall of the ravine. To the south is the entrance to a well-constructed but somewhat ruined hall."
+      ],
+      "source": {
+        "end": {
+          "column": 42,
+          "line": 402,
+          "offset": 11205
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 386,
+          "offset": 10554
+        }
+      },
+      "initialRoomLightFlag": false,
+      "exits": [
+        {
+          "direction": "NORTH",
+          "declaration": "(NORTH TO RAVINE-LEDGE)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "RAVINE-LEDGE"
+          }
+        },
+        {
+          "direction": "EAST",
+          "declaration": "(EAST \"The stream deepens rapidly, and you wisely return before drowning.\")",
+          "view": {
+            "kind": "NEXIT",
+            "message": "The stream deepens rapidly, and you wisely return before drowning."
+          }
+        },
+        {
+          "direction": "WEST",
+          "declaration": "(WEST \"You notice that the ledge above would be a drier route west.\")",
+          "view": {
+            "kind": "NEXIT",
+            "message": "You notice that the ledge above would be a drier route west."
+          }
+        },
+        {
+          "direction": "SOUTH",
+          "declaration": "(SOUTH TO MARBLE-HALL)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "MARBLE-HALL"
+          }
+        },
+        {
+          "direction": "UP",
+          "declaration": "(UP TO RAVINE-LEDGE)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "RAVINE-LEDGE"
+          }
+        }
+      ]
+    },
+    {
+      "room": "RAVINE-LEDGE",
+      "name": "Ledge in Ravine",
+      "description": [
+        "You are on a narrow ledge near the bottom of a deep ravine. The ledge continues to the west. A precarious climb up to another tiny ledge is possible. A short scramble down the rock face leads to a stream."
+      ],
+      "source": {
+        "end": {
+          "column": 22,
+          "line": 417,
+          "offset": 11645
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 404,
+          "offset": 11207
+        }
+      },
+      "initialRoomLightFlag": false,
+      "exits": [
+        {
+          "direction": "WEST",
+          "declaration": "(WEST TO LEDGE-TUNNEL)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "LEDGE-TUNNEL"
+          }
+        },
+        {
+          "direction": "SOUTH",
+          "declaration": "(SOUTH TO DEEP-FORD)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "DEEP-FORD"
+          }
+        },
+        {
+          "direction": "UP",
+          "declaration": "(UP TO TINY-ROOM)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "TINY-ROOM"
+          }
+        },
+        {
+          "direction": "DOWN",
+          "declaration": "(DOWN TO DEEP-FORD)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "DEEP-FORD"
+          }
+        }
+      ]
+    },
+    {
+      "room": "LEDGE-TUNNEL",
+      "name": "End of Ledge",
+      "description": [
+        "A ledge from the east ends here, and a tunnel leads north into the wall. There is a rather odd smokey odor in the warm air of the tunnel."
+      ],
+      "source": {
+        "end": {
+          "column": 59,
+          "line": 429,
+          "offset": 12030
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 419,
+          "offset": 11647
+        }
+      },
+      "initialRoomLightFlag": false,
+      "exits": [
+        {
+          "direction": "NORTH",
+          "declaration": "(NORTH TO DRAGON-ROOM)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "DRAGON-ROOM"
+          }
+        },
+        {
+          "direction": "EAST",
+          "declaration": "(EAST TO RAVINE-LEDGE)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "RAVINE-LEDGE"
+          }
+        },
+        {
+          "direction": "DOWN",
+          "declaration": "(DOWN \"There are a lot of sharp rocks down there.\")",
+          "view": {
+            "kind": "NEXIT",
+            "message": "There are a lot of sharp rocks down there."
+          }
+        },
+        {
+          "direction": "IN",
+          "declaration": "(IN TO DRAGON-ROOM)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "DRAGON-ROOM"
+          }
+        }
+      ]
+    },
+    {
+      "room": "TINY-ROOM",
+      "name": "Tiny Room",
+      "description": [
+        " "
+      ],
+      "source": {
+        "end": {
+          "column": 36,
+          "line": 1721,
+          "offset": 47274
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 1712,
+          "offset": 46993
+        }
+      },
+      "initialRoomLightFlag": false,
+      "exits": [
+        {
+          "direction": "NORTH",
+          "declaration": "(NORTH TO DREARY-ROOM IF PDOOR IS OPEN)",
+          "view": {
+            "door": "PDOOR",
+            "kind": "DEXIT",
+            "message": null,
+            "to": "DREARY-ROOM"
+          }
+        },
+        {
+          "direction": "DOWN",
+          "declaration": "(DOWN TO RAVINE-LEDGE)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "RAVINE-LEDGE"
+          }
+        },
+        {
+          "direction": "IN",
+          "declaration": "(IN TO DREARY-ROOM IF PDOOR IS OPEN)",
+          "view": {
+            "door": "PDOOR",
+            "kind": "DEXIT",
+            "message": null,
+            "to": "DREARY-ROOM"
+          }
+        }
+      ]
+    },
+    {
+      "room": "DREARY-ROOM",
+      "name": "Dreary Room",
+      "description": [
+        " "
+      ],
+      "source": {
+        "end": {
+          "column": 30,
+          "line": 1710,
+          "offset": 46991
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 1702,
+          "offset": 46736
+        }
+      },
+      "initialRoomLightFlag": true,
+      "exits": [
+        {
+          "direction": "SOUTH",
+          "declaration": "(SOUTH TO TINY-ROOM IF PDOOR IS OPEN)",
+          "view": {
+            "door": "PDOOR",
+            "kind": "DEXIT",
+            "message": null,
+            "to": "TINY-ROOM"
+          }
+        },
+        {
+          "direction": "OUT",
+          "declaration": "(OUT TO TINY-ROOM IF PDOOR IS OPEN)",
+          "view": {
+            "door": "PDOOR",
+            "kind": "DEXIT",
+            "message": null,
+            "to": "TINY-ROOM"
+          }
+        }
+      ]
+    }
+  ],
+  "referenceImages": [
+    {
+      "room": "STREAM-PATH",
+      "path": "games/zork2/assets/rooms/stream-path/reference-v1.png",
+      "sha256": "80f392497eda73f2cb981db656c6aae488d71cc9e0018d58268fa54e949f4270",
+      "role": "appearance reference; source descriptions override conflicts"
+    },
+    {
+      "room": "MARBLE-HALL",
+      "path": "games/zork2/assets/rooms/marble-hall/reference-v1.png",
+      "sha256": "389b7851e17052a448ee131a55bc82c46a49858736ba65112aaba0320ba8c9c4",
+      "role": "appearance reference; source descriptions override conflicts"
+    },
+    {
+      "room": "DEEP-FORD",
+      "path": "games/zork2/assets/rooms/deep-ford/reference-v1.png",
+      "sha256": "6dfadbb3f3757c6a64ff55e66ccf03166d8f0cf76ebbe41e1e3909b8f2385f41",
+      "role": "appearance reference; source descriptions override conflicts"
+    },
+    {
+      "room": "RAVINE-LEDGE",
+      "path": "games/zork2/assets/rooms/ravine-ledge/reference-v1.png",
+      "sha256": "99da2d55721410f26228a58fe27c7ef9cf19d69c41b0af2e610a9885a16f3f21",
+      "role": "appearance reference; source descriptions override conflicts"
+    },
+    {
+      "room": "LEDGE-TUNNEL",
+      "path": "games/zork2/assets/rooms/ledge-tunnel/reference-v1.png",
+      "sha256": "b35c0cf40fab0d8e9103b6ff414aa73161e5f6b5afe7fc8ab1a2ca613bda3d7d",
+      "role": "appearance reference; source descriptions override conflicts"
+    },
+    {
+      "room": "TINY-ROOM",
+      "path": "games/zork2/assets/rooms/tiny-room/reference-v2.png",
+      "sha256": "392cbfc305cb48e6ab6e6f002429e9dc7f3c6b3d940731fcf3f10402c0181a2b",
+      "role": "appearance reference; source descriptions override conflicts"
+    },
+    {
+      "room": "DREARY-ROOM",
+      "path": "games/zork2/assets/rooms/dreary-room/reference-v1.png",
+      "sha256": "ccb46fcde04ec5be64bd716dccf26a9c4ca06d419fa48e1c3a51c46bf8eec595",
+      "role": "appearance reference; source descriptions override conflicts"
+    }
+  ],
+  "dynamicSource": {
+    "file": "reference/zork2/2actions.zil",
+    "lines": [
+      1541,
+      1609
+    ],
+    "summary": "Tiny Room carved in ravine wall; down precarious climb. Dreary Room red glow from wall crack, central dusty wooden table. Same north/south massive wooden door with small iron-barred window, bolt lock and lidded keyhole. Lid/key/mat/door states are dynamic."
+  },
+  "stateConstraints": [
+    "SECRET-DOOR connection stays concealed in static shell.",
+    "PDOOR and locks must be independent state-controlled nodes in future mesh.",
+    "Portable contents omitted, including Dreary table contents.",
+    "Cutaway lighting is authoring only: source darkness and observed objects remain authoritative."
+  ],
+  "stylePath": "games/zork2/planning/style-bible.md",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "status": "draft concept; no runtime changes"
+}

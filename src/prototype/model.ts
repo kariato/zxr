@@ -3,6 +3,11 @@ import { movablePropDefinitions } from './movable-props.generated.ts';
 
 /** Hand-built presentation slice. No gameplay rules or inferred exit success. */
 export const sliceRooms:Record<string,{width:number;depth:number;height:number;routes:{direction:string;x:number;z:number}[]}>= {
+  'STREAM-PATH':{width:2,depth:2,height:5,routes:[{direction:'EAST',x:.8,z:0},{direction:'NE',x:.7,z:-.8},{direction:'SW',x:-.7,z:.8}]},
+  'MARBLE-HALL':{width:2,depth:2,height:5,routes:[{direction:'NORTH',x:0,z:-.8},{direction:'SOUTH',x:0,z:.8}]},
+  'DEEP-FORD':{width:2,depth:2,height:5,routes:[{direction:'NORTH',x:0,z:-.8},{direction:'SOUTH',x:0,z:.8}]},
+  'RAVINE-LEDGE':{width:2,depth:2,height:5,routes:[{direction:'WEST',x:-.8,z:0},{direction:'SOUTH',x:0,z:.8},{direction:'UP',x:0,z:-.8}]},
+  'LEDGE-TUNNEL':{width:2,depth:2,height:5,routes:[{direction:'EAST',x:.8,z:0},{direction:'NORTH',x:0,z:-.8}]},
   'GARDEN-NORTH':{width:3.2,depth:3.2,height:6,routes:[{direction:'NORTH',x:0,z:-1.4},{direction:'SOUTH',x:0,z:1.4},{direction:'IN',x:.7,z:-1.2}]},
   'GAZEBO-ROOM':{width:3,depth:3,height:3,routes:[{direction:'OUT',x:-1.1,z:1.1}]},
   'FORMAL-GARDEN':{width:4,depth:4,height:6,routes:[{direction:'NORTH',x:0,z:-1.7},{direction:'SOUTH',x:0,z:1.7},{direction:'WEST',x:-1.7,z:0}]},

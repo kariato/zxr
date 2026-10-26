@@ -119,3 +119,25 @@ it('connects all garden layouts to their source rooms and keeps gazebo contents 
   p.importSave(gazebo);expect(prototypeModel(s.observeAppearance()).room).toBe('GAZEBO-ROOM');
   const observation=s.observeAppearance();observation.perception.lit=false;expect(prototypeModel(observation)).toEqual({room:null,layout:null,props:[]});
 });
+
+it('presents five ravine rooms while preserving source refusals, deferred interiors, darkness and saves',()=>{
+  const s=new GameSession(game),p=new TextPlayer(s,buildObjectActionCatalog(game));
+  p.activateObject(p.objectActions().find(a=>a.object==='LAMP')!);p.activateObject(p.objectActions().find(a=>a.object==='LAMP')!);
+  for(const d of ['SOUTH','SOUTH','SOUTH','SW','SOUTH','SW'])p.walk(d);
+  expect(prototypeModel(s.observeAppearance()).room).toBe('STREAM-PATH');
+  expect(prototypeModel(s.observeAppearance()).layout?.routes.some(r=>r.direction==='WEST')).toBe(false);
+  p.walk('WEST');expect(prototypeModel(s.observeAppearance()).room).toBe('STREAM-PATH');
+  const save=s.exportSave(),world=WorldState.restore(game,save.checkpoint.interpreter.world);
+  const id=(name:string)=>game.bundle.payload.world.entities.find(e=>e.name===name)!.id;
+  world.move(world.global('PLAYER'),id('MARBLE-HALL'));world.setGlobal('HERE',id('MARBLE-HALL'));
+  save.checkpoint.interpreter.world=world.snapshot();p.importSave(save);
+  expect(prototypeModel(s.observeAppearance()).room).toBe('MARBLE-HALL');expect(prototypeModel(s.observeAppearance()).layout).not.toBeNull();
+  p.walk('NORTH');expect(prototypeModel(s.observeAppearance()).room).toBe('DEEP-FORD');
+  p.walk('EAST');expect(prototypeModel(s.observeAppearance()).room).toBe('DEEP-FORD');
+  p.walk('NORTH');expect(prototypeModel(s.observeAppearance()).room).toBe('RAVINE-LEDGE');
+  const ledge=s.exportSave();p.walk('WEST');expect(prototypeModel(s.observeAppearance()).room).toBe('LEDGE-TUNNEL');
+  p.walk('DOWN');expect(prototypeModel(s.observeAppearance()).room).toBe('LEDGE-TUNNEL');
+  p.walk('EAST');p.walk('UP');expect(prototypeModel(s.observeAppearance()).room).toBe('TINY-ROOM');expect(prototypeModel(s.observeAppearance()).layout).toBeNull();
+  p.importSave(ledge);expect(prototypeModel(s.observeAppearance()).room).toBe('RAVINE-LEDGE');
+  p.openObject('LAMP');choose(p,'Turn off: lamp');expect(prototypeModel(s.observeAppearance()).room).toBeNull();
+});

@@ -1,0 +1,12 @@
+{
+  "checks": "passed",
+  "geometryMatchesOriginalTencentMesh": true,
+  "frontArtworkUVsPreserved": true,
+  "hiddenAuthoringGuides": 5,
+  "glbRoundTrip": true,
+  "embeddedTextures": 2,
+  "triangles": 60000,
+  "deferredInteriorsAbsent": true,
+  "entranceBoundaryRetained": true,
+  "runtimeReady": false
+}
