@@ -46,3 +46,14 @@ it('clones one prop asset across room placements without changing cached pose or
   mount.dispose();complete(gltf);await Promise.resolve();expect(parent.children).toEqual([body]);expect(body.visible).toBe(true);
   releasePropModels();
 });
+
+it('fits oversized flat tabletop models uniformly without changing geometry or texture coordinates',()=>{
+  for(const id of ['PLACE-MAT','NEWSPAPER','LETTER-OPENER']){
+    const geometry=new THREE.BoxGeometry(7,.25,5),model=new THREE.Group();model.add(new THREE.Mesh(geometry,new THREE.MeshBasicMaterial()));
+    const positions=Array.from(geometry.attributes.position!.array),uv=Array.from(geometry.attributes.uv!.array);
+    posePropModel(id,model,{open:false});posePropModel(id,model,{open:false});
+    const bounds=new THREE.Box3().setFromObject(model),size=bounds.getSize(new THREE.Vector3());
+    expect(size.x).toBeCloseTo(.3);expect(size.z/size.x).toBeCloseTo(5/7);expect(size.y/size.x).toBeCloseTo(.25/7);
+    expect(Array.from(geometry.attributes.position!.array)).toEqual(positions);expect(Array.from(geometry.attributes.uv!.array)).toEqual(uv);
+  }
+});

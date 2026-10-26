@@ -25,7 +25,7 @@ test('previews five ravine source rooms with one retained model and deferred upp
   await lamp.getByRole('button').first().click();await lamp.getByRole('button').first().click();
   const moves=prototype.getByRole('navigation',{name:'Movement attempts',exact:true});const walk=async(d:string)=>moves.getByRole('button',{name:new RegExp('^Go: '+d+'$','i')}).click();
   const viewport=prototype.locator('.prototype-viewport');
-  const room=async(id:string)=>{await expect(viewport).toHaveAttribute('data-ravine-room',id);await expect(viewport).toHaveAttribute('data-ravine-scene','ready',{timeout:60000});};
+  const room=async(id:string)=>{await expect(viewport).toHaveAttribute('data-ravine-room',id);await expect(viewport).toHaveAttribute('data-scene-projection','orthographic');await expect(viewport).toHaveAttribute('data-ravine-scene','ready',{timeout:60000});};
   for(const d of ['south','south','south','sw','south','sw'])await walk(d);
   await room('STREAM-PATH');expect(requests).toHaveLength(1);
   if(!process.env.CI)await viewport.screenshot({path:test.info().outputPath('stream-path.png')});

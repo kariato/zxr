@@ -17,7 +17,7 @@
   ],
   "skybox": "src/prototype/assets/cavern-skybox-v1.png",
   "skyboxScope": "Five lit ravine exteriors only; existing garden skybox remains garden-only",
-  "presentation": "Narrow-field elevated room previews preserve artwork; Ravine overview and Recenter are turn-free. Source Movement attempts controls transitions. WASD is disabled in these preview rooms.",
+  "presentation": "Orthographic elevated room previews preserve artwork; Ravine overview and Recenter are turn-free. Source Movement attempts controls transitions. Dragging pans without rotating the projected texture. WASD and the walk pad are disabled in these preview rooms.",
   "sourceAuthority": "Engine controls room identity, attempted exits, refusals, object visibility, darkness, turns and saves.",
   "limitations": "Single-view relief remains; this preview does not assert finished first-person collision or headset acceptance."
 }

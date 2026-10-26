@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {movablePropDefinitions} from './movable-props.generated.ts';
 import { GLTFLoader,type GLTF } from 'three/addons/loaders/GLTFLoader.js';
 
 type Load=(url:string)=>Promise<GLTF>;
@@ -11,6 +12,13 @@ const cachedLoad:Load=url=>{
 
 /** Pose a generated prop from engine-observed state only; contents stay separate objects. */
 export function posePropModel(id:string,model:THREE.Object3D,state:{open:boolean}){
+  // The shape pipeline scaled flat props by height, making the mat seven metres
+  // wide. Fit the complete object uniformly; never deform its mesh or UVs.
+  if(['PLACE-MAT','NEWSPAPER','LETTER-OPENER'].includes(id)){
+    const definition=movablePropDefinitions.find(p=>p.id===id);
+    const size=new THREE.Box3().setFromObject(model).getSize(new THREE.Vector3()),span=Math.max(size.x,size.y,size.z);
+    if(definition&&Number.isFinite(span)&&span>0)model.scale.multiplyScalar(Math.max(...definition.sizeMetres)/span);
+  }
   // Generated props face +Z; the procedural props and camera approach face -Z.
   if(id==='CHEST'){model.rotation.y=Math.PI;const hinge=model.getObjectByName('chest_lid_hinge');if(hinge)hinge.rotation.x=state.open?-1.9:0;}
 }

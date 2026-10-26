@@ -1,7 +1,7 @@
 import {expect,it,vi} from 'vitest';
 import * as THREE from 'three';
 import type {GLTF} from 'three/addons/loaders/GLTFLoader.js';
-import {mountGardenScene,addGardenTargets,gardenSceneOffset} from '../src/prototype/garden-scene.ts';
+import {mountGardenScene,addGardenTargets,gardenSceneOffset,gardenPreviewPose} from '../src/prototype/garden-scene.ts';
 
 it('keeps the embedded skybox unlit and unfogged and releases shared GLB resources once',()=>{
   const scene=new THREE.Group(),parent=new THREE.Group(),map=new THREE.Texture();
@@ -36,4 +36,13 @@ it('creates garden interactions only for source-observed objects in the current 
   expect(addGardenTargets(parent,'GAZEBO-ROOM',new Set(['GAZEBO-TABLE']),[]).map(t=>t.userData.object)).toEqual(['GAZEBO-TABLE']);
   expect(addGardenTargets(parent,'TOPIARY-ROOM',new Set(['MOSS']),[]).map(t=>t.userData.object)).toEqual(['MOSS']);
   expect(gardenSceneOffset(null)).toBeUndefined();expect(gardenSceneOffset('DARK-TUNNEL')).toBeUndefined();
+});
+
+it('aligns every garden view including the gazebo with the baked 35-degree image projection',()=>{
+  for(const room of ['GARDEN-NORTH','GAZEBO-ROOM','FORMAL-GARDEN','TOPIARY-ROOM']){
+    const pose=gardenPreviewPose(room);
+    expect(pose.pitch).toBeCloseTo(-35*Math.PI/180);
+    expect(Math.atan2(pose.position[1],pose.position[2])).toBeCloseTo(-pose.pitch);
+    expect(pose.position[2]).toBeGreaterThan(50);
+  }
 });

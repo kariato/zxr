@@ -14,8 +14,16 @@ test('retains the garden GLB and skybox across all four source rooms',async({pag
   const walk=async(direction:string)=>moves.getByRole('button',{name:new RegExp('^Go: '+direction+'$','i')}).click();
   for(const direction of ['south','south','south','sw','south','se'])await walk(direction);
   const viewport=prototype.locator('.prototype-viewport');
-  const room=async(id:string)=>{await expect(viewport).toHaveAttribute('data-garden-room',id);await expect(viewport).toHaveAttribute('data-garden-scene','ready',{timeout:60000});};
+  const room=async(id:string)=>{await expect(viewport).toHaveAttribute('data-garden-room',id);await expect(viewport).toHaveAttribute('data-scene-projection','orthographic');await expect(viewport).toHaveAttribute('data-garden-scene','ready',{timeout:60000});};
   await room('GARDEN-NORTH');expect(requests).toHaveLength(1);
+  await expect(prototype).toContainText('Drag to pan');await expect(prototype.getByLabel('Walk within room',{exact:true})).toBeHidden();
+  const beforePan=await prototype.locator('.prototype-info').textContent();
+  const bounds=await viewport.locator('canvas').boundingBox();expect(bounds).not.toBeNull();
+  await page.mouse.move(bounds!.x+bounds!.width*.6,bounds!.y+bounds!.height*.5);await page.mouse.down();
+  await page.mouse.move(bounds!.x+bounds!.width*.7,bounds!.y+bounds!.height*.6,{steps:6});await page.mouse.up();
+  await expect(prototype.locator('.prototype-info')).toHaveText(beforePan!);
+  await prototype.getByRole('button',{name:'Recenter view',exact:true}).click();
+
   if(!process.env.CI)await viewport.screenshot({path:test.info().outputPath('garden-north.png')});
   const before=await prototype.locator('.prototype-info').textContent();
   await prototype.getByRole('button',{name:'Garden overview',exact:true}).click();
@@ -33,5 +41,7 @@ test('retains the garden GLB and skybox across all four source rooms',async({pag
   await walk('north');await walk('north');await room('GARDEN-NORTH');expect(requests).toHaveLength(1);
   await walk('north');await expect(viewport).not.toHaveAttribute('data-garden-scene','ready');
   await expect(viewport).toHaveAttribute('data-cavern-room','DARK-TUNNEL');
+  await expect(viewport).toHaveAttribute('data-scene-projection','perspective');
+  await expect(prototype.getByLabel('Walk within room',{exact:true})).toBeVisible();
   expect(errors).toEqual([]);
 });

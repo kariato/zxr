@@ -13,6 +13,11 @@ export function gardenSceneOffset(room:string|null){
   const p=room?gardenOrigins[room]:undefined;
   return p?[-p[0],-p[1],-p[2]] as const:undefined;
 }
+/** The image was projected from this elevation. Keep all room previews aligned. */
+export function gardenPreviewPose(room:string){
+  const angle=35*Math.PI/180,distance=room==='GAZEBO-ROOM'?95:room==='GARDEN-NORTH'?110:120;
+  return {position:[0,Math.sin(angle)*distance,Math.cos(angle)*distance] as const,pitch:-angle};
+}
 export type GardenStatus='loading'|'ready'|'failed';
 type Load=(url:string,ready:(gltf:GLTF)=>void,failed:()=>void)=>void;
 function release(root:THREE.Object3D){
