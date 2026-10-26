@@ -1,0 +1,18 @@
+{
+  "geometryUnchanged": true,
+  "geometryFingerprint": "88919b377d18e33e2094e395d52bbe015a51773c43544d2ece90e29fbeffe05e",
+  "originalGLBSha256": "e6cca74045766f2442f337f2c48d63134cc93249f613f40498930959e9ade242",
+  "originalGLBUnchanged": true,
+  "textureMethod": "single-reference planar projection at 35 degrees; not learned paint",
+  "referenceSha256": "d6769075d3ca847d80b3d38d42650deaeaa8429fa37b996f19ed61e66e430ced",
+  "files": {
+    "dragon-and-stone-bridge-color-v1.blend": {
+      "bytes": 17620495,
+      "sha256": "94be3410e744a1f83ce5a65805fcd6f54b741ff0645abfe232228877c12aaaac"
+    },
+    "dragon-and-stone-bridge-color-v1.glb": {
+      "bytes": 53181164,
+      "sha256": "98f19186e65575c4e1449c62932f43561d67721009d44c9683d448338a31b940"
+    }
+  }
+}

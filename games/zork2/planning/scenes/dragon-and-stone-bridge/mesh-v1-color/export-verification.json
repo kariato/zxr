@@ -1,0 +1,5 @@
+{
+  "trianglePositionsExactlyMatchOriginalGLB": true,
+  "triangles": 466662,
+  "note": "Compared every triangle in native coordinates, independent of UV/normal vertex splits."
+}
