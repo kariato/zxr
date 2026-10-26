@@ -61,8 +61,8 @@ it('presents observed movable identities outside the environment slice while hid
   const s=new GameSession(game);s.opening();const save=s.exportSave();
   const world=WorldState.restore(game,save.checkpoint.interpreter.world);
   const id=(name:string)=>game.bundle.payload.world.entities.find(e=>e.name===name)!.id;
-  world.move(world.global('PLAYER'),id('GARDEN-NORTH'));world.setGlobal('HERE',id('GARDEN-NORTH'));
-  world.move(id('ROSE'),id('GARDEN-NORTH'));world.move(id('GOLD-KEY'),id('CHEST'));
+  world.move(world.global('PLAYER'),id('PENTAGRAM-ROOM'));world.setGlobal('HERE',id('PENTAGRAM-ROOM'));
+  world.move(id('ROSE'),id('PENTAGRAM-ROOM'));world.move(id('GOLD-KEY'),id('CHEST'));
   save.checkpoint.interpreter.world=world.snapshot();s.importSave(save);
   const observation=s.observeAppearance();
   expect(prototypeModel(observation).props.some(o=>o.id==='ROSE')).toBe(true);
@@ -99,4 +99,23 @@ it('reveals Dark Tunnel only with source light and follows both junction branche
   const junction=s.exportSave();p.walk('SE');expect(s.observe().perception.room?.id).toBe('GARDEN-NORTH');
   p.importSave(junction);p.walk('SW');expect(s.observe().perception.room?.id).toBe('STREAM-PATH');
   p.importSave(junction);p.walk('NE');expect(s.observe().perception.room?.id).toBe('SHALLOW-FORD');
+});
+
+it('connects all garden layouts to their source rooms and keeps gazebo contents local',()=>{
+  const s=new GameSession(game),p=new TextPlayer(s,buildObjectActionCatalog(game));
+  p.activateObject(p.objectActions().find(a=>a.object==='LAMP')!);p.activateObject(p.objectActions().find(a=>a.object==='LAMP')!);
+  for(const d of ['SOUTH','SOUTH','SOUTH','SW','SOUTH','SE'])p.walk(d);
+  expect(prototypeModel(s.observeAppearance()).room).toBe('GARDEN-NORTH');
+  expect(prototypeModel(s.observeAppearance()).layout?.routes.map(r=>r.direction)).toEqual(['NORTH','SOUTH','IN']);
+  expect(prototypeModel(s.observeAppearance()).props.some(o=>o.id==='TEAPOT')).toBe(false);
+  p.walk('IN');expect(prototypeModel(s.observeAppearance()).room).toBe('GAZEBO-ROOM');
+  expect(s.observe().perception.objects.some(o=>o.id==='GAZEBO-TABLE'&&o.visible)).toBe(true);
+  expect(prototypeModel(s.observeAppearance()).props.some(o=>o.id==='TEAPOT')).toBe(true);
+  const gazebo=s.exportSave();p.walk('OUT');p.walk('SOUTH');
+  expect(prototypeModel(s.observeAppearance()).room).toBe('FORMAL-GARDEN');
+  expect(prototypeModel(s.observeAppearance()).props.some(o=>o.id==='TEAPOT')).toBe(false);
+  p.walk('SOUTH');expect(prototypeModel(s.observeAppearance()).room).toBe('TOPIARY-ROOM');
+  expect(prototypeModel(s.observeAppearance()).layout?.routes.map(r=>r.direction)).toEqual(['NORTH','WEST']);
+  p.importSave(gazebo);expect(prototypeModel(s.observeAppearance()).room).toBe('GAZEBO-ROOM');
+  const observation=s.observeAppearance();observation.perception.lit=false;expect(prototypeModel(observation)).toEqual({room:null,layout:null,props:[]});
 });

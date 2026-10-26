@@ -1,0 +1,37 @@
+import {expect,test} from '@playwright/test';
+
+test('retains the garden GLB and skybox across all four source rooms',async({page})=>{
+  test.setTimeout(240000);
+  const errors:string[]=[],requests:string[]=[];
+  page.on('pageerror',error=>errors.push(error.message));
+  page.on('request',request=>{if(request.url().includes('underground-garden-v2')&&request.url().endsWith('.glb'))requests.push(request.url());});
+  await page.goto('./');await page.getByRole('button',{name:'Start Zork II',exact:true}).click();
+  const prototype=page.getByRole('region',{name:'3D prototype',exact:true});await expect(prototype).toBeVisible({timeout:60000});
+  test.skip(await prototype.getByText('3D is unavailable in this browser.',{exact:false}).isVisible(),'WebGL unavailable; source garden routes are covered by unit tests.');
+  const lamp=prototype.locator('.prototype-objects nav').filter({has:page.getByRole('button',{name:/^Other actions:.*(?:lamp|lantern)/i})});
+  await lamp.getByRole('button').first().click();await lamp.getByRole('button').first().click();
+  const moves=prototype.getByRole('navigation',{name:'Movement attempts',exact:true});
+  const walk=async(direction:string)=>moves.getByRole('button',{name:new RegExp('^Go: '+direction+'$','i')}).click();
+  for(const direction of ['south','south','south','sw','south','se'])await walk(direction);
+  const viewport=prototype.locator('.prototype-viewport');
+  const room=async(id:string)=>{await expect(viewport).toHaveAttribute('data-garden-room',id);await expect(viewport).toHaveAttribute('data-garden-scene','ready',{timeout:60000});};
+  await room('GARDEN-NORTH');expect(requests).toHaveLength(1);
+  await viewport.screenshot({path:test.info().outputPath('garden-north.png')});
+  const before=await prototype.locator('.prototype-info').textContent();
+  await prototype.getByRole('button',{name:'Garden overview',exact:true}).click();
+  await expect(prototype.locator('.prototype-info')).toHaveText(before!);
+  await viewport.screenshot({path:test.info().outputPath('garden-overview.png')});
+  await prototype.getByRole('button',{name:'Recenter view',exact:true}).click();
+  await walk('in');await room('GAZEBO-ROOM');expect(requests).toHaveLength(1);
+  await expect(prototype.locator('.prototype-objects')).toContainText('teapot');
+  await viewport.screenshot({path:test.info().outputPath('gazebo.png')});
+  await walk('out');await room('GARDEN-NORTH');
+  await walk('south');await room('FORMAL-GARDEN');
+  await viewport.screenshot({path:test.info().outputPath('formal-garden.png')});
+  await walk('south');await room('TOPIARY-ROOM');expect(requests).toHaveLength(1);
+  await viewport.screenshot({path:test.info().outputPath('topiary.png')});
+  await walk('north');await walk('north');await room('GARDEN-NORTH');expect(requests).toHaveLength(1);
+  await walk('north');await expect(viewport).not.toHaveAttribute('data-garden-scene','ready');
+  await expect(viewport).toHaveAttribute('data-cavern-room','DARK-TUNNEL');
+  expect(errors).toEqual([]);
+});

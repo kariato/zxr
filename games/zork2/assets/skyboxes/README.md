@@ -38,3 +38,7 @@ out/asset-tools/shape-env/bin/python tools/assets/verify-skyboxes.py
 `verification.json` records complete room coverage, PNG decoding, 2:1 dimensions, selected-image uniqueness, exact prompt hashes, complete style-guide inclusion, source-packet equality and retained-revision integrity. Edge differences are diagnostic measurements, not a seamlessness certificate. `browser-check.json` records successful loading and view controls for all 19 backgrounds in local desktop Chromium. Review screenshots remain under ignored `out/asset-production/skybox-review/`.
 
 These are draft painted backgrounds. The spherical review shows polar stretching, especially around vertical shafts and the volcano nadir, and some wrap transitions may need further art cleanup before headset adoption. They supply neither geometry nor positional parallax. Foreground floors, collision, exits and observed objects must be authored separately. Baked authoring illumination does not grant light in a dark room. No runtime room mapping or gameplay lighting was changed, and this batch does not certify headset performance or complete room scenes.
+
+## Garden runtime integration
+
+The cave-garden panorama is now used for the four lit garden rooms, together with the shared garden GLB's embedded sky sphere. The other new panorama assignments remain authoring proposals. Runtime visibility is gated by the current source observation; leaving the garden or entering darkness clears the active garden background. See the [garden integration](../../planning/scenes/underground-garden/README.md).

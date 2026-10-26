@@ -1,0 +1,44 @@
+{
+  "format": "zxr-garden-skybox-scene-v1",
+  "blend": "underground-garden-v2.blend",
+  "glb": "underground-garden-v2.glb",
+  "sourceBlend": "../mesh-v1/underground-garden-v1.blend",
+  "skybox": {
+    "image": "games/zork2/assets/skyboxes/cave-garden/reference-v1.png",
+    "sha256": "fa297f8b0c13037a5860b896990223da584e3957cffd98451a601a85c3fbd244",
+    "projection": "equirectangular",
+    "radiusMetres": 383.76027832031247,
+    "node": "CAVE_GARDEN_SKYBOX",
+    "inwardFacing": true,
+    "unlit": true
+  },
+  "gardenBoundsBlender": [
+    [
+      -39.66648483276367,
+      -39.97502899169922,
+      0.0
+    ],
+    [
+      39.66648483276367,
+      39.97502899169922,
+      12.0
+    ]
+  ],
+  "rooms": [
+    "GARDEN-NORTH",
+    "GAZEBO-ROOM",
+    "FORMAL-GARDEN",
+    "TOPIARY-ROOM"
+  ],
+  "reviewCamera": "Overview - generated mesh",
+  "files": {
+    "underground-garden-v2.blend": {
+      "bytes": 9278469,
+      "sha256": "35b6948c98f035acc54a73cf04ef7d49918c3397044274d244566b53fcd73687"
+    },
+    "underground-garden-v2.glb": {
+      "bytes": 12438928,
+      "sha256": "f893c297d493569dd272ba44de4359303f3b6221de3e98b6a60edf9d6312458e"
+    }
+  }
+}

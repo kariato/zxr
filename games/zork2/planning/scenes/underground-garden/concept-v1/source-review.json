@@ -1,0 +1,193 @@
+{
+  "rooms": [
+    {
+      "room": "GARDEN-NORTH",
+      "name": "North End of Garden",
+      "description": [
+        "This is the northern end of a formal garden. Hedges hide the cavern walls, and if you don't look up, the illusion is of a cloudy day outside. The light comes from a large growth of glowing mosses on the roof of the cave. A break in the hedge is almost overgrown to the north. A carefully manicured path leads south. In the center of a rosebed is a small open structure, painted white. It appears to be a gazebo."
+      ],
+      "source": {
+        "end": {
+          "column": 53,
+          "line": 296,
+          "offset": 7516
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 281,
+          "offset": 6819
+        }
+      },
+      "exits": [
+        {
+          "direction": "NORTH",
+          "declaration": "(NORTH TO DARK-TUNNEL)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "DARK-TUNNEL"
+          }
+        },
+        {
+          "direction": "SOUTH",
+          "declaration": "(SOUTH TO FORMAL-GARDEN)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "FORMAL-GARDEN"
+          }
+        },
+        {
+          "direction": "IN",
+          "declaration": "(IN TO GAZEBO-ROOM)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "GAZEBO-ROOM"
+          }
+        }
+      ]
+    },
+    {
+      "room": "GAZEBO-ROOM",
+      "name": "Gazebo",
+      "description": [
+        "This is a gazebo in the midst of a formal garden. It is cool and restful here. A tea table adorns the center of the gazebo."
+      ],
+      "source": {
+        "end": {
+          "column": 38,
+          "line": 306,
+          "offset": 7809
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 298,
+          "offset": 7518
+        }
+      },
+      "exits": [
+        {
+          "direction": "OUT",
+          "declaration": "(OUT TO GARDEN-NORTH)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "GARDEN-NORTH"
+          }
+        }
+      ]
+    },
+    {
+      "room": "FORMAL-GARDEN",
+      "name": "Formal Garden",
+      "description": [
+        "This is the middle part of a formal garden. Hedges hide the cavern walls and a dim illumination comes from mosses far above. The path is of small crushed white stones. It winds among bushes and flower beds from south to north. To the north a small structure can be seen. To the south are peculiarly shaped bushes. There is a small gap in the hedges to the west."
+      ],
+      "source": {
+        "end": {
+          "column": 36,
+          "line": 323,
+          "offset": 8438
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 308,
+          "offset": 7811
+        }
+      },
+      "exits": [
+        {
+          "direction": "NORTH",
+          "declaration": "(NORTH TO GARDEN-NORTH)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "GARDEN-NORTH"
+          }
+        },
+        {
+          "direction": "WEST",
+          "declaration": "(WEST TO STREAM-PATH)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "STREAM-PATH"
+          }
+        },
+        {
+          "direction": "SOUTH",
+          "declaration": "(SOUTH TO TOPIARY-ROOM)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "TOPIARY-ROOM"
+          }
+        }
+      ]
+    },
+    {
+      "room": "TOPIARY-ROOM",
+      "name": "Topiary",
+      "description": [
+        "This is the southern end of a formal garden. Hedges hide the cavern walls and mosses provide dim illumination. Fantastically shaped hedges and bushes are arrayed with geometric precision. They have not recently been clipped, but you can discern creatures in the shapes of the bushes: There is a dragon, a unicorn, a great serpent, a huge misshapen dog, and several human figures. On the west side of the garden the path leads through a rose arbor into a tunnel."
+      ],
+      "source": {
+        "end": {
+          "column": 46,
+          "line": 340,
+          "offset": 9143
+        },
+        "file": "2dungeon.zil",
+        "start": {
+          "column": 1,
+          "line": 325,
+          "offset": 8440
+        }
+      },
+      "exits": [
+        {
+          "direction": "NORTH",
+          "declaration": "(NORTH TO FORMAL-GARDEN)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "FORMAL-GARDEN"
+          }
+        },
+        {
+          "direction": "WEST",
+          "declaration": "(WEST TO CAROUSEL-ROOM)",
+          "view": {
+            "kind": "UEXIT",
+            "to": "CAROUSEL-ROOM"
+          }
+        }
+      ]
+    }
+  ],
+  "referenceImages": [
+    {
+      "room": "GARDEN-NORTH",
+      "path": "games/zork2/assets/rooms/garden-north/reference-v1.png",
+      "sha256": "80a0e99744fb473b50898c0a385c2dd7d9c0c7a2fdfe5ef0c8828f07df1be7e2",
+      "role": "appearance reference; source descriptions override conflicting decorative details"
+    },
+    {
+      "room": "GAZEBO-ROOM",
+      "path": "games/zork2/assets/rooms/gazebo-room/reference-v1.png",
+      "sha256": "b9fc0a19ee3c2d40695f67a49515eee7d2406af0f222beb0d7edbcad97da59d5",
+      "role": "appearance reference; source descriptions override conflicting decorative details"
+    },
+    {
+      "room": "FORMAL-GARDEN",
+      "path": "games/zork2/assets/rooms/formal-garden/reference-v1.png",
+      "sha256": "287bfbe9f6cb0524b073006b2ca14b2cec918eb2f1385cba23a08a7ea8b30771",
+      "role": "appearance reference; source descriptions override conflicting decorative details"
+    },
+    {
+      "room": "TOPIARY-ROOM",
+      "path": "games/zork2/assets/rooms/topiary-room/reference-v1.png",
+      "sha256": "9f0da6f652a2979e5b7e61495dd89428640ccb8c32e4a8ec49eccf10abc0c933",
+      "role": "appearance reference; source descriptions override conflicting decorative details"
+    }
+  ],
+  "stylePath": "games/zork2/planning/style-bible.md",
+  "styleSha256": "42ef0011195a8cb3d54a89585cb8cc640f73cde4f5e3b25263d82abcfcd321a5",
+  "status": "draft combined-scene concept; no game-state changes"
+}

@@ -1,0 +1,54 @@
+{
+  "format": "zxr-shared-scene-mesh-v1",
+  "scene": "underground-garden",
+  "rooms": [
+    "GARDEN-NORTH",
+    "GAZEBO-ROOM",
+    "FORMAL-GARDEN",
+    "TOPIARY-ROOM"
+  ],
+  "inputHash": "7b55e4b7b68a2e28df10459a71443fbc0b273e39a3d6e387f1a5f95ced61ad77",
+  "pipeline": {
+    "implementation": "Hunyuan3D-Swift/MLX",
+    "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+    "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+    "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+    "steps": 8,
+    "guidance": 5,
+    "octree": 256,
+    "seed": 42,
+    "quantize": 8,
+    "licence": "Tencent Hunyuan 3D 2.0 Community License",
+    "scope": "US-only local prototype"
+  },
+  "referenceSha256": "93037a645e27182f7a74f02a6845e5e4908b8cc2ffc2b155f80dca89b82e41b0",
+  "sourceReviewSha256": "150b9a763d1a21d471c1c7071d193b0fe63f559a350875275421597732c7ed8f",
+  "targetTriangles": 60000,
+  "heightMetres": 12,
+  "textureMethod": "front-reference-projection; row-median back",
+  "rawTriangles": 396214,
+  "triangles": 60000,
+  "componentsBeforeCleanup": 31,
+  "boundsMetres": [
+    [
+      -39.6664833757377,
+      0.0,
+      -39.97502890794416
+    ],
+    [
+      39.6664833757377,
+      11.999999999999998,
+      39.97502890794416
+    ]
+  ],
+  "sha256": "8b4e91ac0297b78439fe7bd9a5449130e4ebf0ed9bb675ee61cb34392a537d65",
+  "bytes": 8194216,
+  "seconds": 81.95,
+  "review": "draft",
+  "limitations": [
+    "One fused inferred scene; room markers do not separate geometry.",
+    "Reference-projected colour, not learned multiview texture paint.",
+    "Single-view reconstruction cannot guarantee hidden surfaces or walkable paths.",
+    "Scale is an authoring estimate, not a source measurement."
+  ]
+}

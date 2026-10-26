@@ -1,0 +1,34 @@
+{
+  "format": "zxr-shared-scene-concept-v1",
+  "scene": "underground-garden",
+  "rooms": [
+    "GARDEN-NORTH",
+    "GAZEBO-ROOM",
+    "FORMAL-GARDEN",
+    "TOPIARY-ROOM"
+  ],
+  "mode": "built-in-imagegen",
+  "image": "reference.png",
+  "imageSha256": "93037a645e27182f7a74f02a6845e5e4908b8cc2ffc2b155f80dca89b82e41b0",
+  "width": 1536,
+  "height": 1024,
+  "prompt": "reference.prompt.txt",
+  "promptSha256": "af45b1d1cace91f67b385ffee41a48c4c05d25ce84a99f8a3cd57edee14bde5c",
+  "sourceReview": "source-review.json",
+  "sourceReviewSha256": "150b9a763d1a21d471c1c7071d193b0fe63f559a350875275421597732c7ed8f",
+  "generatedSource": "/Users/kariatoo/.codex/generated_images/01a17459-417b-7d73-9b2f-b96ddc3fd136/exec-1851d679-ffa8-4798-bff4-5160b33f0d21.png",
+  "review": "assistant visual review; draft for user review",
+  "reviewChecks": [
+    "One continuous cavern garden rather than separate panels.",
+    "One white-painted open gazebo in the northern rosebed, with tea table visible inside.",
+    "Continuous path skirts the rosebed and winds through central flowerbeds into the southern topiary.",
+    "Northern overgrown opening, central plain western hedge gap and southern western rose arbor remain distinct.",
+    "Dragon, unicorn, serpent, misshapen dog and several human figures are leafy topiary rather than live actors.",
+    "Visible rock roof with glowing moss, no open sky or water feature, no permanently placed living unicorn."
+  ],
+  "limitations": [
+    "Illustrated spatial layout and scale are authoring proposals, not measured navigable geometry.",
+    "Portable objects and changing actor/puzzle states must remain independently observed in the game."
+  ],
+  "runtimeIntegration": "concept only"
+}

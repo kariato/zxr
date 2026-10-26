@@ -1,0 +1,23 @@
+{
+  "checks": "passed",
+  "reopenedBlend": true,
+  "rooms": [
+    "GARDEN-NORTH",
+    "GAZEBO-ROOM",
+    "FORMAL-GARDEN",
+    "TOPIARY-ROOM"
+  ],
+  "triangles": 60000,
+  "packedMaterialTextures": 1,
+  "renderCamera": "Overview - generated mesh",
+  "files": {
+    "underground-garden-v1.blend": {
+      "bytes": 8929530,
+      "sha256": "4a82a32b80dedd1b083ed9643d4ab45d0e8ef39a9a2c4a29996b09b3b0bd24d9"
+    },
+    "underground-garden-v1.glb": {
+      "bytes": 10052916,
+      "sha256": "1eb82bc79c4b47231e38064539e02cce49287076e554691fa446d99fed83d1bf"
+    }
+  }
+}

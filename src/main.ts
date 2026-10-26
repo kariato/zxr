@@ -3,12 +3,13 @@ import { GameSession, loadGame } from './engine/index.ts';
 import { mountRoomNarration,unlockNarrationAudio } from './presentation/audio/browser.ts';
 import { mountBrowserPlayer } from './player/browser.ts';
 import barrowDressingUrl from './prototype/assets/barrow-natural-v2.glb?url';
+import gardenModelUrl from '../games/zork2/planning/scenes/underground-garden/mesh-v2/underground-garden-v2.glb?url';
 import cavernModelUrl from './prototype/assets/narrow-tunnel-room-v1.glb?url';
 import princessModelUrl from './prototype/assets/princess-v1.glb?url';
 import { movablePropUrls } from './prototype/movable-props.ts';
 // The large animated actor and environment keep software-renderer fallbacks.
 // Movable models use the same registry in normal and automated browsers.
-const generatedModels={...(navigator.webdriver?{}:{barrowDressingUrl,princessModelUrl}),cavernModelUrl,propModelUrls:movablePropUrls};
+const generatedModels={...(navigator.webdriver?{}:{barrowDressingUrl,princessModelUrl}),cavernModelUrl,gardenModelUrl,propModelUrls:movablePropUrls};
 const start=document.querySelector<HTMLButtonElement>('#start')!,status=document.querySelector<HTMLElement>('#loading')!,target=document.querySelector<HTMLElement>('#player')!;
 const newGame=document.querySelector<HTMLButtonElement>('#new-game')!;
 async function openGame(restoreAutosave:boolean){

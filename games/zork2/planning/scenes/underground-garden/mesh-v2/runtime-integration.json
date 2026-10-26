@@ -1,0 +1,17 @@
+{
+  "format": "zxr-runtime-scene-integration-v1",
+  "scene": "underground-garden",
+  "asset": "games/zork2/planning/scenes/underground-garden/mesh-v2/underground-garden-v2.glb",
+  "sha256": "f893c297d493569dd272ba44de4359303f3b6221de3e98b6a60edf9d6312458e",
+  "implementation": "src/prototype/garden-scene.ts",
+  "rooms": [
+    "GARDEN-NORTH",
+    "GAZEBO-ROOM",
+    "FORMAL-GARDEN",
+    "TOPIARY-ROOM"
+  ],
+  "skybox": "games/zork2/assets/skyboxes/cave-garden/reference-v1.png",
+  "visibility": "Current lit source observation only",
+  "sourceAuthority": "Room identity, exits, observed objects, actions, turns and save/restore remain engine-controlled.",
+  "scope": "Draft generated mesh integration with raised desktop room views, whole-garden inspection and normal XR eye height; not final collision or geometry acceptance."
+}

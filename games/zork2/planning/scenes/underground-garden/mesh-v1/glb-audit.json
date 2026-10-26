@@ -1,0 +1,21 @@
+[
+  {
+    "file": "games/zork2/planning/scenes/underground-garden/mesh-v1/underground-garden-v1.glb",
+    "sha256": "1eb82bc79c4b47231e38064539e02cce49287076e554691fa446d99fed83d1bf",
+    "bytes": 10052916,
+    "triangles": 60000,
+    "uniqueTriangles": 60000,
+    "vertices": 180000,
+    "materials": 1,
+    "joints": 0,
+    "maxInfluences": 0,
+    "embeddedTextures": [
+      [
+        1536,
+        1024
+      ]
+    ],
+    "clips": [],
+    "checks": "passed"
+  }
+]

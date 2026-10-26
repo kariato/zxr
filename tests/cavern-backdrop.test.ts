@@ -54,3 +54,12 @@ it('loads the distinct lair panorama only for a lit observed lair and reuses it 
   const texture=new THREE.Texture();f.ready(texture);expect(f.scene.background).toBe(texture);
   f.backdrop.update(view('DRAGON-LAIR',false));expect(f.scene.background).toBeNull();f.backdrop.update(view('DRAGON-LAIR'));expect(f.scene.background).toBe(texture);expect(f.load).toHaveBeenCalledTimes(1);f.backdrop.dispose();
 });
+
+it('shares the garden panorama across all four rooms and cannot reveal a dark or different room after a late load',()=>{
+  const f=fixture();f.backdrop.update(view('GARDEN-NORTH'));
+  expect(f.load).toHaveBeenCalledWith(expect.any(Function),expect.any(Function),'garden');
+  f.backdrop.update(view('GARDEN-NORTH',false));const texture=new THREE.Texture();f.ready(texture);expect(f.scene.background).toBeNull();
+  for(const id of ['GAZEBO-ROOM','FORMAL-GARDEN','TOPIARY-ROOM','GARDEN-NORTH']){f.backdrop.update(view(id));expect(f.scene.background).toBe(texture);}
+  expect(f.load).toHaveBeenCalledOnce();f.backdrop.update(view('DARK-TUNNEL'));expect(f.scene.background).toBeNull();
+  const dispose=vi.spyOn(texture,'dispose');f.backdrop.dispose();expect(dispose).toHaveBeenCalledOnce();
+});

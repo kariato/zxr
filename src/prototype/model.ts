@@ -3,6 +3,10 @@ import { movablePropDefinitions } from './movable-props.generated.ts';
 
 /** Hand-built presentation slice. No gameplay rules or inferred exit success. */
 export const sliceRooms:Record<string,{width:number;depth:number;height:number;routes:{direction:string;x:number;z:number}[]}>= {
+  'GARDEN-NORTH':{width:3.2,depth:3.2,height:6,routes:[{direction:'NORTH',x:0,z:-1.4},{direction:'SOUTH',x:0,z:1.4},{direction:'IN',x:.7,z:-1.2}]},
+  'GAZEBO-ROOM':{width:3,depth:3,height:3,routes:[{direction:'OUT',x:-1.1,z:1.1}]},
+  'FORMAL-GARDEN':{width:4,depth:4,height:6,routes:[{direction:'NORTH',x:0,z:-1.7},{direction:'SOUTH',x:0,z:1.7},{direction:'WEST',x:-1.7,z:0}]},
+  'TOPIARY-ROOM':{width:4,depth:4,height:6,routes:[{direction:'NORTH',x:0,z:-1.7},{direction:'WEST',x:-1.7,z:0}]},
   'DRAGON-LAIR':{width:8,depth:9,height:4,routes:[{direction:'SOUTH',x:0,z:4.25}]},
   'INSIDE-BARROW':{width:6,depth:7,height:3,routes:[{direction:'SOUTH',x:0,z:3.25}]},
   'NARROW-TUNNEL':{width:2.4,depth:5,height:4,routes:[{direction:'NORTH',x:0,z:-2.2},{direction:'SOUTH',x:0,z:2.2}]},

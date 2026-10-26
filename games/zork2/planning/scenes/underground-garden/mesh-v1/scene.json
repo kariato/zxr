@@ -1,0 +1,57 @@
+{
+  "format": "zxr-blender-shared-scene-v1",
+  "blend": "underground-garden-v1.blend",
+  "mesh": "underground-garden-v1.glb",
+  "rooms": [
+    "GARDEN-NORTH",
+    "GAZEBO-ROOM",
+    "FORMAL-GARDEN",
+    "TOPIARY-ROOM"
+  ],
+  "boundsBlender": [
+    [
+      -39.66648483276367,
+      -39.97502899169922,
+      0.0
+    ],
+    [
+      39.66648483276367,
+      39.97502899169922,
+      12.0
+    ]
+  ],
+  "reviewViews": [
+    "overview",
+    "three-quarter",
+    "back"
+  ],
+  "renderer": "Blender Cycles CPU, 24 samples",
+  "markers": {
+    "GARDEN-NORTH": [
+      7.139967441558838,
+      23.350250244140625,
+      0.584686279296875
+    ],
+    "GAZEBO-ROOM": [
+      7.139967441558838,
+      31.194000244140625,
+      0.9749526977539062
+    ],
+    "FORMAL-GARDEN": [
+      4.759978294372559,
+      7.622833251953125,
+      2.4465408325195312
+    ],
+    "TOPIARY-ROOM": [
+      1.5866594314575195,
+      -18.194808959960938,
+      2.8766555786132812
+    ]
+  },
+  "textureProjection": {
+    "elevationDegrees": 35,
+    "image": "../concept-v1/reference.png",
+    "method": "Planar reference projection including depth; hidden surfaces remain approximate"
+  },
+  "note": "Renders show actual generated mesh; source concept is packed but hidden from render."
+}
