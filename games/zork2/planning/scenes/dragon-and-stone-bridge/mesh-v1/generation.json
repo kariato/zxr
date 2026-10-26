@@ -1,0 +1,44 @@
+{
+  "scene": "dragon-and-stone-bridge",
+  "pipeline": {
+    "implementation": "Hunyuan3D-Swift/MLX",
+    "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+    "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+    "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+    "steps": 8,
+    "guidance": 5,
+    "octree": 256,
+    "seed": 42,
+    "quantize": 8,
+    "licence": "Tencent Hunyuan 3D 2.0 Community License",
+    "scope": "US-only local prototype"
+  },
+  "reference": "../concept-v2.png",
+  "referenceSha256": "d6769075d3ca847d80b3d38d42650deaeaa8429fa37b996f19ed61e66e430ced",
+  "file": "dragon-and-stone-bridge-v1.glb",
+  "sha256": "e6cca74045766f2442f337f2c48d63134cc93249f613f40498930959e9ade242",
+  "bytes": 8401424,
+  "vertices": 233391,
+  "triangles": 466662,
+  "boundsNativeUnits": [
+    [
+      -0.9838167021585339,
+      -0.29337996387659326,
+      -0.9984746024370267
+    ],
+    [
+      0.9733609712475655,
+      0.28688343890449697,
+      0.9871813182907379
+    ]
+  ],
+  "seconds": 91.43,
+  "geometryPostprocessing": "none",
+  "textureMethod": "none; shape-only output",
+  "review": "draft; not integrated into the game",
+  "limitations": [
+    "Single-image inferred geometry; inspect hidden surfaces and bridge continuity.",
+    "Native model units; no physical scale or walkability asserted.",
+    "Existing lair is not yet merged. No room spawns or walking planes yet."
+  ]
+}
