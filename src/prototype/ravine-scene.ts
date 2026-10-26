@@ -1,23 +1,13 @@
+import {walkingSurfaces} from './walking-surfaces.generated.ts';
 import * as THREE from 'three';
 import type {ObjectAction} from '../player/object-actions.ts';
 import {mountCavernScene} from './cavern-scene.ts';
 
 /** Surface samples converted from Blender Z-up into the exported GLB's Y-up. */
-export const ravineOrigins:Record<string,readonly [number,number,number]>={
-  'STREAM-PATH':[15.888931,6.112156,2.641708],
-  'MARBLE-HALL':[-6.542501,7.957016,17.442944],
-  'DEEP-FORD':[-1.401965,.921349,-11.928299],
-  'RAVINE-LEDGE':[-2.803929,6.628651,-15.228241],
-  'LEDGE-TUNNEL':[-16.356253,8.711491,-18.694725],
-};
+export const ravineOrigins:Record<string,readonly [number,number,number]>=Object.fromEntries(['STREAM-PATH', 'MARBLE-HALL', 'DEEP-FORD', 'RAVINE-LEDGE', 'LEDGE-TUNNEL'].map(id=>[id,walkingSurfaces[id]!.origin]));
 export function ravineSceneOffset(room:string|null){
   const p=room?ravineOrigins[room]:undefined;
   return p?[-p[0],-p[1],-p[2]] as const:undefined;
-}
-/** Match the artwork's elevated projection rather than imply finished first-person geometry. */
-export function ravinePreviewPose(room:string){
-  const distance=room==='MARBLE-HALL'?72:65,angle=35*Math.PI/180;
-  return {position:[0,Math.sin(angle)*distance,Math.cos(angle)*distance] as const,pitch:-angle};
 }
 /** Uses the same tested cancellation and shared resource lifetime as the cavern. */
 export const mountRavineScene=mountCavernScene;

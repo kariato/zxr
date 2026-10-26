@@ -14,10 +14,10 @@ function marbleCheckpoint(){
   save.checkpoint.interpreter.world=world.snapshot();return Buffer.from(JSON.stringify(save));
 }
 
-test('previews five ravine source rooms with one retained model and deferred upper interiors',async({page})=>{
+test('walks on hidden floors in five ravine source rooms with one retained model and deferred upper interiors',async({page})=>{
   test.setTimeout(240000);
   const errors:string[]=[],requests:string[]=[];
-  page.on('pageerror',error=>errors.push(error.message));page.on('request',r=>{if(r.url().includes('lower-ravine-v4')&&r.url().endsWith('.glb'))requests.push(r.url());});
+  page.on('pageerror',error=>errors.push(error.message));page.on('request',r=>{if(r.url().includes('lower-ravine-v2')&&r.url().endsWith('.glb'))requests.push(r.url());});
   await page.goto('./');await page.getByRole('button',{name:'Start Zork II',exact:true}).click();
   const prototype=page.getByRole('region',{name:'3D prototype',exact:true});await expect(prototype).toBeVisible({timeout:60000});
   test.skip(await prototype.getByText('3D is unavailable in this browser.',{exact:false}).isVisible(),'WebGL unavailable; source routes covered by unit tests.');
@@ -25,9 +25,16 @@ test('previews five ravine source rooms with one retained model and deferred upp
   await lamp.getByRole('button').first().click();await lamp.getByRole('button').first().click();
   const moves=prototype.getByRole('navigation',{name:'Movement attempts',exact:true});const walk=async(d:string)=>moves.getByRole('button',{name:new RegExp('^Go: '+d+'$','i')}).click();
   const viewport=prototype.locator('.prototype-viewport');
-  const room=async(id:string)=>{await expect(viewport).toHaveAttribute('data-ravine-room',id);await expect(viewport).toHaveAttribute('data-scene-projection','orthographic');await expect(viewport).toHaveAttribute('data-ravine-scene','ready',{timeout:60000});};
+  const room=async(id:string)=>{await expect(viewport).toHaveAttribute('data-ravine-room',id);await expect(viewport).toHaveAttribute('data-scene-projection','perspective');await expect(viewport).toHaveAttribute('data-ravine-scene','ready',{timeout:60000});};
   for(const d of ['south','south','south','sw','south','sw'])await walk(d);
   await room('STREAM-PATH');expect(requests).toHaveLength(1);
+  await expect(viewport).toHaveAttribute('data-walk-floor','ready');await expect(prototype.getByLabel('Walk within room',{exact:true})).toBeVisible();
+  const beforeWalk=await prototype.locator('.prototype-info').textContent();
+  await viewport.locator('canvas').focus();await page.keyboard.down('w');
+  await expect.poll(async()=>Number(await viewport.getAttribute('data-walk-z')),{timeout:20000}).toBeLessThan(-.1);
+  await page.keyboard.up('w');await expect(prototype.locator('.prototype-info')).toHaveText(beforeWalk!);
+  await prototype.getByRole('button',{name:'Recenter view',exact:true}).click();
+
   if(!process.env.CI)await viewport.screenshot({path:test.info().outputPath('stream-path.png')});
   const before=await prototype.locator('.prototype-info').textContent();await prototype.getByRole('button',{name:'Ravine overview',exact:true}).click();
   await expect(prototype.locator('.prototype-info')).toHaveText(before!);if(!process.env.CI)await viewport.screenshot({path:test.info().outputPath('ravine-overview.png')});

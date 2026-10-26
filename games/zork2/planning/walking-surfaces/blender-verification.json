@@ -1,0 +1,22 @@
+[
+  {
+    "family": "garden",
+    "blend": "garden-with-hidden-floors.blend",
+    "sourceSha256": "f893c297d493569dd272ba44de4359303f3b6221de3e98b6a60edf9d6312458e",
+    "geometryAndUVFingerprint": "1cc688b073fa724686d751911fe67ab51df95950ed6ee85cfac8b4317fd405c3",
+    "geometryAndUVsUnchanged": true,
+    "sourceAssetUnchanged": true,
+    "floorObjects": 4,
+    "floorObjectsRenderHidden": true
+  },
+  {
+    "family": "ravine",
+    "blend": "ravine-with-hidden-floors.blend",
+    "sourceSha256": "dbf528c919ce8ae7c3d3331e3d4d6da4cc28f0d37f0500252424b711f52df3fc",
+    "geometryAndUVFingerprint": "df08f29beceab6c25469a6b5077bd48bd78b0bba05567a9481fa5d8218ec3cf9",
+    "geometryAndUVsUnchanged": true,
+    "sourceAssetUnchanged": true,
+    "floorObjects": 5,
+    "floorObjectsRenderHidden": true
+  }
+]

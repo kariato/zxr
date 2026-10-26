@@ -1,11 +1,12 @@
-import {mountRavineScene,ravineSceneOffset,ravinePreviewPose,addRavineTargets} from './ravine-scene.ts';
+import {walkingSurfaces,walkingHeight,walkingStep,mountWalkingSurface} from './walking-surface.ts';
+import {mountRavineScene,ravineSceneOffset,addRavineTargets} from './ravine-scene.ts';
 import * as THREE from 'three';
 import { VRButton } from 'three/addons/webxr/VRButton.js';
 import type { GameSession } from '../engine/index.ts';
 import type { BrowserPlayer } from '../player/browser.ts';
 import type { PlayerView } from '../player/controller.ts';
 import type { ObjectAction } from '../player/object-actions.ts';
-import {mountGardenScene,gardenSceneOffset,gardenPreviewPose,addGardenTargets,addGazeboTable,type GardenStatus} from './garden-scene.ts';
+import {mountGardenScene,gardenSceneOffset,addGardenTargets,addGazeboTable,type GardenStatus} from './garden-scene.ts';
 import { mountOpeningCavern } from './opening-cavern.ts';
 import { prototypeModel } from './model.ts';
 import { mountCavernBackdrop } from './cavern-backdrop.ts';
@@ -37,9 +38,7 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
   const canvas=renderer.domElement;canvas.tabIndex=0;canvas.setAttribute('aria-label','3D room. Drag to look and use WASD to walk.');viewport.append(canvas);
   const scene=new THREE.Scene();scene.fog=new THREE.Fog(0x070c10,6,22);
   const backdrop=mountCavernBackdrop(scene);scene.backgroundIntensity=.85;
-  const rig=new THREE.Group(),perspectiveCamera=new THREE.PerspectiveCamera(65,1,.05,60),artCamera=new THREE.OrthographicCamera(-20,20,12,-12,.05,1000);
-  let camera:THREE.PerspectiveCamera|THREE.OrthographicCamera=perspectiveCamera,artWidth=40,aspect=1;
-  camera.position.y=1.6;rig.add(camera);scene.add(rig);
+  const rig=new THREE.Group(),camera=new THREE.PerspectiveCamera(65,1,.05,60);camera.position.y=1.6;rig.add(camera);scene.add(rig);
   const roomGroup=new THREE.Group(),hand=new THREE.Group();scene.add(roomGroup);camera.add(hand);
   const targets:THREE.Object3D[]=[];let width=2,depth=2,room:string|null=null,identity='',busy=true,disposed=false,gardenOverview=false,yaw=Math.PI,pitch=-.1;
   const actors:ReturnType<typeof mountPrincessActor>[]=[];
@@ -67,23 +66,14 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
     group.traverse(node=>{if(node.userData.shared)return;if(node instanceof THREE.Mesh){if(node instanceof THREE.InstancedMesh)node.dispose();node.geometry.dispose();for(const mat of Array.isArray(node.material)?node.material:[node.material])if(![stone,floor,wood,brass,steel].includes(mat as THREE.MeshStandardMaterial))mat.dispose();}if(node instanceof THREE.Sprite){node.material.map?.dispose();node.material.dispose();}});group.clear();
   };
   const aim=()=>{camera.rotation.set(pitch,yaw,0,'YXZ');};
-  const project=()=>{
-    perspectiveCamera.aspect=aspect;perspectiveCamera.updateProjectionMatrix();
-    artCamera.left=-artWidth/2;artCamera.right=artWidth/2;artCamera.top=artWidth/aspect/2;artCamera.bottom=-artWidth/aspect/2;artCamera.updateProjectionMatrix();
-  };
-  const setCamera=(artwork:boolean)=>{
-    viewport.dataset.sceneProjection=artwork?'orthographic':'perspective';
-    const next=artwork?artCamera:perspectiveCamera;if(next===camera)return;
-    rig.remove(camera);camera=next;rig.add(camera);camera.add(hand);
-  };
   const recenter=()=>{
-    gardenOverview=false;artWidth=gardenSceneOffset(room)?(room==='GAZEBO-ROOM'?30:room==='TOPIARY-ROOM'?48:44):(room==='MARBLE-HALL'?26:23);project();rig.position.set(0,0,0);rig.rotation.set(0,0,0);
+    gardenOverview=false;rig.position.set(0,0,0);rig.rotation.set(0,0,0);
+    const surface=room?walkingSurfaces[room]:undefined;
     camera.position.set(0,1.6,room==='NARROW-TUNNEL'?1.1:-Math.max(0,depth/2-1.4));
     if(room==='GREAT-CAVERN')camera.position.z=1.2;
-    const garden=!!gardenSceneOffset(room);
     yaw=room==='GREAT-CAVERN'?0:Math.PI;pitch=-.1;
-    if(garden){const pose=gardenPreviewPose(room!);camera.position.set(...pose.position);yaw=0;pitch=pose.pitch;scene.fog=null;}
-    if(ravineSceneOffset(room)){const pose=ravinePreviewPose(room!);camera.position.set(...pose.position);yaw=0;pitch=pose.pitch;}aim();
+    if(surface){const y=walkingHeight(room,0,0)??0;camera.position.set(0,y+1.6,0);yaw=surface.heading;viewport.dataset.walkX='0';viewport.dataset.walkY=y.toFixed(4);viewport.dataset.walkZ='0';}
+    viewport.dataset.sceneProjection='perspective';aim();
   };
   const build=()=>{
     const observation=session.observeAppearance(),model=prototypeModel(observation),changed=room!==model.room;room=model.room;
@@ -92,21 +82,22 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
     const cavernOffset=cavernSceneOffset(model.room),generatedCavern=!!cavernOffset&&!!options.cavernModelUrl;
     const gardenOffset=gardenSceneOffset(room),generatedGarden=!!gardenOffset&&!!options.gardenModelUrl;
     const ravineOffset=ravineSceneOffset(room),generatedRavine=!!ravineOffset&&!!options.ravineModelUrl;
-    setCamera(!!model.layout&&(generatedGarden||generatedRavine));
     const nextKey=generatedRavine?'shared-ravine:'+options.ravineModelUrl:generatedGarden?'shared-garden:'+options.gardenModelUrl:generatedCavern?'shared-cavern:'+options.cavernModelUrl:model.room&&(model.layout||princess)?model.room+(princess?':princess':''):'';
     if(nextKey!==persistentKey)clearActors();persistentKey=nextKey;baseFloor=undefined;cavernFallback=undefined;
     persistent.position.set(...(generatedRavine?ravineOffset!:generatedGarden?gardenOffset!:generatedCavern?cavernOffset!:[0,0,0] as const));
     propMounts.forEach(m=>m.dispose());propMounts.length=0;clear(roomGroup);clear(hand);targets.length=0;
     const layout=model.layout;hasLayout=!!layout;width=layout?.width??8;depth=layout?.depth??8;
     if(changed){recenter();menuPage=textPage=0;}
-    if(!layout&&!model.props.length)return;
+    if(!layout&&!model.props.length){delete viewport.dataset.walkFloor;delete viewport.dataset.walkX;delete viewport.dataset.walkY;delete viewport.dataset.walkZ;return;}
     const lair=room==='DRAGON-LAIR',barrow=room==='INSIDE-BARROW',cavern=!!cavernSceneOffset(room),garden=!!gardenOffset,ravine=!!ravineOffset;
-    hand.position.z=(ravine||garden)?-3.5:0;project();camera.far=garden?1000:ravine?600:60;camera.updateProjectionMatrix();
+    hand.position.z=0;camera.far=garden?1000:ravine?600:60;camera.updateProjectionMatrix();
     scene.fog=(ravine||garden)?null:new THREE.Fog(cavern?0x172126:0x070c10,cavern?12:(barrow||lair)?15:6,cavern?48:(barrow||lair)?45:22);
     scene.add(roomGroup);
     roomGroup.add(new THREE.HemisphereLight(ravine?0xc1d2df:garden?0xcce3ce:room==='DARK-TUNNEL'?0x8d8570:cavern?0x91abb5:0xc5d4c1,ravine?0x44423a:garden?0x485041:cavern?0x38434b:0x303025,ravine?3:garden?3:room==='DARK-TUNNEL'?1.5:2));
     const light=new THREE.PointLight(garden?0xbee5c4:room==='DARK-TUNNEL'?0xd8b687:cavern?0xb0c8b5:0xf6cb83,garden?8:room==='DARK-TUNNEL'?25:cavern?12:(barrow||lair)?4:18,cavern?20:14,2);light.position.set(.7,cavern?4:(barrow||lair)?3.2:2,-1);roomGroup.add(light);
     const environment=new THREE.Group();roomGroup.add(environment);
+    delete viewport.dataset.walkFloor;delete viewport.dataset.walkX;delete viewport.dataset.walkY;delete viewport.dataset.walkZ;
+    if(room&&walkingSurfaces[room]){mountWalkingSurface(roomGroup,room);viewport.dataset.walkFloor='ready';}
     if(generatedCavern){
       cavernFallback=environment;
       if(!dressings.length){dressings.push(mountOpeningCavern(persistent));dressings.push(mountCavernScene(persistent,options.cavernModelUrl!,state=>{
@@ -189,7 +180,7 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
         if(!opening){const rock=new THREE.Mesh(new THREE.DodecahedronGeometry(.8,0),stone);rock.position.set(x,1.3,z+.15*Math.sign(z));rock.scale.y=1.9;environment.add(rock);}
       }
     }
-    for(const route of (ravine||garden)?[]:layout?.routes??[]){
+    for(const route of layout?.routes??[]){
       const label=textureLabel('Go '+route.direction.toLowerCase());label.position.set(route.x,1.45,route.z);label.userData.direction=route.direction;roomGroup.add(label);targets.push(label);
       if(room==='NARROW-TUNNEL'&&route.direction==='SOUTH'){label.position.set(.65,1.05,route.z);label.scale.set(.45,.0845,1);}
     }
@@ -249,11 +240,11 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
   const recenterButton=addButton('Recenter view',()=>{recenter();drawMenu();});
   const ravineOverviewButton=addButton('Ravine overview',()=>{
     const offset=ravineSceneOffset(room);if(!offset||renderer.xr.isPresenting)return;
-    gardenOverview=true;artWidth=78;project();scene.fog=null;const angle=35*Math.PI/180;camera.position.set(offset[0],9+200*Math.sin(angle)+offset[1],200*Math.cos(angle)+offset[2]);yaw=0;pitch=-angle;aim();
+    gardenOverview=true;scene.fog=null;camera.position.set(offset[0],50+offset[1],58+offset[2]);yaw=0;pitch=-Math.atan2(41,58);aim();
   });ravineOverviewButton.hidden=true;
   const gardenOverviewButton=addButton('Garden overview',()=>{
     const offset=gardenSceneOffset(room);if(!offset||renderer.xr.isPresenting)return;
-    gardenOverview=true;artWidth=110;project();scene.fog=null;const angle=35*Math.PI/180;camera.position.set(offset[0],6+340*Math.sin(angle)+offset[1],340*Math.cos(angle)+offset[2]);yaw=0;pitch=-angle;aim();
+    gardenOverview=true;scene.fog=null;camera.position.set(offset[0],46+offset[1],62+offset[2]);yaw=0;pitch=-Math.atan2(40,62);aim();
   });gardenOverviewButton.hidden=true;
   const inspectButton=addButton('Princess close-up',()=>{
     if(renderer.xr.isPresenting||!prototypeModel(session.observeAppearance()).props.some(p=>p.id==='PRINCESS'))return;
@@ -326,10 +317,9 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
     inspectButton.hidden=!prototypeModel(session.observeAppearance()).props.some(p=>p.id==='PRINCESS');inspectButton.disabled=busy||renderer.xr.isPresenting;
     for(const button of [gestureButton,idleButton])if(button){button.hidden=inspectButton.hidden;button.disabled=busy;}
     ravineOverviewButton.hidden=!ravineSceneOffset(room);ravineOverviewButton.disabled=busy||renderer.xr.isPresenting;
-    instructions.textContent=(ravineSceneOffset(room)||gardenSceneOffset(room))?'Scene artwork preview · Drag to pan · Recenter view to reset · Use Movement attempts below to change rooms.':'Drag to look · WASD / arrows to walk · Left-click an object for its actions. Touch: tap to act, hold for actions. XR: left trigger for actions, right trigger to act.';
+    instructions.textContent='Drag to look · WASD / arrows to walk · Use Movement attempts below to change rooms.';
     gardenOverviewButton.hidden=!gardenSceneOffset(room);gardenOverviewButton.disabled=busy||renderer.xr.isPresenting;
-    pad.hidden=!!(gardenSceneOffset(room)||ravineSceneOffset(room));
-    canvas.setAttribute('aria-label',pad.hidden?'Scene artwork preview. Drag to pan; use Movement attempts below to change rooms.':'3D room. Drag to look and use WASD to walk.');
+    pad.hidden=false;canvas.setAttribute('aria-label','3D room. Drag to look and use WASD to walk.');
     recenterButton.disabled=busy;drawMenu();
   });
   const ray=new THREE.Raycaster(),pointer=new THREE.Vector2();
@@ -369,12 +359,6 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
     if(!dragging||dragging.id!==e.pointerId||renderer.xr.isPresenting)return;
     const x=e.clientX-dragging.x,y=e.clientY-dragging.y;dragging.distance+=Math.abs(x)+Math.abs(y);
     if(dragging.distance>=8)hold.cancel();
-    if(gardenSceneOffset(room)||ravineSceneOffset(room)){
-      // Translate parallel to the artwork plane; never rotate projected paint.
-      const scale=gardenOverview ? .1 : .04,angle=35*Math.PI/180;
-      camera.position.x-=x*scale;camera.position.y+=y*scale*Math.cos(angle);camera.position.z-=y*scale*Math.sin(angle);
-      dragging.x=e.clientX;dragging.y=e.clientY;return;
-    }
     yaw-=x*.005;pitch=THREE.MathUtils.clamp(pitch-y*.005,-1.25,1.25);dragging.x=e.clientX;dragging.y=e.clientY;aim();
   };
   const up=(e:PointerEvent)=>{
@@ -387,19 +371,27 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
   const keydown=(e:KeyboardEvent)=>{const key=e.key.toLowerCase();if(['w','a','s','d','arrowup','arrowdown','arrowleft','arrowright'].includes(key)){e.preventDefault();keys.add(key);}};
   const keyup=(e:KeyboardEvent)=>keys.delete(e.key.toLowerCase());
   canvas.addEventListener('contextmenu',e=>e.preventDefault());canvas.addEventListener('pointerdown',down);canvas.addEventListener('pointermove',move);canvas.addEventListener('pointerup',up);canvas.addEventListener('pointercancel',cancel);canvas.addEventListener('lostpointercapture',e=>{if(dragging?.id===e.pointerId)cancel();});canvas.addEventListener('keydown',keydown);canvas.addEventListener('keyup',keyup);canvas.addEventListener('blur',cancel);window.addEventListener('blur',cancel);
-  const resize=()=>{const w=viewport.clientWidth;if(!w)return;const h=Math.max(300,Math.min(600,w*.63));renderer.setSize(w,h);aspect=w/h;project();};
+  const resize=()=>{const w=viewport.clientWidth;if(!w)return;const h=Math.max(300,Math.min(600,w*.63));renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();};
   const observer=new ResizeObserver(resize);observer.observe(viewport);resize();
   const xrChange=()=>{cancel();ravineOverviewButton.disabled=busy||renderer.xr.isPresenting;gardenOverviewButton.disabled=busy||renderer.xr.isPresenting;inspectButton.disabled=busy||renderer.xr.isPresenting;panel.visible=renderer.xr.isPresenting;drawMenu();};renderer.xr.addEventListener('sessionstart',xrChange);renderer.xr.addEventListener('sessionend',()=>{xrChange();recenter();});
   let previous=0;
   renderer.setAnimationLoop(time=>{
     if(disposed)return;const dt=Math.min((time-previous)/1000,.05);previous=time;
     if(!renderer.xr.isPresenting&&!viewport.hidden&&(document.activeElement===canvas||keys.size)){
-      if(hasLayout&&!ravineSceneOffset(room)&&!gardenSceneOffset(room)){
+      if(hasLayout){
+        if(gardenOverview&&keys.size)recenter();
         const forward=Number(keys.has('w')||keys.has('arrowup'))-Number(keys.has('s')||keys.has('arrowdown'));
         const sideways=Number(keys.has('d')||keys.has('arrowright'))-Number(keys.has('a')||keys.has('arrowleft'));
         const length=Math.hypot(forward,sideways)||1;
-        camera.position.x=THREE.MathUtils.clamp(camera.position.x+(sideways*Math.cos(yaw)-forward*Math.sin(yaw))/length*dt*1.6,-width/2+.35,width/2-.35);
-        camera.position.z=THREE.MathUtils.clamp(camera.position.z+(-forward*Math.cos(yaw)-sideways*Math.sin(yaw))/length*dt*1.6,-depth/2+.35,depth/2-.35);
+        const dx=(sideways*Math.cos(yaw)-forward*Math.sin(yaw))/length*dt*1.6,dz=(-forward*Math.cos(yaw)-sideways*Math.sin(yaw))/length*dt*1.6;
+        if(room&&walkingSurfaces[room]){
+          const foot=walkingStep(room,camera.position.x,camera.position.y-1.6,camera.position.z,dx,dz);
+          camera.position.set(foot.x,foot.y+1.6,foot.z);
+          viewport.dataset.walkX=foot.x.toFixed(4);viewport.dataset.walkY=foot.y.toFixed(4);viewport.dataset.walkZ=foot.z.toFixed(4);
+        }else{
+          camera.position.x=THREE.MathUtils.clamp(camera.position.x+dx,-width/2+.35,width/2-.35);
+          camera.position.z=THREE.MathUtils.clamp(camera.position.z+dz,-depth/2+.35,depth/2-.35);
+        }
       }
     }
     if(!viewport.hidden||renderer.xr.isPresenting){actors.forEach(actor=>actor.update(dt));renderer.render(scene,camera);}

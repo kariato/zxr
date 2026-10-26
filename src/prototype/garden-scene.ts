@@ -1,22 +1,13 @@
+import {walkingSurfaces} from './walking-surfaces.generated.ts';
 import * as THREE from 'three';
 import {GLTFLoader,type GLTF} from 'three/addons/loaders/GLTFLoader.js';
 import type {ObjectAction} from '../player/object-actions.ts';
 
 /** Reviewed path samples in the exported GLB's Y-up coordinates. */
-export const gardenOrigins:Record<string,readonly [number,number,number]>={
-  'GARDEN-NORTH':[7.139967,.584704,-23.35025],
-  'GAZEBO-ROOM':[8.5,.600387,-29.5],
-  'FORMAL-GARDEN':[4.759978,2.44661,-7.622833],
-  'TOPIARY-ROOM':[1.586659,2.876804,18.194809],
-};
+export const gardenOrigins:Record<string,readonly [number,number,number]>=Object.fromEntries(['GARDEN-NORTH', 'GAZEBO-ROOM', 'FORMAL-GARDEN', 'TOPIARY-ROOM'].map(id=>[id,walkingSurfaces[id]!.origin]));
 export function gardenSceneOffset(room:string|null){
   const p=room?gardenOrigins[room]:undefined;
   return p?[-p[0],-p[1],-p[2]] as const:undefined;
-}
-/** The image was projected from this elevation. Keep all room previews aligned. */
-export function gardenPreviewPose(room:string){
-  const angle=35*Math.PI/180,distance=room==='GAZEBO-ROOM'?95:room==='GARDEN-NORTH'?110:120;
-  return {position:[0,Math.sin(angle)*distance,Math.cos(angle)*distance] as const,pitch:-angle};
 }
 export type GardenStatus='loading'|'ready'|'failed';
 type Load=(url:string,ready:(gltf:GLTF)=>void,failed:()=>void)=>void;

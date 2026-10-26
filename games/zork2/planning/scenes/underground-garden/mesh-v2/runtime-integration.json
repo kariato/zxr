@@ -13,6 +13,7 @@
   "skybox": "games/zork2/assets/skyboxes/cave-garden/reference-v1.png",
   "visibility": "Current lit source observation only",
   "sourceAuthority": "Room identity, exits, observed objects, actions, turns and save/restore remain engine-controlled.",
-  "scope": "Generated room artwork preview with fixed 35-degree elevated framing for all four rooms, an orthographic camera and whole-garden overview. Dragging pans without rotating; local walking disabled. Not final first-person collision or headset acceptance.",
-  "presentationCorrection": "Removed ground-level and reversed Gazebo framing that exposed single-view texture stretching. Original GLB geometry and UVs remain unchanged."
+  "scope": "Unchanged retained GLB with separately sampled hidden floors, normal perspective room views at 1.6 m eye height, drag-to-look and bounded WASD/touch walking. Optional overview is turn-free.",
+  "walkingSurfaces": "games/zork2/planning/walking-surfaces/surfaces.json",
+  "limitation": "Existing single-view texture projection remains visible at eye level; no visual mesh, UV or polygon repair is claimed."
 }

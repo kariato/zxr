@@ -1,13 +1,12 @@
 import {expect,it,vi} from 'vitest';
 import * as THREE from 'three';
 import type {GLTF} from 'three/addons/loaders/GLTFLoader.js';
-import {ravineSceneOffset,ravinePreviewPose,mountRavineScene,addRavineTargets} from '../src/prototype/ravine-scene.ts';
+import {ravineSceneOffset,mountRavineScene,addRavineTargets} from '../src/prototype/ravine-scene.ts';
 
-it('excludes deferred rooms and uses the retained artwork projection for every preview',()=>{
+it('assigns source origins to supported exterior rooms and excludes deferred interiors',()=>{
   for(const room of ['STREAM-PATH','MARBLE-HALL','DEEP-FORD','RAVINE-LEDGE','LEDGE-TUNNEL']){
     expect(ravineSceneOffset(room)).toHaveLength(3);
-    const pose=ravinePreviewPose(room);expect(pose.pitch).toBeCloseTo(-35*Math.PI/180);
-    expect(Math.atan2(pose.position[1],pose.position[2])).toBeCloseTo(-pose.pitch);
+
   }
   for(const room of [null,'TINY-ROOM','DREARY-ROOM','FORMAL-GARDEN'])expect(ravineSceneOffset(room)).toBeUndefined();
 });

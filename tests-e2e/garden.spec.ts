@@ -14,14 +14,20 @@ test('retains the garden GLB and skybox across all four source rooms',async({pag
   const walk=async(direction:string)=>moves.getByRole('button',{name:new RegExp('^Go: '+direction+'$','i')}).click();
   for(const direction of ['south','south','south','sw','south','se'])await walk(direction);
   const viewport=prototype.locator('.prototype-viewport');
-  const room=async(id:string)=>{await expect(viewport).toHaveAttribute('data-garden-room',id);await expect(viewport).toHaveAttribute('data-scene-projection','orthographic');await expect(viewport).toHaveAttribute('data-garden-scene','ready',{timeout:60000});};
+  const room=async(id:string)=>{await expect(viewport).toHaveAttribute('data-garden-room',id);await expect(viewport).toHaveAttribute('data-scene-projection','perspective');await expect(viewport).toHaveAttribute('data-garden-scene','ready',{timeout:60000});};
   await room('GARDEN-NORTH');expect(requests).toHaveLength(1);
-  await expect(prototype).toContainText('Drag to pan');await expect(prototype.getByLabel('Walk within room',{exact:true})).toBeHidden();
-  const beforePan=await prototype.locator('.prototype-info').textContent();
+  await expect(prototype).toContainText('Drag to look');await expect(prototype.getByLabel('Walk within room',{exact:true})).toBeVisible();
+  await expect(viewport).toHaveAttribute('data-walk-floor','ready');
+  const beforeWalk=await prototype.locator('.prototype-info').textContent();
+  await viewport.locator('canvas').focus();await page.keyboard.down('d');
+  await expect.poll(async()=>Number(await viewport.getAttribute('data-walk-x')),{timeout:20000}).toBeGreaterThan(.1);
+  await page.keyboard.up('d');await expect(prototype.locator('.prototype-info')).toHaveText(beforeWalk!);
+  await prototype.getByRole('button',{name:'Recenter view',exact:true}).click();
+  const beforeLook=await prototype.locator('.prototype-info').textContent();
   const bounds=await viewport.locator('canvas').boundingBox();expect(bounds).not.toBeNull();
   await page.mouse.move(bounds!.x+bounds!.width*.6,bounds!.y+bounds!.height*.5);await page.mouse.down();
   await page.mouse.move(bounds!.x+bounds!.width*.7,bounds!.y+bounds!.height*.6,{steps:6});await page.mouse.up();
-  await expect(prototype.locator('.prototype-info')).toHaveText(beforePan!);
+  await expect(prototype.locator('.prototype-info')).toHaveText(beforeLook!);
   await prototype.getByRole('button',{name:'Recenter view',exact:true}).click();
 
   if(!process.env.CI)await viewport.screenshot({path:test.info().outputPath('garden-north.png')});

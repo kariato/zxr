@@ -4,13 +4,13 @@ One ravine at multiple elevations, with an adjoining ruined hall and two cliff c
 
 ## Exterior model
 
-[Artwork-preserving Blender scene and GLB](mesh-v4/README.md) · [Exterior reference with entrance](exterior-concept-v2/README.md).
+[Retained Tencent GLB](mesh-v2/README.md) · [Hidden walking planes and Blender merges](../../walking-surfaces/README.md) · [Current runtime record](mesh-v2/runtime-integration.json).
 
-The current visual review preserves the original Tencent mesh and front artwork; the primitive rebuild was rejected and removed. The five exterior rooms now use this model for elevated in-game previews, with the existing cavern skybox; see [runtime integration](mesh-v4/runtime-integration.json).
+Runtime uses the original retained mesh-v2 visual GLB without geometry, UV or material edits. Five source rooms now have normal eye-height perspective views and separate hidden floor support. The former art-preview camera and mesh-v4 material edits are not used. Source-controlled transitions remain separate from local walking.
 
-Current modeling scope covers Path Near Stream, Marble Hall, Deep Ford, Ledge in Ravine and End of Ledge. The upper shelf includes a dark entrance into Tiny Room. Tiny Room and Dreary Room interiors and their shared wooden puzzle door are deferred. These room directories remain in the group for later authoring.
+The upper shelf includes the dark entrance into Tiny Room. Tiny Room and Dreary Room interiors and their shared puzzle door remain deferred.
 
-[Original seven-room concept](concept-v1/README.md) is retained as design history; use the exterior v2 reference for mesh production.
+[Original concept](concept-v1/README.md) and [entrance concept](exterior-concept-v2/README.md) remain authoring references. The retained asset's single-view texture projection still has visible limitations from eye level.
 
 ## Rooms
 
