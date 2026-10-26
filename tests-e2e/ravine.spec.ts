@@ -46,6 +46,6 @@ test('previews five ravine source rooms with one retained model and deferred upp
   const heldLamp=prototype.locator('.prototype-objects nav').filter({has:page.getByRole('button',{name:/^Other actions:.*(?:lamp|lantern)/i})});await heldLamp.getByRole('button',{name:/^Other actions:/}).click();
   const available=page.getByRole('region',{name:'Available choices'});
   await available.getByRole('button',{name:/More actions/}).click();
-  await available.getByRole('button',{name:/^\d+\. Turn off: lamp$/}).click();
+  await available.getByRole('button',{name:'Turn off: lamp',exact:true}).click();
   await expect(viewport).not.toHaveAttribute('data-ravine-scene','ready');await expect(prototype.getByRole('button',{name:'Ravine overview',exact:true})).toBeHidden();expect(errors).toEqual([]);
 });
