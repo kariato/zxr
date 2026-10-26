@@ -28,18 +28,18 @@ test('previews five ravine source rooms with one retained model and deferred upp
   const room=async(id:string)=>{await expect(viewport).toHaveAttribute('data-ravine-room',id);await expect(viewport).toHaveAttribute('data-ravine-scene','ready',{timeout:60000});};
   for(const d of ['south','south','south','sw','south','sw'])await walk(d);
   await room('STREAM-PATH');expect(requests).toHaveLength(1);
-  await viewport.screenshot({path:test.info().outputPath('stream-path.png')});
+  if(!process.env.CI)await viewport.screenshot({path:test.info().outputPath('stream-path.png')});
   const before=await prototype.locator('.prototype-info').textContent();await prototype.getByRole('button',{name:'Ravine overview',exact:true}).click();
-  await expect(prototype.locator('.prototype-info')).toHaveText(before!);await viewport.screenshot({path:test.info().outputPath('ravine-overview.png')});
+  await expect(prototype.locator('.prototype-info')).toHaveText(before!);if(!process.env.CI)await viewport.screenshot({path:test.info().outputPath('ravine-overview.png')});
   await prototype.getByRole('button',{name:'Recenter view',exact:true}).click();
   await walk('west');await room('STREAM-PATH');expect(requests).toHaveLength(1);
   // Crossing to the garden switches back to its own GLB and garden-only skybox.
   await walk('east');await expect(viewport).toHaveAttribute('data-garden-room','FORMAL-GARDEN');await expect(viewport).not.toHaveAttribute('data-ravine-scene','ready');
   await page.getByLabel('Import save',{exact:true}).setInputFiles({name:'marble.json',mimeType:'application/json',buffer:marbleCheckpoint()});
-  await room('MARBLE-HALL');await viewport.screenshot({path:test.info().outputPath('marble-hall.png')});const retained=requests.length;
-  await walk('north');await room('DEEP-FORD');await viewport.screenshot({path:test.info().outputPath('deep-ford.png')});
-  await walk('east');await room('DEEP-FORD');await walk('north');await room('RAVINE-LEDGE');await viewport.screenshot({path:test.info().outputPath('ravine-ledge.png')});
-  await walk('west');await room('LEDGE-TUNNEL');await viewport.screenshot({path:test.info().outputPath('end-of-ledge.png')});
+  await room('MARBLE-HALL');if(!process.env.CI)await viewport.screenshot({path:test.info().outputPath('marble-hall.png')});const retained=requests.length;
+  await walk('north');await room('DEEP-FORD');if(!process.env.CI)await viewport.screenshot({path:test.info().outputPath('deep-ford.png')});
+  await walk('east');await room('DEEP-FORD');await walk('north');await room('RAVINE-LEDGE');if(!process.env.CI)await viewport.screenshot({path:test.info().outputPath('ravine-ledge.png')});
+  await walk('west');await room('LEDGE-TUNNEL');if(!process.env.CI)await viewport.screenshot({path:test.info().outputPath('end-of-ledge.png')});
   await walk('down');await room('LEDGE-TUNNEL');await walk('east');await room('RAVINE-LEDGE');expect(requests).toHaveLength(retained);
   await walk('up');await expect(viewport).not.toHaveAttribute('data-ravine-scene','ready');await expect(prototype.locator('.prototype-info')).toContainText('Tiny Room');await expect(prototype.locator('.prototype-info')).toContainText('artwork to follow');
   await walk('down');await room('RAVINE-LEDGE');
