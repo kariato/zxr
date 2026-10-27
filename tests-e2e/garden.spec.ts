@@ -4,7 +4,7 @@ test('retains the garden GLB and skybox across all four source rooms',async({pag
   test.setTimeout(240000);
   const errors:string[]=[],requests:string[]=[];
   page.on('pageerror',error=>errors.push(error.message));
-  page.on('request',request=>{if(request.url().includes('underground-garden-v2')&&request.url().endsWith('.glb'))requests.push(request.url());});
+  page.on('request',request=>{if(request.url().includes('underground-garden-topiary-v3')&&request.url().endsWith('.glb'))requests.push(request.url());});
   await page.goto('./');await page.getByRole('button',{name:'Start Zork II',exact:true}).click();
   const prototype=page.getByRole('region',{name:'3D prototype',exact:true});await expect(prototype).toBeVisible({timeout:60000});
   test.skip(await prototype.getByText('3D is unavailable in this browser.',{exact:false}).isVisible(),'WebGL unavailable; source garden routes are covered by unit tests.');

@@ -1,0 +1,33 @@
+{
+  "source": "games/zork2/planning/scenes/underground-garden/modular-references-v1/hedge-models-centered-v2/garden-centered-topiary.blend",
+  "sourceSha256": "7b64096f8044b21301fa4954067a35e4cb3bc9d34d3014843fd73246fbb22f4a",
+  "asset": "underground-garden-topiary-v3.glb",
+  "sha256": "1058838432268673f6eebfc5df50694f6b4bc339fa752cf54762cd77bba1e4d8",
+  "rooms": [
+    "GARDEN-NORTH",
+    "FORMAL-GARDEN",
+    "TOPIARY-ROOM",
+    "GAZEBO-ROOM"
+  ],
+  "topiaryAssets": 6,
+  "gazeboScaleMultiplier": 0.6,
+  "layout": {
+    "gazeboCenter": [
+      2.6996841430664062,
+      1.5754880905151367,
+      -11.462787628173828
+    ],
+    "overviewPosition": [
+      0,
+      12,
+      16
+    ],
+    "overviewTarget": [
+      0,
+      2,
+      0
+    ]
+  },
+  "triangles": 428649,
+  "textureMethod": "Garden shell reference projection; baked topiary color and normal maps; baked gazebo finish; embedded unlit cave panorama"
+}

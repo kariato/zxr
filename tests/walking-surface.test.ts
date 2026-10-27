@@ -19,13 +19,14 @@ it('allows local walking, follows sampled height and stops at missing support wi
   expect(x).toBeGreaterThan(.1);expect(x).toBeLessThan(1.6);expect(y).toBeCloseTo(walkingHeight('GARDEN-NORTH',x,z)!,5);
   const before={x,y,z};expect(walkingStep('GARDEN-NORTH',x,y,z,100,100)).toEqual(before);
 });
-it('uses the original assets and moves the mistaken wall/hedge origins onto sampled floors',()=>{
-  expect(walkingSurfaces['FORMAL-GARDEN']!.origin[1]).toBeLessThan(1);
+it('uses path-level garden spawns and retains the corrected ravine origins',()=>{
+  expect(walkingSurfaces['FORMAL-GARDEN']!.origin[1]).toBeGreaterThan(1);
+  expect(walkingSurfaces['FORMAL-GARDEN']!.origin[1]).toBeLessThan(2);
   expect(walkingSurfaces['LEDGE-TUNNEL']!.origin[1]).toBeLessThan(7);
   expect(walkingSurfaces['LEDGE-TUNNEL']!.origin[2]).toBeGreaterThan(-18);
 });
 
-it('uses byte-for-byte unchanged visual assets and the same floor data as the Blender merge',()=>{
+it('matches the recorded runtime assets and authored walking floor data',()=>{
   const record=JSON.parse(readFileSync('games/zork2/planning/walking-surfaces/verification.json','utf8'));
   for(const source of record.inputs)expect(createHash('sha256').update(readFileSync(source.asset)).digest('hex')).toBe(source.sha256);
   expect(JSON.parse(readFileSync('games/zork2/planning/walking-surfaces/surfaces.json','utf8'))).toEqual(walkingSurfaces);

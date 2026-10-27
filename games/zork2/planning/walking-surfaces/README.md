@@ -1,4 +1,10 @@
-# Walking surfaces merged with the retained Tencent scenes
+# Walking surfaces
+
+The current runtime garden uses the [modular topiary scene](../../assets/scenes/underground-garden/README.md). Its four origins and hidden floors are resampled from the reviewed shell and smaller gazebo by `tools/assets/garden-runtime.py` at 0.1-metre spacing with slope and height filters. Run this exporter after the older mapping scripts when rebuilding all floor data. Ravine floors remain unchanged. `surfaces.json` and `src/prototype/walking-surfaces.generated.ts` contain the current runtime data; `verification.json` records the current asset hashes.
+
+The Blender merges and preservation reports linked below are retained snapshots of the earlier garden v2 and ravine integration. Their garden geometry and floor layout predate the modular topiary scene.
+
+## Earlier v2 merge
 
 [Garden Blender merge](garden-with-hidden-floors.blend) · [Ravine Blender merge](ravine-with-hidden-floors.blend) · [Floor data](surfaces.json) · [Sampling verification](verification.json) · [Blender preservation checks](blender-verification.json)
 

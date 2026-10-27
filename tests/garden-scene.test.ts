@@ -1,7 +1,7 @@
 import {expect,it,vi} from 'vitest';
 import * as THREE from 'three';
 import type {GLTF} from 'three/addons/loaders/GLTFLoader.js';
-import {mountGardenScene,addGardenTargets,gardenSceneOffset} from '../src/prototype/garden-scene.ts';
+import {mountGardenScene,addGardenTargets,gardenSceneOffset,gardenLayout,gardenOrigins,addGazeboTable} from '../src/prototype/garden-scene.ts';
 
 it('keeps the embedded skybox unlit and unfogged and releases shared GLB resources once',()=>{
   const scene=new THREE.Group(),parent=new THREE.Group(),map=new THREE.Texture();
@@ -36,4 +36,15 @@ it('creates garden interactions only for source-observed objects in the current 
   expect(addGardenTargets(parent,'GAZEBO-ROOM',new Set(['GAZEBO-TABLE']),[]).map(t=>t.userData.object)).toEqual(['GAZEBO-TABLE']);
   expect(addGardenTargets(parent,'TOPIARY-ROOM',new Set(['MOSS']),[]).map(t=>t.userData.object)).toEqual(['MOSS']);
   expect(gardenSceneOffset(null)).toBeUndefined();expect(gardenSceneOffset('DARK-TUNNEL')).toBeUndefined();
+});
+
+it('aligns gazebo interactions with the smaller modular gazebo and keeps its table ahead of the spawn',()=>{
+  const parent=new THREE.Group(),origin=gardenOrigins['GARDEN-NORTH']!;
+  const [target]=addGardenTargets(parent,'GARDEN-NORTH',new Set(['GAZEBO']),[]);
+  expect(target!.position.x+origin[0]).toBeCloseTo(gardenLayout.gazeboCenter[0]);
+  expect(target!.position.z+origin[2]).toBeCloseTo(gardenLayout.gazeboCenter[2]);
+  const table=new THREE.Group();addGazeboTable(table);
+  expect(table.children[0]!.position.z).toBeLessThan(0);
+  const [tableTarget]=addGardenTargets(new THREE.Group(),'GAZEBO-ROOM',new Set(['GAZEBO-TABLE']),[]);
+  expect(tableTarget!.position.z).toEqual(table.children[0]!.position.z);
 });

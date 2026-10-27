@@ -1,4 +1,6 @@
 import {walkingSurfaces} from './walking-surfaces.generated.ts';
+import {gardenLayout} from './garden-layout.generated.ts';
+export {gardenLayout};
 import * as THREE from 'three';
 import {GLTFLoader,type GLTF} from 'three/addons/loaders/GLTFLoader.js';
 import type {ObjectAction} from '../player/object-actions.ts';
@@ -39,9 +41,12 @@ export function mountGardenScene(parent:THREE.Group,url:string,status:(value:Gar
 /** Geometry suggests a hit location; observed source identities authorize actions. */
 export function addGardenTargets(parent:THREE.Group,room:string,visible:ReadonlySet<string>,actions:readonly ObjectAction[]){
   const definitions:[string,number[],number[]][]=[['MOSS',[4,1,4],[0,5,0]]];
-  if(room==='GARDEN-NORTH')definitions.push(['GAZEBO',[3.8,3.2,3.8],[1.36,1.5,-6.15]],['ROSE-BUSH',[2,1.3,1.5],[2,.65,-4]]);
+  if(room==='GARDEN-NORTH'){
+    const origin=gardenOrigins[room]!,center=gardenLayout.gazeboCenter;
+    definitions.push(['GAZEBO',[2.8,3.3,2.8],[center[0]-origin[0],center[1]-origin[1]+1.65,center[2]-origin[2]]],['ROSE-BUSH',[2,1.3,1.5],[2,.65,-4]]);
+  }
   if(room==='TOPIARY-ROOM')definitions.push(['HEDGES',[3,2.8,2],[2,1.4,-1]],['ROSE-BUSH',[1.4,2.5,1],[-2,1.25,0]]);
-  if(room==='GAZEBO-ROOM')definitions.push(['GAZEBO-TABLE',[1.7,.8,1.2],[0,.4,.9]],['GAZEBO',[3.5,3,.3],[0,1.5,-1.5]]);
+  if(room==='GAZEBO-ROOM')definitions.push(['GAZEBO-TABLE',[1.1,.8,1.1],[0,.4,-.65]],['GAZEBO',[2.8,3,.3],[0,1.5,-1.5]]);
   return definitions.flatMap(([id,size,position])=>{
     if(!visible.has(id))return [];
     const mesh=new THREE.Mesh(new THREE.BoxGeometry(size[0],size[1],size[2]),new THREE.MeshBasicMaterial({visible:false}));
@@ -49,9 +54,9 @@ export function addGardenTargets(parent:THREE.Group,room:string,visible:Readonly
   });
 }
 
-/** The table is separate from the fused painting so source objects rest on a real surface. */
+/** A table surface supports the movable source objects within the modular gazebo. */
 export function addGazeboTable(parent:THREE.Group){
   const material=new THREE.MeshStandardMaterial({color:0xaaa58c,roughness:.9});
-  const top=new THREE.Mesh(new THREE.CylinderGeometry(.85,.85,.1,24),material);top.position.set(0,.75,.9);parent.add(top);
-  const leg=new THREE.Mesh(new THREE.CylinderGeometry(.12,.22,.7,8),material);leg.position.set(0,.35,.9);parent.add(leg);
+  const top=new THREE.Mesh(new THREE.CylinderGeometry(.55,.55,.1,24),material);top.position.set(0,.75,-.65);parent.add(top);
+  const leg=new THREE.Mesh(new THREE.CylinderGeometry(.12,.22,.7,8),material);leg.position.set(0,.35,-.65);parent.add(leg);
 }

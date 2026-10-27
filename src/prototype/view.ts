@@ -6,7 +6,7 @@ import type { GameSession } from '../engine/index.ts';
 import type { BrowserPlayer } from '../player/browser.ts';
 import type { PlayerView } from '../player/controller.ts';
 import type { ObjectAction } from '../player/object-actions.ts';
-import {mountGardenScene,gardenSceneOffset,addGardenTargets,addGazeboTable,type GardenStatus} from './garden-scene.ts';
+import {mountGardenScene,gardenSceneOffset,gardenLayout,addGardenTargets,addGazeboTable,type GardenStatus} from './garden-scene.ts';
 import { mountOpeningCavern } from './opening-cavern.ts';
 import { prototypeModel } from './model.ts';
 import { mountCavernBackdrop } from './cavern-backdrop.ts';
@@ -198,7 +198,7 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
         if(['PRINCESS','CHEST','STATUETTE','SWORD','LAMP'].includes(prop.id))group.position.set(prop.id==='PRINCESS'?-2:(prop.id==='CHEST'||prop.id==='STATUETTE')?2:prop.id==='SWORD'?-.9:1,prop.id==='STATUETTE'?.1:.03,prop.id==='PRINCESS'||prop.id==='CHEST'||prop.id==='STATUETTE'?1.3:room==='INSIDE-BARROW'?.6:0);
         else{const slot=roomSlot++;group.position.set((slot%5-2)*(cavern?.4:1.15),.03,cavern?-1.8+Math.floor(slot/5)*.45:Math.floor(slot/5)*1.2);}
         if(room==='GAZEBO-ROOM'&&!['PRINCESS','CHEST','STATUETTE'].includes(prop.id)){
-          const slot=tableSlot++;group.position.set((slot%3-1)*.38,.81,.7+Math.floor(slot/3)*.28);
+          const slot=tableSlot++;group.position.set((slot%3-1)*.26,.81,-.8+Math.floor(slot/3)*.24);
         }
         if(room==='FOOT-BRIDGE')group.position.x=THREE.MathUtils.clamp(group.position.x,-.75,.75);
       }
@@ -244,7 +244,8 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
   });ravineOverviewButton.hidden=true;
   const gardenOverviewButton=addButton('Garden overview',()=>{
     const offset=gardenSceneOffset(room);if(!offset||renderer.xr.isPresenting)return;
-    gardenOverview=true;scene.fog=null;camera.position.set(offset[0],46+offset[1],62+offset[2]);yaw=0;pitch=-Math.atan2(40,62);aim();
+    const position=gardenLayout.overviewPosition,target=gardenLayout.overviewTarget;
+    gardenOverview=true;scene.fog=null;camera.position.set(position[0]+offset[0],position[1]+offset[1],position[2]+offset[2]);yaw=0;pitch=-Math.atan2(position[1]-target[1],position[2]-target[2]);aim();
   });gardenOverviewButton.hidden=true;
   const inspectButton=addButton('Princess close-up',()=>{
     if(renderer.xr.isPresenting||!prototypeModel(session.observeAppearance()).props.some(p=>p.id==='PRINCESS'))return;
