@@ -19,7 +19,7 @@ function release(root:THREE.Object3D){
   for(const material of materials)for(const value of Object.values(material))if(value instanceof THREE.Texture)textures.add(value);
   geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());root.clear();root.removeFromParent();
 }
-/** One loaded GLB for all four lit garden rooms, including its packed sky sphere. */
+/** One loaded GLB for all four lit garden rooms, using the separately cached cave panorama. */
 export function mountGardenScene(parent:THREE.Group,url:string,status:(value:GardenStatus)=>void=()=>{},load:Load=(url,ready,failed)=>new GLTFLoader().load(url,ready,undefined,failed)){
   const root=new THREE.Group();root.name='shared-garden-scene';parent.add(root);
   let disposed=false;status('loading');
@@ -42,10 +42,13 @@ export function mountGardenScene(parent:THREE.Group,url:string,status:(value:Gar
 export function addGardenTargets(parent:THREE.Group,room:string,visible:ReadonlySet<string>,actions:readonly ObjectAction[]){
   const definitions:[string,number[],number[]][]=[['MOSS',[4,1,4],[0,5,0]]];
   if(room==='GARDEN-NORTH'){
-    const origin=gardenOrigins[room]!,center=gardenLayout.gazeboCenter;
-    definitions.push(['GAZEBO',[2.8,3.3,2.8],[center[0]-origin[0],center[1]-origin[1]+1.65,center[2]-origin[2]]],['ROSE-BUSH',[2,1.3,1.5],[2,.65,-4]]);
+    const origin=gardenOrigins[room]!,center=gardenLayout.gazeboCenter,size=gardenLayout.gazeboSize;
+    definitions.push(['GAZEBO',[...size],[center[0]-origin[0],center[1]-origin[1]+size[1]/2,center[2]-origin[2]]],['ROSE-BUSH',[2,1.3,1.5],[2,.65,-4]]);
   }
-  if(room==='TOPIARY-ROOM')definitions.push(['HEDGES',[3,2.8,2],[2,1.4,-1]],['ROSE-BUSH',[1.4,2.5,1],[-2,1.25,0]]);
+  if(room==='TOPIARY-ROOM'){
+    const origin=gardenOrigins[room]!,hedge=gardenLayout.topiary.find(t=>t.name==='dragon')!;
+    definitions.push(['HEDGES',[hedge.size[0],hedge.size[1],Math.abs(hedge.size[2])],[hedge.center[0]-origin[0],hedge.center[1]-origin[1]+hedge.size[1]/2,hedge.center[2]-origin[2]]],['ROSE-BUSH',[1.4,2.5,1],[-2,1.25,0]]);
+  }
   if(room==='GAZEBO-ROOM')definitions.push(['GAZEBO-TABLE',[1.1,.8,1.1],[0,.4,-.65]],['GAZEBO',[2.8,3,.3],[0,1.5,-1.5]]);
   return definitions.flatMap(([id,size,position])=>{
     if(!visible.has(id))return [];

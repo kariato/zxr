@@ -10,14 +10,14 @@
     },
     {
       "family": "garden",
-      "asset": "games/zork2/assets/scenes/underground-garden/underground-garden-topiary-v3.glb",
-      "sha256": "1058838432268673f6eebfc5df50694f6b4bc339fa752cf54762cd77bba1e4d8",
+      "asset": "games/zork2/assets/scenes/underground-garden/underground-garden-shared-v4.glb",
+      "sha256": "0c8d47765afe6c9f795edc8b859e99dc7c291face32f3377e747931bce09dbd0",
       "visualGeometryChanged": false,
       "visualTextureChanged": false,
-      "visualTriangles": 428649
+      "visualTriangles": 52568
     }
   ],
-  "method": "Garden: downward samples from reviewed modular shell and gazebo floor at 0.1 m spacing; slope and height filtering. Ravine samples retained.",
+  "method": "Garden: exact gravel material triangles from compact shared-texture GLB; gazebo low floor sampled at 0.1m; non-garden floors retained.",
   "maxVertexSurfaceErrorMetres": 1e-06,
   "maxCentroidSurfaceErrorMetres": 0.06,
   "roomCount": 9,

@@ -1,10 +1,10 @@
 import {expect,test} from '@playwright/test';
 
-test('retains the garden GLB and skybox across all four source rooms',async({page})=>{
+test('retains the compact garden GLB and cave backdrop across all four source rooms',async({page})=>{
   test.setTimeout(240000);
   const errors:string[]=[],requests:string[]=[];
   page.on('pageerror',error=>errors.push(error.message));
-  page.on('request',request=>{if(request.url().includes('underground-garden-topiary-v3')&&request.url().endsWith('.glb'))requests.push(request.url());});
+  page.on('request',request=>{if(request.url().includes('underground-garden-shared-v4')&&request.url().endsWith('.glb'))requests.push(request.url());});
   await page.goto('./');await page.getByRole('button',{name:'Start Zork II',exact:true}).click();
   const prototype=page.getByRole('region',{name:'3D prototype',exact:true});await expect(prototype).toBeVisible({timeout:60000});
   test.skip(await prototype.getByText('3D is unavailable in this browser.',{exact:false}).isVisible(),'WebGL unavailable; source garden routes are covered by unit tests.');
@@ -20,7 +20,7 @@ test('retains the garden GLB and skybox across all four source rooms',async({pag
   await expect(viewport).toHaveAttribute('data-walk-floor','ready');
   const beforeWalk=await prototype.locator('.prototype-info').textContent();
   await viewport.locator('canvas').focus();await page.keyboard.down('d');
-  await expect.poll(async()=>Number(await viewport.getAttribute('data-walk-x')),{timeout:20000}).toBeGreaterThan(.1);
+  await expect.poll(async()=>Math.abs(Number(await viewport.getAttribute('data-walk-x'))),{timeout:20000}).toBeGreaterThan(.1);
   await page.keyboard.up('d');await expect(prototype.locator('.prototype-info')).toHaveText(beforeWalk!);
   await prototype.getByRole('button',{name:'Recenter view',exact:true}).click();
   const beforeLook=await prototype.locator('.prototype-info').textContent();

@@ -1,33 +1,125 @@
 {
-  "source": "games/zork2/planning/scenes/underground-garden/modular-references-v1/hedge-models-centered-v2/garden-centered-topiary.blend",
-  "sourceSha256": "7b64096f8044b21301fa4954067a35e4cb3bc9d34d3014843fd73246fbb22f4a",
-  "asset": "underground-garden-topiary-v3.glb",
-  "sha256": "1058838432268673f6eebfc5df50694f6b4bc339fa752cf54762cd77bba1e4d8",
+  "source": "games/zork2/planning/scenes/underground-garden/concept-top-down-v1/assembly-v4-shared-textures/garden-shared-textures-v4.glb",
+  "sourceSha256": "dc3a81478aaa979e14b13a784cc2930ea770b2617e6e2f1f74c730267c4acb30",
+  "asset": "underground-garden-shared-v4.glb",
+  "sha256": "0c8d47765afe6c9f795edc8b859e99dc7c291face32f3377e747931bce09dbd0",
+  "bytes": 2886896,
+  "scale": 28,
+  "gazeboWidthMetres": 4.6,
+  "topiaryHeightMetres": [
+    2.1,
+    2.4
+  ],
+  "groundHeight": 1.5,
+  "hedgeHeightMetres": 1,
   "rooms": [
     "GARDEN-NORTH",
     "FORMAL-GARDEN",
     "TOPIARY-ROOM",
     "GAZEBO-ROOM"
   ],
-  "topiaryAssets": 6,
-  "gazeboScaleMultiplier": 0.6,
   "layout": {
     "gazeboCenter": [
-      2.6996841430664062,
-      1.5754880905151367,
-      -11.462787628173828
+      -0.070323,
+      1.5,
+      0.050364
+    ],
+    "gazeboSize": [
+      4.6000001430511475,
+      4.82889461517334,
+      4.505104303359985
+    ],
+    "topiary": [
+      {
+        "name": "dragon",
+        "center": [
+          -15.118108,
+          2.5,
+          7.143701
+        ],
+        "size": [
+          2.202177,
+          2.4,
+          2.75831
+        ]
+      },
+      {
+        "name": "unicorn",
+        "center": [
+          15.017343,
+          2.5,
+          7.156797
+        ],
+        "size": [
+          2.66223,
+          2.1,
+          0.731643
+        ]
+      },
+      {
+        "name": "serpent",
+        "center": [
+          15.012388,
+          2.5,
+          -7.046093
+        ],
+        "size": [
+          1.508563,
+          2.4,
+          1.420462
+        ]
+      },
+      {
+        "name": "dog",
+        "center": [
+          -15.109874,
+          2.5,
+          -7.041987
+        ],
+        "size": [
+          1.744673,
+          2.1,
+          1.090356
+        ]
+      },
+      {
+        "name": "woman-violet",
+        "center": [
+          -6.754183,
+          2.5,
+          -9.285416
+        ],
+        "size": [
+          0.682242,
+          2.1,
+          0.589085
+        ]
+      },
+      {
+        "name": "woman-rose",
+        "center": [
+          6.650424,
+          2.5,
+          9.397718
+        ],
+        "size": [
+          0.62975,
+          2.1,
+          0.481109
+        ]
+      }
     ],
     "overviewPosition": [
       0,
-      12,
-      16
+      13,
+      24
     ],
     "overviewTarget": [
       0,
-      2,
+      1.5,
       0
     ]
   },
-  "triangles": 428649,
-  "textureMethod": "Garden shell reference projection; baked topiary color and normal maps; baked gazebo finish; embedded unlit cave panorama"
+  "textureMethod": "Shared repeating 256px gravel and foliage plus 256px gazebo; external cached cave panorama",
+  "walking": "Exact gravel faces; sampled gazebo interior; native source room transitions unchanged"
 }

@@ -1,0 +1,65 @@
+{
+  "bytes": 2412364,
+  "triangles": 45690,
+  "reimportedTriangles": 45690,
+  "embeddedImages": 3,
+  "meshes": [
+    {
+      "asset": "garden",
+      "originalTriangles": 7682,
+      "triangles": 7682
+    },
+    {
+      "asset": "gazebo",
+      "originalTriangles": 30720,
+      "triangles": 7999
+    },
+    {
+      "asset": "dragon",
+      "originalTriangles": 32767,
+      "triangles": 5000
+    },
+    {
+      "asset": "unicorn",
+      "originalTriangles": 12800,
+      "triangles": 4999
+    },
+    {
+      "asset": "serpent",
+      "originalTriangles": 12800,
+      "triangles": 5000
+    },
+    {
+      "asset": "dog",
+      "originalTriangles": 32768,
+      "triangles": 4999
+    },
+    {
+      "asset": "woman-violet",
+      "originalTriangles": 12800,
+      "triangles": 5000
+    },
+    {
+      "asset": "woman-rose",
+      "originalTriangles": 12800,
+      "triangles": 4999
+    },
+    {
+      "asset": "foundation",
+      "originalTriangles": 12,
+      "triangles": 12
+    }
+  ],
+  "gardenMaterialFaceCountsBeforeReduction": [
+    29912,
+    14120,
+    0
+  ],
+  "sourceUnchanged": true,
+  "sha256": "dc3a81478aaa979e14b13a784cc2930ea770b2617e6e2f1f74c730267c4acb30",
+  "textureMethod": "Shared 256px repeating gravel and foliage tiles; foliage shared across garden and six statues; separate 256px gazebo image",
+  "limitations": [
+    "Garden bed boundaries reconstructed from a 256 by 172 material grid; shallow inferred top relief replaced by a flat top.",
+    "More aggressive focal geometry reduction; small details simplified."
+  ]
+}

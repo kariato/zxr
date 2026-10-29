@@ -48,3 +48,12 @@ it('aligns gazebo interactions with the smaller modular gazebo and keeps its tab
   const [tableTarget]=addGardenTargets(new THREE.Group(),'GAZEBO-ROOM',new Set(['GAZEBO-TABLE']),[]);
   expect(tableTarget!.position.z).toEqual(table.children[0]!.position.z);
 });
+
+it('uses human-scale hedge figures and a usable gazebo independently of the wider grounds',()=>{
+  expect(gardenLayout.gazeboSize[0]).toBeCloseTo(4.6,2);
+  for(const hedge of gardenLayout.topiary){
+    expect(hedge.size[1]).toBeGreaterThanOrEqual(2.09);
+    expect(hedge.size[1]).toBeLessThanOrEqual(2.41);
+  }
+  expect(gardenLayout.overviewPosition[1]).toBeLessThan(15);
+});
