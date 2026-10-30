@@ -12,3 +12,6 @@ games/zork2/planning/scenes/underground-garden/modular-references-v1/blender-ass
 games/zork2/planning/scenes/underground-garden/modular-references-v1/blender-assembly-v2-textured/garden-modular-textured-v2.blend filter=lfs diff=lfs merge=lfs -text
 games/zork2/planning/scenes/underground-garden/modular-references-v1/blender-assembly-v3-reduced/garden-decimation-controls-v3.blend filter=lfs diff=lfs merge=lfs -text
 games/zork2/planning/scenes/volcano/mesh-v2-color/volcano-color-v2.glb filter=lfs diff=lfs merge=lfs -text
+out/**/*.glb filter=lfs diff=lfs merge=lfs -text
+out/**/*.blend filter=lfs diff=lfs merge=lfs -text
+out/**/*.blend1 filter=lfs diff=lfs merge=lfs -text
