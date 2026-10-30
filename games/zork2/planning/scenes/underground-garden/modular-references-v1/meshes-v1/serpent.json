@@ -1,0 +1,39 @@
+{
+  "name": "serpent",
+  "pipeline": {
+    "implementation": "Hunyuan3D-Swift/MLX",
+    "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+    "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+    "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+    "steps": 8,
+    "guidance": 5,
+    "octree": 512,
+    "seed": 42,
+    "quantize": 8,
+    "licence": "Tencent Hunyuan 3D 2.0 Community License",
+    "scope": "US-only local prototype"
+  },
+  "reference": "../serpent.png",
+  "referenceSha256": "b69b7548c3f72750384ad9e40bcce3d1f4d33b968318c212f6199b9d4009de4c",
+  "file": "serpent.glb",
+  "sha256": "2b37671c634e39533085b6b9b6bac311c69f3e08f1a761107a813618c6a46fe5",
+  "bytes": 20758616,
+  "vertices": 576617,
+  "triangles": 1153202,
+  "boundsNativeUnits": [
+    [
+      -0.6323123576224738,
+      -0.9988466589662766,
+      -0.5956204830688709
+    ],
+    [
+      0.6261207994379305,
+      0.9951305653858835,
+      0.5862421645938847
+    ]
+  ],
+  "seconds": 132.89,
+  "geometryPostprocessing": "none",
+  "textureMethod": "none; shape only",
+  "status": "draft; inspect isolated hidden geometry and openings"
+}

@@ -1,0 +1,3 @@
+Remove ONLY the plain dark blue gray background around this volcano diorama and through the open sky at the top. Make the background genuinely transparent. Preserve the exact volcano composition, rock shapes, colors, ledges, rooms, chimney, all interior rock surfaces and floor. Do not redesign or add anything. The large interior rear rock wall belongs to the volcano and must be retained; only empty background and sky should be transparent. Preserve portrait aspect ratio and all boundaries. This is a background extraction for 3D reconstruction.
+
+Input: concept-v1.png. Built-in image_gen.imagegen with transparent_background=true.

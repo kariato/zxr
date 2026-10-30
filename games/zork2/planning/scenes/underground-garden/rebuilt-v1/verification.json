@@ -1,0 +1,29 @@
+{
+  "method": "Authored volumetric meshes and consistent material families; no image projection",
+  "triangles": 85554,
+  "reimportedTriangles": 85554,
+  "meshObjects": 3039,
+  "materials": 22,
+  "projectedTextures": false,
+  "renderAngles": [
+    0,
+    90,
+    180
+  ],
+  "renderResolution": [
+    3840,
+    2160
+  ],
+  "source": "reference/zork2/2dungeon.zil:282-345",
+  "status": "authoring study; not runtime integrated",
+  "files": {
+    "underground-garden-rebuilt-v1.blend": {
+      "bytes": 1347806,
+      "sha256": "ff4f7febebde5c4bacc9207135d0b1bcc997f439fb9168dc46bdb719ba12e4c8"
+    },
+    "underground-garden-rebuilt-v1.glb": {
+      "bytes": 5098164,
+      "sha256": "d013ff8bf69ec52fbeb78916010f53e4680b5100364807829404a299c9b57b1b"
+    }
+  }
+}

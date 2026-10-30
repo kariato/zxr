@@ -1,0 +1,14 @@
+{
+  "geometryAndPlacementUnchanged": true,
+  "geometryFingerprint": "5360718254f4c7410d1c7479ea2bb1758aca7573c76bd1f9b995ad3b39bd5ad7",
+  "textureResolution": [
+    1024,
+    1024
+  ],
+  "reviewResolution": [
+    1920,
+    1080
+  ],
+  "reference": "../gazebo.png",
+  "method": "Reference-inspired procedural finish baked to UV atlas; approximate color/material match"
+}

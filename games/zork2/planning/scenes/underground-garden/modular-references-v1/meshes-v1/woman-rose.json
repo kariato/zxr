@@ -1,0 +1,39 @@
+{
+  "name": "woman-rose",
+  "pipeline": {
+    "implementation": "Hunyuan3D-Swift/MLX",
+    "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+    "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+    "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+    "steps": 8,
+    "guidance": 5,
+    "octree": 512,
+    "seed": 42,
+    "quantize": 8,
+    "licence": "Tencent Hunyuan 3D 2.0 Community License",
+    "scope": "US-only local prototype"
+  },
+  "reference": "../woman-rose.png",
+  "referenceSha256": "2942e75fb479cdf26407437d1bc8a5c3d0954c041e63318ec4da3902af1cfd43",
+  "file": "woman-rose.glb",
+  "sha256": "f68d78b3d7c7127532e987ff0fd3ccee40d748144f199158d31afebaf94ffba3",
+  "bytes": 10664880,
+  "vertices": 296226,
+  "triangles": 592448,
+  "boundsNativeUnits": [
+    [
+      -0.2949404659270052,
+      -0.9989367323427267,
+      -0.23054957062457415
+    ],
+    [
+      0.2839450944706874,
+      0.9938700169046997,
+      0.22389239659375204
+    ]
+  ],
+  "seconds": 93.86,
+  "geometryPostprocessing": "none",
+  "textureMethod": "none; shape only",
+  "status": "draft; inspect isolated hidden geometry and openings"
+}

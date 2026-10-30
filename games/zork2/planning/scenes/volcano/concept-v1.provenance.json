@@ -1,0 +1,14 @@
+{
+  "created": "2026-10-26",
+  "tool": "built-in image_gen.imagegen",
+  "file": "concept-v1.png",
+  "sha256": "aeb9d81a1b1fa463627b1da791992962ccd512483ec803306fc8dd5e71bdd360",
+  "width": 1024,
+  "height": 1536,
+  "prompt": "concept-v1.prompt.txt",
+  "status": "draft; not human approved",
+  "sourceAnchors": [
+    "reference/zork2/2dungeon.zil:582-593,1302-1402",
+    "reference/zork2/2actions.zil:384-397,500-510"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "assets": [
+    {
+      "asset": "garden",
+      "originalTriangles": 809993,
+      "reducedTriangles": 24999,
+      "sampledVertices": 4133,
+      "surfaceErrorP95PercentOfDiagonal": 0.0006737233832426024,
+      "surfaceErrorMaxPercentOfDiagonal": 0.0026940539455875194,
+      "boundsChangePercentOfDiagonal": 0.0017997749988688193,
+      "achievedTriangleRatio": 0.030863229682231822
+    },
+    {
+      "asset": "gazebo",
+      "originalTriangles": 78440,
+      "reducedTriangles": 30720,
+      "sampledVertices": 4214,
+      "surfaceErrorP95PercentOfDiagonal": 0.048695495463301396,
+      "surfaceErrorMaxPercentOfDiagonal": 0.14045957900537434,
+      "boundsChangePercentOfDiagonal": 0.0914104467532786,
+      "achievedTriangleRatio": 0.3916369199388067
+    },
+    {
+      "asset": "dragon",
+      "originalTriangles": 39184,
+      "reducedTriangles": 32767,
+      "sampledVertices": 4632,
+      "surfaceErrorP95PercentOfDiagonal": 0.015560474817420471,
+      "surfaceErrorMaxPercentOfDiagonal": 0.1493165672184805,
+      "boundsChangePercentOfDiagonal": 0.0033541287324651433,
+      "achievedTriangleRatio": 0.8362341772151899
+    },
+    {
+      "asset": "unicorn",
+      "originalTriangles": 39208,
+      "reducedTriangles": 12800,
+      "sampledVertices": 4724,
+      "surfaceErrorP95PercentOfDiagonal": 0.08423583840799197,
+      "surfaceErrorMaxPercentOfDiagonal": 0.21512839338430653,
+      "boundsChangePercentOfDiagonal": 0.09109459864655224,
+      "achievedTriangleRatio": 0.3264639869414405
+    },
+    {
+      "asset": "serpent",
+      "originalTriangles": 39190,
+      "reducedTriangles": 12800,
+      "sampledVertices": 4178,
+      "surfaceErrorP95PercentOfDiagonal": 0.07609107028721204,
+      "surfaceErrorMaxPercentOfDiagonal": 0.26959979259168965,
+      "boundsChangePercentOfDiagonal": 0.12370742789086561,
+      "achievedTriangleRatio": 0.32661393212554224
+    },
+    {
+      "asset": "dog",
+      "originalTriangles": 39158,
+      "reducedTriangles": 32768,
+      "sampledVertices": 4544,
+      "surfaceErrorP95PercentOfDiagonal": 0.016722230183228083,
+      "surfaceErrorMaxPercentOfDiagonal": 0.06509771838614262,
+      "boundsChangePercentOfDiagonal": 0.024008455322318736,
+      "achievedTriangleRatio": 0.8368149547985086
+    },
+    {
+      "asset": "woman-violet",
+      "originalTriangles": 39193,
+      "reducedTriangles": 12800,
+      "sampledVertices": 4747,
+      "surfaceErrorP95PercentOfDiagonal": 0.08249253755741243,
+      "surfaceErrorMaxPercentOfDiagonal": 0.21368688314409578,
+      "boundsChangePercentOfDiagonal": 0.11535683414986576,
+      "achievedTriangleRatio": 0.3265889316969867
+    },
+    {
+      "asset": "woman-rose",
+      "originalTriangles": 39197,
+      "reducedTriangles": 12800,
+      "sampledVertices": 4730,
+      "surfaceErrorP95PercentOfDiagonal": 0.08205573964305964,
+      "surfaceErrorMaxPercentOfDiagonal": 0.20907409540530394,
+      "boundsChangePercentOfDiagonal": 0.042984881523840994,
+      "achievedTriangleRatio": 0.32655560374518455
+    }
+  ],
+  "originalTriangles": 1123563,
+  "exportedTriangles": 172454,
+  "reimportedTriangles": 172454,
+  "originalGLBBytes": 114030592,
+  "reducedGLBBytes": 26621656,
+  "embeddedImages": 14,
+  "sourceFilesUnchanged": true,
+  "cameraElevationDegrees": 45,
+  "cameraAzimuthDegrees": 45,
+  "geometryChecks": "Approximately 4096 sampled source vertices per mesh; one-way surface distances and bounds, GLB reimport, plus visual review",
+  "glbSha256": "c6cb059d4b75253fdf5f8626e91f60fb6284ce43f30eb504ecb4b37e9d5debeb"
+}

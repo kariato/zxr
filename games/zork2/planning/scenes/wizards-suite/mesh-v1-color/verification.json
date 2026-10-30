@@ -1,0 +1,18 @@
+{
+  "geometryUnchanged": true,
+  "geometryFingerprint": "e6c6c063d76caeff3279be7fcec6c108d3a79c09e560f9d7bbfdff5277b7dd57",
+  "originalGLBSha256": "69a1703be6b9fc8d921b677883c3aed5f3c5e09f955ede3fe226e349c06b9a26",
+  "originalGLBUnchanged": true,
+  "textureMethod": "single-reference planar projection at 35 degrees; not learned paint",
+  "referenceSha256": "0e9198e17b5e4f26ca160d43ea8cd3d9aaac0962ec6b3b9b7cbbc36a9cd03ae6",
+  "files": {
+    "wizards-suite-color-v1.blend": {
+      "bytes": 13314650,
+      "sha256": "d5b0d7666016f738fc19f368e49dd356c9221783689157510df7a1c239a73109"
+    },
+    "wizards-suite-color-v1.glb": {
+      "bytes": 40849152,
+      "sha256": "6eec47dea4bd21bba76102897744761c58321886447a1bf06c3188e7f05903ba"
+    }
+  }
+}

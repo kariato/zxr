@@ -1,0 +1,89 @@
+{
+  "created": "2026-10-27",
+  "tool": "built-in image_gen.imagegen",
+  "sourceReference": "../concept-low-hedges-v2/reference.png",
+  "selectedImages": [
+    {
+      "name": "garden-shell",
+      "file": "garden-shell.png",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB",
+      "hasTransparentPixels": false,
+      "bytes": 3515784,
+      "sha256": "33845f285c07ce5c6b3619733ef5246a2b4709402f41adb373363122e2a54643"
+    },
+    {
+      "name": "dragon",
+      "file": "dragon.png",
+      "width": 1312,
+      "height": 1199,
+      "mode": "RGBA",
+      "hasTransparentPixels": true,
+      "bytes": 2037641,
+      "sha256": "89fa6b5b633ccfb8e46775c5966198b07c87444d2d82e54858466d57348b9956"
+    },
+    {
+      "name": "unicorn",
+      "file": "unicorn.png",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "hasTransparentPixels": true,
+      "bytes": 1691510,
+      "sha256": "127b4a97812c4155ddc23101425424aabf92616aa622b9ed7de47d3bfd864a4e"
+    },
+    {
+      "name": "serpent",
+      "file": "serpent.png",
+      "width": 1190,
+      "height": 1322,
+      "mode": "RGBA",
+      "hasTransparentPixels": true,
+      "bytes": 1561228,
+      "sha256": "b69b7548c3f72750384ad9e40bcce3d1f4d33b968318c212f6199b9d4009de4c"
+    },
+    {
+      "name": "dog",
+      "file": "dog.png",
+      "width": 1374,
+      "height": 1145,
+      "mode": "RGBA",
+      "hasTransparentPixels": true,
+      "bytes": 1495669,
+      "sha256": "6a15800a1735dc76ccc1bc5d8d6e5064d551ebc80719462f5a762065e8214c8a"
+    },
+    {
+      "name": "woman-violet",
+      "file": "woman-violet.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "hasTransparentPixels": true,
+      "bytes": 1945014,
+      "sha256": "a167b2f679f602dafab964a27201ea67206111fee3f8c447a502176f6482ce90"
+    },
+    {
+      "name": "woman-rose",
+      "file": "woman-rose.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "hasTransparentPixels": true,
+      "bytes": 1930374,
+      "sha256": "2942e75fb479cdf26407437d1bc8a5c3d0954c041e63318ec4da3902af1cfd43"
+    },
+    {
+      "name": "gazebo",
+      "file": "gazebo.png",
+      "width": 1323,
+      "height": 1189,
+      "mode": "RGBA",
+      "hasTransparentPixels": true,
+      "bytes": 1476797,
+      "sha256": "8b748488030e75e82f1bdab67afe47ac2be989461cc39f439868d70bb83e9330"
+    }
+  ],
+  "visualReview": "Eight references inspected; shell objects removed, individual silhouettes and colors retained; gazebo reframed to retain finial and steps.",
+  "status": "Reference images, no new mesh generation or assembly."
+}

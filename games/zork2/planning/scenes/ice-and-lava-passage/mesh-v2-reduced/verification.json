@@ -1,0 +1,37 @@
+{
+  "sourceSha256": "7b6a4b5f71b4552f1fa27c07d9875c11ba1ca856c81dd287ac1eddc6f49c9f09",
+  "sourceUnchanged": true,
+  "modifierUnappliedInBlend": true,
+  "weightMethod": "maximum incident edge angle; lower weights at sharp bends and boundaries",
+  "meshes": [
+    {
+      "object": "geometry_0",
+      "originalVertices": 143120,
+      "originalTriangles": 286228,
+      "reducedVertices": 28628,
+      "reducedTriangles": 57244,
+      "weightRange": [
+        0.03,
+        0.999736193918691
+      ],
+      "ratio": 0.20000000298023224,
+      "vertexGroup": "Simplify broad surfaces - editable"
+    }
+  ],
+  "exportedMeshes": [
+    {
+      "vertices": 171649,
+      "triangles": 57244
+    }
+  ],
+  "files": {
+    "ice-and-lava-passage-reduced-v2.blend": {
+      "bytes": 11526645,
+      "sha256": "0bcd97987f7e1d40477d65bb80ce5d571bad0c867cdbc3b850a93bb59c616f83"
+    },
+    "ice-and-lava-passage-reduced-v2.glb": {
+      "bytes": 8082372,
+      "sha256": "c9818ce1acf5795cb53be4d525c9fecab3ce28fbdf5c24e486ba2bfa90d9fbaf"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "source": "games/zork2/planning/scenes/underground-garden/concept-low-hedges-v2/mesh-v1/garden-low-hedges-v1.glb",
+  "sourceSha256": "9a62035f8ddb30ce45a1bb5bc88f58fba642a8e84cf62edbf4980c6a044424f0",
+  "sourceUnchanged": true,
+  "geometryUnchanged": true,
+  "geometryFingerprint": "a0d024abaab99b9b8388a58f9808462d2dca1add6d30805da9062eea9f81c615",
+  "vertices": 656367,
+  "triangles": 1312704,
+  "cameraAzimuthChangeDegrees": 90,
+  "resolution": [
+    3840,
+    2160
+  ],
+  "format": "JPEG",
+  "texture": "35-degree single-reference color projection; vertices and faces unchanged",
+  "image": "garden-low-hedges-color-side90-4k.jpg"
+}

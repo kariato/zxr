@@ -1,0 +1,44 @@
+{
+  "scene": "garden-low-hedges-flower-free",
+  "pipeline": {
+    "implementation": "Hunyuan3D-Swift/MLX",
+    "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+    "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+    "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+    "steps": 8,
+    "guidance": 5,
+    "octree": 512,
+    "seed": 42,
+    "quantize": 8,
+    "licence": "Tencent Hunyuan 3D 2.0 Community License",
+    "scope": "US-only local prototype"
+  },
+  "reference": "../reference.png",
+  "referenceSha256": "186f9fb84fed1408fecf553622ee88e831dc826403fc572ba1b1fde7b256b443",
+  "file": "garden-low-hedges-v1.glb",
+  "sha256": "9a62035f8ddb30ce45a1bb5bc88f58fba642a8e84cf62edbf4980c6a044424f0",
+  "bytes": 23629644,
+  "vertices": 656367,
+  "triangles": 1312704,
+  "boundsNativeUnits": [
+    [
+      -0.9851347122160704,
+      -0.2905439275780002,
+      -0.9983278618533433
+    ],
+    [
+      0.9928287726159053,
+      0.1612779854163522,
+      0.9953773877481664
+    ]
+  ],
+  "seconds": 152.32,
+  "geometryPostprocessing": "none",
+  "textureMethod": "none; shape-only output",
+  "review": "draft; not integrated into the game",
+  "limitations": [
+    "Single-image inferred geometry; inspect hidden surfaces and passage continuity.",
+    "Native model units; no physical scale or walkability asserted.",
+    "Low bushes, sculpture separation and gazebo posts require multiview geometry review."
+  ]
+}

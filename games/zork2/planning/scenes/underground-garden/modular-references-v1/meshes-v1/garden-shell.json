@@ -1,0 +1,39 @@
+{
+  "name": "garden-shell",
+  "pipeline": {
+    "implementation": "Hunyuan3D-Swift/MLX",
+    "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+    "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+    "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+    "steps": 8,
+    "guidance": 5,
+    "octree": 512,
+    "seed": 42,
+    "quantize": 8,
+    "licence": "Tencent Hunyuan 3D 2.0 Community License",
+    "scope": "US-only local prototype"
+  },
+  "reference": "../garden-shell.png",
+  "referenceSha256": "33845f285c07ce5c6b3619733ef5246a2b4709402f41adb373363122e2a54643",
+  "file": "garden-shell.glb",
+  "sha256": "83e674254b9fc94449548e9dc1e7c1f8ba6cae56ccd1189e9d8683871b7e1b70",
+  "bytes": 20347560,
+  "vertices": 565212,
+  "triangles": 1130352,
+  "boundsNativeUnits": [
+    [
+      -0.9855413018132386,
+      -0.18203900260141914,
+      -0.9880687000159281
+    ],
+    [
+      0.9935133621962011,
+      0.1842813729477608,
+      0.9802020183015754
+    ]
+  ],
+  "seconds": 129.24,
+  "geometryPostprocessing": "none",
+  "textureMethod": "none; shape only",
+  "status": "draft; inspect isolated hidden geometry and openings"
+}

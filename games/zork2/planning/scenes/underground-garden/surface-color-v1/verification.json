@@ -1,0 +1,35 @@
+{
+  "source": "out/asset-production/underground-garden-v1/raw.glb",
+  "sourceSha256": "00b12e3a45280460f203353657c48dbd4b8ed9ec90a0ba2439118cd825fc07f6",
+  "sourceUnchanged": true,
+  "geometryUnchanged": true,
+  "geometryFingerprint": "f3a44be3f6cab051f253d9e3466f2595af90ef1b672f30b85469a39c38771d69",
+  "triangles": 396214,
+  "reimportedTriangles": 396214,
+  "colorMethod": "3D position/height/normal-based vertex colors; no image projection",
+  "hasVertexColors": true,
+  "hasProjectedImages": false,
+  "renderAngles": [
+    0,
+    90,
+    180
+  ],
+  "renderResolution": [
+    3840,
+    2160
+  ],
+  "limitations": [
+    "Surface colors do not recover missing gazebo, topiary or path geometry.",
+    "Procedural material classification is approximate; no learned multiview paint."
+  ],
+  "files": {
+    "underground-garden-surface-color-v1.blend": {
+      "bytes": 11288163,
+      "sha256": "a68502fe0b288b6357b3c4c8a97a944a77c81e57dafb7227ed68f873af68f1ca"
+    },
+    "underground-garden-surface-color-v1.glb": {
+      "bytes": 47372000,
+      "sha256": "869f459a99dd765052e5f5d705077dac38e6db195c3d14caa49627b3c6c46afd"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "geometryUnchanged": true,
+  "geometryFingerprint": "f7aebd041dbb6009e4bba7c37ae74482d7970cfa7d3288042cfd28bf9b8d90de",
+  "originalGLBSha256": "6fe6151cb3c38300f560e9a05d37f2ec2c478aaa22194eb4f255b1342ed57622",
+  "originalGLBUnchanged": true,
+  "textureMethod": "single-reference planar projection at 60 degrees; not learned paint",
+  "referenceSha256": "1352a8923dba5ad745470880aa01d57e9ae1dddd09190c553582181095d51405",
+  "files": {
+    "carousel-hub-color-v1.blend": {
+      "bytes": 8284618,
+      "sha256": "6a14de239fd1b77ab991b48f33b77eff3c186884cc1d5bf7ed9ba251d9e14165"
+    },
+    "carousel-hub-color-v1.glb": {
+      "bytes": 23596032,
+      "sha256": "b05611290ac4737f056ab75ed37e7a0323738161617f5c0b57b2ac68dbe7af5e"
+    }
+  }
+}

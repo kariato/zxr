@@ -1,0 +1,44 @@
+{
+  "scene": "carousel-hub",
+  "pipeline": {
+    "implementation": "Hunyuan3D-Swift/MLX",
+    "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+    "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+    "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+    "steps": 8,
+    "guidance": 5,
+    "octree": 256,
+    "seed": 42,
+    "quantize": 8,
+    "licence": "Tencent Hunyuan 3D 2.0 Community License",
+    "scope": "US-only local prototype"
+  },
+  "reference": "../concept-v1.png",
+  "referenceSha256": "1352a8923dba5ad745470880aa01d57e9ae1dddd09190c553582181095d51405",
+  "file": "carousel-hub-v1.glb",
+  "sha256": "6fe6151cb3c38300f560e9a05d37f2ec2c478aaa22194eb4f255b1342ed57622",
+  "bytes": 3598288,
+  "vertices": 99924,
+  "triangles": 199868,
+  "boundsNativeUnits": [
+    [
+      -0.9973748365436561,
+      -0.12323116794701805,
+      -0.8922480092238873
+    ],
+    [
+      0.9898936006759831,
+      0.11455258391159417,
+      0.8841213038934534
+    ]
+  ],
+  "seconds": 65.09,
+  "geometryPostprocessing": "none",
+  "textureMethod": "none; shape-only output",
+  "review": "draft; not integrated into the game",
+  "limitations": [
+    "Single-image inferred geometry; inspect hidden surfaces and passage continuity.",
+    "Native model units; no physical scale or walkability asserted.",
+    "Eight tunnel mouths and west crawl need clearance review. Source movement remains authoritative."
+  ]
+}

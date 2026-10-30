@@ -1,0 +1,25 @@
+{
+  "source": "games/zork2/planning/scenes/underground-garden/modular-references-v1/blender-assembly-v1/garden-modular-editable-v1.blend",
+  "sourceSha256": "f131b368e6d547f62e243ae91c5ac76485968acc99eacb449cd60a80241efdec",
+  "sourceUnchanged": true,
+  "geometryUnchanged": true,
+  "geometryFingerprint": "a8af93f0b3315bc97a53d2eb106907013ef81d5b8180efa64024e84dca2ffcf5",
+  "independentAssets": 8,
+  "texturedAssets": [
+    "garden-shell"
+  ],
+  "reference": "../garden-shell.png",
+  "referenceSha256": "33845f285c07ce5c6b3619733ef5246a2b4709402f41adb373363122e2a54643",
+  "textureMethod": "35-degree single-image UV projection; not multiview paint",
+  "renderResolution": [
+    3840,
+    2160
+  ],
+  "views": [
+    "front",
+    "side"
+  ],
+  "file": "garden-modular-textured-v2.blend",
+  "bytes": 281462818,
+  "sha256": "c94c0e88f8b4b278e0055c11673e2e5bcbfb472f5561d3d521059b397a89d6ff"
+}

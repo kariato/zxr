@@ -1,0 +1,44 @@
+{
+  "scene": "wizards-suite",
+  "pipeline": {
+    "implementation": "Hunyuan3D-Swift/MLX",
+    "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+    "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+    "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+    "steps": 8,
+    "guidance": 5,
+    "octree": 256,
+    "seed": 42,
+    "quantize": 8,
+    "licence": "Tencent Hunyuan 3D 2.0 Community License",
+    "scope": "US-only local prototype"
+  },
+  "reference": "../concept-v1.png",
+  "referenceSha256": "0e9198e17b5e4f26ca160d43ea8cd3d9aaac0962ec6b3b9b7cbbc36a9cd03ae6",
+  "file": "wizards-suite-v1.glb",
+  "sha256": "69a1703be6b9fc8d921b677883c3aed5f3c5e09f955ede3fe226e349c06b9a26",
+  "bytes": 6495968,
+  "vertices": 180415,
+  "triangles": 360850,
+  "boundsNativeUnits": [
+    [
+      -0.9980423108814365,
+      -0.19690246633600517,
+      -0.9940695422188721
+    ],
+    [
+      0.9899855892052547,
+      0.039236525821910284,
+      0.9713282286365761
+    ]
+  ],
+  "seconds": 75.83,
+  "geometryPostprocessing": "none",
+  "textureMethod": "none; shape-only output",
+  "review": "draft; not integrated into the game",
+  "limitations": [
+    "Single-image inferred geometry; inspect hidden surfaces and passage continuity.",
+    "Native model units; no physical scale or walkability asserted.",
+    "Mutable door, aquarium, chalk and furnishings are separate future assets. Passage clearance needs review."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "sourceSha256": "9a62035f8ddb30ce45a1bb5bc88f58fba642a8e84cf62edbf4980c6a044424f0",
+  "geometryAndUVFingerprint": "a0d024abaab99b9b8388a58f9808462d2dca1add6d30805da9062eea9f81c615",
+  "geometryAndUVsUnchanged": true,
+  "sourceFileUnchanged": true,
+  "meshObjects": 1,
+  "boundsBlenderNativeUnits": [
+    [
+      -0.9851347208023071,
+      -0.9953773617744446,
+      -0.29054391384124756
+    ],
+    [
+      0.9928287863731384,
+      0.9983278512954712,
+      0.16127797961235046
+    ]
+  ],
+  "reviewImages": [
+    "review-front.png",
+    "review-side.png",
+    "review-back.png"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "scene": "ice-and-lava-passage",
+  "pipeline": {
+    "implementation": "Hunyuan3D-Swift/MLX",
+    "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+    "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+    "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+    "steps": 8,
+    "guidance": 5,
+    "octree": 256,
+    "seed": 42,
+    "quantize": 8,
+    "licence": "Tencent Hunyuan 3D 2.0 Community License",
+    "scope": "US-only local prototype"
+  },
+  "reference": "../concept-v1.png",
+  "referenceSha256": "5d21a4e6d0b2b8605a7143a5cc09634c2c6c0c05e2b6cbac5b716e26709c9e86",
+  "file": "ice-and-lava-passage-v1.glb",
+  "sha256": "cd91c9670fb51dd25abd0d4971b91b182fca062e826c944bf8c6b84ada72eeac",
+  "bytes": 5152964,
+  "vertices": 143120,
+  "triangles": 286228,
+  "boundsNativeUnits": [
+    [
+      -0.9932927293722269,
+      -0.2315502397218392,
+      -0.9035027143314678
+    ],
+    [
+      0.9886786804653911,
+      0.10234845254047853,
+      0.8601600310450896
+    ]
+  ],
+  "seconds": 75.3,
+  "geometryPostprocessing": "none",
+  "textureMethod": "none; shape-only output",
+  "review": "draft; not integrated into the game",
+  "limitations": [
+    "Single-image inferred geometry; inspect hidden surfaces and passage continuity.",
+    "Native model units; no physical scale or walkability asserted.",
+    "Glacier is not separated from the generated shell. No room spawns or walking planes yet."
+  ]
+}

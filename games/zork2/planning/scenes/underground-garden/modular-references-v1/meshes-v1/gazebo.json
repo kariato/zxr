@@ -1,0 +1,39 @@
+{
+  "name": "gazebo",
+  "pipeline": {
+    "implementation": "Hunyuan3D-Swift/MLX",
+    "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+    "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+    "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+    "steps": 8,
+    "guidance": 5,
+    "octree": 512,
+    "seed": 42,
+    "quantize": 8,
+    "licence": "Tencent Hunyuan 3D 2.0 Community License",
+    "scope": "US-only local prototype"
+  },
+  "reference": "../gazebo.png",
+  "referenceSha256": "8b748488030e75e82f1bdab67afe47ac2be989461cc39f439868d70bb83e9330",
+  "file": "gazebo.glb",
+  "sha256": "8bc457e75b16cea10e12cf20dc0fc0cb8091e2857ca96e3e0c203511f60a12cc",
+  "bytes": 60570856,
+  "vertices": 1682383,
+  "triangles": 3365122,
+  "boundsNativeUnits": [
+    [
+      -0.9630365797205267,
+      -0.9986737485006834,
+      -0.9283768326396478
+    ],
+    [
+      0.9555159367394697,
+      0.9860833361580639,
+      0.929415493344806
+    ]
+  ],
+  "seconds": 251.78,
+  "geometryPostprocessing": "none",
+  "textureMethod": "none; shape only",
+  "status": "draft; inspect isolated hidden geometry and openings"
+}

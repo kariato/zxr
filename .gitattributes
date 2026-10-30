@@ -1,0 +1,14 @@
+games/zork2/planning/scenes/underground-garden/concept-top-down-v1/assembly-v1/garden-gazebo-topiary-v1.blend filter=lfs diff=lfs merge=lfs -text
+games/zork2/planning/scenes/underground-garden/modular-references-v1/blender-assembly-v1/garden-modular-editable-v1.blend filter=lfs diff=lfs merge=lfs -text
+games/zork2/planning/scenes/underground-garden/modular-references-v1/blender-assembly-v2-textured/garden-modular-textured-v2.blend1 filter=lfs diff=lfs merge=lfs -text
+games/zork2/planning/scenes/underground-garden/modular-references-v1/blender-assembly-v3-reduced/garden-modular-reduced-v3.blend filter=lfs diff=lfs merge=lfs -text
+games/zork2/planning/scenes/underground-garden/modular-references-v1/blender-assembly-v3-reduced/garden-modular-reduced-v3.glb filter=lfs diff=lfs merge=lfs -text
+games/zork2/planning/scenes/underground-garden/modular-references-v1/meshes-v1/gazebo.glb filter=lfs diff=lfs merge=lfs -text
+games/zork2/planning/scenes/volcano/mesh-v1-color/volcano-color-v1.glb filter=lfs diff=lfs merge=lfs -text
+games/zork2/planning/scenes/underground-garden/concept-top-down-v1/assembly-v1/garden-gazebo-topiary-v1.blend1 filter=lfs diff=lfs merge=lfs -text
+games/zork2/planning/scenes/underground-garden/concept-top-down-v1/assembly-v1/garden-gazebo-topiary-v1.glb filter=lfs diff=lfs merge=lfs -text
+games/zork2/planning/scenes/underground-garden/concept-top-down-v1/mesh-v1-textured/garden-top-down-textured-v1.glb filter=lfs diff=lfs merge=lfs -text
+games/zork2/planning/scenes/underground-garden/modular-references-v1/blender-assembly-v1/garden-modular-editable-v1.glb filter=lfs diff=lfs merge=lfs -text
+games/zork2/planning/scenes/underground-garden/modular-references-v1/blender-assembly-v2-textured/garden-modular-textured-v2.blend filter=lfs diff=lfs merge=lfs -text
+games/zork2/planning/scenes/underground-garden/modular-references-v1/blender-assembly-v3-reduced/garden-decimation-controls-v3.blend filter=lfs diff=lfs merge=lfs -text
+games/zork2/planning/scenes/volcano/mesh-v2-color/volcano-color-v2.glb filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,37 @@
+{
+  "sourceSha256": "6a14de239fd1b77ab991b48f33b77eff3c186884cc1d5bf7ed9ba251d9e14165",
+  "sourceUnchanged": true,
+  "modifierUnappliedInBlend": true,
+  "weightMethod": "maximum incident edge angle; lower weights at sharp bends and boundaries",
+  "meshes": [
+    {
+      "object": "geometry_0",
+      "originalVertices": 99924,
+      "originalTriangles": 199868,
+      "reducedVertices": 9983,
+      "reducedTriangles": 19986,
+      "weightRange": [
+        0.03,
+        0.9998377005986405
+      ],
+      "ratio": 0.10000000149011612,
+      "vertexGroup": "Simplify broad surfaces - editable"
+    }
+  ],
+  "exportedMeshes": [
+    {
+      "vertices": 59877,
+      "triangles": 19986
+    }
+  ],
+  "files": {
+    "carousel-hub-reduced-v2.blend": {
+      "bytes": 8888670,
+      "sha256": "6eebee7250d2a6b8bb97a04953c90ac36113945e05da5d1e23265a217cb2a95f"
+    },
+    "carousel-hub-reduced-v2.glb": {
+      "bytes": 4291096,
+      "sha256": "af9f7ff198849c8f85d1b6da6013bc70244ebdaab9505b5b26977c319b2500d5"
+    }
+  }
+}

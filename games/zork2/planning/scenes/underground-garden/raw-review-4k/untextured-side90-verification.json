@@ -1,0 +1,17 @@
+{
+  "source": "out/asset-production/underground-garden-v1/raw.glb",
+  "sourceSha256": "00b12e3a45280460f203353657c48dbd4b8ed9ec90a0ba2439118cd825fc07f6",
+  "sourceUnchanged": true,
+  "geometryUnchanged": true,
+  "geometryFingerprint": "f3a44be3f6cab051f253d9e3466f2595af90ef1b672f30b85469a39c38771d69",
+  "vertices": 198159,
+  "triangles": 396214,
+  "cameraAzimuthChangeDegrees": 90,
+  "resolution": [
+    3840,
+    2160
+  ],
+  "format": "JPEG",
+  "texture": "none; raw shape with neutral review lighting",
+  "image": "underground-garden-original-high-poly-untextured-side90-4k.jpg"
+}

@@ -1,0 +1,210 @@
+{
+  "assets": [
+    {
+      "name": "garden-shell",
+      "sourceSha256": "83e674254b9fc94449548e9dc1e7c1f8ba6cae56ccd1189e9d8683871b7e1b70",
+      "geometryFingerprint": "ebc3c7fd1ca77694689420270029e623deefe506955b8320681d3e79debfbb71",
+      "scale": 15.158752845034279,
+      "nativeBounds": [
+        [
+          -0.9855412840843201,
+          -0.9802020192146301,
+          -0.18203900754451752
+        ],
+        [
+          0.9935133457183838,
+          0.988068699836731,
+          0.1842813789844513
+        ]
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "dragon",
+      "sourceSha256": "4654fcaf2de4804cd10f2b1ca0101842ec036852dc0e5ce6a1fc21e3fa88e046",
+      "geometryFingerprint": "51c770598f4a55baff29d413e8f9796907ddd8b542405e59fec81e64b8f883ac",
+      "scale": 2.293020366575117,
+      "nativeBounds": [
+        [
+          -0.8217601776123047,
+          -0.9947473406791687,
+          -0.8735976815223694
+        ],
+        [
+          0.7799035310745239,
+          1.0002326965332031,
+          0.8708264231681824
+        ]
+      ],
+      "location": [
+        -3.59999942779541,
+        -3.3830947875976562,
+        1.5055031776428223
+      ]
+    },
+    {
+      "name": "unicorn",
+      "sourceSha256": "d046aa5f18826060819cc614dcbb3d4d0c1e73f414a58fef33bf39a4bc8cf8cb",
+      "geometryFingerprint": "e395550687b4191019babdefd052f3a658ed20720030a056ad20deb093c2ec8c",
+      "scale": 2.1975839285468686,
+      "nativeBounds": [
+        [
+          -0.9774717092514038,
+          -0.2697696387767792,
+          -0.7726340889930725
+        ],
+        [
+          0.985264778137207,
+          0.27420300245285034,
+          0.7745195627212524
+        ]
+      ],
+      "location": [
+        3.000000476837158,
+        -3.7526397705078125,
+        1.5026307106018066
+      ]
+    },
+    {
+      "name": "serpent",
+      "sourceSha256": "2b37671c634e39533085b6b9b6bac311c69f3e08f1a761107a813618c6a46fe5",
+      "geometryFingerprint": "485ae3b2e6ae4616c785743e6da1abf9e65bbe69a64816f79fcf99a7b7a9208b",
+      "scale": 2.1063430529872225,
+      "nativeBounds": [
+        [
+          -0.6323123574256897,
+          -0.586242139339447,
+          -0.9988466501235962
+        ],
+        [
+          0.6261208057403564,
+          0.5956204533576965,
+          0.9951305389404297
+        ]
+      ],
+      "location": [
+        9.0,
+        -0.45496368408203125,
+        1.2866387367248535
+      ]
+    },
+    {
+      "name": "dog",
+      "sourceSha256": "fca73c27ca116c969178810da74fb7641b3f0af8761a9d6b582bba53abeb6865",
+      "geometryFingerprint": "e93b5431287a2bcbbdaa3675914fb7ef1739d3c71304a22a077f50b090535ae3",
+      "scale": 1.3571269887968862,
+      "nativeBounds": [
+        [
+          -0.8427028656005859,
+          -0.5142415165901184,
+          -0.9990197420120239
+        ],
+        [
+          0.8116859197616577,
+          0.5181189179420471,
+          0.9904772043228149
+        ]
+      ],
+      "location": [
+        11.100000381469727,
+        -6.0,
+        1.059999942779541
+      ]
+    },
+    {
+      "name": "woman-violet",
+      "sourceSha256": "def752acdc5fb48149abdfc90efc7ad55b5a61edd4d2b4e9b2368846e826f6fb",
+      "geometryFingerprint": "5d5534d455789f6c571717b8efe1e348f3f42b9a09be79150204a5847713a388",
+      "scale": 1.5063176178443203,
+      "nativeBounds": [
+        [
+          -0.3233528435230255,
+          -0.27382692694664,
+          -0.9988715052604675
+        ],
+        [
+          0.3190211355686188,
+          0.27812957763671875,
+          0.9927403330802917
+        ]
+      ],
+      "location": [
+        12.0,
+        2.9984817504882812,
+        0.9615769982337952
+      ]
+    },
+    {
+      "name": "woman-rose",
+      "sourceSha256": "f68d78b3d7c7127532e987ff0fd3ccee40d748144f199158d31afebaf94ffba3",
+      "geometryFingerprint": "d707a3ac8b301f964dc5b4ec95cf585e871c13e53ba9c32c7bc54b7c4f22b12e",
+      "scale": 1.5054144242095016,
+      "nativeBounds": [
+        [
+          -0.2949404716491699,
+          -0.22389239072799683,
+          -0.9989367127418518
+        ],
+        [
+          0.28394508361816406,
+          0.23054957389831543,
+          0.9938700199127197
+        ]
+      ],
+      "location": [
+        13.5,
+        -2.369659423828125,
+        0.5342584252357483
+      ]
+    },
+    {
+      "name": "gazebo",
+      "sourceSha256": "8bc457e75b16cea10e12cf20dc0fc0cb8091e2857ca96e3e0c203511f60a12cc",
+      "geometryFingerprint": "16e08f10c7e74b202b7378c2be3bf4f7fe16e467f4ad7017f174a383609b2c09",
+      "scale": 2.771119999947145,
+      "nativeBounds": [
+        [
+          -0.9630365967750549,
+          -0.9294154644012451,
+          -0.9986737370491028
+        ],
+        [
+          0.9555159211158752,
+          0.9283768534660339,
+          0.9860833287239075
+        ]
+      ],
+      "location": [
+        2.700000286102295,
+        11.462936401367188,
+        1.575533390045166
+      ]
+    }
+  ],
+  "independentTransformRoots": 8,
+  "exportedTriangles": 11085722,
+  "geometryUnchanged": true,
+  "blendReopened": true,
+  "referenceImagesPacked": 8,
+  "textureMethod": "solid editable material colors; no single-image projection",
+  "files": {
+    "garden-modular-editable-v1.blend": {
+      "bytes": 272649161,
+      "sha256": "f131b368e6d547f62e243ae91c5ac76485968acc99eacb449cd60a80241efdec"
+    },
+    "garden-modular-editable-v1.glb": {
+      "bytes": 926650128,
+      "sha256": "10a992bfe4d7af9c709e35dbcc80b056bb8e0a14100e7dc4c74ea0741a899cd6"
+    }
+  },
+  "limitations": [
+    "Inferred single-image geometry; review anatomy and hidden surfaces.",
+    "Approximate placements and sizes, editable by user.",
+    "Gazebo may have fused posts or railings.",
+    "No learned texture paint or runtime integration."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "source": "games/zork2/planning/scenes/underground-garden/raw-review-4k/underground-garden-original-high-poly-color.glb",
+  "sourceSha256": "9ec766d1c5e1a4befd4c647b94f7524c56277d4957cf12469ad989c37cc777a1",
+  "sourceUnchanged": true,
+  "geometryUnchanged": true,
+  "geometryFingerprint": "40583e14104f72ff12214dee43f06bb680020c61bcd7ef3bdcfc734eaceaf5a1",
+  "vertices": 1183780,
+  "triangles": 396214,
+  "cameraAzimuthChangeDegrees": 90,
+  "resolution": [
+    3840,
+    2160
+  ],
+  "format": "JPEG",
+  "texture": "existing embedded GLB projection, unchanged",
+  "image": "underground-garden-original-high-poly-color-side90-4k.jpg"
+}

@@ -1,0 +1,13 @@
+{
+  "loadsSuccessfully": true,
+  "finiteVertices": true,
+  "validFaceIndices": true,
+  "vertices": 405004,
+  "triangles": 809993,
+  "watertight": false,
+  "extentsNativeUnits": [
+    1.9942457675933838,
+    1.333894670009613,
+    0.13659773021936417
+  ]
+}

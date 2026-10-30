@@ -1,0 +1,44 @@
+{
+  "scene": "garden-top-down",
+  "pipeline": {
+    "implementation": "Hunyuan3D-Swift/MLX",
+    "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+    "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+    "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+    "steps": 8,
+    "guidance": 5,
+    "octree": 512,
+    "seed": 42,
+    "quantize": 8,
+    "licence": "Tencent Hunyuan 3D 2.0 Community License",
+    "scope": "US-only local prototype"
+  },
+  "reference": "../reference.png",
+  "referenceSha256": "4cea215e7bc11c9d806ebaa5650dbb5764b8e8e572929cd1cc14393e004d9c55",
+  "file": "garden-top-down-v1.glb",
+  "sha256": "3fe1ab26ae3b505d55add0cdef6bc0ed6430ec6b9d10eaffa7e217b6085dcab4",
+  "bytes": 14580752,
+  "vertices": 405004,
+  "triangles": 809993,
+  "boundsNativeUnits": [
+    [
+      -0.9991514889772906,
+      -0.6690220168448295,
+      -0.07037795983798911
+    ],
+    [
+      0.9950942750482934,
+      0.6648726313164799,
+      0.06621977210027397
+    ]
+  ],
+  "seconds": 131.28,
+  "geometryPostprocessing": "none",
+  "textureMethod": "none; shape-only output",
+  "review": "draft; not integrated into the game",
+  "limitations": [
+    "Single-image inferred geometry; inspect hidden surfaces and passage continuity.",
+    "Native model units; no physical scale or walkability asserted.",
+    "Overhead reference does not establish hedge heights or hidden underside geometry."
+  ]
+}

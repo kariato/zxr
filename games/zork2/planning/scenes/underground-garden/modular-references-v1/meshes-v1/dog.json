@@ -1,0 +1,39 @@
+{
+  "name": "dog",
+  "pipeline": {
+    "implementation": "Hunyuan3D-Swift/MLX",
+    "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+    "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+    "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+    "steps": 8,
+    "guidance": 5,
+    "octree": 512,
+    "seed": 42,
+    "quantize": 8,
+    "licence": "Tencent Hunyuan 3D 2.0 Community License",
+    "scope": "US-only local prototype"
+  },
+  "reference": "../dog.png",
+  "referenceSha256": "6a15800a1735dc76ccc1bc5d8d6e5064d551ebc80719462f5a762065e8214c8a",
+  "file": "dog.glb",
+  "sha256": "fca73c27ca116c969178810da74fb7641b3f0af8761a9d6b582bba53abeb6865",
+  "bytes": 30330900,
+  "vertices": 842563,
+  "triangles": 1684946,
+  "boundsNativeUnits": [
+    [
+      -0.8427028860492535,
+      -0.9990197553147041,
+      -0.5181189222286853
+    ],
+    [
+      0.8116859130362617,
+      0.9904772308400922,
+      0.5142415339822386
+    ]
+  ],
+  "seconds": 197.81,
+  "geometryPostprocessing": "none",
+  "textureMethod": "none; shape only",
+  "status": "draft; inspect isolated hidden geometry and openings"
+}

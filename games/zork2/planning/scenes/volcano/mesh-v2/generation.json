@@ -1,0 +1,44 @@
+{
+  "scene": "volcano",
+  "pipeline": {
+    "implementation": "Hunyuan3D-Swift/MLX",
+    "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+    "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+    "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+    "steps": 8,
+    "guidance": 5,
+    "octree": 256,
+    "seed": 42,
+    "quantize": 8,
+    "licence": "Tencent Hunyuan 3D 2.0 Community License",
+    "scope": "US-only local prototype"
+  },
+  "reference": "../concept-v2.png",
+  "referenceSha256": "045d535dbd0ba8b05fab55afc0eb764a8fd598e65d2f93df07286542252f6be8",
+  "file": "volcano-v2.glb",
+  "sha256": "8b2cebec7fa6b434d77fe95c8c610f186257479281261b20bf55fd5da2c74b33",
+  "bytes": 10334084,
+  "vertices": 287036,
+  "triangles": 574072,
+  "boundsNativeUnits": [
+    [
+      -0.6978746352741967,
+      -0.9984837126520498,
+      -0.6622605025994345
+    ],
+    [
+      0.7047717361103976,
+      0.9898163638926045,
+      0.7309022352024903
+    ]
+  ],
+  "seconds": 86.46,
+  "geometryPostprocessing": "none",
+  "textureMethod": "none; shape-only output",
+  "review": "draft; not integrated into the game",
+  "limitations": [
+    "Single-image inferred geometry; inspect hidden surfaces and passage continuity.",
+    "Native model units; no physical scale or walkability asserted.",
+    "Ledges and room attachments need manual clearance review. No room spawns or walking planes yet."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "woman-violet",
+  "pipeline": {
+    "implementation": "Hunyuan3D-Swift/MLX",
+    "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+    "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+    "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+    "steps": 8,
+    "guidance": 5,
+    "octree": 512,
+    "seed": 42,
+    "quantize": 8,
+    "licence": "Tencent Hunyuan 3D 2.0 Community License",
+    "scope": "US-only local prototype"
+  },
+  "reference": "../woman-violet.png",
+  "referenceSha256": "a167b2f679f602dafab964a27201ea67206111fee3f8c447a502176f6482ce90",
+  "file": "woman-violet.glb",
+  "sha256": "def752acdc5fb48149abdfc90efc7ad55b5a61edd4d2b4e9b2368846e826f6fb",
+  "bytes": 11465060,
+  "vertices": 318456,
+  "triangles": 636900,
+  "boundsNativeUnits": [
+    [
+      -0.32335285617617116,
+      -0.9988715118767436,
+      -0.27812956787191556
+    ],
+    [
+      0.31902114775143664,
+      0.9927403299388651,
+      0.27382693978392547
+    ]
+  ],
+  "seconds": 100.19,
+  "geometryPostprocessing": "none",
+  "textureMethod": "none; shape only",
+  "status": "draft; inspect isolated hidden geometry and openings"
+}

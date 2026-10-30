@@ -1,0 +1,30 @@
+{
+  "sourceSha256": "3fe1ab26ae3b505d55add0cdef6bc0ed6430ec6b9d10eaffa7e217b6085dcab4",
+  "sourceUnchanged": true,
+  "localGeometryUnchanged": true,
+  "geometryFingerprint": "fa6b93a54f55543f7203c3e439cee570691302e08c6383ddf78d9c2044e5b4cd",
+  "orientation": "Rigid rotation to horizontal XY in Blender, Y-up GLB",
+  "textureMethod": "Overhead reference planar UV projection",
+  "embeddedImages": 1,
+  "triangles": 809993,
+  "reimportedTriangles": 809993,
+  "cameraElevationDegrees": 45,
+  "resolution": [
+    2560,
+    1440
+  ],
+  "files": {
+    "garden-top-down-textured-v1.blend": {
+      "bytes": 26384181,
+      "sha256": "f3845847817baeadcee48be7a080c44529d6a9ebb41ddc5891e8d2a68db230a4"
+    },
+    "garden-top-down-textured-v1.glb": {
+      "bytes": 89893080,
+      "sha256": "fac750bc6ace18a37c91dfffc6d41ffbfd3ff81a34525a0c265e49367992fbb8"
+    },
+    "garden-45-degree.png": {
+      "bytes": 6286218,
+      "sha256": "4deef601ea9e0184d58934a836d8e444cf6f8b4610e85b16a6a98e25c3b4b4e2"
+    }
+  }
+}

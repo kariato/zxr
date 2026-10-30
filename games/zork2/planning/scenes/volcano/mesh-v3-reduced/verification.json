@@ -1,0 +1,37 @@
+{
+  "sourceSha256": "adfc44b7bba3573808569392ff410746b0260b60a1d8477df3e8596f9a400394",
+  "sourceUnchanged": true,
+  "modifierUnappliedInBlend": true,
+  "weightMethod": "maximum incident edge angle; lower weights at sharp bends and boundaries",
+  "meshes": [
+    {
+      "object": "geometry_0",
+      "originalVertices": 287036,
+      "originalTriangles": 574072,
+      "reducedVertices": 28703,
+      "reducedTriangles": 57406,
+      "weightRange": [
+        0.03,
+        0.9997051591334961
+      ],
+      "ratio": 0.10000000149011612,
+      "vertexGroup": "Simplify broad surfaces - editable"
+    }
+  ],
+  "exportedMeshes": [
+    {
+      "vertices": 172164,
+      "triangles": 57406
+    }
+  ],
+  "files": {
+    "volcano-reduced-v3.blend": {
+      "bytes": 21998756,
+      "sha256": "15d4a7830b65bdcc5669f828b73893a45ef13740fa7175da2ecc4a1c37683fc8"
+    },
+    "volcano-reduced-v3.glb": {
+      "bytes": 8782224,
+      "sha256": "4e032c1c065b1c78b444b079ce488c5b5ffeb048605ab14583713d6e2542581e"
+    }
+  }
+}

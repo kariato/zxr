@@ -1,0 +1,79 @@
+{
+  "placements": [
+    {
+      "name": "gazebo",
+      "source": "games/zork2/planning/scenes/underground-garden/modular-references-v1/gazebo-textured-v1/gazebo-textured.glb",
+      "center": [
+        -0.0020285844802856445,
+        -0.002074688673019409,
+        0.06567561626434326
+      ],
+      "scaleFactor": 0.05438568276229458
+    },
+    {
+      "name": "dragon",
+      "source": "games/zork2/planning/scenes/underground-garden/modular-references-v1/hedge-models-v1/dragon-hedge.glb",
+      "center": [
+        -0.5404749417304993,
+        -0.25551468729972837,
+        0.06544208526611328
+      ],
+      "scaleFactor": 0.06482151068762403
+    },
+    {
+      "name": "unicorn",
+      "source": "games/zork2/planning/scenes/underground-garden/modular-references-v1/hedge-models-v1/unicorn-hedge.glb",
+      "center": [
+        0.536417772769928,
+        -0.25551468729972837,
+        0.06574022769927979
+      ],
+      "scaleFactor": 0.07332835703553338
+    },
+    {
+      "name": "serpent",
+      "source": "games/zork2/planning/scenes/underground-garden/modular-references-v1/hedge-models-v1/serpent-hedge.glb",
+      "center": [
+        0.536417772769928,
+        0.25136530995368955,
+        0.06547284126281738
+      ],
+      "scaleFactor": 0.06647098297200267
+    },
+    {
+      "name": "dog",
+      "source": "games/zork2/planning/scenes/underground-garden/modular-references-v1/hedge-models-v1/dog-hedge.glb",
+      "center": [
+        -0.5404749417304993,
+        0.25136530995368955,
+        0.06554841995239258
+      ],
+      "scaleFactor": 0.07756015778204374
+    },
+    {
+      "name": "woman-violet",
+      "source": "games/zork2/planning/scenes/underground-garden/modular-references-v1/hedge-models-v1/woman-violet-hedge.glb",
+      "center": [
+        -0.2413380765914917,
+        0.33139899373054504,
+        0.06537854671478271
+      ],
+      "scaleFactor": 0.0797721066622966
+    },
+    {
+      "name": "woman-rose",
+      "source": "games/zork2/planning/scenes/underground-garden/modular-references-v1/hedge-models-v1/woman-rose-hedge.glb",
+      "center": [
+        0.2372809076309204,
+        -0.33554837107658386,
+        0.0653611421585083
+      ],
+      "scaleFactor": 0.07978319034433806
+    }
+  ],
+  "cameraElevationDegrees": 45,
+  "embeddedImages": 14,
+  "meshObjects": 8,
+  "sourceGardenGeometry": "unchanged",
+  "textureLimitations": "Garden retains overhead reference projection; steep outer sides stretch."
+}

@@ -1,0 +1,18 @@
+{
+  "geometryUnchanged": true,
+  "geometryFingerprint": "fdef2e5ec3d63673a9edf66df1f6ce024545c5019d8c9f771e6256def0c44844",
+  "originalGLBSha256": "8b2cebec7fa6b434d77fe95c8c610f186257479281261b20bf55fd5da2c74b33",
+  "originalGLBUnchanged": true,
+  "textureMethod": "single-reference planar projection at 35 degrees; not learned paint",
+  "referenceSha256": "045d535dbd0ba8b05fab55afc0eb764a8fd598e65d2f93df07286542252f6be8",
+  "files": {
+    "volcano-color-v2.blend": {
+      "bytes": 20168049,
+      "sha256": "adfc44b7bba3573808569392ff410746b0260b60a1d8477df3e8596f9a400394"
+    },
+    "volcano-color-v2.glb": {
+      "bytes": 64373516,
+      "sha256": "b7e73285ff37ea62024126a2cb883d7b2381b4cc5e1b23e5184d445ffdf2f485"
+    }
+  }
+}

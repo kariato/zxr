@@ -1,0 +1,39 @@
+{
+  "name": "dragon",
+  "pipeline": {
+    "implementation": "Hunyuan3D-Swift/MLX",
+    "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+    "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+    "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+    "steps": 8,
+    "guidance": 5,
+    "octree": 512,
+    "seed": 42,
+    "quantize": 8,
+    "licence": "Tencent Hunyuan 3D 2.0 Community License",
+    "scope": "US-only local prototype"
+  },
+  "reference": "../dragon.png",
+  "referenceSha256": "89fa6b5b633ccfb8e46775c5966198b07c87444d2d82e54858466d57348b9956",
+  "file": "dragon.glb",
+  "sha256": "4654fcaf2de4804cd10f2b1ca0101842ec036852dc0e5ce6a1fc21e3fa88e046",
+  "bytes": 28721244,
+  "vertices": 797805,
+  "triangles": 1595566,
+  "boundsNativeUnits": [
+    [
+      -0.8217601618220406,
+      -0.8735976795895815,
+      -1.0002327478319764
+    ],
+    [
+      0.7799035083084922,
+      0.8708264256395399,
+      0.9947473538409364
+    ]
+  ],
+  "seconds": 163.02,
+  "geometryPostprocessing": "none",
+  "textureMethod": "none; shape only",
+  "status": "draft; inspect isolated hidden geometry and openings"
+}

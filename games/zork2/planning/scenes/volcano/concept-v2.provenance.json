@@ -1,0 +1,12 @@
+{
+  "created": "2026-10-26",
+  "tool": "built-in image_gen.imagegen",
+  "input": "concept-v1.png",
+  "prompt": "concept-v2.prompt.txt",
+  "transparentBackground": true,
+  "file": "concept-v2.png",
+  "sha256": "045d535dbd0ba8b05fab55afc0eb764a8fd598e65d2f93df07286542252f6be8",
+  "width": 1024,
+  "height": 1536,
+  "status": "draft"
+}

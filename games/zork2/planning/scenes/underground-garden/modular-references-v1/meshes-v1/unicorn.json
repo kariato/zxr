@@ -1,0 +1,39 @@
+{
+  "name": "unicorn",
+  "pipeline": {
+    "implementation": "Hunyuan3D-Swift/MLX",
+    "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+    "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+    "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+    "steps": 8,
+    "guidance": 5,
+    "octree": 512,
+    "seed": 42,
+    "quantize": 8,
+    "licence": "Tencent Hunyuan 3D 2.0 Community License",
+    "scope": "US-only local prototype"
+  },
+  "reference": "../unicorn.png",
+  "referenceSha256": "127b4a97812c4155ddc23101425424aabf92616aa622b9ed7de47d3bfd864a4e",
+  "file": "unicorn.glb",
+  "sha256": "d046aa5f18826060819cc614dcbb3d4d0c1e73f414a58fef33bf39a4bc8cf8cb",
+  "bytes": 16689948,
+  "vertices": 463577,
+  "triangles": 927186,
+  "boundsNativeUnits": [
+    [
+      -0.9774717299240473,
+      -0.7726341000600274,
+      -0.2742030014113671
+    ],
+    [
+      0.9852647607287197,
+      0.7745195603436736,
+      0.26976963197470916
+    ]
+  ],
+  "seconds": 114.53,
+  "geometryPostprocessing": "none",
+  "textureMethod": "none; shape only",
+  "status": "draft; inspect isolated hidden geometry and openings"
+}

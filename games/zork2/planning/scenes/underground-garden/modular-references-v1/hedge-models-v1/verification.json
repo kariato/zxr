@@ -1,0 +1,60 @@
+{
+  "geometryUnchanged": true,
+  "geometryFingerprint": "d598fc8796764643dd59cc41f519ac6646bf7ff88b53b1069a0455726c709fd6",
+  "gazeboScaleMultiplier": 0.6,
+  "otherTransformsUnchanged": true,
+  "hedgeAssets": [
+    {
+      "name": "dragon",
+      "textureSize": [
+        1024,
+        1024
+      ],
+      "triangles": 39184
+    },
+    {
+      "name": "unicorn",
+      "textureSize": [
+        1024,
+        1024
+      ],
+      "triangles": 39208
+    },
+    {
+      "name": "serpent",
+      "textureSize": [
+        1024,
+        1024
+      ],
+      "triangles": 39190
+    },
+    {
+      "name": "dog",
+      "textureSize": [
+        1024,
+        1024
+      ],
+      "triangles": 39158
+    },
+    {
+      "name": "woman-violet",
+      "textureSize": [
+        1024,
+        1024
+      ],
+      "triangles": 39193
+    },
+    {
+      "name": "woman-rose",
+      "textureSize": [
+        1024,
+        1024
+      ],
+      "triangles": 39197
+    }
+  ],
+  "previewResolution": [
+    1920,
+    1080
+  ]
+}

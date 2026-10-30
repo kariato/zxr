@@ -1,0 +1,18 @@
+{
+  "geometryUnchanged": true,
+  "geometryFingerprint": "e82f0ad2d38187a4cabfe0209d9e63ccfd23da12c536410efa1a09b269f32bc9",
+  "originalGLBSha256": "cd91c9670fb51dd25abd0d4971b91b182fca062e826c944bf8c6b84ada72eeac",
+  "originalGLBUnchanged": true,
+  "textureMethod": "single-reference planar projection at 35 degrees; not learned paint",
+  "referenceSha256": "5d21a4e6d0b2b8605a7143a5cc09634c2c6c0c05e2b6cbac5b716e26709c9e86",
+  "files": {
+    "ice-and-lava-passage-color-v1.blend": {
+      "bytes": 10631335,
+      "sha256": "7b6a4b5f71b4552f1fa27c07d9875c11ba1ca856c81dd287ac1eddc6f49c9f09"
+    },
+    "ice-and-lava-passage-color-v1.glb": {
+      "bytes": 32619460,
+      "sha256": "7a13a553bd24bd6a70b51c111bca0822dc7062873dc563ffe5306ad9093dfeb3"
+    }
+  }
+}

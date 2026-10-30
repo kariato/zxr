@@ -4,6 +4,16 @@ One suite of connected chambers with distinct dressing: guarded entrance, workbe
 
 ## Rooms
 
+[Concept and source/state constraints](scene-concept.md) · [Concept artwork](concept-v1.png) · [Exact built-in ImageGen prompt](concept-v1.prompt.txt)
+
+## Generated authoring drafts
+
+- `mesh-v1/`: untouched Tencent shape GLB, Blender scene and actual front/back geometry renders.
+- `mesh-v1-color/`: editable projected UVs, packed concept and colored GLB/Blender copy.
+- `mesh-v2-reduced/`: curvature-weighted reduction with an adjustable Decimate modifier.
+
+Reproduce with `tools/assets/wizards-suite-scene-generate.py` in the local shape environment, followed by `wizards-suite-scene-blender.py`, `wizards-suite-scene-color.py` and `wizards-suite-scene-decimate.py` in the installed bpy environment. Verification JSON records settings, hashes, mesh counts and source preservation. Native inference units; runtime integration remains pending.
+
 - [Guarded Room (`GUARDIAN-ROOM`)](GUARDIAN-ROOM/README.md)
 - [Wizard's Workshop (`WIZARDS-WORKSHOP`)](WIZARDS-WORKSHOP/README.md)
 - [Wizard's Workroom (`WORKBENCH-ROOM`)](WORKBENCH-ROOM/README.md)

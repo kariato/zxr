@@ -1,0 +1,37 @@
+{
+  "sourceSha256": "d5b0d7666016f738fc19f368e49dd356c9221783689157510df7a1c239a73109",
+  "sourceUnchanged": true,
+  "modifierUnappliedInBlend": true,
+  "weightMethod": "maximum incident edge angle; lower weights at sharp bends and boundaries",
+  "meshes": [
+    {
+      "object": "geometry_0",
+      "originalVertices": 180415,
+      "originalTriangles": 360850,
+      "reducedVertices": 18032,
+      "reducedTriangles": 36084,
+      "weightRange": [
+        0.03,
+        0.9999327092398853
+      ],
+      "ratio": 0.10000000149011612,
+      "vertexGroup": "Simplify broad surfaces - editable"
+    }
+  ],
+  "exportedMeshes": [
+    {
+      "vertices": 108069,
+      "triangles": 36084
+    }
+  ],
+  "files": {
+    "wizards-suite-reduced-v2.blend": {
+      "bytes": 14410541,
+      "sha256": "5f78be279037051df8e4b5cf81930e1ec8f746d75fbc990cb10425df898d5a57"
+    },
+    "wizards-suite-reduced-v2.glb": {
+      "bytes": 6181812,
+      "sha256": "99511f47eb08d3ca217661bf2bb5d1b972471bf24339a3f20e2fd2459c60772d"
+    }
+  }
+}

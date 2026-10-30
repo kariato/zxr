@@ -4,6 +4,16 @@ Especially strong reuse: one tall caldera seen from its bottom, four balloon ele
 
 ## Rooms
 
+[Concept and source/state constraints](scene-concept.md) · [Concept image](concept-v1.png) · [Exact ImageGen prompt](concept-v1.prompt.txt)
+
+## Generated authoring drafts
+
+- `mesh-v2/`: direct untouched Tencent shape GLB and Blender scene, with front/back geometry renders.
+- `mesh-v2-color/`: packed reference image, editable projected UVs and colored GLB/Blender files.
+- `mesh-v3-reduced/`: selective reduction with an unapplied Decimate modifier and editable curvature weights.
+
+Reproduce with `tools/assets/volcano-scene-generate.py` in the local shape environment, then `volcano-scene-blender.py`, `volcano-scene-color.py` and `volcano-scene-decimate.py` in the installed bpy environment. JSON verification records generation settings, hashes, counts and source preservation. Native inference units; runtime integration remains pending.
+
 - [Volcano Bottom (`VOLCANO-BOTTOM`)](VOLCANO-BOTTOM/README.md)
 - [Volcano Core (`VAIR-1`)](VAIR-1/README.md)
 - [Volcano Near Small Ledge (`VAIR-2`)](VAIR-2/README.md)
