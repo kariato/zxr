@@ -19,6 +19,8 @@ import { mountBarrowDressing } from './barrow-dressing.ts';
 import { mountCavernScene,addCavernTargets,cavernSceneOffset,type CavernStatus } from './cavern-scene.ts';
 import { mountPropModel,posePropModel,releasePropModels } from './prop-model.ts';
 import { movablePropDefinitions } from './movable-props.generated.ts';
+import {createRoomAssetLoader} from './room-asset-loader.ts';
+import {barrowStep,barrowPropPoses} from './barrow-layout.ts';
 
 /** Disposable spatial presenter over the existing shared browser controller. */
 export function mountPrototype(host:HTMLElement,session:GameSession,player:BrowserPlayer,options:{ravineModelUrl?:string;gardenModelUrl?:string;onGardenStatus?:(status:GardenStatus)=>void;princessModelUrl?:string;onPrincessStatus?:(status:PrincessStatus)=>void;barrowDressingUrl?:string;onBarrowStatus?:(status:'loading'|'ready'|'failed')=>void;cavernModelUrl?:string;onCavernStatus?:(status:CavernStatus)=>void;propModelUrls?:Partial<Record<string,string>>}={}){
@@ -35,6 +37,7 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
   }
   renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.xr.enabled=true;renderer.xr.setReferenceSpaceType('local-floor');
   renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor(0x070c10);
+  const roomAssets=createRoomAssetLoader(renderer);
   const canvas=renderer.domElement;canvas.tabIndex=0;canvas.setAttribute('aria-label','3D room. Drag to look and use WASD to walk.');viewport.append(canvas);
   const scene=new THREE.Scene();scene.fog=new THREE.Fog(0x070c10,6,22);
   const backdrop=mountCavernBackdrop(scene);scene.backgroundIntensity=.85;
@@ -47,7 +50,7 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
   // rooms also retain one model while changing their origin within that scene.
   const propMounts:{dispose():void}[]=[];
   const persistent=new THREE.Group();scene.add(persistent);let persistentKey='',dressingState:'loading'|'ready'|'failed'='loading',baseFloor:THREE.Mesh|undefined,cavernFallback:THREE.Group|undefined;
-  const clearActors=()=>{actors.forEach(actor=>actor.dispose());actors.length=0;dressings.forEach(d=>d.dispose());dressings.length=0;persistent.clear();persistentKey='';dressingState='loading';delete viewport.dataset.cavernScene;delete viewport.dataset.cavernRoom;delete viewport.dataset.gardenScene;delete viewport.dataset.gardenRoom;delete viewport.dataset.ravineScene;delete viewport.dataset.ravineRoom;};
+  const clearActors=()=>{actors.forEach(actor=>actor.dispose());actors.length=0;dressings.forEach(d=>d.dispose());dressings.length=0;persistent.clear();persistentKey='';dressingState='loading';delete viewport.dataset.barrowScene;delete viewport.dataset.cavernScene;delete viewport.dataset.cavernRoom;delete viewport.dataset.gardenScene;delete viewport.dataset.gardenRoom;delete viewport.dataset.ravineScene;delete viewport.dataset.ravineRoom;};
   let view:PlayerView=player.player.view(),menuPage=0,textPage=0,lastText='',hasLayout=false,nearby=false;
   let objectActions:ObjectAction[]=[];
   const material=(colour:number)=>new THREE.MeshStandardMaterial({color:colour,roughness:.95,flatShading:true});
@@ -72,12 +75,13 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
     camera.position.set(0,1.6,room==='NARROW-TUNNEL'?1.1:-Math.max(0,depth/2-1.4));
     if(room==='GREAT-CAVERN')camera.position.z=1.2;
     yaw=room==='GREAT-CAVERN'?0:Math.PI;pitch=-.1;
+    if(room==='INSIDE-BARROW')camera.position.set(0,1.62,-2.25);
     if(surface){const y=walkingHeight(room,0,0)??0;camera.position.set(0,y+1.6,0);yaw=surface.heading;viewport.dataset.walkX='0';viewport.dataset.walkY=y.toFixed(4);viewport.dataset.walkZ='0';}
     viewport.dataset.sceneProjection='perspective';aim();
   };
   const build=()=>{
     const observation=session.observeAppearance(),model=prototypeModel(observation),changed=room!==model.room;room=model.room;
-    backdrop.update(observation.perception);
+    backdrop.update(room==='INSIDE-BARROW'&&options.barrowDressingUrl?{lit:false,room:null}:observation.perception);
     const princess=!!options.princessModelUrl&&model.props.some(p=>p.id==='PRINCESS'&&!p.held);
     const cavernOffset=cavernSceneOffset(model.room),generatedCavern=!!cavernOffset&&!!options.cavernModelUrl;
     const gardenOffset=gardenSceneOffset(room),generatedGarden=!!gardenOffset&&!!options.gardenModelUrl;
@@ -95,6 +99,7 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
     scene.add(roomGroup);
     roomGroup.add(new THREE.HemisphereLight(ravine?0xc1d2df:garden?0xcce3ce:room==='DARK-TUNNEL'?0x8d8570:cavern?0x91abb5:0xc5d4c1,ravine?0x44423a:garden?0x485041:cavern?0x38434b:0x303025,ravine?3:garden?3:room==='DARK-TUNNEL'?1.5:2));
     const light=new THREE.PointLight(garden?0xbee5c4:room==='DARK-TUNNEL'?0xd8b687:cavern?0xb0c8b5:0xf6cb83,garden?8:room==='DARK-TUNNEL'?25:cavern?12:(barrow||lair)?4:18,cavern?20:14,2);light.position.set(.7,cavern?4:(barrow||lair)?3.2:2,-1);roomGroup.add(light);
+    if(barrow){light.intensity=28;light.position.set(0,2.7,-.5);}
     const environment=new THREE.Group();roomGroup.add(environment);
     delete viewport.dataset.walkFloor;delete viewport.dataset.walkX;delete viewport.dataset.walkY;delete viewport.dataset.walkZ;
     if(room&&walkingSurfaces[room]){mountWalkingSurface(roomGroup,room);viewport.dataset.walkFloor='ready';}
@@ -157,9 +162,10 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
       const ground=box(roomGroup,[width+2,.25,depth+2],[0,-.15,0],floor);baseFloor=ground;
       if(options.barrowDressingUrl){
         if(!dressings.length)dressings.push(mountBarrowDressing(persistent,options.barrowDressingUrl,width,depth,state=>{
-          dressingState=state;if(baseFloor)baseFloor.visible=state!=='ready';options.onBarrowStatus?.(state);
-        }));
+          dressingState=state;if(baseFloor)baseFloor.visible=state!=='ready';viewport.dataset.barrowScene=state;options.onBarrowStatus?.(state);
+        },roomAssets.load));
         ground.visible=dressingState!=='ready';
+        viewport.dataset.barrowScene=dressingState;
         const passage=box(roomGroup,[1.8,2.35,.25],[0,1.17,depth/2-.2],new THREE.MeshBasicMaterial({visible:false}));
         passage.userData.direction='SOUTH';targets.push(passage);
       }else{
@@ -229,12 +235,17 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
         if(prop.on){const lamp=new THREE.PointLight(0xffc87b,.5,8,2);lamp.position.set(0,1.05,-.2);group.add(lamp);}
       }else if(prop.id!=='PRINCESS')box(body,[...size],[0,size[1]!/2,0],wood);
       const modelUrl=prop.id==='PRINCESS'?undefined:options.propModelUrls?.[prop.id];
+      if(barrow&&!prop.held&&(prop.id==='LAMP'||prop.id==='SWORD')){
+        const {position:p,rotation:q}=barrowPropPoses[prop.id];group.position.set(p[0],p[1],p[2]);group.quaternion.set(q[0],q[1],q[2],q[3]);
+      }
       if(modelUrl)propMounts.push(mountPropModel(body,modelUrl,model=>posePropModel(prop.id,model,prop)));
       const action=objectActions.find(a=>a.object===prop.id);
       const label=textureLabel(action?.label??prop.name);label.position.set(0,prop.held ? .25 : prop.id==='PRINCESS'?2.05:.8,0);if(prop.held)label.scale.set(.38,.071,1);group.add(label);
+      if(barrow&&!prop.held&&(prop.id==='LAMP'||prop.id==='SWORD'))label.position.applyQuaternion(group.quaternion.clone().invert());
       label.userData.action=action;label.userData.object=prop.id;
       if(room==='GAZEBO-ROOM'&&!prop.held)label.visible=false;else targets.push(label);
       const hit=box(group,room==='GAZEBO-ROOM'&&!prop.held?[.32,.3,.32]:prop.held?[.3,.45,.3]:prop.id==='PRINCESS'?[1,1.85,.9]:[1.2,.8,.6],[0,prop.id==='PRINCESS'?.92:.3,0],new THREE.MeshBasicMaterial({visible:false}));hit.userData.action=action;hit.userData.object=prop.id;targets.push(hit);
+      if(barrow&&!prop.held&&(prop.id==='LAMP'||prop.id==='SWORD')){hit.position.applyQuaternion(group.quaternion.clone().invert());hit.quaternion.copy(group.quaternion).invert();}
     }
   };
   const recenterButton=addButton('Recenter view',()=>{recenter();drawMenu();});
@@ -389,6 +400,10 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
           const foot=walkingStep(room,camera.position.x,camera.position.y-1.6,camera.position.z,dx,dz);
           camera.position.set(foot.x,foot.y+1.6,foot.z);
           viewport.dataset.walkX=foot.x.toFixed(4);viewport.dataset.walkY=foot.y.toFixed(4);viewport.dataset.walkZ=foot.z.toFixed(4);
+        }else if(room==='INSIDE-BARROW'&&dressingState==='ready'){
+          const foot=barrowStep(camera.position.x,camera.position.z,dx,dz);
+          camera.position.set(foot.x,foot.y+1.6,foot.z);
+          viewport.dataset.walkX=foot.x.toFixed(4);viewport.dataset.walkY=foot.y.toFixed(4);viewport.dataset.walkZ=foot.z.toFixed(4);
         }else{
           camera.position.x=THREE.MathUtils.clamp(camera.position.x+dx,-width/2+.35,width/2-.35);
           camera.position.z=THREE.MathUtils.clamp(camera.position.z+dz,-depth/2+.35,depth/2-.35);
@@ -397,5 +412,5 @@ export function mountPrototype(host:HTMLElement,session:GameSession,player:Brows
     }
     if(!viewport.hidden||renderer.xr.isPresenting){actors.forEach(actor=>actor.update(dt));renderer.render(scene,camera);}
   });
-  return {destroy(){disposed=true;cancel();unsubscribe();observer.disconnect();window.removeEventListener('blur',cancel);renderer.setAnimationLoop(null);void renderer.xr.getSession()?.end();backdrop.dispose();clearActors();propMounts.forEach(m=>m.dispose());releasePropModels();clear(roomGroup);clear(hand);panel.geometry.dispose();menuTexture.dispose();menuMaterial.dispose();controllers.forEach(c=>c.traverse(n=>{if(n instanceof THREE.Line){n.geometry.dispose();(n.material as THREE.Material).dispose();}}));[stone,floor,wood,brass,steel].forEach(m=>m.dispose());renderer.dispose();root.remove();}};
+  return {destroy(){disposed=true;cancel();unsubscribe();observer.disconnect();window.removeEventListener('blur',cancel);renderer.setAnimationLoop(null);void renderer.xr.getSession()?.end();backdrop.dispose();clearActors();roomAssets.dispose();propMounts.forEach(m=>m.dispose());releasePropModels();clear(roomGroup);clear(hand);panel.geometry.dispose();menuTexture.dispose();menuMaterial.dispose();controllers.forEach(c=>c.traverse(n=>{if(n instanceof THREE.Line){n.geometry.dispose();(n.material as THREE.Material).dispose();}}));[stone,floor,wood,brass,steel].forEach(m=>m.dispose());renderer.dispose();root.remove();}};
 }

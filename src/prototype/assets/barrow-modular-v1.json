@@ -1,0 +1,29 @@
+{
+  "room": "INSIDE-BARROW",
+  "file": "barrow-modular-v1.glb",
+  "bytes": 1106984,
+  "sha256": "529e901fff2c25cf952b0bea9792ff335eaea03706d9f21b66c9dde6e671d8a0",
+  "authoringSource": "games/zork2/planning/scenes/barrow-entrance/tencent-complete-v1/finished/barrow-complete.glb",
+  "authoringSha256": "33bae4a9a60a9d05eac5d6c493e65ea88c9a2867d14b65a6b0a2f84fc9667406",
+  "generator": "Tencent Hunyuan3D-2 turbo with straight-on reference colour projection; engineered flat-backed module finishing",
+  "geometry": {
+    "drawCount": 54,
+    "instanceCount": 54,
+    "triangleCount": 43128
+  },
+  "textures": {
+    "count": 8,
+    "format": "KTX2; ETC1S colour and UASTC normals"
+  },
+  "compression": "gltfpack v1.3; Meshopt; position/UV 16-bit; simplify 0.5, bounded error .002, locked borders",
+  "bounds": {
+    "roomWidth": 6,
+    "roomDepth": 6,
+    "roomHeight": 3,
+    "passageEndZ": 7,
+    "openingWidth": 1.6,
+    "openingHeight": 2.4
+  },
+  "props": "No embedded SWORD or LAMP; engine observed objects use existing portable models",
+  "license": "TENCENT-HUNYUAN-3D-2.0-LICENSE.txt"
+}

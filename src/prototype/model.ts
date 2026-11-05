@@ -13,7 +13,7 @@ export const sliceRooms:Record<string,{width:number;depth:number;height:number;r
   'FORMAL-GARDEN':{width:4,depth:4,height:6,routes:[{direction:'NORTH',x:0,z:-1.7},{direction:'SOUTH',x:0,z:1.7},{direction:'WEST',x:-1.7,z:0}]},
   'TOPIARY-ROOM':{width:4,depth:4,height:6,routes:[{direction:'NORTH',x:0,z:-1.7},{direction:'WEST',x:-1.7,z:0}]},
   'DRAGON-LAIR':{width:8,depth:9,height:4,routes:[{direction:'SOUTH',x:0,z:4.25}]},
-  'INSIDE-BARROW':{width:6,depth:7,height:3,routes:[{direction:'SOUTH',x:0,z:3.25}]},
+  'INSIDE-BARROW':{width:6,depth:6,height:3,routes:[{direction:'SOUTH',x:0,z:2.85}]},
   'NARROW-TUNNEL':{width:2.4,depth:5,height:4,routes:[{direction:'NORTH',x:0,z:-2.2},{direction:'SOUTH',x:0,z:2.2}]},
   'GREAT-CAVERN':{width:10,depth:5,height:6,routes:[{direction:'NE',x:0,z:-1.8},{direction:'SW',x:-4,z:1.7}]},
   'SHALLOW-FORD':{width:9,depth:9,height:6,routes:[{direction:'NORTH',x:0,z:-4.1},{direction:'SOUTH',x:0,z:3.8}]},

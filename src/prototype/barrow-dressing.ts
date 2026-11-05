@@ -13,7 +13,7 @@ function release(root:THREE.Object3D){
   materials.forEach(m=>{for(const v of Object.values(m))if(v instanceof THREE.Texture)textures.add(v);});
   geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());root.clear();root.removeFromParent();
 }
-/** Optional local experiment. The ordinary barrow remains the loading/error fallback. */
+/** Modular environment only; source-controlled movable props are rendered separately. */
 export function mountBarrowDressing(parent:THREE.Group,url:string,width:number,depth:number,status:(state:'loading'|'ready'|'failed')=>void=()=>{},load:Load=(url,ready,failed)=>{
   new GLTFLoader().load(url,ready,undefined,failed);
 }){
@@ -22,7 +22,7 @@ export function mountBarrowDressing(parent:THREE.Group,url:string,width:number,d
   let disposed=false;status('loading');
   load(url,gltf=>{
     if(disposed){release(gltf.scene);return;}
-    release(fallback);root.add(gltf.scene);addBarrowTunnelGlow(root,depth/2);status('ready');
+    release(fallback);root.add(gltf.scene);addBarrowTunnelGlow(root,1.55);status('ready');
   },()=>{if(!disposed)status('failed');});
   return {dispose(){if(disposed)return;disposed=true;release(root);}};
 }

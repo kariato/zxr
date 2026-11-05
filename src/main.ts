@@ -2,15 +2,15 @@ import './style.css';
 import { GameSession, loadGame } from './engine/index.ts';
 import { mountRoomNarration,unlockNarrationAudio } from './presentation/audio/browser.ts';
 import { mountBrowserPlayer } from './player/browser.ts';
-import barrowDressingUrl from './prototype/assets/barrow-natural-v2.glb?url';
+import barrowDressingUrl from './prototype/assets/barrow-modular-v1.glb?url';
 import ravineModelUrl from '../games/zork2/planning/scenes/lower-ravine/mesh-v2/lower-ravine-v2.glb?url';
 import gardenModelUrl from '../games/zork2/assets/scenes/underground-garden/underground-garden-shared-v4.glb?url';
 import cavernModelUrl from './prototype/assets/narrow-tunnel-room-v1.glb?url';
 import princessModelUrl from './prototype/assets/princess-v1.glb?url';
 import { movablePropUrls } from './prototype/movable-props.ts';
-// The large animated actor and environment keep software-renderer fallbacks.
+// Only the large animated actor keeps its software-renderer fallback.
 // Movable models use the same registry in normal and automated browsers.
-const generatedModels={...(navigator.webdriver?{}:{barrowDressingUrl,princessModelUrl}),cavernModelUrl,gardenModelUrl,ravineModelUrl,propModelUrls:movablePropUrls};
+const generatedModels={barrowDressingUrl,...(navigator.webdriver?{}:{princessModelUrl}),cavernModelUrl,gardenModelUrl,ravineModelUrl,propModelUrls:movablePropUrls};
 const start=document.querySelector<HTMLButtonElement>('#start')!,status=document.querySelector<HTMLElement>('#loading')!,target=document.querySelector<HTMLElement>('#player')!;
 const newGame=document.querySelector<HTMLButtonElement>('#new-game')!;
 async function openGame(restoreAutosave:boolean){

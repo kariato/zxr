@@ -9,3 +9,7 @@ await copyFile('src/prototype/assets/HUNYUAN-NOTICE.txt', 'dist/licenses/HUNYUAN
 await copyFile('src/prototype/assets/movable-props.json', 'dist/licenses/movable-props.json');
 await copyFile('src/prototype/assets/narrow-tunnel-room-v1.json', 'dist/licenses/narrow-tunnel-room-v1.json');
 await copyFile('src/prototype/assets/TENCENT-HUNYUAN-3D-2.0-LICENSE.txt', 'dist/licenses/TENCENT-HUNYUAN-3D-2.0-LICENSE.txt');
+await copyFile('src/prototype/assets/BASIS-LICENSE.txt', 'dist/licenses/BASIS-APACHE-2.0.txt');
+await copyFile('src/prototype/assets/MESHOPT-LICENSE.txt', 'dist/licenses/MESHOPT-MIT.txt');
+await copyFile('node_modules/three/LICENSE', 'dist/licenses/THREE-MIT.txt');
+await copyFile('src/prototype/assets/barrow-modular-v1.json', 'dist/licenses/barrow-modular-v1.json');
