@@ -1,0 +1,13 @@
+{
+  "file": "garden-arch.glb",
+  "sourceSha256": "687f16481a93f255009a411c67f57a7e34db13446a26a41b1e287df41f518d40",
+  "sha256": "206c5eb36e008042acb52fb0090cb9599701321c2082a1850334993de6da7deb",
+  "standardBytes": 2112644,
+  "browserBytes": 329848,
+  "browserTriangles": 8882,
+  "extensionsRequired": [
+    "KHR_mesh_quantization",
+    "EXT_meshopt_compression",
+    "KHR_texture_basisu"
+  ]
+}

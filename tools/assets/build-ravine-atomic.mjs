@@ -1,0 +1,12 @@
+import {build} from 'vite';
+import {mkdir,copyFile,readFile} from 'node:fs/promises';
+import path from 'node:path';
+const root=process.cwd(),base=path.join(root,'games/zork2/planning/scenes/lower-ravine/atomic-parts-v2');
+const publicDir=path.join(root,'out/asset-production/ravine-atomic-public');await mkdir(publicDir,{recursive:true});
+const manifest=JSON.parse(await readFile(path.join(base,'manifest.json'),'utf8'));
+for(const p of manifest.parts)await copyFile(path.join(base,'meshes/browser',p.id+'.glb'),path.join(publicDir,p.id+'.glb'));
+await copyFile(path.join(base,'manifest.json'),path.join(publicDir,'manifest.json'));
+await copyFile(path.join(root,'node_modules/three/LICENSE'),path.join(publicDir,'THREE-LICENSE.txt'));
+for(const file of ['BASIS-LICENSE.txt','MESHOPT-LICENSE.txt'])await copyFile(path.join(root,'src/prototype/assets',file),path.join(publicDir,file));
+for(const file of ['README.txt','HUNYUAN-NOTICE.txt','TENCENT-HUNYUAN-3D-2.0-LICENSE.txt'])await copyFile(path.join(base,'meshes',file),path.join(publicDir,file));
+await build({configFile:false,root:path.join(root,'tools/assets/ravine-atomic-preview'),publicDir,base:'./',build:{outDir:path.join(root,'out/ravine-atomic'),emptyOutDir:true}});

@@ -1,0 +1,13 @@
+{
+  "file": "wide-cave.glb",
+  "sourceSha256": "8a685663fdb28e94045c3ffd75e90531f15ccd1eb8c492948daa2c1cbda65e57",
+  "sha256": "675b32d6723e820e5c35334f27dea17010d0dbcbd936da18e12d2748e710f641",
+  "standardBytes": 2531212,
+  "browserBytes": 498196,
+  "browserTriangles": 12776,
+  "extensionsRequired": [
+    "KHR_mesh_quantization",
+    "EXT_meshopt_compression",
+    "KHR_texture_basisu"
+  ]
+}

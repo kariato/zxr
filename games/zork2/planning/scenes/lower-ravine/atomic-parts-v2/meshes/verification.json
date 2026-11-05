@@ -1,0 +1,425 @@
+{
+  "parts": {
+    "cliff-face": {
+      "finish": "Tencent front relief resampled into a shallow, flat-backed module; alpha silhouette for openings",
+      "closedManifold": true,
+      "positiveVolume": 2.3233802882231487,
+      "maxFrontRelief": 0.05,
+      "openingChecks": [],
+      "color": "1024px reference projection; opaque mesh material",
+      "normal": "512px residual Tencent relief normal; not learned texture paint",
+      "referenceMaskAlphaThreshold": 200,
+      "file": "cliff-face.glb",
+      "bytes": 2397596,
+      "sha256": "a466e1cd5ce0bafb77111a24e6e6b7a58aaf756971ee85c6a5ff37e22866b670",
+      "rawSourceSha256": "c96a263f8fbb942950a74e36157c7004ac4f3bef0263f11cd66d07ff8e2a78fd",
+      "referenceSha256": "ddcc59c5343c51dd528c74846a1690407eb32bc2a8f0fe9e242efa7c27fae1e0",
+      "triangles": 9600,
+      "dimensionsMetres": [
+        4.0,
+        0.15000000596046448,
+        4.0
+      ]
+    },
+    "ledge-top": {
+      "finish": "Tencent front relief resampled into a shallow, flat-backed module; alpha silhouette for openings",
+      "closedManifold": true,
+      "positiveVolume": 0.9238393359447346,
+      "maxFrontRelief": 0.018,
+      "openingChecks": [],
+      "color": "1024px reference projection; opaque mesh material",
+      "normal": "512px residual Tencent relief normal; not learned texture paint",
+      "referenceMaskAlphaThreshold": 200,
+      "file": "ledge-top.glb",
+      "bytes": 2233804,
+      "sha256": "4a71c6147a3086c91081a7991b41530616e9e1eab7d5982c9e2ef12a204a520e",
+      "rawSourceSha256": "386ea4727f89ed5da1d86e18aa7c6be819b1b3ca836e5678a1ad46d6e2f4ff4e",
+      "referenceSha256": "5969454a49b1f949565623751eed6796df10ef76057f2e206dd04725ea27c333",
+      "triangles": 4896,
+      "dimensionsMetres": [
+        4.0,
+        0.11800000071525574,
+        2.0
+      ]
+    },
+    "ledge-edge": {
+      "finish": "Tencent front relief resampled into a shallow, flat-backed module; alpha silhouette for openings",
+      "closedManifold": true,
+      "positiveVolume": 0.8561051516498736,
+      "maxFrontRelief": 0.05,
+      "openingChecks": [],
+      "color": "1024px reference projection; opaque mesh material",
+      "normal": "512px residual Tencent relief normal; not learned texture paint",
+      "referenceMaskAlphaThreshold": 200,
+      "file": "ledge-edge.glb",
+      "bytes": 2064368,
+      "sha256": "64d54768fed815341f45e741b437976d120c63ad7da8ef8af9fb5819f909f5db",
+      "rawSourceSha256": "c8b1f042bbbd52f4fa4a44333c1afd16addd47d492b7dd899b45da0bf5d98a7b",
+      "referenceSha256": "23f4fb440f91581b0bdbcb3f44adf8550ea8c810e22a23f762d0b07d7f1e7780",
+      "triangles": 4896,
+      "dimensionsMetres": [
+        4.0,
+        0.15000000596046448,
+        1.5
+      ]
+    },
+    "wide-cave": {
+      "finish": "Tencent front relief resampled into a shallow, flat-backed module; alpha silhouette for openings",
+      "closedManifold": true,
+      "positiveVolume": 1.8785763904725228,
+      "maxFrontRelief": 0.065,
+      "openingChecks": [
+        {
+          "x": -0.6,
+          "height": 0.26,
+          "clear": true
+        },
+        {
+          "x": -0.6,
+          "height": 0.78,
+          "clear": true
+        },
+        {
+          "x": -0.6,
+          "height": 1.3,
+          "clear": true
+        },
+        {
+          "x": 0,
+          "height": 0.26,
+          "clear": true
+        },
+        {
+          "x": 0,
+          "height": 0.78,
+          "clear": true
+        },
+        {
+          "x": 0,
+          "height": 1.3,
+          "clear": true
+        },
+        {
+          "x": 0.6,
+          "height": 0.26,
+          "clear": true
+        },
+        {
+          "x": 0.6,
+          "height": 0.78,
+          "clear": true
+        },
+        {
+          "x": 0.6,
+          "height": 1.3,
+          "clear": true
+        }
+      ],
+      "color": "1024px reference projection; opaque mesh material",
+      "normal": "512px residual Tencent relief normal; not learned texture paint",
+      "referenceMaskAlphaThreshold": 200,
+      "file": "wide-cave.glb",
+      "bytes": 2531212,
+      "sha256": "8a685663fdb28e94045c3ffd75e90531f15ccd1eb8c492948daa2c1cbda65e57",
+      "rawSourceSha256": "1cfbec0292ed9532b184604ca41d740c869587376bfc7ee5f103a71bd50016e1",
+      "referenceSha256": "2c52d05aedbab4584c856bf042173805d3bf20e8b78208ca7a66a988e2f11b78",
+      "triangles": 18240,
+      "dimensionsMetres": [
+        4.397379398345947,
+        0.22499999403953552,
+        3.5951476097106934
+      ]
+    },
+    "small-cave": {
+      "finish": "Tencent front relief resampled into a shallow, flat-backed module; alpha silhouette for openings",
+      "closedManifold": true,
+      "positiveVolume": 1.3782648967949775,
+      "maxFrontRelief": 0.065,
+      "openingChecks": [
+        {
+          "x": -0.325,
+          "height": 0.22999999999999998,
+          "clear": true
+        },
+        {
+          "x": -0.325,
+          "height": 0.69,
+          "clear": true
+        },
+        {
+          "x": -0.325,
+          "height": 1.15,
+          "clear": true
+        },
+        {
+          "x": 0,
+          "height": 0.22999999999999998,
+          "clear": true
+        },
+        {
+          "x": 0,
+          "height": 0.69,
+          "clear": true
+        },
+        {
+          "x": 0,
+          "height": 1.15,
+          "clear": true
+        },
+        {
+          "x": 0.325,
+          "height": 0.22999999999999998,
+          "clear": true
+        },
+        {
+          "x": 0.325,
+          "height": 0.69,
+          "clear": true
+        },
+        {
+          "x": 0.325,
+          "height": 1.15,
+          "clear": true
+        }
+      ],
+      "color": "1024px reference projection; opaque mesh material",
+      "normal": "512px residual Tencent relief normal; not learned texture paint",
+      "referenceMaskAlphaThreshold": 200,
+      "file": "small-cave.glb",
+      "bytes": 4044528,
+      "sha256": "b5c817d341c10382186a51605a411c7f32469863fb260fa1f5231fda0122fc5b",
+      "rawSourceSha256": "bec6851282aeec4bf63d61b2c32188a24956af991b3673ce6cad4caeb8c9a475",
+      "referenceSha256": "b236999eac669f150ed753a5357face677eba2f7a8607bf0b269d987c102bf6a",
+      "triangles": 37204,
+      "dimensionsMetres": [
+        2.5999999046325684,
+        0.22499999403953552,
+        3.200000047683716
+      ]
+    },
+    "garden-arch": {
+      "finish": "Tencent front relief resampled into a shallow, flat-backed module; alpha silhouette for openings",
+      "closedManifold": true,
+      "positiveVolume": 1.0406102482568627,
+      "maxFrontRelief": 0.065,
+      "openingChecks": [
+        {
+          "x": -0.425,
+          "height": 0.27999999999999997,
+          "clear": true
+        },
+        {
+          "x": -0.425,
+          "height": 0.84,
+          "clear": true
+        },
+        {
+          "x": -0.425,
+          "height": 1.4,
+          "clear": true
+        },
+        {
+          "x": 0,
+          "height": 0.27999999999999997,
+          "clear": true
+        },
+        {
+          "x": 0,
+          "height": 0.84,
+          "clear": true
+        },
+        {
+          "x": 0,
+          "height": 1.4,
+          "clear": true
+        },
+        {
+          "x": 0.425,
+          "height": 0.27999999999999997,
+          "clear": true
+        },
+        {
+          "x": 0.425,
+          "height": 0.84,
+          "clear": true
+        },
+        {
+          "x": 0.425,
+          "height": 1.4,
+          "clear": true
+        }
+      ],
+      "color": "1024px reference projection; opaque mesh material",
+      "normal": "512px residual Tencent relief normal; not learned texture paint",
+      "referenceMaskAlphaThreshold": 200,
+      "file": "garden-arch.glb",
+      "bytes": 2112644,
+      "sha256": "687f16481a93f255009a411c67f57a7e34db13446a26a41b1e287df41f518d40",
+      "rawSourceSha256": "e3a358934105bb288b3fda724c14af98ba22a140aae0fe50e1c47bfec4b76978",
+      "referenceSha256": "6eb54bb27e32e1843802070c54453f0699583e509457ff172a21916121b5ffef",
+      "triangles": 17556,
+      "dimensionsMetres": [
+        3.3981034755706787,
+        0.22499999403953552,
+        4.0
+      ]
+    },
+    "marble-arch": {
+      "finish": "Tencent front relief resampled into a shallow, flat-backed module; alpha silhouette for openings",
+      "closedManifold": true,
+      "positiveVolume": 1.4049776705633155,
+      "maxFrontRelief": 0.065,
+      "openingChecks": [
+        {
+          "x": -0.45,
+          "height": 0.27999999999999997,
+          "clear": true
+        },
+        {
+          "x": -0.45,
+          "height": 0.84,
+          "clear": true
+        },
+        {
+          "x": -0.45,
+          "height": 1.4,
+          "clear": true
+        },
+        {
+          "x": 0,
+          "height": 0.27999999999999997,
+          "clear": true
+        },
+        {
+          "x": 0,
+          "height": 0.84,
+          "clear": true
+        },
+        {
+          "x": 0,
+          "height": 1.4,
+          "clear": true
+        },
+        {
+          "x": 0.45,
+          "height": 0.27999999999999997,
+          "clear": true
+        },
+        {
+          "x": 0.45,
+          "height": 0.84,
+          "clear": true
+        },
+        {
+          "x": 0.45,
+          "height": 1.4,
+          "clear": true
+        }
+      ],
+      "color": "1024px reference projection; opaque mesh material",
+      "normal": "512px residual Tencent relief normal; not learned texture paint",
+      "referenceMaskAlphaThreshold": 200,
+      "file": "marble-arch.glb",
+      "bytes": 2503908,
+      "sha256": "da18ee85b2f730d2a010b8c3b536709b76b79995ad199099b50142bf7adf71bc",
+      "rawSourceSha256": "b6f4f5844d8bb956f187332f022880222581253d40c674669fe91c2d30679a97",
+      "referenceSha256": "322fc76cf0604a045b1e773eed9f5a07bc744f8565d8175abad6e12f270e6552",
+      "triangles": 21812,
+      "dimensionsMetres": [
+        3.4799365997314453,
+        0.22499999403953552,
+        4.0
+      ]
+    },
+    "marble-floor": {
+      "finish": "Tencent front relief resampled into a shallow, flat-backed module; alpha silhouette for openings",
+      "closedManifold": true,
+      "positiveVolume": 1.0431410784826884,
+      "maxFrontRelief": 0.018,
+      "openingChecks": [],
+      "color": "1024px reference projection; opaque mesh material",
+      "normal": "512px residual Tencent relief normal; not learned texture paint",
+      "referenceMaskAlphaThreshold": 200,
+      "file": "marble-floor.glb",
+      "bytes": 2540156,
+      "sha256": "6b6fce872801fcf14b14f8ccd465886fd029a011be08196884cbfdb59122b389",
+      "rawSourceSha256": "7e6af36c9f70c50b327f6a8f7c10e70209c3c63abcf9866092af151d5bf9cc69",
+      "referenceSha256": "acc8cbf3aeca753593a9bf166ed3bed77c3d33bb1e39e1cdaddd5e2ea4e1db2f",
+      "triangles": 9600,
+      "dimensionsMetres": [
+        3.0,
+        0.11800000071525574,
+        3.0
+      ]
+    },
+    "boulder": {
+      "finish": "Volumetric Tencent mesh decimated in Blender; pixel-level reference projection UV baked",
+      "removedDisconnectedRawComponents": 13,
+      "repairedBoundaryEdges": 0,
+      "closedManifold": true,
+      "hiddenSurfaces": "Neutral stone fallback; not unseen learned detail",
+      "file": "boulder.glb",
+      "bytes": 1144628,
+      "sha256": "3b5002de8baa70759386e0cc6ebc0408a5a2eac806ce96b6c3d96ee1f819cfec",
+      "rawSourceSha256": "ecd66653a0e3fd4cc116bb03714658fd8671cbdd8f6fe98d2f2dfc48d61d236e",
+      "referenceSha256": "6805a7d7a4ca68e1e1a12294189a4e476e85d3265dd0254b0768c354226cb7ea",
+      "triangles": 6000,
+      "dimensionsMetres": [
+        1.3012607097625732,
+        1.0007669925689697,
+        1.0008150339126587
+      ]
+    },
+    "moss-patch": {
+      "finish": "Tencent front relief resampled into a shallow, flat-backed module; alpha silhouette for openings",
+      "closedManifold": true,
+      "positiveVolume": 0.1314070140907203,
+      "maxFrontRelief": 0.05,
+      "openingChecks": [],
+      "color": "1024px reference projection; opaque mesh material",
+      "normal": "512px residual Tencent relief normal; not learned texture paint",
+      "referenceMaskAlphaThreshold": 200,
+      "file": "moss-patch.glb",
+      "bytes": 2868156,
+      "sha256": "8ebb66f9fffbfb5b17449824535f03d9abef4fccadbaedc918dd47299246c335",
+      "rawSourceSha256": "13483f5a7d672a964d208ba3799021ea2b8f57b491b4e0e199d7cff1b7f50e21",
+      "referenceSha256": "652f2d01f06e9e19f0dcab82c62b4db83101e4e609903f575cc6c34931f00185",
+      "triangles": 9600,
+      "dimensionsMetres": [
+        1.0,
+        0.15000000596046448,
+        1.0
+      ]
+    },
+    "riverbed": {
+      "finish": "Tencent front relief resampled into a shallow, flat-backed module; alpha silhouette for openings",
+      "closedManifold": true,
+      "positiveVolume": 1.8605830934702892,
+      "maxFrontRelief": 0.018,
+      "openingChecks": [],
+      "color": "1024px reference projection; opaque mesh material",
+      "normal": "512px residual Tencent relief normal; not learned texture paint",
+      "referenceMaskAlphaThreshold": 200,
+      "file": "riverbed.glb",
+      "bytes": 2536432,
+      "sha256": "55a7f60d08e549ca3a251a3eeeaecb4e6c5e9fb475c8612d55d5790be31ed3ee",
+      "rawSourceSha256": "d62a76c1c9f52cae27c4938802c2893b49eaac1873d7b67bfe4bd2969c3249a6",
+      "referenceSha256": "bc53f3279b355e2801582058ac842b0dc7a690aaf71ab8a076f0db73a4485c37",
+      "triangles": 9600,
+      "dimensionsMetres": [
+        4.0,
+        0.11800000071525574,
+        4.0
+      ]
+    }
+  },
+  "blend": "ravine-atomic-kit.blend",
+  "source": "Eleven independent local Tencent reconstructions",
+  "scope": "Individual textured modular GLBs; staged kit only, no app or gameplay changes",
+  "limitations": [
+    "Front reference projection; hidden faces use neutral stone.",
+    "Panel relief and backs are engineered; raw inference is retained.",
+    "Dimensions are authoring targets, not surveyed scene measurements.",
+    "Modules are not guaranteed seamless tiles."
+  ]
+}

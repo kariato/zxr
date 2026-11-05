@@ -1,0 +1,13 @@
+{
+  "file": "moss-patch.glb",
+  "sourceSha256": "8ebb66f9fffbfb5b17449824535f03d9abef4fccadbaedc918dd47299246c335",
+  "sha256": "7378731e81ac83509e1cdebcf2546f7e223a3ff908d2361ad28a1741843486ef",
+  "standardBytes": 2868156,
+  "browserBytes": 640976,
+  "browserTriangles": 7104,
+  "extensionsRequired": [
+    "KHR_mesh_quantization",
+    "EXT_meshopt_compression",
+    "KHR_texture_basisu"
+  ]
+}

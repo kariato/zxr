@@ -1,0 +1,255 @@
+[
+  {
+    "id": "cliff-face",
+    "sha256": "a466e1cd5ce0bafb77111a24e6e6b7a58aaf756971ee85c6a5ff37e22866b670",
+    "finiteVertices": true,
+    "triangles": 9600,
+    "watertight": true,
+    "windingConsistent": true,
+    "components": 1,
+    "imagesEmbedded": true,
+    "imageCount": 2,
+    "yUpBounds": [
+      [
+        -2.0,
+        0.0,
+        -0.10000000149011612
+      ],
+      [
+        2.0,
+        4.0,
+        0.05000000074505806
+      ]
+    ]
+  },
+  {
+    "id": "ledge-top",
+    "sha256": "4a71c6147a3086c91081a7991b41530616e9e1eab7d5982c9e2ef12a204a520e",
+    "finiteVertices": true,
+    "triangles": 4896,
+    "watertight": true,
+    "windingConsistent": true,
+    "components": 1,
+    "imagesEmbedded": true,
+    "imageCount": 2,
+    "yUpBounds": [
+      [
+        -2.0,
+        0.0,
+        -0.10000000149011612
+      ],
+      [
+        2.0,
+        2.0,
+        0.017999999225139618
+      ]
+    ]
+  },
+  {
+    "id": "ledge-edge",
+    "sha256": "64d54768fed815341f45e741b437976d120c63ad7da8ef8af9fb5819f909f5db",
+    "finiteVertices": true,
+    "triangles": 4896,
+    "watertight": true,
+    "windingConsistent": true,
+    "components": 1,
+    "imagesEmbedded": true,
+    "imageCount": 2,
+    "yUpBounds": [
+      [
+        -2.0,
+        0.0,
+        -0.10000000149011612
+      ],
+      [
+        2.0,
+        1.5,
+        0.05000000074505806
+      ]
+    ]
+  },
+  {
+    "id": "wide-cave",
+    "sha256": "8a685663fdb28e94045c3ffd75e90531f15ccd1eb8c492948daa2c1cbda65e57",
+    "finiteVertices": true,
+    "triangles": 18240,
+    "watertight": true,
+    "windingConsistent": true,
+    "components": 1,
+    "imagesEmbedded": true,
+    "imageCount": 2,
+    "yUpBounds": [
+      [
+        -2.1996676921844482,
+        0.0,
+        -0.1599999964237213
+      ],
+      [
+        2.197711706161499,
+        3.5951476097106934,
+        0.06499999761581421
+      ]
+    ]
+  },
+  {
+    "id": "small-cave",
+    "sha256": "b5c817d341c10382186a51605a411c7f32469863fb260fa1f5231fda0122fc5b",
+    "finiteVertices": true,
+    "triangles": 37204,
+    "watertight": true,
+    "windingConsistent": true,
+    "components": 1,
+    "imagesEmbedded": true,
+    "imageCount": 2,
+    "yUpBounds": [
+      [
+        -1.2999999523162842,
+        0.0,
+        -0.1599999964237213
+      ],
+      [
+        1.2999999523162842,
+        3.200000047683716,
+        0.06499999761581421
+      ]
+    ]
+  },
+  {
+    "id": "garden-arch",
+    "sha256": "687f16481a93f255009a411c67f57a7e34db13446a26a41b1e287df41f518d40",
+    "finiteVertices": true,
+    "triangles": 17556,
+    "watertight": true,
+    "windingConsistent": true,
+    "components": 1,
+    "imagesEmbedded": true,
+    "imageCount": 2,
+    "yUpBounds": [
+      [
+        -1.6990517377853394,
+        0.0,
+        -0.1599999964237213
+      ],
+      [
+        1.6990517377853394,
+        4.0,
+        0.06499999761581421
+      ]
+    ]
+  },
+  {
+    "id": "marble-arch",
+    "sha256": "da18ee85b2f730d2a010b8c3b536709b76b79995ad199099b50142bf7adf71bc",
+    "finiteVertices": true,
+    "triangles": 21812,
+    "watertight": true,
+    "windingConsistent": true,
+    "components": 1,
+    "imagesEmbedded": true,
+    "imageCount": 2,
+    "yUpBounds": [
+      [
+        -1.7458534240722656,
+        0.0,
+        -0.1599999964237213
+      ],
+      [
+        1.7340830564498901,
+        4.0,
+        0.06499999761581421
+      ]
+    ]
+  },
+  {
+    "id": "marble-floor",
+    "sha256": "6b6fce872801fcf14b14f8ccd465886fd029a011be08196884cbfdb59122b389",
+    "finiteVertices": true,
+    "triangles": 9600,
+    "watertight": true,
+    "windingConsistent": true,
+    "components": 1,
+    "imagesEmbedded": true,
+    "imageCount": 2,
+    "yUpBounds": [
+      [
+        -1.5,
+        0.0,
+        -0.10000000149011612
+      ],
+      [
+        1.5,
+        3.0,
+        0.017999999225139618
+      ]
+    ]
+  },
+  {
+    "id": "boulder",
+    "sha256": "3b5002de8baa70759386e0cc6ebc0408a5a2eac806ce96b6c3d96ee1f819cfec",
+    "finiteVertices": true,
+    "triangles": 6000,
+    "watertight": true,
+    "windingConsistent": true,
+    "components": 1,
+    "imagesEmbedded": true,
+    "imageCount": 1,
+    "yUpBounds": [
+      [
+        -0.6502977013587952,
+        4.480883717405959e-07,
+        -0.4999547004699707
+      ],
+      [
+        0.6509630084037781,
+        1.000815510749817,
+        0.5008123517036438
+      ]
+    ]
+  },
+  {
+    "id": "moss-patch",
+    "sha256": "8ebb66f9fffbfb5b17449824535f03d9abef4fccadbaedc918dd47299246c335",
+    "finiteVertices": true,
+    "triangles": 9600,
+    "watertight": true,
+    "windingConsistent": true,
+    "components": 1,
+    "imagesEmbedded": true,
+    "imageCount": 2,
+    "yUpBounds": [
+      [
+        -0.5,
+        0.0,
+        -0.10000000149011612
+      ],
+      [
+        0.5,
+        1.0,
+        0.05000000074505806
+      ]
+    ]
+  },
+  {
+    "id": "riverbed",
+    "sha256": "55a7f60d08e549ca3a251a3eeeaecb4e6c5e9fb475c8612d55d5790be31ed3ee",
+    "finiteVertices": true,
+    "triangles": 9600,
+    "watertight": true,
+    "windingConsistent": true,
+    "components": 1,
+    "imagesEmbedded": true,
+    "imageCount": 2,
+    "yUpBounds": [
+      [
+        -2.0,
+        0.0,
+        -0.10000000149011612
+      ],
+      [
+        2.0,
+        4.0,
+        0.017999999225139618
+      ]
+    ]
+  }
+]

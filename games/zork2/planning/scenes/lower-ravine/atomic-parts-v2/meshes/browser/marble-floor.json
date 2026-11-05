@@ -1,0 +1,13 @@
+{
+  "file": "marble-floor.glb",
+  "sourceSha256": "6b6fce872801fcf14b14f8ccd465886fd029a011be08196884cbfdb59122b389",
+  "sha256": "b0a731ac7653c42456ee9cbfb46d9ab2613c5056c42632ca11c77632cefc3ab6",
+  "standardBytes": 2540156,
+  "browserBytes": 347448,
+  "browserTriangles": 4800,
+  "extensionsRequired": [
+    "KHR_mesh_quantization",
+    "EXT_meshopt_compression",
+    "KHR_texture_basisu"
+  ]
+}

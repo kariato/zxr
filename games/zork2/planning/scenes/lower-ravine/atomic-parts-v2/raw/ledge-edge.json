@@ -1,0 +1,37 @@
+{
+  "part": "ledge-edge",
+  "inputs": {
+    "referenceSha256": "23f4fb440f91581b0bdbcb3f44adf8550ea8c810e22a23f762d0b07d7f1e7780",
+    "pipeline": {
+      "implementation": "Hunyuan3D-Swift/MLX",
+      "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+      "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+      "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+      "steps": 8,
+      "guidance": 5,
+      "octree": 256,
+      "seed": 42,
+      "quantize": 8,
+      "licence": "Tencent Hunyuan 3D 2.0 Community License",
+      "scope": "US-only local prototype"
+    }
+  },
+  "sha256": "c8b1f042bbbd52f4fa4a44333c1afd16addd47d492b7dd899b45da0bf5d98a7b",
+  "vertices": 153258,
+  "triangles": 306504,
+  "bounds": [
+    [
+      -0.9976860342928724,
+      -0.4154330310113069,
+      -0.5066810945990387
+    ],
+    [
+      0.9895911299187161,
+      0.4031213198347716,
+      0.49248499780070487
+    ]
+  ],
+  "seconds": 67.31,
+  "texture": "none",
+  "status": "draft; inspect openings and hidden geometry"
+}

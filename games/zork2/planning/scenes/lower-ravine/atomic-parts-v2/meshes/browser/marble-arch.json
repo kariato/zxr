@@ -1,0 +1,13 @@
+{
+  "file": "marble-arch.glb",
+  "sourceSha256": "da18ee85b2f730d2a010b8c3b536709b76b79995ad199099b50142bf7adf71bc",
+  "sha256": "f03785cc81bf3096dfc0107fc561daa9eb007147bc3a1e45dfdd70d63781b3ef",
+  "standardBytes": 2503908,
+  "browserBytes": 379992,
+  "browserTriangles": 11006,
+  "extensionsRequired": [
+    "KHR_mesh_quantization",
+    "EXT_meshopt_compression",
+    "KHR_texture_basisu"
+  ]
+}

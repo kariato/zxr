@@ -1,0 +1,13 @@
+{
+  "file": "boulder.glb",
+  "sourceSha256": "3b5002de8baa70759386e0cc6ebc0408a5a2eac806ce96b6c3d96ee1f819cfec",
+  "sha256": "6b6bde4307646286729514f5d80ea1b93071f71c1bf9724e2d62256ec005be6f",
+  "standardBytes": 1144628,
+  "browserBytes": 274532,
+  "browserTriangles": 5990,
+  "extensionsRequired": [
+    "KHR_mesh_quantization",
+    "EXT_meshopt_compression",
+    "KHR_texture_basisu"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "part": "riverbed",
+  "inputs": {
+    "referenceSha256": "bc53f3279b355e2801582058ac842b0dc7a690aaf71ab8a076f0db73a4485c37",
+    "pipeline": {
+      "implementation": "Hunyuan3D-Swift/MLX",
+      "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+      "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+      "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+      "steps": 8,
+      "guidance": 5,
+      "octree": 256,
+      "seed": 42,
+      "quantize": 8,
+      "licence": "Tencent Hunyuan 3D 2.0 Community License",
+      "scope": "US-only local prototype"
+    }
+  },
+  "sha256": "d62a76c1c9f52cae27c4938802c2893b49eaac1873d7b67bfe4bd2969c3249a6",
+  "vertices": 292705,
+  "triangles": 585030,
+  "bounds": [
+    [
+      -0.9982313504198496,
+      -0.997977042089058,
+      -0.464131122763493
+    ],
+    [
+      0.9902837423783577,
+      0.9902270141197582,
+      0.45680616132992924
+    ]
+  ],
+  "seconds": 87.92,
+  "texture": "none",
+  "status": "draft; inspect openings and hidden geometry"
+}

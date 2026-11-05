@@ -1,0 +1,37 @@
+{
+  "part": "cliff-face",
+  "inputs": {
+    "referenceSha256": "ddcc59c5343c51dd528c74846a1690407eb32bc2a8f0fe9e242efa7c27fae1e0",
+    "pipeline": {
+      "implementation": "Hunyuan3D-Swift/MLX",
+      "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+      "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+      "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+      "steps": 8,
+      "guidance": 5,
+      "octree": 256,
+      "seed": 42,
+      "quantize": 8,
+      "licence": "Tencent Hunyuan 3D 2.0 Community License",
+      "scope": "US-only local prototype"
+    }
+  },
+  "sha256": "c96a263f8fbb942950a74e36157c7004ac4f3bef0263f11cd66d07ff8e2a78fd",
+  "vertices": 609411,
+  "triangles": 1217974,
+  "bounds": [
+    [
+      -0.9983657745799347,
+      -0.9981424070617003,
+      -0.8564586171127735
+    ],
+    [
+      0.9901771220360853,
+      0.9901657284112084,
+      0.8472889528535297
+    ]
+  ],
+  "seconds": 135.25,
+  "texture": "none",
+  "status": "draft; inspect openings and hidden geometry"
+}

@@ -15,3 +15,7 @@ games/zork2/planning/scenes/volcano/mesh-v2-color/volcano-color-v2.glb filter=lf
 out/**/*.glb filter=lfs diff=lfs merge=lfs -text
 out/**/*.blend filter=lfs diff=lfs merge=lfs -text
 out/**/*.blend1 filter=lfs diff=lfs merge=lfs -text
+games/zork2/planning/scenes/lower-ravine/atomic-parts-v2/**/*.glb filter=lfs diff=lfs merge=lfs -text
+games/zork2/planning/scenes/lower-ravine/atomic-parts-v2/**/*.blend filter=lfs diff=lfs merge=lfs -text
+games/zork2/planning/scenes/lower-ravine/assembled-v3/*.glb filter=lfs diff=lfs merge=lfs -text
+games/zork2/planning/scenes/lower-ravine/assembled-v3/*.blend filter=lfs diff=lfs merge=lfs -text

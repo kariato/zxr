@@ -1,0 +1,145 @@
+{
+  "cliff-face": {
+    "file": "cliff-face.glb",
+    "sourceSha256": "a466e1cd5ce0bafb77111a24e6e6b7a58aaf756971ee85c6a5ff37e22866b670",
+    "sha256": "bcfdd93bab705a87fd35260dfb571145ade0f10df8a71681aad73e575982ebc3",
+    "standardBytes": 2397596,
+    "browserBytes": 357332,
+    "browserTriangles": 4800,
+    "extensionsRequired": [
+      "KHR_mesh_quantization",
+      "EXT_meshopt_compression",
+      "KHR_texture_basisu"
+    ]
+  },
+  "ledge-top": {
+    "file": "ledge-top.glb",
+    "sourceSha256": "4a71c6147a3086c91081a7991b41530616e9e1eab7d5982c9e2ef12a204a520e",
+    "sha256": "b1b1687d6718a7d2f412f35fd1f56ecc728ecfe134a2a9242642d5f1edbcacf3",
+    "standardBytes": 2233804,
+    "browserBytes": 280120,
+    "browserTriangles": 2448,
+    "extensionsRequired": [
+      "KHR_mesh_quantization",
+      "EXT_meshopt_compression",
+      "KHR_texture_basisu"
+    ]
+  },
+  "ledge-edge": {
+    "file": "ledge-edge.glb",
+    "sourceSha256": "64d54768fed815341f45e741b437976d120c63ad7da8ef8af9fb5819f909f5db",
+    "sha256": "21229b9aa98d2989c173af729767335557f13711fa9589f7a4e328f21ffceb23",
+    "standardBytes": 2064368,
+    "browserBytes": 373272,
+    "browserTriangles": 3532,
+    "extensionsRequired": [
+      "KHR_mesh_quantization",
+      "EXT_meshopt_compression",
+      "KHR_texture_basisu"
+    ]
+  },
+  "wide-cave": {
+    "file": "wide-cave.glb",
+    "sourceSha256": "8a685663fdb28e94045c3ffd75e90531f15ccd1eb8c492948daa2c1cbda65e57",
+    "sha256": "675b32d6723e820e5c35334f27dea17010d0dbcbd936da18e12d2748e710f641",
+    "standardBytes": 2531212,
+    "browserBytes": 498196,
+    "browserTriangles": 12776,
+    "extensionsRequired": [
+      "KHR_mesh_quantization",
+      "EXT_meshopt_compression",
+      "KHR_texture_basisu"
+    ]
+  },
+  "small-cave": {
+    "file": "small-cave.glb",
+    "sourceSha256": "b5c817d341c10382186a51605a411c7f32469863fb260fa1f5231fda0122fc5b",
+    "sha256": "02deec32417b23e9ded74c50bbee10b68a1709ebc514c16fe8cc5d93cce79816",
+    "standardBytes": 4044528,
+    "browserBytes": 724248,
+    "browserTriangles": 25928,
+    "extensionsRequired": [
+      "KHR_mesh_quantization",
+      "EXT_meshopt_compression",
+      "KHR_texture_basisu"
+    ]
+  },
+  "garden-arch": {
+    "file": "garden-arch.glb",
+    "sourceSha256": "687f16481a93f255009a411c67f57a7e34db13446a26a41b1e287df41f518d40",
+    "sha256": "206c5eb36e008042acb52fb0090cb9599701321c2082a1850334993de6da7deb",
+    "standardBytes": 2112644,
+    "browserBytes": 329848,
+    "browserTriangles": 8882,
+    "extensionsRequired": [
+      "KHR_mesh_quantization",
+      "EXT_meshopt_compression",
+      "KHR_texture_basisu"
+    ]
+  },
+  "marble-arch": {
+    "file": "marble-arch.glb",
+    "sourceSha256": "da18ee85b2f730d2a010b8c3b536709b76b79995ad199099b50142bf7adf71bc",
+    "sha256": "f03785cc81bf3096dfc0107fc561daa9eb007147bc3a1e45dfdd70d63781b3ef",
+    "standardBytes": 2503908,
+    "browserBytes": 379992,
+    "browserTriangles": 11006,
+    "extensionsRequired": [
+      "KHR_mesh_quantization",
+      "EXT_meshopt_compression",
+      "KHR_texture_basisu"
+    ]
+  },
+  "marble-floor": {
+    "file": "marble-floor.glb",
+    "sourceSha256": "6b6fce872801fcf14b14f8ccd465886fd029a011be08196884cbfdb59122b389",
+    "sha256": "b0a731ac7653c42456ee9cbfb46d9ab2613c5056c42632ca11c77632cefc3ab6",
+    "standardBytes": 2540156,
+    "browserBytes": 347448,
+    "browserTriangles": 4800,
+    "extensionsRequired": [
+      "KHR_mesh_quantization",
+      "EXT_meshopt_compression",
+      "KHR_texture_basisu"
+    ]
+  },
+  "boulder": {
+    "file": "boulder.glb",
+    "sourceSha256": "3b5002de8baa70759386e0cc6ebc0408a5a2eac806ce96b6c3d96ee1f819cfec",
+    "sha256": "6b6bde4307646286729514f5d80ea1b93071f71c1bf9724e2d62256ec005be6f",
+    "standardBytes": 1144628,
+    "browserBytes": 274532,
+    "browserTriangles": 5990,
+    "extensionsRequired": [
+      "KHR_mesh_quantization",
+      "EXT_meshopt_compression",
+      "KHR_texture_basisu"
+    ]
+  },
+  "moss-patch": {
+    "file": "moss-patch.glb",
+    "sourceSha256": "8ebb66f9fffbfb5b17449824535f03d9abef4fccadbaedc918dd47299246c335",
+    "sha256": "7378731e81ac83509e1cdebcf2546f7e223a3ff908d2361ad28a1741843486ef",
+    "standardBytes": 2868156,
+    "browserBytes": 640976,
+    "browserTriangles": 7104,
+    "extensionsRequired": [
+      "KHR_mesh_quantization",
+      "EXT_meshopt_compression",
+      "KHR_texture_basisu"
+    ]
+  },
+  "riverbed": {
+    "file": "riverbed.glb",
+    "sourceSha256": "55a7f60d08e549ca3a251a3eeeaecb4e6c5e9fb475c8612d55d5790be31ed3ee",
+    "sha256": "b90f31eab179373a242c084a25c6cbbc48a3b98811f107cf4b80deb67e3513dd",
+    "standardBytes": 2536432,
+    "browserBytes": 304788,
+    "browserTriangles": 4800,
+    "extensionsRequired": [
+      "KHR_mesh_quantization",
+      "EXT_meshopt_compression",
+      "KHR_texture_basisu"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "part": "marble-floor",
+  "inputs": {
+    "referenceSha256": "acc8cbf3aeca753593a9bf166ed3bed77c3d33bb1e39e1cdaddd5e2ea4e1db2f",
+    "pipeline": {
+      "implementation": "Hunyuan3D-Swift/MLX",
+      "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+      "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+      "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+      "steps": 8,
+      "guidance": 5,
+      "octree": 256,
+      "seed": 42,
+      "quantize": 8,
+      "licence": "Tencent Hunyuan 3D 2.0 Community License",
+      "scope": "US-only local prototype"
+    }
+  },
+  "sha256": "7e6af36c9f70c50b327f6a8f7c10e70209c3c63abcf9866092af151d5bf9cc69",
+  "vertices": 699796,
+  "triangles": 1399338,
+  "bounds": [
+    [
+      -0.9991829963788891,
+      -0.997983164288478,
+      -0.9981289192960664
+    ],
+    [
+      0.9903202019779647,
+      0.9900224086035423,
+      0.99046280218827
+    ]
+  ],
+  "seconds": 160.58,
+  "texture": "none",
+  "status": "draft; inspect openings and hidden geometry"
+}

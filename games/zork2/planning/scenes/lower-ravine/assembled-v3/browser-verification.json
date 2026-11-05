@@ -1,0 +1,9 @@
+{
+  "browserBytes": 4655240,
+  "sha256": "868c856be996ef6cb1eea82cadeefe51b110eafab1b9aa51ba45361111ff7ab7",
+  "extensionsRequired": [
+    "KHR_mesh_quantization",
+    "EXT_meshopt_compression",
+    "KHR_texture_basisu"
+  ]
+}

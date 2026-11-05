@@ -1,0 +1,13 @@
+{
+  "file": "riverbed.glb",
+  "sourceSha256": "55a7f60d08e549ca3a251a3eeeaecb4e6c5e9fb475c8612d55d5790be31ed3ee",
+  "sha256": "b90f31eab179373a242c084a25c6cbbc48a3b98811f107cf4b80deb67e3513dd",
+  "standardBytes": 2536432,
+  "browserBytes": 304788,
+  "browserTriangles": 4800,
+  "extensionsRequired": [
+    "KHR_mesh_quantization",
+    "EXT_meshopt_compression",
+    "KHR_texture_basisu"
+  ]
+}

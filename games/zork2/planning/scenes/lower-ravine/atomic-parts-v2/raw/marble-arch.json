@@ -1,0 +1,37 @@
+{
+  "part": "marble-arch",
+  "inputs": {
+    "referenceSha256": "322fc76cf0604a045b1e773eed9f5a07bc744f8565d8175abad6e12f270e6552",
+    "pipeline": {
+      "implementation": "Hunyuan3D-Swift/MLX",
+      "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+      "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+      "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+      "steps": 8,
+      "guidance": 5,
+      "octree": 256,
+      "seed": 42,
+      "quantize": 8,
+      "licence": "Tencent Hunyuan 3D 2.0 Community License",
+      "scope": "US-only local prototype"
+    }
+  },
+  "sha256": "b6f4f5844d8bb956f187332f022880222581253d40c674669fe91c2d30679a97",
+  "vertices": 59198,
+  "triangles": 118392,
+  "bounds": [
+    [
+      -0.7082044254033399,
+      -0.7728717918002118,
+      -0.10369625839700669
+    ],
+    [
+      0.6999242884231616,
+      0.7628745456013668,
+      0.09613832731792726
+    ]
+  ],
+  "seconds": 57.19,
+  "texture": "none",
+  "status": "draft; inspect openings and hidden geometry"
+}

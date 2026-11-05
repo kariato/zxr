@@ -1,0 +1,37 @@
+{
+  "part": "wide-cave",
+  "inputs": {
+    "referenceSha256": "2c52d05aedbab4584c856bf042173805d3bf20e8b78208ca7a66a988e2f11b78",
+    "pipeline": {
+      "implementation": "Hunyuan3D-Swift/MLX",
+      "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+      "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+      "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+      "steps": 8,
+      "guidance": 5,
+      "octree": 256,
+      "seed": 42,
+      "quantize": 8,
+      "licence": "Tencent Hunyuan 3D 2.0 Community License",
+      "scope": "US-only local prototype"
+    }
+  },
+  "sha256": "1cfbec0292ed9532b184604ca41d740c869587376bfc7ee5f103a71bd50016e1",
+  "vertices": 106018,
+  "triangles": 212016,
+  "bounds": [
+    [
+      -0.9976518187501388,
+      -0.6190743167473896,
+      -0.17924246770921026
+    ],
+    [
+      0.9903891633916952,
+      0.6115137171614311,
+      0.17131802170776456
+    ]
+  ],
+  "seconds": 61.75,
+  "texture": "none",
+  "status": "draft; inspect openings and hidden geometry"
+}

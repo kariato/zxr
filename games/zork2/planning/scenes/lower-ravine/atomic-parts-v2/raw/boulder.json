@@ -1,0 +1,37 @@
+{
+  "part": "boulder",
+  "inputs": {
+    "referenceSha256": "6805a7d7a4ca68e1e1a12294189a4e476e85d3265dd0254b0768c354226cb7ea",
+    "pipeline": {
+      "implementation": "Hunyuan3D-Swift/MLX",
+      "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+      "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+      "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+      "steps": 8,
+      "guidance": 5,
+      "octree": 256,
+      "seed": 42,
+      "quantize": 8,
+      "licence": "Tencent Hunyuan 3D 2.0 Community License",
+      "scope": "US-only local prototype"
+    }
+  },
+  "sha256": "ecd66653a0e3fd4cc116bb03714658fd8671cbdd8f6fe98d2f2dfc48d61d236e",
+  "vertices": 217056,
+  "triangles": 434056,
+  "bounds": [
+    [
+      -0.9122711430956932,
+      -0.6737214997795451,
+      -0.9128395275651437
+    ],
+    [
+      0.9075699835552362,
+      0.6240414274790596,
+      0.897363814256011
+    ]
+  ],
+  "seconds": 76.8,
+  "texture": "none",
+  "status": "draft; inspect openings and hidden geometry"
+}

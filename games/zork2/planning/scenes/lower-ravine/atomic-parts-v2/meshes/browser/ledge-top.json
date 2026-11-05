@@ -1,0 +1,13 @@
+{
+  "file": "ledge-top.glb",
+  "sourceSha256": "4a71c6147a3086c91081a7991b41530616e9e1eab7d5982c9e2ef12a204a520e",
+  "sha256": "b1b1687d6718a7d2f412f35fd1f56ecc728ecfe134a2a9242642d5f1edbcacf3",
+  "standardBytes": 2233804,
+  "browserBytes": 280120,
+  "browserTriangles": 2448,
+  "extensionsRequired": [
+    "KHR_mesh_quantization",
+    "EXT_meshopt_compression",
+    "KHR_texture_basisu"
+  ]
+}

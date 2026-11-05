@@ -1,0 +1,134 @@
+[
+  {
+    "id": "cliff-face",
+    "size": [
+      1254,
+      1254
+    ],
+    "sha256": "ddcc59c5343c51dd528c74846a1690407eb32bc2a8f0fe9e242efa7c27fae1e0",
+    "alphaRange": [
+      0,
+      255
+    ]
+  },
+  {
+    "id": "ledge-top",
+    "size": [
+      1774,
+      887
+    ],
+    "sha256": "5969454a49b1f949565623751eed6796df10ef76057f2e206dd04725ea27c333",
+    "alphaRange": [
+      0,
+      255
+    ]
+  },
+  {
+    "id": "ledge-edge",
+    "size": [
+      1774,
+      887
+    ],
+    "sha256": "23f4fb440f91581b0bdbcb3f44adf8550ea8c810e22a23f762d0b07d7f1e7780",
+    "alphaRange": [
+      0,
+      255
+    ]
+  },
+  {
+    "id": "wide-cave",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "2c52d05aedbab4584c856bf042173805d3bf20e8b78208ca7a66a988e2f11b78",
+    "alphaRange": [
+      0,
+      254
+    ]
+  },
+  {
+    "id": "small-cave",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "b236999eac669f150ed753a5357face677eba2f7a8607bf0b269d987c102bf6a",
+    "alphaRange": [
+      0,
+      254
+    ]
+  },
+  {
+    "id": "garden-arch",
+    "size": [
+      1312,
+      1199
+    ],
+    "sha256": "6eb54bb27e32e1843802070c54453f0699583e509457ff172a21916121b5ffef",
+    "alphaRange": [
+      0,
+      255
+    ]
+  },
+  {
+    "id": "marble-arch",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "322fc76cf0604a045b1e773eed9f5a07bc744f8565d8175abad6e12f270e6552",
+    "alphaRange": [
+      0,
+      254
+    ]
+  },
+  {
+    "id": "marble-floor",
+    "size": [
+      1254,
+      1254
+    ],
+    "sha256": "acc8cbf3aeca753593a9bf166ed3bed77c3d33bb1e39e1cdaddd5e2ea4e1db2f",
+    "alphaRange": [
+      0,
+      255
+    ]
+  },
+  {
+    "id": "boulder",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "6805a7d7a4ca68e1e1a12294189a4e476e85d3265dd0254b0768c354226cb7ea",
+    "alphaRange": [
+      0,
+      254
+    ]
+  },
+  {
+    "id": "moss-patch",
+    "size": [
+      1254,
+      1254
+    ],
+    "sha256": "652f2d01f06e9e19f0dcab82c62b4db83101e4e609903f575cc6c34931f00185",
+    "alphaRange": [
+      0,
+      255
+    ]
+  },
+  {
+    "id": "riverbed",
+    "size": [
+      1254,
+      1254
+    ],
+    "sha256": "bc53f3279b355e2801582058ac842b0dc7a690aaf71ab8a076f0db73a4485c37",
+    "alphaRange": [
+      0,
+      255
+    ]
+  }
+]

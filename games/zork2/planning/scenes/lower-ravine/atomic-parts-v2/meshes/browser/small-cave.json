@@ -1,0 +1,13 @@
+{
+  "file": "small-cave.glb",
+  "sourceSha256": "b5c817d341c10382186a51605a411c7f32469863fb260fa1f5231fda0122fc5b",
+  "sha256": "02deec32417b23e9ded74c50bbee10b68a1709ebc514c16fe8cc5d93cce79816",
+  "standardBytes": 4044528,
+  "browserBytes": 724248,
+  "browserTriangles": 25928,
+  "extensionsRequired": [
+    "KHR_mesh_quantization",
+    "EXT_meshopt_compression",
+    "KHR_texture_basisu"
+  ]
+}

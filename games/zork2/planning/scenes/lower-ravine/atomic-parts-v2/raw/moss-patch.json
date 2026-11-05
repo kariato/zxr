@@ -1,0 +1,37 @@
+{
+  "part": "moss-patch",
+  "inputs": {
+    "referenceSha256": "652f2d01f06e9e19f0dcab82c62b4db83101e4e609903f575cc6c34931f00185",
+    "pipeline": {
+      "implementation": "Hunyuan3D-Swift/MLX",
+      "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+      "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+      "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+      "steps": 8,
+      "guidance": 5,
+      "octree": 256,
+      "seed": 42,
+      "quantize": 8,
+      "licence": "Tencent Hunyuan 3D 2.0 Community License",
+      "scope": "US-only local prototype"
+    }
+  },
+  "sha256": "13483f5a7d672a964d208ba3799021ea2b8f57b491b4e0e199d7cff1b7f50e21",
+  "vertices": 157754,
+  "triangles": 315504,
+  "bounds": [
+    [
+      -0.9907988279203809,
+      -0.9934412456472917,
+      -0.08003313872174556
+    ],
+    [
+      0.9836494145116934,
+      0.9891434204274883,
+      0.07930982344138227
+    ]
+  ],
+  "seconds": 68.17,
+  "texture": "none",
+  "status": "draft; inspect openings and hidden geometry"
+}

@@ -1,0 +1,13 @@
+{
+  "file": "cliff-face.glb",
+  "sourceSha256": "a466e1cd5ce0bafb77111a24e6e6b7a58aaf756971ee85c6a5ff37e22866b670",
+  "sha256": "bcfdd93bab705a87fd35260dfb571145ade0f10df8a71681aad73e575982ebc3",
+  "standardBytes": 2397596,
+  "browserBytes": 357332,
+  "browserTriangles": 4800,
+  "extensionsRequired": [
+    "KHR_mesh_quantization",
+    "EXT_meshopt_compression",
+    "KHR_texture_basisu"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "file": "ledge-edge.glb",
+  "sourceSha256": "64d54768fed815341f45e741b437976d120c63ad7da8ef8af9fb5819f909f5db",
+  "sha256": "21229b9aa98d2989c173af729767335557f13711fa9589f7a4e328f21ffceb23",
+  "standardBytes": 2064368,
+  "browserBytes": 373272,
+  "browserTriangles": 3532,
+  "extensionsRequired": [
+    "KHR_mesh_quantization",
+    "EXT_meshopt_compression",
+    "KHR_texture_basisu"
+  ]
+}

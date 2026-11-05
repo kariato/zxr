@@ -1,0 +1,37 @@
+{
+  "part": "garden-arch",
+  "inputs": {
+    "referenceSha256": "6eb54bb27e32e1843802070c54453f0699583e509457ff172a21916121b5ffef",
+    "pipeline": {
+      "implementation": "Hunyuan3D-Swift/MLX",
+      "revision": "292331f4d26ddb80b9dcea6bcb5629ff82f12b82",
+      "weights": "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0-turbo",
+      "weightsRevision": "9cd649ba6913f7a852e3286bad86bfa9a2d83dcf",
+      "steps": 8,
+      "guidance": 5,
+      "octree": 256,
+      "seed": 42,
+      "quantize": 8,
+      "licence": "Tencent Hunyuan 3D 2.0 Community License",
+      "scope": "US-only local prototype"
+    }
+  },
+  "sha256": "e3a358934105bb288b3fda724c14af98ba22a140aae0fe50e1c47bfec4b76978",
+  "vertices": 68816,
+  "triangles": 137628,
+  "bounds": [
+    [
+      -0.7994807181958661,
+      -0.9982308641294456,
+      -0.10620675368903165
+    ],
+    [
+      0.7918530911140838,
+      0.9900601874649775,
+      0.09854957814062715
+    ]
+  ],
+  "seconds": 57.19,
+  "texture": "none",
+  "status": "draft; inspect openings and hidden geometry"
+}
