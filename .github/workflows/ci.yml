@@ -4,7 +4,8 @@ permissions:
   contents: read
 jobs:
   check:
-    runs-on: ubuntu-latest
+    # Keep browser dependency installation on a Playwright-supported image.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
