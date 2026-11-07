@@ -1,0 +1,26 @@
+{
+  "pipelineVersion": 2,
+  "room": "INSIDE-BARROW",
+  "source": "games/zork2/planning/scenes/barrow-entrance/below-grade-v4/barrow-below-grade.glb",
+  "sourceSha256": "7b6fbaede1d09cb1b4cb22b7d2ccf06e80647501337af0a4645b26511d75d388",
+  "sourceBytes": 9467712,
+  "bytes": 2858300,
+  "sourceTriangles": 104032,
+  "triangles": 26008,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "emissive",
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "c64bd697f10e49ffe8882f5071b8dd082be1b14272e869d76a91328fe94e8a78",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true,
+  "emissiveResolution": 1024
+}

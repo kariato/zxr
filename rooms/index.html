@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zork II rooms</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#101a22;color:#e7ecee;font:15px system-ui;height:100dvh;display:flex;flex-direction:column}header{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:14px}h1{font-size:22px;margin:0 auto 0 0}button,select,a{font:inherit;color:inherit;background:#263b45;border:1px solid #617984;border-radius:5px;padding:9px}select{max-width:100%}main{flex:1;min-height:200px;position:relative}canvas{display:block;touch-action:none}#status{position:absolute;bottom:12px;left:12px;right:12px;pointer-events:none;background:#101a22dc;padding:10px}footer{padding:12px;color:#b4c6ce;font-size:13px}a{display:inline-block;text-decoration:none}@media(max-width:650px){h1{width:100%}header{gap:6px}select{flex:1;min-width:0}}
+</style>
+<header><h1>Zork II · 86 rooms</h1><button id="previous" aria-label="Previous room">←</button><select id="rooms" aria-label="Room"></select><button id="next" aria-label="Next room">→</button><button id="reset">Reset view</button><a id="download">Download GLB</a><a href="../">Play Zork II</a></header>
+<main id="stage"><div id="status" role="status">Loading rooms…</div></main>
+<footer>Drag to orbit · right-drag to pan · scroll or pinch to zoom. Optimized room studies include static props; the game’s interactive scenes are separate.</footer>
+<script type="module" src="./main.js"></script>
+</html>

@@ -1,0 +1,26 @@
+{
+  "pipelineVersion": 2,
+  "room": "DREARY-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/dreary-room/iteration-02/room.glb",
+  "sourceSha256": "9c3f0d831fef3e0f89154bbb9f09a9d9f79fbcffaf94c3d25ef34242708c9b91",
+  "sourceBytes": 39685884,
+  "bytes": 5635868,
+  "sourceTriangles": 396844,
+  "triangles": 39975,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal",
+    "emissive"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "ee7f0732cece9cc7a28b25f8e0b74073253be4da3fea799af7816152ec9c2454",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true,
+  "emissiveResolution": 1024
+}

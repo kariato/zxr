@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "LAVA-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/lava-room/iteration-02/room.glb",
+  "sourceSha256": "cd6caa06bdc4a5c92c1d7241934b962aa03aaaad92857f5fecdf9e0071b4631a",
+  "sourceBytes": 29892740,
+  "bytes": 5648236,
+  "sourceTriangles": 400962,
+  "triangles": 40000,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "b0d788b3d0106c16c8b58c071bbb12444e0cd68aeaf5276469ff28b81cc0085b",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

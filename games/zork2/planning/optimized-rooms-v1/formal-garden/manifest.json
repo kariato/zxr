@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "FORMAL-GARDEN",
+  "source": "games/zork2/planning/individual-room-review-v2/formal-garden/iteration-02/room.glb",
+  "sourceSha256": "57be27e4722a2eabbebb14d5184784be2964185f358f60f09668a0ed678b9275",
+  "sourceBytes": 11060072,
+  "bytes": 5778720,
+  "sourceTriangles": 516338,
+  "triangles": 39636,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "418e3830e39c2a67107f740022fd361d4e93cffb8df2a3dfc686e05dd02b440b",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

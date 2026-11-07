@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "STAIRWAY-TOP",
+  "source": "games/zork2/planning/individual-room-review-v2/stairway-top/iteration-02/room.glb",
+  "sourceSha256": "8644a821f42603276c82adf1da801082c53fa36ff1e5e64a0de10dcdf41c3e1a",
+  "sourceBytes": 17697268,
+  "bytes": 5359700,
+  "sourceTriangles": 392306,
+  "triangles": 39998,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "eb5174259fc3976e7c71d2c82b4f8b2194c6fb730f091f651c7dc21580df00bf",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

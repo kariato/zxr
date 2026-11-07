@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "CRYPT-ANTEROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/crypt-anteroom/iteration-02/room.glb",
+  "sourceSha256": "5a1cb53a4e779e294902bfac742d932b03a96d6e3355ed06715d7e414f1f02b6",
+  "sourceBytes": 19820180,
+  "bytes": 5573392,
+  "sourceTriangles": 342122,
+  "triangles": 39996,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "e3b181d28af4ca5126c585bbc9a6d5aaef096e10b61720eea445920a3b811d2f",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

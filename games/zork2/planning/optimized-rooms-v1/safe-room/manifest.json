@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "SAFE-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/safe-room/iteration-02/room.glb",
+  "sourceSha256": "a2b810775d3dd8e312c9dded50034e1073ddf5a2231ccbdcc2edd0052df9cd8e",
+  "sourceBytes": 30178908,
+  "bytes": 5836664,
+  "sourceTriangles": 321326,
+  "triangles": 39997,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "ec011a60a602ca359f672b869d10ddc6cdb4379b8a22688d1d6f5a3b2edf96df",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

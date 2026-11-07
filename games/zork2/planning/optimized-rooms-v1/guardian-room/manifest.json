@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "GUARDIAN-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/guardian-room/iteration-02/room.glb",
+  "sourceSha256": "1151948ef12821a6a3c4b64888acfa322228a8c103ecf35d1a1a8817fc5d06df",
+  "sourceBytes": 20409580,
+  "bytes": 5434724,
+  "sourceTriangles": 337234,
+  "triangles": 39998,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "caa6b77dc40091d89980f62dbb46dcc9a319b36dcef7c13bd6bf52cbb8c6cf34",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

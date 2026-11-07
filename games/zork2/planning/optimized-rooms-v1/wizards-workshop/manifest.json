@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "WIZARDS-WORKSHOP",
+  "source": "games/zork2/planning/individual-room-review-v2/wizards-workshop/iteration-02/room.glb",
+  "sourceSha256": "b11357569007a7856b80461fbd7e4be5b9bc2d2a1e875d14d8c3c1eaa425264e",
+  "sourceBytes": 24330552,
+  "bytes": 5731852,
+  "sourceTriangles": 436266,
+  "triangles": 39995,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "bb26d16fad7937684266b0fc5c515f981da9c3ff7842f8ace256f97c6f775f4d",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "LEDGE-TUNNEL",
+  "source": "games/zork2/planning/individual-room-review-v2/ledge-tunnel/iteration-02/room.glb",
+  "sourceSha256": "d8c3f42ccd2ccf83ebd9fc8420ea75c32e2e8a1df1589b7e02ff7e15e85c4815",
+  "sourceBytes": 52570540,
+  "bytes": 6726004,
+  "sourceTriangles": 523922,
+  "triangles": 40000,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "d3cd1f15e334bec4003119ec7c947d6722910cb744af2f8d624d3c297d80a9a0",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

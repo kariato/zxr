@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "IN-CAGE",
+  "source": "games/zork2/planning/individual-room-review-v2/in-cage/iteration-04/room.glb",
+  "sourceSha256": "55c2771fdd47ec622724365177576d3b181f8fdcd89c881398ded623d2877b88",
+  "sourceBytes": 36924748,
+  "bytes": 6690684,
+  "sourceTriangles": 388138,
+  "triangles": 40000,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "36f895e5bb58de56a8b12255e684b4e751e02b883d94d6af83771f3402cef9ea",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

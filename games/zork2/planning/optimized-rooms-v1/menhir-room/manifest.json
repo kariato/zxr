@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "MENHIR-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/menhir-room/iteration-02/room.glb",
+  "sourceSha256": "f07ab13142302778a5eb412dfc71f72c94876d7c48181cddec1e026d6eeca05f",
+  "sourceBytes": 28103456,
+  "bytes": 5630652,
+  "sourceTriangles": 424942,
+  "triangles": 40000,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "3fad9705a4575d6b0b1e2d4a090857aedb28d54774dcbd2ebeab7642a2bebf88",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "DRAGON-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/dragon-room/iteration-02/room.glb",
+  "sourceSha256": "108bd9dd7bbc7c5f65eb8f8fd05d8e3aca4f75430841f4610423c32a7a525c43",
+  "sourceBytes": 40228008,
+  "bytes": 5162520,
+  "sourceTriangles": 697874,
+  "triangles": 39995,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "2eea9ac1578ea5543fdf11757da1ddf4eab2326c5bd32c429e2156151d19be2b",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "CERBERUS-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/cerberus-room/iteration-02/room.glb",
+  "sourceSha256": "c8403bafa8f4fa563c6449d712c1080599470121fe6d6786c9aa7e16a622d06b",
+  "sourceBytes": 32999876,
+  "bytes": 5654424,
+  "sourceTriangles": 407422,
+  "triangles": 39989,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "394bd42e062e1cfc450c9af0aadbdda1cd035eff7149832e9af4886b09fe0694",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

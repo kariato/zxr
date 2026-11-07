@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "IN-AQUARIUM",
+  "source": "games/zork2/planning/individual-room-review-v2/in-aquarium/iteration-02/room.glb",
+  "sourceSha256": "55e4bdffa1c5eeebcce78c2a6ee6feca115dfb0016549b882eb0db82e2c5770f",
+  "sourceBytes": 33969920,
+  "bytes": 5572272,
+  "sourceTriangles": 341670,
+  "triangles": 39998,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "cbe3824b15785b7a2a4cc29f8cab4b5c180d7a3853e7380f35c66ee762db66d6",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

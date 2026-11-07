@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "TELLER-EAST",
+  "source": "games/zork2/planning/individual-room-review-v2/teller-east/iteration-02/room.glb",
+  "sourceSha256": "baa12caba961f9a16362fda6f964ab92a8f9eb6fe4d8db6d47439bbe7e75b1ff",
+  "sourceBytes": 18115144,
+  "bytes": 5545184,
+  "sourceTriangles": 388238,
+  "triangles": 39998,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "ed4530ef367f40beb896b8d4b19386e94e08ca434199e0a630ccc35edc2eddc8",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

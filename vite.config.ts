@@ -1,3 +1,4 @@
+import { mkdirSync, copyFileSync, readFileSync } from 'node:fs';
 import { defineConfig } from 'vite';
 import { compileSourcePath } from './tools/zil/compile.ts';
 import { packBundle } from './src/zil/bundle.ts';
@@ -7,8 +8,19 @@ import { reviewMiddleware } from './tools/planning/review-server.ts';
 import { collectLabels } from './tools/planning/labels.ts';
 // Build-time/server-only compilation. The browser loads a validated bundle.
 let building=false;
-export default defineConfig({base:process.env.GITHUB_PAGES==='true'?'/zxr/':'./',plugins:[{
+export default defineConfig({build:{rollupOptions:{input:{main:'index.html',rooms:'rooms/index.html'}}},base:process.env.GITHUB_PAGES==='true'?'/zxr/':'./',plugins:[{
   name:'zxr-story-bundle',
+  closeBundle(){
+    const source='games/zork2/planning/optimized-rooms-v1';
+    const catalogue=JSON.parse(readFileSync(source+'/catalogue.json','utf8'));
+    mkdirSync('dist/rooms/models',{recursive:true});
+    copyFileSync(source+'/catalogue.json','dist/rooms/catalogue.json');
+    for(const room of catalogue.rooms){
+      const id=room.room.toLowerCase();
+      mkdirSync('dist/rooms/models/'+id,{recursive:true});
+      copyFileSync(source+'/'+id+'/room.glb','dist/rooms/models/'+id+'/room.glb');
+    }
+  },
   configResolved(config){building=config.command==='build';},
   buildStart(){if(building){
     const bundle=compileSourcePath('reference/zork2');

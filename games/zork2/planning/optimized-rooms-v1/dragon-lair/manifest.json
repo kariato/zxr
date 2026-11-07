@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "DRAGON-LAIR",
+  "source": "games/zork2/planning/individual-room-review-v2/dragon-lair/iteration-02/room.glb",
+  "sourceSha256": "9228990134a352dea5984e58b4df8290d8d8b1363a9f9376ea56157141999e15",
+  "sourceBytes": 35106268,
+  "bytes": 5523396,
+  "sourceTriangles": 391760,
+  "triangles": 39993,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "07d6b22552bd5b2abad00839a33b001435d84c45a98c1a93a840ea788fe9311f",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

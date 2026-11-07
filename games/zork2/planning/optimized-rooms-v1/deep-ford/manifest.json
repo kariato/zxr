@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "DEEP-FORD",
+  "source": "games/zork2/planning/individual-room-review-v2/deep-ford/iteration-02/room.glb",
+  "sourceSha256": "57f6480cbf32bced3cdad66de6328bdfaebaa660ea180f67e2f045be9a5e717d",
+  "sourceBytes": 30993492,
+  "bytes": 5639144,
+  "sourceTriangles": 478954,
+  "triangles": 40000,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "7206bad2ecd8de0892807dc3f050ef2946b378ed6d1e27a1caecd5b558640e86",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

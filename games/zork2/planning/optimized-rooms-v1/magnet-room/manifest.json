@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "MAGNET-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/magnet-room/iteration-02/room.glb",
+  "sourceSha256": "5a7ae059b24242acbc92b024f5241689ef794338dd2c8e642238c3c8437911c1",
+  "sourceBytes": 35056808,
+  "bytes": 5751392,
+  "sourceTriangles": 392646,
+  "triangles": 39998,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "09866d3c71a3e8a6811e2e68f33362dd20a11bf23e0eef39abba75a7aade0151",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

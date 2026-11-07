@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "MACHINE-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/machine-room/iteration-02/room.glb",
+  "sourceSha256": "6a06a66757cfc757d0b24460a592eee388ca3462cc87dbf33e0a26e47bf09418",
+  "sourceBytes": 20727816,
+  "bytes": 5665568,
+  "sourceTriangles": 345534,
+  "triangles": 39998,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "5f3beb81a325ba8dfb4660f0a4d038345645488ff3b9a5ab54766e7c68531cd5",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

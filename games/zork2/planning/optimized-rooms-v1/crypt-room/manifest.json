@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "CRYPT-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/crypt-room/iteration-02/room.glb",
+  "sourceSha256": "e70a00d5ca040de9a6d4bf8cf6bfb7abe8f64b56f505855b46145623063ef504",
+  "sourceBytes": 21310780,
+  "bytes": 5559276,
+  "sourceTriangles": 350790,
+  "triangles": 39995,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "cae67ee8d57c7ab0509121e596f5e6a1f81465a3611275b3d8d3a422f61ac355",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

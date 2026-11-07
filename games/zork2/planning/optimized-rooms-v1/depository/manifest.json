@@ -1,0 +1,26 @@
+{
+  "pipelineVersion": 2,
+  "room": "DEPOSITORY",
+  "source": "games/zork2/planning/individual-room-review-v2/depository/iteration-04/room.glb",
+  "sourceSha256": "f06ce66b32a43a0301052b877c91c2424c2968a65d802dd828ff92e801aff465",
+  "sourceBytes": 20533660,
+  "bytes": 5744648,
+  "sourceTriangles": 336714,
+  "triangles": 39986,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "tangentNormal",
+    "emissive",
+    "baseColor"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "1082614b298e9ad9dea17395347732e423253c9f67d0b6547cbe6fdf4e852630",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true,
+  "emissiveResolution": 1024
+}

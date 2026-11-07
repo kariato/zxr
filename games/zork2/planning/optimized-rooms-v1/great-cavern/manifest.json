@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "GREAT-CAVERN",
+  "source": "games/zork2/planning/individual-room-review-v2/great-cavern/iteration-02/room.glb",
+  "sourceSha256": "65baa30fc08535c7a1916aee1edbe14a87816c4e8cd22fdba587d9c5917d4b7e",
+  "sourceBytes": 47209476,
+  "bytes": 5512196,
+  "sourceTriangles": 819518,
+  "triangles": 40000,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "af595eed427239e5548102fefc29b9c361939418780898aa4da7062059817827",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

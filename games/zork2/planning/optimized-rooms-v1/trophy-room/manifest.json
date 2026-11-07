@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "TROPHY-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/trophy-room/iteration-02/room.glb",
+  "sourceSha256": "279618b40df57af2cdfff036c49b8b96724b01ddfa599217e7ce178a2c30721f",
+  "sourceBytes": 25027212,
+  "bytes": 5507084,
+  "sourceTriangles": 302790,
+  "triangles": 39983,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "d2067e35061fe1c5fd93f2c5ceac657a6c90e08cac22e30361096f1a43355902",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

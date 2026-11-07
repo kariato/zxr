@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "RIDDLE-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/riddle-room/iteration-02/room.glb",
+  "sourceSha256": "28290cd63fbc8642fb9edb0cbfaf819ccaa9c109fcb544cff538db877d216bac",
+  "sourceBytes": 31268936,
+  "bytes": 5714876,
+  "sourceTriangles": 432932,
+  "triangles": 39997,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "8001f5a228ff2bbc8b08a823e3be87a887844992f5d4d2208d808c69648365e2",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "VOLCANO-VIEW",
+  "source": "games/zork2/planning/individual-room-review-v2/volcano-view/iteration-02/room.glb",
+  "sourceSha256": "0bac89c114e811932a5334a75f486548c92095a05f553b7796f24b49f51f679f",
+  "sourceBytes": 52676536,
+  "bytes": 6729896,
+  "sourceTriangles": 530966,
+  "triangles": 40000,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "daa102af38a99bb91ff5006dce27ee45082058564c86723b6711382c36459dbc",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

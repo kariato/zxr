@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "MARBLE-HALL",
+  "source": "games/zork2/planning/individual-room-review-v2/marble-hall/iteration-02/room.glb",
+  "sourceSha256": "cf9555a8171f57cae3c4ee5ca0d374851945bfc55ab317c2a8267f45fcc85972",
+  "sourceBytes": 18864372,
+  "bytes": 5399352,
+  "sourceTriangles": 333546,
+  "triangles": 39998,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "44d2fce6c131b15ba91d73c4a6b6f784841385e40f7493e5d966c3034ff4e14c",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

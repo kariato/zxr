@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "STONE-BRIDGE",
+  "source": "games/zork2/planning/individual-room-review-v2/stone-bridge/iteration-02/room.glb",
+  "sourceSha256": "3fc210877729c3df0c5278e0cbd3ab54ecf441bd217a2c9c2e42c4766b9ecea3",
+  "sourceBytes": 29436968,
+  "bytes": 6809612,
+  "sourceTriangles": 428162,
+  "triangles": 40000,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "5236aed16a7e4ea4755ad2b41db86c013ca5faa41f911d5ba72dde38b7e8a0ce",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

@@ -1,0 +1,26 @@
+{
+  "pipelineVersion": 2,
+  "room": "NARROW-TUNNEL",
+  "source": "src/prototype/assets/narrow-tunnel-room-v1.glb",
+  "sourceSha256": "975601012fcca29e5e2741aafca355778c8e96553f4787ece13329fcc140a080",
+  "sourceBytes": 1197532,
+  "bytes": 1002952,
+  "sourceTriangles": 25938,
+  "triangles": 6477,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "emissive",
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "eca34b4c1c0ceedfe24b5c0c5e4ba6fef579ded299ac7a8dc4d4f638f4bbb356",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 1024,
+  "normalResolution": 512,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true,
+  "emissiveResolution": 1024
+}

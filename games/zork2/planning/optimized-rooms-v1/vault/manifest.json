@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "VAULT",
+  "source": "games/zork2/planning/individual-room-review-v2/vault/iteration-02/room.glb",
+  "sourceSha256": "3ed84b0a47bb38e5ac01da2acf751261b854a1e2589e5925d4ebe32814a2cacc",
+  "sourceBytes": 16933504,
+  "bytes": 5651752,
+  "sourceTriangles": 247058,
+  "triangles": 39989,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "d8d8fdbfee3886f904753a773c50e72d967def7826130c119016fe7871a6931c",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

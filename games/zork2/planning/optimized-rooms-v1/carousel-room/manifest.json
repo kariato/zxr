@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "CAROUSEL-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/carousel-room/iteration-02/room.glb",
+  "sourceSha256": "8c96201ec45197e11bdc8ef36c0b2fa9f2c2e6098071eb6cc30d832a4f2adb1e",
+  "sourceBytes": 38198640,
+  "bytes": 5891496,
+  "sourceTriangles": 713402,
+  "triangles": 39998,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "d37cd5c8233bbd7d01cd3c859edcb2c726dd611742246cd393ccf2675c1a5978",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

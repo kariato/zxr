@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "FOOT-BRIDGE",
+  "source": "games/zork2/planning/individual-room-review-v2/foot-bridge/iteration-04/room.glb",
+  "sourceSha256": "be7abe8f29051b8a75808802a68a942144b5fdd3a33638b11ef648a8383b8712",
+  "sourceBytes": 28568080,
+  "bytes": 7050864,
+  "sourceTriangles": 541666,
+  "triangles": 40000,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "a048f02ba7b42261fb7924bbc3fcc6fa9ee7d7a39260357d07ceb861245bf11c",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

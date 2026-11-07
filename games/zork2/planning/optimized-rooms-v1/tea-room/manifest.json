@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "TEA-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/tea-room/iteration-02/room.glb",
+  "sourceSha256": "d14305964b871da2ccc90fcde881f86a19964d7e0a3afa24d57478646a9ab737",
+  "sourceBytes": 34633652,
+  "bytes": 5671028,
+  "sourceTriangles": 468936,
+  "triangles": 39992,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "ccfd92f2ab3cffe8113dfc39444586f1b31ed1f5cb81225768afd296e5b3af28",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

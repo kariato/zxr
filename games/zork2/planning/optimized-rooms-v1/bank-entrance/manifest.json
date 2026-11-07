@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "BANK-ENTRANCE",
+  "source": "games/zork2/planning/scenes/bank/modular-parts-v1/meshes/room-shell.glb",
+  "sourceSha256": "e66be11fb561829a1e5bd6ed033ae6a65e095f6ca4d951900c4f30814e3d18eb",
+  "sourceBytes": 5618304,
+  "bytes": 1272936,
+  "sourceTriangles": 120000,
+  "triangles": 30000,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "197a5a7fc04253de23897aee0f13d50318f8babe9c4f8c059d42229c916dcc01",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "TOPIARY-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/topiary-room/iteration-02/room.glb",
+  "sourceSha256": "6400238e6083a7b3e765f22ebbaa745c45d4f3b163223ea0a851fccc36500d04",
+  "sourceBytes": 32377576,
+  "bytes": 5375960,
+  "sourceTriangles": 702116,
+  "triangles": 39575,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "17e746c78efbb6ea0e333d871113b259b19c770e0f9c6b3448ed5160d154229b",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

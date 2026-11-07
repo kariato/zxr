@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "POOL-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/pool-room/iteration-02/room.glb",
+  "sourceSha256": "ef5297ac7ca4a62438d96e7962e50af94cc70643a1654ac5f3ed13cda9c4502b",
+  "sourceBytes": 33126148,
+  "bytes": 5492476,
+  "sourceTriangles": 390512,
+  "triangles": 39997,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "9badbf6671bb0e096191c644c44551129a56b5b3de9d6be9ffc0b113c8ddbdda",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

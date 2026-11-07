@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "WELL-TOP",
+  "source": "games/zork2/planning/individual-room-review-v2/well-top/iteration-02/room.glb",
+  "sourceSha256": "a2ee4fa1890f5dedde8c9617c780672d8894cb2b1acec20c60fa05816f64d187",
+  "sourceBytes": 21812916,
+  "bytes": 5784188,
+  "sourceTriangles": 357962,
+  "triangles": 39998,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "a5f77091e5bffa34fbb42f1e498dcb24f9a970ecae60045cc87b6ace6da9e43b",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

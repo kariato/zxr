@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "VAIR-1",
+  "source": "games/zork2/planning/individual-room-review-v2/vair-1/iteration-02/room.glb",
+  "sourceSha256": "e02cf215ec62ce6605b4a54b41545ffb7d9f24e6b9b17129be75b1b7e19ad7fd",
+  "sourceBytes": 20653056,
+  "bytes": 6974076,
+  "sourceTriangles": 192084,
+  "triangles": 40000,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "54184a1fd9b535f5640014e219ff3029688f35c262ab126ae5d887735bce4d22",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

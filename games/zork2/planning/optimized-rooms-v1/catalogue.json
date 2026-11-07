@@ -1,0 +1,950 @@
+{
+  "rooms": [
+    {
+      "room": "AQUARIUM-ROOM",
+      "label": "Aquarium Room",
+      "bytes": 5972156,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "BANK-ENTRANCE",
+      "label": "Bank Entrance",
+      "bytes": 1272936,
+      "triangles": 30000,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.0
+      ]
+    },
+    {
+      "room": "CAGE-ROOM",
+      "label": "Dingy Closet",
+      "bytes": 6840916,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.3200000524520874
+      ]
+    },
+    {
+      "room": "CAROUSEL-ROOM",
+      "label": "Carousel Room",
+      "bytes": 5891496,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        3.0
+      ]
+    },
+    {
+      "room": "CERBERUS-ROOM",
+      "label": "Cerberus Room",
+      "bytes": 5654424,
+      "triangles": 39989,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "COBWEBBY-CORRIDOR",
+      "label": "Cobwebby Corridor",
+      "bytes": 5629624,
+      "triangles": 39991,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        3.0
+      ]
+    },
+    {
+      "room": "COOL-ROOM",
+      "label": "Cool Room",
+      "bytes": 5690868,
+      "triangles": 40000,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "CRYPT-ANTEROOM",
+      "label": "Crypt Anteroom",
+      "bytes": 5573392,
+      "triangles": 39996,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "CRYPT-ROOM",
+      "label": "Crypt",
+      "bytes": 5559276,
+      "triangles": 39995,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "DARK-TUNNEL",
+      "label": "Dark Tunnel",
+      "bytes": 5716820,
+      "triangles": 39999,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        3.0
+      ]
+    },
+    {
+      "room": "DEAD-PALANTIR-1",
+      "label": "Room of Red Mist",
+      "bytes": 1961184,
+      "triangles": 12,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        -0.0
+      ]
+    },
+    {
+      "room": "DEAD-PALANTIR-2",
+      "label": "Room of Blue Mist",
+      "bytes": 1810584,
+      "triangles": 12,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        -0.0
+      ]
+    },
+    {
+      "room": "DEAD-PALANTIR-3",
+      "label": "Room of White Mist",
+      "bytes": 1496956,
+      "triangles": 12,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        -0.0
+      ]
+    },
+    {
+      "room": "DEAD-PALANTIR-4",
+      "label": "Room of Black Mist",
+      "bytes": 1546356,
+      "triangles": 12,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        -0.0
+      ]
+    },
+    {
+      "room": "DEEP-FORD",
+      "label": "Deep Ford",
+      "bytes": 5639144,
+      "triangles": 40000,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "DEPOSITORY",
+      "label": "Safety Depository",
+      "bytes": 5744648,
+      "triangles": 39986,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        5.0
+      ]
+    },
+    {
+      "room": "DIAMOND-1",
+      "label": "Oddly-angled Room",
+      "bytes": 5740040,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.7599999904632568
+      ]
+    },
+    {
+      "room": "DIAMOND-2",
+      "label": "Oddly-angled Room",
+      "bytes": 5710032,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.7599999904632568
+      ]
+    },
+    {
+      "room": "DIAMOND-3",
+      "label": "Oddly-angled Room",
+      "bytes": 5775004,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.7599999904632568
+      ]
+    },
+    {
+      "room": "DIAMOND-4",
+      "label": "Oddly-angled Room",
+      "bytes": 5808080,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.7599999904632568
+      ]
+    },
+    {
+      "room": "DIAMOND-5",
+      "label": "Oddly-angled Room",
+      "bytes": 5623252,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.7599999904632568
+      ]
+    },
+    {
+      "room": "DIAMOND-6",
+      "label": "Oddly-angled Room",
+      "bytes": 5702768,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.7599999904632568
+      ]
+    },
+    {
+      "room": "DIAMOND-7",
+      "label": "Oddly-angled Room",
+      "bytes": 5783588,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.7599999904632568
+      ]
+    },
+    {
+      "room": "DIAMOND-8",
+      "label": "Oddly-angled Room",
+      "bytes": 5789916,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.7599999904632568
+      ]
+    },
+    {
+      "room": "DIAMOND-9",
+      "label": "Oddly-angled Room",
+      "bytes": 5781604,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.7599999904632568
+      ]
+    },
+    {
+      "room": "DRAGON-LAIR",
+      "label": "Dragon's Lair",
+      "bytes": 5523396,
+      "triangles": 39993,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "DRAGON-ROOM",
+      "label": "Dragon Room",
+      "bytes": 5162520,
+      "triangles": 39995,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        3.0
+      ]
+    },
+    {
+      "room": "DREARY-ROOM",
+      "label": "Dreary Room",
+      "bytes": 5635868,
+      "triangles": 39975,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "FOOT-BRIDGE",
+      "label": "Foot Bridge",
+      "bytes": 7050864,
+      "triangles": 40000,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        4.199999809265137
+      ]
+    },
+    {
+      "room": "FORMAL-GARDEN",
+      "label": "Formal Garden",
+      "bytes": 5778720,
+      "triangles": 39636,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        3.0
+      ]
+    },
+    {
+      "room": "FRESCO-ROOM",
+      "label": "Fresco Room",
+      "bytes": 5657916,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        3.0
+      ]
+    },
+    {
+      "room": "GARDEN-NORTH",
+      "label": "North End of Garden",
+      "bytes": 5651124,
+      "triangles": 39618,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        3.0
+      ]
+    },
+    {
+      "room": "GAZEBO-ROOM",
+      "label": "Gazebo",
+      "bytes": 6476156,
+      "triangles": 39479,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        3.0
+      ]
+    },
+    {
+      "room": "GLACIER-ROOM",
+      "label": "Ice Room",
+      "bytes": 6309516,
+      "triangles": 39999,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "GREAT-CAVERN",
+      "label": "Great Cavern",
+      "bytes": 5512196,
+      "triangles": 40000,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        3.0
+      ]
+    },
+    {
+      "room": "GUARDIAN-ROOM",
+      "label": "Guarded Room",
+      "bytes": 5434724,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "IN-AQUARIUM",
+      "label": "Murky Room",
+      "bytes": 5572272,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "IN-CAGE",
+      "label": "Cage",
+      "bytes": 6690684,
+      "triangles": 40000,
+      "camera": [
+        -1.5,
+        1.649999976158142,
+        -1.2000000476837158
+      ]
+    },
+    {
+      "room": "INSIDE-BARROW",
+      "label": "Inside the Barrow",
+      "bytes": 2858300,
+      "triangles": 26008,
+      "camera": [
+        0.30000001192092896,
+        1.649999976158142,
+        1.600000023841858
+      ]
+    },
+    {
+      "room": "KENNEL",
+      "label": "Kennel",
+      "bytes": 5971756,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "LAVA-ROOM",
+      "label": "Lava Room",
+      "bytes": 5648236,
+      "triangles": 40000,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "LAVA-TUBE",
+      "label": "Lava Tube",
+      "bytes": 6880812,
+      "triangles": 39999,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.0
+      ]
+    },
+    {
+      "room": "LEDGE-1",
+      "label": "Narrow Ledge",
+      "bytes": 6714876,
+      "triangles": 39990,
+      "camera": [
+        -0.4000000059604645,
+        1.649999976158142,
+        0.5
+      ]
+    },
+    {
+      "room": "LEDGE-2",
+      "label": "Wide Ledge",
+      "bytes": 6735452,
+      "triangles": 39996,
+      "camera": [
+        -0.4000000059604645,
+        1.649999976158142,
+        0.5
+      ]
+    },
+    {
+      "room": "LEDGE-TUNNEL",
+      "label": "End of Ledge",
+      "bytes": 6726004,
+      "triangles": 40000,
+      "camera": [
+        -0.4000000059604645,
+        1.649999976158142,
+        0.5
+      ]
+    },
+    {
+      "room": "LIBRARY",
+      "label": "Library",
+      "bytes": 5885636,
+      "triangles": 39945,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "MACHINE-ROOM",
+      "label": "Machine Room",
+      "bytes": 5665568,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "MAGNET-ROOM",
+      "label": "Low Room",
+      "bytes": 5751392,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "MARBLE-HALL",
+      "label": "Marble Hall",
+      "bytes": 5399352,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        3.0
+      ]
+    },
+    {
+      "room": "MENHIR-ROOM",
+      "label": "Menhir Room",
+      "bytes": 5630652,
+      "triangles": 40000,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "NARROW-TUNNEL",
+      "label": "Narrow Tunnel",
+      "bytes": 1002952,
+      "triangles": 6477,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.0
+      ]
+    },
+    {
+      "room": "OFFICE",
+      "label": "Chairman's Office",
+      "bytes": 5406216,
+      "triangles": 39995,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "PEARL-ROOM",
+      "label": "Pearl Room",
+      "bytes": 5632796,
+      "triangles": 39995,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.3200000524520874
+      ]
+    },
+    {
+      "room": "PENTAGRAM-ROOM",
+      "label": "Pentagram Room",
+      "bytes": 5668772,
+      "triangles": 39999,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "POOL-ROOM",
+      "label": "Pool Room",
+      "bytes": 5492476,
+      "triangles": 39997,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "POSTS-ROOM",
+      "label": "Posts Room",
+      "bytes": 6771064,
+      "triangles": 40000,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.0
+      ]
+    },
+    {
+      "room": "RAVINE-LEDGE",
+      "label": "Ledge in Ravine",
+      "bytes": 6933364,
+      "triangles": 40000,
+      "camera": [
+        -0.44999998807907104,
+        1.7000000476837158,
+        -0.0
+      ]
+    },
+    {
+      "room": "RIDDLE-ROOM",
+      "label": "Riddle Room",
+      "bytes": 5714876,
+      "triangles": 39997,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "ROOM-8",
+      "label": "Room 8",
+      "bytes": 5795260,
+      "triangles": 39992,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.3200000524520874
+      ]
+    },
+    {
+      "room": "SAFE-ROOM",
+      "label": "Dusty Room",
+      "bytes": 5836664,
+      "triangles": 39997,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.3200000524520874
+      ]
+    },
+    {
+      "room": "SHALLOW-FORD",
+      "label": "Shallow Ford",
+      "bytes": 5615040,
+      "triangles": 40000,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "SMALL-ROOM",
+      "label": "Small Room",
+      "bytes": 5978396,
+      "triangles": 40000,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.3200000524520874
+      ]
+    },
+    {
+      "room": "STAIRWAY-TOP",
+      "label": "Stairway",
+      "bytes": 5359700,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "STONE-BRIDGE",
+      "label": "Stone Bridge",
+      "bytes": 6809612,
+      "triangles": 40000,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        4.199999809265137
+      ]
+    },
+    {
+      "room": "STREAM-PATH",
+      "label": "Path Near Stream",
+      "bytes": 6727572,
+      "triangles": 40000,
+      "camera": [
+        -0.4000000059604645,
+        1.649999976158142,
+        0.5
+      ]
+    },
+    {
+      "room": "TEA-ROOM",
+      "label": "Tea Room",
+      "bytes": 5671028,
+      "triangles": 39992,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "TELLER-EAST",
+      "label": "East Teller's Room",
+      "bytes": 5545184,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "TELLER-WEST",
+      "label": "West Teller's Room",
+      "bytes": 5508712,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "TINY-ROOM",
+      "label": "Tiny Room",
+      "bytes": 5781552,
+      "triangles": 39988,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        1.3200000524520874
+      ]
+    },
+    {
+      "room": "TOPIARY-ROOM",
+      "label": "Topiary",
+      "bytes": 5375960,
+      "triangles": 39575,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        3.0
+      ]
+    },
+    {
+      "room": "TROPHY-ROOM",
+      "label": "Trophy Room",
+      "bytes": 5507084,
+      "triangles": 39983,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "VAIR-1",
+      "label": "Volcano Core",
+      "bytes": 6974076,
+      "triangles": 40000,
+      "camera": [
+        0.0,
+        3.0,
+        -0.0
+      ]
+    },
+    {
+      "room": "VAIR-2",
+      "label": "Volcano Near Small Ledge",
+      "bytes": 6996680,
+      "triangles": 40000,
+      "camera": [
+        0.0,
+        3.0,
+        -0.0
+      ]
+    },
+    {
+      "room": "VAIR-3",
+      "label": "Volcano by Viewing Ledge",
+      "bytes": 6966092,
+      "triangles": 40000,
+      "camera": [
+        0.0,
+        3.0,
+        -0.0
+      ]
+    },
+    {
+      "room": "VAIR-4",
+      "label": "Volcano Near Wide Ledge",
+      "bytes": 7013600,
+      "triangles": 40000,
+      "camera": [
+        0.0,
+        3.0,
+        -0.0
+      ]
+    },
+    {
+      "room": "VAULT",
+      "label": "Vault",
+      "bytes": 5651752,
+      "triangles": 39989,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "VIEWING-EAST",
+      "label": "East Viewing Room",
+      "bytes": 5492876,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "VIEWING-WEST",
+      "label": "West Viewing Room",
+      "bytes": 5492876,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "VOLCANO-BOTTOM",
+      "label": "Volcano Bottom",
+      "bytes": 5183696,
+      "triangles": 39990,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        3.0
+      ]
+    },
+    {
+      "room": "VOLCANO-VIEW",
+      "label": "Volcano View",
+      "bytes": 6729896,
+      "triangles": 40000,
+      "camera": [
+        -0.4000000059604645,
+        1.649999976158142,
+        0.5
+      ]
+    },
+    {
+      "room": "WELL-BOTTOM",
+      "label": "Circular Room",
+      "bytes": 5618196,
+      "triangles": 39992,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "WELL-TOP",
+      "label": "Top of Well",
+      "bytes": 5784188,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "WIZARDS-QUARTERS",
+      "label": "Wizard's Quarters",
+      "bytes": 5493712,
+      "triangles": 39998,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "WIZARDS-WORKSHOP",
+      "label": "Wizard's Workshop",
+      "bytes": 5731852,
+      "triangles": 39995,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "WORKBENCH-ROOM",
+      "label": "Wizard's Workroom",
+      "bytes": 5693332,
+      "triangles": 39999,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    },
+    {
+      "room": "ZORK3",
+      "label": "Landing",
+      "bytes": 5812244,
+      "triangles": 40000,
+      "camera": [
+        0.0,
+        1.649999976158142,
+        2.200000047683716
+      ]
+    }
+  ]
+}

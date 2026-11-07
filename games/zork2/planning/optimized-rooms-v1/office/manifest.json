@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "OFFICE",
+  "source": "games/zork2/planning/individual-room-review-v2/office/iteration-02/room.glb",
+  "sourceSha256": "4b497dd2d03aeffc8c478dda89d6a15b26126691da7068cac66b9290c6672c16",
+  "sourceBytes": 19206524,
+  "bytes": 5406216,
+  "sourceTriangles": 275790,
+  "triangles": 39995,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "6ac109a97d2156ae5aa9f0ee4c1cc894e31e27a394a3b1e2d373f9cf390131b2",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

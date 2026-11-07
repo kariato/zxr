@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "VOLCANO-BOTTOM",
+  "source": "games/zork2/planning/individual-room-review-v2/volcano-bottom/iteration-02/room.glb",
+  "sourceSha256": "ef95931fbdf6d2783cafd5274cf604e1dfb6dc83761e5b2d20d55d80554e3707",
+  "sourceBytes": 44908944,
+  "bytes": 5183696,
+  "sourceTriangles": 634806,
+  "triangles": 39990,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "f40d93de4c5544bd79e25db39b7d84e78d6c58250d8489e6cf9f96f9af9276ce",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

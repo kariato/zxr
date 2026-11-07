@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "RAVINE-LEDGE",
+  "source": "games/zork2/planning/individual-room-review-v2/ravine-ledge/iteration-04/room.glb",
+  "sourceSha256": "47a187cb068152cd8c62c559fd2ff10c2529fe24f44c5a83b51f27ab80e36bfe",
+  "sourceBytes": 32381744,
+  "bytes": 6933364,
+  "sourceTriangles": 1195772,
+  "triangles": 40000,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "ee3fc9b0c53db330b08292a1ff0cbaba2c62dfafcd009ed28e325da7315ae051",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

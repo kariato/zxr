@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "KENNEL",
+  "source": "games/zork2/planning/individual-room-review-v2/kennel/iteration-02/room.glb",
+  "sourceSha256": "f20e177e0160bf3c5433435f57669dd6a42e9c3b17f977db063bee3d54c6c38e",
+  "sourceBytes": 33759788,
+  "bytes": 5971756,
+  "sourceTriangles": 359658,
+  "triangles": 39998,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "e6621b912f84ee127e31dd2f740a8915b12da80e899e073dff58e9841469c261",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

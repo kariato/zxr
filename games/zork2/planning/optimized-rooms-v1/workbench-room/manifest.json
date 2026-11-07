@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "WORKBENCH-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/workbench-room/iteration-02/room.glb",
+  "sourceSha256": "1e501b8901c1c55761c70ef3cba53753cbfa240c4fd03fd68cc8cffc816a05da",
+  "sourceBytes": 24629492,
+  "bytes": 5693332,
+  "sourceTriangles": 451322,
+  "triangles": 39999,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "47cbf167ee94bd82bacae68b059fa4b3d154532a16fbd47b02efbf328d26fff8",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

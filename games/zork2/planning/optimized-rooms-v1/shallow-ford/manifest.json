@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "SHALLOW-FORD",
+  "source": "games/zork2/planning/individual-room-review-v2/shallow-ford/iteration-02/room.glb",
+  "sourceSha256": "acf77f76de71f16809b2d1c09e6f7e3458c0d48a3aab9285f6786ef836ad20e6",
+  "sourceBytes": 29261408,
+  "bytes": 5615040,
+  "sourceTriangles": 460954,
+  "triangles": 40000,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "8e38514b7e8d68ba0326b7cdacd6406b019a8ba00576df0899d772b15103c1b3",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

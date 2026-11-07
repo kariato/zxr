@@ -1,0 +1,25 @@
+{
+  "pipelineVersion": 2,
+  "room": "DEAD-PALANTIR-1",
+  "source": "games/zork2/planning/individual-room-review-v2/dead-palantir-1/iteration-02/room.glb",
+  "sourceSha256": "5fa615f6cb58de52928e26e34cf50c45f886dc6c5263b48f5ea818b2b14c793b",
+  "sourceBytes": 6931412,
+  "bytes": 1961184,
+  "sourceTriangles": 12,
+  "triangles": 12,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "2af1e73286d99eac94fbd17d93f84956e5412e9e4c88c1972462e4332d19e6f9",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true,
+  "unlitAtmosphere": true
+}

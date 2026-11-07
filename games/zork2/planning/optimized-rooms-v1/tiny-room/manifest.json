@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "TINY-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/tiny-room/iteration-02/room.glb",
+  "sourceSha256": "4a659f06f98e4c672f49250cd40433a1cd0e09601e7f503ee83e93ec1aa9a8ac",
+  "sourceBytes": 31920996,
+  "bytes": 5781552,
+  "sourceTriangles": 367286,
+  "triangles": 39988,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "0334e479a09b9d51e4efb88e6dff78629244e2dcddeda752370be45bc1a1a505",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

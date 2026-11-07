@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "COOL-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/cool-room/iteration-02/room.glb",
+  "sourceSha256": "b970f8a65e89d9dda41b80c3f1122e42bde00a63d39bd81ea87afe0102f612a1",
+  "sourceBytes": 27519604,
+  "bytes": 5690868,
+  "sourceTriangles": 464078,
+  "triangles": 40000,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "076ecc054536535ba4d4a1b37f57ecb8ed357c61946abd65f2bc7949a0f9da4e",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

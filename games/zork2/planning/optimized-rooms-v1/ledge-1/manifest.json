@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "LEDGE-1",
+  "source": "games/zork2/planning/individual-room-review-v2/ledge-1/iteration-02/room.glb",
+  "sourceSha256": "71f9095f45d1b25a0fa88927e4e65fbc7ef8b0b0abd0931df8f897f89779c5eb",
+  "sourceBytes": 54407908,
+  "bytes": 6714876,
+  "sourceTriangles": 536966,
+  "triangles": 39990,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "1ed4c9213d58b8a1e6add9c1f89fa87a4bdb3f6734a848e1254aef0c2715ca98",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

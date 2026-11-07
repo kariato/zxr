@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "GARDEN-NORTH",
+  "source": "games/zork2/planning/individual-room-review-v2/garden-north/iteration-02/room.glb",
+  "sourceSha256": "7b68e5efe14573f097e2808f63ef0ba198f1b4db50639ad7a44dc8793ab2d682",
+  "sourceBytes": 12185620,
+  "bytes": 5651124,
+  "sourceTriangles": 466986,
+  "triangles": 39618,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "e70803b92b552b262deb7fedf9f23b250df9237ac81100ca5e89afbed476d096",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

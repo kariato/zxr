@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "PEARL-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/pearl-room/iteration-02/room.glb",
+  "sourceSha256": "c776b84248427cf34c4623b1e7e2eab151b5961cc613d8dcb52eba859d3c86d3",
+  "sourceBytes": 26672964,
+  "bytes": 5632796,
+  "sourceTriangles": 337470,
+  "triangles": 39995,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "c991b80cf6cf6d58e1bafa7febbb78bdd7b64e4ebe44aa3cc738ed9d613b48fb",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

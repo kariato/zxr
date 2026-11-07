@@ -1,0 +1,1644 @@
+{
+  "total": 86,
+  "passed": 86,
+  "errors": [],
+  "rooms": [
+    {
+      "room": "AQUARIUM-ROOM",
+      "triangles": 39998,
+      "bytes": 5972156,
+      "sourceBytes": 20066048,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "BANK-ENTRANCE",
+      "triangles": 30000,
+      "bytes": 1272936,
+      "sourceBytes": 5618304,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "CAGE-ROOM",
+      "triangles": 39998,
+      "bytes": 6840916,
+      "sourceBytes": 36833660,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "CAROUSEL-ROOM",
+      "triangles": 39998,
+      "bytes": 5891496,
+      "sourceBytes": 38198640,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "CERBERUS-ROOM",
+      "triangles": 39989,
+      "bytes": 5654424,
+      "sourceBytes": 32999876,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "COBWEBBY-CORRIDOR",
+      "triangles": 39991,
+      "bytes": 5629624,
+      "sourceBytes": 26538076,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "COOL-ROOM",
+      "triangles": 40000,
+      "bytes": 5690868,
+      "sourceBytes": 27519604,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "CRYPT-ANTEROOM",
+      "triangles": 39996,
+      "bytes": 5573392,
+      "sourceBytes": 19820180,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "CRYPT-ROOM",
+      "triangles": 39995,
+      "bytes": 5559276,
+      "sourceBytes": 21310780,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DARK-TUNNEL",
+      "triangles": 39999,
+      "bytes": 5716820,
+      "sourceBytes": 31571004,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DEAD-PALANTIR-1",
+      "triangles": 12,
+      "bytes": 1961184,
+      "sourceBytes": 6931412,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DEAD-PALANTIR-2",
+      "triangles": 12,
+      "bytes": 1810584,
+      "sourceBytes": 7846320,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DEAD-PALANTIR-3",
+      "triangles": 12,
+      "bytes": 1496956,
+      "sourceBytes": 7364388,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DEAD-PALANTIR-4",
+      "triangles": 12,
+      "bytes": 1546356,
+      "sourceBytes": 7119832,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DEEP-FORD",
+      "triangles": 40000,
+      "bytes": 5639144,
+      "sourceBytes": 30993492,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DEPOSITORY",
+      "triangles": 39986,
+      "bytes": 5744648,
+      "sourceBytes": 20533660,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DIAMOND-1",
+      "triangles": 39998,
+      "bytes": 5740040,
+      "sourceBytes": 7506612,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DIAMOND-2",
+      "triangles": 39998,
+      "bytes": 5710032,
+      "sourceBytes": 16940024,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DIAMOND-3",
+      "triangles": 39998,
+      "bytes": 5775004,
+      "sourceBytes": 18093960,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DIAMOND-4",
+      "triangles": 39998,
+      "bytes": 5808080,
+      "sourceBytes": 16940016,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DIAMOND-5",
+      "triangles": 39998,
+      "bytes": 5623252,
+      "sourceBytes": 13481308,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DIAMOND-6",
+      "triangles": 39998,
+      "bytes": 5702768,
+      "sourceBytes": 16940016,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DIAMOND-7",
+      "triangles": 39998,
+      "bytes": 5783588,
+      "sourceBytes": 18093960,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DIAMOND-8",
+      "triangles": 39998,
+      "bytes": 5789916,
+      "sourceBytes": 16940024,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DIAMOND-9",
+      "triangles": 39998,
+      "bytes": 5781604,
+      "sourceBytes": 18093960,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DRAGON-LAIR",
+      "triangles": 39993,
+      "bytes": 5523396,
+      "sourceBytes": 35106268,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DRAGON-ROOM",
+      "triangles": 39995,
+      "bytes": 5162520,
+      "sourceBytes": 40228008,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "DREARY-ROOM",
+      "triangles": 39975,
+      "bytes": 5635868,
+      "sourceBytes": 39685884,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "FOOT-BRIDGE",
+      "triangles": 40000,
+      "bytes": 7050864,
+      "sourceBytes": 28568080,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "FORMAL-GARDEN",
+      "triangles": 39636,
+      "bytes": 5778720,
+      "sourceBytes": 11060072,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "FRESCO-ROOM",
+      "triangles": 39998,
+      "bytes": 5657916,
+      "sourceBytes": 19681944,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "GARDEN-NORTH",
+      "triangles": 39618,
+      "bytes": 5651124,
+      "sourceBytes": 12185620,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "GAZEBO-ROOM",
+      "triangles": 39479,
+      "bytes": 6476156,
+      "sourceBytes": 16880204,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "GLACIER-ROOM",
+      "triangles": 39999,
+      "bytes": 6309516,
+      "sourceBytes": 35858808,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "GREAT-CAVERN",
+      "triangles": 40000,
+      "bytes": 5512196,
+      "sourceBytes": 47209476,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "GUARDIAN-ROOM",
+      "triangles": 39998,
+      "bytes": 5434724,
+      "sourceBytes": 20409580,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "IN-AQUARIUM",
+      "triangles": 39998,
+      "bytes": 5572272,
+      "sourceBytes": 33969920,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "IN-CAGE",
+      "triangles": 40000,
+      "bytes": 6690684,
+      "sourceBytes": 36924748,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "INSIDE-BARROW",
+      "triangles": 26008,
+      "bytes": 2858300,
+      "sourceBytes": 9467712,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "KENNEL",
+      "triangles": 39998,
+      "bytes": 5971756,
+      "sourceBytes": 33759788,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "LAVA-ROOM",
+      "triangles": 40000,
+      "bytes": 5648236,
+      "sourceBytes": 29892740,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "LAVA-TUBE",
+      "triangles": 39999,
+      "bytes": 6880812,
+      "sourceBytes": 23018400,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "LEDGE-1",
+      "triangles": 39990,
+      "bytes": 6714876,
+      "sourceBytes": 54407908,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "LEDGE-2",
+      "triangles": 39996,
+      "bytes": 6735452,
+      "sourceBytes": 53438432,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "LEDGE-TUNNEL",
+      "triangles": 40000,
+      "bytes": 6726004,
+      "sourceBytes": 52570540,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "LIBRARY",
+      "triangles": 39945,
+      "bytes": 5885636,
+      "sourceBytes": 39561180,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "MACHINE-ROOM",
+      "triangles": 39998,
+      "bytes": 5665568,
+      "sourceBytes": 20727816,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "MAGNET-ROOM",
+      "triangles": 39998,
+      "bytes": 5751392,
+      "sourceBytes": 35056808,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "MARBLE-HALL",
+      "triangles": 39998,
+      "bytes": 5399352,
+      "sourceBytes": 18864372,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "MENHIR-ROOM",
+      "triangles": 40000,
+      "bytes": 5630652,
+      "sourceBytes": 28103456,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "NARROW-TUNNEL",
+      "triangles": 6477,
+      "bytes": 1002952,
+      "sourceBytes": 1197532,
+      "maps": {
+        "color": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 512,
+          "height": 512,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "OFFICE",
+      "triangles": 39995,
+      "bytes": 5406216,
+      "sourceBytes": 19206524,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "PEARL-ROOM",
+      "triangles": 39995,
+      "bytes": 5632796,
+      "sourceBytes": 26672964,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "PENTAGRAM-ROOM",
+      "triangles": 39999,
+      "bytes": 5668772,
+      "sourceBytes": 32760612,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "POOL-ROOM",
+      "triangles": 39997,
+      "bytes": 5492476,
+      "sourceBytes": 33126148,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "POSTS-ROOM",
+      "triangles": 40000,
+      "bytes": 6771064,
+      "sourceBytes": 30891412,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "RAVINE-LEDGE",
+      "triangles": 40000,
+      "bytes": 6933364,
+      "sourceBytes": 32381744,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "RIDDLE-ROOM",
+      "triangles": 39997,
+      "bytes": 5714876,
+      "sourceBytes": 31268936,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "ROOM-8",
+      "triangles": 39992,
+      "bytes": 5795260,
+      "sourceBytes": 30244212,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "SAFE-ROOM",
+      "triangles": 39997,
+      "bytes": 5836664,
+      "sourceBytes": 30178908,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "SHALLOW-FORD",
+      "triangles": 40000,
+      "bytes": 5615040,
+      "sourceBytes": 29261408,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "SMALL-ROOM",
+      "triangles": 40000,
+      "bytes": 5978396,
+      "sourceBytes": 30181812,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "STAIRWAY-TOP",
+      "triangles": 39998,
+      "bytes": 5359700,
+      "sourceBytes": 17697268,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "STONE-BRIDGE",
+      "triangles": 40000,
+      "bytes": 6809612,
+      "sourceBytes": 29436968,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "STREAM-PATH",
+      "triangles": 40000,
+      "bytes": 6727572,
+      "sourceBytes": 54683444,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "TEA-ROOM",
+      "triangles": 39992,
+      "bytes": 5671028,
+      "sourceBytes": 34633652,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "TELLER-EAST",
+      "triangles": 39998,
+      "bytes": 5545184,
+      "sourceBytes": 18115144,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "TELLER-WEST",
+      "triangles": 39998,
+      "bytes": 5508712,
+      "sourceBytes": 18115136,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "TINY-ROOM",
+      "triangles": 39988,
+      "bytes": 5781552,
+      "sourceBytes": 31920996,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "TOPIARY-ROOM",
+      "triangles": 39575,
+      "bytes": 5375960,
+      "sourceBytes": 32377576,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "TROPHY-ROOM",
+      "triangles": 39983,
+      "bytes": 5507084,
+      "sourceBytes": 25027212,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "VAIR-1",
+      "triangles": 40000,
+      "bytes": 6974076,
+      "sourceBytes": 20653056,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "VAIR-2",
+      "triangles": 40000,
+      "bytes": 6996680,
+      "sourceBytes": 20653060,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "VAIR-3",
+      "triangles": 40000,
+      "bytes": 6966092,
+      "sourceBytes": 20653084,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "VAIR-4",
+      "triangles": 40000,
+      "bytes": 7013600,
+      "sourceBytes": 20653060,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "VAULT",
+      "triangles": 39989,
+      "bytes": 5651752,
+      "sourceBytes": 16933504,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "VIEWING-EAST",
+      "triangles": 39998,
+      "bytes": 5492876,
+      "sourceBytes": 18117964,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "VIEWING-WEST",
+      "triangles": 39998,
+      "bytes": 5492876,
+      "sourceBytes": 18117964,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "VOLCANO-BOTTOM",
+      "triangles": 39990,
+      "bytes": 5183696,
+      "sourceBytes": 44908944,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "VOLCANO-VIEW",
+      "triangles": 40000,
+      "bytes": 6729896,
+      "sourceBytes": 52676536,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "WELL-BOTTOM",
+      "triangles": 39992,
+      "bytes": 5618196,
+      "sourceBytes": 20805576,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "WELL-TOP",
+      "triangles": 39998,
+      "bytes": 5784188,
+      "sourceBytes": 21812916,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "WIZARDS-QUARTERS",
+      "triangles": 39998,
+      "bytes": 5493712,
+      "sourceBytes": 19016100,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "WIZARDS-WORKSHOP",
+      "triangles": 39995,
+      "bytes": 5731852,
+      "sourceBytes": 24330552,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "WORKBENCH-ROOM",
+      "triangles": 39999,
+      "bytes": 5693332,
+      "sourceBytes": 24629492,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "room": "ZORK3",
+      "triangles": 40000,
+      "bytes": 5812244,
+      "sourceBytes": 31393272,
+      "maps": {
+        "color": {
+          "width": 2048,
+          "height": 2048,
+          "mimeType": "image/jpeg"
+        },
+        "normal": {
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/png"
+        }
+      },
+      "passed": true
+    }
+  ],
+  "sourceBytes": 2225667608,
+  "bytes": 478808404,
+  "note": "Structural checks only; not blanket visual acceptance or gameplay validation."
+}

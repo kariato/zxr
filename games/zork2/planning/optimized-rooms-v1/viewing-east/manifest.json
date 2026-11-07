@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "VIEWING-EAST",
+  "source": "games/zork2/planning/individual-room-review-v2/viewing-east/iteration-02/room.glb",
+  "sourceSha256": "981115084d4593b6aeecab4c460781880191202766400e672c7413a3dc227ff4",
+  "sourceBytes": 18117964,
+  "bytes": 5492876,
+  "sourceTriangles": 272862,
+  "triangles": 39998,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "ce4e66de4b4626be90279f98e62f8c1ae3c63812a1aba48cf0888e479c93206c",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

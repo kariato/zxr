@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "COBWEBBY-CORRIDOR",
+  "source": "games/zork2/planning/individual-room-review-v2/cobwebby-corridor/iteration-02/room.glb",
+  "sourceSha256": "602e7418f656f01b48852cb6b0061ca0d82a225eb96a3e7afc5d0d12933ae4ad",
+  "sourceBytes": 26538076,
+  "bytes": 5629624,
+  "sourceTriangles": 442818,
+  "triangles": 39991,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "ca0bc382b2b264e3dc5e35f7e78d32568e409f348674338e85eb6b9a3a2eb1e1",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

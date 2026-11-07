@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "STREAM-PATH",
+  "source": "games/zork2/planning/individual-room-review-v2/stream-path/iteration-02/room.glb",
+  "sourceSha256": "46ffe28485b01e2fd99ee6094d6046fa398081eeb60dae21fbb37048d8cc6358",
+  "sourceBytes": 54683444,
+  "bytes": 6727572,
+  "sourceTriangles": 541478,
+  "triangles": 40000,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "cbcbd7e0915507cbebf1b17d355d0d58872bf317ce04aa7cab184de769a31c74",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

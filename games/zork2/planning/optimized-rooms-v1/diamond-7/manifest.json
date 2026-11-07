@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "DIAMOND-7",
+  "source": "games/zork2/planning/individual-room-review-v2/diamond-7/iteration-02/room.glb",
+  "sourceSha256": "acab652b5886cbb2c1da0ff592c209337b6b9eecad3f5a6b58411d904df183f0",
+  "sourceBytes": 18093960,
+  "bytes": 5783588,
+  "sourceTriangles": 667738,
+  "triangles": 39998,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "ed267dbfb543e2d2d9f75b8e5ce591f98c658dd59841507ce26b60eac7649075",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}

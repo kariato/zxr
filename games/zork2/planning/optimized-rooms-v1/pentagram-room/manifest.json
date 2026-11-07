@@ -1,0 +1,24 @@
+{
+  "pipelineVersion": 2,
+  "room": "PENTAGRAM-ROOM",
+  "source": "games/zork2/planning/individual-room-review-v2/pentagram-room/iteration-02/room.glb",
+  "sourceSha256": "6a4ec984fa58105f55102b07e6a9fa770e19fb482f2b7f5d67cdf5a4712dbb40",
+  "sourceBytes": 32760612,
+  "bytes": 5668772,
+  "sourceTriangles": 380476,
+  "triangles": 39999,
+  "meshCount": 1,
+  "materialCount": 1,
+  "maps": [
+    "baseColor",
+    "tangentNormal"
+  ],
+  "atlasResolution": 2048,
+  "sha256": "d2554f9f32f37e720ba7226cab852c9dd8199691146a1608e815f229f57b1174",
+  "visualStatus": "pending inspection",
+  "note": "Flattened room geometry; source-object boundaries are retained only in original authoring assets.",
+  "colorResolution": 2048,
+  "normalResolution": 1024,
+  "textureEncoding": "JPEG albedo, lossless PNG tangent normal",
+  "compacted": true
+}
