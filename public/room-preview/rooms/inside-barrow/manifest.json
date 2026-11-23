@@ -1,0 +1,13 @@
+{
+  "file": "barrow-below-grade-v4.glb",
+  "bytes": 1177504,
+  "sha256": "1f9f3096a5402ab48e79f6e30e93f28a903b0595eade50c2da7176a7d18877ae",
+  "texturedTreads": 12,
+  "texturedRisers": 12,
+  "wallModules": 6,
+  "floorSource": "../tencent-complete-v1/finished/floor.glb",
+  "wallSource": "../tencent-wall-panel-v1/finished/wall-panel.glb",
+  "skyboxMeanBrightnessRatio": 2.1890793056496323,
+  "skybox": "barrow-night-forest-v3.jpg",
+  "images": 8
+}

@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "CAROUSEL-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/carousel-room/room-bom.json",
+  "bomSha256": "1f54bb6334bcddcd832187711f01cf3fc590500a4df72a6294b6698e2590c0f9",
+  "glb": "games/zork2/planning/room-bom-prototype/carousel-room/build/room.glb",
+  "glbBytes": 9621588,
+  "glbSha256": "2d278a1a68e1239b59a713949077abaad5b60c146abddeb1662defe8387f7dbb",
+  "meshCount": 17,
+  "materialCount": 6,
+  "triangles": 14600,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/carousel-room/build/review-4view.png"
+}

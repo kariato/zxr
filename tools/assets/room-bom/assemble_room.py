@@ -166,6 +166,217 @@ def make_grey_stone_tile(size: int = 512) -> np.ndarray:
     return out
 
 
+def make_granite_tile(size: int = 512) -> np.ndarray:
+    """Seamless crystalline speckled weathered granite texture (quartz, feldspar, mica flecks)."""
+    rng = np.random.default_rng(419)
+    # Macro mineral mottling
+    macro = (
+        0.45 * _periodic_noise_octave(6, size, rng)
+        + 0.35 * _periodic_noise_octave(16, size, rng)
+        + 0.20 * _periodic_noise_octave(32, size, rng)
+    )
+    # Fine crystalline granite speckles (dark biotite mica + light quartz/feldspar)
+    speck_dark = _periodic_noise_octave(128, size, rng)
+    speck_light = _periodic_noise_octave(128, size, rng)
+    micro = rng.normal(0.0, 0.045, (size, size)).astype(np.float32)
+    # Soften 1px micro grain slightly
+    micro = (micro + np.roll(micro, 1, 0) + np.roll(micro, 1, 1)) / 3.0
+
+    mica = np.where(speck_dark < 0.24, -0.14, 0.0).astype(np.float32)
+    quartz = np.where(speck_light > 0.78, 0.12, 0.0).astype(np.float32)
+    val = np.clip(0.30 + 0.24 * macro + mica + quartz + micro, 0.08, 0.78)
+    out = np.empty((size, size, 4), dtype=np.float32)
+    # Slightly warm weathered grey-taupe granite
+    out[:, :, 0] = val * 1.00
+    out[:, :, 1] = val * 0.97
+    out[:, :, 2] = val * 0.93
+    out[:, :, 3] = 1.0
+    return out
+
+
+def make_light_stone_tile(size: int = 512) -> np.ndarray:
+    """Seamless pale warm carved limestone/light-granite texture for grand arches and ceiling ribs."""
+    rng = np.random.default_rng(613)
+    macro = (
+        0.45 * _periodic_noise_octave(6, size, rng)
+        + 0.35 * _periodic_noise_octave(16, size, rng)
+        + 0.20 * _periodic_noise_octave(32, size, rng)
+    )
+    fine = _periodic_noise_octave(96, size, rng)
+    micro = rng.normal(0.0, 0.028, (size, size)).astype(np.float32)
+    micro = (micro + np.roll(micro, 1, 0) + np.roll(micro, 1, 1)) / 3.0
+    val = np.clip(0.56 + 0.20 * macro + 0.08 * (fine - 0.5) + micro, 0.36, 0.92)
+    out = np.empty((size, size, 4), dtype=np.float32)
+    # Pale warm carved limestone / light sandstone that pops against darker granite walls
+    out[:, :, 0] = val * 1.04
+    out[:, :, 1] = val * 0.97
+    out[:, :, 2] = val * 0.84
+    out[:, :, 3] = 1.0
+    return out
+
+
+def make_warm_ashlar_tile(size: int = 512) -> np.ndarray:
+    """Weathered warm golden-ochre dressed sandstone ashlar blocks (seamless fBm + soft joints)."""
+    rng = np.random.default_rng(211)
+    fbm = np.zeros((size, size), dtype=np.float32)
+    wsum = 0.0
+    for gn, wt in ((4, 0.30), (8, 0.25), (16, 0.20), (32, 0.14), (64, 0.08), (128, 0.03)):
+        fbm += _periodic_noise_octave(gn, size, rng) * wt
+        wsum += wt
+    fbm /= wsum
+
+    y = np.linspace(0.0, 1.0, size, endpoint=False, dtype=np.float32)[:, None]
+    x = np.linspace(0.0, 1.0, size, endpoint=False, dtype=np.float32)[None, :]
+    rows, cols = 6, 3
+    row_i = np.floor(y * rows)
+    u = (x * cols + 0.5 * (row_i % 2)) % 1.0
+    v = (y * rows) % 1.0
+    # Per-block warm tone variation
+    bhash = np.sin(row_i * 17.31 + np.floor((x * cols + 0.5 * (row_i % 2)) % cols) * 53.7) * 43758.5
+    btone = ((bhash - np.floor(bhash)) - 0.5) * 0.12
+    # Slightly rough, weathered stone joints
+    jitter = (fbm - 0.5) * 0.025
+    mu = np.minimum(u, 1.0 - u) + jitter
+    mv = np.minimum(v, 1.0 - v) + jitter
+    joint = np.minimum(np.clip(mu / 0.032, 0.0, 1.0), np.clip(mv / 0.055, 0.0, 1.0))
+
+    val = np.clip((0.28 + 0.34 * fbm + btone) * (0.45 + 0.55 * joint), 0.08, 0.78)
+    out = np.empty((size, size, 4), dtype=np.float32)
+    # Warm weathered sandstone / ochre limestone palette matching Carousel Room
+    out[:, :, 0] = val * 1.12
+    out[:, :, 1] = val * 0.88
+    out[:, :, 2] = val * 0.58
+    out[:, :, 3] = 1.0
+    return out
+
+
+def make_radial_floor_medallion(size: int = 1024) -> np.ndarray:
+    """Synthesize a high-res concentric radial stone slab floor medallion matching Carousel Room."""
+    rng = np.random.default_rng(307)
+    fbm = np.zeros((size, size), dtype=np.float32)
+    wsum = 0.0
+    for gn, wt in ((4, 0.25), (8, 0.25), (16, 0.22), (32, 0.15), (64, 0.09), (128, 0.04)):
+        fbm += _periodic_noise_octave(gn, size, rng) * wt
+        wsum += wt
+    fbm /= wsum
+
+    # Polar coordinates centered at (0.5, 0.5), radius 0..1 at edge
+    coords = np.linspace(-1.0, 1.0, size, dtype=np.float32)
+    yy, xx = np.meshgrid(coords, coords, indexing='ij')
+    r = np.hypot(xx, yy)
+    ang = (np.arctan2(yy, xx) + np.pi) / (2.0 * np.pi)  # 0..1
+
+    # Concentric ring radii (matching alternating warm golden & darker slate-brown inlaid bands)
+    ring_edges = [0.0, 0.08, 0.22, 0.31, 0.48, 0.58, 0.76, 0.86, 1.5]
+    ring_tones = [0.56, 0.62, 0.38, 0.64, 0.36, 0.60, 0.42, 0.52]
+    ring_sectors = [8, 16, 16, 24, 24, 32, 32, 40]
+
+    tone = np.full((size, size), 0.52, dtype=np.float32)
+    joint = np.ones((size, size), dtype=np.float32)
+
+    for idx in range(len(ring_tones)):
+        r0, r1 = ring_edges[idx], ring_edges[idx + 1]
+        mask = (r >= r0) & (r < r1)
+        if not mask.any():
+            continue
+        nsec = ring_sectors[idx]
+        sec_idx = np.floor(ang * nsec)
+        # Per-slab subtle variation
+        shash = np.sin(idx * 29.1 + sec_idx * 71.7) * 43758.5
+        svar = ((shash - np.floor(shash)) - 0.5) * 0.10
+        tone = np.where(mask, ring_tones[idx] + svar, tone)
+
+        # Ring border seams + radial slab seams
+        dr0 = np.abs(r - r0)
+        dr1 = np.abs(r - r1)
+        d_rad = np.minimum(dr0, dr1)
+        sec_u = (ang * nsec) % 1.0
+        d_ang = np.minimum(sec_u, 1.0 - sec_u) * np.maximum(r, 0.05) * (2.0 * np.pi / nsec)
+        seam = np.minimum(np.clip(d_rad / 0.008, 0.0, 1.0), np.clip(d_ang / 0.007, 0.0, 1.0))
+        joint = np.where(mask, np.minimum(joint, seam), joint)
+
+    val = np.clip((tone * (0.72 + 0.56 * fbm)) * (0.36 + 0.64 * joint), 0.08, 0.85)
+    # Layer natural cavern dust & grit settled into joints and drifted across outer slabs
+    dust_rng = np.random.default_rng(523)
+    dust_fbm = (
+        0.45 * _periodic_noise_octave(8, size, dust_rng)
+        + 0.35 * _periodic_noise_octave(24, size, dust_rng)
+        + 0.20 * _periodic_noise_octave(64, size, dust_rng)
+    )
+    grit = dust_rng.normal(0.0, 0.035, (size, size)).astype(np.float32)
+    # Dust collects heavier near outer perimeter (r > 0.55), inside slab seams, and in random drifts
+    edge_dust = np.clip((r - 0.50) / 0.45, 0.0, 1.0) * 0.45
+    seam_dust = (1.0 - joint) * 0.55
+    drift_dust = np.clip((dust_fbm - 0.46) / 0.36, 0.0, 1.0) * 0.48
+    dust_mask = np.clip(edge_dust + seam_dust + drift_dust, 0.0, 0.78)
+
+    base_rgb = np.empty((size, size, 3), dtype=np.float32)
+    base_rgb[:, :, 0] = val * 1.12
+    base_rgb[:, :, 1] = val * 0.86
+    base_rgb[:, :, 2] = val * 0.56
+    dust_color = np.array([[[0.46, 0.39, 0.30]]], dtype=np.float32) + grit[:, :, None]
+
+    out = np.empty((size, size, 4), dtype=np.float32)
+    out[:, :, :3] = np.clip(base_rgb * (1.0 - dust_mask[:, :, None]) + dust_color * dust_mask[:, :, None], 0.06, 0.86)
+    out[:, :, 3] = 1.0
+    return out
+
+
+# 5x7 crisp pixel bitmap font for carved stone arch keystone numerals 1..8
+_DIGIT_BITMAPS = {
+    '1': ['..#..', '.##..', '..#..', '..#..', '..#..', '..#..', '.###.'],
+    '2': ['.###.', '#...#', '....#', '..##.', '.#...', '#....', '#####'],
+    '3': ['.###.', '#...#', '....#', '..##.', '....#', '#...#', '.###.'],
+    '4': ['...#.', '..##.', '.#.#.', '#..#.', '#####', '...#.', '...#.'],
+    '5': ['#####', '#....', '####.', '....#', '....#', '#...#', '.###.'],
+    '6': ['.###.', '#....', '####.', '#...#', '#...#', '#...#', '.###.'],
+    '7': ['#####', '....#', '...#.', '..#..', '.#...', '.#...', '.#...'],
+    '8': ['.###.', '#...#', '#...#', '.###.', '#...#', '#...#', '.###.'],
+}
+
+
+def make_arch_number_plaque_texture(num_str: str, size: int = 256) -> tuple[np.ndarray, np.ndarray]:
+    """Generate a carved light-stone keystone plaque albedo + normal map for arch number 1..8."""
+    base = make_light_stone_tile(size)
+    # Darken carved stone border frame
+    border = np.ones((size, size), dtype=np.float32)
+    m = size // 12
+    border[:m, :] = 0.55
+    border[-m:, :] = 0.55
+    border[:, :m] = 0.55
+    border[:, -m:] = 0.55
+    base[:, :, :3] *= border[:, :, None]
+
+    # Render crisp incised/gilded numeral in center
+    glyph = _DIGIT_BITMAPS[num_str]
+    gh, gw = len(glyph), len(glyph[0])
+    mask = np.zeros((size, size), dtype=np.float32)
+    pad_y, pad_x = int(size * 0.20), int(size * 0.26)
+    cell_h = (size - 2 * pad_y) / gh
+    cell_w = (size - 2 * pad_x) / gw
+    for r_i, row in enumerate(glyph):
+        for c_i, ch in enumerate(row):
+            if ch == '#':
+                y0 = int(pad_y + r_i * cell_h)
+                y1 = int(pad_y + (r_i + 1) * cell_h)
+                x0 = int(pad_x + c_i * cell_w)
+                x1 = int(pad_x + (c_i + 1) * cell_w)
+                mask[y0:y1, x0:x1] = 1.0
+    # Soften edges for carved bevel look
+    mask = box_blur_rgb(np.repeat(mask[:, :, None], 3, axis=2), radius=3)[:, :, 0]
+
+    # Warm gold-ochre highlighted relief numeral with dark recessed outline
+    outline = np.clip(box_blur_rgb(np.repeat(mask[:, :, None], 3, axis=2), radius=6)[:, :, 0] - mask, 0.0, 1.0)
+    rgb = base[:, :, :3] * (1.0 - 0.65 * outline[:, :, None])
+    gold = np.array([[[0.92, 0.76, 0.42]]], dtype=np.float32)
+    rgb = rgb * (1.0 - 0.85 * mask[:, :, None]) + gold * (0.85 * mask[:, :, None])
+    albedo = np.empty_like(base)
+    albedo[:, :, :3] = np.clip(rgb, 0.0, 1.0)
+    albedo[:, :, 3] = 1.0
+    normal = synthesize_normal_map(albedo, strength=1.8)
+    return albedo, normal
+
+
 def make_dark_oak_tile(size: int = 512) -> np.ndarray:
     """Synthesize a clean, seamless repeating dark aged oak woodgrain texture (no panel frames)."""
     rng = np.random.default_rng(77)
@@ -548,6 +759,407 @@ def build_pillar(obj_spec: dict, mat: bpy.types.Material, tile_m: float):
         v.co.y = cy + v.co.y * pd
         v.co.z = cz + (v.co.z + 0.5) * ph
     return create_mesh_object(obj_spec['id'], bm, mat, uv_scale=1.0 / tile_m)
+
+
+# ---------------------------------------------------------------------------
+# Octagonal Gothic-Romanesque Rotunda builder (e.g. CAROUSEL-ROOM)
+# ---------------------------------------------------------------------------
+
+def build_rotunda(
+    radius: float,
+    dome_height: float,
+    stone_mat: bpy.types.Material,
+    trim_mat: bpy.types.Material,
+    floor_mat: bpy.types.Material,
+    tunnel_mat: bpy.types.Material,
+    dark_mat: bpy.types.Material,
+    tile_m: float,
+    tex_dir: Path,
+    sides: int = 8,
+):
+    """Build a grand 8-bay circular/octagonal rotunda with radial medallion floor, stepped granite piers,
+    soaring light-stone Gothic-Romanesque arches & portcullis headers, carved numbered keystone plaques (1..8),
+    deep ribbed passages, and light-stone ceiling ribs sweeping into a high dome lost in gloom.
+    """
+    entab_z = 6.35
+    cornice_z = 7.35
+
+    # 1. Circular radial stone floor medallion (planar 0..1 UVs matching concentric rings)
+    bf = bmesh.new()
+    f_segs = 64
+    f_rad = radius + 1.4
+    center_v = bf.verts.new((0.0, 0.0, 0.0))
+    ring_vs = [bf.verts.new((math.sin(i * math.tau / f_segs) * f_rad, math.cos(i * math.tau / f_segs) * f_rad, 0.0)) for i in range(f_segs)]
+    for i in range(f_segs):
+        j = (i + 1) % f_segs
+        bf.faces.new((center_v, ring_vs[j], ring_vs[i]))
+    fmesh = bpy.data.meshes.new('rotunda-radial-floor')
+    bf.to_mesh(fmesh)
+    bf.free()
+    fmesh.materials.append(floor_mat)
+    fuv = fmesh.uv_layers.new(name='UVMap')
+    for poly in fmesh.polygons:
+        for li in poly.loop_indices:
+            co = fmesh.vertices[fmesh.loops[li].vertex_index].co
+            fuv.data[li].uv = (co.x / (2.0 * f_rad) + 0.5, co.y / (2.0 * f_rad) + 0.5)
+    fobj = bpy.data.objects.new('rotunda-radial-floor', fmesh)
+    bpy.context.scene.collection.objects.link(fobj)
+
+    # 2. 8 tall stepped stone piers at octagon vertices + base rubble
+    bp = bmesh.new()
+    br = bmesh.new()
+    rng = random.Random(808)
+    vert_r = radius / math.cos(math.pi / sides)
+
+    def add_oriented_box(bm_t, origin, tangent, outward, u0, u1, d0, d1, z0, z1):
+        corners = [
+            origin + tangent * u0 + outward * d0 + Vector((0, 0, z0)),
+            origin + tangent * u1 + outward * d0 + Vector((0, 0, z0)),
+            origin + tangent * u1 + outward * d1 + Vector((0, 0, z0)),
+            origin + tangent * u0 + outward * d1 + Vector((0, 0, z0)),
+            origin + tangent * u0 + outward * d0 + Vector((0, 0, z1)),
+            origin + tangent * u1 + outward * d0 + Vector((0, 0, z1)),
+            origin + tangent * u1 + outward * d1 + Vector((0, 0, z1)),
+            origin + tangent * u0 + outward * d1 + Vector((0, 0, z1)),
+        ]
+        vs = [bm_t.verts.new(c) for c in corners]
+        bm_t.faces.new((vs[0], vs[3], vs[2], vs[1]))
+        bm_t.faces.new((vs[4], vs[5], vs[6], vs[7]))
+        bm_t.faces.new((vs[0], vs[1], vs[5], vs[4]))
+        bm_t.faces.new((vs[2], vs[3], vs[7], vs[6]))
+        bm_t.faces.new((vs[1], vs[2], vs[6], vs[5]))
+        bm_t.faces.new((vs[3], vs[0], vs[4], vs[7]))
+
+    for i in range(sides):
+        # Vertex angle sits halfway between bay centers
+        a = (i + 0.5) * (math.tau / sides)
+        outward = Vector((math.sin(a), math.cos(a), 0.0))
+        tangent = Vector((math.cos(a), -math.sin(a), 0.0))
+        p = outward * vert_r
+        # Two-tier stepped plinth base
+        add_oriented_box(bp, p, tangent, outward, -0.64, 0.64, -0.68, 0.55, 0.0, 0.42)
+        add_oriented_box(bp, p, tangent, outward, -0.54, 0.54, -0.58, 0.50, 0.42, 0.85)
+        # Main vertical ashlar pier shaft
+        add_oriented_box(bp, p, tangent, outward, -0.44, 0.44, -0.48, 0.48, 0.85, entab_z)
+        # Stepped capital & cornice bracket
+        add_oriented_box(bp, p, tangent, outward, -0.54, 0.54, -0.58, 0.52, entab_z, entab_z + 0.28)
+        add_oriented_box(bp, p, tangent, outward, -0.62, 0.62, -0.66, 0.55, entab_z + 0.28, cornice_z)
+        # Small fallen stone rubble around each pier base
+        for _ in range(5):
+            rp = p - outward * rng.uniform(0.55, 1.15) + tangent * rng.uniform(-0.85, 0.85)
+            rad = rng.uniform(0.08, 0.20)
+            ret = bmesh.ops.create_icosphere(br, subdivisions=1, radius=rad)
+            for v in ret['verts']:
+                v.co = Vector((rp.x + v.co.x * 1.2, rp.y + v.co.y * 1.1, max(0.0, (v.co.z + rad * 0.4) * 0.65)))
+
+    bmesh.ops.recalc_face_normals(bp, faces=bp.faces)
+    create_mesh_object('rotunda-piers', bp, stone_mat, uv_scale=1.0 / tile_m)
+    create_mesh_object('rotunda-pier-rubble', br, stone_mat, uv_scale=1.0 / tile_m)
+
+    # 3. 8 Grand Archway bays (light-stone arches, ribs & portcullis trim; dark granite spandrels/piers)
+    ba_wall = bmesh.new()   # granite spandrels & frieze
+    ba_trim = bmesh.new()   # lighter stone arches, capitals, keystones, dentils, passage ribs & portcullis frame
+    bt = bmesh.new()
+    bt_floor = bmesh.new()
+    side_w = 2.0 * radius * math.tan(math.pi / sides)
+    arch_w = side_w * 0.74
+    half_aw = arch_w * 0.5
+    impost_z = 3.15
+    crown_z = 5.55
+
+    def pointed_arch_pts(hw: float, z_imp: float, z_cr: float, n_half: int = 8):
+        """Soaring Gothic-Romanesque pointed arch profile from left floor -> crown -> right floor."""
+        pts = [(-hw, 0.0), (-hw, z_imp)]
+        for k in range(1, n_half):
+            t = k / n_half
+            ang = math.pi * 0.5 * t
+            u = -hw * math.cos(ang)
+            z = z_imp + (z_cr - z_imp) * (math.sin(ang) ** 0.78)
+            pts.append((u, z))
+        pts.append((0.0, z_cr + 0.14))
+        for k in range(n_half - 1, 0, -1):
+            t = k / n_half
+            ang = math.pi * 0.5 * t
+            u = hw * math.cos(ang)
+            z = z_imp + (z_cr - z_imp) * (math.sin(ang) ** 0.78)
+            pts.append((u, z))
+        pts.extend([(hw, z_imp), (hw, 0.0)])
+        return pts
+
+    inner_arch = pointed_arch_pts(half_aw, impost_z, crown_z)
+
+    for i in range(sides):
+        # Bay 0 = North (1), Bay 1 = NE (2), ..., Bay 7 = NW (8)
+        a = i * (math.tau / sides)
+        outward = Vector((math.sin(a), math.cos(a), 0.0))
+        inward = -outward
+        tangent = Vector((math.cos(a), -math.sin(a), 0.0))
+        center = outward * radius
+
+        # Grand light-stone inner jamb pilasters + stepped plinths + 3-tier ornate impost capitals
+        for sgn in (-1.0, 1.0):
+            u_in = sgn * half_aw
+            u_out = sgn * (side_w * 0.5)
+            u0, u1 = min(u_in, u_out), max(u_in, u_out)
+            add_oriented_box(ba_trim, center, tangent, outward, u0, u1, -0.38, 0.70, 0.0, impost_z)
+            # Stepped plinth footing
+            add_oriented_box(ba_trim, center, tangent, outward, u0 - 0.07, u1 + 0.07, -0.50, 0.74, 0.0, 0.45)
+            # 3-tier stepped ornate impost capital moulding
+            add_oriented_box(ba_trim, center, tangent, outward, u0 - 0.05, u1 + 0.05, -0.46, 0.72, impost_z - 0.34, impost_z - 0.20)
+            add_oriented_box(ba_trim, center, tangent, outward, u0 - 0.10, u1 + 0.10, -0.54, 0.76, impost_z - 0.20, impost_z - 0.06)
+            add_oriented_box(ba_trim, center, tangent, outward, u0 - 0.15, u1 + 0.15, -0.62, 0.78, impost_z - 0.06, impost_z + 0.10)
+
+        # Grand double-stepped light-stone archivolt (inner recessed order + bold outer hood moulding)
+        ring_t = 0.60
+        for k in range(len(inner_arch) - 1):
+            u0, z0 = inner_arch[k]
+            u1, z1 = inner_arch[k + 1]
+            if z0 < impost_z and z1 < impost_z:
+                continue
+            def outer_of(u, z, rad_off):
+                dx = u
+                dz = max(0.05, z - impost_z + 0.35)
+                dist = max(math.hypot(dx, dz), 1e-4)
+                return u + (dx / dist) * rad_off, min(entab_z, z + (dz / dist) * rad_off)
+
+            mu0, mz0 = outer_of(u0, z0, ring_t * 0.56)
+            mu1, mz1 = outer_of(u1, z1, ring_t * 0.56)
+            ou0, oz0 = outer_of(u0, z0, ring_t)
+            ou1, oz1 = outer_of(u1, z1, ring_t)
+
+            # Inner arch order (projects inward 0.38 m)
+            vs_in = [ba_trim.verts.new(p) for p in (
+                center + tangent * u0 + inward * 0.38 + Vector((0, 0, z0)),
+                center + tangent * u1 + inward * 0.38 + Vector((0, 0, z1)),
+                center + tangent * mu1 + inward * 0.38 + Vector((0, 0, mz1)),
+                center + tangent * mu0 + inward * 0.38 + Vector((0, 0, mz0)),
+                center + tangent * u0 + outward * 0.72 + Vector((0, 0, z0)),
+                center + tangent * u1 + outward * 0.72 + Vector((0, 0, z1)),
+                center + tangent * mu1 + outward * 0.72 + Vector((0, 0, mz1)),
+                center + tangent * mu0 + outward * 0.72 + Vector((0, 0, mz0)),
+            )]
+            ba_trim.faces.new((vs_in[0], vs_in[1], vs_in[2], vs_in[3]))
+            ba_trim.faces.new((vs_in[4], vs_in[5], vs_in[1], vs_in[0]))
+            ba_trim.faces.new((vs_in[3], vs_in[2], vs_in[6], vs_in[7]))
+            ba_trim.faces.new((vs_in[7], vs_in[6], vs_in[5], vs_in[4]))
+
+            # Bold outer hood-moulding archivolt (projects inward 0.56 m)
+            vs_out = [ba_trim.verts.new(p) for p in (
+                center + tangent * mu0 + inward * 0.56 + Vector((0, 0, mz0)),
+                center + tangent * mu1 + inward * 0.56 + Vector((0, 0, mz1)),
+                center + tangent * ou1 + inward * 0.50 + Vector((0, 0, oz1)),
+                center + tangent * ou0 + inward * 0.50 + Vector((0, 0, oz0)),
+                center + tangent * mu0 + outward * 0.72 + Vector((0, 0, mz0)),
+                center + tangent * mu1 + outward * 0.72 + Vector((0, 0, mz1)),
+                center + tangent * ou1 + outward * 0.72 + Vector((0, 0, oz1)),
+                center + tangent * ou0 + outward * 0.72 + Vector((0, 0, oz0)),
+            )]
+            ba_trim.faces.new((vs_out[0], vs_out[1], vs_out[2], vs_out[3]))
+            ba_trim.faces.new((vs_out[4], vs_out[5], vs_out[1], vs_out[0]))
+            ba_trim.faces.new((vs_out[3], vs_out[2], vs_out[6], vs_out[7]))
+            ba_trim.faces.new((vs_out[7], vs_out[6], vs_out[5], vs_out[4]))
+
+            # Granite spandrel wall fill between arch extrados and entab_z
+            sp_u0 = -side_w * 0.54 if k == 1 else max(-side_w * 0.54, min(side_w * 0.54, ou0))
+            sp_u1 = side_w * 0.54 if k == len(inner_arch) - 3 else max(-side_w * 0.54, min(side_w * 0.54, ou1))
+            sp0 = ba_wall.verts.new(center + tangent * ou0 + inward * 0.22 + Vector((0, 0, oz0)))
+            sp1 = ba_wall.verts.new(center + tangent * ou1 + inward * 0.22 + Vector((0, 0, oz1)))
+            sp2 = ba_wall.verts.new(center + tangent * sp_u1 + inward * 0.22 + Vector((0, 0, entab_z)))
+            sp3 = ba_wall.verts.new(center + tangent * sp_u0 + inward * 0.22 + Vector((0, 0, entab_z)))
+            ba_wall.faces.new((sp0, sp1, sp2, sp3))
+        for sgn in (-1.0, 1.0):
+            u_in = sgn * half_aw
+            u_out = sgn * (side_w * 0.55)
+            add_oriented_box(ba_wall, center, tangent, outward, min(u_in, u_out), max(u_in, u_out), -0.24, 0.70, impost_z, entab_z)
+
+        # Raised portcullis grate tucked high inside each grand arch crown (light-stone grid & spikes, walkway 100% open)
+        port_z_bot = impost_z + 1.05
+        port_z_top = crown_z - 0.15
+        # Horizontal portcullis crossbars
+        for hz in (port_z_bot + 0.12, port_z_bot + 0.62, port_z_bot + 1.12):
+            if hz < port_z_top:
+                bar_hw = half_aw * max(0.25, math.sqrt(max(0.0, 1.0 - ((hz - impost_z) / max(crown_z - impost_z, 0.5)) ** 2)))
+                add_oriented_box(ba_trim, center, tangent, outward, -bar_hw, bar_hw, 0.12, 0.26, hz - 0.05, hz + 0.05)
+        # Vertical portcullis bars + downward-pointing gate teeth
+        for b_idx in range(-4, 5):
+            bu = b_idx * (half_aw * 0.21)
+            if abs(bu) < half_aw * 0.88:
+                # Arch ceiling height at horizontal offset bu
+                z_cap = impost_z + (crown_z - impost_z) * (max(0.0, 1.0 - (bu / half_aw) ** 2) ** 0.45)
+                if z_cap > port_z_bot + 0.15:
+                    add_oriented_box(ba_trim, center, tangent, outward, bu - 0.045, bu + 0.045, 0.14, 0.24, port_z_bot - 0.16, z_cap)
+
+        # Sculpted protruding light-stone keystone block crowning the arch + light-stone cornice dentil blocks
+        add_oriented_box(ba_trim, center, tangent, outward, -0.46, 0.46, -0.66, 0.42, crown_z - 0.20, crown_z + 0.74)
+        for d_idx in range(-4, 5):
+            du = d_idx * (side_w * 0.105)
+            add_oriented_box(ba_trim, center, tangent, outward, du - 0.12, du + 0.12, -0.60, -0.34, cornice_z - 0.46, cornice_z - 0.26)
+
+        # Continuous granite entablature frieze + projecting light-stone cornice moulding
+        add_oriented_box(ba_wall, center, tangent, outward, -side_w * 0.54, side_w * 0.54, -0.34, 0.70, entab_z, cornice_z - 0.26)
+        add_oriented_box(ba_trim, center, tangent, outward, -side_w * 0.56, side_w * 0.56, -0.58, 0.74, cornice_z - 0.26, cornice_z)
+
+        # Carved numbered keystone plaque (1..8) mounted cleanly on the front face of the sculpted keystone
+        num_str = str(i + 1)
+        p_albedo, p_normal = make_arch_number_plaque_texture(num_str, 256)
+        p_aimg = save_image_rgba(p_albedo, tex_dir / f'arch-num-{num_str}-albedo.png', colorspace='sRGB')
+        p_nimg = save_image_rgba(p_normal, tex_dir / f'arch-num-{num_str}-normal.png', colorspace='Non-Color')
+        p_mat = build_pbr_material(f'mat-arch-num-{num_str}', p_aimg, p_nimg, roughness=0.72, normal_strength=1.4)
+
+        bpl = bmesh.new()
+        pw, ph = 0.74, 0.78
+        pl_center = center + inward * 0.68 + Vector((0, 0, crown_z + 0.26))
+        v0 = bpl.verts.new(pl_center - tangent * (pw * 0.5) + Vector((0, 0, -ph * 0.5)))
+        v1 = bpl.verts.new(pl_center + tangent * (pw * 0.5) + Vector((0, 0, -ph * 0.5)))
+        v2 = bpl.verts.new(pl_center + tangent * (pw * 0.5) + Vector((0, 0, ph * 0.5)))
+        v3 = bpl.verts.new(pl_center - tangent * (pw * 0.5) + Vector((0, 0, ph * 0.5)))
+        bpl.faces.new((v0, v1, v2, v3))
+        pmesh = bpy.data.meshes.new(f'arch-number-{num_str}')
+        bpl.to_mesh(pmesh)
+        bpl.free()
+        pmesh.materials.append(p_mat)
+        puv = pmesh.uv_layers.new(name='UVMap')
+        # Map 0..1 cleanly so numeral reads upright when looking at the arch from the rotunda center
+        for li, uv_c in zip(pmesh.polygons[0].loop_indices, [(0.0, 0.0), (1.0, 0.0), (1.0, 1.0), (0.0, 1.0)]):
+            puv.data[li].uv = uv_c
+        pobj = bpy.data.objects.new(f'arch-number-{num_str}', pmesh)
+        bpy.context.scene.collection.objects.link(pobj)
+
+        # Deep ribbed vaulted passage receding 12 m behind each arch
+        tun_depth = 12.0
+        n_steps = 8
+        t_rings = []
+        for s in range(n_steps + 1):
+            d_out = 0.45 + (tun_depth - 0.45) * (s / n_steps)
+            ring = []
+            for u, z in inner_arch:
+                pt = center + tangent * u + outward * d_out + Vector((0, 0, z))
+                ring.append(bt.verts.new(pt))
+            t_rings.append(ring)
+        for s in range(n_steps):
+            for k in range(len(inner_arch) - 1):
+                bt.faces.new((t_rings[s][k], t_rings[s + 1][k], t_rings[s + 1][k + 1], t_rings[s][k + 1]))
+        # Dark terminal cap at 12 m
+        cap_f = bt.faces.new(t_rings[-1])
+        cap_f.material_index = 1
+
+        # 3 successive recessed interior light-stone arch ribs inside each passage
+        for rib_d in (3.0, 6.2, 9.2):
+            rib_c = center + outward * rib_d
+            for sgn in (-1.0, 1.0):
+                u_i = sgn * (half_aw - 0.26)
+                u_o = sgn * (half_aw + 0.08)
+                add_oriented_box(ba_trim, rib_c, tangent, outward, min(u_i, u_o), max(u_i, u_o), -0.24, 0.24, 0.0, impost_z)
+            for k in range(len(inner_arch) - 1):
+                u0, z0 = inner_arch[k]
+                u1, z1 = inner_arch[k + 1]
+                if z0 < impost_z and z1 < impost_z:
+                    continue
+                s0 = 0.90
+                q0 = rib_c + tangent * (u0 * s0) - outward * 0.22 + Vector((0, 0, z0 * 0.96))
+                q1 = rib_c + tangent * (u1 * s0) - outward * 0.22 + Vector((0, 0, z1 * 0.96))
+                q2 = rib_c + tangent * u1 - outward * 0.22 + Vector((0, 0, z1 + 0.05))
+                q3 = rib_c + tangent * u0 - outward * 0.22 + Vector((0, 0, z0 + 0.05))
+                q4 = rib_c + tangent * (u0 * s0) + outward * 0.22 + Vector((0, 0, z0 * 0.96))
+                q5 = rib_c + tangent * (u1 * s0) + outward * 0.22 + Vector((0, 0, z1 * 0.96))
+                q6 = rib_c + tangent * u1 + outward * 0.22 + Vector((0, 0, z1 + 0.05))
+                q7 = rib_c + tangent * u0 + outward * 0.22 + Vector((0, 0, z0 + 0.05))
+                qvs = [ba_trim.verts.new(q) for q in (q0, q1, q2, q3, q4, q5, q6, q7)]
+                ba_trim.faces.new((qvs[0], qvs[1], qvs[2], qvs[3]))
+                ba_trim.faces.new((qvs[4], qvs[5], qvs[1], qvs[0]))
+                ba_trim.faces.new((qvs[7], qvs[6], qvs[5], qvs[4]))
+
+        # Passage floor slab
+        fv0 = bt_floor.verts.new(center - tangent * (half_aw + 0.15) + outward * 0.2)
+        fv1 = bt_floor.verts.new(center + tangent * (half_aw + 0.15) + outward * 0.2)
+        fv2 = bt_floor.verts.new(center + tangent * (half_aw + 0.15) + outward * tun_depth)
+        fv3 = bt_floor.verts.new(center - tangent * (half_aw + 0.15) + outward * tun_depth)
+        bt_floor.faces.new((fv0, fv1, fv2, fv3))
+
+        # Cool dusty slate-blue glow deep inside each passage (matches reference warm-vs-cool contrast!)
+        ldata = bpy.data.lights.new(f'passage-cool-{num_str}', 'POINT')
+        ldata.energy = 110.0
+        ldata.color = (0.34, 0.56, 0.78)
+        ldata.shadow_soft_size = 0.8
+        lobj = bpy.data.objects.new(f'passage-cool-{num_str}', ldata)
+        bpy.context.scene.collection.objects.link(lobj)
+        lobj.location = center + outward * 7.8 + Vector((0, 0, 2.2))
+
+    bmesh.ops.recalc_face_normals(ba_wall, faces=ba_wall.faces)
+    create_mesh_object('rotunda-spandrel-walls', ba_wall, stone_mat, uv_scale=1.0 / tile_m)
+    bmesh.ops.recalc_face_normals(ba_trim, faces=ba_trim.faces)
+    create_mesh_object('rotunda-arches-and-portcullis', ba_trim, trim_mat, uv_scale=1.0 / tile_m)
+
+    tmesh = bpy.data.meshes.new('rotunda-passages')
+    bt.to_mesh(tmesh)
+    bt.free()
+    tmesh.materials.append(tunnel_mat)
+    tmesh.materials.append(dark_mat)
+    tuv = tmesh.uv_layers.new(name='UVMap')
+    for poly in tmesh.polygons:
+        for li in poly.loop_indices:
+            co = tmesh.vertices[tmesh.loops[li].vertex_index].co
+            tuv.data[li].uv = ((co.x + co.y) / tile_m, co.z / tile_m)
+    tobj = bpy.data.objects.new('rotunda-passages', tmesh)
+    bpy.context.scene.collection.objects.link(tobj)
+    create_mesh_object('rotunda-passage-floors', bt_floor, tunnel_mat, uv_scale=1.0 / tile_m)
+
+    # 4. High ribbed stone dome lost in gloom (z = cornice_z .. dome_height)
+    bd = bmesh.new()
+    d_segs = 32
+    d_rings = 12
+    dome_rings = []
+    for ir in range(d_rings + 1):
+        t = ir / d_rings
+        phi = t * (math.pi * 0.48)
+        r_cur = (vert_r + 0.15) * math.cos(phi)
+        z_cur = cornice_z - 0.1 + (dome_height - cornice_z + 0.1) * math.sin(phi)
+        ring = []
+        for k in range(d_segs):
+            a = k * (math.tau / d_segs)
+            ring.append(bd.verts.new((math.sin(a) * r_cur, math.cos(a) * r_cur, z_cur)))
+        dome_rings.append(ring)
+    for ir in range(d_rings):
+        for k in range(d_segs):
+            k2 = (k + 1) % d_segs
+            bd.faces.new((dome_rings[ir][k], dome_rings[ir + 1][k], dome_rings[ir + 1][k2], dome_rings[ir][k2]))
+    apex_v = bd.verts.new((0.0, 0.0, dome_height + 0.1))
+    for k in range(d_segs):
+        k2 = (k + 1) % d_segs
+        bd.faces.new((dome_rings[-1][k], apex_v, dome_rings[-1][k2]))
+    create_mesh_object('room-ceiling', bd, tunnel_mat, uv_scale=1.0 / (tile_m * 1.4))
+
+    # 8 bold curved light-stone dome ribs springing straight up from the 8 pier capitals to the apex
+    brib = bmesh.new()
+    rib_hw = 0.44
+    rib_depth = 0.52
+    for i in range(sides):
+        a = (i + 0.5) * (math.tau / sides)
+        outward = Vector((math.sin(a), math.cos(a), 0.0))
+        tangent = Vector((math.cos(a), -math.sin(a), 0.0))
+        rib_sec = []
+        for ir in range(d_rings + 1):
+            t = ir / d_rings
+            phi = t * (math.pi * 0.47)
+            r_out = vert_r * math.cos(phi)
+            r_in = max(0.35, r_out - rib_depth)
+            z_c = cornice_z + (dome_height - cornice_z) * math.sin(phi)
+            w_cur = rib_hw * (1.0 - 0.42 * t)
+            c_in = outward * r_in + Vector((0, 0, z_c))
+            c_out = outward * r_out + Vector((0, 0, z_c))
+            rib_sec.append([
+                brib.verts.new(c_in - tangent * w_cur),
+                brib.verts.new(c_in + tangent * w_cur),
+                brib.verts.new(c_out + tangent * w_cur),
+                brib.verts.new(c_out - tangent * w_cur),
+            ])
+        for ir in range(d_rings):
+            s0, s1 = rib_sec[ir], rib_sec[ir + 1]
+            for j in range(4):
+                j2 = (j + 1) % 4
+                brib.faces.new((s0[j], s0[j2], s1[j2], s1[j]))
+    bmesh.ops.recalc_face_normals(brib, faces=brib.faces)
+    create_mesh_object('rotunda-dome-ribs', brib, trim_mat, uv_scale=1.0 / tile_m)
 
 
 def _add_box(bm: bmesh.types.BMesh, x0: float, x1: float, y0: float, y1: float, z0: float, z1: float, mat_idx: int = 0):
@@ -1812,6 +2424,14 @@ def main():
     for sname, spec in bom['surfaces'].items():
         if spec.get('procedural') == 'grey-stone':
             albedo_arr = make_grey_stone_tile(512)
+        elif spec.get('procedural') == 'granite':
+            albedo_arr = make_granite_tile(512)
+        elif spec.get('procedural') == 'light-stone':
+            albedo_arr = make_light_stone_tile(512)
+        elif spec.get('procedural') == 'warm-ashlar':
+            albedo_arr = make_warm_ashlar_tile(512)
+        elif spec.get('procedural') == 'radial-floor':
+            albedo_arr = make_radial_floor_medallion(1024)
         elif spec.get('procedural') == 'dark-oak':
             albedo_arr = make_dark_oak_tile(512)
         elif spec.get('procedural') == 'weathered-oak':
@@ -1851,7 +2471,22 @@ def main():
     env = bom['envelope']
     w, d, h = env['dimensionsMetres']
     disp = float(env.get('wallDisplacementMetres', 0.35 if env['wallStyle'] == 'rough-cavern' else 0.03))
-    if env['shape'] == 'organic-cavern':
+    if env['shape'] == 'rotunda':
+        tunnel_mat = materials.get('tunnel-stone', materials['ceiling'])
+        trim_mat = materials.get('arch-trim', materials['wall'])
+        build_rotunda(
+            radius=w * 0.5,
+            dome_height=h,
+            stone_mat=materials['wall'],
+            trim_mat=trim_mat,
+            floor_mat=materials['floor'],
+            tunnel_mat=tunnel_mat,
+            dark_mat=dark_mat,
+            tile_m=surface_tiles['wall'],
+            tex_dir=tex_dir,
+            sides=8,
+        )
+    elif env['shape'] == 'organic-cavern':
         cobble_mat = materials.get('cobble', materials['floor'])
         tunnels = [o for o in bom['objects'] if o['category'] == 'smoothed-tunnel']
         open_sky = env['ceilingStyle'] == 'open-sky'

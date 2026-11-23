@@ -26,7 +26,7 @@
       "required": ["shape", "dimensionsMetres", "wallStyle", "ceilingStyle"],
       "additionalProperties": false,
       "properties": {
-        "shape": { "enum": ["box", "octagon", "organic-cavern"] },
+        "shape": { "enum": ["box", "octagon", "organic-cavern", "rotunda"] },
         "dimensionsMetres": {
           "type": "array",
           "items": { "type": "number", "exclusiveMinimum": 0 },
@@ -161,7 +161,7 @@
       "properties": {
         "sourceView": { "enum": ["N", "E", "S", "W"] },
         "crop": { "$ref": "#/$defs/cropBox" },
-        "procedural": { "enum": ["grey-stone", "dark-oak", "weathered-oak", "tufted-leather"] },
+        "procedural": { "enum": ["grey-stone", "granite", "light-stone", "warm-ashlar", "radial-floor", "dark-oak", "weathered-oak", "tufted-leather"] },
         "tileMetres": { "type": "number", "exclusiveMinimum": 0 },
         "roughness": { "type": "number", "minimum": 0, "maximum": 1 },
         "normalStrength": { "type": "number", "minimum": 0, "maximum": 3 },

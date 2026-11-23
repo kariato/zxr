@@ -2,11 +2,31 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { createRoomAssetLoader } from './prototype/room-asset-loader.ts';
 import cavernSkyboxUrl from './prototype/assets/cavern-skybox-v1.png?url';
+import barrowSkyboxUrl from './prototype/assets/barrow-night-forest-v3.jpg?url';
 
-type RoomKey = 'office' | 'shallow-ford' | 'well-top';
+type RoomKey = 'carousel-room' | 'inside-barrow' | 'office' | 'shallow-ford' | 'well-top';
 type WalkPreset = readonly [[number, number, number], number, number];
 
 const ROOMS: Record<RoomKey, { label: string; skybox?: string; fog?: number; presets: Record<'view-n' | 'view-e' | 'view-s' | 'view-w', WalkPreset> }> = {
+  'carousel-room': {
+    label: 'Carousel Room',
+    presets: {
+      'view-n': [[0.0, 1.7, 5.4], 0.0, 0.08],
+      'view-e': [[-5.4, 1.7, 0.0], -Math.PI / 2, 0.08],
+      'view-s': [[0.0, 1.7, -5.4], Math.PI, 0.08],
+      'view-w': [[5.4, 1.7, 0.0], Math.PI / 2, 0.08],
+    },
+  },
+  'inside-barrow': {
+    label: 'Inside the Barrow',
+    skybox: barrowSkyboxUrl,
+    presets: {
+      'view-n': [[0.0, 1.62, -2.25], Math.PI, -0.08],
+      'view-e': [[-1.2, 1.62, 0.0], -Math.PI / 2, -0.08],
+      'view-s': [[0.0, 1.62, 1.8], 0.0, -0.08],
+      'view-w': [[1.2, 1.62, 0.0], Math.PI / 2, -0.08],
+    },
+  },
   office: {
     label: "Chairman's Office",
     presets: {
@@ -39,7 +59,7 @@ const ROOMS: Record<RoomKey, { label: string; skybox?: string; fog?: number; pre
 };
 
 const params = new URLSearchParams(location.search);
-const initialRoom = (params.get('room') as RoomKey) in ROOMS ? (params.get('room') as RoomKey) : 'office';
+const initialRoom = (params.get('room') as RoomKey) in ROOMS ? (params.get('room') as RoomKey) : 'carousel-room';
 
 const viewport = document.getElementById('viewport')!;
 const statusEl = document.getElementById('status')!;

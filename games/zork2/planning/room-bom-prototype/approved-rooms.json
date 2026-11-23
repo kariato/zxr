@@ -1,0 +1,56 @@
+{
+  "format": "zxr-approved-rooms-v1",
+  "updatedAt": "2026-11-23",
+  "rooms": [
+    {
+      "room": "INSIDE-BARROW",
+      "slug": "inside-barrow",
+      "label": "Inside the Barrow",
+      "status": "good",
+      "glb": "public/room-preview/rooms/inside-barrow/room.glb",
+      "sourceGlb": "src/prototype/assets/barrow-below-grade-v4.glb",
+      "skybox": "src/prototype/assets/barrow-night-forest-v3.jpg",
+      "notes": "First barrow room with textured stairs and night-forest skybox."
+    },
+    {
+      "room": "CAROUSEL-ROOM",
+      "slug": "carousel-room",
+      "label": "Carousel Room",
+      "status": "good",
+      "bom": "games/zork2/planning/room-bom-prototype/carousel-room/room-bom.json",
+      "glb": "public/room-preview/rooms/carousel-room/room.glb",
+      "skybox": null,
+      "notes": "Octagonal rotunda with dusty radial medallion floor, grand light-stone arches, portcullis headers, numbered keystones 1-8, granite piers, and light-stone dome ribs."
+    },
+    {
+      "room": "OFFICE",
+      "slug": "office",
+      "label": "Chairman's Office",
+      "status": "good",
+      "bom": "games/zork2/planning/room-bom-prototype/office/room-bom.json",
+      "glb": "public/room-preview/rooms/office/room.glb",
+      "skybox": null,
+      "notes": "Wainscot-aligned peeling plaster walls, dark oak beams/pilasters, mottled grey stone north arch, crimson rug, Hunyuan3D-2 desk, tufted leather chair, dirty vandalized bookcase, and anchor:PORTRAIT."
+    },
+    {
+      "room": "SHALLOW-FORD",
+      "slug": "shallow-ford",
+      "label": "Shallow Ford",
+      "status": "good",
+      "bom": "games/zork2/planning/room-bom-prototype/shallow-ford/room-bom.json",
+      "glb": "public/room-preview/rooms/shallow-ford/room.glb",
+      "skybox": "src/prototype/assets/cavern-skybox-v1.png",
+      "notes": "Continuous organic cavern terrain with full-horizon ford, rising slopes, 180-spire stalagmite forest, recessed winding path, full-width tunnel cliff wall, and cavern skybox."
+    },
+    {
+      "room": "WELL-TOP",
+      "slug": "well-top",
+      "label": "Top of Well",
+      "status": "good",
+      "bom": "games/zork2/planning/room-bom-prototype/well-top/room-bom.json",
+      "glb": "public/room-preview/rooms/well-top/room.glb",
+      "skybox": null,
+      "notes": "Cavern room with textured grey stone well curb, arched eastern tunnel, floor crack, boulders, and anchor:TOP-ETCHINGS."
+    }
+  ]
+}

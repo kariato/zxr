@@ -109,6 +109,13 @@ const walkPresets = roomSlug === 'shallow-ford'
       'view-s': [[-0.5, 1.55, -2.0], Math.PI * 0.88, -0.08],
       'view-w': [[1.8, 1.55, 0.5], Math.PI / 2, -0.10],
     }
+  : roomSlug === 'carousel-room'
+    ? {
+        'view-n': [[0.0, 1.7, 5.4], 0.0, 0.06],
+        'view-e': [[-5.4, 1.7, 0.0], -Math.PI / 2, 0.06],
+        'view-s': [[0.0, 1.7, -5.4], Math.PI, 0.06],
+        'view-w': [[5.4, 1.7, 0.0], Math.PI / 2, 0.06],
+      }
   : roomSlug === 'office'
     ? {
         'view-n': [[-0.9, 1.55, 2.4], -0.12, -0.08],

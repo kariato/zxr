@@ -1,0 +1,64 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "CAROUSEL-ROOM",
+  "label": "Carousel Room",
+  "sourceContext": "games/zork2/assets/rooms/carousel-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/carousel-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/carousel-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/carousel-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/carousel-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "rotunda",
+    "dimensionsMetres": [17.4, 17.4, 16.5],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.02,
+    "ceilingStyle": "vaulted",
+    "lighting": {
+      "ambientColor": [0.06, 0.08, 0.11],
+      "ambientStrength": 0.18,
+      "lights": [
+        { "name": "carousel-center-glow", "position": [0.0, 0.0, 2.8], "color": [1.0, 0.72, 0.36], "energy": 950, "radius": 1.8 },
+        { "name": "carousel-floor-warm-n", "position": [0.0, 3.8, 2.1], "color": [1.0, 0.74, 0.40], "energy": 320, "radius": 1.4 },
+        { "name": "carousel-floor-warm-s", "position": [0.0, -3.8, 2.1], "color": [1.0, 0.74, 0.40], "energy": 320, "radius": 1.4 },
+        { "name": "carousel-floor-warm-e", "position": [3.8, 0.0, 2.1], "color": [1.0, 0.74, 0.40], "energy": 320, "radius": 1.4 },
+        { "name": "carousel-floor-warm-w", "position": [-3.8, 0.0, 2.1], "color": [1.0, 0.74, 0.40], "energy": 320, "radius": 1.4 },
+        { "name": "dome-gloom-cool", "position": [0.0, 0.0, 10.5], "color": [0.24, 0.34, 0.48], "energy": 140, "radius": 3.5 }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "procedural": "granite",
+      "tileMetres": 2.0,
+      "roughness": 0.84,
+      "normalStrength": 1.35
+    },
+    "arch-trim": {
+      "procedural": "light-stone",
+      "tileMetres": 1.8,
+      "roughness": 0.78,
+      "normalStrength": 1.25
+    },
+    "floor": {
+      "procedural": "radial-floor",
+      "tileMetres": 19.6,
+      "roughness": 0.82,
+      "normalStrength": 1.25
+    },
+    "ceiling": {
+      "procedural": "grey-stone",
+      "tileMetres": 3.8,
+      "roughness": 0.94,
+      "normalStrength": 1.2
+    },
+    "tunnel-stone": {
+      "procedural": "grey-stone",
+      "tileMetres": 2.6,
+      "roughness": 0.92,
+      "normalStrength": 1.25
+    }
+  },
+  "objects": []
+}
