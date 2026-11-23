@@ -1,0 +1,30 @@
+{
+  "format": "zxr-scene-spec-v1",
+  "room": "OFFICE",
+  "views": {
+    "N": "games/zork2/assets/rooms/office/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/office/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/office/reverse-v2.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/office/yaw-270-v1.png"
+  },
+  "heroObjects": [
+    {
+      "id": "chairman-desk",
+      "sourceView": "N",
+      "crop": [0.54, 0.59, 0.98, 0.94],
+      "inpaintFromBackground": false
+    },
+    {
+      "id": "leather-armchair",
+      "sourceView": "N",
+      "crop": [0.80, 0.42, 1.00, 0.68],
+      "inpaintFromBackground": false
+    },
+    {
+      "id": "oak-bookcase",
+      "sourceView": "N",
+      "crop": [0.76, 0.15, 0.97, 0.62],
+      "inpaintFromBackground": false
+    }
+  ]
+}

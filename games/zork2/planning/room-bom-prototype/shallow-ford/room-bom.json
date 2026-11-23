@@ -1,0 +1,142 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "SHALLOW-FORD",
+  "label": "Shallow Ford",
+  "sourceContext": "games/zork2/assets/rooms/shallow-ford/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/shallow-ford/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/shallow-ford/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/shallow-ford/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/shallow-ford/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "organic-cavern",
+    "dimensionsMetres": [21.0, 19.0, 6.8],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.95,
+    "ceilingStyle": "open-sky",
+    "skybox": "src/prototype/assets/cavern-skybox-v1.png",
+    "lighting": {
+      "ambientColor": [0.16, 0.22, 0.28],
+      "ambientStrength": 0.75,
+      "lights": [
+        { "name": "warm-shore-sun", "position": [-2.5, 2.2, 3.8], "color": [1.0, 0.78, 0.48], "energy": 650, "radius": 2.2 },
+        { "name": "ford-water-shimmer", "position": [0.5, -0.8, 3.2], "color": [0.95, 0.82, 0.58], "energy": 420, "radius": 1.8 },
+        { "name": "north-misty-blue", "position": [-1.5, 11.5, 4.6], "color": [0.46, 0.66, 0.88], "energy": 520, "radius": 3.0 },
+        { "name": "west-bank-warm", "position": [-5.2, -2.0, 2.8], "color": [1.0, 0.76, 0.46], "energy": 340, "radius": 1.6 }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "E",
+      "crop": [0.25, 0.14, 0.72, 0.46],
+      "tileMetres": 4.2,
+      "roughness": 0.90,
+      "normalStrength": 1.35,
+      "colorScale": 1.05,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "S",
+      "crop": [0.25, 0.54, 0.68, 0.68],
+      "tileMetres": 3.0,
+      "roughness": 0.88,
+      "normalStrength": 1.10,
+      "colorScale": 1.05,
+      "tileable": true
+    },
+    "cobble": {
+      "sourceView": "N",
+      "crop": [0.42, 0.68, 0.85, 0.90],
+      "tileMetres": 2.4,
+      "roughness": 0.55,
+      "normalStrength": 1.25,
+      "colorScale": 1.15,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "E",
+      "crop": [0.06, 0.02, 0.45, 0.18],
+      "tileMetres": 4.8,
+      "roughness": 0.94,
+      "normalStrength": 1.25,
+      "colorScale": 0.85,
+      "tileable": true
+    },
+    "stalagmite": {
+      "sourceView": "N",
+      "crop": [0.06, 0.18, 0.24, 0.48],
+      "tileMetres": 2.6,
+      "roughness": 0.86,
+      "normalStrength": 1.30,
+      "colorScale": 1.10,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "shallow-ford-water",
+      "category": "water-surface",
+      "description": "Clear shallow teal-green stream flowing across the cavern over smooth river cobbles",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [0.20, 0.54, 0.95, 0.94],
+      "placement": {
+        "position": [0.0, -0.7, -0.05],
+        "waterColor": [0.16, 0.36, 0.36],
+        "alpha": 0.52
+      }
+    },
+    {
+      "id": "dark-tunnel-south",
+      "category": "smoothed-tunnel",
+      "description": "Enlarged, smoothed arched dark tunnel across the shallow ford leading south to Dark Tunnel",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "sourceView": "N",
+      "crop": [0.66, 0.18, 0.94, 0.54],
+      "surface": "wall",
+      "placement": {
+        "position": [2.4, -7.2, 0.0],
+        "sizeMetres": [3.5, 1.0, 3.3],
+        "depthMetres": 11.0,
+        "yawDeg": 165,
+        "curveYawDeg": 18
+      }
+    },
+    {
+      "id": "north-stalagmites",
+      "category": "stalagmite-field",
+      "description": "Tapered limestone stalagmites flanking the winding northern gravel path toward Great Cavern",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [0.02, 0.08, 0.48, 0.54],
+      "surface": "stalagmite",
+      "placement": {
+        "position": [0.0, 12.0, 0.0],
+        "sizeMetres": [52.0, 34.0, 5.2],
+        "count": 180,
+        "minHeight": 1.1,
+        "maxHeight": 4.4,
+        "pathClearance": 2.0,
+        "seed": 404
+      }
+    },
+    {
+      "id": "shore-river-boulders",
+      "category": "river-boulders",
+      "description": "Smooth water-worn rounded boulders lining the gravel shores and ford banks",
+      "zilIdentity": null,
+      "sourceView": "E",
+      "crop": [0.05, 0.36, 0.92, 0.72],
+      "surface": "wall",
+      "placement": {
+        "position": [0.0, 0.0, 0.0],
+        "sizeMetres": [16.0, 13.0, 1.15],
+        "count": 34,
+        "seed": 606
+      }
+    }
+  ]
+}

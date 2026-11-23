@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zxr.local/schema/room-bom-v1.json",
+  "title": "ZXR Room Bill of Materials (BOM) v1",
+  "type": "object",
+  "required": ["format", "room", "views", "envelope", "surfaces", "objects"],
+  "additionalProperties": false,
+  "properties": {
+    "format": { "const": "zxr-room-bom-v1" },
+    "room": { "type": "string", "minLength": 1 },
+    "label": { "type": "string" },
+    "sourceContext": { "type": "string" },
+    "views": {
+      "type": "object",
+      "required": ["N", "E", "S", "W"],
+      "additionalProperties": false,
+      "properties": {
+        "N": { "type": "string" },
+        "E": { "type": "string" },
+        "S": { "type": "string" },
+        "W": { "type": "string" }
+      }
+    },
+    "envelope": {
+      "type": "object",
+      "required": ["shape", "dimensionsMetres", "wallStyle", "ceilingStyle"],
+      "additionalProperties": false,
+      "properties": {
+        "shape": { "enum": ["box", "octagon", "organic-cavern"] },
+        "dimensionsMetres": {
+          "type": "array",
+          "items": { "type": "number", "exclusiveMinimum": 0 },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "wallStyle": { "enum": ["rough-cavern", "dressed-masonry", "plaster", "hedge"] },
+        "wallDisplacementMetres": { "type": "number", "minimum": 0, "maximum": 1.2 },
+        "ceilingStyle": { "enum": ["flat", "rough-cavern", "vaulted", "coffered", "open-sky"] },
+        "wainscotHeightMetres": { "type": "number", "minimum": 0, "maximum": 2.0 },
+        "wallSurfaces": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "skybox": { "type": "string" },
+        "lighting": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "ambientColor": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+            "ambientStrength": { "type": "number", "minimum": 0 },
+            "lights": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["name", "position", "color", "energy"],
+                "additionalProperties": false,
+                "properties": {
+                  "name": { "type": "string" },
+                  "position": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+                  "color": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+                  "energy": { "type": "number", "minimum": 0 },
+                  "radius": { "type": "number", "minimum": 0.05 }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "surfaces": {
+      "type": "object",
+      "required": ["wall", "floor", "ceiling"],
+      "additionalProperties": { "$ref": "#/$defs/surfaceSpec" },
+      "properties": {
+        "wall": { "$ref": "#/$defs/surfaceSpec" },
+        "floor": { "$ref": "#/$defs/surfaceSpec" },
+        "ceiling": { "$ref": "#/$defs/surfaceSpec" }
+      }
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "category", "placement"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "category": {
+            "enum": [
+              "well",
+              "opening",
+              "door",
+              "recess",
+              "floor-crack",
+              "boulder-cluster",
+              "river-boulders",
+              "water-surface",
+              "stalagmite-field",
+              "stalactite-ceiling",
+              "smoothed-tunnel",
+              "rug",
+              "pillar",
+              "table",
+              "chair",
+              "bookcase",
+              "hero-3d",
+              "zil-prop-anchor"
+            ]
+          },
+          "description": { "type": "string" },
+          "zilIdentity": { "type": ["string", "null"] },
+          "exitDirection": { "type": ["string", "null"] },
+          "sourceView": { "enum": ["N", "E", "S", "W"] },
+          "crop": { "$ref": "#/$defs/cropBox" },
+          "surface": { "type": "string" },
+          "meshPath": { "type": "string" },
+          "placement": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "wall": { "enum": ["N", "E", "S", "W"] },
+              "position": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+              "sizeMetres": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+              "yawDeg": { "type": "number" },
+              "offsetAlongWall": { "type": "number" },
+              "depthMetres": { "type": "number" },
+              "outerRadius": { "type": "number" },
+              "innerRadius": { "type": "number" },
+              "height": { "type": "number" },
+              "shaftDepth": { "type": "number" },
+              "blocks": { "type": "integer", "minimum": 6, "maximum": 48 },
+              "count": { "type": "integer", "minimum": 1, "maximum": 300 },
+              "spread": { "type": "number" },
+              "seed": { "type": "integer" },
+              "tunnelColor": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+              "tunnelEnergy": { "type": "number" },
+              "waterColor": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+              "alpha": { "type": "number", "minimum": 0.05, "maximum": 1.0 },
+              "minHeight": { "type": "number" },
+              "maxHeight": { "type": "number" },
+              "radius": { "type": "number" },
+              "pathClearance": { "type": "number" },
+              "curveYawDeg": { "type": "number" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "cropBox": {
+      "type": "array",
+      "description": "Normalized [x0, y0, x1, y1] in image space (top-left origin, 0..1).",
+      "items": { "type": "number", "minimum": 0, "maximum": 1 },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "surfaceSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sourceView": { "enum": ["N", "E", "S", "W"] },
+        "crop": { "$ref": "#/$defs/cropBox" },
+        "procedural": { "enum": ["grey-stone", "dark-oak", "weathered-oak", "tufted-leather"] },
+        "tileMetres": { "type": "number", "exclusiveMinimum": 0 },
+        "roughness": { "type": "number", "minimum": 0, "maximum": 1 },
+        "normalStrength": { "type": "number", "minimum": 0, "maximum": 3 },
+        "colorScale": { "type": "number", "minimum": 0.2, "maximum": 2.0 },
+        "tileable": { "type": "boolean" }
+      }
+    }
+  }
+}

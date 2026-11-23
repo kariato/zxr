@@ -8,7 +8,7 @@ import { reviewMiddleware } from './tools/planning/review-server.ts';
 import { collectLabels } from './tools/planning/labels.ts';
 // Build-time/server-only compilation. The browser loads a validated bundle.
 let building=false;
-export default defineConfig({build:{rollupOptions:{input:{main:'index.html',rooms:'rooms/index.html'}}},base:process.env.GITHUB_PAGES==='true'?'/zxr/':'./',plugins:[{
+export default defineConfig({build:{rollupOptions:{input:{main:'index.html',rooms:'rooms/index.html',roomPreview:'room-preview.html'}}},base:process.env.GITHUB_PAGES==='true'?'/zxr/':'./',plugins:[{
   name:'zxr-story-bundle',
   closeBundle(){
     const source='games/zork2/planning/optimized-rooms-v1';

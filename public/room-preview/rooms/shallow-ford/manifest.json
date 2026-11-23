@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "SHALLOW-FORD",
+  "bom": "games/zork2/planning/room-bom-prototype/shallow-ford/room-bom.json",
+  "bomSha256": "a820236de55788280d441bc9ff0574db1d5df223ba8823f8a3579eaa5ab7c201",
+  "glb": "games/zork2/planning/room-bom-prototype/shallow-ford/build/room.glb",
+  "glbBytes": 8936936,
+  "glbSha256": "2c3ba8f74b5abba2b74d145300c9f12f8be0dc9e7e1ea7fa55547c96987d0370",
+  "meshCount": 7,
+  "materialCount": 6,
+  "triangles": 61349,
+  "zilAnchors": [],
+  "skybox": "src/prototype/assets/cavern-skybox-v1.png",
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/shallow-ford/build/review-4view.png"
+}

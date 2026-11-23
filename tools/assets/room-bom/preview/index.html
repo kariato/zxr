@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ZXR Room BOM Preview</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; height: 100dvh; display: flex; flex-direction: column; overflow: hidden;
+      background: #141b20; color: #ecebe4; font: 14px/1.4 system-ui, sans-serif;
+    }
+    header {
+      flex: 0 0 auto; padding: 12px 20px; display: flex; flex-wrap: wrap;
+      justify-content: space-between; align-items: center; gap: 12px;
+      border-bottom: 1px solid #303d44; background: #192228;
+    }
+    h1 { margin: 0; font-size: 18px; font-weight: 600; }
+    .sub { margin: 2px 0 0; font-size: 12px; color: #9db0b8; }
+    .controls { display: flex; flex-wrap: wrap; gap: 6px; }
+    button {
+      background: #27363e; color: #eef3f5; border: 1px solid #4d626c;
+      padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 13px;
+    }
+    button:hover { background: #334752; }
+    button[aria-pressed="true"] { background: #4c6b53; border-color: #7ea887; }
+    main { flex: 1; min-height: 0; position: relative; }
+    canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+    #status {
+      position: absolute; left: 16px; bottom: 16px; padding: 8px 12px;
+      background: rgba(16, 23, 28, 0.88); border: 1px solid #42535c;
+      border-radius: 6px; font-size: 13px; pointer-events: none;
+    }
+    #ref-drawer {
+      position: absolute; right: 16px; top: 16px; width: min(560px, 48vw);
+      background: rgba(16, 23, 28, 0.94); border: 1px solid #42535c;
+      border-radius: 8px; padding: 10px; display: none;
+    }
+    #ref-drawer.open { display: block; }
+    #ref-drawer img { width: 100%; display: block; border-radius: 4px; }
+    #ref-drawer p { margin: 0 0 6px; font-size: 12px; color: #b7c6cc; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1 id="title">Room BOM Preview</h1>
+      <p class="sub">Drag to orbit · Scroll to zoom · Right-drag to pan · WASD to walk</p>
+    </div>
+    <div class="controls">
+      <button id="view-n">North (Well)</button>
+      <button id="view-e">East (Passage)</button>
+      <button id="view-s">South</button>
+      <button id="view-w">West</button>
+      <button id="view-top">Top cutaway</button>
+      <button id="toggle-ceiling" aria-pressed="true">Ceiling</button>
+      <button id="toggle-wire" aria-pressed="false">Wireframe</button>
+      <button id="toggle-ref" aria-pressed="false">4-View Reference</button>
+    </div>
+  </header>
+  <main id="viewport">
+    <div id="status">Loading GLB…</div>
+    <aside id="ref-drawer">
+      <p>Top: original 4 reference views (N / E / S / W) · Bottom: Blender renders</p>
+      <img id="ref-img" alt="4-view reference sheet" />
+    </aside>
+  </main>
+  <script type="module" src="./viewer.js"></script>
+</body>
+</html>

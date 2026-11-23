@@ -1,0 +1,182 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "WELL-TOP",
+  "label": "Top of Well",
+  "sourceContext": "games/zork2/assets/rooms/well-top/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/well-top/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/well-top/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/well-top/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/well-top/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [9.2, 8.4, 3.7],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.42,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [0.10, 0.12, 0.15],
+      "ambientStrength": 0.25,
+      "lights": [
+        { "name": "well-warm-key", "position": [-0.2, -1.8, 2.3], "color": [1.0, 0.76, 0.48], "energy": 220, "radius": 1.1 },
+        { "name": "east-approach-glow", "position": [3.0, 0.2, 2.0], "color": [1.0, 0.72, 0.42], "energy": 180, "radius": 0.9 },
+        { "name": "south-fill", "position": [-1.2, -3.0, 1.9], "color": [0.95, 0.72, 0.46], "energy": 110, "radius": 1.2 },
+        { "name": "north-cool-shadow", "position": [-1.4, 3.0, 2.4], "color": [0.42, 0.56, 0.72], "energy": 45, "radius": 1.4 }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "S",
+      "crop": [0.30, 0.16, 0.76, 0.58],
+      "tileMetres": 3.4,
+      "roughness": 0.92,
+      "normalStrength": 1.35,
+      "colorScale": 1.0,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "S",
+      "crop": [0.18, 0.68, 0.78, 0.96],
+      "tileMetres": 2.8,
+      "roughness": 0.90,
+      "normalStrength": 1.05,
+      "colorScale": 1.0,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "S",
+      "crop": [0.18, 0.02, 0.78, 0.18],
+      "tileMetres": 3.8,
+      "roughness": 0.95,
+      "normalStrength": 1.25,
+      "colorScale": 0.85,
+      "tileable": true
+    },
+    "well-stone": {
+      "procedural": "grey-stone",
+      "tileMetres": 1.35,
+      "roughness": 0.88,
+      "normalStrength": 1.15
+    }
+  },
+  "objects": [
+    {
+      "id": "stone-well-curb",
+      "category": "well",
+      "description": "Circular weathered ashlar stone well rim with deep dark shaft descending below floor",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [0.04, 0.34, 0.62, 0.82],
+      "surface": "well-stone",
+      "placement": {
+        "position": [-1.05, 0.35, 0.0],
+        "outerRadius": 1.68,
+        "innerRadius": 1.26,
+        "height": 0.84,
+        "shaftDepth": 8.0,
+        "blocks": 18
+      }
+    },
+    {
+      "id": "top-etchings-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive source object anchor for TOP-ETCHINGS on the south-facing side of the well curb",
+      "zilIdentity": "TOP-ETCHINGS",
+      "sourceView": "N",
+      "crop": [0.24, 0.60, 0.52, 0.80],
+      "placement": {
+        "position": [-1.05, -1.33, 0.44],
+        "sizeMetres": [1.55, 0.08, 0.72],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "east-arched-passage",
+      "category": "opening",
+      "description": "Rough-hewn arched rock passage on the east wall leading to the Tea Room",
+      "zilIdentity": null,
+      "exitDirection": "EAST",
+      "sourceView": "E",
+      "crop": [0.34, 0.10, 0.64, 0.56],
+      "surface": "wall",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 0.15,
+        "sizeMetres": [2.05, 0.55, 2.55],
+        "depthMetres": 7.5,
+        "tunnelColor": [1.0, 0.72, 0.38],
+        "tunnelEnergy": 160
+      }
+    },
+    {
+      "id": "north-west-rock-recess",
+      "category": "recess",
+      "description": "Shallow dark rocky alcove behind the well on the north-west wall (non-exit)",
+      "zilIdentity": null,
+      "exitDirection": null,
+      "sourceView": "N",
+      "crop": [0.12, 0.08, 0.40, 0.36],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": -1.5,
+        "sizeMetres": [2.8, 0.5, 2.4],
+        "depthMetres": 4.2
+      }
+    },
+    {
+      "id": "east-floor-crack",
+      "category": "floor-crack",
+      "description": "Small jagged crack across the floor in front of the eastern passage entrance",
+      "zilIdentity": null,
+      "sourceView": "E",
+      "crop": [0.22, 0.60, 0.65, 0.68],
+      "placement": {
+        "position": [2.45, 0.15, 0.0],
+        "sizeMetres": [0.10, 3.6, 0.08],
+        "yawDeg": 6
+      }
+    },
+    {
+      "id": "south-wall-boulders",
+      "category": "boulder-cluster",
+      "description": "Angular fallen boulders and rubble grounding the south rock wall",
+      "sourceView": "S",
+      "surface": "wall",
+      "placement": {
+        "position": [0.0, -3.55, 0.0],
+        "sizeMetres": [6.5, 1.0, 0.85],
+        "count": 14,
+        "seed": 101
+      }
+    },
+    {
+      "id": "west-wall-boulders",
+      "category": "boulder-cluster",
+      "description": "Angular rock boulders along the west cavern wall",
+      "sourceView": "W",
+      "surface": "wall",
+      "placement": {
+        "position": [-3.9, -0.4, 0.0],
+        "sizeMetres": [1.0, 5.8, 0.90],
+        "count": 12,
+        "seed": 202
+      }
+    },
+    {
+      "id": "east-approach-boulders",
+      "category": "boulder-cluster",
+      "description": "Rubble flanking the east passage approach",
+      "sourceView": "E",
+      "surface": "wall",
+      "placement": {
+        "position": [3.5, -2.1, 0.0],
+        "sizeMetres": [1.4, 2.6, 0.75],
+        "count": 10,
+        "seed": 303
+      }
+    }
+  ]
+}

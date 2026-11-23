@@ -1,0 +1,17 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "OFFICE",
+  "bom": "games/zork2/planning/room-bom-prototype/office/room-bom.json",
+  "bomSha256": "2fe4f5abf211b65b927105b6e9c0229703fcc207285bfe3132563cf1044779fe",
+  "glb": "games/zork2/planning/room-bom-prototype/office/build/room.glb",
+  "glbBytes": 7287100,
+  "glbSha256": "c8619f0c04b0804379a5404d4bcbe20d12e01dc0f8aa9e6d99f4ad36af4f9b3f",
+  "meshCount": 23,
+  "materialCount": 11,
+  "triangles": 20545,
+  "zilAnchors": [
+    "PORTRAIT"
+  ],
+  "skybox": null,
+  "reviewSheet": null
+}
