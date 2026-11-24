@@ -1,0 +1,292 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "WIZARDS-QUARTERS",
+  "label": "Wizard's Quarters",
+  "sourceContext": "games/zork2/assets/rooms/wizards-quarters/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/wizards-quarters/reference-v2.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/wizards-quarters/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/wizards-quarters/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/wizards-quarters/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      8.4,
+      8.2,
+      4.4
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.04,
+    "ceilingStyle": "vaulted",
+    "lighting": {
+      "ambientColor": [
+        0.048,
+        0.084,
+        0.152
+      ],
+      "ambientStrength": 0.274,
+      "lights": [
+        {
+          "name": "quarters-warm-torch",
+          "position": [
+            -2.4,
+            -1.2,
+            2.3
+          ],
+          "color": [
+            0.937,
+            0.705,
+            0.443
+          ],
+          "energy": 373.3,
+          "radius": 1.1
+        },
+        {
+          "name": "bed-side-fill",
+          "position": [
+            2.2,
+            0.2,
+            2.4
+          ],
+          "color": [
+            0.857,
+            0.665,
+            0.483
+          ],
+          "energy": 149.3,
+          "radius": 1.2
+        },
+        {
+          "name": "south-bounce",
+          "position": [
+            0,
+            -2.8,
+            2.2
+          ],
+          "color": [
+            0.887,
+            0.685,
+            0.483
+          ],
+          "energy": 136.9,
+          "radius": 1.2
+        },
+        {
+          "name": "north-aquarium-cool",
+          "position": [
+            -0.8,
+            4.3,
+            2.2
+          ],
+          "color": [
+            0.237,
+            0.445,
+            0.703
+          ],
+          "energy": 93.3,
+          "radius": 1.1
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.72,
+        0.12,
+        0.96,
+        0.44
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.9,
+      "normalStrength": 1.35,
+      "colorScale": 1.389,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.66,
+        0.78,
+        0.96
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.84,
+      "normalStrength": 1.25,
+      "colorScale": 1.086,
+      "tileable": true
+    },
+    "ceiling": {
+      "procedural": "grey-stone",
+      "tileMetres": 3.4,
+      "roughness": 0.93,
+      "normalStrength": 1.25
+    },
+    "stone-trim": {
+      "procedural": "warm-ashlar",
+      "tileMetres": 2,
+      "roughness": 0.86,
+      "normalStrength": 1.25
+    },
+    "wood-furniture": {
+      "procedural": "weathered-oak",
+      "tileMetres": 1.2,
+      "roughness": 0.76,
+      "normalStrength": 1.1
+    }
+  },
+  "objects": [
+    {
+      "id": "north-aquarium-arch",
+      "category": "opening",
+      "description": "Pointed stone archway on the north wall leading to the Aquarium Room",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.28,
+        0.16,
+        0.46,
+        0.58
+      ],
+      "surface": "stone-trim",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": -0.8,
+        "sizeMetres": [
+          2.1,
+          0.6,
+          2.9
+        ],
+        "depthMetres": 7,
+        "tunnelColor": [
+          0.3,
+          0.46,
+          0.64
+        ],
+        "tunnelEnergy": 70
+      }
+    },
+    {
+      "id": "pilaster-north-left",
+      "category": "pillar",
+      "description": "Vaulting stone pilaster flanking the west side of the north archway",
+      "zilIdentity": null,
+      "surface": "stone-trim",
+      "placement": {
+        "position": [
+          -2.35,
+          3.85,
+          0
+        ],
+        "sizeMetres": [
+          0.52,
+          0.52,
+          4.4
+        ]
+      }
+    },
+    {
+      "id": "pilaster-north-right",
+      "category": "pillar",
+      "description": "Vaulting stone pilaster flanking the east side of the north archway",
+      "zilIdentity": null,
+      "surface": "stone-trim",
+      "placement": {
+        "position": [
+          0.65,
+          3.85,
+          0
+        ],
+        "sizeMetres": [
+          0.52,
+          0.52,
+          4.4
+        ]
+      }
+    },
+    {
+      "id": "pilaster-ne-corner",
+      "category": "pillar",
+      "description": "Vaulting stone pilaster in the north-east corner",
+      "zilIdentity": null,
+      "surface": "stone-trim",
+      "placement": {
+        "position": [
+          3.95,
+          3.85,
+          0
+        ],
+        "sizeMetres": [
+          0.52,
+          0.52,
+          4.4
+        ]
+      }
+    },
+    {
+      "id": "pilaster-west-mid",
+      "category": "pillar",
+      "description": "Heavy stone wall pilaster along the west wall",
+      "zilIdentity": null,
+      "surface": "stone-trim",
+      "placement": {
+        "position": [
+          -3.95,
+          -0.4,
+          0
+        ],
+        "sizeMetres": [
+          0.54,
+          0.54,
+          4.4
+        ]
+      }
+    },
+    {
+      "id": "wizard-wooden-cot",
+      "category": "table",
+      "description": "Simple low timber bedstead against the east wall of the Wizard's quarters",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "surface": "wood-furniture",
+      "placement": {
+        "position": [
+          3.15,
+          0.55,
+          0
+        ],
+        "sizeMetres": [
+          1.25,
+          2.25,
+          0.58
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "wooden-stool",
+      "category": "chair",
+      "description": "Sturdy four-legged weathered oak stool on the western side of the floor",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "surface": "wood-furniture",
+      "placement": {
+        "position": [
+          -2.15,
+          -1.65,
+          0
+        ],
+        "sizeMetres": [
+          0.52,
+          0.52,
+          0.52
+        ],
+        "yawDeg": 18
+      }
+    }
+  ]
+}

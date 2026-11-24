@@ -1,0 +1,189 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "IN-CAGE",
+  "label": "Cage",
+  "sourceContext": "games/zork2/assets/rooms/in-cage/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/in-cage/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/in-cage/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/in-cage/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/in-cage/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      5.6,
+      5.6,
+      3.2
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.34,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.1,
+        0.09,
+        0.09
+      ],
+      "ambientStrength": 0.188,
+      "lights": [
+        {
+          "name": "nw-torch-key",
+          "position": [
+            -1.4,
+            1.5,
+            2.2
+          ],
+          "color": [
+            1,
+            0.72,
+            0.38
+          ],
+          "energy": 165,
+          "radius": 0.8
+        },
+        {
+          "name": "floor-bounce",
+          "position": [
+            0,
+            -0.4,
+            1.6
+          ],
+          "color": [
+            0.92,
+            0.68,
+            0.42
+          ],
+          "energy": 74.7,
+          "radius": 1
+        },
+        {
+          "name": "ne-shadow-fill",
+          "position": [
+            1.6,
+            1.4,
+            2
+          ],
+          "color": [
+            0.36,
+            0.44,
+            0.56
+          ],
+          "energy": 31.5,
+          "radius": 1.2
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "procedural": "grey-stone",
+      "tileMetres": 2.4,
+      "roughness": 0.92,
+      "normalStrength": 1.35
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.18,
+        0.78,
+        0.82,
+        0.96
+      ],
+      "tileMetres": 2.2,
+      "roughness": 0.84,
+      "normalStrength": 1.15,
+      "colorScale": 1,
+      "tileable": true
+    },
+    "ceiling": {
+      "procedural": "granite",
+      "tileMetres": 2.8,
+      "roughness": 0.95,
+      "normalStrength": 1.3
+    }
+  },
+  "objects": [
+    {
+      "id": "ne-cavern-recess",
+      "category": "recess",
+      "description": "Shallow dark rocky recess in the north-east cavern wall beyond the cage (non-exit)",
+      "zilIdentity": null,
+      "exitDirection": null,
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 1.1,
+        "sizeMetres": [
+          1.9,
+          0.5,
+          2.2
+        ],
+        "depthMetres": 2.4
+      }
+    },
+    {
+      "id": "north-wall-rubble",
+      "category": "boulder-cluster",
+      "description": "Fallen stones resting along the base of the northern cavern wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0.3,
+          2.25,
+          0
+        ],
+        "sizeMetres": [
+          3.8,
+          0.9,
+          0.55
+        ],
+        "count": 12,
+        "seed": 501
+      }
+    },
+    {
+      "id": "west-wall-rubble",
+      "category": "boulder-cluster",
+      "description": "Rough boulders grounding the western rock wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -2.25,
+          0.2,
+          0
+        ],
+        "sizeMetres": [
+          0.85,
+          3.6,
+          0.65
+        ],
+        "count": 10,
+        "seed": 502
+      }
+    },
+    {
+      "id": "east-wall-rubble",
+      "category": "boulder-cluster",
+      "description": "Loose cavern rocks along the eastern wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          2.25,
+          -0.3,
+          0
+        ],
+        "sizeMetres": [
+          0.85,
+          3.4,
+          0.6
+        ],
+        "count": 10,
+        "seed": 503
+      }
+    }
+  ]
+}

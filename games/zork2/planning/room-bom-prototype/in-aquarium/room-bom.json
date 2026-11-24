@@ -1,0 +1,235 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "IN-AQUARIUM",
+  "label": "Murky Room",
+  "sourceContext": "games/zork2/assets/rooms/in-aquarium/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/in-aquarium/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/in-aquarium/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/in-aquarium/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/in-aquarium/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      6.4,
+      6.4,
+      3.8
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.04,
+    "ceilingStyle": "flat",
+    "lighting": {
+      "ambientColor": [
+        0.08,
+        0.18,
+        0.18
+      ],
+      "ambientStrength": 0.732,
+      "lights": [
+        {
+          "name": "murky-surface-caustic",
+          "position": [
+            0,
+            0.4,
+            3.2
+          ],
+          "color": [
+            0.42,
+            0.76,
+            0.74
+          ],
+          "energy": 455.5,
+          "radius": 2.2
+        },
+        {
+          "name": "sand-floor-bounce",
+          "position": [
+            0.6,
+            0.2,
+            1.4
+          ],
+          "color": [
+            0.78,
+            0.74,
+            0.56
+          ],
+          "energy": 227.7,
+          "radius": 1.6
+        },
+        {
+          "name": "north-murk-depth",
+          "position": [
+            -1.2,
+            2.2,
+            2
+          ],
+          "color": [
+            0.18,
+            0.42,
+            0.44
+          ],
+          "energy": 154.5,
+          "radius": 1.8
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.72,
+        0.14,
+        0.98,
+        0.56
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.84,
+      "normalStrength": 1.25,
+      "colorScale": 1.243,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.22,
+        0.64,
+        0.62,
+        0.94
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.88,
+      "normalStrength": 1.15,
+      "colorScale": 1.371,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.16,
+        0.02,
+        0.68,
+        0.18
+      ],
+      "tileMetres": 3.4,
+      "roughness": 0.35,
+      "normalStrength": 0.95,
+      "colorScale": 0.9,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "south-aquarium-exit",
+      "category": "opening",
+      "description": "Murky exit leading back out into the Aquarium Room",
+      "zilIdentity": null,
+      "exitDirection": "OUT",
+      "sourceView": "S",
+      "crop": [
+        0.3,
+        0.2,
+        0.7,
+        0.7
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.8,
+          0.5,
+          2.4
+        ],
+        "depthMetres": 4.5,
+        "tunnelColor": [
+          0.24,
+          0.52,
+          0.54
+        ],
+        "tunnelEnergy": 85
+      }
+    },
+    {
+      "id": "palantir-3-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for PALANTIR-3 (clear crystal sphere) lying in the sand",
+      "zilIdentity": "PALANTIR-3",
+      "sourceView": "N",
+      "crop": [
+        0.64,
+        0.66,
+        0.72,
+        0.77
+      ],
+      "placement": {
+        "position": [
+          0.85,
+          0.45,
+          0.16
+        ],
+        "sizeMetres": [
+          0.32,
+          0.32,
+          0.32
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "murky-water-overhead",
+      "category": "water-surface",
+      "description": "Murky blue-green water plane spanning the upper interior of the aquarium",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.1,
+        0.01,
+        0.74,
+        0.22
+      ],
+      "placement": {
+        "position": [
+          0,
+          0,
+          3.45
+        ],
+        "waterColor": [
+          0.1,
+          0.28,
+          0.28
+        ],
+        "alpha": 0.45
+      }
+    },
+    {
+      "id": "aquarium-floor-stones",
+      "category": "boulder-cluster",
+      "description": "Submerged dressed stone blocks and pebbles resting along the sandy wall base",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0,
+        0.68,
+        0.24,
+        0.96
+      ],
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0,
+          2.75,
+          0
+        ],
+        "sizeMetres": [
+          4.8,
+          0.85,
+          0.38
+        ],
+        "count": 12,
+        "seed": 481
+      }
+    }
+  ]
+}

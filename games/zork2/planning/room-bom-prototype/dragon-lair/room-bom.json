@@ -1,0 +1,351 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "DRAGON-LAIR",
+  "label": "Dragon's Lair",
+  "sourceContext": "games/zork2/assets/rooms/dragon-lair/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/dragon-lair/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/dragon-lair/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/dragon-lair/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/dragon-lair/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "organic-cavern",
+    "dimensionsMetres": [
+      9.8,
+      9.2,
+      4.4
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.55,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.084,
+        0.067,
+        0.066
+      ],
+      "ambientStrength": 0.327,
+      "lights": [
+        {
+          "name": "lair-warm-firelight",
+          "position": [
+            -0.6,
+            0.4,
+            2.4
+          ],
+          "color": [
+            0.942,
+            0.632,
+            0.31
+          ],
+          "energy": 446.2,
+          "radius": 1.3
+        },
+        {
+          "name": "princess-corner-glow",
+          "position": [
+            -2.8,
+            2.2,
+            2.6
+          ],
+          "color": [
+            0.942,
+            0.712,
+            0.43
+          ],
+          "energy": 267.7,
+          "radius": 1.1
+        },
+        {
+          "name": "south-doorway-ember",
+          "position": [
+            0.4,
+            -3.4,
+            2
+          ],
+          "color": [
+            0.92,
+            0.472,
+            0.23
+          ],
+          "energy": 163.6,
+          "radius": 1
+        },
+        {
+          "name": "ceiling-smoke-shadow",
+          "position": [
+            1.2,
+            1.8,
+            3.6
+          ],
+          "color": [
+            0.27,
+            0.352,
+            0.49
+          ],
+          "energy": 81.8,
+          "radius": 1.6
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "S",
+      "crop": [
+        0.42,
+        0.18,
+        0.66,
+        0.44
+      ],
+      "tileMetres": 3.4,
+      "roughness": 0.94,
+      "normalStrength": 1.45,
+      "colorScale": 1.614,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "S",
+      "crop": [
+        0.22,
+        0.66,
+        0.74,
+        0.94
+      ],
+      "tileMetres": 3,
+      "roughness": 0.9,
+      "normalStrength": 1.25,
+      "colorScale": 1.214,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "S",
+      "crop": [
+        0.36,
+        0.02,
+        0.66,
+        0.14
+      ],
+      "tileMetres": 3.8,
+      "roughness": 0.96,
+      "normalStrength": 1.35,
+      "colorScale": 0.85,
+      "tileable": true
+    },
+    "scorched-rock": {
+      "sourceView": "N",
+      "crop": [
+        0.66,
+        0.18,
+        0.8,
+        0.48
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.92,
+      "normalStrength": 1.5,
+      "colorScale": 0.95,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "south-blackened-doorway",
+      "category": "opening",
+      "description": "Blackened flame-scarred rock doorway leading south back to the Dragon Room",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "sourceView": "N",
+      "crop": [
+        0.68,
+        0.18,
+        0.94,
+        0.62
+      ],
+      "surface": "scorched-rock",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 0.4,
+        "sizeMetres": [
+          2.25,
+          0.6,
+          2.75
+        ],
+        "depthMetres": 7,
+        "tunnelColor": [
+          0.24,
+          0.3,
+          0.38
+        ],
+        "tunnelEnergy": 45
+      }
+    },
+    {
+      "id": "ceiling-stalactites",
+      "category": "stalactite-ceiling",
+      "description": "Jagged soot-darkened stalactites hanging from the rough cavern roof",
+      "zilIdentity": null,
+      "surface": "ceiling",
+      "placement": {
+        "position": [
+          0,
+          0,
+          4.3
+        ],
+        "sizeMetres": [
+          8.4,
+          7.8,
+          1.2
+        ],
+        "count": 26,
+        "minHeight": 0.35,
+        "maxHeight": 1.15,
+        "radius": 0.18,
+        "seed": 410
+      }
+    },
+    {
+      "id": "princess-rock-outcrop",
+      "category": "boulder-cluster",
+      "description": "Cluster of large angular rocks in the northwest corner forming a seat for the princess",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.16,
+        0.36,
+        0.42,
+        0.62
+      ],
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -2.6,
+          2.6,
+          0
+        ],
+        "sizeMetres": [
+          2.4,
+          2.2,
+          1.15
+        ],
+        "count": 10,
+        "seed": 411
+      }
+    },
+    {
+      "id": "north-cavern-debris",
+      "category": "boulder-cluster",
+      "description": "Fallen rocks and charred debris along the north cavern wall",
+      "zilIdentity": null,
+      "surface": "scorched-rock",
+      "placement": {
+        "position": [
+          1.4,
+          3.8,
+          0
+        ],
+        "sizeMetres": [
+          4.8,
+          1.4,
+          1.1
+        ],
+        "count": 14,
+        "seed": 412
+      }
+    },
+    {
+      "id": "east-wall-boulders",
+      "category": "boulder-cluster",
+      "description": "Angular boulders and rubble piled along the east wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          3.9,
+          0.2,
+          0
+        ],
+        "sizeMetres": [
+          1.5,
+          5.8,
+          1.2
+        ],
+        "count": 14,
+        "seed": 413
+      }
+    },
+    {
+      "id": "west-wall-boulders",
+      "category": "boulder-cluster",
+      "description": "Fallen rocks and debris framing the chest corner along the west wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3.9,
+          -0.6,
+          0
+        ],
+        "sizeMetres": [
+          1.4,
+          4.6,
+          0.95
+        ],
+        "count": 12,
+        "seed": 414
+      }
+    },
+    {
+      "id": "chest-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for CHEST (rotten wooden chest) among the corner debris",
+      "zilIdentity": "CHEST",
+      "sourceView": "N",
+      "crop": [
+        0.04,
+        0.48,
+        0.28,
+        0.68
+      ],
+      "placement": {
+        "position": [
+          -2.55,
+          1.2,
+          0
+        ],
+        "sizeMetres": [
+          1.05,
+          0.68,
+          0.62
+        ],
+        "yawDeg": 24
+      }
+    },
+    {
+      "id": "princess-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL actor anchor for PRINCESS seated on a rock in the corner",
+      "zilIdentity": "PRINCESS",
+      "sourceView": "N",
+      "crop": [
+        0.23,
+        0.2,
+        0.35,
+        0.49
+      ],
+      "placement": {
+        "position": [
+          -2.2,
+          2.55,
+          0.72
+        ],
+        "sizeMetres": [
+          0.65,
+          0.65,
+          1.45
+        ],
+        "yawDeg": -35
+      }
+    }
+  ]
+}

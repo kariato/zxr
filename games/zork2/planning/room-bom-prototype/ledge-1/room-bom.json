@@ -1,0 +1,274 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "LEDGE-1",
+  "label": "Narrow Ledge",
+  "sourceContext": "games/zork2/assets/rooms/ledge-1/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/ledge-1/reference-v2.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/ledge-1/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/ledge-1/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/ledge-1/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      4.4,
+      8.6,
+      5.4
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.42,
+    "ceilingStyle": "open-sky",
+    "skybox": "src/prototype/assets/lair-skybox-v1.png",
+    "lighting": {
+      "ambientColor": [
+        0.03,
+        0.14,
+        0.511
+      ],
+      "ambientStrength": 0.55,
+      "lights": [
+        {
+          "name": "ledge-warm-key",
+          "position": [
+            0.4,
+            0.2,
+            2.4
+          ],
+          "color": [
+            0.498,
+            0.615,
+            0.922
+          ],
+          "energy": 260,
+          "radius": 1.2
+        },
+        {
+          "name": "volcano-chasm-cool",
+          "position": [
+            -2,
+            0.6,
+            3.6
+          ],
+          "color": [
+            0.12,
+            0.475,
+            1
+          ],
+          "energy": 240,
+          "radius": 2.2
+        },
+        {
+          "name": "south-tunnel-glow",
+          "position": [
+            0.4,
+            -3.4,
+            2
+          ],
+          "color": [
+            0.438,
+            0.575,
+            0.942
+          ],
+          "energy": 130,
+          "radius": 1.1
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.76,
+        0.04,
+        0.98,
+        0.46
+      ],
+      "tileMetres": 3,
+      "roughness": 0.9,
+      "normalStrength": 1.35,
+      "colorScale": 1,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.44,
+        0.64,
+        0.72,
+        0.94
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.88,
+      "normalStrength": 1.2,
+      "colorScale": 1.2,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.04,
+        0.02,
+        0.34,
+        0.24
+      ],
+      "tileMetres": 4,
+      "roughness": 0.94,
+      "normalStrength": 1.25,
+      "colorScale": 0.9,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "south-library-opening",
+      "category": "opening",
+      "description": "Rough-hewn rock opening on the south wall leading into the royal Library",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "sourceView": "N",
+      "crop": [
+        0.6,
+        0.02,
+        0.74,
+        0.3
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 0.35,
+        "sizeMetres": [
+          1.85,
+          0.6,
+          2.6
+        ],
+        "depthMetres": 7,
+        "tunnelColor": [
+          0.88,
+          0.64,
+          0.38
+        ],
+        "tunnelEnergy": 100
+      }
+    },
+    {
+      "id": "west-gnome-door",
+      "category": "door",
+      "description": "Conditional secret rock door on the west side opening when the gnome door is revealed",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": -1.2,
+        "sizeMetres": [
+          1.25,
+          0.45,
+          2.05
+        ],
+        "depthMetres": 4.5,
+        "tunnelColor": [
+          0.42,
+          0.56,
+          0.74
+        ],
+        "tunnelEnergy": 70
+      }
+    },
+    {
+      "id": "coin-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for COIN (priceless gold octagonal zorkmid) lying on the narrow ledge floor",
+      "zilIdentity": "COIN",
+      "sourceView": "N",
+      "crop": [
+        0.73,
+        0.72,
+        0.81,
+        0.79
+      ],
+      "placement": {
+        "position": [
+          0.75,
+          0.65,
+          0
+        ],
+        "sizeMetres": [
+          0.18,
+          0.18,
+          0.04
+        ],
+        "yawDeg": 12
+      }
+    },
+    {
+      "id": "hook-1-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for HOOK-1 (small iron hook attached to the volcanic rock wall)",
+      "zilIdentity": "HOOK-1",
+      "sourceView": "N",
+      "crop": [
+        0.85,
+        0.24,
+        0.94,
+        0.39
+      ],
+      "placement": {
+        "position": [
+          1.72,
+          0.8,
+          1.38
+        ],
+        "sizeMetres": [
+          0.16,
+          0.22,
+          0.26
+        ],
+        "yawDeg": 270
+      }
+    },
+    {
+      "id": "east-cliff-scree",
+      "category": "boulder-cluster",
+      "description": "Fallen volcanic rocks and scree along the eastern cliff face",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          1.65,
+          -0.4,
+          0
+        ],
+        "sizeMetres": [
+          0.85,
+          6.2,
+          0.72
+        ],
+        "count": 14,
+        "seed": 541
+      }
+    },
+    {
+      "id": "west-ledge-lip",
+      "category": "boulder-cluster",
+      "description": "Craggy volcanic rock lip along the western drop-off edge",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -1.85,
+          1.4,
+          0
+        ],
+        "sizeMetres": [
+          0.75,
+          4.4,
+          0.45
+        ],
+        "count": 10,
+        "seed": 542
+      }
+    }
+  ]
+}

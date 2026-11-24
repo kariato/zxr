@@ -1,0 +1,308 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "TELLER-WEST",
+  "label": "West Teller's Room",
+  "sourceContext": "games/zork2/assets/rooms/teller-west/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/teller-west/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/teller-west/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/teller-west/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/teller-west/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      6.2,
+      6.4,
+      3.3
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.025,
+    "ceilingStyle": "flat",
+    "lighting": {
+      "ambientColor": [
+        0.1,
+        0.09,
+        0.09
+      ],
+      "ambientStrength": 0.24,
+      "lights": [
+        {
+          "name": "west-depository-spill",
+          "position": [
+            -2.2,
+            0,
+            2
+          ],
+          "color": [
+            1,
+            0.74,
+            0.4
+          ],
+          "energy": 240,
+          "radius": 1
+        },
+        {
+          "name": "center-warm-fill",
+          "position": [
+            0.2,
+            -0.4,
+            2.4
+          ],
+          "color": [
+            0.96,
+            0.72,
+            0.44
+          ],
+          "energy": 140,
+          "radius": 1.2
+        },
+        {
+          "name": "south-entrance-glow",
+          "position": [
+            0,
+            -2.6,
+            2
+          ],
+          "color": [
+            0.95,
+            0.7,
+            0.42
+          ],
+          "energy": 110,
+          "radius": 1
+        },
+        {
+          "name": "north-viewing-cool",
+          "position": [
+            0,
+            2.8,
+            1.9
+          ],
+          "color": [
+            0.34,
+            0.48,
+            0.64
+          ],
+          "energy": 55,
+          "radius": 1
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.62,
+        0.16,
+        0.72,
+        0.62
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.88,
+      "normalStrength": 1.25,
+      "colorScale": 1,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.25,
+        0.72,
+        0.75,
+        0.96
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.86,
+      "normalStrength": 1.15,
+      "colorScale": 1.068,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.26,
+        0.01,
+        0.74,
+        0.11
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.92,
+      "normalStrength": 1.15,
+      "colorScale": 0.9,
+      "tileable": true
+    },
+    "trim-stone": {
+      "procedural": "light-stone",
+      "tileMetres": 1.8,
+      "roughness": 0.82,
+      "normalStrength": 1.1
+    }
+  },
+  "objects": [
+    {
+      "id": "north-viewing-doorway",
+      "category": "opening",
+      "description": "Stone-framed doorway on the north wall beneath the Viewing Room sign leading to the West Viewing Room",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.43,
+        0.33,
+        0.58,
+        0.67
+      ],
+      "surface": "trim-stone",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.55,
+          0.5,
+          2.35
+        ],
+        "depthMetres": 6,
+        "tunnelColor": [
+          0.3,
+          0.45,
+          0.62
+        ],
+        "tunnelEnergy": 55
+      }
+    },
+    {
+      "id": "west-depository-doorway",
+      "category": "opening",
+      "description": "Open stone doorway on the west wall beneath the Bank Personnel Only sign leading to the Safety Depository",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "sourceView": "N",
+      "crop": [
+        0.06,
+        0.22,
+        0.21,
+        0.75
+      ],
+      "surface": "trim-stone",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.6,
+          0.5,
+          2.35
+        ],
+        "depthMetres": 6,
+        "tunnelColor": [
+          1,
+          0.72,
+          0.36
+        ],
+        "tunnelEnergy": 150
+      }
+    },
+    {
+      "id": "south-bank-entrance-doorway",
+      "category": "opening",
+      "description": "Stone-framed doorway on the south wall returning to the Bank Entrance",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "sourceView": "S",
+      "surface": "trim-stone",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.7,
+          0.5,
+          2.4
+        ],
+        "depthMetres": 6,
+        "tunnelColor": [
+          0.95,
+          0.7,
+          0.42
+        ],
+        "tunnelEnergy": 110
+      }
+    },
+    {
+      "id": "corner-pilaster-nw",
+      "category": "pillar",
+      "description": "Dressed stone corner pilaster at the northwest corner",
+      "zilIdentity": null,
+      "surface": "trim-stone",
+      "placement": {
+        "position": [
+          -2.94,
+          3.04,
+          0
+        ],
+        "sizeMetres": [
+          0.32,
+          0.32,
+          3.3
+        ]
+      }
+    },
+    {
+      "id": "corner-pilaster-ne",
+      "category": "pillar",
+      "description": "Dressed stone corner pilaster at the northeast corner",
+      "zilIdentity": null,
+      "surface": "trim-stone",
+      "placement": {
+        "position": [
+          2.94,
+          3.04,
+          0
+        ],
+        "sizeMetres": [
+          0.32,
+          0.32,
+          3.3
+        ]
+      }
+    },
+    {
+      "id": "corner-pilaster-sw",
+      "category": "pillar",
+      "description": "Dressed stone corner pilaster at the southwest corner",
+      "zilIdentity": null,
+      "surface": "trim-stone",
+      "placement": {
+        "position": [
+          -2.94,
+          -3.04,
+          0
+        ],
+        "sizeMetres": [
+          0.32,
+          0.32,
+          3.3
+        ]
+      }
+    },
+    {
+      "id": "corner-pilaster-se",
+      "category": "pillar",
+      "description": "Dressed stone corner pilaster at the southeast corner",
+      "zilIdentity": null,
+      "surface": "trim-stone",
+      "placement": {
+        "position": [
+          2.94,
+          -3.04,
+          0
+        ],
+        "sizeMetres": [
+          0.32,
+          0.32,
+          3.3
+        ]
+      }
+    }
+  ]
+}

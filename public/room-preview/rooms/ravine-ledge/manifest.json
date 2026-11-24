@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "RAVINE-LEDGE",
+  "bom": "games/zork2/planning/room-bom-prototype/ravine-ledge/room-bom.json",
+  "bomSha256": "ec377e5e3aa38e2766bd4dc0b405bb6ed7eb3802619c915bf73efb8627173006",
+  "glb": "games/zork2/planning/room-bom-prototype/ravine-ledge/build/room.glb",
+  "glbBytes": 4718636,
+  "glbSha256": "25ed48f5862dcf68d4adc927b52f5dc2542fd714c1e24bb69b3ac419f03070fc",
+  "meshCount": 17,
+  "materialCount": 4,
+  "triangles": 33296,
+  "zilAnchors": [],
+  "skybox": "src/prototype/assets/cavern-skybox-v1.png",
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/ravine-ledge/build/review-4view.png"
+}

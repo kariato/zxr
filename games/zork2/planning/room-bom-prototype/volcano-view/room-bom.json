@@ -1,0 +1,132 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "VOLCANO-VIEW",
+  "label": "Volcano View",
+  "sourceContext": "games/zork2/assets/rooms/volcano-view/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/volcano-view/reference-v2.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/volcano-view/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/volcano-view/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/volcano-view/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "organic-cavern",
+    "dimensionsMetres": [10.5, 9.5, 14.0],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.78,
+    "ceilingStyle": "open-sky",
+    "lighting": {
+      "ambientColor": [0.24, 0.29, 0.38],
+      "ambientStrength": 0.50,
+      "lights": [
+        { "name": "volcano-rim-overcast", "position": [-0.5, 2.5, 11.5], "color": [0.82, 0.88, 0.98], "energy": 2400, "radius": 3.8 },
+        { "name": "ledge-warm-bounce", "position": [1.5, -1.0, 2.4], "color": [0.95, 0.78, 0.58], "energy": 240, "radius": 1.8 },
+        { "name": "east-tube-fill", "position": [4.0, 0.2, 2.2], "color": [0.90, 0.72, 0.50], "energy": 130, "radius": 1.1 }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [0.80, 0.08, 0.96, 0.36],
+      "tileMetres": 3.8,
+      "roughness": 0.94,
+      "normalStrength": 1.5,
+      "colorScale": 0.95,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [0.28, 0.74, 0.78, 0.96],
+      "tileMetres": 3.2,
+      "roughness": 0.92,
+      "normalStrength": 1.3,
+      "colorScale": 1.0,
+      "tileable": true
+    },
+    "ceiling": {
+      "procedural": "granite",
+      "tileMetres": 4.6,
+      "roughness": 0.95,
+      "normalStrength": 1.3
+    }
+  },
+  "objects": [
+    {
+      "id": "east-lava-tube-arch",
+      "category": "opening",
+      "description": "Jagged natural basalt archway on the east wall leading into the Lava Tube",
+      "zilIdentity": null,
+      "exitDirection": "EAST",
+      "sourceView": "N",
+      "crop": [0.86, 0.24, 0.99, 0.62],
+      "surface": "wall",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 0.5,
+        "sizeMetres": [2.2, 0.85, 2.9],
+        "depthMetres": 7.5,
+        "tunnelColor": [0.90, 0.72, 0.48],
+        "tunnelEnergy": 110
+      }
+    },
+    {
+      "id": "north-crater-overlook-recess",
+      "category": "recess",
+      "description": "Deep shadowed drop-off overlooking the dormant volcano shaft and distant ledges (non-exit)",
+      "zilIdentity": null,
+      "exitDirection": null,
+      "sourceView": "N",
+      "crop": [0.16, 0.14, 0.76, 0.68],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": -0.4,
+        "sizeMetres": [5.8, 0.7, 5.2],
+        "depthMetres": 4.5
+      }
+    },
+    {
+      "id": "west-ledge-boulders",
+      "category": "boulder-cluster",
+      "description": "Angular basalt rocks and boulders framing the western side of the viewing ledge",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "surface": "wall",
+      "placement": {
+        "position": [-3.6, -0.8, 0.0],
+        "sizeMetres": [2.4, 5.4, 1.4],
+        "count": 18,
+        "seed": 911
+      }
+    },
+    {
+      "id": "north-rim-rubble",
+      "category": "boulder-cluster",
+      "description": "Low fractured rock outcrops edging the north drop-off of the ledge",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "surface": "wall",
+      "placement": {
+        "position": [-0.5, 3.6, 0.0],
+        "sizeMetres": [5.6, 1.2, 0.55],
+        "count": 14,
+        "seed": 912
+      }
+    },
+    {
+      "id": "south-ledge-boulders",
+      "category": "boulder-cluster",
+      "description": "Volcanic rubble grounding the southern rock wall",
+      "zilIdentity": null,
+      "sourceView": "S",
+      "surface": "wall",
+      "placement": {
+        "position": [0.2, -3.9, 0.0],
+        "sizeMetres": [6.5, 1.4, 1.1],
+        "count": 16,
+        "seed": 913
+      }
+    }
+  ]
+}

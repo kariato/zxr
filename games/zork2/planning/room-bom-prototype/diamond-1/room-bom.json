@@ -1,0 +1,296 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "DIAMOND-1",
+  "label": "Oddly-angled Room",
+  "sourceContext": "games/zork2/assets/rooms/diamond-1/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/diamond-1/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/diamond-1/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/diamond-1/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/diamond-1/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "octagon",
+    "dimensionsMetres": [
+      9,
+      9,
+      3.8
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.06,
+    "ceilingStyle": "flat",
+    "lighting": {
+      "ambientColor": [
+        0.03,
+        0.081,
+        0.213
+      ],
+      "ambientStrength": 0.24,
+      "lights": [
+        {
+          "name": "glassy-warm-center",
+          "position": [
+            0,
+            -0.4,
+            2.3
+          ],
+          "color": [
+            0.815,
+            0.733,
+            0.645
+          ],
+          "energy": 280,
+          "radius": 1.2
+        },
+        {
+          "name": "facet-glint-east",
+          "position": [
+            2.6,
+            0.6,
+            2.1
+          ],
+          "color": [
+            0.815,
+            0.753,
+            0.685
+          ],
+          "energy": 140,
+          "radius": 1
+        },
+        {
+          "name": "facet-glint-west",
+          "position": [
+            -2.6,
+            0.4,
+            2.1
+          ],
+          "color": [
+            0.765,
+            0.713,
+            0.665
+          ],
+          "energy": 130,
+          "radius": 1
+        },
+        {
+          "name": "maze-cool-shadow",
+          "position": [
+            0,
+            2.8,
+            2.6
+          ],
+          "color": [
+            0.155,
+            0.393,
+            0.765
+          ],
+          "energy": 65,
+          "radius": 1.6
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.28,
+        0.24,
+        0.42,
+        0.58
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.34,
+      "normalStrength": 1.35,
+      "colorScale": 1.174,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.68,
+        0.72,
+        0.96
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.38,
+      "normalStrength": 1.15,
+      "colorScale": 1.05,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.32,
+        0.02,
+        0.68,
+        0.16
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.4,
+      "normalStrength": 1.2,
+      "colorScale": 0.9,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "se-diamond-passage",
+      "category": "opening",
+      "description": "Faceted glassy-walled diagonal passage leading southeast to the central diamond room",
+      "zilIdentity": null,
+      "exitDirection": "SE",
+      "sourceView": "N",
+      "crop": [
+        0.46,
+        0.28,
+        0.6,
+        0.58
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 2,
+        "sizeMetres": [
+          1.9,
+          0.6,
+          2.7
+        ],
+        "depthMetres": 7,
+        "tunnelColor": [
+          0.45,
+          0.38,
+          0.26
+        ],
+        "tunnelEnergy": 55
+      }
+    },
+    {
+      "id": "north-faceted-recess",
+      "category": "recess",
+      "description": "Shallow faceted glassy alcove on the north wall echoing the maze geometry (non-exit)",
+      "zilIdentity": null,
+      "exitDirection": null,
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.9,
+          0.5,
+          2.7
+        ],
+        "depthMetres": 1.6
+      }
+    },
+    {
+      "id": "east-faceted-recess",
+      "category": "recess",
+      "description": "Shallow faceted glassy alcove on the east wall (non-exit)",
+      "zilIdentity": null,
+      "exitDirection": null,
+      "surface": "wall",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.9,
+          0.5,
+          2.7
+        ],
+        "depthMetres": 1.6
+      }
+    },
+    {
+      "id": "west-faceted-recess",
+      "category": "recess",
+      "description": "Shallow faceted glassy alcove on the west wall (non-exit)",
+      "zilIdentity": null,
+      "exitDirection": null,
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.9,
+          0.5,
+          2.7
+        ],
+        "depthMetres": 1.6
+      }
+    },
+    {
+      "id": "facet-pillar-nw",
+      "category": "pillar",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3,
+          3,
+          0
+        ],
+        "sizeMetres": [
+          0.85,
+          0.85,
+          3.8
+        ],
+        "yawDeg": 45
+      }
+    },
+    {
+      "id": "facet-pillar-ne",
+      "category": "pillar",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          3,
+          3,
+          0
+        ],
+        "sizeMetres": [
+          0.85,
+          0.85,
+          3.8
+        ],
+        "yawDeg": 45
+      }
+    },
+    {
+      "id": "facet-pillar-sw",
+      "category": "pillar",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3,
+          -3,
+          0
+        ],
+        "sizeMetres": [
+          0.85,
+          0.85,
+          3.8
+        ],
+        "yawDeg": 45
+      }
+    },
+    {
+      "id": "facet-pillar-se",
+      "category": "pillar",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          3,
+          -3,
+          0
+        ],
+        "sizeMetres": [
+          0.85,
+          0.85,
+          3.8
+        ],
+        "yawDeg": 45
+      }
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "FOOT-BRIDGE",
+  "label": "Foot Bridge",
+  "sourceContext": "games/zork2/assets/rooms/foot-bridge/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/foot-bridge/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/foot-bridge/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/foot-bridge/reverse-v2.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/foot-bridge/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "organic-cavern",
+    "dimensionsMetres": [
+      14,
+      14,
+      7.6
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.78,
+    "ceilingStyle": "open-sky",
+    "skybox": "src/prototype/assets/cavern-skybox-v1.png",
+    "lighting": {
+      "ambientColor": [
+        0.134,
+        0.163,
+        0.206
+      ],
+      "ambientStrength": 0.619,
+      "lights": [
+        {
+          "name": "bridge-warm-key",
+          "position": [
+            0,
+            0,
+            3.2
+          ],
+          "color": [
+            1,
+            0.727,
+            0.371
+          ],
+          "energy": 577,
+          "radius": 1.8
+        },
+        {
+          "name": "north-ledge-glow",
+          "position": [
+            0,
+            4.8,
+            2.8
+          ],
+          "color": [
+            1,
+            0.747,
+            0.411
+          ],
+          "energy": 384.6,
+          "radius": 1.5
+        },
+        {
+          "name": "west-ravine-mist",
+          "position": [
+            -5.2,
+            0,
+            2.4
+          ],
+          "color": [
+            0.389,
+            0.547,
+            0.731
+          ],
+          "energy": 357.2,
+          "radius": 2.4
+        },
+        {
+          "name": "east-ravine-mist",
+          "position": [
+            5.2,
+            0,
+            2.4
+          ],
+          "color": [
+            0.369,
+            0.527,
+            0.711
+          ],
+          "energy": 329.7,
+          "radius": 2.4
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.39,
+        0.04,
+        0.54,
+        0.28
+      ],
+      "tileMetres": 3.8,
+      "roughness": 0.92,
+      "normalStrength": 1.35,
+      "colorScale": 1.514,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.22,
+        0.84,
+        0.64,
+        0.98
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.9,
+      "normalStrength": 1.15,
+      "colorScale": 1.068,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.56,
+        0.02,
+        0.82,
+        0.14
+      ],
+      "tileMetres": 4.4,
+      "roughness": 0.95,
+      "normalStrength": 1.25,
+      "colorScale": 0.85,
+      "tileable": true
+    },
+    "ravine-rock": {
+      "procedural": "grey-stone",
+      "tileMetres": 3.2,
+      "roughness": 0.92,
+      "normalStrength": 1.35
+    }
+  },
+  "objects": [
+    {
+      "id": "north-narrow-tunnel",
+      "category": "opening",
+      "description": "Cavern path heading north across the far ravine ledge toward Narrow Tunnel",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.52,
+        0.1,
+        0.84,
+        0.34
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2.6,
+          0.6,
+          3
+        ],
+        "depthMetres": 8,
+        "tunnelColor": [
+          0.95,
+          0.7,
+          0.38
+        ],
+        "tunnelEnergy": 140
+      }
+    },
+    {
+      "id": "south-great-cavern",
+      "category": "opening",
+      "description": "Cavern path leading south back toward the Great Cavern",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "sourceView": "S",
+      "crop": [
+        0.3,
+        0.14,
+        0.7,
+        0.56
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2.8,
+          0.6,
+          3.2
+        ],
+        "depthMetres": 8,
+        "tunnelColor": [
+          0.46,
+          0.62,
+          0.78
+        ],
+        "tunnelEnergy": 120
+      }
+    },
+    {
+      "id": "ravine-stalactites",
+      "category": "stalactite-ceiling",
+      "description": "Sharp limestone stalactites hanging from the cavern roof above the ravine",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.12,
+        0.01,
+        0.38,
+        0.22
+      ],
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0,
+          0,
+          7.2
+        ],
+        "sizeMetres": [
+          12,
+          12,
+          2.2
+        ],
+        "count": 36,
+        "minHeight": 0.8,
+        "maxHeight": 2.4,
+        "seed": 411
+      }
+    },
+    {
+      "id": "west-ravine-spires",
+      "category": "stalagmite-field",
+      "description": "Jagged rock spires rising from the misty depths of the western ravine",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.04,
+        0.22,
+        0.36,
+        0.68
+      ],
+      "surface": "ravine-rock",
+      "placement": {
+        "position": [
+          -4.8,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          3.6,
+          10,
+          3.8
+        ],
+        "count": 28,
+        "minHeight": 1.2,
+        "maxHeight": 3.6,
+        "pathClearance": 2.2,
+        "seed": 412
+      }
+    },
+    {
+      "id": "east-ravine-spires",
+      "category": "stalagmite-field",
+      "description": "Jagged rock spires rising from the eastern ravine chasm",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.76,
+        0.34,
+        0.96,
+        0.78
+      ],
+      "surface": "ravine-rock",
+      "placement": {
+        "position": [
+          4.8,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          3.6,
+          10,
+          3.6
+        ],
+        "count": 26,
+        "minHeight": 1.1,
+        "maxHeight": 3.4,
+        "pathClearance": 2.2,
+        "seed": 413
+      }
+    },
+    {
+      "id": "south-abutment-boulders",
+      "category": "boulder-cluster",
+      "description": "Rough stone blocks and gravel grounding the southern bridge abutment",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.02,
+        0.7,
+        0.24,
+        0.96
+      ],
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0,
+          -5.6,
+          0
+        ],
+        "sizeMetres": [
+          6,
+          1.4,
+          0.75
+        ],
+        "count": 14,
+        "seed": 414
+      }
+    },
+    {
+      "id": "north-abutment-boulders",
+      "category": "boulder-cluster",
+      "description": "Rocky scree flanking the northern bridge abutment",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.68,
+        0.22,
+        0.92,
+        0.42
+      ],
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0,
+          5.6,
+          0
+        ],
+        "sizeMetres": [
+          6,
+          1.4,
+          0.75
+        ],
+        "count": 14,
+        "seed": 415
+      }
+    }
+  ]
+}

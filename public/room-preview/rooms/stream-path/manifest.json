@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "STREAM-PATH",
+  "bom": "games/zork2/planning/room-bom-prototype/stream-path/room-bom.json",
+  "bomSha256": "bcb574a00fc88717c997c8b3623c8eedcd004aacaf8ee0bbe2089c0e3810cc11",
+  "glb": "games/zork2/planning/room-bom-prototype/stream-path/build/room.glb",
+  "glbBytes": 6683320,
+  "glbSha256": "bf0df8d0cac8bc616c829fe67ccb8ad893fba87a6e80f790f87e0467b90ef774",
+  "meshCount": 13,
+  "materialCount": 5,
+  "triangles": 44320,
+  "zilAnchors": [],
+  "skybox": "src/prototype/assets/cavern-skybox-v1.png",
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/stream-path/build/review-4view.png"
+}

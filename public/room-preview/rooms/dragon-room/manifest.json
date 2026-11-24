@@ -1,0 +1,17 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "DRAGON-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/dragon-room/room-bom.json",
+  "bomSha256": "d6144e53d7b1863c9383955125aa787c8ea9940cb28d1e6f31d19fb20262b17e",
+  "glb": "games/zork2/planning/room-bom-prototype/dragon-room/build/room.glb",
+  "glbBytes": 5118952,
+  "glbSha256": "b7cc386995699c4f290d7984f4acb573acb5dc9ea17131073fda16fccc6e9d32",
+  "meshCount": 21,
+  "materialCount": 5,
+  "triangles": 24306,
+  "zilAnchors": [
+    "DRAGON"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/dragon-room/build/review-4view.png"
+}

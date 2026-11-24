@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "FRESCO-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/fresco-room/room-bom.json",
+  "bomSha256": "af8a534ec85261d933f2f173f3733adc3d81b4bff8af9188676336c927750f9c",
+  "glb": "games/zork2/planning/room-bom-prototype/fresco-room/build/room.glb",
+  "glbBytes": 4026984,
+  "glbSha256": "eb989c118636e6c297b80b9a2d882d0ec553598e7da7cc8313dbe2590a3ec600",
+  "meshCount": 24,
+  "materialCount": 6,
+  "triangles": 12586,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/fresco-room/build/review-4view.png"
+}

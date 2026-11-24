@@ -1,0 +1,276 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "TELLER-EAST",
+  "label": "East Teller's Room",
+  "sourceContext": "games/zork2/assets/rooms/teller-east/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/teller-east/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/teller-east/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/teller-east/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/teller-east/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      6.8,
+      6.4,
+      3.4
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.08,
+    "ceilingStyle": "flat",
+    "lighting": {
+      "ambientColor": [
+        0.111,
+        0.102,
+        0.099
+      ],
+      "ambientStrength": 0.261,
+      "lights": [
+        {
+          "name": "west-bank-warm",
+          "position": [
+            -2,
+            -1.2,
+            2.2
+          ],
+          "color": [
+            1,
+            0.746,
+            0.398
+          ],
+          "energy": 239,
+          "radius": 1.1
+        },
+        {
+          "name": "east-door-warm",
+          "position": [
+            2.2,
+            0.2,
+            2.1
+          ],
+          "color": [
+            1,
+            0.726,
+            0.378
+          ],
+          "energy": 195.6,
+          "radius": 1
+        },
+        {
+          "name": "center-fill",
+          "position": [
+            0,
+            -0.2,
+            2.6
+          ],
+          "color": [
+            0.962,
+            0.766,
+            0.498
+          ],
+          "energy": 119.5,
+          "radius": 1.2
+        },
+        {
+          "name": "north-viewing-cool",
+          "position": [
+            -0.6,
+            3,
+            2
+          ],
+          "color": [
+            0.402,
+            0.526,
+            0.658
+          ],
+          "energy": 70.6,
+          "radius": 0.9
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.5,
+        0.16,
+        0.68,
+        0.58
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.88,
+      "normalStrength": 1.25,
+      "colorScale": 1.163,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.72,
+        0.78,
+        0.96
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.86,
+      "normalStrength": 1.15,
+      "colorScale": 1.148,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.3,
+        0.01,
+        0.72,
+        0.12
+      ],
+      "tileMetres": 3,
+      "roughness": 0.94,
+      "normalStrength": 1.15,
+      "colorScale": 0.88,
+      "tileable": true
+    },
+    "door-timber": {
+      "procedural": "dark-oak",
+      "tileMetres": 1.4,
+      "roughness": 0.6,
+      "normalStrength": 0.95
+    },
+    "arch-stone": {
+      "procedural": "grey-stone",
+      "tileMetres": 2,
+      "roughness": 0.88,
+      "normalStrength": 1.2
+    }
+  },
+  "objects": [
+    {
+      "id": "north-viewing-room-opening",
+      "category": "opening",
+      "description": "Cut-stone doorway on the north wall beneath the Viewing Room sign leading to the East Viewing Room",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.12,
+        0.18,
+        0.3,
+        0.68
+      ],
+      "surface": "arch-stone",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": -0.6,
+        "sizeMetres": [
+          1.75,
+          0.5,
+          2.45
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.38,
+          0.52,
+          0.68
+        ],
+        "tunnelEnergy": 65
+      }
+    },
+    {
+      "id": "east-depository-door",
+      "category": "door",
+      "description": "Open iron-bound bank doorway on the east wall beneath the BANK PERSONNEL ONLY sign leading to the Safety Depository",
+      "zilIdentity": null,
+      "exitDirection": "EAST",
+      "sourceView": "N",
+      "crop": [
+        0.73,
+        0.2,
+        0.92,
+        0.7
+      ],
+      "surface": "door-timber",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 0.2,
+        "sizeMetres": [
+          1.75,
+          0.5,
+          2.45
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          1,
+          0.74,
+          0.42
+        ],
+        "tunnelEnergy": 110
+      }
+    },
+    {
+      "id": "south-bank-entrance-opening",
+      "category": "opening",
+      "description": "Cut-stone doorway on the south wall leading back to the Bank Entrance",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "sourceView": "S",
+      "surface": "arch-stone",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.85,
+          0.5,
+          2.45
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.95,
+          0.72,
+          0.45
+        ],
+        "tunnelEnergy": 95
+      }
+    },
+    {
+      "id": "corner-pilaster-ne",
+      "category": "pillar",
+      "description": "Dressed stone corner pilaster at the northeast corner of the teller room",
+      "zilIdentity": null,
+      "surface": "arch-stone",
+      "placement": {
+        "position": [
+          3.22,
+          3.02,
+          0
+        ],
+        "sizeMetres": [
+          0.36,
+          0.36,
+          3.4
+        ]
+      }
+    },
+    {
+      "id": "corner-pilaster-nw",
+      "category": "pillar",
+      "description": "Dressed stone corner pilaster at the northwest corner of the teller room",
+      "zilIdentity": null,
+      "surface": "arch-stone",
+      "placement": {
+        "position": [
+          -3.22,
+          3.02,
+          0
+        ],
+        "sizeMetres": [
+          0.36,
+          0.36,
+          3.4
+        ]
+      }
+    }
+  ]
+}

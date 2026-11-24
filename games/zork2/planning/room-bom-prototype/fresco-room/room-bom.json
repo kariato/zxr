@@ -1,0 +1,369 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "FRESCO-ROOM",
+  "label": "Fresco Room",
+  "sourceContext": "games/zork2/assets/rooms/fresco-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/fresco-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/fresco-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/fresco-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/fresco-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      9.6,
+      7.2,
+      4
+    ],
+    "wallStyle": "plaster",
+    "wallDisplacementMetres": 0.02,
+    "ceilingStyle": "flat",
+    "wainscotHeightMetres": 0.55,
+    "lighting": {
+      "ambientColor": [
+        0.113,
+        0.093,
+        0.067
+      ],
+      "ambientStrength": 0.22,
+      "lights": [
+        {
+          "name": "west-bank-warm",
+          "position": [
+            -3.4,
+            0,
+            2.2
+          ],
+          "color": [
+            1,
+            0.726,
+            0.355
+          ],
+          "energy": 340,
+          "radius": 1.2
+        },
+        {
+          "name": "fresco-center-fill",
+          "position": [
+            0,
+            0.6,
+            2.6
+          ],
+          "color": [
+            0.985,
+            0.746,
+            0.455
+          ],
+          "energy": 210,
+          "radius": 1.5
+        },
+        {
+          "name": "east-dragon-cool",
+          "position": [
+            3.6,
+            0,
+            2.1
+          ],
+          "color": [
+            0.405,
+            0.526,
+            0.655
+          ],
+          "energy": 110,
+          "radius": 1.2
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.26,
+        0.24,
+        0.72,
+        0.65
+      ],
+      "tileMetres": 4.8,
+      "roughness": 0.88,
+      "normalStrength": 1.15,
+      "colorScale": 1.078,
+      "tileable": false
+    },
+    "wainscot": {
+      "procedural": "grey-stone",
+      "tileMetres": 1.8,
+      "roughness": 0.9,
+      "normalStrength": 1.2
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.22,
+        0.76,
+        0.78,
+        0.98
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.86,
+      "normalStrength": 1.2,
+      "colorScale": 1.02,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.28,
+        0.02,
+        0.7,
+        0.14
+      ],
+      "tileMetres": 3.4,
+      "roughness": 0.94,
+      "normalStrength": 1.15,
+      "colorScale": 0.88,
+      "tileable": true
+    },
+    "pilaster-stone": {
+      "procedural": "warm-ashlar",
+      "tileMetres": 1.6,
+      "roughness": 0.86,
+      "normalStrength": 1.25
+    }
+  },
+  "objects": [
+    {
+      "id": "east-dragon-passage",
+      "category": "opening",
+      "description": "Arched stone doorway on the east wall leading toward the Dragon Room",
+      "zilIdentity": null,
+      "exitDirection": "EAST",
+      "sourceView": "N",
+      "crop": [
+        0.8,
+        0.16,
+        0.96,
+        0.76
+      ],
+      "surface": "pilaster-stone",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2,
+          0.55,
+          2.75
+        ],
+        "depthMetres": 7.5,
+        "tunnelColor": [
+          0.34,
+          0.48,
+          0.64
+        ],
+        "tunnelEnergy": 95
+      }
+    },
+    {
+      "id": "west-bank-passage",
+      "category": "opening",
+      "description": "Arched stone doorway on the west wall leading to the Bank Entrance",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "sourceView": "N",
+      "crop": [
+        0.04,
+        0.16,
+        0.2,
+        0.76
+      ],
+      "surface": "pilaster-stone",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2,
+          0.55,
+          2.75
+        ],
+        "depthMetres": 7.5,
+        "tunnelColor": [
+          1,
+          0.72,
+          0.36
+        ],
+        "tunnelEnergy": 180
+      }
+    },
+    {
+      "id": "pilaster-nw",
+      "category": "pillar",
+      "description": "Carved stone pilaster framing the northwest fresco bay",
+      "zilIdentity": null,
+      "surface": "pilaster-stone",
+      "placement": {
+        "position": [
+          -4.55,
+          3.38,
+          0
+        ],
+        "sizeMetres": [
+          0.46,
+          0.46,
+          4
+        ]
+      }
+    },
+    {
+      "id": "pilaster-n-center",
+      "category": "pillar",
+      "description": "Central stone pilaster dividing the two blackened dragon-rescue frescoes on the north wall",
+      "zilIdentity": null,
+      "surface": "pilaster-stone",
+      "placement": {
+        "position": [
+          0,
+          3.38,
+          0
+        ],
+        "sizeMetres": [
+          0.44,
+          0.44,
+          4
+        ]
+      }
+    },
+    {
+      "id": "pilaster-ne",
+      "category": "pillar",
+      "description": "Carved stone pilaster framing the northeast fresco bay",
+      "zilIdentity": null,
+      "surface": "pilaster-stone",
+      "placement": {
+        "position": [
+          4.55,
+          3.38,
+          0
+        ],
+        "sizeMetres": [
+          0.46,
+          0.46,
+          4
+        ]
+      }
+    },
+    {
+      "id": "pilaster-sw",
+      "category": "pillar",
+      "description": "Carved stone pilaster framing the southwest fresco bay",
+      "zilIdentity": null,
+      "surface": "pilaster-stone",
+      "placement": {
+        "position": [
+          -4.55,
+          -3.38,
+          0
+        ],
+        "sizeMetres": [
+          0.46,
+          0.46,
+          4
+        ]
+      }
+    },
+    {
+      "id": "pilaster-s-center",
+      "category": "pillar",
+      "description": "Central stone pilaster dividing the fresco panels on the south wall",
+      "zilIdentity": null,
+      "surface": "pilaster-stone",
+      "placement": {
+        "position": [
+          0,
+          -3.38,
+          0
+        ],
+        "sizeMetres": [
+          0.44,
+          0.44,
+          4
+        ]
+      }
+    },
+    {
+      "id": "pilaster-se",
+      "category": "pillar",
+      "description": "Carved stone pilaster framing the southeast fresco bay",
+      "zilIdentity": null,
+      "surface": "pilaster-stone",
+      "placement": {
+        "position": [
+          4.55,
+          -3.38,
+          0
+        ],
+        "sizeMetres": [
+          0.46,
+          0.46,
+          4
+        ]
+      }
+    },
+    {
+      "id": "north-baseboard-rubble",
+      "category": "boulder-cluster",
+      "description": "Small cracked plaster and stone fragments scattered along the north plinth",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.68,
+        0.74,
+        0.74
+      ],
+      "surface": "wainscot",
+      "placement": {
+        "position": [
+          0,
+          3.1,
+          0
+        ],
+        "sizeMetres": [
+          7.6,
+          0.6,
+          0.24
+        ],
+        "count": 14,
+        "seed": 431
+      }
+    },
+    {
+      "id": "south-baseboard-rubble",
+      "category": "boulder-cluster",
+      "description": "Small fallen stone fragments along the south plinth",
+      "zilIdentity": null,
+      "sourceView": "S",
+      "crop": [
+        0.24,
+        0.68,
+        0.74,
+        0.76
+      ],
+      "surface": "wainscot",
+      "placement": {
+        "position": [
+          0,
+          -3.1,
+          0
+        ],
+        "sizeMetres": [
+          7.6,
+          0.6,
+          0.24
+        ],
+        "count": 12,
+        "seed": 432
+      }
+    }
+  ]
+}

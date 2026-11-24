@@ -1,0 +1,254 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "LEDGE-2",
+  "label": "Wide Ledge",
+  "sourceContext": "games/zork2/assets/rooms/ledge-2/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/ledge-2/reference-v2.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/ledge-2/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/ledge-2/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/ledge-2/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      6.8,
+      8.2,
+      5.6
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.44,
+    "ceilingStyle": "open-sky",
+    "skybox": "src/prototype/assets/lair-skybox-v1.png",
+    "lighting": {
+      "ambientColor": [
+        0.03,
+        0.162,
+        0.401
+      ],
+      "ambientStrength": 0.647,
+      "lights": [
+        {
+          "name": "wide-ledge-warm-key",
+          "position": [
+            0.8,
+            0.4,
+            2.5
+          ],
+          "color": [
+            0.716,
+            0.679,
+            0.724
+          ],
+          "energy": 323.3,
+          "radius": 1.3
+        },
+        {
+          "name": "volcano-void-cool",
+          "position": [
+            -2.8,
+            0.8,
+            3.8
+          ],
+          "color": [
+            0.156,
+            0.529,
+            1
+          ],
+          "energy": 300.2,
+          "radius": 2.4
+        },
+        {
+          "name": "south-door-alcove",
+          "position": [
+            1.6,
+            -3.2,
+            2.1
+          ],
+          "color": [
+            0.676,
+            0.649,
+            0.704
+          ],
+          "energy": 161.7,
+          "radius": 1
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.46,
+        0.16,
+        0.72,
+        0.48
+      ],
+      "tileMetres": 3.2,
+      "roughness": 0.9,
+      "normalStrength": 1.35,
+      "colorScale": 1.277,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.36,
+        0.62,
+        0.78,
+        0.94
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.88,
+      "normalStrength": 1.15,
+      "colorScale": 1.239,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.04,
+        0.02,
+        0.32,
+        0.22
+      ],
+      "tileMetres": 4.2,
+      "roughness": 0.94,
+      "normalStrength": 1.25,
+      "colorScale": 0.9,
+      "tileable": true
+    },
+    "door-wood": {
+      "procedural": "weathered-oak",
+      "tileMetres": 1.2,
+      "roughness": 0.82,
+      "normalStrength": 1.15
+    }
+  },
+  "objects": [
+    {
+      "id": "south-safe-room-door",
+      "category": "door",
+      "description": "Small weathered wooden door set into a stone-framed alcove on the south wall leading to the Dusty Room",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "sourceView": "N",
+      "crop": [
+        0.8,
+        0.23,
+        0.89,
+        0.44
+      ],
+      "surface": "door-wood",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 1.4,
+        "sizeMetres": [
+          1.45,
+          0.45,
+          2.25
+        ],
+        "depthMetres": 6,
+        "tunnelColor": [
+          0.86,
+          0.64,
+          0.38
+        ],
+        "tunnelEnergy": 90
+      }
+    },
+    {
+      "id": "west-gnome-door",
+      "category": "door",
+      "description": "Conditional secret rock door on the west side opening when the gnome door is revealed",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": -1.4,
+        "sizeMetres": [
+          1.25,
+          0.45,
+          2.05
+        ],
+        "depthMetres": 4.5,
+        "tunnelColor": [
+          0.42,
+          0.56,
+          0.74
+        ],
+        "tunnelEnergy": 70
+      }
+    },
+    {
+      "id": "hook-2-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for HOOK-2 (small iron hook attached to the volcanic rock face)",
+      "zilIdentity": "HOOK-2",
+      "sourceView": "N",
+      "crop": [
+        0.56,
+        0.23,
+        0.61,
+        0.33
+      ],
+      "placement": {
+        "position": [
+          1.85,
+          1.45,
+          1.42
+        ],
+        "sizeMetres": [
+          0.16,
+          0.22,
+          0.26
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "east-cliff-boulders",
+      "category": "boulder-cluster",
+      "description": "Fallen volcanic rocks banking the eastern cliff face",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          2.75,
+          0.2,
+          0
+        ],
+        "sizeMetres": [
+          1.1,
+          6,
+          0.85
+        ],
+        "count": 14,
+        "seed": 551
+      }
+    },
+    {
+      "id": "west-ledge-rim-rocks",
+      "category": "boulder-cluster",
+      "description": "Angular rock blocks lining the precipitous western drop-off edge",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -2.85,
+          1.2,
+          0
+        ],
+        "sizeMetres": [
+          0.95,
+          4.8,
+          0.52
+        ],
+        "count": 12,
+        "seed": 552
+      }
+    }
+  ]
+}

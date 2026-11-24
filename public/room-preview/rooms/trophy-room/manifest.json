@@ -1,0 +1,22 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "TROPHY-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/trophy-room/room-bom.json",
+  "bomSha256": "2113c3f3c64cf6cec57dc0b50226b0ce140350f064c7048c17376b0ed45283d6",
+  "glb": "games/zork2/planning/room-bom-prototype/trophy-room/build/room.glb",
+  "glbBytes": 3743848,
+  "glbSha256": "6788c92630bcefe34bef2f9b34cc71d023de17a7218d22f1f8a2f4c9dc2e7881",
+  "meshCount": 12,
+  "materialCount": 6,
+  "triangles": 10869,
+  "zilAnchors": [
+    "DEGREE",
+    "WANDS",
+    "TROPHY-SWORD",
+    "TROPHY-BOTTLES",
+    "WIZARD-CASE",
+    "WARNING-LABEL"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/trophy-room/build/review-4view.png"
+}

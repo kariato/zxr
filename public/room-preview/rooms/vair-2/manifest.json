@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "VAIR-2",
+  "bom": "games/zork2/planning/room-bom-prototype/vair-2/room-bom.json",
+  "bomSha256": "81b09ca33dd0060ad9e3c2e04954cacdc62d2b82a75511fc2d77848ea0351b2c",
+  "glb": "games/zork2/planning/room-bom-prototype/vair-2/build/room.glb",
+  "glbBytes": 3808264,
+  "glbSha256": "d4868b642cb6ed915c5b4b7f81a694d8c2d5bba4ff8d1e77b8ceafd38160519c",
+  "meshCount": 7,
+  "materialCount": 4,
+  "triangles": 26827,
+  "zilAnchors": [],
+  "skybox": "src/prototype/assets/lair-skybox-v1.png",
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/vair-2/build/review-4view.png"
+}

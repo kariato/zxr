@@ -1,0 +1,227 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "CAGE-ROOM",
+  "label": "Dingy Closet",
+  "sourceContext": "games/zork2/assets/rooms/cage-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/cage-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/cage-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/cage-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/cage-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      3.8,
+      4.4,
+      2.6
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.14,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.079,
+        0.084,
+        0.101
+      ],
+      "ambientStrength": 0.213,
+      "lights": [
+        {
+          "name": "closet-warm-key",
+          "position": [
+            -0.3,
+            -0.4,
+            1.9
+          ],
+          "color": [
+            0.938,
+            0.704,
+            0.462
+          ],
+          "energy": 124.3,
+          "radius": 0.8
+        },
+        {
+          "name": "east-inscription-wash",
+          "position": [
+            0.6,
+            0.2,
+            1.6
+          ],
+          "color": [
+            0.938,
+            0.724,
+            0.502
+          ],
+          "energy": 84.3,
+          "radius": 0.9
+        },
+        {
+          "name": "north-door-cool",
+          "position": [
+            -0.35,
+            2.4,
+            1.6
+          ],
+          "color": [
+            0.358,
+            0.524,
+            0.742
+          ],
+          "energy": 66.6,
+          "radius": 0.9
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.58,
+        0.12,
+        0.9,
+        0.56
+      ],
+      "tileMetres": 2.2,
+      "roughness": 0.92,
+      "normalStrength": 1.35,
+      "colorScale": 0.945,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.28,
+        0.68,
+        0.64,
+        0.95
+      ],
+      "tileMetres": 2,
+      "roughness": 0.9,
+      "normalStrength": 1.15,
+      "colorScale": 0.941,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.01,
+        0.64,
+        0.12
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.95,
+      "normalStrength": 1.3,
+      "colorScale": 0.85,
+      "tileable": true
+    },
+    "ledge-stone": {
+      "procedural": "grey-stone",
+      "tileMetres": 1.4,
+      "roughness": 0.88,
+      "normalStrength": 1.25
+    }
+  },
+  "objects": [
+    {
+      "id": "north-machine-room-doorway",
+      "category": "opening",
+      "description": "Rectangular stone-linteled doorway on the north wall leading out to the Machine Room",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.23,
+        0.16,
+        0.45,
+        0.62
+      ],
+      "surface": "ledge-stone",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": -0.35,
+        "sizeMetres": [
+          1.35,
+          0.45,
+          2.05
+        ],
+        "depthMetres": 6,
+        "tunnelColor": [
+          0.42,
+          0.52,
+          0.66
+        ],
+        "tunnelEnergy": 95
+      }
+    },
+    {
+      "id": "west-stone-ledge",
+      "category": "pillar",
+      "description": "Low rough-hewn stone shelf along the west wall supporting the red crystal sphere",
+      "zilIdentity": null,
+      "surface": "ledge-stone",
+      "placement": {
+        "position": [
+          -1.45,
+          -0.1,
+          0
+        ],
+        "sizeMetres": [
+          0.85,
+          2.4,
+          0.78
+        ]
+      }
+    },
+    {
+      "id": "palantir-1-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for PALANTIR-1 (red crystal sphere) resting on the west stone ledge",
+      "zilIdentity": "PALANTIR-1",
+      "sourceView": "N",
+      "crop": [
+        0.11,
+        0.52,
+        0.19,
+        0.63
+      ],
+      "placement": {
+        "position": [
+          -1.35,
+          0.25,
+          0.78
+        ],
+        "sizeMetres": [
+          0.26,
+          0.26,
+          0.26
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "east-wall-rubble",
+      "category": "boulder-cluster",
+      "description": "Small angular stone rubble along the base of the east carved wall",
+      "zilIdentity": null,
+      "surface": "ledge-stone",
+      "placement": {
+        "position": [
+          1.55,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          0.55,
+          3.4,
+          0.35
+        ],
+        "count": 14,
+        "seed": 401
+      }
+    }
+  ]
+}

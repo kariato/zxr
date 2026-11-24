@@ -1,0 +1,480 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "DIAMOND-5",
+  "label": "Oddly-angled Room",
+  "sourceContext": "games/zork2/assets/rooms/diamond-5/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/diamond-5/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/diamond-5/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/diamond-5/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/diamond-5/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      11.6,
+      11.6,
+      3.8
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.06,
+    "ceilingStyle": "flat",
+    "lighting": {
+      "ambientColor": [
+        0.036,
+        0.1,
+        0.194
+      ],
+      "ambientStrength": 0.316,
+      "lights": [
+        {
+          "name": "hub-warm-center",
+          "position": [
+            0,
+            0,
+            2.7
+          ],
+          "color": [
+            0.892,
+            0.733,
+            0.548
+          ],
+          "energy": 420.2,
+          "radius": 1.4
+        },
+        {
+          "name": "stairway-pale-glow",
+          "position": [
+            3.8,
+            3.2,
+            3.2
+          ],
+          "color": [
+            0.652,
+            0.813,
+            1
+          ],
+          "energy": 210.1,
+          "radius": 1.1
+        },
+        {
+          "name": "west-warm-fill",
+          "position": [
+            -3.2,
+            -1.2,
+            2.2
+          ],
+          "color": [
+            0.852,
+            0.693,
+            0.528
+          ],
+          "energy": 197,
+          "radius": 1.2
+        },
+        {
+          "name": "south-cool-rim",
+          "position": [
+            0,
+            -4.2,
+            2.4
+          ],
+          "color": [
+            0.252,
+            0.453,
+            0.748
+          ],
+          "energy": 105,
+          "radius": 1.4
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.15,
+        0.25,
+        0.22,
+        0.56
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.38,
+      "normalStrength": 1.15,
+      "colorScale": 1.208,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.22,
+        0.65,
+        0.72,
+        0.96
+      ],
+      "tileMetres": 3.2,
+      "roughness": 0.34,
+      "normalStrength": 0.95,
+      "colorScale": 1.256,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.16,
+        0.02,
+        0.42,
+        0.12
+      ],
+      "tileMetres": 3.4,
+      "roughness": 0.42,
+      "normalStrength": 1,
+      "colorScale": 0.92,
+      "tileable": true
+    },
+    "marble-stair": {
+      "sourceView": "N",
+      "crop": [
+        0.45,
+        0.22,
+        0.55,
+        0.56
+      ],
+      "tileMetres": 1.8,
+      "roughness": 0.48,
+      "normalStrength": 1,
+      "colorScale": 1.05,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "north-passage",
+      "category": "opening",
+      "description": "Faceted glassy-stone passage leading north to DIAMOND-2",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.26,
+        0.36,
+        0.54
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.65,
+          0.5,
+          2.65
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.28,
+          0.38,
+          0.52
+        ],
+        "tunnelEnergy": 45
+      }
+    },
+    {
+      "id": "nw-passage",
+      "category": "opening",
+      "description": "Faceted passage offset northwest along the north wall to DIAMOND-1",
+      "zilIdentity": null,
+      "exitDirection": "NW",
+      "sourceView": "N",
+      "crop": [
+        0.04,
+        0.2,
+        0.14,
+        0.58
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": -3.3,
+        "sizeMetres": [
+          1.65,
+          0.5,
+          2.6
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.26,
+          0.36,
+          0.5
+        ],
+        "tunnelEnergy": 40
+      }
+    },
+    {
+      "id": "ne-passage",
+      "category": "opening",
+      "description": "Faceted passage offset northeast along the north wall to DIAMOND-3",
+      "zilIdentity": null,
+      "exitDirection": "NE",
+      "sourceView": "N",
+      "crop": [
+        0.66,
+        0.26,
+        0.78,
+        0.54
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 3.3,
+        "sizeMetres": [
+          1.65,
+          0.5,
+          2.6
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.26,
+          0.36,
+          0.5
+        ],
+        "tunnelEnergy": 40
+      }
+    },
+    {
+      "id": "south-passage",
+      "category": "opening",
+      "description": "Faceted glassy-stone passage leading south to DIAMOND-8",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "surface": "wall",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.65,
+          0.5,
+          2.65
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.28,
+          0.38,
+          0.52
+        ],
+        "tunnelEnergy": 45
+      }
+    },
+    {
+      "id": "sw-passage",
+      "category": "opening",
+      "description": "Faceted passage offset southwest along the south wall to DIAMOND-7",
+      "zilIdentity": null,
+      "exitDirection": "SW",
+      "surface": "wall",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": -3.3,
+        "sizeMetres": [
+          1.65,
+          0.5,
+          2.6
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.26,
+          0.36,
+          0.5
+        ],
+        "tunnelEnergy": 40
+      }
+    },
+    {
+      "id": "se-passage",
+      "category": "opening",
+      "description": "Faceted passage offset southeast along the south wall to DIAMOND-9",
+      "zilIdentity": null,
+      "exitDirection": "SE",
+      "surface": "wall",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 3.3,
+        "sizeMetres": [
+          1.65,
+          0.5,
+          2.6
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.26,
+          0.36,
+          0.5
+        ],
+        "tunnelEnergy": 40
+      }
+    },
+    {
+      "id": "east-passage",
+      "category": "opening",
+      "description": "Faceted glassy-stone passage leading east to DIAMOND-6",
+      "zilIdentity": null,
+      "exitDirection": "EAST",
+      "surface": "wall",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.65,
+          0.5,
+          2.65
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.28,
+          0.38,
+          0.52
+        ],
+        "tunnelEnergy": 45
+      }
+    },
+    {
+      "id": "west-passage",
+      "category": "opening",
+      "description": "Faceted glassy-stone passage leading west to DIAMOND-4",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.65,
+          0.5,
+          2.65
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.28,
+          0.38,
+          0.52
+        ],
+        "tunnelEnergy": 45
+      }
+    },
+    {
+      "id": "up-marble-stairway",
+      "category": "opening",
+      "description": "Marble stairway ascending upward from the central diamond chamber to STAIRWAY-TOP",
+      "zilIdentity": null,
+      "exitDirection": "UP",
+      "sourceView": "N",
+      "crop": [
+        0.42,
+        0.06,
+        0.58,
+        0.6
+      ],
+      "surface": "marble-stair",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 3.3,
+        "sizeMetres": [
+          1.75,
+          0.55,
+          3.1
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.7,
+          0.78,
+          0.88
+        ],
+        "tunnelEnergy": 120
+      }
+    },
+    {
+      "id": "down-secret-passage",
+      "category": "opening",
+      "description": "Dark descending secret passage revealed at the foot of the stairway leading to CERBERUS-ROOM",
+      "zilIdentity": null,
+      "exitDirection": "DOWN",
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": -3.3,
+        "sizeMetres": [
+          1.55,
+          0.5,
+          2.4
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.12,
+          0.14,
+          0.18
+        ],
+        "tunnelEnergy": 20
+      }
+    },
+    {
+      "id": "stairway-pier-left",
+      "category": "pillar",
+      "description": "Faceted glassy stone pier flanking the marble stairway",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          3.8,
+          1.85,
+          0
+        ],
+        "sizeMetres": [
+          0.95,
+          0.95,
+          3.8
+        ],
+        "yawDeg": 24
+      }
+    },
+    {
+      "id": "stairway-pier-right",
+      "category": "pillar",
+      "description": "Faceted glassy stone pier flanking the north-west quadrant",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3.8,
+          2.4,
+          0
+        ],
+        "sizeMetres": [
+          0.95,
+          0.95,
+          3.8
+        ],
+        "yawDeg": -22
+      }
+    },
+    {
+      "id": "secret-floor-seam",
+      "category": "floor-crack",
+      "description": "Subtle recessed seam in the stone floor near the foot of the stairway",
+      "zilIdentity": null,
+      "placement": {
+        "position": [
+          2.8,
+          3.2,
+          0
+        ],
+        "sizeMetres": [
+          0.08,
+          1.9,
+          0.06
+        ],
+        "yawDeg": 12
+      }
+    }
+  ]
+}

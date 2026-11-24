@@ -1,0 +1,17 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "PENTAGRAM-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/pentagram-room/room-bom.json",
+  "bomSha256": "18777a7a646e8b484a310a31bf228227d577a519438a53408d7f6633f96661bd",
+  "glb": "games/zork2/planning/room-bom-prototype/pentagram-room/build/room.glb",
+  "glbBytes": 3743680,
+  "glbSha256": "be692edbde2d9252d1740e4d374b20c234eb64c44aa79a9d1922f1fd70db15d1",
+  "meshCount": 13,
+  "materialCount": 5,
+  "triangles": 11483,
+  "zilAnchors": [
+    "PENTAGRAM"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/pentagram-room/build/review-4view.png"
+}

@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "WIZARDS-WORKSHOP",
+  "bom": "games/zork2/planning/room-bom-prototype/wizards-workshop/room-bom.json",
+  "bomSha256": "ba300ff7c7e7de3f32294589760382756bd6b708c4abae8cef5993982012a283",
+  "glb": "games/zork2/planning/room-bom-prototype/wizards-workshop/build/room.glb",
+  "glbBytes": 6199664,
+  "glbSha256": "a5f8467e44817f7c634b0f72314325c0d8de091db0a2f7dfbcfbecdf7ebaf791",
+  "meshCount": 23,
+  "materialCount": 8,
+  "triangles": 17269,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/wizards-workshop/build/review-4view.png"
+}

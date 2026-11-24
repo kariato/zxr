@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "IN-CAGE",
+  "bom": "games/zork2/planning/room-bom-prototype/in-cage/room-bom.json",
+  "bomSha256": "ada60047f7f631e1670341a9050f5ac89b733dc8aa1c93233098221397871b50",
+  "glb": "games/zork2/planning/room-bom-prototype/in-cage/build/room.glb",
+  "glbBytes": 3304612,
+  "glbSha256": "e2fbbfc313d90abd91dde78f26639b72ddf080a515f8f9b6e33f7808cf192ebc",
+  "meshCount": 12,
+  "materialCount": 4,
+  "triangles": 9401,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/in-cage/build/review-4view.png"
+}

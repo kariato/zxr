@@ -1,0 +1,19 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "DEPOSITORY",
+  "bom": "games/zork2/planning/room-bom-prototype/depository/room-bom.json",
+  "bomSha256": "236e92d36b0fb6695cb0254d435385c1511ce8e3dcf1434e9bc0ce5afd9a896b",
+  "glb": "games/zork2/planning/room-bom-prototype/depository/build/room.glb",
+  "glbBytes": 4526344,
+  "glbSha256": "85de23424cad49ae2613e68378732c55d0ee53656814b4b235a3f9fcb4c0a183",
+  "meshCount": 27,
+  "materialCount": 6,
+  "triangles": 16967,
+  "zilAnchors": [
+    "CURTAIN",
+    "CUBE",
+    "BANK-BROCHURE"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/depository/build/review-4view.png"
+}

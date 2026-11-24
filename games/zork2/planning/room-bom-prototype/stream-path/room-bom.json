@@ -1,0 +1,345 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "STREAM-PATH",
+  "label": "Path Near Stream",
+  "sourceContext": "games/zork2/assets/rooms/stream-path/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/stream-path/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/stream-path/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/stream-path/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/stream-path/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "organic-cavern",
+    "dimensionsMetres": [
+      20,
+      18,
+      8.2
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.9,
+    "ceilingStyle": "open-sky",
+    "skybox": "src/prototype/assets/cavern-skybox-v1.png",
+    "lighting": {
+      "ambientColor": [
+        0.185,
+        0.209,
+        0.215
+      ],
+      "ambientStrength": 1.8,
+      "lights": [
+        {
+          "name": "path-warm-key",
+          "position": [
+            -2.2,
+            -1.2,
+            3
+          ],
+          "color": [
+            1,
+            0.763,
+            0.329
+          ],
+          "energy": 1744.9,
+          "radius": 2
+        },
+        {
+          "name": "east-arch-warm",
+          "position": [
+            4.8,
+            -0.4,
+            2.8
+          ],
+          "color": [
+            1,
+            0.803,
+            0.389
+          ],
+          "energy": 1073.8,
+          "radius": 1.8
+        },
+        {
+          "name": "ravine-mist-cool",
+          "position": [
+            3.5,
+            6,
+            3.4
+          ],
+          "color": [
+            0.471,
+            0.603,
+            0.729
+          ],
+          "energy": 1610.5,
+          "radius": 3
+        },
+        {
+          "name": "sw-tunnel-dim",
+          "position": [
+            -5,
+            -4.8,
+            1.8
+          ],
+          "color": [
+            0.941,
+            0.623,
+            0.249
+          ],
+          "energy": 469.7,
+          "radius": 1.2
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.22,
+        0.06,
+        0.38,
+        0.38
+      ],
+      "tileMetres": 4,
+      "roughness": 0.92,
+      "normalStrength": 1.35,
+      "colorScale": 1.85,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.62,
+        0.56,
+        0.92
+      ],
+      "tileMetres": 3,
+      "roughness": 0.9,
+      "normalStrength": 1.15,
+      "colorScale": 1.85,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.42,
+        0.02,
+        0.58,
+        0.16
+      ],
+      "tileMetres": 4.6,
+      "roughness": 0.94,
+      "normalStrength": 1.25,
+      "colorScale": 0.85,
+      "tileable": true
+    },
+    "arch-stone": {
+      "sourceView": "N",
+      "crop": [
+        0.84,
+        0.08,
+        0.98,
+        0.38
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.88,
+      "normalStrength": 1.3,
+      "colorScale": 1.05,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "ravine-stream-water",
+      "category": "water-surface",
+      "description": "Rushing white-water stream deep in the misty ravine north and east of the path",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.6,
+        0.42,
+        0.72,
+        0.76
+      ],
+      "placement": {
+        "position": [
+          3.2,
+          2,
+          -2.2
+        ],
+        "waterColor": [
+          0.18,
+          0.34,
+          0.44
+        ],
+        "alpha": 0.72
+      }
+    },
+    {
+      "id": "east-ruined-arch",
+      "category": "smoothed-tunnel",
+      "description": "Ruined mossy stone archway choked with vines leading east to the Formal Garden",
+      "zilIdentity": null,
+      "exitDirection": "EAST",
+      "sourceView": "N",
+      "crop": [
+        0.78,
+        0.04,
+        0.99,
+        0.46
+      ],
+      "surface": "arch-stone",
+      "placement": {
+        "position": [
+          7.5,
+          -0.5,
+          0
+        ],
+        "sizeMetres": [
+          3,
+          1,
+          3.2
+        ],
+        "depthMetres": 9,
+        "yawDeg": 270,
+        "curveYawDeg": 8
+      }
+    },
+    {
+      "id": "ne-ravine-path-tunnel",
+      "category": "smoothed-tunnel",
+      "description": "Winding ravine-edge cavern path heading northeast toward the Dark Tunnel",
+      "zilIdentity": null,
+      "exitDirection": "NE",
+      "sourceView": "N",
+      "crop": [
+        0.42,
+        0.14,
+        0.6,
+        0.44
+      ],
+      "surface": "wall",
+      "placement": {
+        "position": [
+          4.2,
+          7.2,
+          0
+        ],
+        "sizeMetres": [
+          3.4,
+          1,
+          3.6
+        ],
+        "depthMetres": 10,
+        "yawDeg": 315,
+        "curveYawDeg": 12
+      }
+    },
+    {
+      "id": "sw-crawl-tunnel",
+      "category": "smoothed-tunnel",
+      "description": "Rough rock tunnel narrowing to a tight crawl heading southwest toward the Carousel Room",
+      "zilIdentity": null,
+      "exitDirection": "SW",
+      "sourceView": "N",
+      "crop": [
+        0.02,
+        0.18,
+        0.24,
+        0.56
+      ],
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -5.8,
+          -5.8,
+          0
+        ],
+        "sizeMetres": [
+          2.2,
+          1,
+          2.1
+        ],
+        "depthMetres": 10,
+        "yawDeg": 135,
+        "curveYawDeg": -12
+      }
+    },
+    {
+      "id": "west-secret-passage",
+      "category": "smoothed-tunnel",
+      "description": "Conditional secret passage heading west toward the Marble Hall",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "sourceView": "W",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -7.8,
+          1.2,
+          0
+        ],
+        "sizeMetres": [
+          2,
+          1,
+          2.4
+        ],
+        "depthMetres": 8,
+        "yawDeg": 90,
+        "curveYawDeg": 0
+      }
+    },
+    {
+      "id": "ravine-stalactites",
+      "category": "stalactite-ceiling",
+      "description": "Jagged limestone stalactites hanging from the upper ravine overhang",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          16,
+          14,
+          2.4
+        ],
+        "count": 42,
+        "minHeight": 0.8,
+        "maxHeight": 2.3,
+        "seed": 771
+      }
+    },
+    {
+      "id": "ravine-edge-boulders",
+      "category": "river-boulders",
+      "description": "Mossy boulders and broken limestone rocks lining the dirt path along the ravine rim",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.02,
+        0.52,
+        0.62,
+        0.9
+      ],
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          14,
+          12,
+          1
+        ],
+        "count": 28,
+        "seed": 772
+      }
+    }
+  ]
+}

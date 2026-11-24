@@ -1,0 +1,283 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "AQUARIUM-ROOM",
+  "label": "Aquarium Room",
+  "sourceContext": "games/zork2/assets/rooms/aquarium-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/aquarium-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/aquarium-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/aquarium-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/aquarium-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      8,
+      7.6,
+      3.3
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.04,
+    "ceilingStyle": "flat",
+    "lighting": {
+      "ambientColor": [
+        0.08,
+        0.11,
+        0.14
+      ],
+      "ambientStrength": 0.416,
+      "lights": [
+        {
+          "name": "aquarium-cyan-glow",
+          "position": [
+            0,
+            2.2,
+            1.9
+          ],
+          "color": [
+            0.36,
+            0.74,
+            0.96
+          ],
+          "energy": 340.5,
+          "radius": 1.4
+        },
+        {
+          "name": "east-fitful-amber",
+          "position": [
+            3.4,
+            0.2,
+            2
+          ],
+          "color": [
+            1,
+            0.68,
+            0.32
+          ],
+          "energy": 397.3,
+          "radius": 1
+        },
+        {
+          "name": "south-dark-fill",
+          "position": [
+            -1.2,
+            -2.6,
+            2
+          ],
+          "color": [
+            0.3,
+            0.36,
+            0.46
+          ],
+          "energy": 85.1,
+          "radius": 1.2
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.3,
+        0.49,
+        0.74,
+        0.62
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.88,
+      "normalStrength": 1.25,
+      "colorScale": 1.569,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.06,
+        0.7,
+        0.5,
+        0.96
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.65,
+      "normalStrength": 1.15,
+      "colorScale": 1.257,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.18,
+        0.01,
+        0.76,
+        0.09
+      ],
+      "tileMetres": 3,
+      "roughness": 0.94,
+      "normalStrength": 1.2,
+      "colorScale": 0.85,
+      "tileable": true
+    },
+    "pillar-stone": {
+      "procedural": "grey-stone",
+      "tileMetres": 1.6,
+      "roughness": 0.86,
+      "normalStrength": 1.2
+    }
+  },
+  "objects": [
+    {
+      "id": "east-workbench-arch",
+      "category": "opening",
+      "description": "Stone-block arched doorway on the east wall lit by warm fitful amber light from the Workbench Room",
+      "zilIdentity": null,
+      "exitDirection": "EAST",
+      "sourceView": "N",
+      "crop": [
+        0.85,
+        0.1,
+        0.99,
+        0.68
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 0.2,
+        "sizeMetres": [
+          1.9,
+          0.55,
+          2.5
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          1,
+          0.68,
+          0.3
+        ],
+        "tunnelEnergy": 180
+      }
+    },
+    {
+      "id": "south-quarters-arch",
+      "category": "opening",
+      "description": "Dark stone arched passage on the south wall leading toward the Wizard's Quarters",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "sourceView": "N",
+      "crop": [
+        0.04,
+        0.18,
+        0.21,
+        0.6
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": -1.4,
+        "sizeMetres": [
+          1.85,
+          0.55,
+          2.45
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.22,
+          0.28,
+          0.38
+        ],
+        "tunnelEnergy": 30
+      }
+    },
+    {
+      "id": "north-west-pilaster",
+      "category": "pillar",
+      "description": "Carved stone column flanking the western edge of the northern aquarium bay",
+      "zilIdentity": null,
+      "surface": "pillar-stone",
+      "placement": {
+        "position": [
+          -2.6,
+          3.55,
+          0
+        ],
+        "sizeMetres": [
+          0.55,
+          0.55,
+          3.3
+        ]
+      }
+    },
+    {
+      "id": "north-east-pilaster",
+      "category": "pillar",
+      "description": "Carved stone column flanking the eastern edge of the northern aquarium bay",
+      "zilIdentity": null,
+      "surface": "pillar-stone",
+      "placement": {
+        "position": [
+          2.6,
+          3.55,
+          0
+        ],
+        "sizeMetres": [
+          0.55,
+          0.55,
+          3.3
+        ]
+      }
+    },
+    {
+      "id": "aquarium-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for AQUARIUM filling the northern half of the room (also provides IN exit)",
+      "zilIdentity": "AQUARIUM",
+      "exitDirection": "IN",
+      "sourceView": "N",
+      "crop": [
+        0.29,
+        0.11,
+        0.78,
+        0.5
+      ],
+      "placement": {
+        "position": [
+          0,
+          2.85,
+          0
+        ],
+        "sizeMetres": [
+          4.6,
+          1.5,
+          2.6
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "serpent-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for SERPENT (baby sea serpent) swimming inside the aquarium",
+      "zilIdentity": "SERPENT",
+      "sourceView": "N",
+      "crop": [
+        0.43,
+        0.22,
+        0.71,
+        0.44
+      ],
+      "placement": {
+        "position": [
+          0.3,
+          2.85,
+          1.45
+        ],
+        "sizeMetres": [
+          2.2,
+          0.6,
+          1.1
+        ],
+        "yawDeg": 0
+      }
+    }
+  ]
+}

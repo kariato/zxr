@@ -1,0 +1,305 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "DIAMOND-8",
+  "label": "Oddly-angled Room",
+  "sourceContext": "games/zork2/assets/rooms/diamond-8/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/diamond-8/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/diamond-8/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/diamond-8/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/diamond-8/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      9.6,
+      8.6,
+      3.5
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.08,
+    "ceilingStyle": "flat",
+    "lighting": {
+      "ambientColor": [
+        0.03,
+        0.085,
+        0.206
+      ],
+      "ambientStrength": 0.286,
+      "lights": [
+        {
+          "name": "south-warm-key",
+          "position": [
+            0,
+            -1.4,
+            2.3
+          ],
+          "color": [
+            0.849,
+            0.702,
+            0.571
+          ],
+          "energy": 325.3,
+          "radius": 1.1
+        },
+        {
+          "name": "west-rim-warm",
+          "position": [
+            -3,
+            0.6,
+            2.1
+          ],
+          "color": [
+            0.829,
+            0.682,
+            0.551
+          ],
+          "energy": 182.1,
+          "radius": 1
+        },
+        {
+          "name": "north-cool-gloom",
+          "position": [
+            0,
+            3,
+            2.4
+          ],
+          "color": [
+            0.189,
+            0.422,
+            0.771
+          ],
+          "energy": 91.1,
+          "radius": 1.4
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.18,
+        0.36,
+        0.52
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.42,
+      "normalStrength": 1.2,
+      "colorScale": 1.181,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.26,
+        0.64,
+        0.74,
+        0.96
+      ],
+      "tileMetres": 3,
+      "roughness": 0.4,
+      "normalStrength": 1.05,
+      "colorScale": 1.143,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.18,
+        0.02,
+        0.52,
+        0.1
+      ],
+      "tileMetres": 3.2,
+      "roughness": 0.46,
+      "normalStrength": 1.1,
+      "colorScale": 0.92,
+      "tileable": true
+    },
+    "facet-stone": {
+      "procedural": "granite",
+      "tileMetres": 2,
+      "roughness": 0.42,
+      "normalStrength": 1.2
+    }
+  },
+  "objects": [
+    {
+      "id": "north-passage",
+      "category": "opening",
+      "description": "Central angled glassy-stone passage leading north to DIAMOND-5",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.42,
+        0.24,
+        0.54,
+        0.52
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.75,
+          0.5,
+          2.55
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.26,
+          0.36,
+          0.5
+        ],
+        "tunnelEnergy": 45
+      }
+    },
+    {
+      "id": "nw-passage",
+      "category": "opening",
+      "description": "Angled glassy-stone passage offset northwest along the north wall to DIAMOND-4",
+      "zilIdentity": null,
+      "exitDirection": "NW",
+      "sourceView": "N",
+      "crop": [
+        0.12,
+        0.22,
+        0.23,
+        0.56
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": -3,
+        "sizeMetres": [
+          1.65,
+          0.5,
+          2.5
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.24,
+          0.34,
+          0.48
+        ],
+        "tunnelEnergy": 40
+      }
+    },
+    {
+      "id": "ne-passage",
+      "category": "opening",
+      "description": "Angled glassy-stone passage offset northeast along the north wall to DIAMOND-6",
+      "zilIdentity": null,
+      "exitDirection": "NE",
+      "sourceView": "N",
+      "crop": [
+        0.78,
+        0.24,
+        0.9,
+        0.56
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 3,
+        "sizeMetres": [
+          1.65,
+          0.5,
+          2.5
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.24,
+          0.34,
+          0.48
+        ],
+        "tunnelEnergy": 40
+      }
+    },
+    {
+      "id": "faceted-pier-left",
+      "category": "pillar",
+      "description": "Angular faceted glassy-stone pier flanking the north-west and north passages",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -1.55,
+          2.35,
+          0
+        ],
+        "sizeMetres": [
+          1.1,
+          1.15,
+          3.5
+        ],
+        "yawDeg": 22
+      }
+    },
+    {
+      "id": "faceted-pier-right",
+      "category": "pillar",
+      "description": "Angular faceted glassy-stone pier flanking the north and north-east passages",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          1.55,
+          2.35,
+          0
+        ],
+        "sizeMetres": [
+          1.1,
+          1.15,
+          3.5
+        ],
+        "yawDeg": -22
+      }
+    },
+    {
+      "id": "sw-corner-rubble",
+      "category": "boulder-cluster",
+      "description": "Angular fallen stone chips and rubble beside the southwest pier",
+      "zilIdentity": null,
+      "surface": "facet-stone",
+      "placement": {
+        "position": [
+          -3.7,
+          -2.6,
+          0
+        ],
+        "sizeMetres": [
+          1.4,
+          2,
+          0.65
+        ],
+        "count": 10,
+        "seed": 801
+      }
+    },
+    {
+      "id": "se-corner-rubble",
+      "category": "boulder-cluster",
+      "description": "Angular fallen stone chips and rubble beside the southeast pier",
+      "zilIdentity": null,
+      "surface": "facet-stone",
+      "placement": {
+        "position": [
+          3.7,
+          -2.6,
+          0
+        ],
+        "sizeMetres": [
+          1.4,
+          2,
+          0.55
+        ],
+        "count": 9,
+        "seed": 802
+      }
+    }
+  ]
+}

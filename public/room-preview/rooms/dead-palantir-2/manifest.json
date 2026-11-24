@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "DEAD-PALANTIR-2",
+  "bom": "games/zork2/planning/room-bom-prototype/dead-palantir-2/room-bom.json",
+  "bomSha256": "0840ea81446f4c30940fbe0342e710d33f12f8f87170af2175c4b60d5cf1d0b5",
+  "glb": "games/zork2/planning/room-bom-prototype/dead-palantir-2/build/room.glb",
+  "glbBytes": 1705592,
+  "glbSha256": "4eb7d0fa7e522e8904758ffdffd484e5e3c82bf33945a222aeed3a4627d1b7b8",
+  "meshCount": 6,
+  "materialCount": 4,
+  "triangles": 1593,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/dead-palantir-2/build/review-4view.png"
+}

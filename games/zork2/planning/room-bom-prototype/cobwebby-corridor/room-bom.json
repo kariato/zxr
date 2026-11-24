@@ -1,0 +1,310 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "COBWEBBY-CORRIDOR",
+  "label": "Cobwebby Corridor",
+  "sourceContext": "games/zork2/assets/rooms/cobwebby-corridor/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/cobwebby-corridor/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/cobwebby-corridor/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/cobwebby-corridor/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/cobwebby-corridor/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "organic-cavern",
+    "dimensionsMetres": [
+      8.6,
+      10.4,
+      3.6
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.52,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.033,
+        0.077,
+        0.147
+      ],
+      "ambientStrength": 0.298,
+      "lights": [
+        {
+          "name": "corridor-warm-torch",
+          "position": [
+            -0.6,
+            0.4,
+            2.2
+          ],
+          "color": [
+            0.866,
+            0.686,
+            0.534
+          ],
+          "energy": 243.6,
+          "radius": 1.1
+        },
+        {
+          "name": "ne-bend-fill",
+          "position": [
+            2.4,
+            2.4,
+            2
+          ],
+          "color": [
+            0.626,
+            0.606,
+            0.634
+          ],
+          "energy": 115,
+          "radius": 1.2
+        },
+        {
+          "name": "sw-tunnel-cool",
+          "position": [
+            -1.8,
+            -3.6,
+            2
+          ],
+          "color": [
+            0.206,
+            0.386,
+            0.674
+          ],
+          "energy": 74.4,
+          "radius": 1.3
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.46,
+        0.42,
+        0.68,
+        0.72
+      ],
+      "tileMetres": 3,
+      "roughness": 0.94,
+      "normalStrength": 1.4,
+      "colorScale": 1.399,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.34,
+        0.74,
+        0.74,
+        0.96
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.95,
+      "normalStrength": 1.25,
+      "colorScale": 1.353,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.1,
+        0.01,
+        0.52,
+        0.14
+      ],
+      "tileMetres": 3.4,
+      "roughness": 0.96,
+      "normalStrength": 1.35,
+      "colorScale": 0.85,
+      "tileable": true
+    },
+    "shelf-rock": {
+      "procedural": "grey-stone",
+      "tileMetres": 1.5,
+      "roughness": 0.9,
+      "normalStrength": 1.3
+    }
+  },
+  "objects": [
+    {
+      "id": "north-high-crack",
+      "category": "opening",
+      "description": "Narrow crack high up on the north rock face leading into the Lava Tube",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.58,
+        0.05,
+        0.65,
+        0.2
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": -1.4,
+        "sizeMetres": [
+          0.95,
+          0.6,
+          1.6
+        ],
+        "depthMetres": 5.5,
+        "tunnelColor": [
+          0.22,
+          0.24,
+          0.3
+        ],
+        "tunnelEnergy": 25
+      }
+    },
+    {
+      "id": "ne-carousel-passage",
+      "category": "opening",
+      "description": "Twisting cobwebbed rock corridor continuing northeast toward the Round Room",
+      "zilIdentity": null,
+      "exitDirection": "NE",
+      "sourceView": "N",
+      "crop": [
+        0.74,
+        0.24,
+        0.92,
+        0.58
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 2.2,
+        "sizeMetres": [
+          2.1,
+          0.65,
+          2.7
+        ],
+        "depthMetres": 8,
+        "tunnelColor": [
+          0.3,
+          0.36,
+          0.45
+        ],
+        "tunnelEnergy": 55
+      }
+    },
+    {
+      "id": "sw-guardian-passage",
+      "category": "opening",
+      "description": "Winding cobwebbed corridor descending southwest toward the Guarded Room",
+      "zilIdentity": null,
+      "exitDirection": "SW",
+      "sourceView": "N",
+      "crop": [
+        0.18,
+        0.24,
+        0.36,
+        0.54
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": -2,
+        "sizeMetres": [
+          2.1,
+          0.65,
+          2.7
+        ],
+        "depthMetres": 8,
+        "tunnelColor": [
+          0.28,
+          0.34,
+          0.42
+        ],
+        "tunnelEnergy": 50
+      }
+    },
+    {
+      "id": "west-fuse-rock-shelf",
+      "category": "pillar",
+      "description": "Flat-topped angular rock ledge on the west side of the corridor where the black string coil rests",
+      "zilIdentity": null,
+      "surface": "shelf-rock",
+      "placement": {
+        "position": [
+          -2.9,
+          1.2,
+          0
+        ],
+        "sizeMetres": [
+          1.1,
+          1.4,
+          0.62
+        ]
+      }
+    },
+    {
+      "id": "fuse-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for FUSE (coil of black braided string) resting on the west rock shelf",
+      "zilIdentity": "FUSE",
+      "sourceView": "N",
+      "crop": [
+        0.14,
+        0.63,
+        0.25,
+        0.72
+      ],
+      "placement": {
+        "position": [
+          -2.8,
+          1.2,
+          0.62
+        ],
+        "sizeMetres": [
+          0.35,
+          0.35,
+          0.12
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "west-corridor-boulders",
+      "category": "boulder-cluster",
+      "description": "Rough angular boulders and dust-covered stones along the west corridor wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3.6,
+          -1.6,
+          0
+        ],
+        "sizeMetres": [
+          1.2,
+          5.4,
+          0.9
+        ],
+        "count": 16,
+        "seed": 605
+      }
+    },
+    {
+      "id": "east-corridor-boulders",
+      "category": "boulder-cluster",
+      "description": "Angular fallen rock rubble along the east corridor wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          3.5,
+          -1.2,
+          0
+        ],
+        "sizeMetres": [
+          1.2,
+          5,
+          0.85
+        ],
+        "count": 14,
+        "seed": 606
+      }
+    }
+  ]
+}

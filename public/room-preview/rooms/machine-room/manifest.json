@@ -1,0 +1,19 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "MACHINE-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/machine-room/room-bom.json",
+  "bomSha256": "47bb0a48232b438acf92df1b62bf81ff467eb80032d16c376dcc13319b8bef40",
+  "glb": "games/zork2/planning/room-bom-prototype/machine-room/build/room.glb",
+  "glbBytes": 4629144,
+  "glbSha256": "11390bfdc35244c4b809e47f3ffafc8c09361cb32641d9cd6b39f7779e75a8f5",
+  "meshCount": 17,
+  "materialCount": 5,
+  "triangles": 13628,
+  "zilAnchors": [
+    "ROUND-BUTTON",
+    "TRIANGULAR-BUTTON",
+    "SQUARE-BUTTON"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/machine-room/build/review-4view.png"
+}

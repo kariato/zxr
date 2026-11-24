@@ -1,0 +1,286 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "DARK-TUNNEL",
+  "label": "Dark Tunnel",
+  "sourceContext": "games/zork2/assets/rooms/dark-tunnel/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/dark-tunnel/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/dark-tunnel/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/dark-tunnel/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/dark-tunnel/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "organic-cavern",
+    "dimensionsMetres": [
+      9.2,
+      9.8,
+      3.4
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.42,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.077,
+        0.081,
+        0.093
+      ],
+      "ambientStrength": 0.286,
+      "lights": [
+        {
+          "name": "ne-distant-dim-glow",
+          "position": [
+            1.8,
+            4.2,
+            1.9
+          ],
+          "color": [
+            0.553,
+            0.644,
+            0.767
+          ],
+          "energy": 182.5,
+          "radius": 1.3
+        },
+        {
+          "name": "junction-lantern-fill",
+          "position": [
+            0,
+            -0.6,
+            1.9
+          ],
+          "color": [
+            0.962,
+            0.744,
+            0.427
+          ],
+          "energy": 222.1,
+          "radius": 1.1
+        },
+        {
+          "name": "sw-deep-shadow",
+          "position": [
+            -3,
+            -2,
+            1.8
+          ],
+          "color": [
+            0.233,
+            0.284,
+            0.347
+          ],
+          "energy": 47.5,
+          "radius": 1.2
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.4,
+        0.28,
+        0.56,
+        0.58
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.9,
+      "normalStrength": 1.25,
+      "colorScale": 1.481,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.22,
+        0.64,
+        0.72,
+        0.96
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.95,
+      "normalStrength": 1.25,
+      "colorScale": 1.433,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.01,
+        0.6,
+        0.12
+      ],
+      "tileMetres": 3.4,
+      "roughness": 0.94,
+      "normalStrength": 1.25,
+      "colorScale": 0.85,
+      "tileable": true
+    },
+    "tunnel-rock": {
+      "procedural": "grey-stone",
+      "tileMetres": 2,
+      "roughness": 0.9,
+      "normalStrength": 1.2
+    }
+  },
+  "objects": [
+    {
+      "id": "ne-shallow-ford-tunnel",
+      "category": "opening",
+      "description": "Smooth dusty tunnel branch heading northeast toward dim light at the Shallow Ford",
+      "zilIdentity": null,
+      "exitDirection": "NE",
+      "sourceView": "N",
+      "crop": [
+        0.58,
+        0.08,
+        0.78,
+        0.44
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 1.6,
+        "sizeMetres": [
+          2.1,
+          0.7,
+          2.5
+        ],
+        "depthMetres": 9,
+        "tunnelColor": [
+          0.5,
+          0.58,
+          0.68
+        ],
+        "tunnelEnergy": 95
+      }
+    },
+    {
+      "id": "sw-stream-path-tunnel",
+      "category": "opening",
+      "description": "Wide dark corridor floored with twigs and leaves branching southwest toward the Stream Path",
+      "zilIdentity": null,
+      "exitDirection": "SW",
+      "sourceView": "N",
+      "crop": [
+        0.04,
+        0.08,
+        0.38,
+        0.5
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": -1.8,
+        "sizeMetres": [
+          2.8,
+          0.7,
+          2.5
+        ],
+        "depthMetres": 8.5,
+        "tunnelColor": [
+          0.16,
+          0.2,
+          0.26
+        ],
+        "tunnelEnergy": 20
+      }
+    },
+    {
+      "id": "se-garden-north-tunnel",
+      "category": "opening",
+      "description": "Narrower dark tunnel branch leading southeast toward the North End of Garden",
+      "zilIdentity": null,
+      "exitDirection": "SE",
+      "sourceView": "N",
+      "crop": [
+        0.84,
+        0.24,
+        0.98,
+        0.52
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": -1.8,
+        "sizeMetres": [
+          1.55,
+          0.7,
+          2.2
+        ],
+        "depthMetres": 8,
+        "tunnelColor": [
+          0.16,
+          0.2,
+          0.26
+        ],
+        "tunnelEnergy": 20
+      }
+    },
+    {
+      "id": "junction-divider-boulders",
+      "category": "boulder-cluster",
+      "description": "Smooth worn rock spur and boulders dividing the northeast and southwest tunnel forks",
+      "zilIdentity": null,
+      "surface": "tunnel-rock",
+      "placement": {
+        "position": [
+          -1.2,
+          2.4,
+          0
+        ],
+        "sizeMetres": [
+          1.8,
+          1.6,
+          1.3
+        ],
+        "count": 10,
+        "seed": 901
+      }
+    },
+    {
+      "id": "west-wall-boulders",
+      "category": "boulder-cluster",
+      "description": "Rounded tunnel-edge stones grounding the west wall",
+      "zilIdentity": null,
+      "surface": "tunnel-rock",
+      "placement": {
+        "position": [
+          -3.8,
+          1.6,
+          0
+        ],
+        "sizeMetres": [
+          1.2,
+          3.6,
+          0.85
+        ],
+        "count": 10,
+        "seed": 902
+      }
+    },
+    {
+      "id": "east-wall-boulders",
+      "category": "boulder-cluster",
+      "description": "Rounded tunnel-edge stones grounding the east wall",
+      "zilIdentity": null,
+      "surface": "tunnel-rock",
+      "placement": {
+        "position": [
+          3.8,
+          1.4,
+          0
+        ],
+        "sizeMetres": [
+          1.2,
+          3.6,
+          0.85
+        ],
+        "count": 10,
+        "seed": 903
+      }
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "VAIR-3",
+  "label": "Volcano by Viewing Ledge",
+  "sourceContext": "games/zork2/assets/rooms/vair-3/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/vair-3/reference-v2.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/vair-3/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/vair-3/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/vair-3/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "organic-cavern",
+    "dimensionsMetres": [
+      18,
+      18,
+      16
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.85,
+    "ceilingStyle": "open-sky",
+    "skybox": "src/prototype/assets/lair-skybox-v1.png",
+    "lighting": {
+      "ambientColor": [
+        0.082,
+        0.21,
+        0.398
+      ],
+      "ambientStrength": 1.03,
+      "lights": [
+        {
+          "name": "narrow-rim-sunbeams",
+          "position": [
+            -2,
+            2,
+            14.5
+          ],
+          "color": [
+            0.725,
+            0.892,
+            1
+          ],
+          "energy": 2200,
+          "radius": 4
+        },
+        {
+          "name": "east-viewing-ledge-warm",
+          "position": [
+            6.8,
+            0,
+            3.4
+          ],
+          "color": [
+            0.805,
+            0.772,
+            0.775
+          ],
+          "energy": 883.5,
+          "radius": 2
+        },
+        {
+          "name": "abyss-mist-cool",
+          "position": [
+            0,
+            0,
+            2.5
+          ],
+          "color": [
+            0.225,
+            0.492,
+            0.915
+          ],
+          "energy": 589.1,
+          "radius": 3.5
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.02,
+        0.12,
+        0.24,
+        0.58
+      ],
+      "tileMetres": 5.5,
+      "roughness": 0.93,
+      "normalStrength": 1.45,
+      "colorScale": 1.697,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.62,
+        0.62,
+        0.92
+      ],
+      "tileMetres": 6,
+      "roughness": 0.94,
+      "normalStrength": 1.3,
+      "colorScale": 1.053,
+      "tileable": true
+    },
+    "ceiling": {
+      "procedural": "granite",
+      "tileMetres": 7.5,
+      "roughness": 0.95,
+      "normalStrength": 1.3
+    }
+  },
+  "objects": [
+    {
+      "id": "east-viewing-ledge-recess",
+      "category": "recess",
+      "description": "Thin jutting rocky viewing ledge alcove on the eastern volcano wall, too narrow to land on (non-exit)",
+      "zilIdentity": null,
+      "exitDirection": null,
+      "sourceView": "N",
+      "crop": [
+        0.71,
+        0.2,
+        0.98,
+        0.42
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2.4,
+          0.6,
+          2.2
+        ],
+        "depthMetres": 2.5
+      }
+    },
+    {
+      "id": "east-ledge-crags",
+      "category": "boulder-cluster",
+      "description": "Steep rock buttress beneath the narrow eastern viewing ledge",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          7.8,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          2.6,
+          8.5,
+          3.2
+        ],
+        "count": 14,
+        "seed": 851
+      }
+    },
+    {
+      "id": "west-rim-crags",
+      "category": "boulder-cluster",
+      "description": "Jagged basalt cliffs framing the western side of the narrow volcano shaft",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -7.8,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          2.6,
+          9,
+          3.4
+        ],
+        "count": 14,
+        "seed": 852
+      }
+    },
+    {
+      "id": "abyss-rock-spires",
+      "category": "stalagmite-field",
+      "description": "Distant jagged volcanic rock formations on the crater floor far below",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "radius": 7.2,
+        "pathClearance": 2.5,
+        "count": 22,
+        "minHeight": 1.2,
+        "maxHeight": 3.8,
+        "seed": 853
+      }
+    }
+  ]
+}

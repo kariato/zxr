@@ -1,0 +1,303 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "DIAMOND-4",
+  "label": "Oddly-angled Room",
+  "sourceContext": "games/zork2/assets/rooms/diamond-4/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/diamond-4/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/diamond-4/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/diamond-4/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/diamond-4/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      8.6,
+      8.6,
+      3.4
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.06,
+    "ceilingStyle": "flat",
+    "lighting": {
+      "ambientColor": [
+        0.03,
+        0.088,
+        0.19
+      ],
+      "ambientStrength": 0.255,
+      "lights": [
+        {
+          "name": "chamber-warm-key",
+          "position": [
+            -0.4,
+            -0.6,
+            2.4
+          ],
+          "color": [
+            0.88,
+            0.729,
+            0.56
+          ],
+          "energy": 278.6,
+          "radius": 1.1
+        },
+        {
+          "name": "east-facet-fill",
+          "position": [
+            2.6,
+            0.2,
+            2.1
+          ],
+          "color": [
+            0.86,
+            0.709,
+            0.54
+          ],
+          "energy": 162.5,
+          "radius": 1
+        },
+        {
+          "name": "cool-passage-rim",
+          "position": [
+            -2.2,
+            2.4,
+            2.2
+          ],
+          "color": [
+            0.26,
+            0.469,
+            0.78
+          ],
+          "energy": 81.3,
+          "radius": 1.3
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.28,
+        0.14,
+        0.39,
+        0.5
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.38,
+      "normalStrength": 1.1,
+      "colorScale": 1.086,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.22,
+        0.62,
+        0.72,
+        0.92
+      ],
+      "tileMetres": 3,
+      "roughness": 0.34,
+      "normalStrength": 0.95,
+      "colorScale": 1.104,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.28,
+        0.01,
+        0.62,
+        0.1
+      ],
+      "tileMetres": 3.2,
+      "roughness": 0.42,
+      "normalStrength": 1,
+      "colorScale": 0.92,
+      "tileable": true
+    },
+    "facet-stone": {
+      "procedural": "granite",
+      "tileMetres": 2,
+      "roughness": 0.36,
+      "normalStrength": 1.15
+    }
+  },
+  "objects": [
+    {
+      "id": "east-passage",
+      "category": "opening",
+      "description": "Angled glassy-stone passage leading east toward the center of the diamond maze",
+      "zilIdentity": null,
+      "exitDirection": "EAST",
+      "sourceView": "N",
+      "crop": [
+        0.43,
+        0.22,
+        0.57,
+        0.54
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.85,
+          0.5,
+          2.55
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.28,
+          0.38,
+          0.52
+        ],
+        "tunnelEnergy": 45
+      }
+    },
+    {
+      "id": "ne-passage",
+      "category": "opening",
+      "description": "Angled glassy-stone passage offset northeast along the north wall",
+      "zilIdentity": null,
+      "exitDirection": "NE",
+      "sourceView": "N",
+      "crop": [
+        0.76,
+        0.14,
+        0.94,
+        0.56
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 2.2,
+        "sizeMetres": [
+          1.75,
+          0.5,
+          2.5
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.26,
+          0.36,
+          0.5
+        ],
+        "tunnelEnergy": 40
+      }
+    },
+    {
+      "id": "se-passage",
+      "category": "opening",
+      "description": "Angled glassy-stone passage offset southeast along the south wall",
+      "zilIdentity": null,
+      "exitDirection": "SE",
+      "sourceView": "N",
+      "crop": [
+        0.05,
+        0.16,
+        0.24,
+        0.54
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 2.2,
+        "sizeMetres": [
+          1.75,
+          0.5,
+          2.5
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.26,
+          0.36,
+          0.5
+        ],
+        "tunnelEnergy": 40
+      }
+    },
+    {
+      "id": "angled-pier-nw",
+      "category": "pillar",
+      "description": "Oddly angled glassy stone buttress framing the northwest corner",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3.6,
+          3.6,
+          0
+        ],
+        "sizeMetres": [
+          1.25,
+          1.1,
+          3.4
+        ],
+        "yawDeg": 32
+      }
+    },
+    {
+      "id": "angled-pier-sw",
+      "category": "pillar",
+      "description": "Oddly angled glassy stone buttress framing the southwest corner",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3.6,
+          -3.6,
+          0
+        ],
+        "sizeMetres": [
+          1.2,
+          1.15,
+          3.4
+        ],
+        "yawDeg": -28
+      }
+    },
+    {
+      "id": "angled-pier-n-mid",
+      "category": "pillar",
+      "description": "Faceted glassy stone pier dividing the north wall",
+      "zilIdentity": null,
+      "surface": "facet-stone",
+      "placement": {
+        "position": [
+          -0.35,
+          3.85,
+          0
+        ],
+        "sizeMetres": [
+          1.1,
+          0.9,
+          3.4
+        ],
+        "yawDeg": 18
+      }
+    },
+    {
+      "id": "angled-pier-w-mid",
+      "category": "pillar",
+      "description": "Faceted glassy stone pier breaking up the solid west wall",
+      "zilIdentity": null,
+      "surface": "facet-stone",
+      "placement": {
+        "position": [
+          -3.85,
+          0.15,
+          0
+        ],
+        "sizeMetres": [
+          0.95,
+          1.25,
+          3.4
+        ],
+        "yawDeg": -16
+      }
+    }
+  ]
+}

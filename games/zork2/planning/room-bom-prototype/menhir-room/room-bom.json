@@ -1,0 +1,333 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "MENHIR-ROOM",
+  "label": "Menhir Room",
+  "sourceContext": "games/zork2/assets/rooms/menhir-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/menhir-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/menhir-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/menhir-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/menhir-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "organic-cavern",
+    "dimensionsMetres": [
+      12.8,
+      13.4,
+      5.2
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.55,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.12,
+        0.114,
+        0.11
+      ],
+      "ambientStrength": 0.386,
+      "lights": [
+        {
+          "name": "quarry-center-warm",
+          "position": [
+            0,
+            -1,
+            3.2
+          ],
+          "color": [
+            1,
+            0.79,
+            0.441
+          ],
+          "energy": 586.6,
+          "radius": 1.6
+        },
+        {
+          "name": "east-blocks-warm",
+          "position": [
+            3.6,
+            0.6,
+            2.6
+          ],
+          "color": [
+            1,
+            0.77,
+            0.421
+          ],
+          "energy": 339.5,
+          "radius": 1.3
+        },
+        {
+          "name": "north-passage-cool",
+          "position": [
+            0,
+            5.8,
+            2.4
+          ],
+          "color": [
+            0.399,
+            0.51,
+            0.621
+          ],
+          "energy": 169.8,
+          "radius": 1.5
+        },
+        {
+          "name": "south-passage-cool",
+          "position": [
+            0,
+            -5.8,
+            2.4
+          ],
+          "color": [
+            0.399,
+            0.51,
+            0.621
+          ],
+          "energy": 169.8,
+          "radius": 1.5
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.25,
+        0.14,
+        0.41,
+        0.4
+      ],
+      "tileMetres": 3.4,
+      "roughness": 0.92,
+      "normalStrength": 1.35,
+      "colorScale": 1.548,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.34,
+        0.72,
+        0.74,
+        0.96
+      ],
+      "tileMetres": 3.2,
+      "roughness": 0.92,
+      "normalStrength": 1.15,
+      "colorScale": 1.168,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.16,
+        0.02,
+        0.78,
+        0.14
+      ],
+      "tileMetres": 4,
+      "roughness": 0.95,
+      "normalStrength": 1.35,
+      "colorScale": 0.9,
+      "tileable": true
+    },
+    "quarry-block": {
+      "procedural": "warm-ashlar",
+      "tileMetres": 1.6,
+      "roughness": 0.86,
+      "normalStrength": 1.2
+    }
+  },
+  "objects": [
+    {
+      "id": "north-quarry-passage",
+      "category": "opening",
+      "description": "Rock-cut quarry passage on the north wall leading to Carousel Room",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.06,
+        0.24,
+        0.21,
+        0.52
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2.6,
+          0.7,
+          3.1
+        ],
+        "depthMetres": 8.5,
+        "tunnelColor": [
+          0.34,
+          0.48,
+          0.64
+        ],
+        "tunnelEnergy": 95
+      }
+    },
+    {
+      "id": "south-quarry-passage",
+      "category": "opening",
+      "description": "Rock-cut quarry passage on the south wall leading to Stairway",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "sourceView": "N",
+      "crop": [
+        0.78,
+        0.26,
+        0.92,
+        0.54
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2.6,
+          0.7,
+          3.1
+        ],
+        "depthMetres": 8.5,
+        "tunnelColor": [
+          0.34,
+          0.48,
+          0.64
+        ],
+        "tunnelEnergy": 95
+      }
+    },
+    {
+      "id": "southwest-menhir-passage",
+      "category": "opening",
+      "description": "Conditional passage on the southwest side leading to Kennel when the menhir is floated",
+      "zilIdentity": null,
+      "exitDirection": "SW",
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": -3.2,
+        "sizeMetres": [
+          2.2,
+          0.7,
+          2.8
+        ],
+        "depthMetres": 7.5,
+        "tunnelColor": [
+          0.3,
+          0.42,
+          0.56
+        ],
+        "tunnelEnergy": 75
+      }
+    },
+    {
+      "id": "east-quarry-block-north",
+      "category": "pillar",
+      "description": "Dressed limestone building block stack along the east quarry wall",
+      "zilIdentity": null,
+      "surface": "quarry-block",
+      "placement": {
+        "position": [
+          4.6,
+          2.2,
+          0
+        ],
+        "sizeMetres": [
+          1.5,
+          1.4,
+          1.65
+        ],
+        "yawDeg": 4
+      }
+    },
+    {
+      "id": "east-quarry-block-mid",
+      "category": "pillar",
+      "description": "Finished rectangular limestone block on the east quarry floor",
+      "zilIdentity": null,
+      "surface": "quarry-block",
+      "placement": {
+        "position": [
+          4.8,
+          -0.4,
+          0
+        ],
+        "sizeMetres": [
+          1.6,
+          1.5,
+          1.15
+        ],
+        "yawDeg": -6
+      }
+    },
+    {
+      "id": "east-quarry-block-south",
+      "category": "pillar",
+      "description": "Cut limestone building block near the southeast wall",
+      "zilIdentity": null,
+      "surface": "quarry-block",
+      "placement": {
+        "position": [
+          4.4,
+          -3.4,
+          0
+        ],
+        "sizeMetres": [
+          1.4,
+          1.3,
+          1.05
+        ],
+        "yawDeg": 12
+      }
+    },
+    {
+      "id": "west-limestone-chunks",
+      "category": "boulder-cluster",
+      "description": "Rough-hewn unworked limestone chunks scattered along the western side of the quarry",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -4.4,
+          1.4,
+          0
+        ],
+        "sizeMetres": [
+          2.4,
+          5.2,
+          1.25
+        ],
+        "count": 16,
+        "seed": 621
+      }
+    },
+    {
+      "id": "southwest-quarry-rubble",
+      "category": "boulder-cluster",
+      "description": "Loose limestone rubble and chippings near the southern quarry floor",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3.4,
+          -4.6,
+          0
+        ],
+        "sizeMetres": [
+          2.8,
+          1.8,
+          0.85
+        ],
+        "count": 12,
+        "seed": 622
+      }
+    }
+  ]
+}

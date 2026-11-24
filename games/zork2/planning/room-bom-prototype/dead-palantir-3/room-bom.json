@@ -1,0 +1,78 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "DEAD-PALANTIR-3",
+  "label": "Room of White Mist",
+  "sourceContext": "games/zork2/assets/rooms/dead-palantir-3/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/dead-palantir-3/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/dead-palantir-3/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/dead-palantir-3/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/dead-palantir-3/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "rotunda",
+    "dimensionsMetres": [12.0, 12.0, 9.5],
+    "wallStyle": "plaster",
+    "wallDisplacementMetres": 0.02,
+    "ceilingStyle": "vaulted",
+    "lighting": {
+      "ambientColor": [0.36, 0.38, 0.42],
+      "ambientStrength": 0.52,
+      "lights": [
+        { "name": "white-mist-core", "position": [0.5, 0.0, 3.4], "color": [0.98, 0.98, 1.0], "energy": 560, "radius": 2.6 },
+        { "name": "east-crystal-rim", "position": [4.2, 0.2, 4.0], "color": [1.0, 0.97, 0.92], "energy": 340, "radius": 2.0 },
+        { "name": "west-dark-transition", "position": [-4.4, 0.0, 2.4], "color": [0.22, 0.25, 0.32], "energy": 90, "radius": 1.8 },
+        { "name": "dome-silver-wash", "position": [0.0, 0.0, 7.6], "color": [0.86, 0.90, 0.96], "energy": 260, "radius": 3.2 }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [0.16, 0.14, 0.78, 0.54],
+      "tileMetres": 4.2,
+      "roughness": 0.36,
+      "normalStrength": 0.55,
+      "colorScale": 1.05,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [0.14, 0.68, 0.86, 0.96],
+      "tileMetres": 4.0,
+      "roughness": 0.68,
+      "normalStrength": 0.50,
+      "colorScale": 1.0,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [0.24, 0.04, 0.76, 0.28],
+      "tileMetres": 4.8,
+      "roughness": 0.34,
+      "normalStrength": 0.45,
+      "colorScale": 0.95,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "west-black-mist-passage",
+      "category": "opening",
+      "description": "Darkening corridor of mist to the west where the white mist turns black toward Room of Black Mist",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "sourceView": "N",
+      "crop": [0.34, 0.18, 0.68, 0.52],
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 0.0,
+        "sizeMetres": [2.4, 0.5, 3.0],
+        "depthMetres": 6.5,
+        "tunnelColor": [0.10, 0.11, 0.16],
+        "tunnelEnergy": 30
+      }
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "ZORK3",
+  "label": "Landing",
+  "sourceContext": "games/zork2/assets/rooms/zork3/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/zork3/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/zork3/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/zork3/reverse-v2.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/zork3/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "organic-cavern",
+    "dimensionsMetres": [
+      6.8,
+      7.6,
+      4.2
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.48,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.041,
+        0.132,
+        0.139
+      ],
+      "ambientStrength": 0.273,
+      "lights": [
+        {
+          "name": "green-warden-lines-glow",
+          "position": [
+            0,
+            0.2,
+            0.65
+          ],
+          "color": [
+            0.143,
+            0.981,
+            0.437
+          ],
+          "energy": 296.2,
+          "radius": 1.6
+        },
+        {
+          "name": "west-landing-warm",
+          "position": [
+            -2.2,
+            -1.5,
+            2.2
+          ],
+          "color": [
+            0.923,
+            0.701,
+            0.457
+          ],
+          "energy": 239.2,
+          "radius": 1.1
+        },
+        {
+          "name": "east-wall-warm",
+          "position": [
+            2.2,
+            -0.8,
+            2.1
+          ],
+          "color": [
+            0.873,
+            0.661,
+            0.457
+          ],
+          "energy": 159.5,
+          "radius": 1.1
+        },
+        {
+          "name": "staircase-abyss-cool",
+          "position": [
+            0,
+            4.2,
+            1.8
+          ],
+          "color": [
+            0.12,
+            0.281,
+            0.497
+          ],
+          "energy": 62.7,
+          "radius": 1.5
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.02,
+        0.04,
+        0.26,
+        0.36
+      ],
+      "tileMetres": 3,
+      "roughness": 0.92,
+      "normalStrength": 1.45,
+      "colorScale": 1.187,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.18,
+        0.56,
+        0.8,
+        0.94
+      ],
+      "tileMetres": 4.2,
+      "roughness": 0.82,
+      "normalStrength": 1.25,
+      "colorScale": 1.455,
+      "tileable": false
+    },
+    "ceiling": {
+      "procedural": "granite",
+      "tileMetres": 3.8,
+      "roughness": 0.95,
+      "normalStrength": 1.35
+    },
+    "parapet-stone": {
+      "procedural": "warm-ashlar",
+      "tileMetres": 1.8,
+      "roughness": 0.88,
+      "normalStrength": 1.3
+    }
+  },
+  "objects": [
+    {
+      "id": "north-descending-stair-tunnel",
+      "category": "recess",
+      "description": "Rough-hewn dark descending staircase tunnel beyond the rune-carved landing (conditional story finale, not an open walkable exit)",
+      "zilIdentity": null,
+      "exitDirection": null,
+      "sourceView": "N",
+      "crop": [
+        0.4,
+        0.04,
+        0.84,
+        0.48
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 0.2,
+        "sizeMetres": [
+          3.2,
+          0.7,
+          3.2
+        ],
+        "depthMetres": 6.5
+      }
+    },
+    {
+      "id": "stair-parapet-west",
+      "category": "pillar",
+      "description": "Rough-cut stone parapet block guarding the western flank of the descending staircase",
+      "zilIdentity": null,
+      "surface": "parapet-stone",
+      "placement": {
+        "position": [
+          -1.75,
+          2.6,
+          0
+        ],
+        "sizeMetres": [
+          0.85,
+          1.45,
+          1.35
+        ]
+      }
+    },
+    {
+      "id": "stair-parapet-east",
+      "category": "pillar",
+      "description": "Rough-cut stone parapet block guarding the eastern flank of the descending staircase",
+      "zilIdentity": null,
+      "surface": "parapet-stone",
+      "placement": {
+        "position": [
+          2.15,
+          2.4,
+          0
+        ],
+        "sizeMetres": [
+          0.85,
+          1.55,
+          1.35
+        ]
+      }
+    },
+    {
+      "id": "west-landing-boulders",
+      "category": "boulder-cluster",
+      "description": "Jagged cavern rock rubble grounding the western landing wall",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -2.85,
+          -0.6,
+          0
+        ],
+        "sizeMetres": [
+          1.1,
+          4.6,
+          0.85
+        ],
+        "count": 14,
+        "seed": 951
+      }
+    },
+    {
+      "id": "east-landing-boulders",
+      "category": "boulder-cluster",
+      "description": "Fallen rock slabs grounding the eastern cavern wall",
+      "zilIdentity": null,
+      "sourceView": "E",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          2.85,
+          -0.8,
+          0
+        ],
+        "sizeMetres": [
+          1.1,
+          4.4,
+          0.85
+        ],
+        "count": 12,
+        "seed": 952
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "POOL-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/pool-room/room-bom.json",
+  "bomSha256": "9cd904a8e27ba446971fcaf19ae17c21e094851c1df5bb8f8aee3dfb98b4fd88",
+  "glb": "games/zork2/planning/room-bom-prototype/pool-room/build/room.glb",
+  "glbBytes": 4341872,
+  "glbSha256": "bd15cd1e5fd868bad83f1ec4983e9aecd5e5bda7d183666925fa429548bd4dbb",
+  "meshCount": 8,
+  "materialCount": 4,
+  "triangles": 25509,
+  "zilAnchors": [
+    "FLASK",
+    "LEAK",
+    "POOL"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/pool-room/build/review-4view.png"
+}

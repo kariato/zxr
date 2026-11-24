@@ -1,0 +1,1106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ZXR · Room Review &amp; Rebuild Workbench</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --panel: #161e26;
+      --panel-2: #1c2630;
+      --border: #2a3744;
+      --text: #e8eef2;
+      --muted: #8fa3b3;
+      --accent: #56b4e9;
+      --good: #3fb950;
+      --warn: #d29922;
+      --bad: #f85149;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; height: 100dvh; display: flex; flex-direction: column; overflow: hidden;
+      background: var(--bg); color: var(--text);
+      font: 13px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    header {
+      flex: 0 0 auto; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between;
+      background: var(--panel); border-bottom: 1px solid var(--border); gap: 12px;
+    }
+    header h1 { margin: 0; font-size: 16px; font-weight: 650; letter-spacing: 0.2px; }
+    header .stats { color: var(--muted); font-size: 12px; display: flex; gap: 14px; align-items: center; }
+    .layout { flex: 1; min-height: 0; display: grid; grid-template-columns: 300px 1fr 360px; }
+    .sidebar {
+      border-right: 1px solid var(--border); background: var(--panel);
+      display: flex; flex-direction: column; min-height: 0;
+    }
+    .sidebar-controls { padding: 10px; border-bottom: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px; }
+    .sidebar-controls input {
+      width: 100%; padding: 7px 10px; border-radius: 6px; border: 1px solid var(--border);
+      background: var(--bg); color: var(--text); font-size: 13px;
+    }
+    .pill-row { display: flex; gap: 4px; flex-wrap: wrap; }
+    .pill {
+      padding: 4px 8px; border-radius: 999px; border: 1px solid var(--border);
+      background: var(--panel-2); color: var(--muted); cursor: pointer; font-size: 11px;
+    }
+    .pill.active { background: #1f3b4d; border-color: var(--accent); color: #dff2ff; }
+    .room-list { flex: 1; overflow-y: auto; padding: 6px; }
+    .room-item {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+      padding: 8px 10px; border-radius: 6px; cursor: pointer; margin-bottom: 2px;
+      border: 1px solid transparent;
+    }
+    .room-item:hover { background: var(--panel-2); }
+    .room-item.active { background: #1d2f3e; border-color: var(--accent); }
+    .room-item .name { font-weight: 550; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .room-item .slug { font-size: 11px; color: var(--muted); }
+    .room-item .left { min-width: 0; flex: 1; }
+    .badge {
+      padding: 2px 7px; border-radius: 999px; font-size: 11px; font-weight: 600;
+      font-variant-numeric: tabular-nums; flex: 0 0 auto;
+    }
+    .badge.good { background: rgba(63, 185, 80, 0.16); color: #6ee787; border: 1px solid rgba(63, 185, 80, 0.4); }
+    .badge.warn { background: rgba(210, 153, 34, 0.16); color: #f0c05a; border: 1px solid rgba(210, 153, 34, 0.4); }
+    .badge.bad { background: rgba(248, 81, 73, 0.16); color: #ff8a80; border: 1px solid rgba(248, 81, 73, 0.4); }
+    .badge.approved { background: rgba(86, 180, 233, 0.18); color: #8fd4ff; border: 1px solid rgba(86, 180, 233, 0.45); }
+
+    .main { display: flex; flex-direction: column; min-height: 0; min-width: 0; background: var(--bg); }
+    .main-header {
+      padding: 10px 16px; border-bottom: 1px solid var(--border); background: var(--panel);
+      display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    }
+    .main-header h2 { margin: 0; font-size: 16px; }
+    .tabs { display: flex; gap: 6px; }
+    .tab-btn {
+      padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border);
+      background: var(--panel-2); color: var(--muted); cursor: pointer; font-size: 12px; font-weight: 550;
+    }
+    .tab-btn.active { background: #213c4f; border-color: var(--accent); color: #fff; }
+    .tab-pane { flex: 1; min-height: 0; overflow-y: auto; padding: 14px 16px; display: none; }
+    .tab-pane.active { display: block; }
+    .tab-pane.iframe-pane { padding: 0; overflow: hidden; }
+    .tab-pane.iframe-pane.active { display: flex; }
+    iframe.preview-frame { width: 100%; height: 100%; border: 0; background: #0b1014; }
+
+    .review-img-wrap {
+      background: #070a0d; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 12px;
+    }
+    .review-img-wrap img { display: block; width: 100%; height: auto; }
+    .overview-hero {
+      display: grid; grid-template-columns: minmax(260px, 420px) 1fr; gap: 12px; align-items: stretch;
+      background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 10px; margin-bottom: 12px;
+    }
+    .overview-hero img {
+      display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); background: #070a0d;
+    }
+    .overview-meta { display: flex; flex-direction: column; min-width: 0; gap: 6px; }
+    .overview-prompt {
+      flex: 1; max-height: 220px; overflow-y: auto; margin: 0; padding: 8px;
+      background: #0a0e12; border: 1px solid var(--border); border-radius: 6px;
+      font: 11px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; color: #b7c8d6; white-space: pre-wrap;
+    }
+    .review-caption {
+      padding: 6px 10px; font-size: 11px; color: var(--muted); background: var(--panel);
+      border-top: 1px solid var(--border); display: flex; justify-content: space-between;
+    }
+    .view-scores { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; }
+    .vscore {
+      background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px;
+    }
+    .vscore .k { font-size: 11px; color: var(--muted); }
+    .vscore .v { font-size: 17px; font-weight: 700; margin-top: 2px; }
+    .vscore .sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .card {
+      background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+      padding: 12px; margin-bottom: 12px;
+    }
+    .card h3 { margin: 0 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); }
+    .card pre {
+      margin: 0; white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px; color: #d3dde5;
+    }
+    .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 8px 0 12px; }
+    .metric-box { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 7px 9px; }
+    .metric-box .ml { font-size: 11px; color: var(--muted); }
+    .metric-box .mv { font-size: 15px; font-weight: 700; margin-top: 2px; font-variant-numeric: tabular-nums; }
+    .delta-pos { color: #6ee787; font-weight: 600; font-size: 11px; margin-left: 4px; }
+    .delta-neg { color: #ff8a80; font-weight: 600; font-size: 11px; margin-left: 4px; }
+    .gap-list { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+    .gap-item {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px;
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;
+    }
+    .gap-item.missing { border-left: 3px solid var(--warn); }
+    .gap-item.visual { border-left: 3px solid var(--accent); }
+    .gap-title { font-weight: 600; font-size: 12px; color: var(--text); }
+    .gap-reason { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .gap-apply {
+      flex: 0 0 auto; padding: 4px 8px; border-radius: 5px; border: 1px solid var(--border);
+      background: var(--panel-2); color: #cde6f7; cursor: pointer; font-size: 11px;
+    }
+    .gap-apply:hover { border-color: var(--accent); color: #fff; }
+    .llm-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+    .llm-controls { display: flex; align-items: center; gap: 6px; }
+    .llm-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 8px; }
+    .llm-view-box {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px;
+    }
+    .llm-view-box .vh { font-weight: 700; font-size: 12px; color: #9fd8ff; margin-bottom: 4px; }
+    .llm-view-box .vd { font-size: 12px; color: #d6e1ea; margin-bottom: 5px; }
+    .llm-view-box .vf { font-size: 11px; color: #8fe8a1; }
+    .llm-feedback-bar {
+      margin-top: 10px; padding: 8px 10px; border-radius: 6px;
+      background: #101b24; border: 1px solid rgba(86, 180, 233, 0.35);
+      display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+    }
+    .bom-editor {
+      width: 100%; height: calc(100% - 38px); min-height: 460px; resize: none;
+      background: #0b1015; color: #d7e6f2; border: 1px solid var(--border); border-radius: 6px;
+      padding: 10px; font: 12px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    .feedback-panel {
+      border-left: 1px solid var(--border); background: var(--panel);
+      display: flex; flex-direction: column; min-height: 0; overflow-y: auto; padding: 14px; gap: 10px;
+    }
+    .feedback-panel > * { flex: 0 0 auto; }
+    .feedback-panel h3 { margin: 0; font-size: 13px; font-weight: 650; }
+    textarea.fb-input {
+      width: 100%; height: 115px; min-height: 54px; resize: none; padding: 10px; border-radius: 6px;
+      border: 1px solid var(--border); background: var(--bg); color: var(--text); font: 13px/1.45 inherit;
+    }
+    .v-splitter {
+      height: 10px; margin-top: 2px; cursor: ns-resize; display: flex; align-items: center; justify-content: center;
+      user-select: none; touch-action: none; border-radius: 4px;
+    }
+    .v-splitter::before {
+      content: ""; width: 42px; height: 3px; border-radius: 999px; background: #3c4f60; transition: background 0.15s;
+    }
+    .v-splitter:hover::before, .v-splitter.dragging::before { background: var(--accent); }
+    .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+    .chip {
+      padding: 4px 8px; border-radius: 6px; border: 1px solid var(--border);
+      background: var(--panel-2); color: #c4d4e0; cursor: pointer; font-size: 11px;
+    }
+    .chip:hover { border-color: var(--accent); color: #fff; }
+    .btn {
+      padding: 9px 12px; border-radius: 6px; border: 1px solid var(--border);
+      background: var(--panel-2); color: var(--text); cursor: pointer; font-weight: 600; font-size: 13px;
+    }
+    .btn:hover:not(:disabled) { background: #263644; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn.primary { background: #1d5b82; border-color: var(--accent); color: #fff; }
+    .btn.primary:hover:not(:disabled) { background: #246f9e; }
+    .btn.refine { background: #29593a; border-color: var(--good); color: #fff; }
+    .btn.refine:hover:not(:disabled) { background: #336e48; }
+    .btn.approve { background: #1d4d3e; border-color: #4dc99c; color: #d8fff0; }
+    .btn-row { display: flex; gap: 8px; }
+    .btn-row .btn { flex: 1; }
+    .status-box {
+      padding: 9px 10px; border-radius: 6px; font-size: 12px;
+      background: var(--bg); border: 1px solid var(--border); color: var(--muted);
+    }
+    .status-box.busy { border-color: var(--accent); color: #b7e2ff; }
+    .status-box.ok { border-color: var(--good); color: #9ceea8; }
+    .status-box.err { border-color: var(--bad); color: #ffa099; }
+    .progress-card {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .progress-card.busy { border-color: var(--accent); }
+    .progress-card.ok { border-color: var(--good); background: rgba(63, 185, 80, 0.08); }
+    .progress-card.err { border-color: var(--bad); background: rgba(248, 81, 73, 0.08); }
+    .progress-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12px; }
+    .step-pill {
+      font-weight: 700; font-size: 11px; padding: 2px 8px; border-radius: 999px;
+      background: #1d3546; color: #9fd8ff; border: 1px solid rgba(86, 180, 233, 0.45);
+      font-variant-numeric: tabular-nums;
+    }
+    .progress-card.ok .step-pill { background: rgba(63, 185, 80, 0.22); color: #7ef095; border-color: rgba(63, 185, 80, 0.5); }
+    .progress-card.err .step-pill { background: rgba(248, 81, 73, 0.22); color: #ff9c95; border-color: rgba(248, 81, 73, 0.5); }
+    .elapsed { color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+    .progress-bar-track { height: 6px; border-radius: 999px; background: #1c2630; overflow: hidden; }
+    .progress-bar-fill {
+      height: 100%; width: 0%; background: var(--accent); transition: width 0.25s ease;
+    }
+    .progress-card.ok .progress-bar-fill { background: var(--good); }
+    .progress-card.err .progress-bar-fill { background: var(--bad); }
+    .progress-label { font-weight: 600; font-size: 13px; color: var(--text); }
+    .progress-detail { font-size: 11px; color: var(--muted); }
+    .small-log {
+      height: 120px; min-height: 54px; overflow: auto;
+      font: 11px/1.4 ui-monospace, Menlo, monospace;
+      background: #0a0e12; border: 1px solid var(--border); border-radius: 6px; padding: 8px;
+      white-space: pre-wrap; color: #9db0bf;
+    }
+    .resizable-box {
+      height: 185px; min-height: 54px; overflow: auto;
+      font-size: 11.5px; color: #d6e1ea; line-height: 1.45;
+      white-space: pre-wrap; font-family: inherit; margin: 0;
+      padding: 6px; background: #0a0e12; border: 1px solid var(--border); border-radius: 5px;
+    }
+    .row-inline { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    select.iters {
+      background: var(--bg); color: var(--text); border: 1px solid var(--border);
+      border-radius: 6px; padding: 4px 8px; font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ZXR · Room Review &amp; Rebuild Workbench</h1>
+    <div class="stats" id="global-stats">Loading rooms…</div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-controls">
+        <input id="search" type="search" placeholder="Filter rooms by name or slug…" />
+        <div class="pill-row" id="filter-pills">
+          <button class="pill active" data-filter="all">All</button>
+          <button class="pill" data-filter="candidates">Candidates</button>
+          <button class="pill" data-filter="approved">Approved ✓</button>
+          <button class="pill" data-filter="low">&lt; 68</button>
+        </div>
+        <div class="pill-row" id="sort-pills">
+          <button class="pill active" data-sort="score-desc">Score ↓</button>
+          <button class="pill" data-sort="score-asc">Score ↑</button>
+          <button class="pill" data-sort="alpha">A–Z</button>
+        </div>
+      </div>
+      <div class="room-list" id="room-list"></div>
+    </aside>
+
+    <section class="main">
+      <div class="main-header">
+        <div>
+          <h2 id="room-title">Select a room</h2>
+        </div>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="review">4-View Comparison</button>
+          <button class="tab-btn" data-tab="3d">Interactive 3D GLB</button>
+          <button class="tab-btn" data-tab="bom">Room BOM JSON</button>
+        </div>
+      </div>
+
+      <div class="tab-pane active" id="tab-review">
+        <div class="overview-hero" id="overview-hero" style="display:none">
+          <img id="overview-img" alt="Original LLM concept overview image" />
+          <div class="overview-meta">
+            <h3 style="margin:0;font-size:12px;text-transform:uppercase;letter-spacing:0.6px;color:#9fd8ff">Original Concept Overview (LLM Image Idea)</h3>
+            <pre id="overview-prompt" class="overview-prompt"></pre>
+          </div>
+        </div>
+        <div class="review-img-wrap" id="review-img-wrap">
+          <img id="review-img" alt="4-view reference vs render comparison" />
+          <div class="review-caption">
+            <span id="review-caption-text">Top row: N / E / S / W reference artwork · Bottom row: N / E / S / W / Up / Down Blender GLB renders (6 views)</span>
+            <span style="display:flex;align-items:center;gap:8px">
+              <button class="pill" id="toggle-before-btn" type="button" style="display:none">Show Before Rebuild</button>
+              <span id="review-meta"></span>
+            </span>
+          </div>
+        </div>
+        <div class="view-scores" id="view-scores"></div>
+        <div class="card" id="llm-card">
+          <div class="llm-header">
+            <h3 style="margin:0">Vision-LLM 4-View Visual Diff &amp; Fix Plan</h3>
+            <div class="llm-controls">
+              <select id="llm-model-select" class="iters" title="Local Ollama Vision Model"></select>
+              <button class="btn primary" id="llm-run-btn" type="button" style="padding:5px 10px;font-size:12px">Analyze 4 Views with LLM</button>
+            </div>
+          </div>
+          <div id="llm-status" style="font-size:12px;color:var(--muted)">Click <strong>Analyze 4 Views with LLM</strong> to inspect the N / E / S / W reference vs. GLB renders and generate a fix plan.</div>
+          <div id="llm-body" style="display:none">
+            <div id="llm-summary" style="font-size:12px;color:#e4edf5;margin-top:6px"></div>
+            <div class="llm-grid" id="llm-grid"></div>
+            <div class="llm-feedback-bar">
+              <div style="font-size:12px;color:#cde6f7;flex:1;min-width:200px">
+                <strong>Pipeline Feedback:</strong> <span id="llm-pipeline-fb"></span>
+              </div>
+              <div style="display:flex;gap:6px">
+                <button class="btn" id="llm-copy-btn" type="button" style="padding:5px 9px;font-size:11px">Copy to Feedback</button>
+                <button class="btn refine" id="llm-apply-btn" type="button" style="padding:5px 10px;font-size:11px">Feed Back &amp; Rebuild</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="comparison-card">
+          <h3>Updated Model Comparison &amp; What the Model Thinks Is Missing</h3>
+          <div id="comparison-summary" style="font-size:12px;color:#d6e1ea"></div>
+          <div class="metric-grid" id="metric-grid"></div>
+          <ul class="gap-list" id="gap-list"></ul>
+        </div>
+        <div class="card">
+          <h3>Original Room Description</h3>
+          <div id="room-desc" style="color:#d6e1ea"></div>
+        </div>
+        <div class="card">
+          <h3>Automated Visual-Diff Critique</h3>
+          <pre id="room-critique"></pre>
+        </div>
+      </div>
+
+      <div class="tab-pane iframe-pane" id="tab-3d">
+        <iframe id="preview-frame" class="preview-frame" title="Interactive 3D Room Preview"></iframe>
+      </div>
+
+      <div class="tab-pane" id="tab-bom">
+        <div class="row-inline" style="margin-bottom:8px">
+          <span style="color:var(--muted);font-size:12px">Edit <code>room-bom.json</code> directly; click <strong>Apply Feedback &amp; Rebuild</strong> to validate and rebuild.</span>
+          <button class="btn" id="reset-bom-btn" type="button" style="padding:5px 10px;font-size:12px">Reset Edits</button>
+        </div>
+        <textarea id="bom-editor" class="bom-editor" spellcheck="false"></textarea>
+      </div>
+    </section>
+
+    <aside class="feedback-panel">
+      <div class="row-inline">
+        <h3>Feedback &amp; Rebuild</h3>
+        <button class="btn approve" id="approve-btn" type="button" style="padding:5px 10px;font-size:12px">Approve ✓</button>
+      </div>
+
+      <div class="card" style="margin:0;padding:10px 10px 4px;background:var(--bg)">
+        <h3 style="margin-bottom:6px">Zork II Super Description</h3>
+        <pre id="sidebar-room-desc" class="resizable-box"></pre>
+        <div class="v-splitter" data-target="sidebar-room-desc" title="Drag to resize height"></div>
+      </div>
+
+      <div class="card" style="margin:0;padding:10px 10px 4px;background:var(--bg)">
+        <h3 style="margin-bottom:6px">Actions, Hazards &amp; Object Usage</h3>
+        <pre id="sidebar-gameplay-guide" class="resizable-box" style="height:175px"></pre>
+        <div class="v-splitter" data-target="sidebar-gameplay-guide" title="Drag to resize height"></div>
+      </div>
+
+      <div>
+        <textarea id="feedback-input" class="fb-input" placeholder="Describe what to change (e.g. 'brighter, warmer torchlight, darker floor, rougher cavern walls, open sky, taller ceiling, circular room')…"></textarea>
+        <div class="v-splitter" data-target="feedback-input" title="Drag to resize height"></div>
+      </div>
+
+      <div class="chips" id="quick-chips">
+        <button class="chip" data-text="brighter">+ Brighter</button>
+        <button class="chip" data-text="darker">- Darker</button>
+        <button class="chip" data-text="warmer lighting">Warmer</button>
+        <button class="chip" data-text="cooler blue lighting">Cooler</button>
+        <button class="chip" data-text="brighter floor">Brighter floor</button>
+        <button class="chip" data-text="darker floor">Darker floor</button>
+        <button class="chip" data-text="rougher walls">Rougher rock</button>
+        <button class="chip" data-text="smoother walls">Smoother walls</button>
+        <button class="chip" data-text="taller ceiling">Taller</button>
+        <button class="chip" data-text="open sky">Open sky</button>
+        <button class="chip" data-text="circular rotunda">Circular</button>
+        <button class="chip" data-text="octagon">Octagon</button>
+      </div>
+
+      <button class="btn primary" id="rebuild-btn" type="button">Apply Feedback &amp; Rebuild</button>
+
+      <div class="row-inline">
+        <button class="btn refine" id="refine-btn" type="button" style="flex:1">Feedback + Auto-Refine Loop</button>
+        <select id="max-iters" class="iters" title="Max refinement iterations">
+          <option value="2">2 iters</option>
+          <option value="3" selected>3 iters</option>
+          <option value="4">4 iters</option>
+          <option value="5">5 iters</option>
+        </select>
+      </div>
+
+      <button class="btn" id="rollback-btn" type="button" disabled>Undo / Rollback Previous BOM</button>
+
+      <div class="progress-card" id="progress-card">
+        <div class="progress-head">
+          <span class="step-pill" id="step-pill">Idle</span>
+          <span class="elapsed" id="elapsed-label"></span>
+        </div>
+        <div class="progress-bar-track"><div class="progress-bar-fill" id="progress-fill"></div></div>
+        <div class="progress-label" id="progress-label">Ready</div>
+        <div class="progress-detail" id="progress-detail">Select a room and enter feedback to rebuild.</div>
+      </div>
+
+      <div id="applied-wrap" style="display:none">
+        <h3 style="margin-bottom:4px">Applied Changes</h3>
+        <div class="small-log" id="applied-log"></div>
+        <div class="v-splitter" data-target="applied-log" title="Drag to resize height"></div>
+      </div>
+
+      <div>
+        <h3 style="margin-bottom:4px">Feedback History</h3>
+        <div class="small-log" id="history-log">No user feedback recorded yet for this room.</div>
+        <div class="v-splitter" data-target="history-log" title="Drag to resize height"></div>
+      </div>
+
+      <details>
+        <summary style="cursor:pointer;color:var(--muted);font-size:12px">Engine Build Log</summary>
+        <div class="small-log" id="build-log" style="margin-top:6px">No build run yet.</div>
+        <div class="v-splitter" data-target="build-log" title="Drag to resize height"></div>
+      </details>
+    </aside>
+  </div>
+
+  <script>
+    let allRooms = [];
+    let currentSlug = null;
+    let currentDetail = null;
+    let originalBomStr = '';
+    let filterMode = 'all';
+    let sortMode = 'score-desc';
+    let activeTab = 'review';
+
+    const roomListEl = document.getElementById('room-list');
+    const searchEl = document.getElementById('search');
+    const statsEl = document.getElementById('global-stats');
+    const titleEl = document.getElementById('room-title');
+    const overviewHeroEl = document.getElementById('overview-hero');
+    const overviewImgEl = document.getElementById('overview-img');
+    const overviewPromptEl = document.getElementById('overview-prompt');
+    const reviewImgEl = document.getElementById('review-img');
+    const reviewImgWrap = document.getElementById('review-img-wrap');
+    const reviewMetaEl = document.getElementById('review-meta');
+    const reviewCaptionText = document.getElementById('review-caption-text');
+    const toggleBeforeBtn = document.getElementById('toggle-before-btn');
+    let showingBeforeImg = false;
+    const viewScoresEl = document.getElementById('view-scores');
+    const comparisonSummaryEl = document.getElementById('comparison-summary');
+    const metricGridEl = document.getElementById('metric-grid');
+    const gapListEl = document.getElementById('gap-list');
+    const llmModelSelect = document.getElementById('llm-model-select');
+    const llmRunBtn = document.getElementById('llm-run-btn');
+    const llmStatusEl = document.getElementById('llm-status');
+    const llmBodyEl = document.getElementById('llm-body');
+    const llmSummaryEl = document.getElementById('llm-summary');
+    const llmGridEl = document.getElementById('llm-grid');
+    const llmPipelineFbEl = document.getElementById('llm-pipeline-fb');
+    const llmCopyBtn = document.getElementById('llm-copy-btn');
+    const llmApplyBtn = document.getElementById('llm-apply-btn');
+    const descEl = document.getElementById('room-desc');
+    const sidebarDescEl = document.getElementById('sidebar-room-desc');
+    const sidebarGameplayEl = document.getElementById('sidebar-gameplay-guide');
+    let lastPrevDiffBySlug = {};
+    let currentLlmCritique = null;
+    const critiqueEl = document.getElementById('room-critique');
+    const previewFrame = document.getElementById('preview-frame');
+    const bomEditor = document.getElementById('bom-editor');
+    const feedbackInput = document.getElementById('feedback-input');
+    const rebuildBtn = document.getElementById('rebuild-btn');
+    const refineBtn = document.getElementById('refine-btn');
+    const rollbackBtn = document.getElementById('rollback-btn');
+    const approveBtn = document.getElementById('approve-btn');
+    const maxItersEl = document.getElementById('max-iters');
+    const progressCard = document.getElementById('progress-card');
+    const stepPill = document.getElementById('step-pill');
+    const elapsedLabel = document.getElementById('elapsed-label');
+    const progressFill = document.getElementById('progress-fill');
+    const progressLabel = document.getElementById('progress-label');
+    const progressDetail = document.getElementById('progress-detail');
+    const appliedWrap = document.getElementById('applied-wrap');
+    const appliedLog = document.getElementById('applied-log');
+    const historyLog = document.getElementById('history-log');
+    const buildLog = document.getElementById('build-log');
+    let elapsedTimer = null;
+    let buildStartMs = 0;
+
+    function scoreClass(score) {
+      if (score === null || score === undefined) return 'approved';
+      if (score >= 74) return 'good';
+      if (score >= 65) return 'warn';
+      return 'bad';
+    }
+
+    function stopElapsedTimer() {
+      if (elapsedTimer) {
+        clearInterval(elapsedTimer);
+        elapsedTimer = null;
+      }
+    }
+
+    function startElapsedTimer() {
+      stopElapsedTimer();
+      buildStartMs = Date.now();
+      elapsedLabel.textContent = '0.0s';
+      elapsedTimer = setInterval(() => {
+        elapsedLabel.textContent = `${((Date.now() - buildStartMs) / 1000).toFixed(1)}s`;
+      }, 100);
+    }
+
+    function setProgress(step, totalSteps, label, detail = '', state = 'busy') {
+      progressCard.className = 'progress-card' + (state ? ' ' + state : '');
+      if (state === 'ok') {
+        stepPill.textContent = `✓ Step ${totalSteps} of ${totalSteps} · Update Ready`;
+        progressFill.style.width = '100%';
+      } else if (state === 'err') {
+        stepPill.textContent = 'Failed';
+      } else if (step > 0 && totalSteps > 0) {
+        stepPill.textContent = `Step ${step} of ${totalSteps}`;
+        progressFill.style.width = `${Math.max(6, Math.round((step / totalSteps) * 100))}%`;
+      } else {
+        stepPill.textContent = 'Idle';
+        progressFill.style.width = '0%';
+      }
+      progressLabel.textContent = label;
+      progressDetail.textContent = detail;
+    }
+
+    function setStatus(msg, cls = '') {
+      stopElapsedTimer();
+      if (cls === 'ok') setProgress(1, 1, msg, '', 'ok');
+      else if (cls === 'err') setProgress(0, 0, msg, '', 'err');
+      else if (cls === 'busy') setProgress(1, 3, msg, 'Working…', 'busy');
+      else setProgress(0, 0, 'Ready', msg, '');
+    }
+
+    function renderList() {
+      const q = searchEl.value.trim().toLowerCase();
+      let list = allRooms.filter(r => {
+        if (filterMode === 'candidates' && r.approved) return false;
+        if (filterMode === 'approved' && !r.approved) return false;
+        if (filterMode === 'low' && (r.approved || r.bestScore === null || r.bestScore >= 68)) return false;
+        if (q && !r.slug.includes(q) && !r.label.toLowerCase().includes(q)) return false;
+        return true;
+      });
+
+      list.sort((a, b) => {
+        if (sortMode === 'alpha') return a.slug.localeCompare(b.slug);
+        const sa = a.bestScore ?? (sortMode === 'score-asc' ? 999 : -1);
+        const sb = b.bestScore ?? (sortMode === 'score-asc' ? 999 : -1);
+        return sortMode === 'score-asc' ? sa - sb : sb - sa;
+      });
+
+      roomListEl.innerHTML = '';
+      for (const r of list) {
+        const div = document.createElement('div');
+        div.className = 'room-item' + (r.slug === currentSlug ? ' active' : '');
+        const badgeText = r.approved
+          ? (r.bestScore !== null ? `✓ ${r.bestScore.toFixed(1)}` : '✓ Approved')
+          : (r.bestScore !== null ? r.bestScore.toFixed(1) : '—');
+        const badgeCls = r.approved ? 'approved' : scoreClass(r.bestScore);
+        div.innerHTML = `
+          <div class="left">
+            <div class="name">${r.label}</div>
+            <div class="slug">${r.slug}${r.delta !== null ? ` · ${r.delta >= 0 ? '+' : ''}${r.delta.toFixed(1)}` : ''}</div>
+          </div>
+          <span class="badge ${badgeCls}">${badgeText}</span>
+        `;
+        div.addEventListener('click', () => selectRoom(r.slug));
+        roomListEl.appendChild(div);
+      }
+
+      const approvedCount = allRooms.filter(r => r.approved).length;
+      const scored = allRooms.filter(r => !r.approved && r.bestScore !== null);
+      const avg = scored.length ? (scored.reduce((s, r) => s + r.bestScore, 0) / scored.length).toFixed(2) : '—';
+      statsEl.innerHTML = `<span><strong>${allRooms.length}</strong> rooms</span><span><strong>${approvedCount}</strong> approved</span><span>Candidate avg: <strong>${avg}</strong>/100</span>`;
+    }
+
+    function renderDetail(detail) {
+      currentDetail = detail;
+      const listEntry = allRooms.find(r => r.slug === detail.slug);
+      const scoreStr = detail.diff ? ` · Score ${detail.diff.overallScore.toFixed(2)}/100` : '';
+      titleEl.textContent = `${listEntry?.label || detail.slug} (${detail.slug})${scoreStr}`;
+
+      // Approve button
+      approveBtn.textContent = detail.approved ? 'Approved ✓ (Unapprove)' : 'Approve ✓';
+      approveBtn.className = 'btn ' + (detail.approved ? '' : 'approve');
+
+      // Original LLM Concept Overview image + prompt at the top
+      if (detail.hasReferenceImage) {
+        overviewHeroEl.style.display = 'grid';
+        overviewImgEl.src = `/api/rooms/${detail.slug}/reference-image`;
+        overviewPromptEl.textContent = detail.referencePrompt?.trim() || 'No concept prompt text saved.';
+      } else {
+        overviewHeroEl.style.display = 'none';
+      }
+
+      // Review image (always force-bust cache with Date.now() so updated renders show immediately)
+      showingBeforeImg = false;
+      if (detail.hasReview) {
+        reviewImgWrap.style.display = 'block';
+        reviewImgEl.src = `/api/rooms/${detail.slug}/review-image?t=${Date.now()}`;
+        reviewCaptionText.textContent = 'Top row: N / E / S / W reference artwork · Bottom row: N / E / S / W / Up / Down Blender GLB renders (CURRENT)';
+        toggleBeforeBtn.style.display = detail.hasPrevReview ? 'inline-block' : 'none';
+        toggleBeforeBtn.textContent = 'Show Before Rebuild';
+        toggleBeforeBtn.classList.remove('active');
+        reviewMetaEl.textContent = detail.manifest
+          ? `${detail.manifest.meshCount} meshes · ${detail.manifest.triangles.toLocaleString()} tris`
+          : '';
+      } else {
+        reviewImgWrap.style.display = 'none';
+      }
+
+      // Per-view scores (with before -> after delta when just rebuilt)
+      const prevDiff = lastPrevDiffBySlug[detail.slug] || null;
+      viewScoresEl.innerHTML = '';
+      if (detail.diff?.views) {
+        for (const k of ['N', 'E', 'S', 'W']) {
+          const v = detail.diff.views[k];
+          const pv = prevDiff?.views?.[k];
+          let deltaHtml = '';
+          if (pv) {
+            const d = v.score - pv.score;
+            if (Math.abs(d) >= 0.05) {
+              deltaHtml = `<span class="${d >= 0 ? 'delta-pos' : 'delta-neg'}">${d >= 0 ? '+' : ''}${d.toFixed(1)}</span>`;
+            }
+          }
+          const el = document.createElement('div');
+          el.className = 'vscore';
+          el.innerHTML = `
+            <div class="k">${k} View</div>
+            <div class="v">${v.score.toFixed(1)}${deltaHtml}</div>
+            <div class="sub">struct ${v.structure}% · luma ${v.lumaDelta >= 0 ? '+' : ''}${v.lumaDelta}</div>
+          `;
+          viewScoresEl.appendChild(el);
+        }
+      }
+
+      // Updated Model Comparison & Missing Elements Analysis
+      const analysis = detail.analysis || {};
+      const bd = analysis.breakdown;
+      if (bd) {
+        let cmpText = `Overall similarity score: <strong>${bd.overall.toFixed(2)}/100</strong>`;
+        if (prevDiff) {
+          const od = bd.overall - prevDiff.overallScore;
+          cmpText = `Updated score: <strong>${prevDiff.overallScore.toFixed(2)} → ${bd.overall.toFixed(2)}/100</strong> <span class="${od >= 0 ? 'delta-pos' : 'delta-neg'}">(${od >= 0 ? '+' : ''}${od.toFixed(2)})</span>`;
+        }
+        comparisonSummaryEl.innerHTML = cmpText;
+        metricGridEl.innerHTML = `
+          <div class="metric-box"><div class="ml">Color Layout</div><div class="mv">${bd.colorLayout}%</div></div>
+          <div class="metric-box"><div class="ml">Palette / Histogram</div><div class="mv">${bd.histogram}%</div></div>
+          <div class="metric-box"><div class="ml">3D Structure (NCC)</div><div class="mv">${bd.structure}%</div></div>
+          <div class="metric-box"><div class="ml">Texture / Edge Relief</div><div class="mv">${bd.edge}%</div></div>
+        `;
+      } else {
+        comparisonSummaryEl.textContent = 'Run Rebuild to generate a 4-view visual comparison score.';
+        metricGridEl.innerHTML = '';
+      }
+
+      gapListEl.innerHTML = '';
+      const allGaps = [
+        ...(analysis.missingExits || []).map(g => ({ ...g, cls: 'missing', tag: 'Missing Exit' })),
+        ...(analysis.missingAnchors || []).map(g => ({ ...g, cls: 'missing', tag: 'Missing ZIL Anchor' })),
+        ...(analysis.missingFeatures || []).map(g => ({ ...g, cls: 'missing', tag: 'Missing Feature' })),
+        ...(analysis.visualGaps || []).map(g => ({
+          item: `${g.view} View Gap (${g.score}/100)`,
+          reason: g.reason,
+          suggestion: g.suggestion,
+          cls: 'visual',
+          tag: 'Visual Diff',
+        })),
+      ];
+      if (!allGaps.length) {
+        const li = document.createElement('li');
+        li.className = 'gap-item';
+        li.innerHTML = `<div><div class="gap-title">No major missing elements detected</div><div class="gap-reason">All source exits, ZIL anchors, key architectural features, and cardinal views align closely with the reference.</div></div>`;
+        gapListEl.appendChild(li);
+      } else {
+        for (const g of allGaps) {
+          const li = document.createElement('li');
+          li.className = `gap-item ${g.cls}`;
+          const btnHtml = g.suggestion
+            ? `<button type="button" class="gap-apply" data-suggest="${g.suggestion.replace(/"/g, '&quot;')}">+ Add to feedback</button>`
+            : '';
+          li.innerHTML = `
+            <div>
+              <div class="gap-title">${g.tag}: ${g.item}</div>
+              <div class="gap-reason">${g.reason}</div>
+            </div>
+            ${btnHtml}
+          `;
+          const btn = li.querySelector('.gap-apply');
+          if (btn) {
+            btn.addEventListener('click', () => {
+              const s = btn.dataset.suggest;
+              feedbackInput.value = feedbackInput.value.trim() ? `${feedbackInput.value.trim()}, ${s}` : s;
+              feedbackInput.focus();
+            });
+          }
+          gapListEl.appendChild(li);
+        }
+      }
+
+      // Description & critique (uses merged Zork II super-description covering all 86 rooms)
+      const superText = detail.superDescription?.superDescription;
+      const literal = detail.sourceContext?.literalRoomDescription;
+      const fallbackText = Array.isArray(literal) ? literal.join(' ') : (literal || 'No source description.');
+      const fullDesc = superText || fallbackText;
+      descEl.textContent = fullDesc;
+      descEl.style.whiteSpace = 'pre-wrap';
+      sidebarDescEl.textContent = fullDesc;
+      sidebarGameplayEl.textContent = detail.superDescription?.gameplayGuide || 'No gameplay guide generated for this room.';
+      critiqueEl.textContent = detail.critique?.trim() || 'No automated critique yet. Click Rebuild to render & score.';
+
+      // BOM editor
+      originalBomStr = detail.bom ? JSON.stringify(detail.bom, null, 2) : '';
+      bomEditor.value = originalBomStr || '// Approved non-BOM room (no room-bom.json)';
+      bomEditor.disabled = !detail.hasBom;
+      rebuildBtn.disabled = !detail.hasBom;
+      refineBtn.disabled = !detail.hasBom;
+      rollbackBtn.disabled = !detail.hasBackup;
+
+      // Feedback history
+      historyLog.textContent = detail.userFeedback?.trim() || 'No user feedback recorded yet for this room.';
+      renderLlmCritique(detail.llmCritique || null);
+
+      // 3D preview iframe (only reload when 3D tab is active or room changed)
+      if (activeTab === '3d') {
+        previewFrame.src = `/preview/room-preview.html?room=${encodeURIComponent(detail.slug)}&v=${detail.glbMtime || Date.now()}`;
+      }
+    }
+
+    function renderLlmCritique(c) {
+      currentLlmCritique = c;
+      if (!c) {
+        llmBodyEl.style.display = 'none';
+        llmStatusEl.textContent = 'Click "Analyze 4 Views with LLM" to inspect the N / E / S / W reference vs. GLB renders and generate a fix plan.';
+        return;
+      }
+      llmStatusEl.textContent = `Analyzed with ${c.model} · ${new Date(c.generatedAt).toLocaleTimeString()}`;
+      llmBodyEl.style.display = 'block';
+      llmSummaryEl.textContent = c.summary || '';
+      llmGridEl.innerHTML = '';
+      for (const k of ['N', 'E', 'S', 'W']) {
+        const v = c.views?.[k] || {};
+        const box = document.createElement('div');
+        box.className = 'llm-view-box';
+        box.innerHTML = `
+          <div class="vh">${k} View</div>
+          <div class="vd"><strong>Differences:</strong> ${v.differences || '—'}</div>
+          <div class="vf"><strong>Fix:</strong> ${v.howToFix || '—'}</div>
+        `;
+        llmGridEl.appendChild(box);
+      }
+      llmPipelineFbEl.textContent = c.pipelineFeedback || '(no automatic directives)';
+    }
+
+    async function loadLlmModels() {
+      try {
+        const res = await fetch('/api/llm/models');
+        const info = await res.json();
+        llmModelSelect.innerHTML = '';
+        if (!info.available || !info.models?.length) {
+          const opt = document.createElement('option');
+          opt.value = '';
+          opt.textContent = 'Ollama unavailable';
+          llmModelSelect.appendChild(opt);
+          llmRunBtn.disabled = true;
+          return;
+        }
+        for (const m of info.models) {
+          const opt = document.createElement('option');
+          opt.value = m;
+          opt.textContent = m;
+          llmModelSelect.appendChild(opt);
+        }
+        if (info.defaultModel) llmModelSelect.value = info.defaultModel;
+      } catch {
+        llmRunBtn.disabled = true;
+      }
+    }
+
+    llmRunBtn.addEventListener('click', async () => {
+      if (!currentSlug) return;
+      const model = llmModelSelect.value;
+      llmRunBtn.disabled = true;
+      const t0 = Date.now();
+      const timer = setInterval(() => {
+        llmStatusEl.textContent = `Running ${model} vision analysis on ${currentSlug}/review-4view.png (${((Date.now() - t0) / 1000).toFixed(1)}s)…`;
+      }, 200);
+      try {
+        const res = await fetch(`/api/rooms/${encodeURIComponent(currentSlug)}/llm-critique`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ model }),
+        });
+        const data = await res.json();
+        clearInterval(timer);
+        if (!res.ok) {
+          llmStatusEl.textContent = `Vision-LLM error: ${data.error || res.status}`;
+          return;
+        }
+        renderLlmCritique(data.llmCritique);
+      } catch (err) {
+        clearInterval(timer);
+        llmStatusEl.textContent = `Vision-LLM error: ${err.message}`;
+      } finally {
+        llmRunBtn.disabled = false;
+      }
+    });
+
+    llmCopyBtn.addEventListener('click', () => {
+      if (!currentLlmCritique?.pipelineFeedback) return;
+      feedbackInput.value = currentLlmCritique.pipelineFeedback;
+      feedbackInput.focus();
+    });
+
+    llmApplyBtn.addEventListener('click', () => {
+      if (!currentLlmCritique) return;
+      if (currentLlmCritique.pipelineFeedback) {
+        feedbackInput.value = currentLlmCritique.pipelineFeedback;
+      }
+      triggerRebuild('feedback', currentLlmCritique.bomPatch || null);
+    });
+
+    async function loadRooms() {
+      const res = await fetch('/api/rooms');
+      const data = await res.json();
+      allRooms = data.rooms || [];
+      renderList();
+      if (!currentSlug && allRooms.length) {
+        const firstCand = allRooms.find(r => !r.approved) || allRooms[0];
+        await selectRoom(firstCand.slug);
+      }
+    }
+
+    async function selectRoom(slug) {
+      currentSlug = slug;
+      renderList();
+      const res = await fetch(`/api/rooms/${encodeURIComponent(slug)}`);
+      const detail = await res.json();
+      renderDetail(detail);
+      if (activeTab === '3d') {
+        previewFrame.src = `/preview/room-preview.html?room=${encodeURIComponent(slug)}&v=${detail.glbMtime || Date.now()}`;
+      }
+    }
+
+    async function triggerRebuild(mode, llmPatch = null) {
+      if (!currentSlug || !currentDetail?.hasBom) return;
+      let bomOverride = null;
+      if (bomEditor.value.trim() && bomEditor.value.trim() !== originalBomStr.trim()) {
+        try {
+          bomOverride = JSON.parse(bomEditor.value);
+        } catch (err) {
+          setStatus(`Invalid JSON in Room BOM editor: ${err.message}`, 'err');
+          return;
+        }
+      }
+
+      rebuildBtn.disabled = true;
+      refineBtn.disabled = true;
+      rollbackBtn.disabled = true;
+      buildLog.textContent = '';
+      const totalEst = mode === 'auto-refine' ? Number(maxItersEl.value) + 4 : 6;
+      startElapsedTimer();
+      setProgress(1, totalEst, 'Starting rebuild pipeline…', `Submitting feedback for ${currentSlug}`, 'busy');
+
+      try {
+        const res = await fetch(`/api/rooms/${encodeURIComponent(currentSlug)}/rebuild`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            feedback: feedbackInput.value,
+            mode,
+            maxIters: Number(maxItersEl.value),
+            bomOverride,
+            llmPatch,
+            llmModel: llmModelSelect.value || undefined,
+          }),
+        });
+
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({ error: `HTTP ${res.status}` }));
+          stopElapsedTimer();
+          setProgress(0, 0, `Rebuild failed: ${errData.error || res.status}`, '', 'err');
+          if (errData.log || errData.details) buildLog.textContent = errData.log || JSON.stringify(errData.details, null, 2);
+          return;
+        }
+
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+        let finalData = null;
+        const logLines = [];
+
+        while (true) {
+          const { value, done } = await reader.read();
+          if (done) break;
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split('\n');
+          buffer = lines.pop() || '';
+          for (const raw of lines) {
+            if (!raw.trim()) continue;
+            let ev;
+            try { ev = JSON.parse(raw); } catch { continue; }
+            if (ev.type === 'progress') {
+              setProgress(ev.step, ev.totalSteps, ev.label, ev.detail || '', 'busy');
+            } else if (ev.type === 'log') {
+              logLines.push(ev.line);
+              if (logLines.length > 120) logLines.shift();
+              buildLog.textContent = logLines.join('\n');
+              buildLog.scrollTop = buildLog.scrollHeight;
+            } else if (ev.type === 'error') {
+              stopElapsedTimer();
+              setProgress(0, 0, `Rebuild failed: ${ev.error}`, '', 'err');
+              if (ev.log || ev.details) buildLog.textContent = ev.log || JSON.stringify(ev.details, null, 2);
+              return;
+            } else if (ev.type === 'done') {
+              finalData = ev;
+            }
+          }
+        }
+
+        if (!finalData) {
+          stopElapsedTimer();
+          setProgress(0, 0, 'Rebuild stream ended unexpectedly', '', 'err');
+          return;
+        }
+
+        stopElapsedTimer();
+        if (finalData.applied?.length) {
+          appliedWrap.style.display = 'block';
+          appliedLog.textContent = finalData.applied.map(a => `• ${a}`).join('\n');
+        } else {
+          appliedWrap.style.display = 'none';
+        }
+        if (finalData.log) buildLog.textContent = finalData.log;
+
+        const newScore = finalData.room?.diff?.overallScore;
+        const prevScore = finalData.prevScore;
+        let scoreDetail = newScore !== undefined ? `Candidate score: ${newScore.toFixed(2)}/100` : 'Preview refreshed';
+        if (newScore !== undefined && prevScore !== null && prevScore !== undefined) {
+          const d = newScore - prevScore;
+          scoreDetail = `Score: ${prevScore.toFixed(2)} → ${newScore.toFixed(2)} (${d >= 0 ? '+' : ''}${d.toFixed(2)}) · Preview & 3D GLB updated`;
+        }
+        if (finalData.prevDiff) {
+          lastPrevDiffBySlug[currentSlug] = finalData.prevDiff;
+        }
+        setProgress(totalEst, totalEst, `Update ready for ${currentSlug}!`, scoreDetail, 'ok');
+        await loadRooms();
+        renderDetail(finalData.room);
+        previewFrame.src = `/preview/room-preview.html?room=${encodeURIComponent(currentSlug)}&v=${Date.now()}`;
+      } catch (err) {
+        stopElapsedTimer();
+        setProgress(0, 0, `Error: ${err.message}`, '', 'err');
+      } finally {
+        rebuildBtn.disabled = !currentDetail?.hasBom;
+        refineBtn.disabled = !currentDetail?.hasBom;
+        rollbackBtn.disabled = !currentDetail?.hasBackup;
+      }
+    }
+
+    rebuildBtn.addEventListener('click', () => triggerRebuild('feedback'));
+    refineBtn.addEventListener('click', () => triggerRebuild('auto-refine'));
+
+    rollbackBtn.addEventListener('click', async () => {
+      if (!currentSlug) return;
+      setStatus(`Rolling back ${currentSlug} to previous BOM…`, 'busy');
+      rollbackBtn.disabled = true;
+      try {
+        const res = await fetch(`/api/rooms/${encodeURIComponent(currentSlug)}/rollback`, { method: 'POST' });
+        const data = await res.json();
+        if (!res.ok) {
+          setStatus(`Rollback failed: ${data.error}`, 'err');
+          return;
+        }
+        setStatus(`Rolled back ${currentSlug} to previous BOM.`, 'ok');
+        await loadRooms();
+        renderDetail(data.room);
+      } catch (err) {
+        setStatus(`Rollback error: ${err.message}`, 'err');
+      }
+    });
+
+    approveBtn.addEventListener('click', async () => {
+      if (!currentSlug || !currentDetail) return;
+      const nextApproved = !currentDetail.approved;
+      const res = await fetch(`/api/rooms/${encodeURIComponent(currentSlug)}/approve`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ approved: nextApproved, notes: feedbackInput.value.trim() }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setStatus(nextApproved ? `Marked ${currentSlug} as Approved ✓` : `Removed ${currentSlug} from Approved`, 'ok');
+        await loadRooms();
+        renderDetail(data.room);
+      }
+    });
+
+    toggleBeforeBtn.addEventListener('click', () => {
+      if (!currentSlug) return;
+      showingBeforeImg = !showingBeforeImg;
+      if (showingBeforeImg) {
+        reviewImgEl.src = `/api/rooms/${currentSlug}/prev-review-image?t=${Date.now()}`;
+        reviewCaptionText.textContent = 'Showing PREVIOUS 4-view render (before last rebuild)';
+        toggleBeforeBtn.textContent = 'Show Updated Render';
+        toggleBeforeBtn.classList.add('active');
+      } else {
+        reviewImgEl.src = `/api/rooms/${currentSlug}/review-image?t=${Date.now()}`;
+        reviewCaptionText.textContent = 'Top row: N / E / S / W reference artwork · Bottom row: N / E / S / W / Up / Down Blender GLB renders (CURRENT)';
+        toggleBeforeBtn.textContent = 'Show Before Rebuild';
+        toggleBeforeBtn.classList.remove('active');
+      }
+    });
+
+    document.getElementById('reset-bom-btn').addEventListener('click', () => {
+      bomEditor.value = originalBomStr;
+    });
+
+    document.querySelectorAll('#quick-chips .chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const t = btn.dataset.text;
+        feedbackInput.value = feedbackInput.value.trim() ? `${feedbackInput.value.trim()}, ${t}` : t;
+        feedbackInput.focus();
+      });
+    });
+
+    document.querySelectorAll('#filter-pills .pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#filter-pills .pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filterMode = btn.dataset.filter;
+        renderList();
+      });
+    });
+
+    document.querySelectorAll('#sort-pills .pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#sort-pills .pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        sortMode = btn.dataset.sort;
+        renderList();
+      });
+    });
+
+    searchEl.addEventListener('input', renderList);
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeTab = btn.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+        document.getElementById(`tab-${activeTab}`).classList.add('active');
+        if (activeTab === '3d' && currentSlug) {
+          previewFrame.src = `/preview/room-preview.html?room=${encodeURIComponent(currentSlug)}&v=${currentDetail?.glbMtime || Date.now()}`;
+        }
+      });
+    });
+
+    // Wire interactive drag-to-resize splitters for all right-column sections
+    document.querySelectorAll('.v-splitter').forEach(bar => {
+      bar.addEventListener('pointerdown', e => {
+        const target = document.getElementById(bar.dataset.target);
+        if (!target) return;
+        e.preventDefault();
+        bar.setPointerCapture(e.pointerId);
+        bar.classList.add('dragging');
+        const startY = e.clientY;
+        const startH = target.getBoundingClientRect().height;
+        const onMove = ev => {
+          const nextH = Math.max(54, Math.min(900, Math.round(startH + (ev.clientY - startY))));
+          target.style.height = `${nextH}px`;
+        };
+        const onUp = () => {
+          bar.classList.remove('dragging');
+          bar.removeEventListener('pointermove', onMove);
+          bar.removeEventListener('pointerup', onUp);
+          bar.removeEventListener('pointercancel', onUp);
+        };
+        bar.addEventListener('pointermove', onMove);
+        bar.addEventListener('pointerup', onUp);
+        bar.addEventListener('pointercancel', onUp);
+      });
+    });
+
+    loadLlmModels();
+    loadRooms();
+  </script>
+</body>
+</html>

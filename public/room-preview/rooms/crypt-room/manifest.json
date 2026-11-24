@@ -1,0 +1,18 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "CRYPT-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/crypt-room/room-bom.json",
+  "bomSha256": "08b62225b9eb4c217fed805c438d8ff69f4ef282e85616353a64d49145b856e6",
+  "glb": "games/zork2/planning/room-bom-prototype/crypt-room/build/room.glb",
+  "glbBytes": 3372908,
+  "glbSha256": "42fd6e0ac9c7c36e7309b606f34838803d3538a52aca68698ef4b3cc10cc678f",
+  "meshCount": 13,
+  "materialCount": 5,
+  "triangles": 12117,
+  "zilAnchors": [
+    "CRYPT",
+    "HEADS"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/crypt-room/build/review-4view.png"
+}

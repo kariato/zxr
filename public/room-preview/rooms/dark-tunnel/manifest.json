@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "DARK-TUNNEL",
+  "bom": "games/zork2/planning/room-bom-prototype/dark-tunnel/room-bom.json",
+  "bomSha256": "256aaa3f5a98b066aa2d984c3ec9c997a9341efb90a786a3d1643af4d478edc0",
+  "glb": "games/zork2/planning/room-bom-prototype/dark-tunnel/build/room.glb",
+  "glbBytes": 4701612,
+  "glbSha256": "d52dc12c75ed95b229f1bccdccd896e39ae87b404efe6bef5715d9d2289bdb5b",
+  "meshCount": 14,
+  "materialCount": 5,
+  "triangles": 19933,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/dark-tunnel/build/review-4view.png"
+}

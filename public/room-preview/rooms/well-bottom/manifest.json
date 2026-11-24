@@ -1,0 +1,18 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "WELL-BOTTOM",
+  "bom": "games/zork2/planning/room-bom-prototype/well-bottom/room-bom.json",
+  "bomSha256": "ce682fe7658cfcb04e0af129781b13e23b437fa07975948cd2c51a752ed456b8",
+  "glb": "games/zork2/planning/room-bom-prototype/well-bottom/build/room.glb",
+  "glbBytes": 3081328,
+  "glbSha256": "34138416cac349aa3298784e52de582d76ccb0b6ce70d646e527c00acf5ca758",
+  "meshCount": 8,
+  "materialCount": 4,
+  "triangles": 8031,
+  "zilAnchors": [
+    "BOTTOM-ETCHINGS",
+    "BUCKET"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/well-bottom/build/review-4view.png"
+}

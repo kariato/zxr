@@ -1,0 +1,415 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "FORMAL-GARDEN",
+  "label": "Formal Garden",
+  "sourceContext": "games/zork2/assets/rooms/formal-garden/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/formal-garden/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/formal-garden/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/formal-garden/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/formal-garden/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      11,
+      14,
+      6.2
+    ],
+    "wallStyle": "hedge",
+    "wallDisplacementMetres": 0.24,
+    "ceilingStyle": "open-sky",
+    "skybox": "src/prototype/assets/cavern-skybox-v1.png",
+    "lighting": {
+      "ambientColor": [
+        0.175,
+        0.223,
+        0.145
+      ],
+      "ambientStrength": 0.716,
+      "lights": [
+        {
+          "name": "moss-canopy-key",
+          "position": [
+            0,
+            1.5,
+            5.4
+          ],
+          "color": [
+            0.79,
+            0.947,
+            0.69
+          ],
+          "energy": 729.1,
+          "radius": 2.8
+        },
+        {
+          "name": "north-gazebo-glow",
+          "position": [
+            0,
+            5.4,
+            3.8
+          ],
+          "color": [
+            0.83,
+            0.927,
+            0.77
+          ],
+          "energy": 416.6,
+          "radius": 2
+        },
+        {
+          "name": "south-path-fill",
+          "position": [
+            0,
+            -4.2,
+            3.6
+          ],
+          "color": [
+            0.85,
+            0.887,
+            0.71
+          ],
+          "energy": 338.5,
+          "radius": 2
+        },
+        {
+          "name": "west-gap-cool",
+          "position": [
+            -4.4,
+            0.4,
+            2.4
+          ],
+          "color": [
+            0.59,
+            0.767,
+            0.79
+          ],
+          "energy": 208.4,
+          "radius": 1.4
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.01,
+        0.14,
+        0.14,
+        0.5
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.92,
+      "normalStrength": 1.35,
+      "colorScale": 1.316,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.68,
+        0.72,
+        0.96
+      ],
+      "tileMetres": 2.2,
+      "roughness": 0.88,
+      "normalStrength": 1.15,
+      "colorScale": 1.139,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.3,
+        0.02,
+        0.6,
+        0.22
+      ],
+      "tileMetres": 4.6,
+      "roughness": 0.94,
+      "normalStrength": 1.25,
+      "colorScale": 0.9,
+      "tileable": true
+    },
+    "curb-stone": {
+      "procedural": "grey-stone",
+      "tileMetres": 1.4,
+      "roughness": 0.88,
+      "normalStrength": 1.15
+    }
+  },
+  "objects": [
+    {
+      "id": "north-garden-path",
+      "category": "opening",
+      "description": "Crushed white-stone garden walk continuing north toward the gazebo",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.56,
+        0.26,
+        0.74,
+        0.52
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2.8,
+          0.6,
+          3.2
+        ],
+        "depthMetres": 7.5,
+        "tunnelColor": [
+          0.76,
+          0.92,
+          0.78
+        ],
+        "tunnelEnergy": 140
+      }
+    },
+    {
+      "id": "south-topiary-path",
+      "category": "opening",
+      "description": "Crushed white-stone garden walk leading south toward the topiary bushes",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "sourceView": "S",
+      "crop": [
+        0.34,
+        0.24,
+        0.66,
+        0.64
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2.8,
+          0.6,
+          3.2
+        ],
+        "depthMetres": 7.5,
+        "tunnelColor": [
+          0.72,
+          0.88,
+          0.72
+        ],
+        "tunnelEnergy": 120
+      }
+    },
+    {
+      "id": "west-hedge-gap",
+      "category": "opening",
+      "description": "Small arched gap in the western hedges leading to the Path Near Stream",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "sourceView": "N",
+      "crop": [
+        0.12,
+        0.22,
+        0.26,
+        0.54
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 0.6,
+        "sizeMetres": [
+          1.8,
+          0.6,
+          2.5
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.52,
+          0.74,
+          0.8
+        ],
+        "tunnelEnergy": 110
+      }
+    },
+    {
+      "id": "hedge-column-nw",
+      "category": "pillar",
+      "description": "Tall clipped boxwood hedge column framing the northwest flower bed",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -2.8,
+          2.6,
+          0
+        ],
+        "sizeMetres": [
+          1.1,
+          1.1,
+          3.4
+        ]
+      }
+    },
+    {
+      "id": "hedge-column-sw",
+      "category": "pillar",
+      "description": "Tall clipped boxwood hedge column flanking the southwest path",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -2.8,
+          -2.6,
+          0
+        ],
+        "sizeMetres": [
+          1.1,
+          1.1,
+          3.2
+        ]
+      }
+    },
+    {
+      "id": "hedge-column-ne",
+      "category": "pillar",
+      "description": "Tall clipped hedge column framing the northeast flower bed",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          2.8,
+          2.6,
+          0
+        ],
+        "sizeMetres": [
+          1.1,
+          1.1,
+          3.5
+        ]
+      }
+    },
+    {
+      "id": "hedge-column-se",
+      "category": "pillar",
+      "description": "Tall clipped hedge column flanking the southeast flower bed",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          2.8,
+          -2.6,
+          0
+        ],
+        "sizeMetres": [
+          1.1,
+          1.1,
+          3.3
+        ]
+      }
+    },
+    {
+      "id": "west-path-curbstones",
+      "category": "boulder-cluster",
+      "description": "Low weathered stone edging stones bordering the west side of the white gravel walk",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.08,
+        0.6,
+        0.56,
+        0.88
+      ],
+      "surface": "curb-stone",
+      "placement": {
+        "position": [
+          -2,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          0.55,
+          9.6,
+          0.28
+        ],
+        "count": 18,
+        "seed": 421
+      }
+    },
+    {
+      "id": "east-path-curbstones",
+      "category": "boulder-cluster",
+      "description": "Low weathered stone edging stones bordering the east side of the white gravel walk",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.7,
+        0.64,
+        0.92,
+        0.96
+      ],
+      "surface": "curb-stone",
+      "placement": {
+        "position": [
+          2,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          0.55,
+          9.6,
+          0.28
+        ],
+        "count": 18,
+        "seed": 422
+      }
+    },
+    {
+      "id": "garden-bed-east",
+      "category": "garden-bed",
+      "description": "Curbed floral garden bed with rounded shrubs and topiary along the east path",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          3.8,
+          0.4,
+          0.0
+        ],
+        "sizeMetres": [
+          2.4,
+          5.2,
+          1.45
+        ],
+        "count": 9,
+        "seed": 411,
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "garden-bed-west",
+      "category": "garden-bed",
+      "description": "Curbed floral garden bed with rounded shrubs and topiary along the west path",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3.8,
+          0.4,
+          0.0
+        ],
+        "sizeMetres": [
+          2.4,
+          5.2,
+          1.45
+        ],
+        "count": 9,
+        "seed": 412,
+        "yawDeg": 0
+      }
+    }
+  ]
+}

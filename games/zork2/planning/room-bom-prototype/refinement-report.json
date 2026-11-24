@@ -1,0 +1,492 @@
+{
+  "updatedAt": "2026-11-24T15:45:18.846Z",
+  "count": 81,
+  "rooms": [
+    {
+      "slug": "stream-path",
+      "initScore": 43.22,
+      "bestScore": 54.77,
+      "bestIter": 4
+    },
+    {
+      "slug": "gazebo-room",
+      "initScore": 37.98,
+      "bestScore": 55.53,
+      "bestIter": 4
+    },
+    {
+      "slug": "volcano-view",
+      "initScore": 55.81,
+      "bestScore": 55.81,
+      "bestIter": 0
+    },
+    {
+      "slug": "diamond-9",
+      "initScore": 55.5,
+      "bestScore": 58.35,
+      "bestIter": 3
+    },
+    {
+      "slug": "diamond-7",
+      "initScore": 56.65,
+      "bestScore": 60.17,
+      "bestIter": 1
+    },
+    {
+      "slug": "volcano-bottom",
+      "initScore": 58.97,
+      "bestScore": 60.34,
+      "bestIter": 2
+    },
+    {
+      "slug": "in-cage",
+      "initScore": 60.39,
+      "bestScore": 62.88,
+      "bestIter": 2
+    },
+    {
+      "slug": "dead-palantir-3",
+      "initScore": 63.32,
+      "bestScore": 63.32,
+      "bestIter": 0
+    },
+    {
+      "slug": "great-cavern",
+      "initScore": 52.84,
+      "bestScore": 64.19,
+      "bestIter": 3
+    },
+    {
+      "slug": "glacier-room",
+      "initScore": 52.52,
+      "bestScore": 65.28,
+      "bestIter": 3
+    },
+    {
+      "slug": "garden-north",
+      "initScore": 65.84,
+      "bestScore": 66,
+      "bestIter": 1
+    },
+    {
+      "slug": "machine-room",
+      "initScore": 63.81,
+      "bestScore": 66.08,
+      "bestIter": 3
+    },
+    {
+      "slug": "teller-west",
+      "initScore": 66.42,
+      "bestScore": 66.62,
+      "bestIter": 1
+    },
+    {
+      "slug": "vair-4",
+      "initScore": 37.22,
+      "bestScore": 67.19,
+      "bestIter": 4
+    },
+    {
+      "slug": "dead-palantir-2",
+      "initScore": 61.2,
+      "bestScore": 68.41,
+      "bestIter": 2
+    },
+    {
+      "slug": "pool-room",
+      "initScore": 57.34,
+      "bestScore": 68.44,
+      "bestIter": 4
+    },
+    {
+      "slug": "trophy-room",
+      "initScore": 68.39,
+      "bestScore": 68.64,
+      "bestIter": 1
+    },
+    {
+      "slug": "bank-entrance",
+      "initScore": 54.55,
+      "bestScore": 68.81,
+      "bestIter": 4
+    },
+    {
+      "slug": "magnet-room",
+      "initScore": 68.86,
+      "bestScore": 68.86,
+      "bestIter": 0
+    },
+    {
+      "slug": "topiary-room",
+      "initScore": 64.92,
+      "bestScore": 69.12,
+      "bestIter": 4
+    },
+    {
+      "slug": "dragon-lair",
+      "initScore": 57.71,
+      "bestScore": 69.28,
+      "bestIter": 4
+    },
+    {
+      "slug": "menhir-room",
+      "initScore": 58.22,
+      "bestScore": 69.34,
+      "bestIter": 2
+    },
+    {
+      "slug": "vair-2",
+      "initScore": 45.72,
+      "bestScore": 69.43,
+      "bestIter": 4
+    },
+    {
+      "slug": "narrow-tunnel",
+      "initScore": 54.29,
+      "bestScore": 69.75,
+      "bestIter": 4
+    },
+    {
+      "slug": "library",
+      "initScore": 69.87,
+      "bestScore": 69.87,
+      "bestIter": 0
+    },
+    {
+      "slug": "deep-ford",
+      "initScore": 70.07,
+      "bestScore": 70.21,
+      "bestIter": 1
+    },
+    {
+      "slug": "well-bottom",
+      "initScore": 69.19,
+      "bestScore": 70.35,
+      "bestIter": 2
+    },
+    {
+      "slug": "dead-palantir-1",
+      "initScore": 70.57,
+      "bestScore": 70.57,
+      "bestIter": 0
+    },
+    {
+      "slug": "wizards-quarters",
+      "initScore": 65.86,
+      "bestScore": 70.92,
+      "bestIter": 4
+    },
+    {
+      "slug": "pearl-room",
+      "initScore": 69.33,
+      "bestScore": 70.97,
+      "bestIter": 2
+    },
+    {
+      "slug": "guardian-room",
+      "initScore": 66.32,
+      "bestScore": 71.16,
+      "bestIter": 4
+    },
+    {
+      "slug": "vair-3",
+      "initScore": 53.09,
+      "bestScore": 71.33,
+      "bestIter": 4
+    },
+    {
+      "slug": "dragon-room",
+      "initScore": 66.72,
+      "bestScore": 71.49,
+      "bestIter": 3
+    },
+    {
+      "slug": "vault",
+      "initScore": 64.94,
+      "bestScore": 71.49,
+      "bestIter": 3
+    },
+    {
+      "slug": "posts-room",
+      "initScore": 62.67,
+      "bestScore": 71.61,
+      "bestIter": 4
+    },
+    {
+      "slug": "marble-hall",
+      "initScore": 66.66,
+      "bestScore": 71.67,
+      "bestIter": 2
+    },
+    {
+      "slug": "kennel",
+      "initScore": 58.49,
+      "bestScore": 71.68,
+      "bestIter": 4
+    },
+    {
+      "slug": "dead-palantir-4",
+      "initScore": 44.66,
+      "bestScore": 71.76,
+      "bestIter": 4
+    },
+    {
+      "slug": "vair-1",
+      "initScore": 51.47,
+      "bestScore": 71.94,
+      "bestIter": 4
+    },
+    {
+      "slug": "dark-tunnel",
+      "initScore": 59.42,
+      "bestScore": 72.03,
+      "bestIter": 4
+    },
+    {
+      "slug": "tiny-room",
+      "initScore": 60.36,
+      "bestScore": 72.04,
+      "bestIter": 3
+    },
+    {
+      "slug": "crypt-room",
+      "initScore": 53.16,
+      "bestScore": 72.1,
+      "bestIter": 4
+    },
+    {
+      "slug": "cobwebby-corridor",
+      "initScore": 59.87,
+      "bestScore": 72.15,
+      "bestIter": 4
+    },
+    {
+      "slug": "crypt-anteroom",
+      "initScore": 52.83,
+      "bestScore": 72.48,
+      "bestIter": 4
+    },
+    {
+      "slug": "riddle-room",
+      "initScore": 63.67,
+      "bestScore": 72.69,
+      "bestIter": 4
+    },
+    {
+      "slug": "lava-room",
+      "initScore": 66.62,
+      "bestScore": 72.9,
+      "bestIter": 4
+    },
+    {
+      "slug": "ledge-1",
+      "initScore": 66.17,
+      "bestScore": 73,
+      "bestIter": 4
+    },
+    {
+      "slug": "pentagram-room",
+      "initScore": 66.26,
+      "bestScore": 73.1,
+      "bestIter": 4
+    },
+    {
+      "slug": "room-8",
+      "initScore": 57.11,
+      "bestScore": 73.12,
+      "bestIter": 4
+    },
+    {
+      "slug": "ledge-tunnel",
+      "initScore": 64.62,
+      "bestScore": 73.17,
+      "bestIter": 4
+    },
+    {
+      "slug": "wizards-workshop",
+      "initScore": 68.12,
+      "bestScore": 73.34,
+      "bestIter": 4
+    },
+    {
+      "slug": "aquarium-room",
+      "initScore": 57.64,
+      "bestScore": 73.49,
+      "bestIter": 4
+    },
+    {
+      "slug": "workbench-room",
+      "initScore": 70.56,
+      "bestScore": 73.53,
+      "bestIter": 4
+    },
+    {
+      "slug": "teller-east",
+      "initScore": 72.28,
+      "bestScore": 73.58,
+      "bestIter": 2
+    },
+    {
+      "slug": "dreary-room",
+      "initScore": 63.71,
+      "bestScore": 73.67,
+      "bestIter": 4
+    },
+    {
+      "slug": "tea-room",
+      "initScore": 66.67,
+      "bestScore": 73.69,
+      "bestIter": 4
+    },
+    {
+      "slug": "cool-room",
+      "initScore": 60.81,
+      "bestScore": 73.82,
+      "bestIter": 4
+    },
+    {
+      "slug": "viewing-west",
+      "initScore": 69.97,
+      "bestScore": 74,
+      "bestIter": 4
+    },
+    {
+      "slug": "fresco-room",
+      "initScore": 73.92,
+      "bestScore": 74.16,
+      "bestIter": 1
+    },
+    {
+      "slug": "diamond-6",
+      "initScore": 66.19,
+      "bestScore": 74.78,
+      "bestIter": 4
+    },
+    {
+      "slug": "diamond-1",
+      "initScore": 72.69,
+      "bestScore": 74.86,
+      "bestIter": 4
+    },
+    {
+      "slug": "diamond-3",
+      "initScore": 72.7,
+      "bestScore": 74.93,
+      "bestIter": 3
+    },
+    {
+      "slug": "stairway-top",
+      "initScore": 72.97,
+      "bestScore": 74.93,
+      "bestIter": 2
+    },
+    {
+      "slug": "cerberus-room",
+      "initScore": 63.47,
+      "bestScore": 74.95,
+      "bestIter": 4
+    },
+    {
+      "slug": "formal-garden",
+      "initScore": 69.93,
+      "bestScore": 75.06,
+      "bestIter": 3
+    },
+    {
+      "slug": "zork3",
+      "initScore": 69.85,
+      "bestScore": 75.14,
+      "bestIter": 3
+    },
+    {
+      "slug": "foot-bridge",
+      "initScore": 69.91,
+      "bestScore": 75.27,
+      "bestIter": 4
+    },
+    {
+      "slug": "ravine-ledge",
+      "initScore": 65.48,
+      "bestScore": 75.42,
+      "bestIter": 4
+    },
+    {
+      "slug": "depository",
+      "initScore": 72.7,
+      "bestScore": 75.59,
+      "bestIter": 4
+    },
+    {
+      "slug": "diamond-2",
+      "initScore": 74.78,
+      "bestScore": 75.69,
+      "bestIter": 2
+    },
+    {
+      "slug": "diamond-4",
+      "initScore": 70.44,
+      "bestScore": 75.72,
+      "bestIter": 3
+    },
+    {
+      "slug": "diamond-8",
+      "initScore": 67.54,
+      "bestScore": 75.78,
+      "bestIter": 4
+    },
+    {
+      "slug": "stone-bridge",
+      "initScore": 70,
+      "bestScore": 76.2,
+      "bestIter": 4
+    },
+    {
+      "slug": "safe-room",
+      "initScore": 60.4,
+      "bestScore": 76.81,
+      "bestIter": 4
+    },
+    {
+      "slug": "ledge-2",
+      "initScore": 67.64,
+      "bestScore": 76.85,
+      "bestIter": 4
+    },
+    {
+      "slug": "lava-tube",
+      "initScore": 74,
+      "bestScore": 76.96,
+      "bestIter": 4
+    },
+    {
+      "slug": "diamond-5",
+      "initScore": 68.71,
+      "bestScore": 77.45,
+      "bestIter": 4
+    },
+    {
+      "slug": "cage-room",
+      "initScore": 75.56,
+      "bestScore": 77.56,
+      "bestIter": 1
+    },
+    {
+      "slug": "small-room",
+      "initScore": 65.55,
+      "bestScore": 77.83,
+      "bestIter": 0
+    },
+    {
+      "slug": "in-aquarium",
+      "initScore": 66.31,
+      "bestScore": 79,
+      "bestIter": 3
+    },
+    {
+      "slug": "viewing-east",
+      "initScore": 76.67,
+      "bestScore": 79.81,
+      "bestIter": 0
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "TELLER-EAST",
+  "bom": "games/zork2/planning/room-bom-prototype/teller-east/room-bom.json",
+  "bomSha256": "cd4896ac30b88cc8a79b9d1655985eac7d5b4b6b0f2461a5e859894e7ca3ca13",
+  "glb": "games/zork2/planning/room-bom-prototype/teller-east/build/room.glb",
+  "glbBytes": 3899332,
+  "glbSha256": "066f0d2730e1d8802db371902922f1f1128ab9706e88c0e512fcebbb823600b2",
+  "meshCount": 17,
+  "materialCount": 6,
+  "triangles": 10177,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/teller-east/build/review-4view.png"
+}

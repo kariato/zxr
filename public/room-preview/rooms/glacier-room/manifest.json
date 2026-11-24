@@ -1,0 +1,17 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "GLACIER-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/glacier-room/room-bom.json",
+  "bomSha256": "d682ef1c0a7a4cb2821b1858819d979a3e71d20f9bf02d985a7d7dcc3efe9e92",
+  "glb": "games/zork2/planning/room-bom-prototype/glacier-room/build/room.glb",
+  "glbBytes": 4221944,
+  "glbSha256": "46b3c959dd6543d448ff34e626c3fbcd82c9227bfb6c3ba7bd3a4c7c798f20a0",
+  "meshCount": 14,
+  "materialCount": 4,
+  "triangles": 20425,
+  "zilAnchors": [
+    "ICE"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/glacier-room/build/review-4view.png"
+}

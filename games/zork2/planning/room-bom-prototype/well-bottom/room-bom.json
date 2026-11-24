@@ -1,0 +1,260 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "WELL-BOTTOM",
+  "label": "Circular Room",
+  "sourceContext": "games/zork2/assets/rooms/well-bottom/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/well-bottom/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/well-bottom/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/well-bottom/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/well-bottom/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "rotunda",
+    "dimensionsMetres": [
+      7.4,
+      7.4,
+      14
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.04,
+    "ceilingStyle": "flat",
+    "lighting": {
+      "ambientColor": [
+        0.101,
+        0.088,
+        0.069
+      ],
+      "ambientStrength": 0.18,
+      "lights": [
+        {
+          "name": "well-bottom-warm-key",
+          "position": [
+            -0.8,
+            -1.2,
+            2.2
+          ],
+          "color": [
+            1,
+            0.74,
+            0.299
+          ],
+          "energy": 240,
+          "radius": 1
+        },
+        {
+          "name": "etchings-warm-fill",
+          "position": [
+            1.4,
+            1.2,
+            2
+          ],
+          "color": [
+            1,
+            0.76,
+            0.339
+          ],
+          "energy": 160,
+          "radius": 0.9
+        },
+        {
+          "name": "west-passage-cool",
+          "position": [
+            -3.4,
+            0,
+            1.8
+          ],
+          "color": [
+            0.401,
+            0.48,
+            0.539
+          ],
+          "energy": 60,
+          "radius": 1
+        },
+        {
+          "name": "shaft-gloom-top",
+          "position": [
+            0,
+            0,
+            9.5
+          ],
+          "color": [
+            0.281,
+            0.3,
+            0.339
+          ],
+          "energy": 55,
+          "radius": 2.4
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.36,
+        0.22,
+        0.66,
+        0.52
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.72,
+      "normalStrength": 1.35,
+      "colorScale": 1.191,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.16,
+        0.76,
+        0.56,
+        0.96
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.32,
+      "normalStrength": 1.15,
+      "colorScale": 1,
+      "tileable": true
+    },
+    "ceiling": {
+      "procedural": "grey-stone",
+      "tileMetres": 3.5,
+      "roughness": 0.95,
+      "normalStrength": 1.2
+    }
+  },
+  "objects": [
+    {
+      "id": "west-pearl-passage",
+      "category": "opening",
+      "description": "Arched brick-and-mortar passageway on the west wall leading to the Pearl Room",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "sourceView": "N",
+      "crop": [
+        0.06,
+        0.24,
+        0.34,
+        0.74
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.95,
+          0.6,
+          2.45
+        ],
+        "depthMetres": 7,
+        "tunnelColor": [
+          0.3,
+          0.44,
+          0.6
+        ],
+        "tunnelEnergy": 55
+      }
+    },
+    {
+      "id": "bottom-etchings-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for BOTTOM-ETCHINGS carved into the damp brick wall",
+      "zilIdentity": "BOTTOM-ETCHINGS",
+      "sourceView": "N",
+      "crop": [
+        0.56,
+        0.3,
+        0.88,
+        0.5
+      ],
+      "placement": {
+        "position": [
+          1.65,
+          3.15,
+          1.65
+        ],
+        "sizeMetres": [
+          1.8,
+          0.08,
+          1
+        ],
+        "yawDeg": -28
+      }
+    },
+    {
+      "id": "wooden-bucket-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL vehicle anchor for BUCKET (3-foot wooden bucket) resting on the damp floor",
+      "zilIdentity": "BUCKET",
+      "sourceView": "N",
+      "crop": [
+        0.5,
+        0.54,
+        0.75,
+        0.86
+      ],
+      "placement": {
+        "position": [
+          0.75,
+          0.85,
+          0
+        ],
+        "sizeMetres": [
+          0.92,
+          0.92,
+          0.92
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "damp-floor-puddle",
+      "category": "water-surface",
+      "description": "Thin glistening seepage puddle pooled across the damp circular stone floor",
+      "zilIdentity": null,
+      "placement": {
+        "position": [
+          0.3,
+          0.4,
+          0.015
+        ],
+        "sizeMetres": [
+          4.6,
+          4.6,
+          0.02
+        ],
+        "waterColor": [
+          0.1,
+          0.14,
+          0.16
+        ],
+        "alpha": 0.45
+      }
+    },
+    {
+      "id": "perimeter-wet-rubble",
+      "category": "boulder-cluster",
+      "description": "Scattered wet mortar chunks and fallen stones around the base of the circular brick wall",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          2.2,
+          1.8,
+          0
+        ],
+        "sizeMetres": [
+          2.2,
+          2.6,
+          0.45
+        ],
+        "count": 12,
+        "seed": 921
+      }
+    }
+  ]
+}

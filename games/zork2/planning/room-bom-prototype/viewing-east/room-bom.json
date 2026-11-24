@@ -1,0 +1,397 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "VIEWING-EAST",
+  "label": "East Viewing Room",
+  "sourceContext": "games/zork2/assets/rooms/viewing-east/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/viewing-east/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/viewing-east/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/viewing-east/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/viewing-east/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      7.8,
+      7.2,
+      4.1
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.03,
+    "ceilingStyle": "vaulted",
+    "lighting": {
+      "ambientColor": [
+        0.03,
+        0.08,
+        0.225
+      ],
+      "ambientStrength": 0.22,
+      "lights": [
+        {
+          "name": "viewing-center-key",
+          "position": [
+            0,
+            0.4,
+            2.8
+          ],
+          "color": [
+            0.81,
+            0.693,
+            0.61
+          ],
+          "energy": 280,
+          "radius": 1.1
+        },
+        {
+          "name": "north-sign-spot",
+          "position": [
+            0,
+            2.3,
+            2.5
+          ],
+          "color": [
+            0.81,
+            0.733,
+            0.67
+          ],
+          "energy": 190,
+          "radius": 0.8
+        },
+        {
+          "name": "south-entry-fill",
+          "position": [
+            0,
+            -2.5,
+            2.3
+          ],
+          "color": [
+            0.73,
+            0.633,
+            0.61
+          ],
+          "energy": 120,
+          "radius": 1.2
+        },
+        {
+          "name": "east-alcove-cool",
+          "position": [
+            2.8,
+            0.2,
+            2.2
+          ],
+          "color": [
+            0.19,
+            0.433,
+            0.81
+          ],
+          "energy": 45,
+          "radius": 1.1
+        },
+        {
+          "name": "west-alcove-cool",
+          "position": [
+            -2.8,
+            0.2,
+            2.2
+          ],
+          "color": [
+            0.19,
+            0.433,
+            0.81
+          ],
+          "energy": 45,
+          "radius": 1.1
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.35,
+        0.46,
+        0.65,
+        0.6
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.88,
+      "normalStrength": 1.25,
+      "colorScale": 1,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.66,
+        0.76,
+        0.92
+      ],
+      "tileMetres": 3,
+      "roughness": 0.78,
+      "normalStrength": 1.15,
+      "colorScale": 1,
+      "tileable": true
+    },
+    "ceiling": {
+      "procedural": "grey-stone",
+      "tileMetres": 3.2,
+      "roughness": 0.92,
+      "normalStrength": 1.2
+    },
+    "stone-trim": {
+      "procedural": "sandstone",
+      "tileMetres": 1.1,
+      "roughness": 0.88,
+      "normalStrength": 0.95
+    }
+  },
+  "objects": [
+    {
+      "id": "south-bank-arch",
+      "category": "opening",
+      "description": "A pronounced stone arch made of solid blocks matching the room's stone columns, leading back to the Bank Entrance",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "sourceView": "S",
+      "surface": "stone-trim",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.75,
+          0.45,
+          2.45
+        ],
+        "depthMetres": 8.5,
+        "curveYawDeg": 68,
+        "tunnelColor": [
+          0.95,
+          0.72,
+          0.42
+        ],
+        "tunnelEnergy": 140
+      }
+    },
+    {
+      "id": "pillar-north-west",
+      "category": "pillar",
+      "description": "Engaged stone vaulting pillar framing the west side of the north bay",
+      "zilIdentity": null,
+      "surface": "stone-trim",
+      "placement": {
+        "position": [
+          -2,
+          3.45,
+          0
+        ],
+        "sizeMetres": [
+          0.315,
+          0.315,
+          4.1
+        ]
+      }
+    },
+    {
+      "id": "pillar-north-east",
+      "category": "pillar",
+      "description": "Engaged stone vaulting pillar framing the east side of the north bay",
+      "zilIdentity": null,
+      "surface": "stone-trim",
+      "placement": {
+        "position": [
+          2,
+          3.45,
+          0
+        ],
+        "sizeMetres": [
+          0.315,
+          0.315,
+          4.1
+        ]
+      }
+    },
+    {
+      "id": "pillar-south-west",
+      "category": "pillar",
+      "description": "Engaged stone vaulting pillar framing the west side of the south arch bay",
+      "zilIdentity": null,
+      "surface": "stone-trim",
+      "placement": {
+        "position": [
+          -2,
+          -3.45,
+          0
+        ],
+        "sizeMetres": [
+          0.315,
+          0.315,
+          4.1
+        ]
+      }
+    },
+    {
+      "id": "pillar-south-east",
+      "category": "pillar",
+      "description": "Engaged stone vaulting pillar framing the east side of the south arch bay",
+      "zilIdentity": null,
+      "surface": "stone-trim",
+      "placement": {
+        "position": [
+          2,
+          -3.45,
+          0
+        ],
+        "sizeMetres": [
+          0.315,
+          0.315,
+          4.1
+        ]
+      }
+    },
+    {
+      "id": "pillar-east-north",
+      "category": "pillar",
+      "description": "Engaged stone vaulting pillar framing the north side of the east bench bay",
+      "zilIdentity": null,
+      "surface": "stone-trim",
+      "placement": {
+        "position": [
+          3.75,
+          1.87,
+          0
+        ],
+        "sizeMetres": [
+          0.315,
+          0.315,
+          4.1
+        ]
+      }
+    },
+    {
+      "id": "pillar-east-south",
+      "category": "pillar",
+      "description": "Engaged stone vaulting pillar framing the south side of the east bench bay",
+      "zilIdentity": null,
+      "surface": "stone-trim",
+      "placement": {
+        "position": [
+          3.75,
+          -1.87,
+          0
+        ],
+        "sizeMetres": [
+          0.315,
+          0.315,
+          4.1
+        ]
+      }
+    },
+    {
+      "id": "pillar-west-north",
+      "category": "pillar",
+      "description": "Engaged stone vaulting pillar framing the north side of the west bench bay",
+      "zilIdentity": null,
+      "surface": "stone-trim",
+      "placement": {
+        "position": [
+          -3.75,
+          1.87,
+          0
+        ],
+        "sizeMetres": [
+          0.315,
+          0.315,
+          4.1
+        ]
+      }
+    },
+    {
+      "id": "pillar-west-south",
+      "category": "pillar",
+      "description": "Engaged stone vaulting pillar framing the south side of the west bench bay",
+      "zilIdentity": null,
+      "surface": "stone-trim",
+      "placement": {
+        "position": [
+          -3.75,
+          -1.87,
+          0
+        ],
+        "sizeMetres": [
+          0.315,
+          0.315,
+          4.1
+        ]
+      }
+    },
+    {
+      "id": "west-stone-bench",
+      "category": "table",
+      "description": "Thick carved sandstone viewing bench centered along the west wall between the pillars",
+      "zilIdentity": null,
+      "surface": "stone-trim",
+      "placement": {
+        "position": [
+          -3.42,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          0.72,
+          2.55,
+          0.54
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "east-stone-bench",
+      "category": "table",
+      "description": "Thick carved sandstone viewing bench centered along the east wall between the pillars",
+      "zilIdentity": null,
+      "surface": "stone-trim",
+      "placement": {
+        "position": [
+          3.42,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          0.72,
+          2.55,
+          0.54
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "north-bank-sign",
+      "category": "wall-plaque",
+      "description": "Framed Zork Bank notice plaque mounted on the center of the north wall",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.38,
+        0.2,
+        0.64,
+        0.44
+      ],
+      "surface": "stone-trim",
+      "placement": {
+        "position": [
+          0,
+          3.55,
+          1.95
+        ],
+        "sizeMetres": [
+          1.85,
+          0.09,
+          1.15
+        ],
+        "yawDeg": 0
+      }
+    }
+  ]
+}

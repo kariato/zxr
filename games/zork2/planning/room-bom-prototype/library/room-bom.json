@@ -1,0 +1,469 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "LIBRARY",
+  "label": "Library",
+  "sourceContext": "games/zork2/assets/rooms/library/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/library/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/library/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/library/reverse-v2.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/library/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      8.4,
+      9.2,
+      4.2
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.04,
+    "ceilingStyle": "vaulted",
+    "lighting": {
+      "ambientColor": [
+        0.11,
+        0.1,
+        0.09
+      ],
+      "ambientStrength": 0.25,
+      "lights": [
+        {
+          "name": "library-warm-key",
+          "position": [
+            -0.6,
+            -0.5,
+            2.7
+          ],
+          "color": [
+            1,
+            0.74,
+            0.42
+          ],
+          "energy": 270,
+          "radius": 1.3
+        },
+        {
+          "name": "rug-amber-fill",
+          "position": [
+            1.4,
+            -1.8,
+            2.2
+          ],
+          "color": [
+            0.96,
+            0.7,
+            0.42
+          ],
+          "energy": 180,
+          "radius": 1.2
+        },
+        {
+          "name": "north-chasm-cool",
+          "position": [
+            0,
+            4.4,
+            2.2
+          ],
+          "color": [
+            0.38,
+            0.52,
+            0.68
+          ],
+          "energy": 95,
+          "radius": 1.1
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "procedural": "warm-ashlar",
+      "tileMetres": 2.4,
+      "roughness": 0.9,
+      "normalStrength": 1.25
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.5,
+        0.86,
+        0.72,
+        0.98
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.88,
+      "normalStrength": 1.15,
+      "colorScale": 1.535,
+      "tileable": true
+    },
+    "ceiling": {
+      "procedural": "grey-stone",
+      "tileMetres": 2.8,
+      "roughness": 0.93,
+      "normalStrength": 1.2
+    },
+    "oak-shelf": {
+      "procedural": "weathered-oak",
+      "tileMetres": 1.2,
+      "roughness": 0.84,
+      "normalStrength": 1.25
+    },
+    "table-oak": {
+      "procedural": "dark-oak",
+      "tileMetres": 1.4,
+      "roughness": 0.68,
+      "normalStrength": 1
+    },
+    "library-rug": {
+      "sourceView": "N",
+      "crop": [
+        0.44,
+        0.58,
+        0.76,
+        0.74
+      ],
+      "tileMetres": 3.6,
+      "roughness": 0.95,
+      "normalStrength": 0.75,
+      "colorScale": 1.05,
+      "tileable": false
+    }
+  },
+  "objects": [
+    {
+      "id": "north-ledge-arch",
+      "category": "opening",
+      "description": "Carved Gothic stone archway on the north wall leading out to Narrow Ledge",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.49,
+        0.05,
+        0.71,
+        0.45
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2.1,
+          0.6,
+          2.8
+        ],
+        "depthMetres": 7.5,
+        "tunnelColor": [
+          0.36,
+          0.48,
+          0.64
+        ],
+        "tunnelEnergy": 85
+      }
+    },
+    {
+      "id": "pillar-north-west",
+      "category": "pillar",
+      "description": "Heavy carved stone column flanking the west side of the northern archway",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -1.55,
+          4.15,
+          0
+        ],
+        "sizeMetres": [
+          0.62,
+          0.62,
+          4.2
+        ]
+      }
+    },
+    {
+      "id": "pillar-north-east",
+      "category": "pillar",
+      "description": "Heavy carved stone column flanking the east side of the northern archway",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          1.55,
+          4.15,
+          0
+        ],
+        "sizeMetres": [
+          0.62,
+          0.62,
+          4.2
+        ]
+      }
+    },
+    {
+      "id": "library-reading-table",
+      "category": "table",
+      "description": "Heavy carved royal oak reading table near the center of the library",
+      "zilIdentity": null,
+      "surface": "table-oak",
+      "placement": {
+        "position": [
+          -0.35,
+          0.2,
+          0
+        ],
+        "sizeMetres": [
+          1.95,
+          1.05,
+          0.82
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "royal-library-rug",
+      "category": "rug",
+      "description": "Tattered crimson and gold woven rug across the library flagstones",
+      "zilIdentity": null,
+      "surface": "library-rug",
+      "placement": {
+        "position": [
+          0.45,
+          -0.75,
+          0.025
+        ],
+        "sizeMetres": [
+          3.6,
+          5.2,
+          0.02
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "west-bookcase-north",
+      "category": "bookcase",
+      "description": "Tall gnawed oak royal bookcase along the north-west wall",
+      "zilIdentity": null,
+      "surface": "oak-shelf",
+      "placement": {
+        "position": [
+          -3.92,
+          2,
+          0
+        ],
+        "sizeMetres": [
+          2.6,
+          0.55,
+          3.1
+        ],
+        "yawDeg": 90
+      }
+    },
+    {
+      "id": "west-bookcase-south",
+      "category": "bookcase",
+      "description": "Tall gnawed oak royal bookcase along the south-west wall",
+      "zilIdentity": null,
+      "surface": "oak-shelf",
+      "placement": {
+        "position": [
+          -3.92,
+          -1.6,
+          0
+        ],
+        "sizeMetres": [
+          2.6,
+          0.55,
+          3.1
+        ],
+        "yawDeg": 90
+      }
+    },
+    {
+      "id": "east-bookcase-north",
+      "category": "bookcase",
+      "description": "Tall gnawed oak royal bookcase along the north-east wall",
+      "zilIdentity": null,
+      "surface": "oak-shelf",
+      "placement": {
+        "position": [
+          3.92,
+          2,
+          0
+        ],
+        "sizeMetres": [
+          2.6,
+          0.55,
+          3.1
+        ],
+        "yawDeg": -90
+      }
+    },
+    {
+      "id": "east-bookcase-south",
+      "category": "bookcase",
+      "description": "Tall gnawed oak royal bookcase along the south-east wall",
+      "zilIdentity": null,
+      "surface": "oak-shelf",
+      "placement": {
+        "position": [
+          3.92,
+          -1.6,
+          0
+        ],
+        "sizeMetres": [
+          2.6,
+          0.55,
+          3.1
+        ],
+        "yawDeg": -90
+      }
+    },
+    {
+      "id": "blue-book-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for BLUE-BOOK (worn and battered blue book in the south-west corner)",
+      "zilIdentity": "BLUE-BOOK",
+      "sourceView": "N",
+      "crop": [
+        0.01,
+        0.61,
+        0.24,
+        0.79
+      ],
+      "placement": {
+        "position": [
+          -2.15,
+          -1.65,
+          0.55
+        ],
+        "sizeMetres": [
+          0.34,
+          0.26,
+          0.08
+        ],
+        "yawDeg": 18
+      }
+    },
+    {
+      "id": "green-book-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for GREEN-BOOK (handsome green leather book in the center of the room on the table)",
+      "zilIdentity": "GREEN-BOOK",
+      "sourceView": "N",
+      "crop": [
+        0.31,
+        0.4,
+        0.45,
+        0.47
+      ],
+      "placement": {
+        "position": [
+          -0.35,
+          0.2,
+          0.82
+        ],
+        "sizeMetres": [
+          0.36,
+          0.26,
+          0.09
+        ],
+        "yawDeg": -8
+      }
+    },
+    {
+      "id": "purple-book-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for PURPLE-BOOK (mold-covered purple book lying in the dust)",
+      "zilIdentity": "PURPLE-BOOK",
+      "sourceView": "N",
+      "crop": [
+        0.64,
+        0.7,
+        0.79,
+        0.84
+      ],
+      "placement": {
+        "position": [
+          1.1,
+          -1.25,
+          0.03
+        ],
+        "sizeMetres": [
+          0.34,
+          0.25,
+          0.08
+        ],
+        "yawDeg": 22
+      }
+    },
+    {
+      "id": "white-book-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for WHITE-BOOK (white book sitting right beside the purple book)",
+      "zilIdentity": "WHITE-BOOK",
+      "sourceView": "N",
+      "crop": [
+        0.77,
+        0.74,
+        0.92,
+        0.89
+      ],
+      "placement": {
+        "position": [
+          1.65,
+          -1.45,
+          0.03
+        ],
+        "sizeMetres": [
+          0.32,
+          0.24,
+          0.08
+        ],
+        "yawDeg": -14
+      }
+    },
+    {
+      "id": "west-shelf-debris",
+      "category": "boulder-cluster",
+      "description": "Fallen masonry and splintered debris beneath the gnawed west shelves",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3.25,
+          -0.2,
+          0
+        ],
+        "sizeMetres": [
+          0.9,
+          5.2,
+          0.42
+        ],
+        "count": 12,
+        "seed": 571
+      }
+    },
+    {
+      "id": "east-shelf-debris",
+      "category": "boulder-cluster",
+      "description": "Fallen masonry and splintered debris beneath the gnawed east shelves",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          3.25,
+          -0.2,
+          0
+        ],
+        "sizeMetres": [
+          0.9,
+          5.2,
+          0.42
+        ],
+        "count": 12,
+        "seed": 572
+      }
+    }
+  ]
+}

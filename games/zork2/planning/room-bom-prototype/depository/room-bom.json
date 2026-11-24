@@ -1,0 +1,505 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "DEPOSITORY",
+  "label": "Safety Depository",
+  "sourceContext": "games/zork2/assets/rooms/depository/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/depository/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/depository/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/depository/reverse-v2.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/depository/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      11.6,
+      13,
+      5.2
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.025,
+    "ceilingStyle": "coffered",
+    "lighting": {
+      "ambientColor": [
+        0.12,
+        0.11,
+        0.14
+      ],
+      "ambientStrength": 0.305,
+      "lights": [
+        {
+          "name": "curtain-shimmer-north",
+          "position": [
+            0,
+            5.6,
+            2.6
+          ],
+          "color": [
+            0.52,
+            0.64,
+            1
+          ],
+          "energy": 478.5,
+          "radius": 2.4
+        },
+        {
+          "name": "east-doorway-amber",
+          "position": [
+            4.4,
+            -1.8,
+            2.4
+          ],
+          "color": [
+            1,
+            0.74,
+            0.4
+          ],
+          "energy": 304.5,
+          "radius": 1.4
+        },
+        {
+          "name": "west-doorway-amber",
+          "position": [
+            -4.4,
+            -1.8,
+            2.4
+          ],
+          "color": [
+            1,
+            0.74,
+            0.4
+          ],
+          "energy": 304.5,
+          "radius": 1.4
+        },
+        {
+          "name": "south-doorway-amber",
+          "position": [
+            0,
+            -5.2,
+            2.4
+          ],
+          "color": [
+            1,
+            0.72,
+            0.38
+          ],
+          "energy": 282.8,
+          "radius": 1.4
+        },
+        {
+          "name": "cube-overhead-fill",
+          "position": [
+            0,
+            0,
+            4.4
+          ],
+          "color": [
+            0.92,
+            0.84,
+            0.76
+          ],
+          "energy": 195.8,
+          "radius": 2
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "S",
+      "crop": [
+        0.3,
+        0.12,
+        0.44,
+        0.34
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.84,
+      "normalStrength": 1.25,
+      "colorScale": 1.454,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "S",
+      "crop": [
+        0.28,
+        0.56,
+        0.72,
+        0.88
+      ],
+      "tileMetres": 3.2,
+      "roughness": 0.52,
+      "normalStrength": 1.1,
+      "colorScale": 1.05,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "S",
+      "crop": [
+        0.32,
+        0.01,
+        0.68,
+        0.08
+      ],
+      "tileMetres": 3.6,
+      "roughness": 0.9,
+      "normalStrength": 1.15,
+      "colorScale": 0.9,
+      "tileable": true
+    },
+    "pilaster-stone": {
+      "procedural": "warm-ashlar",
+      "tileMetres": 2,
+      "roughness": 0.82,
+      "normalStrength": 1.25
+    },
+    "deposit-niche": {
+      "sourceView": "N",
+      "crop": [
+        0.17,
+        0.2,
+        0.31,
+        0.42
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.88,
+      "normalStrength": 1.35,
+      "colorScale": 0.95,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "east-vault-doorway",
+      "category": "opening",
+      "description": "Large dressed-stone doorway on the east wall leading out of the depository",
+      "zilIdentity": null,
+      "exitDirection": "EAST",
+      "sourceView": "N",
+      "crop": [
+        0.88,
+        0.12,
+        0.99,
+        0.56
+      ],
+      "surface": "pilaster-stone",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": -1.8,
+        "sizeMetres": [
+          2.4,
+          0.6,
+          3.2
+        ],
+        "depthMetres": 6,
+        "tunnelColor": [
+          1,
+          0.74,
+          0.4
+        ],
+        "tunnelEnergy": 150
+      }
+    },
+    {
+      "id": "west-vault-doorway",
+      "category": "opening",
+      "description": "Large dressed-stone doorway on the west wall leading out of the depository",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "sourceView": "N",
+      "crop": [
+        0.01,
+        0.12,
+        0.12,
+        0.56
+      ],
+      "surface": "pilaster-stone",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": -1.8,
+        "sizeMetres": [
+          2.4,
+          0.6,
+          3.2
+        ],
+        "depthMetres": 6,
+        "tunnelColor": [
+          1,
+          0.74,
+          0.4
+        ],
+        "tunnelEnergy": 150
+      }
+    },
+    {
+      "id": "south-office-doorway",
+      "category": "opening",
+      "description": "Large framed stone doorway on the south wall leading to the Chairman's Office",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "sourceView": "S",
+      "crop": [
+        0.43,
+        0.22,
+        0.57,
+        0.45
+      ],
+      "surface": "pilaster-stone",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2.4,
+          0.6,
+          3.1
+        ],
+        "depthMetres": 7.5,
+        "tunnelColor": [
+          1,
+          0.72,
+          0.38
+        ],
+        "tunnelEnergy": 170
+      }
+    },
+    {
+      "id": "east-deposit-recess",
+      "category": "recess",
+      "description": "Rows of empty safety deposit box niches recessed into the north-east masonry wall",
+      "zilIdentity": null,
+      "exitDirection": null,
+      "sourceView": "N",
+      "crop": [
+        0.69,
+        0.18,
+        0.83,
+        0.44
+      ],
+      "surface": "deposit-niche",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 2.4,
+        "sizeMetres": [
+          4.2,
+          0.4,
+          2.8
+        ],
+        "depthMetres": 0.6
+      }
+    },
+    {
+      "id": "west-deposit-recess",
+      "category": "recess",
+      "description": "Rows of empty safety deposit box niches recessed into the north-west masonry wall",
+      "zilIdentity": null,
+      "exitDirection": null,
+      "sourceView": "N",
+      "crop": [
+        0.17,
+        0.18,
+        0.31,
+        0.44
+      ],
+      "surface": "deposit-niche",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 2.4,
+        "sizeMetres": [
+          4.2,
+          0.4,
+          2.8
+        ],
+        "depthMetres": 0.6
+      }
+    },
+    {
+      "id": "pilaster-nw",
+      "category": "pillar",
+      "surface": "pilaster-stone",
+      "placement": {
+        "position": [
+          -5.55,
+          6.2,
+          0
+        ],
+        "sizeMetres": [
+          0.55,
+          0.55,
+          5.2
+        ]
+      }
+    },
+    {
+      "id": "pilaster-ne",
+      "category": "pillar",
+      "surface": "pilaster-stone",
+      "placement": {
+        "position": [
+          5.55,
+          6.2,
+          0
+        ],
+        "sizeMetres": [
+          0.55,
+          0.55,
+          5.2
+        ]
+      }
+    },
+    {
+      "id": "pilaster-sw",
+      "category": "pillar",
+      "surface": "pilaster-stone",
+      "placement": {
+        "position": [
+          -5.55,
+          -6.2,
+          0
+        ],
+        "sizeMetres": [
+          0.55,
+          0.55,
+          5.2
+        ]
+      }
+    },
+    {
+      "id": "pilaster-se",
+      "category": "pillar",
+      "surface": "pilaster-stone",
+      "placement": {
+        "position": [
+          5.55,
+          -6.2,
+          0
+        ],
+        "sizeMetres": [
+          0.55,
+          0.55,
+          5.2
+        ]
+      }
+    },
+    {
+      "id": "east-wall-rubble",
+      "category": "boulder-cluster",
+      "description": "Scattered chipped stone fragments along the east baseboard beneath the stripped deposit niches",
+      "zilIdentity": null,
+      "surface": "pilaster-stone",
+      "placement": {
+        "position": [
+          5.25,
+          2.2,
+          0
+        ],
+        "sizeMetres": [
+          0.75,
+          5.4,
+          0.32
+        ],
+        "count": 12,
+        "seed": 801
+      }
+    },
+    {
+      "id": "west-wall-rubble",
+      "category": "boulder-cluster",
+      "description": "Scattered chipped stone fragments along the west baseboard beneath the stripped deposit niches",
+      "zilIdentity": null,
+      "surface": "pilaster-stone",
+      "placement": {
+        "position": [
+          -5.25,
+          2.2,
+          0
+        ],
+        "sizeMetres": [
+          0.75,
+          5.4,
+          0.32
+        ],
+        "count": 12,
+        "seed": 802
+      }
+    },
+    {
+      "id": "curtain-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for CURTAIN, the shimmering curtain of light spanning the north wall",
+      "zilIdentity": "CURTAIN",
+      "sourceView": "N",
+      "crop": [
+        0.35,
+        0.1,
+        0.65,
+        0.36
+      ],
+      "placement": {
+        "position": [
+          0,
+          6.25,
+          0
+        ],
+        "sizeMetres": [
+          6.4,
+          0.15,
+          4.6
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "cube-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for CUBE, the ten-foot engraved stone cube in the center of the room",
+      "zilIdentity": "CUBE",
+      "sourceView": "N",
+      "crop": [
+        0.33,
+        0.35,
+        0.65,
+        0.72
+      ],
+      "placement": {
+        "position": [
+          0,
+          0.2,
+          0
+        ],
+        "sizeMetres": [
+          3.05,
+          3.05,
+          3.05
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "bank-brochure-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for BANK-BROCHURE lying on the flagstones south-west of the stone cube",
+      "zilIdentity": "BANK-BROCHURE",
+      "sourceView": "N",
+      "crop": [
+        0.16,
+        0.77,
+        0.24,
+        0.84
+      ],
+      "placement": {
+        "position": [
+          -2.4,
+          -2.8,
+          0.03
+        ],
+        "sizeMetres": [
+          0.32,
+          0.24,
+          0.02
+        ],
+        "yawDeg": 22
+      }
+    }
+  ]
+}

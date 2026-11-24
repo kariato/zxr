@@ -1,0 +1,20 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "VOLCANO-BOTTOM",
+  "bom": "games/zork2/planning/room-bom-prototype/volcano-bottom/room-bom.json",
+  "bomSha256": "90f3b4b1f8b656ab8e34d9330cc25b43e7a250dd158cc52c421226b6f6718cde",
+  "glb": "games/zork2/planning/room-bom-prototype/volcano-bottom/build/room.glb",
+  "glbBytes": 3628924,
+  "glbSha256": "4122a2f81eabe1070ca7a7f727413fa4009189dd015defdfa08c237a6606bc60",
+  "meshCount": 7,
+  "materialCount": 4,
+  "triangles": 24507,
+  "zilAnchors": [
+    "BALLOON",
+    "BRAIDED-WIRE",
+    "CLOTH-BAG",
+    "RECEPTACLE"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/volcano-bottom/build/review-4view.png"
+}

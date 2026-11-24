@@ -1,0 +1,21 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "TEA-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/tea-room/room-bom.json",
+  "bomSha256": "8224ade2cbf57810ea3ef7860493f267c4cd57f64b3641db5d9dbf984f21c8b9",
+  "glb": "games/zork2/planning/room-bom-prototype/tea-room/build/room.glb",
+  "glbBytes": 5642956,
+  "glbSha256": "65e86e0302168c811bb46d9503699f30f1b96f6a188305321e2b2584e27260a1",
+  "meshCount": 20,
+  "materialCount": 7,
+  "triangles": 18117,
+  "zilAnchors": [
+    "ALICE-TABLE",
+    "BLUE-ICING",
+    "EAT-ME-CAKE",
+    "ORANGE-ICING",
+    "RED-ICING"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/tea-room/build/review-4view.png"
+}

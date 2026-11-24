@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "FORMAL-GARDEN",
+  "bom": "games/zork2/planning/room-bom-prototype/formal-garden/room-bom.json",
+  "bomSha256": "413fbf0baf4abf7cd68c1c497f4ec36c18106a245778741ef4c22b3f995d68c0",
+  "glb": "games/zork2/planning/room-bom-prototype/formal-garden/build/room.glb",
+  "glbBytes": 3619932,
+  "glbSha256": "8f57f6c1105ce106c071556ddf71cf18c057dddd59ad686bc41b37cdc48358f7",
+  "meshCount": 17,
+  "materialCount": 5,
+  "triangles": 13264,
+  "zilAnchors": [],
+  "skybox": "src/prototype/assets/cavern-skybox-v1.png",
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/formal-garden/build/review-4view.png"
+}

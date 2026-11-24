@@ -250,6 +250,39 @@ def make_warm_ashlar_tile(size: int = 512) -> np.ndarray:
     return out
 
 
+def make_sandstone_tile(size: int = 512) -> np.ndarray:
+    """Synthesize a fine-grained neutral weathered sandstone/limestone texture (subtle grain, muted buff-grey)."""
+    rng = np.random.default_rng(209)
+    n_coarse = _periodic_noise_octave(16, size, rng)
+    n_med = _periodic_noise_octave(48, size, rng)
+    n_fine = _periodic_noise_octave(96, size, rng)
+    n_grain = _periodic_noise_octave(192, size, rng)
+
+    # Fine sedimentary mineral grain with very subtle weathering (no large blotches or heavy yellow tint)
+    y_norm = np.linspace(0.0, 1.0, size, endpoint=False)[:, None]
+    strata = 0.018 * np.sin((y_norm * 18.0 + n_coarse * 0.25) * math.tau)
+    shade = (
+        0.48
+        + 0.065 * (n_coarse - 0.5)
+        + 0.060 * (n_med - 0.5)
+        + 0.055 * (n_fine - 0.5)
+        + 0.045 * (n_grain - 0.5)
+        + strata
+    )
+    pits = np.clip((0.24 - n_fine) * 0.9, 0.0, 0.045)
+    shade = np.clip(shade - pits, 0.28, 0.68)
+
+    # Muted neutral buff-grey weathered stone (not yellow)
+    r = np.clip(shade * 0.99 + 0.01 * (n_coarse - 0.5), 0.22, 0.72)
+    g = np.clip(shade * 0.95 + 0.008 * (n_med - 0.5), 0.21, 0.69)
+    b = np.clip(shade * 0.87 - 0.005 * (n_coarse - 0.5), 0.19, 0.64)
+    out = np.ones((size, size, 4), dtype=np.float32)
+    out[:, :, 0] = r
+    out[:, :, 1] = g
+    out[:, :, 2] = b
+    return out
+
+
 def make_radial_floor_medallion(size: int = 1024) -> np.ndarray:
     """Synthesize a high-res concentric radial stone slab floor medallion matching Carousel Room."""
     rng = np.random.default_rng(307)
@@ -645,6 +678,92 @@ def build_ceiling(width: float, depth: float, height: float, style: str, mat: bp
     return ceil_obj
 
 
+def build_vaulted_ribs(
+    width: float,
+    depth: float,
+    height: float,
+    trim_mat: bpy.types.Material,
+    tile_m: float,
+):
+    """Build Romanesque/Gothic stone wall-arcade arches and transverse/diagonal vault ribs
+    springing from above head height (~2.25m) into the arched ceiling."""
+    hw, hd = width * 0.5, depth * 0.5
+    spring_z = min(height * 0.56, 2.25)
+    crown_z = height + 0.55
+    bm = bmesh.new()
+
+    def add_rib_arch(p0: Vector, p1: Vector, apex_z: float, rib_w: float = 0.28, rib_d: float = 0.26, steps: int = 16):
+        """Extrude a 3D rectangular stone rib along a parabolic/semicircular arch from p0 to p1."""
+        chord = p1 - p0
+        horiz = Vector((chord.x, chord.y, 0.0))
+        span = horiz.length
+        if span < 0.4:
+            return
+        fwd = horiz.normalized()
+        side = Vector((-fwd.y, fwd.x, 0.0))
+        rings = []
+        for i in range(steps + 1):
+            t = i / steps
+            # Smooth semicircular-ish rise from spring_z to apex_z
+            s = math.sin(t * math.pi)
+            z = p0.z + (apex_z - p0.z) * (s ** 0.82)
+            c = p0.lerp(p1, t)
+            c.z = z
+            # Tangent along arch for perpendicular cross-section
+            dt = 0.01
+            t2 = min(1.0, t + dt) if t < 0.99 else max(0.0, t - dt)
+            s2 = math.sin(t2 * math.pi)
+            c2 = p0.lerp(p1, t2)
+            c2.z = p0.z + (apex_z - p0.z) * (s2 ** 0.82)
+            tang = (c2 - c).normalized() if t < 0.99 else (c - c2).normalized()
+            up_n = side.cross(tang).normalized()
+            hw_r = rib_w * 0.5
+            hd_r = rib_d * 0.5
+            v0 = bm.verts.new(c - side * hw_r - up_n * hd_r)
+            v1 = bm.verts.new(c + side * hw_r - up_n * hd_r)
+            v2 = bm.verts.new(c + side * hw_r + up_n * hd_r)
+            v3 = bm.verts.new(c - side * hw_r + up_n * hd_r)
+            rings.append((v0, v1, v2, v3))
+        for i in range(steps):
+            a, b = rings[i], rings[i + 1]
+            for k in range(4):
+                k2 = (k + 1) % 4
+                bm.faces.new((a[k], b[k], b[k2], a[k2]))
+
+    # 1. Wall-arcade arches along all 4 perimeter walls (center bay + corner springings)
+    inset = 0.14
+    bay_x = min(hw * 0.52, 2.0)
+    bay_y = min(hd * 0.52, 2.0)
+    wall_apex = height - 0.12
+
+    # North & South wall arcades (3 bays: left, center, right)
+    for sy in (1.0, -1.0):
+        y = sy * (hd - inset)
+        xs = [-hw + inset, -bay_x, bay_x, hw - inset]
+        for i in range(len(xs) - 1):
+            add_rib_arch(Vector((xs[i], y, spring_z)), Vector((xs[i + 1], y, spring_z)), wall_apex, rib_w=0.26, rib_d=0.30)
+
+    # East & West wall arcades (3 bays)
+    for sx in (1.0, -1.0):
+        x = sx * (hw - inset)
+        ys = [-hd + inset, -bay_y, bay_y, hd - inset]
+        for i in range(len(ys) - 1):
+            add_rib_arch(Vector((x, ys[i], spring_z)), Vector((x, ys[i + 1], spring_z)), wall_apex, rib_w=0.26, rib_d=0.30)
+
+    # 2. Transverse ceiling ribs spanning across the room (E-W and N-S)
+    for y in (-bay_y, bay_y):
+        add_rib_arch(Vector((-hw + inset, y, spring_z)), Vector((hw - inset, y, spring_z)), crown_z, rib_w=0.30, rib_d=0.28)
+    for x in (-bay_x, bay_x):
+        add_rib_arch(Vector((x, -hd + inset, spring_z)), Vector((x, hd - inset, spring_z)), crown_z, rib_w=0.30, rib_d=0.28)
+
+    # 3. Diagonal groin ribs springing cleanly from wall corners across the central vault
+    add_rib_arch(Vector((-hw + inset, -hd + inset, spring_z)), Vector((hw - inset, hd - inset, spring_z)), crown_z + 0.08, rib_w=0.24, rib_d=0.24)
+    add_rib_arch(Vector((-hw + inset, hd - inset, spring_z)), Vector((hw - inset, -hd + inset, spring_z)), crown_z + 0.08, rib_w=0.24, rib_d=0.24)
+
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    return create_mesh_object('vaulted-ribs', bm, trim_mat, uv_scale=1.0 / tile_m)
+
+
 def build_coffered_beams(width: float, depth: float, height: float, wood_mat: bpy.types.Material, tile_m: float):
     """Add dark timber ceiling beams and cornice moulding for coffered architectural rooms."""
     bm = bmesh.new()
@@ -748,17 +867,819 @@ def build_rug(obj_spec: dict, mat: bpy.types.Material):
 
 
 def build_pillar(obj_spec: dict, mat: bpy.types.Material, tile_m: float):
-    """Build a square stepped wooden/stone pilaster or column."""
+    """Build a dressed stone/timber pilaster or column with stepped plinth base and molded capital."""
     pl = obj_spec['placement']
     cx, cy, cz = pl.get('position', [0.0, 0.0, 0.0])
     pw, pd, ph = pl.get('sizeMetres', [0.42, 0.42, 3.6])
     bm = bmesh.new()
-    bmesh.ops.create_cube(bm, size=1.0)
-    for v in bm.verts:
-        v.co.x = cx + v.co.x * pw
-        v.co.y = cy + v.co.y * pd
-        v.co.z = cz + (v.co.z + 0.5) * ph
-    return create_mesh_object(obj_spec['id'], bm, mat, uv_scale=1.0 / tile_m)
+    # Main shaft
+    _add_box(bm, -pw * 0.5, pw * 0.5, -pd * 0.5, pd * 0.5, 0.0, ph)
+    # Stepped plinth base (bottom 0.34m)
+    bw, bd = pw * 1.28, pd * 1.28
+    _add_box(bm, -bw * 0.5, bw * 0.5, -bd * 0.5, bd * 0.5, 0.0, min(0.30, ph * 0.12))
+    mw, md = pw * 1.14, pd * 1.14
+    _add_box(bm, -mw * 0.5, mw * 0.5, -md * 0.5, md * 0.5, min(0.30, ph * 0.12), min(0.42, ph * 0.16))
+    # Molded capital at springing height (just above head height, ~2.25m)
+    cap_z = min(ph * 0.56, 2.25)
+    if ph >= 2.6:
+        _add_box(bm, -mw * 0.5, mw * 0.5, -md * 0.5, md * 0.5, cap_z - 0.12, cap_z)
+        _add_box(bm, -bw * 0.5, bw * 0.5, -bd * 0.5, bd * 0.5, cap_z, cap_z + 0.16)
+    obj = create_mesh_object(obj_spec['id'], bm, mat, uv_scale=1.0 / tile_m)
+    obj.location = (cx, cy, cz)
+    return obj
+
+
+def build_table(obj_spec: dict, mat: bpy.types.Material, tile_m: float):
+    """Build a solid timber table or heavy carved stone bench (when height <= 0.65m)."""
+    pl = obj_spec['placement']
+    cx, cy, cz = pl.get('position', [0.0, 0.0, 0.0])
+    tw, td, th = pl.get('sizeMetres', [1.8, 0.95, 0.80])
+    yaw = math.radians(pl.get('yawDeg', 0.0))
+    is_bench = th <= 0.65
+    top_t = min(0.14, th * 0.28) if is_bench else min(0.08, th * 0.12)
+    apron_h = 0.0 if is_bench else min(0.11, th * 0.15)
+    leg_w = min(0.18, min(tw, td) * 0.30) if is_bench else min(0.09, min(tw, td) * 0.12)
+    inset_x = tw * 0.5 - leg_w * (0.95 if is_bench else 0.85)
+    inset_y = td * 0.5 - leg_w * (1.25 if is_bench else 0.85)
+
+    bm = bmesh.new()
+    # Tabletop / thick stone seat slab
+    _add_box(bm, -tw * 0.5, tw * 0.5, -td * 0.5, td * 0.5, th - top_t, th)
+    if apron_h > 0.0:
+        _add_box(bm, -inset_x, inset_x, -inset_y, inset_y, th - top_t - apron_h, th - top_t)
+    # Four corner legs (chunky carved stone blocks for benches)
+    for sx in (-1.0, 1.0):
+        for sy in (-1.0, 1.0):
+            lx = sx * max(0.05, inset_x - leg_w * 0.5)
+            ly = sy * max(0.05, inset_y - leg_w * 0.5)
+            _add_box(bm, lx - leg_w * 0.5, lx + leg_w * 0.5, ly - leg_w * 0.5, ly + leg_w * 0.5, 0.0, th - top_t)
+
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    obj = create_mesh_object(obj_spec['id'], bm, mat, uv_scale=1.0 / tile_m)
+    obj.location = (cx, cy, cz)
+    obj.rotation_euler = (0.0, 0.0, yaw)
+    return obj
+
+
+def build_stairs(obj_spec: dict, mat: bpy.types.Material, tile_m: float):
+    """Build a carved stone/marble staircase with stepped treads, risers, and flanking balustrades."""
+    pl = obj_spec['placement']
+    cx, cy, cz = pl.get('position', [0.0, 0.0, 0.0])
+    sw, run, rise = pl.get('sizeMetres', [2.2, 3.6, 2.0])
+    yaw = math.radians(pl.get('yawDeg', 0.0))
+    n_steps = max(3, int(pl.get('steps', 10)))
+    bm = bmesh.new()
+
+    step_d = run / n_steps
+    step_h = rise / n_steps
+    y_start = -run * 0.5
+    inner_hw = sw * 0.5 - 0.16
+
+    for i in range(n_steps):
+        y0 = y_start + i * step_d
+        y1 = y0 + step_d + 0.02
+        if rise >= 0:
+            z0 = 0.0
+            z1 = (i + 1) * step_h
+        else:
+            z0 = (i + 1) * step_h - 0.35
+            z1 = i * step_h
+        _add_box(bm, -inner_hw, inner_hw, y0, y1, z0, z1)
+
+    # Flanking stepped stone balustrades / stringer walls
+    bal_w = 0.22
+    bal_h = 0.78
+    for sx in (-1.0, 1.0):
+        bx0 = sx * inner_hw if sx > 0 else sx * inner_hw - bal_w
+        bx1 = bx0 + bal_w
+        for i in range(n_steps):
+            y0 = y_start + i * step_d
+            y1 = y0 + step_d + 0.02
+            top_z = (i + 1) * step_h + bal_h if rise >= 0 else i * step_h + bal_h
+            bot_z = 0.0 if rise >= 0 else (i + 1) * step_h - 0.35
+            _add_box(bm, bx0, bx1, y0, y1, bot_z, top_z)
+
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    obj = create_mesh_object(obj_spec['id'], bm, mat, uv_scale=1.0 / tile_m)
+    obj.location = (cx, cy, cz)
+    obj.rotation_euler = (0.0, 0.0, yaw)
+    return obj
+
+
+def build_bridge(obj_spec: dict, mat: bpy.types.Material, tile_m: float):
+    """Build a cambered arched stone/timber bridge deck with flanking parapets and coping stones."""
+    pl = obj_spec['placement']
+    cx, cy, cz = pl.get('position', [0.0, 0.0, 0.0])
+    bw, blen, bthick = pl.get('sizeMetres', [3.2, 9.0, 0.55])
+    yaw = math.radians(pl.get('yawDeg', 0.0))
+    parapet_h = float(pl.get('parapetHeight', 0.85))
+    n_seg = 16
+    camber = min(0.55, blen * 0.055)
+    hw = bw * 0.5
+    hl = blen * 0.5
+    par_w = 0.28
+
+    bm = bmesh.new()
+    for i in range(n_seg):
+        t0, t1 = i / n_seg, (i + 1) / n_seg
+        tm = (t0 + t1) * 0.5
+        y0 = -hl + blen * t0
+        y1 = -hl + blen * t1 + 0.02
+        arch_z = camber * math.sin(tm * math.pi)
+        # Underside deepens toward abutments to form a stone bridge arch
+        spandrel = 0.85 * ((abs(tm - 0.5) * 2.0) ** 1.6)
+        deck_top = arch_z
+        deck_bot = arch_z - max(0.32, bthick) - spandrel
+        _add_box(bm, -hw, hw, y0, y1, deck_bot, deck_top)
+
+        if parapet_h > 0.05:
+            for sx in (-1.0, 1.0):
+                px0 = sx * (hw - par_w) if sx > 0 else -hw
+                px1 = hw if sx > 0 else -hw + par_w
+                _add_box(bm, px0, px1, y0, y1, deck_top, deck_top + parapet_h)
+                # Slightly overhanging coping cap
+                _add_box(bm, px0 - 0.04, px1 + 0.04, y0, y1, deck_top + parapet_h, deck_top + parapet_h + 0.09)
+
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    obj = create_mesh_object(obj_spec['id'], bm, mat, uv_scale=1.0 / tile_m)
+    obj.location = (cx, cy, cz)
+    obj.rotation_euler = (0.0, 0.0, yaw)
+    return obj
+
+
+def build_wall_plaque(
+    obj_spec: dict,
+    frame_mat: bpy.types.Material,
+    panel_mat: bpy.types.Material,
+    tile_m: float,
+):
+    """Build a framed wall sign, plaque, or fresco recess with beveled border and inner panel."""
+    pl = obj_spec['placement']
+    cx, cy, cz = pl.get('position', [0.0, 0.0, 1.7])
+    pw, pthick, ph = pl.get('sizeMetres', [1.5, 0.09, 1.05])
+    yaw = math.radians(pl.get('yawDeg', 0.0))
+    border = min(0.09, min(pw, ph) * 0.12)
+
+    # Outer frame
+    bf = bmesh.new()
+    hw, hh = pw * 0.5, ph * 0.5
+    ht = pthick * 0.5
+    # Backplate + 4 frame rails
+    _add_box(bf, -hw, hw, -ht, 0.0, -hh, hh)
+    _add_box(bf, -hw, hw, 0.0, ht, hh - border, hh)
+    _add_box(bf, -hw, hw, 0.0, ht, -hh, -hh + border)
+    _add_box(bf, -hw, -hw + border, 0.0, ht, -hh + border, hh - border)
+    _add_box(bf, hw - border, hw, 0.0, ht, -hh + border, hh - border)
+    bmesh.ops.recalc_face_normals(bf, faces=bf.faces)
+    frame_obj = create_mesh_object(obj_spec['id'] + '-frame', bf, frame_mat, uv_scale=1.0 / tile_m)
+    frame_obj.location = (cx, cy, cz)
+    frame_obj.rotation_euler = (0.0, 0.0, yaw)
+
+    # Front display panel with clean 0..1 UVs (faces -Y in local space before yaw rotation)
+    bp = bmesh.new()
+    iw, ih = hw - border * 0.85, hh - border * 0.85
+    py = -ht - 0.008
+    v0 = bp.verts.new((-iw, py, -ih))
+    v1 = bp.verts.new((iw, py, -ih))
+    v2 = bp.verts.new((iw, py, ih))
+    v3 = bp.verts.new((-iw, py, ih))
+    bp.faces.new((v0, v1, v2, v3))
+    pmesh = bpy.data.meshes.new(obj_spec['id'])
+    bp.to_mesh(pmesh)
+    bp.free()
+    pmesh.materials.append(panel_mat)
+    uv = pmesh.uv_layers.new(name='UVMap')
+    coords = [(0.0, 0.0), (1.0, 0.0), (1.0, 1.0), (0.0, 1.0)]
+    for li, c in zip(pmesh.polygons[0].loop_indices, coords):
+        uv.data[li].uv = c
+    pobj = bpy.data.objects.new(obj_spec['id'], pmesh)
+    pobj.location = (cx, cy, cz)
+    pobj.rotation_euler = (0.0, 0.0, yaw)
+    bpy.context.scene.collection.objects.link(pobj)
+    return pobj
+
+
+def build_garden_bed(
+    obj_spec: dict,
+    hedge_mat: bpy.types.Material,
+    stone_mat: bpy.types.Material,
+    tile_m: float,
+):
+    """Build a stone-curbed garden bed with trimmed boxwood border, rounded shrubs, and flower clusters."""
+    pl = obj_spec['placement']
+    cx, cy, cz = pl.get('position', [0.0, 0.0, 0.0])
+    gw, gd, gh = pl.get('sizeMetres', [3.2, 1.8, 1.35])
+    yaw = math.radians(pl.get('yawDeg', 0.0))
+    count = max(3, int(pl.get('count', 7)))
+    rng = random.Random(int(pl.get('seed', 313)))
+
+    hw, hd = gw * 0.5, gd * 0.5
+    curb_h = 0.24
+    curb_t = 0.16
+
+    # 1. Dressed stone curb + soil bed
+    bc = bmesh.new()
+    _add_box(bc, -hw, hw, -hd, -hd + curb_t, 0.0, curb_h)
+    _add_box(bc, -hw, hw, hd - curb_t, hd, 0.0, curb_h)
+    _add_box(bc, -hw, -hw + curb_t, -hd + curb_t, hd - curb_t, 0.0, curb_h)
+    _add_box(bc, hw - curb_t, hw, -hd + curb_t, hd - curb_t, 0.0, curb_h)
+    _add_box(bc, -hw + curb_t, hw - curb_t, -hd + curb_t, hd - curb_t, 0.0, curb_h * 0.72)
+    bmesh.ops.recalc_face_normals(bc, faces=bc.faces)
+    curb_obj = create_mesh_object(obj_spec['id'] + '-curb', bc, stone_mat, uv_scale=1.0 / tile_m)
+    curb_obj.location = (cx, cy, cz)
+    curb_obj.rotation_euler = (0.0, 0.0, yaw)
+
+    # 2. Low trimmed boxwood rim + organic rounded shrubs / topiary cones
+    bf = bmesh.new()
+    rim_h = min(0.55, gh * 0.42)
+    _add_box(bf, -hw + curb_t, hw - curb_t, -hd + curb_t, hd - curb_t, curb_h * 0.7, curb_h * 0.7 + rim_h * 0.55)
+
+    for i in range(count):
+        sx = rng.uniform(-hw + curb_t + 0.3, hw - curb_t - 0.3) if gw > 0.9 else 0.0
+        sy = rng.uniform(-hd + curb_t + 0.3, hd - curb_t - 0.3) if gd > 0.9 else 0.0
+        r = rng.uniform(0.32, min(0.75, min(hw, hd) * 0.65))
+        if i == 0 and gh >= 1.25:
+            # Sculpted conical/tiered topiary centerpiece
+            res = bmesh.ops.create_cone(bf, cap_ends=True, segments=10, radius1=r * 0.9, radius2=0.08, depth=gh * 0.85)
+            for v in res['verts']:
+                v.co.x += sx + 0.05 * noise_3d(v.co.x * 3, v.co.y * 3, v.co.z * 3, i)
+                v.co.y += sy + 0.05 * noise_3d(v.co.y * 3, v.co.x * 3, v.co.z * 3, i + 7)
+                v.co.z += curb_h + gh * 0.42
+        else:
+            res = bmesh.ops.create_icosphere(bf, subdivisions=2, radius=r)
+            sz = rng.uniform(0.7, 1.15)
+            for v in res['verts']:
+                n = 1.0 + 0.14 * noise_3d(v.co.x * 2.5, v.co.y * 2.5, v.co.z * 2.5, i + 17)
+                v.co.x = sx + v.co.x * n
+                v.co.y = sy + v.co.y * n
+                v.co.z = curb_h + r * 0.55 * sz + v.co.z * sz * n
+
+    bmesh.ops.recalc_face_normals(bf, faces=bf.faces)
+    foliage_obj = create_mesh_object(obj_spec['id'], bf, hedge_mat, uv_scale=1.0 / max(tile_m * 0.6, 0.8))
+    foliage_obj.location = (cx, cy, cz)
+    foliage_obj.rotation_euler = (0.0, 0.0, yaw)
+
+    # 3. Subtle floral accent clusters (rose / coral blooms)
+    flower_mat = solid_material(f"mat-bloom-{obj_spec['id']}", (0.72, 0.24, 0.28), roughness=0.82)
+    bbl = bmesh.new()
+    for j in range(max(4, count)):
+        fx = rng.uniform(-hw + curb_t + 0.25, hw - curb_t - 0.25) if gw > 0.8 else 0.0
+        fy = rng.uniform(-hd + curb_t + 0.25, hd - curb_t - 0.25) if gd > 0.8 else 0.0
+        fr = rng.uniform(0.10, 0.20)
+        res = bmesh.ops.create_icosphere(bbl, subdivisions=1, radius=fr)
+        for v in res['verts']:
+            v.co.x += fx
+            v.co.y += fy
+            v.co.z += curb_h + rim_h * 0.65 + rng.uniform(0.05, 0.22)
+    bloom_obj = create_mesh_object(obj_spec['id'] + '-blooms', bbl, flower_mat, uv_scale=1.0)
+    bloom_obj.location = (cx, cy, cz)
+    bloom_obj.rotation_euler = (0.0, 0.0, yaw)
+    return foliage_obj
+
+
+def build_pedestal(obj_spec: dict, mat: bpy.types.Material, tile_m: float):
+    """Build a stepped architectural display pedestal, altar plinth, or machine console."""
+    pl = obj_spec['placement']
+    cx, cy, cz = pl.get('position', [0.0, 0.0, 0.0])
+    pw, pd, ph = pl.get('sizeMetres', [1.1, 0.85, 1.15])
+    yaw = math.radians(pl.get('yawDeg', 0.0))
+    hw, hd = pw * 0.5, pd * 0.5
+
+    bm = bmesh.new()
+    # Stepped plinth base
+    b1 = min(0.16, ph * 0.16)
+    b2 = min(0.28, ph * 0.26)
+    cap = min(0.14, ph * 0.14)
+    _add_box(bm, -hw, hw, -hd, hd, 0.0, b1)
+    _add_box(bm, -hw * 0.90, hw * 0.90, -hd * 0.90, hd * 0.90, b1, b2)
+    # Recessed shaft / console body
+    _add_box(bm, -hw * 0.78, hw * 0.78, -hd * 0.78, hd * 0.78, b2, ph - cap)
+    # Overhanging beveled cap
+    _add_box(bm, -hw * 0.96, hw * 0.96, -hd * 0.96, hd * 0.96, ph - cap, ph)
+
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    obj = create_mesh_object(obj_spec['id'], bm, mat, uv_scale=1.0 / tile_m)
+    obj.location = (cx, cy, cz)
+    obj.rotation_euler = (0.0, 0.0, yaw)
+    return obj
+
+
+def build_polygonal_chamber(
+    radius: float,
+    height: float,
+    sides: int,
+    wall_mat: bpy.types.Material,
+    floor_mat: bpy.types.Material,
+    ceil_mat: bpy.types.Material,
+    tile_m: float,
+    disp: float,
+    ceiling_style: str,
+    openings: list[dict],
+):
+    """Build a circular (rotunda) or octagonal chamber with cutouts only for declared openings."""
+    # Map wall side + offsetAlongWall to target angle and width in radians.
+    side_angles = {'N': 0.0, 'E': math.pi * 0.5, 'S': math.pi, 'W': 1.5 * math.pi}
+    cutouts = []
+    for o in openings:
+        pl = o['placement']
+        side = pl.get('wall')
+        if side not in side_angles:
+            continue
+        ow, _, oh = pl.get('sizeMetres', [2.0, 0.5, 2.5])
+        off = float(pl.get('offsetAlongWall', 0.0))
+        ang = (side_angles[side] + off / max(radius, 1.0)) % math.tau
+        half_ang = (ow * 0.5) / max(radius, 1.0)
+        cutouts.append((ang, half_ang, oh))
+
+    def in_cutout(theta: float, z: float) -> bool:
+        for ang, half_ang, oh in cutouts:
+            da = abs(((theta - ang + math.pi) % math.tau) - math.pi)
+            if da < half_ang and z < oh:
+                return True
+        return False
+
+    # Floor disk
+    bf = bmesh.new()
+    fverts = []
+    for i in range(sides):
+        a = i * (math.tau / sides)
+        fverts.append(bf.verts.new((math.sin(a) * radius, math.cos(a) * radius, 0.0)))
+    bf.faces.new(fverts)
+    create_mesh_object('room-floor', bf, floor_mat, uv_scale=1.0 / tile_m)
+
+    # Ceiling disk or shallow dome (skipped for open-sky)
+    if ceiling_style != 'open-sky':
+        bc = bmesh.new()
+        if ceiling_style in {'vaulted', 'rough-cavern'}:
+            rings = []
+            for ir in range(5):
+                t = ir / 4.0
+                r = radius * (1.0 - t)
+                z = height + (radius * 0.22) * math.sin(t * math.pi * 0.5)
+                if r < 0.05:
+                    rings.append([bc.verts.new((0.0, 0.0, z))])
+                else:
+                    ring = []
+                    for i in range(sides):
+                        a = i * (math.tau / sides)
+                        ring.append(bc.verts.new((math.sin(a) * r, math.cos(a) * r, z)))
+                    rings.append(ring)
+            for ir in range(len(rings) - 1):
+                if len(rings[ir + 1]) == 1:
+                    apex = rings[ir + 1][0]
+                    for i in range(sides):
+                        bc.faces.new((rings[ir][(i + 1) % sides], rings[ir][i], apex))
+                else:
+                    for i in range(sides):
+                        i2 = (i + 1) % sides
+                        bc.faces.new((rings[ir][i2], rings[ir][i], rings[ir + 1][i], rings[ir + 1][i2]))
+        else:
+            cverts = [bc.verts.new((math.sin(i * math.tau / sides) * radius, math.cos(i * math.tau / sides) * radius, height)) for i in range(sides)]
+            cverts.reverse()
+            bc.faces.new(cverts)
+        create_mesh_object('room-ceiling', bc, ceil_mat, uv_scale=1.0 / tile_m)
+
+    # Walls with vertical + angular subdivision so openings punch cleanly
+    n_seg = max(sides, 32 if sides > 8 else 24)
+    n_z = 14
+    bw = bmesh.new()
+    grid = []
+    for iz in range(n_z + 1):
+        z = height * (iz / n_z)
+        row = []
+        for iseg in range(n_seg):
+            if sides <= 8:
+                # Preserve crisp octagonal facets while subdividing each face
+                per_face = n_seg // sides
+                face_i = iseg // per_face
+                frac = (iseg % per_face) / per_face
+                a0 = face_i * (math.tau / sides) + math.pi / sides
+                a1 = (face_i + 1) * (math.tau / sides) + math.pi / sides
+                p0 = Vector((math.sin(a0) * radius, math.cos(a0) * radius, z))
+                p1 = Vector((math.sin(a1) * radius, math.cos(a1) * radius, z))
+                p = p0.lerp(p1, frac)
+            else:
+                a = iseg * (math.tau / n_seg)
+                p = Vector((math.sin(a) * radius, math.cos(a) * radius, z))
+            if disp > 0.005:
+                inward = Vector((-p.x, -p.y, 0.0)).normalized()
+                n = disp * 0.45 * noise_3d(p.x * 0.8, p.y * 0.8, p.z * 0.9, 41)
+                p = p + inward * n
+            row.append(bw.verts.new(p))
+        grid.append(row)
+
+    for iz in range(n_z):
+        for iseg in range(n_seg):
+            iseg2 = (iseg + 1) % n_seg
+            v0, v1, v2, v3 = grid[iz][iseg], grid[iz][iseg2], grid[iz + 1][iseg2], grid[iz + 1][iseg]
+            mid = (v0.co + v1.co + v2.co + v3.co) * 0.25
+            theta = math.atan2(mid.x, mid.y) % math.tau
+            if in_cutout(theta, mid.z):
+                continue
+            bw.faces.new((v1, v0, v3, v2))
+    bmesh.ops.recalc_face_normals(bw, faces=bw.faces)
+    create_mesh_object('chamber-walls', bw, wall_mat, uv_scale=1.0 / tile_m)
+
+
+# ---------------------------------------------------------------------------
+# Octagonal Gothic-Romanesque Rotunda builder (e.g. CAROUSEL-ROOM)
+# ---------------------------------------------------------------------------
+
+def build_rotunda(
+    radius: float,
+    dome_height: float,
+    stone_mat: bpy.types.Material,
+    trim_mat: bpy.types.Material,
+    floor_mat: bpy.types.Material,
+    tunnel_mat: bpy.types.Material,
+    dark_mat: bpy.types.Material,
+    tile_m: float,
+    tex_dir: Path,
+    sides: int = 8,
+):
+    """Build a grand 8-bay circular/octagonal rotunda with radial medallion floor, stepped granite piers,
+    soaring light-stone Gothic-Romanesque arches & portcullis headers, carved numbered keystone plaques (1..8),
+    deep ribbed passages, and light-stone ceiling ribs sweeping into a high dome lost in gloom.
+    """
+    entab_z = 6.35
+    cornice_z = 7.35
+
+    # 1. Circular radial stone floor medallion (planar 0..1 UVs matching concentric rings)
+    bf = bmesh.new()
+    f_segs = 64
+    f_rad = radius + 1.4
+    center_v = bf.verts.new((0.0, 0.0, 0.0))
+    ring_vs = [bf.verts.new((math.sin(i * math.tau / f_segs) * f_rad, math.cos(i * math.tau / f_segs) * f_rad, 0.0)) for i in range(f_segs)]
+    for i in range(f_segs):
+        j = (i + 1) % f_segs
+        bf.faces.new((center_v, ring_vs[j], ring_vs[i]))
+    fmesh = bpy.data.meshes.new('rotunda-radial-floor')
+    bf.to_mesh(fmesh)
+    bf.free()
+    fmesh.materials.append(floor_mat)
+    fuv = fmesh.uv_layers.new(name='UVMap')
+    for poly in fmesh.polygons:
+        for li in poly.loop_indices:
+            co = fmesh.vertices[fmesh.loops[li].vertex_index].co
+            fuv.data[li].uv = (co.x / (2.0 * f_rad) + 0.5, co.y / (2.0 * f_rad) + 0.5)
+    fobj = bpy.data.objects.new('rotunda-radial-floor', fmesh)
+    bpy.context.scene.collection.objects.link(fobj)
+
+    # 2. 8 tall stepped stone piers at octagon vertices + base rubble
+    bp = bmesh.new()
+    br = bmesh.new()
+    rng = random.Random(808)
+    vert_r = radius / math.cos(math.pi / sides)
+
+    def add_oriented_box(bm_t, origin, tangent, outward, u0, u1, d0, d1, z0, z1):
+        corners = [
+            origin + tangent * u0 + outward * d0 + Vector((0, 0, z0)),
+            origin + tangent * u1 + outward * d0 + Vector((0, 0, z0)),
+            origin + tangent * u1 + outward * d1 + Vector((0, 0, z0)),
+            origin + tangent * u0 + outward * d1 + Vector((0, 0, z0)),
+            origin + tangent * u0 + outward * d0 + Vector((0, 0, z1)),
+            origin + tangent * u1 + outward * d0 + Vector((0, 0, z1)),
+            origin + tangent * u1 + outward * d1 + Vector((0, 0, z1)),
+            origin + tangent * u0 + outward * d1 + Vector((0, 0, z1)),
+        ]
+        vs = [bm_t.verts.new(c) for c in corners]
+        bm_t.faces.new((vs[0], vs[3], vs[2], vs[1]))
+        bm_t.faces.new((vs[4], vs[5], vs[6], vs[7]))
+        bm_t.faces.new((vs[0], vs[1], vs[5], vs[4]))
+        bm_t.faces.new((vs[2], vs[3], vs[7], vs[6]))
+        bm_t.faces.new((vs[1], vs[2], vs[6], vs[5]))
+        bm_t.faces.new((vs[3], vs[0], vs[4], vs[7]))
+
+    for i in range(sides):
+        # Vertex angle sits halfway between bay centers
+        a = (i + 0.5) * (math.tau / sides)
+        outward = Vector((math.sin(a), math.cos(a), 0.0))
+        tangent = Vector((math.cos(a), -math.sin(a), 0.0))
+        p = outward * vert_r
+        # Two-tier stepped plinth base
+        add_oriented_box(bp, p, tangent, outward, -0.64, 0.64, -0.68, 0.55, 0.0, 0.42)
+        add_oriented_box(bp, p, tangent, outward, -0.54, 0.54, -0.58, 0.50, 0.42, 0.85)
+        # Main vertical ashlar pier shaft
+        add_oriented_box(bp, p, tangent, outward, -0.44, 0.44, -0.48, 0.48, 0.85, entab_z)
+        # Stepped capital & cornice bracket
+        add_oriented_box(bp, p, tangent, outward, -0.54, 0.54, -0.58, 0.52, entab_z, entab_z + 0.28)
+        add_oriented_box(bp, p, tangent, outward, -0.62, 0.62, -0.66, 0.55, entab_z + 0.28, cornice_z)
+        # Small fallen stone rubble around each pier base
+        for _ in range(5):
+            rp = p - outward * rng.uniform(0.55, 1.15) + tangent * rng.uniform(-0.85, 0.85)
+            rad = rng.uniform(0.08, 0.20)
+            ret = bmesh.ops.create_icosphere(br, subdivisions=1, radius=rad)
+            for v in ret['verts']:
+                v.co = Vector((rp.x + v.co.x * 1.2, rp.y + v.co.y * 1.1, max(0.0, (v.co.z + rad * 0.4) * 0.65)))
+
+    bmesh.ops.recalc_face_normals(bp, faces=bp.faces)
+    create_mesh_object('rotunda-piers', bp, stone_mat, uv_scale=1.0 / tile_m)
+    create_mesh_object('rotunda-pier-rubble', br, stone_mat, uv_scale=1.0 / tile_m)
+
+    # 3. 8 Grand Archway bays (light-stone arches, ribs & portcullis trim; dark granite spandrels/piers)
+    ba_wall = bmesh.new()   # granite spandrels & frieze
+    ba_trim = bmesh.new()   # lighter stone arches, capitals, keystones, dentils, passage ribs & portcullis frame
+    bt = bmesh.new()
+    bt_floor = bmesh.new()
+    side_w = 2.0 * radius * math.tan(math.pi / sides)
+    arch_w = side_w * 0.74
+    half_aw = arch_w * 0.5
+    impost_z = 3.15
+    crown_z = 5.55
+
+    def pointed_arch_pts(hw: float, z_imp: float, z_cr: float, n_half: int = 8):
+        """Soaring Gothic-Romanesque pointed arch profile from left floor -> crown -> right floor."""
+        pts = [(-hw, 0.0), (-hw, z_imp)]
+        for k in range(1, n_half):
+            t = k / n_half
+            ang = math.pi * 0.5 * t
+            u = -hw * math.cos(ang)
+            z = z_imp + (z_cr - z_imp) * (math.sin(ang) ** 0.78)
+            pts.append((u, z))
+        pts.append((0.0, z_cr + 0.14))
+        for k in range(n_half - 1, 0, -1):
+            t = k / n_half
+            ang = math.pi * 0.5 * t
+            u = hw * math.cos(ang)
+            z = z_imp + (z_cr - z_imp) * (math.sin(ang) ** 0.78)
+            pts.append((u, z))
+        pts.extend([(hw, z_imp), (hw, 0.0)])
+        return pts
+
+    inner_arch = pointed_arch_pts(half_aw, impost_z, crown_z)
+
+    for i in range(sides):
+        # Bay 0 = North (1), Bay 1 = NE (2), ..., Bay 7 = NW (8)
+        a = i * (math.tau / sides)
+        outward = Vector((math.sin(a), math.cos(a), 0.0))
+        inward = -outward
+        tangent = Vector((math.cos(a), -math.sin(a), 0.0))
+        center = outward * radius
+
+        # Grand light-stone inner jamb pilasters + stepped plinths + 3-tier ornate impost capitals
+        for sgn in (-1.0, 1.0):
+            u_in = sgn * half_aw
+            u_out = sgn * (side_w * 0.5)
+            u0, u1 = min(u_in, u_out), max(u_in, u_out)
+            add_oriented_box(ba_trim, center, tangent, outward, u0, u1, -0.38, 0.70, 0.0, impost_z)
+            # Stepped plinth footing
+            add_oriented_box(ba_trim, center, tangent, outward, u0 - 0.07, u1 + 0.07, -0.50, 0.74, 0.0, 0.45)
+            # 3-tier stepped ornate impost capital moulding
+            add_oriented_box(ba_trim, center, tangent, outward, u0 - 0.05, u1 + 0.05, -0.46, 0.72, impost_z - 0.34, impost_z - 0.20)
+            add_oriented_box(ba_trim, center, tangent, outward, u0 - 0.10, u1 + 0.10, -0.54, 0.76, impost_z - 0.20, impost_z - 0.06)
+            add_oriented_box(ba_trim, center, tangent, outward, u0 - 0.15, u1 + 0.15, -0.62, 0.78, impost_z - 0.06, impost_z + 0.10)
+
+        # Grand double-stepped light-stone archivolt (inner recessed order + bold outer hood moulding)
+        ring_t = 0.60
+        for k in range(len(inner_arch) - 1):
+            u0, z0 = inner_arch[k]
+            u1, z1 = inner_arch[k + 1]
+            if z0 < impost_z and z1 < impost_z:
+                continue
+            def outer_of(u, z, rad_off):
+                dx = u
+                dz = max(0.05, z - impost_z + 0.35)
+                dist = max(math.hypot(dx, dz), 1e-4)
+                return u + (dx / dist) * rad_off, min(entab_z, z + (dz / dist) * rad_off)
+
+            mu0, mz0 = outer_of(u0, z0, ring_t * 0.56)
+            mu1, mz1 = outer_of(u1, z1, ring_t * 0.56)
+            ou0, oz0 = outer_of(u0, z0, ring_t)
+            ou1, oz1 = outer_of(u1, z1, ring_t)
+
+            # Inner arch order (projects inward 0.38 m)
+            vs_in = [ba_trim.verts.new(p) for p in (
+                center + tangent * u0 + inward * 0.38 + Vector((0, 0, z0)),
+                center + tangent * u1 + inward * 0.38 + Vector((0, 0, z1)),
+                center + tangent * mu1 + inward * 0.38 + Vector((0, 0, mz1)),
+                center + tangent * mu0 + inward * 0.38 + Vector((0, 0, mz0)),
+                center + tangent * u0 + outward * 0.72 + Vector((0, 0, z0)),
+                center + tangent * u1 + outward * 0.72 + Vector((0, 0, z1)),
+                center + tangent * mu1 + outward * 0.72 + Vector((0, 0, mz1)),
+                center + tangent * mu0 + outward * 0.72 + Vector((0, 0, mz0)),
+            )]
+            ba_trim.faces.new((vs_in[0], vs_in[1], vs_in[2], vs_in[3]))
+            ba_trim.faces.new((vs_in[4], vs_in[5], vs_in[1], vs_in[0]))
+            ba_trim.faces.new((vs_in[3], vs_in[2], vs_in[6], vs_in[7]))
+            ba_trim.faces.new((vs_in[7], vs_in[6], vs_in[5], vs_in[4]))
+
+            # Bold outer hood-moulding archivolt (projects inward 0.56 m)
+            vs_out = [ba_trim.verts.new(p) for p in (
+                center + tangent * mu0 + inward * 0.56 + Vector((0, 0, mz0)),
+                center + tangent * mu1 + inward * 0.56 + Vector((0, 0, mz1)),
+                center + tangent * ou1 + inward * 0.50 + Vector((0, 0, oz1)),
+                center + tangent * ou0 + inward * 0.50 + Vector((0, 0, oz0)),
+                center + tangent * mu0 + outward * 0.72 + Vector((0, 0, mz0)),
+                center + tangent * mu1 + outward * 0.72 + Vector((0, 0, mz1)),
+                center + tangent * ou1 + outward * 0.72 + Vector((0, 0, oz1)),
+                center + tangent * ou0 + outward * 0.72 + Vector((0, 0, oz0)),
+            )]
+            ba_trim.faces.new((vs_out[0], vs_out[1], vs_out[2], vs_out[3]))
+            ba_trim.faces.new((vs_out[4], vs_out[5], vs_out[1], vs_out[0]))
+            ba_trim.faces.new((vs_out[3], vs_out[2], vs_out[6], vs_out[7]))
+            ba_trim.faces.new((vs_out[7], vs_out[6], vs_out[5], vs_out[4]))
+
+            # Granite spandrel wall fill between arch extrados and entab_z
+            sp_u0 = -side_w * 0.54 if k == 1 else max(-side_w * 0.54, min(side_w * 0.54, ou0))
+            sp_u1 = side_w * 0.54 if k == len(inner_arch) - 3 else max(-side_w * 0.54, min(side_w * 0.54, ou1))
+            sp0 = ba_wall.verts.new(center + tangent * ou0 + inward * 0.22 + Vector((0, 0, oz0)))
+            sp1 = ba_wall.verts.new(center + tangent * ou1 + inward * 0.22 + Vector((0, 0, oz1)))
+            sp2 = ba_wall.verts.new(center + tangent * sp_u1 + inward * 0.22 + Vector((0, 0, entab_z)))
+            sp3 = ba_wall.verts.new(center + tangent * sp_u0 + inward * 0.22 + Vector((0, 0, entab_z)))
+            ba_wall.faces.new((sp0, sp1, sp2, sp3))
+        for sgn in (-1.0, 1.0):
+            u_in = sgn * half_aw
+            u_out = sgn * (side_w * 0.55)
+            add_oriented_box(ba_wall, center, tangent, outward, min(u_in, u_out), max(u_in, u_out), -0.24, 0.70, impost_z, entab_z)
+
+        # Raised portcullis grate tucked high inside each grand arch crown (light-stone grid & spikes, walkway 100% open)
+        port_z_bot = impost_z + 1.05
+        port_z_top = crown_z - 0.15
+        # Horizontal portcullis crossbars
+        for hz in (port_z_bot + 0.12, port_z_bot + 0.62, port_z_bot + 1.12):
+            if hz < port_z_top:
+                bar_hw = half_aw * max(0.25, math.sqrt(max(0.0, 1.0 - ((hz - impost_z) / max(crown_z - impost_z, 0.5)) ** 2)))
+                add_oriented_box(ba_trim, center, tangent, outward, -bar_hw, bar_hw, 0.12, 0.26, hz - 0.05, hz + 0.05)
+        # Vertical portcullis bars + downward-pointing gate teeth
+        for b_idx in range(-4, 5):
+            bu = b_idx * (half_aw * 0.21)
+            if abs(bu) < half_aw * 0.88:
+                # Arch ceiling height at horizontal offset bu
+                z_cap = impost_z + (crown_z - impost_z) * (max(0.0, 1.0 - (bu / half_aw) ** 2) ** 0.45)
+                if z_cap > port_z_bot + 0.15:
+                    add_oriented_box(ba_trim, center, tangent, outward, bu - 0.045, bu + 0.045, 0.14, 0.24, port_z_bot - 0.16, z_cap)
+
+        # Sculpted protruding light-stone keystone block crowning the arch + light-stone cornice dentil blocks
+        add_oriented_box(ba_trim, center, tangent, outward, -0.46, 0.46, -0.66, 0.42, crown_z - 0.20, crown_z + 0.74)
+        for d_idx in range(-4, 5):
+            du = d_idx * (side_w * 0.105)
+            add_oriented_box(ba_trim, center, tangent, outward, du - 0.12, du + 0.12, -0.60, -0.34, cornice_z - 0.46, cornice_z - 0.26)
+
+        # Continuous granite entablature frieze + projecting light-stone cornice moulding
+        add_oriented_box(ba_wall, center, tangent, outward, -side_w * 0.54, side_w * 0.54, -0.34, 0.70, entab_z, cornice_z - 0.26)
+        add_oriented_box(ba_trim, center, tangent, outward, -side_w * 0.56, side_w * 0.56, -0.58, 0.74, cornice_z - 0.26, cornice_z)
+
+        # Carved numbered keystone plaque (1..8) mounted cleanly on the front face of the sculpted keystone
+        num_str = str(i + 1)
+        p_albedo, p_normal = make_arch_number_plaque_texture(num_str, 256)
+        p_aimg = save_image_rgba(p_albedo, tex_dir / f'arch-num-{num_str}-albedo.png', colorspace='sRGB')
+        p_nimg = save_image_rgba(p_normal, tex_dir / f'arch-num-{num_str}-normal.png', colorspace='Non-Color')
+        p_mat = build_pbr_material(f'mat-arch-num-{num_str}', p_aimg, p_nimg, roughness=0.72, normal_strength=1.4)
+
+        bpl = bmesh.new()
+        pw, ph = 0.74, 0.78
+        pl_center = center + inward * 0.68 + Vector((0, 0, crown_z + 0.26))
+        v0 = bpl.verts.new(pl_center - tangent * (pw * 0.5) + Vector((0, 0, -ph * 0.5)))
+        v1 = bpl.verts.new(pl_center + tangent * (pw * 0.5) + Vector((0, 0, -ph * 0.5)))
+        v2 = bpl.verts.new(pl_center + tangent * (pw * 0.5) + Vector((0, 0, ph * 0.5)))
+        v3 = bpl.verts.new(pl_center - tangent * (pw * 0.5) + Vector((0, 0, ph * 0.5)))
+        bpl.faces.new((v0, v1, v2, v3))
+        pmesh = bpy.data.meshes.new(f'arch-number-{num_str}')
+        bpl.to_mesh(pmesh)
+        bpl.free()
+        pmesh.materials.append(p_mat)
+        puv = pmesh.uv_layers.new(name='UVMap')
+        # Map 0..1 cleanly so numeral reads upright when looking at the arch from the rotunda center
+        for li, uv_c in zip(pmesh.polygons[0].loop_indices, [(0.0, 0.0), (1.0, 0.0), (1.0, 1.0), (0.0, 1.0)]):
+            puv.data[li].uv = uv_c
+        pobj = bpy.data.objects.new(f'arch-number-{num_str}', pmesh)
+        bpy.context.scene.collection.objects.link(pobj)
+
+        # Deep ribbed vaulted passage receding 12 m behind each arch
+        tun_depth = 12.0
+        n_steps = 8
+        t_rings = []
+        for s in range(n_steps + 1):
+            d_out = 0.45 + (tun_depth - 0.45) * (s / n_steps)
+            ring = []
+            for u, z in inner_arch:
+                pt = center + tangent * u + outward * d_out + Vector((0, 0, z))
+                ring.append(bt.verts.new(pt))
+            t_rings.append(ring)
+        for s in range(n_steps):
+            for k in range(len(inner_arch) - 1):
+                bt.faces.new((t_rings[s][k], t_rings[s + 1][k], t_rings[s + 1][k + 1], t_rings[s][k + 1]))
+        # Dark terminal cap at 12 m
+        cap_f = bt.faces.new(t_rings[-1])
+        cap_f.material_index = 1
+
+        # 3 successive recessed interior light-stone arch ribs inside each passage
+        for rib_d in (3.0, 6.2, 9.2):
+            rib_c = center + outward * rib_d
+            for sgn in (-1.0, 1.0):
+                u_i = sgn * (half_aw - 0.26)
+                u_o = sgn * (half_aw + 0.08)
+                add_oriented_box(ba_trim, rib_c, tangent, outward, min(u_i, u_o), max(u_i, u_o), -0.24, 0.24, 0.0, impost_z)
+            for k in range(len(inner_arch) - 1):
+                u0, z0 = inner_arch[k]
+                u1, z1 = inner_arch[k + 1]
+                if z0 < impost_z and z1 < impost_z:
+                    continue
+                s0 = 0.90
+                q0 = rib_c + tangent * (u0 * s0) - outward * 0.22 + Vector((0, 0, z0 * 0.96))
+                q1 = rib_c + tangent * (u1 * s0) - outward * 0.22 + Vector((0, 0, z1 * 0.96))
+                q2 = rib_c + tangent * u1 - outward * 0.22 + Vector((0, 0, z1 + 0.05))
+                q3 = rib_c + tangent * u0 - outward * 0.22 + Vector((0, 0, z0 + 0.05))
+                q4 = rib_c + tangent * (u0 * s0) + outward * 0.22 + Vector((0, 0, z0 * 0.96))
+                q5 = rib_c + tangent * (u1 * s0) + outward * 0.22 + Vector((0, 0, z1 * 0.96))
+                q6 = rib_c + tangent * u1 + outward * 0.22 + Vector((0, 0, z1 + 0.05))
+                q7 = rib_c + tangent * u0 + outward * 0.22 + Vector((0, 0, z0 + 0.05))
+                qvs = [ba_trim.verts.new(q) for q in (q0, q1, q2, q3, q4, q5, q6, q7)]
+                ba_trim.faces.new((qvs[0], qvs[1], qvs[2], qvs[3]))
+                ba_trim.faces.new((qvs[4], qvs[5], qvs[1], qvs[0]))
+                ba_trim.faces.new((qvs[7], qvs[6], qvs[5], qvs[4]))
+
+        # Passage floor slab
+        fv0 = bt_floor.verts.new(center - tangent * (half_aw + 0.15) + outward * 0.2)
+        fv1 = bt_floor.verts.new(center + tangent * (half_aw + 0.15) + outward * 0.2)
+        fv2 = bt_floor.verts.new(center + tangent * (half_aw + 0.15) + outward * tun_depth)
+        fv3 = bt_floor.verts.new(center - tangent * (half_aw + 0.15) + outward * tun_depth)
+        bt_floor.faces.new((fv0, fv1, fv2, fv3))
+
+        # Cool dusty slate-blue glow deep inside each passage (matches reference warm-vs-cool contrast!)
+        ldata = bpy.data.lights.new(f'passage-cool-{num_str}', 'POINT')
+        ldata.energy = 110.0
+        ldata.color = (0.34, 0.56, 0.78)
+        ldata.shadow_soft_size = 0.8
+        lobj = bpy.data.objects.new(f'passage-cool-{num_str}', ldata)
+        bpy.context.scene.collection.objects.link(lobj)
+        lobj.location = center + outward * 7.8 + Vector((0, 0, 2.2))
+
+    bmesh.ops.recalc_face_normals(ba_wall, faces=ba_wall.faces)
+    create_mesh_object('rotunda-spandrel-walls', ba_wall, stone_mat, uv_scale=1.0 / tile_m)
+    bmesh.ops.recalc_face_normals(ba_trim, faces=ba_trim.faces)
+    create_mesh_object('rotunda-arches-and-portcullis', ba_trim, trim_mat, uv_scale=1.0 / tile_m)
+
+    tmesh = bpy.data.meshes.new('rotunda-passages')
+    bt.to_mesh(tmesh)
+    bt.free()
+    tmesh.materials.append(tunnel_mat)
+    tmesh.materials.append(dark_mat)
+    tuv = tmesh.uv_layers.new(name='UVMap')
+    for poly in tmesh.polygons:
+        for li in poly.loop_indices:
+            co = tmesh.vertices[tmesh.loops[li].vertex_index].co
+            tuv.data[li].uv = ((co.x + co.y) / tile_m, co.z / tile_m)
+    tobj = bpy.data.objects.new('rotunda-passages', tmesh)
+    bpy.context.scene.collection.objects.link(tobj)
+    create_mesh_object('rotunda-passage-floors', bt_floor, tunnel_mat, uv_scale=1.0 / tile_m)
+
+    # 4. High ribbed stone dome lost in gloom (z = cornice_z .. dome_height)
+    bd = bmesh.new()
+    d_segs = 32
+    d_rings = 12
+    dome_rings = []
+    for ir in range(d_rings + 1):
+        t = ir / d_rings
+        phi = t * (math.pi * 0.48)
+        r_cur = (vert_r + 0.15) * math.cos(phi)
+        z_cur = cornice_z - 0.1 + (dome_height - cornice_z + 0.1) * math.sin(phi)
+        ring = []
+        for k in range(d_segs):
+            a = k * (math.tau / d_segs)
+            ring.append(bd.verts.new((math.sin(a) * r_cur, math.cos(a) * r_cur, z_cur)))
+        dome_rings.append(ring)
+    for ir in range(d_rings):
+        for k in range(d_segs):
+            k2 = (k + 1) % d_segs
+            bd.faces.new((dome_rings[ir][k], dome_rings[ir + 1][k], dome_rings[ir + 1][k2], dome_rings[ir][k2]))
+    apex_v = bd.verts.new((0.0, 0.0, dome_height + 0.1))
+    for k in range(d_segs):
+        k2 = (k + 1) % d_segs
+        bd.faces.new((dome_rings[-1][k], apex_v, dome_rings[-1][k2]))
+    create_mesh_object('room-ceiling', bd, tunnel_mat, uv_scale=1.0 / (tile_m * 1.4))
+
+    # 8 bold curved light-stone dome ribs springing straight up from the 8 pier capitals to the apex
+    brib = bmesh.new()
+    rib_hw = 0.44
+    rib_depth = 0.52
+    for i in range(sides):
+        a = (i + 0.5) * (math.tau / sides)
+        outward = Vector((math.sin(a), math.cos(a), 0.0))
+        tangent = Vector((math.cos(a), -math.sin(a), 0.0))
+        rib_sec = []
+        for ir in range(d_rings + 1):
+            t = ir / d_rings
+            phi = t * (math.pi * 0.47)
+            r_out = vert_r * math.cos(phi)
+            r_in = max(0.35, r_out - rib_depth)
+            z_c = cornice_z + (dome_height - cornice_z) * math.sin(phi)
+            w_cur = rib_hw * (1.0 - 0.42 * t)
+            c_in = outward * r_in + Vector((0, 0, z_c))
+            c_out = outward * r_out + Vector((0, 0, z_c))
+            rib_sec.append([
+                brib.verts.new(c_in - tangent * w_cur),
+                brib.verts.new(c_in + tangent * w_cur),
+                brib.verts.new(c_out + tangent * w_cur),
+                brib.verts.new(c_out - tangent * w_cur),
+            ])
+        for ir in range(d_rings):
+            s0, s1 = rib_sec[ir], rib_sec[ir + 1]
+            for j in range(4):
+                j2 = (j + 1) % 4
+                brib.faces.new((s0[j], s0[j2], s1[j2], s1[j]))
+    bmesh.ops.recalc_face_normals(brib, faces=brib.faces)
+    create_mesh_object('rotunda-dome-ribs', brib, trim_mat, uv_scale=1.0 / tile_m)
 
 
 # ---------------------------------------------------------------------------
@@ -1445,10 +2366,11 @@ def build_passage_or_recess(
     obj_spec: dict,
     width: float,
     depth: float,
-    wall_mat: bpy.types.Material,
+    arch_mat: bpy.types.Material,
     floor_mat: bpy.types.Material,
     dark_mat: bpy.types.Material,
     tile_m: float,
+    tunnel_wall_mat: bpy.types.Material | None = None,
 ):
     """Build deep arched rock reveal/tunnel for an opening or capped recess."""
     pl = obj_spec['placement']
@@ -1475,29 +2397,49 @@ def build_passage_or_recess(
         arch_pts.append((half_w, float(z)))
 
     rings = []
-    n_depth = 8
+    n_depth = 14
+    should_curve = obj_spec['category'] == 'opening' and tun_depth >= 3.0
+    curve_sign = 1.0 if (sum(map(ord, obj_spec['id'])) % 2 == 0) else -1.0
+    max_bend = math.radians(float(pl.get('curveYawDeg', 62.0))) * curve_sign if should_curve else 0.0
+
+    spine_pts = []
+    spine_tangs = []
+    cur_pos = center - outward * 0.05
+    step_len = (tun_depth + 0.05) / n_depth
     for idp in range(n_depth + 1):
-        d = -0.05 + (tun_depth + 0.05) * (idp / n_depth)
+        t = idp / n_depth
+        bend_t = max(0.0, (t - 0.22) / 0.78) ** 1.4
+        ang = max_bend * bend_t
+        cos_a, sin_a = math.cos(ang), math.sin(ang)
+        local_out = outward * cos_a + tangent * sin_a
+        local_tan = tangent * cos_a - outward * sin_a
+        spine_pts.append(cur_pos.copy())
+        spine_tangs.append(local_tan)
+        cur_pos = cur_pos + local_out * step_len
+
+    for idp in range(n_depth + 1):
+        sp = spine_pts[idp]
+        lt = spine_tangs[idp]
         ring = []
         for u, z in arch_pts:
-            p = center + tangent * u + outward * d + Vector((0.0, 0.0, z))
-            n = 0.08 * noise_3d(p.x * 1.4, p.y * 1.4, p.z * 1.4, 71)
-            ring.append(bm.verts.new(p + inward * (n * 0.4) + Vector((0, 0, n * 0.3))))
+            p = sp + lt * u + Vector((0.0, 0.0, z))
+            n = 0.06 * noise_3d(p.x * 1.4, p.y * 1.4, p.z * 1.4, 71)
+            ring.append(bm.verts.new(p + inward * (n * 0.35) + Vector((0, 0, n * 0.25))))
         rings.append(ring)
 
     for idp in range(n_depth):
         for k in range(len(arch_pts) - 1):
             bm.faces.new((rings[idp][k], rings[idp + 1][k], rings[idp + 1][k + 1], rings[idp][k + 1]))
 
-    # Cap the back of the tunnel/recess.
-    back_verts = [bm.verts.new(center + tangent * u + outward * tun_depth + Vector((0, 0, z))) for u, z in arch_pts]
+    # Cap the far curved end with dark void so no dead-end brick wall is ever visible.
+    back_verts = [bm.verts.new(spine_pts[-1] + spine_tangs[-1] * u + Vector((0.0, 0.0, z))) for u, z in arch_pts]
     back_face = bm.faces.new(back_verts)
-    back_face.material_index = 0
+    back_face.material_index = 1 if should_curve else 0
 
     mesh = bpy.data.meshes.new(obj_spec['id'])
     bm.to_mesh(mesh)
     bm.free()
-    mesh.materials.append(wall_mat)
+    mesh.materials.append(tunnel_wall_mat or arch_mat)
     mesh.materials.append(dark_mat)
     uv_layer = mesh.uv_layers.new(name='UVMap')
     uv_scale = 1.0 / tile_m
@@ -1508,20 +2450,22 @@ def build_passage_or_recess(
     obj = bpy.data.objects.new(obj_spec['id'], mesh)
     bpy.context.scene.collection.objects.link(obj)
 
-    # Floor slab inside the passage/recess.
+    # Curved floor slab following the tunnel spine.
     bf = bmesh.new()
-    v0 = bf.verts.new(center - tangent * (half_w + 0.1) - outward * 0.35)
-    v1 = bf.verts.new(center + tangent * (half_w + 0.1) - outward * 0.35)
-    v2 = bf.verts.new(center + tangent * (half_w + 0.1) + outward * tun_depth)
-    v3 = bf.verts.new(center - tangent * (half_w + 0.1) + outward * tun_depth)
-    bf.faces.new((v0, v1, v2, v3))
+    fl_left = [bf.verts.new(center - tangent * (half_w + 0.12) - outward * 0.35)]
+    fl_right = [bf.verts.new(center + tangent * (half_w + 0.12) - outward * 0.35)]
+    for idp in range(n_depth + 1):
+        fl_left.append(bf.verts.new(spine_pts[idp] - spine_tangs[idp] * (half_w + 0.12)))
+        fl_right.append(bf.verts.new(spine_pts[idp] + spine_tangs[idp] * (half_w + 0.12)))
+    for i in range(len(fl_left) - 1):
+        bf.faces.new((fl_left[i], fl_right[i], fl_right[i + 1], fl_left[i + 1]))
     create_mesh_object(obj_spec['id'] + '-floor', bf, floor_mat, uv_scale=1.0 / tile_m)
 
     # Sculpted 3D rock/stone arch surround encompassing the tunnel entrance.
     ba = bmesh.new()
-    arch_thickness = 0.52
-    proj_in = 0.45
-    proj_out = 0.42
+    arch_thickness = 0.26
+    proj_in = 0.24
+    proj_out = 0.24
     # Build inner and outer profile loops around the full archway (left jamb -> crown -> right jamb).
     inner_pts = arch_pts
     outer_pts = []
@@ -1571,8 +2515,33 @@ def build_passage_or_recess(
         ba.faces.new((v_fi0, v_fo0, v_bo0, v_bi0))  # end cap 0
         ba.faces.new((v_fi1, v_bi1, v_bo1, v_fo1))  # end cap 1
 
+    # Add two wide stepped stone impost blocks on left & right jambs just before the arch splits
+    if obj_spec['category'] == 'opening':
+        imp_z0 = arch_start - 0.14
+        imp_z1 = arch_start + 0.06
+        for side_s in (-1.0, 1.0):
+            u_in = side_s * (half_w - 0.05)
+            u_out = side_s * (half_w + arch_thickness + 0.10)
+            u0, u1 = (u_out, u_in) if side_s < 0 else (u_in, u_out)
+            d_front = proj_in + 0.09
+            d_back = -proj_out - 0.06
+            c000 = ba.verts.new(center + tangent * u0 + inward * d_back + Vector((0, 0, imp_z0)))
+            c100 = ba.verts.new(center + tangent * u1 + inward * d_back + Vector((0, 0, imp_z0)))
+            c110 = ba.verts.new(center + tangent * u1 + inward * d_front + Vector((0, 0, imp_z0)))
+            c010 = ba.verts.new(center + tangent * u0 + inward * d_front + Vector((0, 0, imp_z0)))
+            c001 = ba.verts.new(center + tangent * u0 + inward * d_back + Vector((0, 0, imp_z1)))
+            c101 = ba.verts.new(center + tangent * u1 + inward * d_back + Vector((0, 0, imp_z1)))
+            c111 = ba.verts.new(center + tangent * u1 + inward * d_front + Vector((0, 0, imp_z1)))
+            c011 = ba.verts.new(center + tangent * u0 + inward * d_front + Vector((0, 0, imp_z1)))
+            ba.faces.new((c010, c110, c111, c011))
+            ba.faces.new((c100, c000, c001, c101))
+            ba.faces.new((c001, c101, c111, c011))
+            ba.faces.new((c010, c000, c100, c110))
+            ba.faces.new((c000, c010, c011, c001))
+            ba.faces.new((c110, c100, c101, c111))
+
     bmesh.ops.recalc_face_normals(ba, faces=ba.faces)
-    create_mesh_object(obj_spec['id'] + '-arch', ba, wall_mat, uv_scale=1.0 / tile_m)
+    create_mesh_object(obj_spec['id'] + '-arch', ba, arch_mat, uv_scale=1.0 / tile_m)
 
     # Optional warm/cool bounce light inside exit passages.
     if pl.get('tunnelEnergy', 0) > 0:
@@ -1882,6 +2851,7 @@ def build_organic_cavern_terrain(
     tile_m: float,
     water_z: float = -0.05,
     open_horizon: bool = False,
+    has_stream: bool = True,
 ):
     """Build one continuous organic terrain with cobble streambed and gravel shores."""
     bm = bmesh.new()
@@ -1900,7 +2870,10 @@ def build_organic_cavern_terrain(
         y = y0 + (y1 - y0) * (iy / ny)
         for ix in range(nx + 1):
             x = x0 + (x1 - x0) * (ix / nx)
-            z = organic_cavern_ground_z(x, y, w, d)
+            if has_stream:
+                z = organic_cavern_ground_z(x, y, w, d)
+            else:
+                z = 0.10 * noise_3d(x * 0.35, y * 0.35, 0.0, 19) + 0.04 * noise_3d(x * 0.9, y * 0.9, 0.0, 43)
             row.append(bm.verts.new((x, y, z)))
         grid.append(row)
 
@@ -1909,7 +2882,7 @@ def build_organic_cavern_terrain(
             v0, v1, v2, v3 = grid[iy][ix], grid[iy][ix + 1], grid[iy + 1][ix + 1], grid[iy + 1][ix]
             face = bm.faces.new((v0, v1, v2, v3))
             avg_z = (v0.co.z + v1.co.z + v2.co.z + v3.co.z) * 0.25
-            face.material_index = 1 if avg_z < (water_z + 0.05) else 0
+            face.material_index = 1 if (has_stream and avg_z < (water_z + 0.05)) else 0
 
     mesh = bpy.data.meshes.new('cavern-terrain')
     bm.to_mesh(mesh)
@@ -1937,26 +2910,37 @@ def build_organic_cavern_dome(
     ceil_mat: bpy.types.Material,
     tile_m: float,
     tunnels: list[dict],
+    openings: list[dict] | None = None,
+    symmetric: bool = False,
 ):
     """Build one continuous, vaulted organic limestone cavern shell (walls + ceiling, no box corners)."""
     bm = bmesh.new()
     n_theta = 72
     n_phi = 24  # 0 = below ground bank, 1 = ceiling crown
-    rx_base = w * 0.54
-    ry_south = d * 0.48
-    ry_north = d * 0.76  # elongated northward into the stalagmite cavern
+    rx_base = w * (0.50 if symmetric else 0.54)
+    ry_south = d * (0.50 if symmetric else 0.48)
+    ry_north = d * (0.50 if symmetric else 0.76)
+
+    wall_cutout_pts = []
+    for o in (openings or []):
+        pl = o['placement']
+        side = pl.get('wall')
+        if side in {'N', 'E', 'S', 'W'}:
+            origin, tangent, _, _ = wall_frame(side, w, d)
+            cu = float(pl.get('offsetAlongWall', 0.0))
+            ow, _, oh = pl.get('sizeMetres', [2.0, 0.5, 2.5])
+            c = origin + tangent * cu
+            wall_cutout_pts.append((c.x, c.y, ow, oh))
 
     def in_tunnel_cutout(p: Vector) -> bool:
         for t in tunnels:
             pl = t['placement']
             tx, ty, tz = pl.get('position', [2.4, -6.8, 0.0])
             tw, _, th = pl.get('sizeMetres', [3.4, 1.0, 3.2])
-            # Distance to tunnel portal center in XY and Z
-            dx = p.x - tx
-            dy = p.y - ty
-            if math.hypot(dx, dy) > max(tw * 0.72, 2.2):
-                continue
-            if -0.4 <= p.z <= th + 0.15:
+            if math.hypot(p.x - tx, p.y - ty) <= max(tw * 0.72, 2.2) and -0.4 <= p.z <= th + 0.15:
+                return True
+        for cx, cy, ow, oh in wall_cutout_pts:
+            if math.hypot(p.x - cx, p.y - cy) <= max(ow * 0.68, 1.45) and -0.4 <= p.z <= oh + 0.15:
                 return True
         return False
 
@@ -2354,6 +3338,127 @@ def build_river_boulders(obj_spec: dict, mat: bpy.types.Material, tile_m: float,
 # 4-view render & side-by-side contact sheet against the 4 reference images
 # ---------------------------------------------------------------------------
 
+def compute_visual_diff(
+    out_dir: Path,
+    ref_arrays: dict[str, np.ndarray],
+    renders: dict[str, np.ndarray],
+) -> dict:
+    """Compare rendered N/E/S/W views against reference artwork and emit quantitative score + feedback critique."""
+    per_view = {}
+    feedback_lines = []
+    scores = []
+
+    for key in ['N', 'E', 'S', 'W']:
+        ref = resize_bilinear(ref_arrays[key], 144, 216)[:, :, :3]
+        ren = resize_bilinear(renders[key], 144, 216)[:, :, :3]
+
+        # 1. Luminance structure (normalized cross-correlation + brightness diff)
+        ref_l = 0.2126 * ref[:, :, 0] + 0.7152 * ref[:, :, 1] + 0.0722 * ref[:, :, 2]
+        ren_l = 0.2126 * ren[:, :, 0] + 0.7152 * ren[:, :, 1] + 0.0722 * ren[:, :, 2]
+        ref_mean, ren_mean = float(ref_l.mean()), float(ren_l.mean())
+        luma_diff = ren_mean - ref_mean  # negative => render too dark
+
+        r0 = ref_l - ref_mean
+        g0 = ren_l - ren_mean
+        denom = float(np.sqrt((r0 * r0).sum() * (g0 * g0).sum())) + 1e-6
+        ncc = float(np.clip((r0 * g0).sum() / denom, -1.0, 1.0))
+        struct_score = max(0.0, (ncc + 1.0) * 0.5)
+
+        # 2. Spatial 6x4 color grid similarity
+        gh, gw = 4, 6
+        bh, bw = ref.shape[0] // gh, ref.shape[1] // gw
+        ref_grid = ref[: gh * bh, : gw * bw].reshape(gh, bh, gw, bw, 3).mean(axis=(1, 3))
+        ren_grid = ren[: gh * bh, : gw * bw].reshape(gh, bh, gw, bw, 3).mean(axis=(1, 3))
+        grid_l1 = float(np.abs(ref_grid - ren_grid).mean())
+        color_layout_score = max(0.0, 1.0 - grid_l1 * 2.2)
+
+        # 3. Horizontal band analysis: top (ceiling/sky), mid (walls/exits), bottom (floor)
+        top_ref, top_ren = float(ref_l[:48].mean()), float(ren_l[:48].mean())
+        mid_ref, mid_ren = float(ref_l[48:96].mean()), float(ren_l[48:96].mean())
+        bot_ref, bot_ren = float(ref_l[96:].mean()), float(ren_l[96:].mean())
+
+        # 4. Color warmth/tint (R-B channel balance) and saturation
+        ref_warm = float((ref[:, :, 0] - ref[:, :, 2]).mean())
+        ren_warm = float((ren[:, :, 0] - ren[:, :, 2]).mean())
+        warm_diff = ren_warm - ref_warm
+
+        # 5. Global RGB histogram intersection (16 bins per channel)
+        hist_sim = 0.0
+        for c in range(3):
+            h_ref, _ = np.histogram(ref[:, :, c], bins=16, range=(0.0, 1.0))
+            h_ren, _ = np.histogram(ren[:, :, c], bins=16, range=(0.0, 1.0))
+            h_ref = h_ref / max(h_ref.sum(), 1)
+            h_ren = h_ren / max(h_ren.sum(), 1)
+            hist_sim += float(np.minimum(h_ref, h_ren).sum())
+        hist_sim /= 3.0
+
+        # 6. Edge / texture contrast similarity
+        ref_gx = np.abs(np.diff(ref_l, axis=1)).mean()
+        ren_gx = np.abs(np.diff(ren_l, axis=1)).mean()
+        edge_ratio = float(ren_gx / (ref_gx + 1e-4))
+        edge_score = max(0.0, 1.0 - abs(math.log(max(edge_ratio, 0.15))) * 0.55)
+
+        view_score = round(100.0 * (0.35 * color_layout_score + 0.30 * hist_sim + 0.20 * struct_score + 0.15 * edge_score), 2)
+        scores.append(view_score)
+
+        issues = []
+        if luma_diff < -0.10:
+            issues.append(f"render is noticeably darker than reference (delta {luma_diff:+.2f}); raise light energy or ambientStrength")
+        elif luma_diff > 0.10:
+            issues.append(f"render is noticeably brighter than reference (delta {luma_diff:+.2f}); lower light energy or colorScale")
+        if top_ren - top_ref < -0.14:
+            issues.append(f"upper band (ceiling/sky) is much darker than reference ({top_ren:.2f} vs {top_ref:.2f}); check open-sky/skybox or wall height")
+        if bot_ren - bot_ref < -0.12:
+            issues.append(f"floor band is too dark ({bot_ren:.2f} vs {bot_ref:.2f}); brighten floor colorScale or add low fill light")
+        elif bot_ren - bot_ref > 0.12:
+            issues.append(f"floor band is too bright ({bot_ren:.2f} vs {bot_ref:.2f}); darken floor colorScale")
+        if warm_diff < -0.07:
+            issues.append(f"render is too cool/blue vs reference (warmth delta {warm_diff:+.2f}); shift light colors warmer")
+        elif warm_diff > 0.07:
+            issues.append(f"render is too warm/orange vs reference (warmth delta {warm_diff:+.2f}); shift light colors cooler")
+        if edge_ratio < 0.55:
+            issues.append(f"render looks too flat/smooth vs reference (edge ratio {edge_ratio:.2f}); increase normalStrength or wallDisplacementMetres")
+        elif edge_ratio > 1.75:
+            issues.append(f"render has excessive high-frequency noise (edge ratio {edge_ratio:.2f}); pick cleaner wall/floor texture crop")
+
+        per_view[key] = {
+            'score': view_score,
+            'colorLayout': round(color_layout_score * 100, 1),
+            'histogram': round(hist_sim * 100, 1),
+            'structure': round(struct_score * 100, 1),
+            'edge': round(edge_score * 100, 1),
+            'lumaDelta': round(luma_diff, 3),
+            'warmthDelta': round(warm_diff, 3),
+            'topLumaDelta': round(top_ren - top_ref, 3),
+            'midLumaDelta': round(mid_ren - mid_ref, 3),
+            'botLumaDelta': round(bot_ren - bot_ref, 3),
+            'issues': issues,
+        }
+        if issues:
+            feedback_lines.append(f"[{key} view | score {view_score}/100]")
+            for iss in issues:
+                feedback_lines.append(f"  - {iss}")
+
+    overall = round(sum(scores) / len(scores), 2)
+    diff_report = {
+        'format': 'zxr-room-bom-visual-diff-v1',
+        'overallScore': overall,
+        'views': per_view,
+    }
+    (out_dir / 'review-diff.json').write_text(json.dumps(diff_report, indent=2))
+    critique_text = (
+        f"Visual Diff Overall Score: {overall}/100\n"
+        + (
+            "\n".join(feedback_lines)
+            if feedback_lines
+            else "All 4 cardinal views closely match reference luminance, color balance, and structure."
+        )
+        + "\n"
+    )
+    (out_dir / 'review-critique.txt').write_text(critique_text)
+    return diff_report
+
+
 def render_four_view_review(out_dir: Path, ref_arrays: dict[str, np.ndarray], resolution: int, samples: int):
     scene = bpy.context.scene
     scene.render.engine = 'CYCLES'
@@ -2370,12 +3475,14 @@ def render_four_view_review(out_dir: Path, ref_arrays: dict[str, np.ndarray], re
     scene.collection.objects.link(cam)
     scene.camera = cam
 
-    # Match the 4 cardinal headings: N (+Y), E (+X), S (-Y), W (-X)
+    # Match the 4 cardinal headings (N/E/S/W) plus Up (ceiling) and Down (floor)
     headings = [
         ('N', (0.0, -2.1, 1.55), (0.0, 1.5, 1.15)),
         ('E', (-0.6, 0.0, 1.55), (3.5, 0.15, 1.25)),
         ('S', (0.0, 1.2, 1.55), (0.0, -3.5, 1.15)),
         ('W', (1.2, 0.0, 1.55), (-3.5, 0.0, 1.15)),
+        ('U', (0.0, 0.0, 1.15), (0.0, 0.15, 4.5)),
+        ('D', (0.0, 0.0, 2.35), (0.0, 0.15, -1.0)),
     ]
     renders = {}
     for key, loc, target in headings:
@@ -2386,15 +3493,115 @@ def render_four_view_review(out_dir: Path, ref_arrays: dict[str, np.ndarray], re
         bpy.ops.render.render(write_still=True)
         renders[key] = load_image_rgba(render_path)
 
-    # Composite 2x4 contact sheet: top row = references, bottom row = Blender renders.
+    # Composite 2x6 contact sheet:
+    # - Top row cols 0..3 = N/E/S/W references (aligned above N/E/S/W renders), cols 4..5 = dark backdrop
+    # - Bottom row cols 0..5 = N/E/S/W/Up/Down Blender renders (6 images)
     rh, rw, _ = renders['N'].shape
-    sheet = np.zeros((rh * 2, rw * 4, 4), dtype=np.float32)
+    sheet = np.zeros((rh * 2, rw * 6, 4), dtype=np.float32)
+    sheet[:, :, 0] = 0.055
+    sheet[:, :, 1] = 0.075
+    sheet[:, :, 2] = 0.095
     sheet[:, :, 3] = 1.0
     for idx, key in enumerate(['N', 'E', 'S', 'W']):
         sheet[0:rh, idx * rw : (idx + 1) * rw, :] = resize_bilinear(ref_arrays[key], rh, rw)
+    for idx, key in enumerate(['N', 'E', 'S', 'W', 'U', 'D']):
         sheet[rh : rh * 2, idx * rw : (idx + 1) * rw, :] = renders[key]
     save_image_rgba(sheet, out_dir / 'review-4view.png', colorspace='sRGB')
+    compute_visual_diff(out_dir, ref_arrays, renders)
     bpy.data.objects.remove(cam, do_unlink=True)
+
+
+def place_preview_zil_props(bom: dict, materials: dict, surface_tiles: dict):
+    """Place starting ZIL objects into the Blender scene ONLY AFTER room.glb has been exported,
+    so the 6-view preview renders show how the room looks with its objects without baking them
+    into room.glb."""
+    mp_path = ROOT / 'src/prototype/assets/movable-props.json'
+    prop_map = {}
+    if mp_path.exists():
+        mp = json.loads(mp_path.read_text())
+        for entry in mp.get('assets', []):
+            pid = str(entry.get('id', '')).upper()
+            rel = entry.get('file')
+            if pid and rel:
+                full = ROOT / 'src/prototype/assets' / rel
+                if full.exists():
+                    prop_map[pid] = (full, entry.get('sizeMetres'))
+
+    wood_mat = materials.get('timber', materials.get('table-oak', materials.get('wainscot', materials['wall'])))
+    glass_mat = solid_material('mat-preview-glass', (0.14, 0.42, 0.46), roughness=0.15)
+    iron_mat = solid_material('mat-preview-iron', (0.20, 0.22, 0.24), roughness=0.55)
+    bronze_mat = solid_material('mat-preview-proxy', (0.52, 0.36, 0.20), roughness=0.65)
+
+    for obj_spec in bom.get('objects', []):
+        if obj_spec.get('category') != 'zil-prop-anchor':
+            continue
+        zil_id = str(obj_spec.get('zilIdentity') or '').upper()
+        pl = obj_spec.get('placement') or {}
+        cx, cy, cz = pl.get('position', [0.0, 0.0, 0.0])
+        sx, sy, sz = pl.get('sizeMetres', [0.45, 0.45, 0.45])
+        yaw_deg = float(pl.get('yawDeg', 0.0))
+
+        # 1. If we have a real 3D prop GLB in src/prototype/assets/, import and fit it at the anchor
+        if zil_id in prop_map:
+            glb_file, default_size = prop_map[zil_id]
+            target_size = pl.get('sizeMetres') or default_size or [0.4, 0.4, 0.4]
+            import_hero_glb(
+                {
+                    'id': f'preview-prop-{obj_spec["id"]}',
+                    'meshPath': str(glb_file.relative_to(ROOT)),
+                    'placement': {
+                        'position': [cx, cy, cz],
+                        'sizeMetres': target_size,
+                        'yawDeg': yaw_deg,
+                    },
+                },
+                mat=None,
+            )
+            continue
+
+        # 2. Preview-only geometric stand-ins for non-GLB ZIL tables/containers/scenery
+        if zil_id in {'ALICE-TABLE', 'GAZEBO-TABLE', 'WORKBENCH', 'PTABLE'}:
+            build_table(
+                {
+                    'id': f'preview-prop-{obj_spec["id"]}',
+                    'placement': {'position': [cx, cy, cz], 'sizeMetres': [sx, sy, sz], 'yawDeg': yaw_deg},
+                },
+                wood_mat,
+                1.4,
+            )
+        elif zil_id == 'AQUARIUM':
+            bm = bmesh.new()
+            _add_box(bm, -sx * 0.5, sx * 0.5, -sy * 0.5, sy * 0.5, 0.0, sz)
+            obj = create_mesh_object(f'preview-prop-{obj_spec["id"]}', bm, glass_mat, uv_scale=1.0)
+            obj.location = (cx, cy, cz)
+            obj.rotation_euler = (0.0, 0.0, math.radians(yaw_deg))
+        elif zil_id in {'SAFE', 'WIZARD-CASE', 'CUBE', 'CRYPT'}:
+            bm = bmesh.new()
+            _add_box(bm, -sx * 0.5, sx * 0.5, -sy * 0.5, sy * 0.5, 0.0, sz)
+            obj = create_mesh_object(f'preview-prop-{obj_spec["id"]}', bm, iron_mat, uv_scale=1.0)
+            obj.location = (cx, cy, cz)
+            obj.rotation_euler = (0.0, 0.0, math.radians(yaw_deg))
+        elif zil_id == 'BUCKET':
+            bm = bmesh.new()
+            bmesh.ops.create_cone(bm, cap_ends=True, segments=16, radius1=min(sx, sy) * 0.42, radius2=min(sx, sy) * 0.52, depth=sz)
+            for v in bm.verts:
+                v.co.z += sz * 0.5
+            obj = create_mesh_object(f'preview-prop-{obj_spec["id"]}', bm, wood_mat, uv_scale=1.0)
+            obj.location = (cx, cy, cz)
+        elif zil_id in {'TOP-ETCHINGS', 'BOTTOM-ETCHINGS', 'PENTAGRAM', 'PCRACK', 'KEYHOLE-1', 'KEYHOLE-2', 'SLOT', 'LEAK', 'POOL', 'HEDGES'}:
+            # Flat/surface-embedded features — skip boxy proxy
+            continue
+        else:
+            # Subtle stylized bronze stand-in for creatures/actors/unmodeled props (e.g. DRAGON, CERBERUS, ROBOT, BALLOON)
+            bm = bmesh.new()
+            bmesh.ops.create_icosphere(bm, subdivisions=2, radius=0.5)
+            for v in bm.verts:
+                v.co.x *= sx
+                v.co.y *= sy
+                v.co.z = (v.co.z + 0.5) * sz
+            obj = create_mesh_object(f'preview-prop-{obj_spec["id"]}', bm, bronze_mat, uv_scale=1.0)
+            obj.location = (cx, cy, cz)
+            obj.rotation_euler = (0.0, 0.0, math.radians(yaw_deg))
 
 
 # ---------------------------------------------------------------------------
@@ -2430,6 +3637,8 @@ def main():
             albedo_arr = make_light_stone_tile(512)
         elif spec.get('procedural') == 'warm-ashlar':
             albedo_arr = make_warm_ashlar_tile(512)
+        elif spec.get('procedural') == 'sandstone':
+            albedo_arr = make_sandstone_tile(512)
         elif spec.get('procedural') == 'radial-floor':
             albedo_arr = make_radial_floor_medallion(1024)
         elif spec.get('procedural') == 'dark-oak':
@@ -2467,11 +3676,14 @@ def main():
             crop = crop_region(ref_arrays[obj_spec['sourceView']], obj_spec['crop'])
             save_image_rgba(crop, crop_dir / f"{obj_spec['id']}.png", colorspace='sRGB')
 
-    # 4. Build room envelope (organic-cavern dome + terrain OR box/octagon walls).
+    # 4. Build room envelope (organic-cavern dome + terrain OR box/octagon/rotunda walls).
     env = bom['envelope']
     w, d, h = env['dimensionsMetres']
     disp = float(env.get('wallDisplacementMetres', 0.35 if env['wallStyle'] == 'rough-cavern' else 0.03))
-    if env['shape'] == 'rotunda':
+    all_wall_openings = [o for o in bom['objects'] if o['category'] in {'opening', 'door', 'recess'}]
+    is_open_hedge = env['wallStyle'] == 'hedge' and env['ceilingStyle'] == 'open-sky'
+
+    if env['shape'] == 'rotunda' and bom.get('room') == 'CAROUSEL-ROOM':
         tunnel_mat = materials.get('tunnel-stone', materials['ceiling'])
         trim_mat = materials.get('arch-trim', materials['wall'])
         build_rotunda(
@@ -2486,15 +3698,39 @@ def main():
             tex_dir=tex_dir,
             sides=8,
         )
+    elif env['shape'] in {'rotunda', 'octagon'}:
+        build_polygonal_chamber(
+            radius=min(w, d) * 0.5,
+            height=h,
+            sides=24 if env['shape'] == 'rotunda' else 8,
+            wall_mat=materials['wall'],
+            floor_mat=materials['floor'],
+            ceil_mat=materials['ceiling'],
+            tile_m=surface_tiles['wall'],
+            disp=disp,
+            ceiling_style=env['ceilingStyle'],
+            openings=all_wall_openings,
+        )
     elif env['shape'] == 'organic-cavern':
         cobble_mat = materials.get('cobble', materials['floor'])
         tunnels = [o for o in bom['objects'] if o['category'] == 'smoothed-tunnel']
         open_sky = env['ceilingStyle'] == 'open-sky'
-        build_organic_cavern_terrain(w, d, materials['floor'], cobble_mat, surface_tiles['floor'], open_horizon=open_sky)
+        is_ford = bom.get('room') == 'SHALLOW-FORD'
+        has_stream = is_ford or any(o['category'] == 'water-surface' for o in bom['objects'])
+        build_organic_cavern_terrain(
+            w, d, materials['floor'], cobble_mat, surface_tiles['floor'],
+            open_horizon=open_sky,
+            has_stream=has_stream,
+        )
         if open_sky:
             build_tunnel_cliff_wall(tunnels, materials['wall'], surface_tiles['wall'], w, h, disp)
         else:
-            build_organic_cavern_dome(w, d, h, disp, materials['wall'], materials['ceiling'], surface_tiles['wall'], tunnels)
+            build_organic_cavern_dome(
+                w, d, h, disp, materials['wall'], materials['ceiling'], surface_tiles['wall'],
+                tunnels,
+                openings=None if is_ford else all_wall_openings,
+                symmetric=not is_ford,
+            )
     else:
         floor_cutouts = [
             (o['placement']['position'][0], o['placement']['position'][1], o['placement'].get('innerRadius', 1.2))
@@ -2507,17 +3743,21 @@ def main():
             beam_key = 'timber' if 'timber' in materials else 'wainscot'
             if beam_key in materials:
                 build_coffered_beams(w, d, h, materials[beam_key], surface_tiles[beam_key])
+        elif env['ceilingStyle'] == 'vaulted' and env['wallStyle'] == 'dressed-masonry':
+            trim_key = 'stone-trim' if 'stone-trim' in materials else ('arch-trim' if 'arch-trim' in materials else 'wall')
+            build_vaulted_ribs(w, d, h, materials[trim_key], surface_tiles[trim_key])
 
         wall_surf_map = env.get('wallSurfaces', {})
         wainscot_h = float(env.get('wainscotHeightMetres', 0.0))
+        wall_h = min(h, 3.6) if is_open_hedge else h
         for side in ['N', 'E', 'S', 'W']:
             side_openings = [
                 o for o in bom['objects']
                 if o['category'] in {'opening', 'door', 'recess'} and o['placement'].get('wall') == side
             ]
             wname = wall_surf_map.get(side, 'wall')
-            uv_z = (wainscot_h, h - 0.22) if (wainscot_h > 0.0 and wname == 'wall') else None
-            build_wall_with_openings(side, w, d, h, disp, side_openings, materials[wname], surface_tiles[wname], uv_z_range=uv_z)
+            uv_z = (wainscot_h, wall_h - 0.22) if (wainscot_h > 0.0 and wname == 'wall') else None
+            build_wall_with_openings(side, w, d, wall_h, disp, side_openings, materials[wname], surface_tiles[wname], uv_z_range=uv_z)
             if wainscot_h > 0.0 and 'wainscot' in materials and wname == 'wall':
                 build_wainscot_band(side, w, d, wainscot_h, side_openings, materials['wainscot'], surface_tiles['wainscot'])
 
@@ -2529,7 +3769,8 @@ def main():
         mat = materials.get(obj_spec.get('surface', 'wall'), materials['wall'])
         tile_m = surface_tiles.get(obj_spec.get('surface', 'wall'), 3.0)
         if cat in {'opening', 'door', 'recess'}:
-            build_passage_or_recess(obj_spec, w, d, mat, materials['floor'], dark_mat, tile_m)
+            if not (is_open_hedge and cat == 'opening'):
+                build_passage_or_recess(obj_spec, w, d, mat, materials['floor'], dark_mat, tile_m, tunnel_wall_mat=materials['wall'])
         elif cat == 'well':
             build_well(obj_spec, mat, dark_mat, etching_mat)
         elif cat == 'floor-crack':
@@ -2550,12 +3791,33 @@ def main():
             build_rug(obj_spec, mat)
         elif cat == 'pillar':
             build_pillar(obj_spec, mat, tile_m)
+        elif cat == 'table':
+            build_table(obj_spec, mat, tile_m)
         elif cat == 'chair':
             wood_mat = materials.get('timber', materials.get('wainscot', materials.get('desk-wood', materials['wall'])))
             build_executive_chair(obj_spec, mat, wood_mat, tile_m)
         elif cat == 'bookcase':
             rubble_mat = materials.get('north-stone', materials['wall'])
             build_bookcase(obj_spec, mat, rubble_mat, tile_m)
+        elif cat == 'stairs':
+            build_stairs(obj_spec, mat, tile_m)
+        elif cat == 'bridge':
+            build_bridge(obj_spec, mat, tile_m)
+        elif cat == 'wall-plaque':
+            panel_mat = mat
+            if obj_spec.get('sourceView') and obj_spec.get('crop'):
+                p_crop = resize_bilinear(crop_region(ref_arrays[obj_spec['sourceView']], obj_spec['crop']), 512, 512)
+                p_norm = synthesize_normal_map(p_crop, strength=0.6)
+                p_alb_img = save_image_rgba(p_crop, tex_dir / f"{obj_spec['id']}-panel-albedo.png", colorspace='sRGB')
+                p_nrm_img = save_image_rgba(p_norm, tex_dir / f"{obj_spec['id']}-panel-normal.png", colorspace='Non-Color')
+                panel_mat = build_pbr_material(f"mat-panel-{obj_spec['id']}", p_alb_img, p_nrm_img, roughness=0.72, normal_strength=0.6)
+            frame_mat = materials.get('timber', materials.get('stone-trim', mat))
+            build_wall_plaque(obj_spec, frame_mat, panel_mat, tile_m)
+        elif cat == 'garden-bed':
+            stone_mat = materials.get('floor', materials.get('stone-trim', materials['wall']))
+            build_garden_bed(obj_spec, mat, stone_mat, tile_m)
+        elif cat == 'pedestal':
+            build_pedestal(obj_spec, mat, tile_m)
         elif cat == 'hero-3d' and obj_spec.get('meshPath'):
             hero_mat = materials.get(obj_spec['surface']) if obj_spec.get('surface') else None
             import_hero_glb(obj_spec, hero_mat, tile_m)
@@ -2599,14 +3861,16 @@ def main():
         export_extras=True,
     )
 
-    # 8. Optional 4-view review render against references.
-    review_path = None
-    if args.render_review:
-        render_four_view_review(out_dir, ref_arrays, args.resolution, args.samples)
-        review_path = str((out_dir / 'review-4view.png').relative_to(ROOT))
-
+    # Measure clean room.glb stats BEFORE placing preview-only ZIL props.
     mesh_objs = [o for o in scene.objects if o.type == 'MESH']
     tris = sum(sum(len(p.vertices) - 2 for p in o.data.polygons) for o in mesh_objs)
+
+    # 8. Optional 6-view review render against references (with starting ZIL props overlaid for preview only).
+    review_path = None
+    if args.render_review:
+        place_preview_zil_props(bom, materials, surface_tiles)
+        render_four_view_review(out_dir, ref_arrays, args.resolution, args.samples)
+        review_path = str((out_dir / 'review-4view.png').relative_to(ROOT))
     manifest = {
         'format': 'zxr-room-bom-build-v1',
         'room': bom['room'],

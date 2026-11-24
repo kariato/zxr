@@ -1,0 +1,17 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "TOPIARY-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/topiary-room/room-bom.json",
+  "bomSha256": "3e5ddc31643cc7e5f5a8a840c147614967325e81576f80d28d241c4a890b7a51",
+  "glb": "games/zork2/planning/room-bom-prototype/topiary-room/build/room.glb",
+  "glbBytes": 2847116,
+  "glbSha256": "216a1b1696db6566d40fd61b4876b871e1dbdd4d228b17b6e58ae23b6bfb3858",
+  "meshCount": 11,
+  "materialCount": 5,
+  "triangles": 11032,
+  "zilAnchors": [
+    "HEDGES"
+  ],
+  "skybox": "src/prototype/assets/cavern-skybox-v1.png",
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/topiary-room/build/review-4view.png"
+}

@@ -1,0 +1,306 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "POOL-ROOM",
+  "label": "Pool Room",
+  "sourceContext": "games/zork2/assets/rooms/pool-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/pool-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/pool-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/pool-room/reverse-v2.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/pool-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "organic-cavern",
+    "dimensionsMetres": [
+      12.6,
+      11.4,
+      4.6
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.52,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.172,
+        0.146,
+        0.078
+      ],
+      "ambientStrength": 0.41,
+      "lights": [
+        {
+          "name": "west-ledge-warm",
+          "position": [
+            -3.8,
+            -0.8,
+            2.2
+          ],
+          "color": [
+            1,
+            0.76,
+            0.238
+          ],
+          "energy": 409,
+          "radius": 1.2
+        },
+        {
+          "name": "ceiling-leak-cool",
+          "position": [
+            2.4,
+            1.4,
+            3.8
+          ],
+          "color": [
+            0.742,
+            0.84,
+            0.758
+          ],
+          "energy": 467.5,
+          "radius": 1.6
+        },
+        {
+          "name": "pool-surface-teal",
+          "position": [
+            2.2,
+            -0.4,
+            1.4
+          ],
+          "color": [
+            0.503,
+            0.68,
+            0.598
+          ],
+          "energy": 233.7,
+          "radius": 1.8
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.42,
+        0.14,
+        0.64,
+        0.38
+      ],
+      "tileMetres": 3.2,
+      "roughness": 0.88,
+      "normalStrength": 1.35,
+      "colorScale": 1.672,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.18,
+        0.72,
+        0.44,
+        0.94
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.74,
+      "normalStrength": 1.2,
+      "colorScale": 1.074,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.14,
+        0.01,
+        0.58,
+        0.14
+      ],
+      "tileMetres": 3.8,
+      "roughness": 0.92,
+      "normalStrength": 1.35,
+      "colorScale": 0.9,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "west-posts-passage",
+      "category": "opening",
+      "description": "Rough-hewn rock tunnel on the west wall leading back to Posts Room",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "sourceView": "N",
+      "crop": [
+        0.05,
+        0.12,
+        0.21,
+        0.38
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 1.6,
+        "sizeMetres": [
+          2.2,
+          0.7,
+          2.7
+        ],
+        "depthMetres": 8.5,
+        "tunnelColor": [
+          1,
+          0.72,
+          0.38
+        ],
+        "tunnelEnergy": 160
+      }
+    },
+    {
+      "id": "pool-water-surface",
+      "category": "water-surface",
+      "description": "Deep opaque teal salty water filling the depressed eastern half of the cavern",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.36,
+        0.4,
+        0.94,
+        0.78
+      ],
+      "placement": {
+        "position": [
+          2.2,
+          0.2,
+          -0.12
+        ],
+        "sizeMetres": [
+          6.4,
+          7.6,
+          0.05
+        ],
+        "waterColor": [
+          0.08,
+          0.28,
+          0.34
+        ],
+        "alpha": 0.82
+      }
+    },
+    {
+      "id": "flask-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for FLASK (stoppered glass flask with skull-and-crossbones) resting on the western rocky ledge",
+      "zilIdentity": "FLASK",
+      "sourceView": "N",
+      "crop": [
+        0.12,
+        0.53,
+        0.19,
+        0.67
+      ],
+      "placement": {
+        "position": [
+          -3.2,
+          -1.6,
+          0
+        ],
+        "sizeMetres": [
+          0.18,
+          0.18,
+          0.28
+        ],
+        "yawDeg": 10
+      }
+    },
+    {
+      "id": "leak-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for LEAK (large ceiling leak pouring salty water into the pool)",
+      "zilIdentity": "LEAK",
+      "sourceView": "N",
+      "crop": [
+        0.63,
+        0.02,
+        0.75,
+        0.42
+      ],
+      "placement": {
+        "position": [
+          2.4,
+          1.4,
+          4.3
+        ],
+        "sizeMetres": [
+          1.1,
+          1.1,
+          0.4
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "pool-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for POOL (pool of tears submerging the depressed half of the room)",
+      "zilIdentity": "POOL",
+      "sourceView": "N",
+      "crop": [
+        0.28,
+        0.38,
+        0.96,
+        0.84
+      ],
+      "placement": {
+        "position": [
+          2.2,
+          0.2,
+          -0.15
+        ],
+        "sizeMetres": [
+          6.4,
+          7.6,
+          0.8
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "south-ledge-boulders",
+      "category": "boulder-cluster",
+      "description": "Wet angular boulders framing the foreground ledge along the southern rim",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -2.4,
+          -4.8,
+          0
+        ],
+        "sizeMetres": [
+          4.6,
+          1.4,
+          0.85
+        ],
+        "count": 12,
+        "seed": 661
+      }
+    },
+    {
+      "id": "east-pool-rim-boulders",
+      "category": "boulder-cluster",
+      "description": "Jagged damp boulders lining the far eastern bank of the salty pool",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          5.4,
+          0.2,
+          0
+        ],
+        "sizeMetres": [
+          1.4,
+          7.4,
+          0.95
+        ],
+        "count": 14,
+        "seed": 662
+      }
+    }
+  ]
+}

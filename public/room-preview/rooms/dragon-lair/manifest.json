@@ -1,0 +1,18 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "DRAGON-LAIR",
+  "bom": "games/zork2/planning/room-bom-prototype/dragon-lair/room-bom.json",
+  "bomSha256": "be858fc66cc4f264ea4014e3e8ea23ea996cb322d0d056f66a6a17c522532637",
+  "glb": "games/zork2/planning/room-bom-prototype/dragon-lair/build/room.glb",
+  "glbBytes": 5053888,
+  "glbSha256": "6c16e051c4322e7917009a06de41a961b99ca3e119ac37fabd8773aa34d287e6",
+  "meshCount": 10,
+  "materialCount": 5,
+  "triangles": 21905,
+  "zilAnchors": [
+    "CHEST",
+    "PRINCESS"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/dragon-lair/build/review-4view.png"
+}

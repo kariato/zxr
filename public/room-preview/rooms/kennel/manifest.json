@@ -1,0 +1,17 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "KENNEL",
+  "bom": "games/zork2/planning/room-bom-prototype/kennel/room-bom.json",
+  "bomSha256": "b2641d4fe45b9535948b91eba79d4c7485719b672e28a96d56d6731c4ef786d9",
+  "glb": "games/zork2/planning/room-bom-prototype/kennel/build/room.glb",
+  "glbBytes": 3333824,
+  "glbSha256": "6f96abd06965d8e811d1eee32ecfdd15d5d2dc3c9115edd7c1f66636b5ce9255",
+  "meshCount": 12,
+  "materialCount": 4,
+  "triangles": 10713,
+  "zilAnchors": [
+    "COLLAR"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/kennel/build/review-4view.png"
+}

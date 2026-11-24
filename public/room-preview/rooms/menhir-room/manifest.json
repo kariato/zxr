@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "MENHIR-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/menhir-room/room-bom.json",
+  "bomSha256": "7a6215874d4e8c46e64c07d503327480960a238ac5f9183380fa6d2775368165",
+  "glb": "games/zork2/planning/room-bom-prototype/menhir-room/build/room.glb",
+  "glbBytes": 4570032,
+  "glbSha256": "a6f93a03256b300d7a06787c26bce1f3cf10d1825471b1b022febdc70a735aa3",
+  "meshCount": 16,
+  "materialCount": 5,
+  "triangles": 20117,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/menhir-room/build/review-4view.png"
+}

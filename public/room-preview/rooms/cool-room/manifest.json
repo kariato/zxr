@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "COOL-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/cool-room/room-bom.json",
+  "bomSha256": "0829ad1df593d2419b4c0e0a7d0a75925d5bbbfe9b2b0b44b8c425fb4ba697b8",
+  "glb": "games/zork2/planning/room-bom-prototype/cool-room/build/room.glb",
+  "glbBytes": 5088836,
+  "glbSha256": "c3f4b481e9cf4121d5f3d0f9d559b7b23b0d533ea50a74b1b942e8e7bd2d95b2",
+  "meshCount": 16,
+  "materialCount": 5,
+  "triangles": 21957,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/cool-room/build/review-4view.png"
+}

@@ -1,0 +1,17 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "POSTS-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/posts-room/room-bom.json",
+  "bomSha256": "c937569964abc949be54820eebd590225be64b9714fb9907cd37e27e8bb7c8cb",
+  "glb": "games/zork2/planning/room-bom-prototype/posts-room/build/room.glb",
+  "glbBytes": 3993172,
+  "glbSha256": "96a6088fd859779a027f314cc78fd363185b99569914df716562db105a5b9269",
+  "meshCount": 11,
+  "materialCount": 5,
+  "triangles": 19450,
+  "zilAnchors": [
+    "POSTS"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/posts-room/build/review-4view.png"
+}

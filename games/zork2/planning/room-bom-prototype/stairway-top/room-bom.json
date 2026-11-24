@@ -1,0 +1,309 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "STAIRWAY-TOP",
+  "label": "Stairway",
+  "sourceContext": "games/zork2/assets/rooms/stairway-top/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/stairway-top/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/stairway-top/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/stairway-top/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/stairway-top/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      8.6,
+      8,
+      4.4
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.38,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.03,
+        0.089,
+        0.195
+      ],
+      "ambientStrength": 0.22,
+      "lights": [
+        {
+          "name": "landing-warm-key",
+          "position": [
+            1.4,
+            -0.6,
+            2.6
+          ],
+          "color": [
+            0.891,
+            0.733,
+            0.569
+          ],
+          "energy": 280,
+          "radius": 1.2
+        },
+        {
+          "name": "marble-stair-rim",
+          "position": [
+            -1.2,
+            -1.4,
+            2.2
+          ],
+          "color": [
+            0.891,
+            0.773,
+            0.65
+          ],
+          "energy": 180,
+          "radius": 1
+        },
+        {
+          "name": "stairwell-gloom-cool",
+          "position": [
+            -3,
+            1,
+            2.6
+          ],
+          "color": [
+            0.171,
+            0.373,
+            0.689
+          ],
+          "energy": 70,
+          "radius": 1.5
+        },
+        {
+          "name": "north-passage-warm",
+          "position": [
+            2.2,
+            3.4,
+            2.4
+          ],
+          "color": [
+            0.84,
+            0.693,
+            0.529
+          ],
+          "energy": 110,
+          "radius": 1
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.56,
+        0.12,
+        0.68,
+        0.44
+      ],
+      "tileMetres": 3.4,
+      "roughness": 0.92,
+      "normalStrength": 1.35,
+      "colorScale": 1.133,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.42,
+        0.68,
+        0.9,
+        0.96
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.86,
+      "normalStrength": 1.2,
+      "colorScale": 1.119,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.38,
+        0.01,
+        0.64,
+        0.14
+      ],
+      "tileMetres": 3.8,
+      "roughness": 0.95,
+      "normalStrength": 1.3,
+      "colorScale": 0.85,
+      "tileable": true
+    },
+    "marble": {
+      "sourceView": "N",
+      "crop": [
+        0.01,
+        0.48,
+        0.15,
+        0.88
+      ],
+      "tileMetres": 1.6,
+      "roughness": 0.48,
+      "normalStrength": 0.85,
+      "colorScale": 1.08,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "north-menhir-passage",
+      "category": "opening",
+      "description": "Tall rough-hewn rock passage leading north to the Menhir Room",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.7,
+        0.06,
+        0.92,
+        0.56
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 2,
+        "sizeMetres": [
+          2.1,
+          0.6,
+          3.1
+        ],
+        "depthMetres": 9,
+        "tunnelColor": [
+          0.9,
+          0.68,
+          0.4
+        ],
+        "tunnelEnergy": 85
+      }
+    },
+    {
+      "id": "down-marble-stairway",
+      "category": "opening",
+      "description": "Grand marble stairway descending into the gloom toward the Oddly-angled Rooms",
+      "zilIdentity": null,
+      "exitDirection": "DOWN",
+      "sourceView": "N",
+      "crop": [
+        0.14,
+        0.42,
+        0.52,
+        0.82
+      ],
+      "surface": "marble",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 0.6,
+        "sizeMetres": [
+          2.6,
+          0.6,
+          3
+        ],
+        "depthMetres": 8.5,
+        "tunnelColor": [
+          0.24,
+          0.34,
+          0.48
+        ],
+        "tunnelEnergy": 40
+      }
+    },
+    {
+      "id": "marble-pier-south",
+      "category": "pillar",
+      "description": "Carved veined marble balustrade pier at the south edge of the descending stairway",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0,
+        0.36,
+        0.17,
+        0.96
+      ],
+      "surface": "marble",
+      "placement": {
+        "position": [
+          -2.6,
+          -1.2,
+          0
+        ],
+        "sizeMetres": [
+          0.68,
+          0.68,
+          1.35
+        ]
+      }
+    },
+    {
+      "id": "marble-pier-north",
+      "category": "pillar",
+      "description": "Carved veined marble balustrade pier at the north edge of the descending stairway",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.52,
+        0.35,
+        0.63,
+        0.66
+      ],
+      "surface": "marble",
+      "placement": {
+        "position": [
+          -1.2,
+          1.4,
+          0
+        ],
+        "sizeMetres": [
+          0.62,
+          0.62,
+          1.3
+        ]
+      }
+    },
+    {
+      "id": "east-landing-rubble",
+      "category": "boulder-cluster",
+      "description": "Fallen stone fragments along the east cavern wall beside the landing",
+      "sourceView": "N",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          3.7,
+          -0.4,
+          0
+        ],
+        "sizeMetres": [
+          0.95,
+          5.4,
+          0.72
+        ],
+        "count": 12,
+        "seed": 751
+      }
+    },
+    {
+      "id": "marble-staircase",
+      "category": "stairs",
+      "description": "Broad carved stone stairway descending toward the Cerberus Room",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -1.8,
+          0.0,
+          0.0
+        ],
+        "sizeMetres": [
+          2.2,
+          3.4,
+          -1.6
+        ],
+        "steps": 10,
+        "yawDeg": 90
+      }
+    }
+  ]
+}

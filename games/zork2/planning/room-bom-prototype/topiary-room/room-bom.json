@@ -1,0 +1,346 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "TOPIARY-ROOM",
+  "label": "Topiary",
+  "sourceContext": "games/zork2/assets/rooms/topiary-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/topiary-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/topiary-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/topiary-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/topiary-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      14,
+      14,
+      6.2
+    ],
+    "wallStyle": "hedge",
+    "wallDisplacementMetres": 0.25,
+    "ceilingStyle": "open-sky",
+    "skybox": "src/prototype/assets/cavern-skybox-v1.png",
+    "lighting": {
+      "ambientColor": [
+        0.155,
+        0.203,
+        0.125
+      ],
+      "ambientStrength": 0.464,
+      "lights": [
+        {
+          "name": "moss-canopy-glow",
+          "position": [
+            0,
+            0.5,
+            5.2
+          ],
+          "color": [
+            0.61,
+            0.827,
+            0.47
+          ],
+          "energy": 556,
+          "radius": 2.6
+        },
+        {
+          "name": "garden-path-warm",
+          "position": [
+            -1.2,
+            -1.4,
+            2.4
+          ],
+          "color": [
+            1,
+            0.807,
+            0.49
+          ],
+          "energy": 317.6,
+          "radius": 1.5
+        },
+        {
+          "name": "arbor-west-fill",
+          "position": [
+            -5.2,
+            0,
+            2.3
+          ],
+          "color": [
+            0.95,
+            0.727,
+            0.43
+          ],
+          "energy": 211.9,
+          "radius": 1.2
+        },
+        {
+          "name": "east-hedge-moss",
+          "position": [
+            4.2,
+            1.5,
+            3.2
+          ],
+          "color": [
+            0.53,
+            0.747,
+            0.41
+          ],
+          "energy": 238.4,
+          "radius": 1.8
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.74,
+        0.64,
+        0.98,
+        0.92
+      ],
+      "tileMetres": 2.2,
+      "roughness": 0.94,
+      "normalStrength": 1.35,
+      "colorScale": 1.708,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.28,
+        0.68,
+        0.68,
+        0.96
+      ],
+      "tileMetres": 3.4,
+      "roughness": 0.92,
+      "normalStrength": 1.05,
+      "colorScale": 0.941,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.42,
+        0.01,
+        0.72,
+        0.18
+      ],
+      "tileMetres": 4.5,
+      "roughness": 0.95,
+      "normalStrength": 1.25,
+      "colorScale": 0.9,
+      "tileable": true
+    },
+    "arbor-stone": {
+      "procedural": "light-stone",
+      "tileMetres": 1.8,
+      "roughness": 0.86,
+      "normalStrength": 1.15
+    }
+  },
+  "objects": [
+    {
+      "id": "north-garden-path",
+      "category": "opening",
+      "description": "Wide hedged garden path opening on the north wall leading into the Formal Garden",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2.8,
+          0.6,
+          3.2
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.55,
+          0.74,
+          0.46
+        ],
+        "tunnelEnergy": 95
+      }
+    },
+    {
+      "id": "west-rose-arbor",
+      "category": "opening",
+      "description": "Rose-covered stone arbor archway on the west side leading into a tunnel toward the Carousel Room",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "sourceView": "N",
+      "crop": [
+        0.01,
+        0.16,
+        0.25,
+        0.64
+      ],
+      "surface": "arbor-stone",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2.3,
+          0.6,
+          2.9
+        ],
+        "depthMetres": 7,
+        "tunnelColor": [
+          0.76,
+          0.64,
+          0.44
+        ],
+        "tunnelEnergy": 85
+      }
+    },
+    {
+      "id": "hedges-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for HEDGES representing the geometrically arrayed overgrown creature-shaped topiary bushes",
+      "zilIdentity": "HEDGES",
+      "sourceView": "N",
+      "crop": [
+        0.22,
+        0.08,
+        0.96,
+        0.6
+      ],
+      "placement": {
+        "position": [
+          0,
+          2.2,
+          0
+        ],
+        "sizeMetres": [
+          4.5,
+          4.5,
+          2.4
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "topiary-hedge-plinth-nw",
+      "category": "pillar",
+      "description": "Trimmed overgrown hedge plinth flanking the northwest garden parterre",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3.6,
+          3.8,
+          0
+        ],
+        "sizeMetres": [
+          1.35,
+          1.35,
+          1.85
+        ]
+      }
+    },
+    {
+      "id": "topiary-hedge-plinth-ne",
+      "category": "pillar",
+      "description": "Trimmed overgrown hedge plinth flanking the northeast garden parterre",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          3.6,
+          3.8,
+          0
+        ],
+        "sizeMetres": [
+          1.35,
+          1.35,
+          1.85
+        ]
+      }
+    },
+    {
+      "id": "topiary-hedge-plinth-se",
+      "category": "pillar",
+      "description": "Trimmed overgrown hedge plinth flanking the southeast garden parterre",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          3.8,
+          -3.4,
+          0
+        ],
+        "sizeMetres": [
+          1.4,
+          1.4,
+          1.45
+        ]
+      }
+    },
+    {
+      "id": "topiary-hedge-plinth-sw",
+      "category": "pillar",
+      "description": "Trimmed overgrown hedge plinth flanking the southwest garden parterre",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3.8,
+          -3.4,
+          0
+        ],
+        "sizeMetres": [
+          1.4,
+          1.4,
+          1.45
+        ]
+      }
+    },
+    {
+      "id": "east-hedge-border",
+      "category": "boulder-cluster",
+      "description": "Overgrown leafy shrub beds bordering the eastern hedge wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          5.8,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          1.6,
+          8.5,
+          1.15
+        ],
+        "count": 14,
+        "seed": 821
+      }
+    },
+    {
+      "id": "south-hedge-border",
+      "category": "boulder-cluster",
+      "description": "Overgrown leafy shrub beds bordering the southern hedge wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0,
+          -5.8,
+          0
+        ],
+        "sizeMetres": [
+          8.5,
+          1.6,
+          1.1
+        ],
+        "count": 14,
+        "seed": 822
+      }
+    }
+  ]
+}

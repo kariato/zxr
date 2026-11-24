@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "NARROW-TUNNEL",
+  "bom": "games/zork2/planning/room-bom-prototype/narrow-tunnel/room-bom.json",
+  "bomSha256": "df3808e89a415d920377baa887ab0663aca8215a348e18a558034429505ac1e2",
+  "glb": "games/zork2/planning/room-bom-prototype/narrow-tunnel/build/room.glb",
+  "glbBytes": 5698404,
+  "glbSha256": "75b9da9bc64194284e086fdac933b9f9d99e5766e6ff2d9171cc4e6f22ff54e2",
+  "meshCount": 15,
+  "materialCount": 5,
+  "triangles": 30360,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/narrow-tunnel/build/review-4view.png"
+}

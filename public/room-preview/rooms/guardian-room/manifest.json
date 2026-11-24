@@ -1,0 +1,17 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "GUARDIAN-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/guardian-room/room-bom.json",
+  "bomSha256": "32a10c4d3d34469e7b01a6d3eafe9bf8915539314b04baa8f0383dd49fafcc23",
+  "glb": "games/zork2/planning/room-bom-prototype/guardian-room/build/room.glb",
+  "glbBytes": 3862428,
+  "glbSha256": "b8e91f14d2bb082e2d73991916dd4800d07e021fa35bbda57ef5c2e9d660332c",
+  "meshCount": 14,
+  "materialCount": 5,
+  "triangles": 10006,
+  "zilAnchors": [
+    "DOOR-KEEPER"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/guardian-room/build/review-4view.png"
+}

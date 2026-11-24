@@ -1,0 +1,21 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "WORKBENCH-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/workbench-room/room-bom.json",
+  "bomSha256": "68d54ce43f23dd9d4bc6b186bd11473b54f5367c3f4508be248988eaf5778217",
+  "glb": "games/zork2/planning/room-bom-prototype/workbench-room/build/room.glb",
+  "glbBytes": 5117140,
+  "glbSha256": "fb17e3a81204ff944dae6dea60327d97b5ba3a5f844d6428fd14f9d777abd857",
+  "meshCount": 20,
+  "materialCount": 8,
+  "triangles": 15931,
+  "zilAnchors": [
+    "WORKBENCH",
+    "ARCANA",
+    "STAND-1",
+    "STAND-2",
+    "STAND-3"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/workbench-room/build/review-4view.png"
+}

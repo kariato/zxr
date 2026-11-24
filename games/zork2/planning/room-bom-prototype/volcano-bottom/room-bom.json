@@ -1,0 +1,317 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "VOLCANO-BOTTOM",
+  "label": "Volcano Bottom",
+  "sourceContext": "games/zork2/assets/rooms/volcano-bottom/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/volcano-bottom/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/volcano-bottom/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/volcano-bottom/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/volcano-bottom/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "organic-cavern",
+    "dimensionsMetres": [
+      14.5,
+      14.5,
+      16
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.95,
+    "ceilingStyle": "open-sky",
+    "lighting": {
+      "ambientColor": [
+        0.235,
+        0.263,
+        0.325
+      ],
+      "ambientStrength": 0.342,
+      "lights": [
+        {
+          "name": "volcano-cone-sunbeam",
+          "position": [
+            0.8,
+            1.2,
+            13.5
+          ],
+          "color": [
+            0.981,
+            0.948,
+            0.949
+          ],
+          "energy": 2017.8,
+          "radius": 3.5
+        },
+        {
+          "name": "crater-floor-bounce",
+          "position": [
+            0,
+            0.5,
+            2.8
+          ],
+          "color": [
+            1,
+            0.808,
+            0.519
+          ],
+          "energy": 288.7,
+          "radius": 2.2
+        },
+        {
+          "name": "north-tunnel-rim",
+          "position": [
+            1.6,
+            5.2,
+            2.4
+          ],
+          "color": [
+            0.981,
+            0.768,
+            0.489
+          ],
+          "energy": 136.8,
+          "radius": 1.4
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.36,
+        0.16,
+        0.68,
+        0.42
+      ],
+      "tileMetres": 4.5,
+      "roughness": 0.94,
+      "normalStrength": 1.5,
+      "colorScale": 0.879,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.32,
+        0.72,
+        0.66,
+        0.94
+      ],
+      "tileMetres": 3.6,
+      "roughness": 0.92,
+      "normalStrength": 1.2,
+      "colorScale": 1,
+      "tileable": true
+    },
+    "ceiling": {
+      "procedural": "granite",
+      "tileMetres": 5,
+      "roughness": 0.95,
+      "normalStrength": 1.3
+    }
+  },
+  "objects": [
+    {
+      "id": "north-lava-room-tunnel",
+      "category": "opening",
+      "description": "Rough-hewn basalt arch on the north crater wall leading to the Lava Room",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.64,
+        0.48,
+        0.78,
+        0.7
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 1.6,
+        "sizeMetres": [
+          2.4,
+          0.9,
+          2.8
+        ],
+        "depthMetres": 8,
+        "tunnelColor": [
+          0.95,
+          0.62,
+          0.34
+        ],
+        "tunnelEnergy": 120
+      }
+    },
+    {
+      "id": "balloon-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL vehicle anchor for BALLOON wicker basket resting on the western crater floor",
+      "zilIdentity": "BALLOON",
+      "sourceView": "N",
+      "crop": [
+        0.1,
+        0.5,
+        0.38,
+        0.8
+      ],
+      "placement": {
+        "position": [
+          -2.2,
+          0.6,
+          0
+        ],
+        "sizeMetres": [
+          1.65,
+          1.65,
+          1.35
+        ],
+        "yawDeg": 15
+      }
+    },
+    {
+      "id": "braided-wire-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for BRAIDED-WIRE rigged above the balloon basket",
+      "zilIdentity": "BRAIDED-WIRE",
+      "sourceView": "N",
+      "crop": [
+        0.14,
+        0.02,
+        0.35,
+        0.54
+      ],
+      "placement": {
+        "position": [
+          -2.2,
+          0.6,
+          1.35
+        ],
+        "sizeMetres": [
+          1.4,
+          1.4,
+          2.2
+        ],
+        "yawDeg": 15
+      }
+    },
+    {
+      "id": "cloth-bag-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for CLOTH-BAG hanging from the side of the balloon basket",
+      "zilIdentity": "CLOTH-BAG",
+      "sourceView": "N",
+      "crop": [
+        0.22,
+        0.6,
+        0.29,
+        0.76
+      ],
+      "placement": {
+        "position": [
+          -1.85,
+          -0.22,
+          0.62
+        ],
+        "sizeMetres": [
+          0.36,
+          0.32,
+          0.58
+        ],
+        "yawDeg": 15
+      }
+    },
+    {
+      "id": "receptacle-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for RECEPTACLE mounted on the balloon basket rim",
+      "zilIdentity": "RECEPTACLE",
+      "sourceView": "N",
+      "crop": [
+        0.3,
+        0.58,
+        0.38,
+        0.7
+      ],
+      "placement": {
+        "position": [
+          -1.42,
+          -0.08,
+          0.82
+        ],
+        "sizeMetres": [
+          0.42,
+          0.38,
+          0.42
+        ],
+        "yawDeg": 15
+      }
+    },
+    {
+      "id": "west-crater-talus",
+      "category": "boulder-cluster",
+      "description": "Jagged volcanic basalt boulders piled along the western crater rim",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -5.8,
+          0.4,
+          0
+        ],
+        "sizeMetres": [
+          2.6,
+          9.5,
+          1.9
+        ],
+        "count": 26,
+        "seed": 901
+      }
+    },
+    {
+      "id": "east-crater-talus",
+      "category": "boulder-cluster",
+      "description": "Fallen basalt scree and rock slabs lining the eastern crater wall",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          5.8,
+          -0.5,
+          0
+        ],
+        "sizeMetres": [
+          2.8,
+          9.5,
+          2
+        ],
+        "count": 28,
+        "seed": 902
+      }
+    },
+    {
+      "id": "south-crater-boulders",
+      "category": "boulder-cluster",
+      "description": "Volcanic rubble scattered across the southern crater floor perimeter",
+      "zilIdentity": null,
+      "sourceView": "S",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0,
+          -5.8,
+          0
+        ],
+        "sizeMetres": [
+          9,
+          2.4,
+          1.5
+        ],
+        "count": 22,
+        "seed": 903
+      }
+    }
+  ]
+}

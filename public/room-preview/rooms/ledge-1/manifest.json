@@ -1,0 +1,18 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "LEDGE-1",
+  "bom": "games/zork2/planning/room-bom-prototype/ledge-1/room-bom.json",
+  "bomSha256": "08bb8ddcb08450de1247041b15fd95919478017d68526fa4c520b3ede7079e49",
+  "glb": "games/zork2/planning/room-bom-prototype/ledge-1/build/room.glb",
+  "glbBytes": 3062128,
+  "glbSha256": "ddf28102b753c4e8b76a29669aa98cd7d4ac8d266db8c1749e60bc19d16c63a3",
+  "meshCount": 13,
+  "materialCount": 4,
+  "triangles": 11178,
+  "zilAnchors": [
+    "COIN",
+    "HOOK-1"
+  ],
+  "skybox": "src/prototype/assets/lair-skybox-v1.png",
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/ledge-1/build/review-4view.png"
+}

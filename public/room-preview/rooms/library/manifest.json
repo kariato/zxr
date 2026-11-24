@@ -1,0 +1,20 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "LIBRARY",
+  "bom": "games/zork2/planning/room-bom-prototype/library/room-bom.json",
+  "bomSha256": "3fb1bde637824c25185cd443967d5071c8b7d9069076f88e19eb24fdbf49e1d6",
+  "glb": "games/zork2/planning/room-bom-prototype/library/build/room.glb",
+  "glbBytes": 4696836,
+  "glbSha256": "fd5820525466755b158f3b603a2e74e987c8c37a2699b2b2298e1a1ce4e6e400",
+  "meshCount": 20,
+  "materialCount": 7,
+  "triangles": 17409,
+  "zilAnchors": [
+    "BLUE-BOOK",
+    "GREEN-BOOK",
+    "PURPLE-BOOK",
+    "WHITE-BOOK"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/library/build/review-4view.png"
+}

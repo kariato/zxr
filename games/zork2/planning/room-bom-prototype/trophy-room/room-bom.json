@@ -1,0 +1,396 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "TROPHY-ROOM",
+  "label": "Trophy Room",
+  "sourceContext": "games/zork2/assets/rooms/trophy-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/trophy-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/trophy-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/trophy-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/trophy-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      7.2,
+      7.6,
+      3.6
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.03,
+    "ceilingStyle": "vaulted",
+    "lighting": {
+      "ambientColor": [
+        0.08,
+        0.086,
+        0.12
+      ],
+      "ambientStrength": 0.22,
+      "lights": [
+        {
+          "name": "trophy-warm-key",
+          "position": [
+            -0.8,
+            0.4,
+            2.5
+          ],
+          "color": [
+            0.959,
+            0.73,
+            0.461
+          ],
+          "energy": 250,
+          "radius": 1.1
+        },
+        {
+          "name": "cabinet-warm-accent",
+          "position": [
+            -0.8,
+            2.4,
+            2.2
+          ],
+          "color": [
+            0.959,
+            0.71,
+            0.421
+          ],
+          "energy": 160,
+          "radius": 0.9
+        },
+        {
+          "name": "south-fill",
+          "position": [
+            0.6,
+            -2.2,
+            2.2
+          ],
+          "color": [
+            0.879,
+            0.67,
+            0.461
+          ],
+          "energy": 120,
+          "radius": 1.2
+        },
+        {
+          "name": "north-workshop-cool",
+          "position": [
+            1.85,
+            3.9,
+            2
+          ],
+          "color": [
+            0.279,
+            0.43,
+            0.621
+          ],
+          "energy": 50,
+          "radius": 1
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.77,
+        0.48,
+        0.87,
+        0.76
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.88,
+      "normalStrength": 1.25,
+      "colorScale": 1,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.22,
+        0.78,
+        0.82,
+        0.98
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.86,
+      "normalStrength": 1.15,
+      "colorScale": 1,
+      "tileable": true
+    },
+    "ceiling": {
+      "procedural": "grey-stone",
+      "tileMetres": 3,
+      "roughness": 0.92,
+      "normalStrength": 1.2
+    },
+    "dark-oak": {
+      "procedural": "dark-oak",
+      "tileMetres": 1.4,
+      "roughness": 0.66,
+      "normalStrength": 0.95
+    },
+    "plinth-stone": {
+      "procedural": "grey-stone",
+      "tileMetres": 1.6,
+      "roughness": 0.88,
+      "normalStrength": 1.2
+    }
+  },
+  "objects": [
+    {
+      "id": "north-workshop-arch",
+      "category": "opening",
+      "description": "Arched stone doorway on the north wall leading to the Wizard's Workshop",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.85,
+        0.04,
+        1,
+        0.82
+      ],
+      "surface": "plinth-stone",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 1.85,
+        "sizeMetres": [
+          1.65,
+          0.55,
+          2.55
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.3,
+          0.42,
+          0.56
+        ],
+        "tunnelEnergy": 50
+      }
+    },
+    {
+      "id": "west-display-table",
+      "category": "table",
+      "description": "Heavy carved oak display table against the west wall holding preserved specimen bottles",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.14,
+        0.56,
+        0.51,
+        0.85
+      ],
+      "surface": "dark-oak",
+      "placement": {
+        "position": [
+          -3.05,
+          0.8,
+          0
+        ],
+        "sizeMetres": [
+          0.85,
+          2.1,
+          0.88
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "owl-pedestal",
+      "category": "pillar",
+      "description": "Stone display pedestal near the west wall supporting the stuffed owl perch",
+      "zilIdentity": null,
+      "surface": "plinth-stone",
+      "placement": {
+        "position": [
+          -3.15,
+          -1.1,
+          0
+        ],
+        "sizeMetres": [
+          0.65,
+          0.65,
+          1.15
+        ]
+      }
+    },
+    {
+      "id": "east-storage-bookcase",
+      "category": "bookcase",
+      "description": "Carved oak shelving unit against the east wall for Wizard's memorabilia",
+      "zilIdentity": null,
+      "surface": "dark-oak",
+      "placement": {
+        "position": [
+          3.25,
+          -0.4,
+          0
+        ],
+        "sizeMetres": [
+          1.6,
+          0.45,
+          2.4
+        ],
+        "yawDeg": 90
+      }
+    },
+    {
+      "id": "degree-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for DEGREE (Doctor of Thaumaturgy from GUE Tech) framed on the west wall",
+      "zilIdentity": "DEGREE",
+      "sourceView": "N",
+      "crop": [
+        0.14,
+        0.02,
+        0.34,
+        0.29
+      ],
+      "placement": {
+        "position": [
+          -3.52,
+          0.6,
+          2.25
+        ],
+        "sizeMetres": [
+          0.06,
+          1.1,
+          0.8
+        ],
+        "yawDeg": 90
+      }
+    },
+    {
+      "id": "wands-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for WANDS mounted on the wooden wand rack on the west wall",
+      "zilIdentity": "WANDS",
+      "sourceView": "N",
+      "crop": [
+        0.13,
+        0.28,
+        0.35,
+        0.5
+      ],
+      "placement": {
+        "position": [
+          -3.52,
+          0.6,
+          1.48
+        ],
+        "sizeMetres": [
+          0.12,
+          1.05,
+          0.58
+        ],
+        "yawDeg": 90
+      }
+    },
+    {
+      "id": "trophy-sword-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for TROPHY-SWORD nicked swords mounted vertically on the west wall",
+      "zilIdentity": "TROPHY-SWORD",
+      "sourceView": "N",
+      "crop": [
+        0.35,
+        0.09,
+        0.51,
+        0.5
+      ],
+      "placement": {
+        "position": [
+          -3.52,
+          2.05,
+          1.85
+        ],
+        "sizeMetres": [
+          0.1,
+          1.1,
+          1.25
+        ],
+        "yawDeg": 90
+      }
+    },
+    {
+      "id": "trophy-bottles-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for TROPHY-BOTTLES containing preserved homunculi atop the west oak table",
+      "zilIdentity": "TROPHY-BOTTLES",
+      "sourceView": "N",
+      "crop": [
+        0.2,
+        0.46,
+        0.48,
+        0.6
+      ],
+      "placement": {
+        "position": [
+          -3.05,
+          0.8,
+          0.92
+        ],
+        "sizeMetres": [
+          0.55,
+          1.75,
+          0.45
+        ],
+        "yawDeg": 90
+      }
+    },
+    {
+      "id": "wizard-case-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for WIZARD-CASE ornate trophy cabinet imbedded in the north wall",
+      "zilIdentity": "WIZARD-CASE",
+      "sourceView": "N",
+      "crop": [
+        0.55,
+        0.09,
+        0.78,
+        0.7
+      ],
+      "placement": {
+        "position": [
+          -0.85,
+          3.62,
+          0
+        ],
+        "sizeMetres": [
+          1.85,
+          0.48,
+          2.45
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "warning-label-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for WARNING-LABEL affixed to the north wall beside the archway",
+      "zilIdentity": "WARNING-LABEL",
+      "sourceView": "N",
+      "crop": [
+        0.77,
+        0.26,
+        0.86,
+        0.45
+      ],
+      "placement": {
+        "position": [
+          0.68,
+          3.74,
+          1.65
+        ],
+        "sizeMetres": [
+          0.42,
+          0.03,
+          0.58
+        ],
+        "yawDeg": 0
+      }
+    }
+  ]
+}

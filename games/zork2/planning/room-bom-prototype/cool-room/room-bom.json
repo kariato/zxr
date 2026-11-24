@@ -1,0 +1,319 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "COOL-ROOM",
+  "label": "Cool Room",
+  "sourceContext": "games/zork2/assets/rooms/cool-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/cool-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/cool-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/cool-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/cool-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "organic-cavern",
+    "dimensionsMetres": [
+      9.6,
+      9.2,
+      4.2
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.55,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.102,
+        0.122,
+        0.148
+      ],
+      "ambientStrength": 0.392,
+      "lights": [
+        {
+          "name": "west-icy-mist-glow",
+          "position": [
+            -3.6,
+            0.8,
+            2
+          ],
+          "color": [
+            0.485,
+            0.686,
+            0.895
+          ],
+          "energy": 286.2,
+          "radius": 1.4
+        },
+        {
+          "name": "north-bridge-cool-key",
+          "position": [
+            1,
+            3.6,
+            2.5
+          ],
+          "color": [
+            0.505,
+            0.646,
+            0.815
+          ],
+          "energy": 241,
+          "radius": 1.5
+        },
+        {
+          "name": "junction-warm-lantern",
+          "position": [
+            0.4,
+            -1.2,
+            2
+          ],
+          "color": [
+            1,
+            0.766,
+            0.455
+          ],
+          "energy": 218.4,
+          "radius": 1.1
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.34,
+        0.14,
+        0.56,
+        0.56
+      ],
+      "tileMetres": 3.2,
+      "roughness": 0.9,
+      "normalStrength": 1.4,
+      "colorScale": 1.551,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.28,
+        0.68,
+        0.78,
+        0.96
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.62,
+      "normalStrength": 1.2,
+      "colorScale": 1.226,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.16,
+        0.01,
+        0.62,
+        0.12
+      ],
+      "tileMetres": 3.8,
+      "roughness": 0.94,
+      "normalStrength": 1.35,
+      "colorScale": 0.85,
+      "tileable": true
+    },
+    "bridge-stone": {
+      "procedural": "grey-stone",
+      "tileMetres": 1.8,
+      "roughness": 0.84,
+      "normalStrength": 1.2
+    }
+  },
+  "objects": [
+    {
+      "id": "north-bridge-approach",
+      "category": "opening",
+      "description": "Wide cavern opening on the north wall framing the approach to the Stone Bridge",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.56,
+        0.06,
+        0.92,
+        0.58
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 1,
+        "sizeMetres": [
+          3.2,
+          0.7,
+          3.3
+        ],
+        "depthMetres": 8.5,
+        "tunnelColor": [
+          0.36,
+          0.52,
+          0.72
+        ],
+        "tunnelEnergy": 120
+      }
+    },
+    {
+      "id": "west-glacier-tunnel",
+      "category": "opening",
+      "description": "Narrow misty cavern tunnel on the west wall carrying chilly air from the Ice Room",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "sourceView": "N",
+      "crop": [
+        0.04,
+        0.1,
+        0.28,
+        0.54
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 0.8,
+        "sizeMetres": [
+          1.65,
+          0.7,
+          2.5
+        ],
+        "depthMetres": 8,
+        "tunnelColor": [
+          0.42,
+          0.64,
+          0.88
+        ],
+        "tunnelEnergy": 145
+      }
+    },
+    {
+      "id": "se-carousel-passage",
+      "category": "opening",
+      "description": "Twisty damp cavern path on the south-east wall leading back to the Round Room",
+      "zilIdentity": null,
+      "exitDirection": "SE",
+      "surface": "wall",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 2.2,
+        "sizeMetres": [
+          2,
+          0.65,
+          2.6
+        ],
+        "depthMetres": 7.5,
+        "tunnelColor": [
+          0.58,
+          0.5,
+          0.4
+        ],
+        "tunnelEnergy": 75
+      }
+    },
+    {
+      "id": "bridge-parapet-west",
+      "category": "pillar",
+      "description": "Low dressed-stone bridge parapet pier flanking the western side of the north bridge approach",
+      "zilIdentity": null,
+      "surface": "bridge-stone",
+      "placement": {
+        "position": [
+          -0.85,
+          3.6,
+          0
+        ],
+        "sizeMetres": [
+          0.55,
+          1.8,
+          0.95
+        ]
+      }
+    },
+    {
+      "id": "bridge-parapet-east",
+      "category": "pillar",
+      "description": "Low dressed-stone bridge parapet pier flanking the eastern side of the north bridge approach",
+      "zilIdentity": null,
+      "surface": "bridge-stone",
+      "placement": {
+        "position": [
+          2.85,
+          3.6,
+          0
+        ],
+        "sizeMetres": [
+          0.55,
+          1.8,
+          0.95
+        ]
+      }
+    },
+    {
+      "id": "cavern-stalactites",
+      "category": "stalactite-ceiling",
+      "description": "Damp limestone stalactites hanging from the cavern ceiling above the misty junction",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0,
+          0,
+          4.1
+        ],
+        "sizeMetres": [
+          7.6,
+          7.2,
+          1
+        ],
+        "count": 24,
+        "minHeight": 0.25,
+        "maxHeight": 0.95,
+        "seed": 610
+      }
+    },
+    {
+      "id": "west-bank-boulders",
+      "category": "boulder-cluster",
+      "description": "Wet rocky boulders flanking the narrow western mist tunnel",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3.8,
+          -2,
+          0
+        ],
+        "sizeMetres": [
+          1.6,
+          4.2,
+          1
+        ],
+        "count": 14,
+        "seed": 611
+      }
+    },
+    {
+      "id": "east-bank-boulders",
+      "category": "boulder-cluster",
+      "description": "Damp cavern boulders along the eastern rock wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          4,
+          0.2,
+          0
+        ],
+        "sizeMetres": [
+          1.4,
+          5.4,
+          1.1
+        ],
+        "count": 12,
+        "seed": 612
+      }
+    }
+  ]
+}

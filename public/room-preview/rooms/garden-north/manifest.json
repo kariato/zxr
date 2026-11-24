@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "GARDEN-NORTH",
+  "bom": "games/zork2/planning/room-bom-prototype/garden-north/room-bom.json",
+  "bomSha256": "22325709d6cb94e4705438e15975625abd03cb1c510e0575cfcc3bb4c7164262",
+  "glb": "games/zork2/planning/room-bom-prototype/garden-north/build/room.glb",
+  "glbBytes": 3621740,
+  "glbSha256": "68b33d1032b7a8621eea70c9e4ab81a94622834d1511ce0ba60d99de5879358e",
+  "meshCount": 11,
+  "materialCount": 5,
+  "triangles": 10410,
+  "zilAnchors": [],
+  "skybox": "src/prototype/assets/cavern-skybox-v1.png",
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/garden-north/build/review-4view.png"
+}

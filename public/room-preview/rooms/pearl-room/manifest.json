@@ -1,0 +1,17 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "PEARL-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/pearl-room/room-bom.json",
+  "bomSha256": "574592019f58b8123352de54fddbdf4f338540255fafd804668cc78875785839",
+  "glb": "games/zork2/planning/room-bom-prototype/pearl-room/build/room.glb",
+  "glbBytes": 4365796,
+  "glbSha256": "fff213476b36c25a544b2b1e673bfe17b966d882a0c1c3ae138d43a97273bbce",
+  "meshCount": 15,
+  "materialCount": 6,
+  "triangles": 10910,
+  "zilAnchors": [
+    "PEARL"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/pearl-room/build/review-4view.png"
+}

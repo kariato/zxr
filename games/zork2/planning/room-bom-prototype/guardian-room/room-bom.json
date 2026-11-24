@@ -1,0 +1,274 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "GUARDIAN-ROOM",
+  "label": "Guarded Room",
+  "sourceContext": "games/zork2/assets/rooms/guardian-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/guardian-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/guardian-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/guardian-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/guardian-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      5.2,
+      7.6,
+      3.3
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.08,
+    "ceilingStyle": "vaulted",
+    "lighting": {
+      "ambientColor": [
+        0.03,
+        0.059,
+        0.195
+      ],
+      "ambientStrength": 0.218,
+      "lights": [
+        {
+          "name": "door-warm-lantern",
+          "position": [
+            0,
+            -2,
+            2
+          ],
+          "color": [
+            0.791,
+            0.668,
+            0.589
+          ],
+          "energy": 262,
+          "radius": 1
+        },
+        {
+          "name": "corridor-center-fill",
+          "position": [
+            0,
+            0.8,
+            2.2
+          ],
+          "color": [
+            0.671,
+            0.648,
+            0.689
+          ],
+          "energy": 120.1,
+          "radius": 1.2
+        },
+        {
+          "name": "north-corridor-cool",
+          "position": [
+            0,
+            3.6,
+            1.9
+          ],
+          "color": [
+            0.131,
+            0.428,
+            0.849
+          ],
+          "energy": 76.4,
+          "radius": 1.1
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.42,
+        0.24,
+        0.56,
+        0.72
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.92,
+      "normalStrength": 1.35,
+      "colorScale": 1.067,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.72,
+        0.76,
+        0.96
+      ],
+      "tileMetres": 2.2,
+      "roughness": 0.9,
+      "normalStrength": 1.15,
+      "colorScale": 1.262,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.16,
+        0.01,
+        0.48,
+        0.14
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.95,
+      "normalStrength": 1.25,
+      "colorScale": 0.85,
+      "tileable": true
+    },
+    "door-oak": {
+      "procedural": "weathered-oak",
+      "tileMetres": 1.4,
+      "roughness": 0.82,
+      "normalStrength": 1.25
+    }
+  },
+  "objects": [
+    {
+      "id": "north-cobwebby-corridor",
+      "category": "opening",
+      "description": "Cobweb-draped arched stone corridor exiting north to the Cobwebby Corridor",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.08,
+        0.16,
+        0.3,
+        0.64
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.9,
+          0.55,
+          2.5
+        ],
+        "depthMetres": 8.5,
+        "tunnelColor": [
+          0.3,
+          0.44,
+          0.6
+        ],
+        "tunnelEnergy": 70
+      }
+    },
+    {
+      "id": "south-wizard-door",
+      "category": "door",
+      "description": "Stained and battered heavy oak door bound with iron bands at the south end of the room",
+      "zilIdentity": "WIZ-DOOR",
+      "exitDirection": "SOUTH",
+      "sourceView": "N",
+      "crop": [
+        0.56,
+        0.04,
+        0.88,
+        0.8
+      ],
+      "surface": "door-oak",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2.1,
+          0.35,
+          2.55
+        ],
+        "depthMetres": 6,
+        "tunnelColor": [
+          0.9,
+          0.64,
+          0.36
+        ],
+        "tunnelEnergy": 85
+      }
+    },
+    {
+      "id": "door-keeper-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for DOOR-KEEPER (lizard head embedded in the southern door)",
+      "zilIdentity": "DOOR-KEEPER",
+      "sourceView": "N",
+      "crop": [
+        0.63,
+        0.25,
+        0.77,
+        0.47
+      ],
+      "placement": {
+        "position": [
+          0,
+          -3.55,
+          1.55
+        ],
+        "sizeMetres": [
+          0.45,
+          0.35,
+          0.45
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "west-corridor-rubble",
+      "category": "boulder-cluster",
+      "description": "Fallen stone fragments and dust along the west wall base",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.04,
+        0.68,
+        0.22,
+        0.94
+      ],
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -2.25,
+          0.2,
+          0
+        ],
+        "sizeMetres": [
+          0.7,
+          5.2,
+          0.36
+        ],
+        "count": 12,
+        "seed": 471
+      }
+    },
+    {
+      "id": "east-corridor-rubble",
+      "category": "boulder-cluster",
+      "description": "Scattered stone chips along the east wall base",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.32,
+        0.6,
+        0.48,
+        0.74
+      ],
+      "surface": "wall",
+      "placement": {
+        "position": [
+          2.25,
+          0.2,
+          0
+        ],
+        "sizeMetres": [
+          0.7,
+          5.2,
+          0.34
+        ],
+        "count": 12,
+        "seed": 472
+      }
+    }
+  ]
+}

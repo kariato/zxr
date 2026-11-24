@@ -1,0 +1,264 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "DIAMOND-7",
+  "label": "Oddly-angled Room",
+  "sourceContext": "games/zork2/assets/rooms/diamond-7/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/diamond-7/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/diamond-7/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/diamond-7/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/diamond-7/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      8.2,
+      8.2,
+      3.4
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.06,
+    "ceilingStyle": "flat",
+    "lighting": {
+      "ambientColor": [
+        0.08,
+        0.11,
+        0.14
+      ],
+      "ambientStrength": 0.28,
+      "lights": [
+        {
+          "name": "west-amber-key",
+          "position": [
+            -2.2,
+            -1,
+            2.3
+          ],
+          "color": [
+            1,
+            0.74,
+            0.42
+          ],
+          "energy": 279.5,
+          "radius": 1
+        },
+        {
+          "name": "east-amber-fill",
+          "position": [
+            2.2,
+            -0.6,
+            2.2
+          ],
+          "color": [
+            0.96,
+            0.72,
+            0.44
+          ],
+          "energy": 177.9,
+          "radius": 1.1
+        },
+        {
+          "name": "north-cool-shadow",
+          "position": [
+            0,
+            2.6,
+            2.3
+          ],
+          "color": [
+            0.36,
+            0.5,
+            0.68
+          ],
+          "energy": 95.3,
+          "radius": 1.3
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.4,
+        0.22,
+        0.56,
+        0.58
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.35,
+      "normalStrength": 1.15,
+      "colorScale": 1.143,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.68,
+        0.76,
+        0.96
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.32,
+      "normalStrength": 0.95,
+      "colorScale": 1.259,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.2,
+        0.02,
+        0.5,
+        0.11
+      ],
+      "tileMetres": 3,
+      "roughness": 0.4,
+      "normalStrength": 1,
+      "colorScale": 0.92,
+      "tileable": true
+    },
+    "facet-stone": {
+      "procedural": "granite",
+      "tileMetres": 2,
+      "roughness": 0.36,
+      "normalStrength": 1.15
+    }
+  },
+  "objects": [
+    {
+      "id": "ne-passage",
+      "category": "opening",
+      "description": "Angled glassy-stone passage offset northeast along the north wall leading back to DIAMOND-5",
+      "zilIdentity": null,
+      "exitDirection": "NE",
+      "sourceView": "N",
+      "crop": [
+        0.68,
+        0.28,
+        0.8,
+        0.56
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 2,
+        "sizeMetres": [
+          1.85,
+          0.5,
+          2.55
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.28,
+          0.38,
+          0.52
+        ],
+        "tunnelEnergy": 45
+      }
+    },
+    {
+      "id": "central-faceted-pillar",
+      "category": "pillar",
+      "description": "Massive angular faceted stone column dominating the center-north of the chamber",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.35,
+        0.14,
+        0.66,
+        0.64
+      ],
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -0.35,
+          1.35,
+          0
+        ],
+        "sizeMetres": [
+          1.65,
+          1.55,
+          3.4
+        ],
+        "yawDeg": 34
+      }
+    },
+    {
+      "id": "west-false-alcove",
+      "category": "recess",
+      "description": "Shallow dark faceted alcove on the west wall (non-exit)",
+      "zilIdentity": null,
+      "exitDirection": null,
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 0.6,
+        "sizeMetres": [
+          1.6,
+          0.45,
+          2.4
+        ],
+        "depthMetres": 2.2
+      }
+    },
+    {
+      "id": "east-false-alcove",
+      "category": "recess",
+      "description": "Shallow dark faceted alcove on the east wall (non-exit)",
+      "zilIdentity": null,
+      "exitDirection": null,
+      "surface": "wall",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": -0.6,
+        "sizeMetres": [
+          1.6,
+          0.45,
+          2.4
+        ],
+        "depthMetres": 2.2
+      }
+    },
+    {
+      "id": "angled-pier-sw",
+      "category": "pillar",
+      "description": "Faceted corner buttress in the southwest corner",
+      "zilIdentity": null,
+      "surface": "facet-stone",
+      "placement": {
+        "position": [
+          -3.4,
+          -3.4,
+          0
+        ],
+        "sizeMetres": [
+          1.15,
+          1.15,
+          3.4
+        ],
+        "yawDeg": -26
+      }
+    },
+    {
+      "id": "angled-pier-se",
+      "category": "pillar",
+      "description": "Faceted corner buttress in the southeast corner",
+      "zilIdentity": null,
+      "surface": "facet-stone",
+      "placement": {
+        "position": [
+          3.4,
+          -3.4,
+          0
+        ],
+        "sizeMetres": [
+          1.15,
+          1.15,
+          3.4
+        ],
+        "yawDeg": 24
+      }
+    }
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "GLACIER-ROOM",
+  "label": "Ice Room",
+  "sourceContext": "games/zork2/assets/rooms/glacier-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/glacier-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/glacier-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/glacier-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/glacier-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "organic-cavern",
+    "dimensionsMetres": [
+      13,
+      11.5,
+      6.4
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.65,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.084,
+        0.157,
+        0.236
+      ],
+      "ambientStrength": 0.636,
+      "lights": [
+        {
+          "name": "glacier-ice-bounce",
+          "position": [
+            -2.8,
+            0,
+            2.8
+          ],
+          "color": [
+            0.448,
+            0.772,
+            0.992
+          ],
+          "energy": 599.3,
+          "radius": 2
+        },
+        {
+          "name": "east-passage-warm",
+          "position": [
+            4.6,
+            0.4,
+            2.2
+          ],
+          "color": [
+            0.968,
+            0.732,
+            0.452
+          ],
+          "energy": 524.4,
+          "radius": 1.4
+        },
+        {
+          "name": "lava-tube-shaft",
+          "position": [
+            1,
+            4.4,
+            4.8
+          ],
+          "color": [
+            0.608,
+            0.732,
+            0.892
+          ],
+          "energy": 412,
+          "radius": 1.6
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.28,
+        0.02,
+        0.54,
+        0.24
+      ],
+      "tileMetres": 3.6,
+      "roughness": 0.88,
+      "normalStrength": 1.35,
+      "colorScale": 1.802,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.42,
+        0.72,
+        0.86,
+        0.96
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.56,
+      "normalStrength": 1.15,
+      "colorScale": 1.291,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.72,
+        0.02,
+        0.98,
+        0.24
+      ],
+      "tileMetres": 4.2,
+      "roughness": 0.92,
+      "normalStrength": 1.3,
+      "colorScale": 0.88,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "east-cool-passage",
+      "category": "opening",
+      "description": "Large arched lava passage exiting east toward the Cool Room",
+      "zilIdentity": null,
+      "exitDirection": "EAST",
+      "sourceView": "N",
+      "crop": [
+        0.78,
+        0.3,
+        0.98,
+        0.68
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2.8,
+          0.65,
+          3.1
+        ],
+        "depthMetres": 8.5,
+        "tunnelColor": [
+          1,
+          0.72,
+          0.38
+        ],
+        "tunnelEnergy": 160
+      }
+    },
+    {
+      "id": "west-lava-passage",
+      "category": "opening",
+      "description": "Conditional western passage to the Lava Room revealed once the glacier is melted",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "sourceView": "W",
+      "crop": [
+        0.28,
+        0.2,
+        0.72,
+        0.68
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2.4,
+          0.65,
+          2.8
+        ],
+        "depthMetres": 7.5,
+        "tunnelColor": [
+          0.92,
+          0.44,
+          0.22
+        ],
+        "tunnelEnergy": 80
+      }
+    },
+    {
+      "id": "up-lava-tube",
+      "category": "opening",
+      "description": "Upward lava tube rising above the jumble of fallen rocks on the north wall",
+      "zilIdentity": null,
+      "exitDirection": "UP",
+      "sourceView": "N",
+      "crop": [
+        0.54,
+        0.02,
+        0.7,
+        0.28
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 1,
+        "sizeMetres": [
+          2.4,
+          0.65,
+          3.4
+        ],
+        "depthMetres": 7,
+        "tunnelColor": [
+          0.6,
+          0.7,
+          0.84
+        ],
+        "tunnelEnergy": 130
+      }
+    },
+    {
+      "id": "glacier-ice-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for ICE (glacier) filling the western half of the hall",
+      "zilIdentity": "ICE",
+      "sourceView": "N",
+      "crop": [
+        0,
+        0.04,
+        0.56,
+        0.76
+      ],
+      "placement": {
+        "position": [
+          -3.2,
+          0.2,
+          0
+        ],
+        "sizeMetres": [
+          4.6,
+          7.6,
+          5.2
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "north-rock-jumble",
+      "category": "boulder-cluster",
+      "description": "Jumble of fallen volcanic basalt boulders piled beneath the upward lava tube",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.48,
+        0.2,
+        0.76,
+        0.66
+      ],
+      "surface": "wall",
+      "placement": {
+        "position": [
+          1,
+          4.4,
+          0
+        ],
+        "sizeMetres": [
+          4.2,
+          2.4,
+          2.2
+        ],
+        "count": 26,
+        "seed": 451
+      }
+    },
+    {
+      "id": "south-lava-boulders",
+      "category": "boulder-cluster",
+      "description": "Dark angular basalt boulders grounding the southern wall",
+      "zilIdentity": null,
+      "sourceView": "S",
+      "crop": [
+        0.16,
+        0.54,
+        0.84,
+        0.82
+      ],
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0.4,
+          -4.9,
+          0
+        ],
+        "sizeMetres": [
+          7.2,
+          1.4,
+          0.95
+        ],
+        "count": 16,
+        "seed": 452
+      }
+    },
+    {
+      "id": "lava-floor-crack",
+      "category": "floor-crack",
+      "description": "Fracture seam running across the ice-smoothed volcanic rock floor",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.22,
+        0.82,
+        0.86,
+        0.94
+      ],
+      "placement": {
+        "position": [
+          0.6,
+          -1.6,
+          0
+        ],
+        "sizeMetres": [
+          5.4,
+          0.12,
+          0.06
+        ],
+        "yawDeg": 12
+      }
+    }
+  ]
+}

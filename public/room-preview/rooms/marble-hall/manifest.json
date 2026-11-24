@@ -1,0 +1,17 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "MARBLE-HALL",
+  "bom": "games/zork2/planning/room-bom-prototype/marble-hall/room-bom.json",
+  "bomSha256": "aed8e32014f6e6c733789f93a470a23ed8aa991025c1e92752507b90fb99fe3d",
+  "glb": "games/zork2/planning/room-bom-prototype/marble-hall/build/room.glb",
+  "glbBytes": 5217832,
+  "glbSha256": "3f1e778aa96a08f2bcba1f8b1b232e54ee0f18555605f19ce474cc346a3eea6f",
+  "meshCount": 25,
+  "materialCount": 5,
+  "triangles": 20973,
+  "zilAnchors": [
+    "BRICK"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/marble-hall/build/review-4view.png"
+}

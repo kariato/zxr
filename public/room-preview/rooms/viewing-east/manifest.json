@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "VIEWING-EAST",
+  "bom": "games/zork2/planning/room-bom-prototype/viewing-east/room-bom.json",
+  "bomSha256": "b3c0d4f3ec9250fdc64e9505853a0eca96b2224b893f1d3ab99698d73de31c71",
+  "glb": "games/zork2/planning/room-bom-prototype/viewing-east/build/room.glb",
+  "glbBytes": 4795064,
+  "glbSha256": "4619845ef1d2d04d1a782a1d610a7da63cc32139df3713675284a8354ce9c9dc",
+  "meshCount": 22,
+  "materialCount": 5,
+  "triangles": 14009,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/viewing-east/build/review-4view.png"
+}

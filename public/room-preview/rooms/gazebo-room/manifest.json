@@ -1,0 +1,22 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "GAZEBO-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/gazebo-room/room-bom.json",
+  "bomSha256": "3255236f9652ec487a18df85739f4cfc89539033abc9791116d7f3e1221ee8ac",
+  "glb": "games/zork2/planning/room-bom-prototype/gazebo-room/build/room.glb",
+  "glbBytes": 6609680,
+  "glbSha256": "c992dce278caa42461a315f34a29b8b86288e8945d23dac635a87d6862f1b2fd",
+  "meshCount": 13,
+  "materialCount": 5,
+  "triangles": 4657,
+  "zilAnchors": [
+    "GAZEBO-TABLE",
+    "PLACE-MAT",
+    "TEAPOT",
+    "NEWSPAPER",
+    "MATCH",
+    "LETTER-OPENER"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/gazebo-room/build/review-4view.png"
+}

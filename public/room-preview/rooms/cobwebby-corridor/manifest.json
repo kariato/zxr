@@ -1,0 +1,17 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "COBWEBBY-CORRIDOR",
+  "bom": "games/zork2/planning/room-bom-prototype/cobwebby-corridor/room-bom.json",
+  "bomSha256": "a599d9759413af955d78394785055742581d6985f85d0dfc7e118061cb3713e6",
+  "glb": "games/zork2/planning/room-bom-prototype/cobwebby-corridor/build/room.glb",
+  "glbBytes": 5158492,
+  "glbSha256": "760d0d1b024337c4c0bd5b6a9a423a855a5701821e26cc51eac50d11555b8c61",
+  "meshCount": 14,
+  "materialCount": 5,
+  "triangles": 20075,
+  "zilAnchors": [
+    "FUSE"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/cobwebby-corridor/build/review-4view.png"
+}

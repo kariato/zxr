@@ -1,0 +1,282 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "PENTAGRAM-ROOM",
+  "label": "Pentagram Room",
+  "sourceContext": "games/zork2/assets/rooms/pentagram-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/pentagram-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/pentagram-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/pentagram-room/reverse-v2.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/pentagram-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      8.4,
+      8.6,
+      3.9
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.32,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.048,
+        0.081,
+        0.152
+      ],
+      "ambientStrength": 0.238,
+      "lights": [
+        {
+          "name": "west-torch-warm",
+          "position": [
+            -3.2,
+            -0.4,
+            2
+          ],
+          "color": [
+            0.919,
+            0.68,
+            0.441
+          ],
+          "energy": 345.9,
+          "radius": 1.1
+        },
+        {
+          "name": "center-pentagram-fill",
+          "position": [
+            0,
+            0,
+            2.6
+          ],
+          "color": [
+            0.879,
+            0.72,
+            0.541
+          ],
+          "energy": 151.3,
+          "radius": 1.5
+        },
+        {
+          "name": "east-wall-bounce",
+          "position": [
+            3,
+            -0.6,
+            2.1
+          ],
+          "color": [
+            0.839,
+            0.66,
+            0.481
+          ],
+          "energy": 108.1,
+          "radius": 1.2
+        },
+        {
+          "name": "north-corridor-cool",
+          "position": [
+            0,
+            4.4,
+            2.2
+          ],
+          "color": [
+            0.259,
+            0.44,
+            0.681
+          ],
+          "energy": 70.3,
+          "radius": 1.1
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.18,
+        0.16,
+        0.44,
+        0.42
+      ],
+      "tileMetres": 3,
+      "roughness": 0.92,
+      "normalStrength": 1.35,
+      "colorScale": 1.556,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.02,
+        0.46,
+        0.22,
+        0.64
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.88,
+      "normalStrength": 1.15,
+      "colorScale": 0.864,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.22,
+        0.01,
+        0.78,
+        0.1
+      ],
+      "tileMetres": 3.6,
+      "roughness": 0.95,
+      "normalStrength": 1.3,
+      "colorScale": 0.88,
+      "tileable": true
+    },
+    "jamb-stone": {
+      "procedural": "grey-stone",
+      "tileMetres": 1.8,
+      "roughness": 0.88,
+      "normalStrength": 1.25
+    }
+  },
+  "objects": [
+    {
+      "id": "north-workbench-doorway",
+      "category": "opening",
+      "description": "Tall dressed-stone rectangular doorway on the north wall leading to Workbench Room",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.46,
+        0.07,
+        0.68,
+        0.44
+      ],
+      "surface": "jamb-stone",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.85,
+          0.65,
+          2.75
+        ],
+        "depthMetres": 8,
+        "tunnelColor": [
+          0.32,
+          0.44,
+          0.58
+        ],
+        "tunnelEnergy": 70
+      }
+    },
+    {
+      "id": "pentagram-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for PENTAGRAM (great black-chalk pentagram with central black circle inscribed on the flagstone floor)",
+      "zilIdentity": "PENTAGRAM",
+      "sourceView": "N",
+      "crop": [
+        0.12,
+        0.46,
+        0.88,
+        0.87
+      ],
+      "placement": {
+        "position": [
+          0,
+          0,
+          0.01
+        ],
+        "sizeMetres": [
+          4.8,
+          4.8,
+          0.04
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "stone-pilaster-nw",
+      "category": "pillar",
+      "description": "Rough-dressed stone pilaster framing the northwest corner",
+      "zilIdentity": null,
+      "surface": "jamb-stone",
+      "placement": {
+        "position": [
+          -3.65,
+          3.65,
+          0
+        ],
+        "sizeMetres": [
+          0.65,
+          0.65,
+          3.9
+        ]
+      }
+    },
+    {
+      "id": "stone-pilaster-ne",
+      "category": "pillar",
+      "description": "Rough-dressed stone pilaster framing the northeast corner",
+      "zilIdentity": null,
+      "surface": "jamb-stone",
+      "placement": {
+        "position": [
+          3.65,
+          3.65,
+          0
+        ],
+        "sizeMetres": [
+          0.65,
+          0.65,
+          3.9
+        ]
+      }
+    },
+    {
+      "id": "west-wall-rubble",
+      "category": "boulder-cluster",
+      "description": "Small angular stone blocks grounding the western cavern wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3.75,
+          -0.4,
+          0
+        ],
+        "sizeMetres": [
+          0.85,
+          5.4,
+          0.48
+        ],
+        "count": 12,
+        "seed": 651
+      }
+    },
+    {
+      "id": "east-wall-rubble",
+      "category": "boulder-cluster",
+      "description": "Small angular stone blocks grounding the eastern cavern wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          3.75,
+          -0.4,
+          0
+        ],
+        "sizeMetres": [
+          0.85,
+          5.4,
+          0.48
+        ],
+        "count": 12,
+        "seed": 652
+      }
+    }
+  ]
+}

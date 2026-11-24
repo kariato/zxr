@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "LAVA-TUBE",
+  "bom": "games/zork2/planning/room-bom-prototype/lava-tube/room-bom.json",
+  "bomSha256": "18935c6fc25423edc8f5cdcc66ddd1603a20c9f5654f2456c9157a13365d7471",
+  "glb": "games/zork2/planning/room-bom-prototype/lava-tube/build/room.glb",
+  "glbBytes": 3905364,
+  "glbSha256": "c32f67d0c590043bdabb938fae8fcca5cf247d22c0ee118d7ecf97b6f58ae12c",
+  "meshCount": 12,
+  "materialCount": 4,
+  "triangles": 14075,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/lava-tube/build/review-4view.png"
+}

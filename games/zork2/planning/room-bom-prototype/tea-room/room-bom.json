@@ -1,0 +1,482 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "TEA-ROOM",
+  "label": "Tea Room",
+  "sourceContext": "games/zork2/assets/rooms/tea-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/tea-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/tea-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/tea-room/reverse-v2.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/tea-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      8.4,
+      7.6,
+      3.6
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.28,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.105,
+        0.104,
+        0.125
+      ],
+      "ambientStrength": 0.386,
+      "lights": [
+        {
+          "name": "tea-table-warm-key",
+          "position": [
+            0.2,
+            -0.2,
+            2.5
+          ],
+          "color": [
+            0.929,
+            0.767,
+            0.53
+          ],
+          "energy": 385.6,
+          "radius": 1.3
+        },
+        {
+          "name": "east-wall-amber",
+          "position": [
+            3.1,
+            0.8,
+            1.9
+          ],
+          "color": [
+            0.929,
+            0.687,
+            0.39
+          ],
+          "energy": 257.1,
+          "radius": 1
+        },
+        {
+          "name": "south-fill",
+          "position": [
+            -0.4,
+            -2.6,
+            2.2
+          ],
+          "color": [
+            0.9,
+            0.727,
+            0.53
+          ],
+          "energy": 180,
+          "radius": 1.2
+        },
+        {
+          "name": "nw-passage-cool",
+          "position": [
+            -2.2,
+            3.4,
+            2.1
+          ],
+          "color": [
+            0.31,
+            0.467,
+            0.67
+          ],
+          "energy": 70.7,
+          "radius": 1
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "S",
+      "crop": [
+        0.15,
+        0.15,
+        0.85,
+        0.5
+      ],
+      "tileMetres": 3,
+      "roughness": 0.92,
+      "normalStrength": 1.35,
+      "colorScale": 1.437,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "S",
+      "crop": [
+        0.18,
+        0.65,
+        0.82,
+        0.95
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.88,
+      "normalStrength": 1.2,
+      "colorScale": 1.112,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.38,
+        0.01,
+        0.72,
+        0.12
+      ],
+      "tileMetres": 3.4,
+      "roughness": 0.95,
+      "normalStrength": 1.25,
+      "colorScale": 0.88,
+      "tileable": true
+    },
+    "rug": {
+      "sourceView": "N",
+      "crop": [
+        0.56,
+        0.8,
+        0.86,
+        0.98
+      ],
+      "tileMetres": 4.2,
+      "roughness": 0.94,
+      "normalStrength": 0.7,
+      "colorScale": 1.08,
+      "tileable": false
+    },
+    "timber": {
+      "procedural": "dark-oak",
+      "tileMetres": 1.4,
+      "roughness": 0.62,
+      "normalStrength": 0.95
+    },
+    "leather": {
+      "procedural": "tufted-leather",
+      "tileMetres": 0.9,
+      "roughness": 0.55,
+      "normalStrength": 1.25
+    }
+  },
+  "objects": [
+    {
+      "id": "west-well-passage",
+      "category": "opening",
+      "description": "Arched stone passageway on the west wall leading back to the Top of Well",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "sourceView": "N",
+      "crop": [
+        0.02,
+        0.04,
+        0.22,
+        0.48
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 0.2,
+        "sizeMetres": [
+          1.95,
+          0.55,
+          2.55
+        ],
+        "depthMetres": 7.5,
+        "tunnelColor": [
+          1,
+          0.74,
+          0.4
+        ],
+        "tunnelEnergy": 120
+      }
+    },
+    {
+      "id": "nw-magnet-passage",
+      "category": "opening",
+      "description": "Rough arched rock passageway on the northwest side leading to the Low Room",
+      "zilIdentity": null,
+      "exitDirection": "NW",
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.06,
+        0.45,
+        0.38
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": -2.1,
+        "sizeMetres": [
+          1.95,
+          0.55,
+          2.55
+        ],
+        "depthMetres": 7.5,
+        "tunnelColor": [
+          0.36,
+          0.48,
+          0.62
+        ],
+        "tunnelEnergy": 55
+      }
+    },
+    {
+      "id": "east-mouse-hole",
+      "category": "recess",
+      "description": "Tiny arched mouse hole (no more than four inches high) in the eastern corner of the room",
+      "zilIdentity": null,
+      "exitDirection": null,
+      "sourceView": "N",
+      "crop": [
+        0.9,
+        0.42,
+        0.97,
+        0.51
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 1.6,
+        "sizeMetres": [
+          0.24,
+          0.25,
+          0.22
+        ],
+        "depthMetres": 0.5
+      }
+    },
+    {
+      "id": "tea-room-rug",
+      "category": "rug",
+      "description": "Ornate crimson and gold fringed rug centered beneath the tea table",
+      "zilIdentity": null,
+      "surface": "rug",
+      "placement": {
+        "position": [
+          0.2,
+          -0.2,
+          0.02
+        ],
+        "sizeMetres": [
+          4.6,
+          3.6,
+          0.02
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "tea-chair-south",
+      "category": "chair",
+      "description": "Wooden upholstered dining chair on the south side of the tea table",
+      "zilIdentity": null,
+      "surface": "leather",
+      "placement": {
+        "position": [
+          -0.35,
+          -1.25,
+          0
+        ],
+        "sizeMetres": [
+          0.62,
+          0.58,
+          1.02
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "tea-chair-north",
+      "category": "chair",
+      "description": "Tall crimson-backed wooden chair at the north side of the tea table",
+      "zilIdentity": null,
+      "surface": "leather",
+      "placement": {
+        "position": [
+          0.55,
+          0.95,
+          0
+        ],
+        "sizeMetres": [
+          0.68,
+          0.62,
+          1.24
+        ],
+        "yawDeg": 180
+      }
+    },
+    {
+      "id": "tea-chair-west",
+      "category": "chair",
+      "description": "Mismatched oak chair at the west end of the tea table",
+      "zilIdentity": null,
+      "surface": "timber",
+      "placement": {
+        "position": [
+          -1.55,
+          -0.2,
+          0
+        ],
+        "sizeMetres": [
+          0.58,
+          0.56,
+          0.98
+        ],
+        "yawDeg": 90
+      }
+    },
+    {
+      "id": "tea-chair-east",
+      "category": "chair",
+      "description": "Mismatched wooden chair at the east end of the tea table",
+      "zilIdentity": null,
+      "surface": "timber",
+      "placement": {
+        "position": [
+          1.95,
+          -0.35,
+          0
+        ],
+        "sizeMetres": [
+          0.58,
+          0.56,
+          1.02
+        ],
+        "yawDeg": 270
+      }
+    },
+    {
+      "id": "alice-table-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for ALICE-TABLE (large oblong tea table)",
+      "zilIdentity": "ALICE-TABLE",
+      "sourceView": "N",
+      "crop": [
+        0.13,
+        0.38,
+        0.81,
+        0.84
+      ],
+      "placement": {
+        "position": [
+          0.2,
+          -0.2,
+          0
+        ],
+        "sizeMetres": [
+          2.8,
+          1.35,
+          0.82
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "blue-icing-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for BLUE-ICING (cake frosted with blue letters) on the tea table",
+      "zilIdentity": "BLUE-ICING",
+      "sourceView": "N",
+      "crop": [
+        0.32,
+        0.42,
+        0.43,
+        0.51
+      ],
+      "placement": {
+        "position": [
+          -0.65,
+          -0.35,
+          0.84
+        ],
+        "sizeMetres": [
+          0.34,
+          0.34,
+          0.18
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "eat-me-cake-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for EAT-ME-CAKE (cake frosted with green letters) on the tea table",
+      "zilIdentity": "EAT-ME-CAKE",
+      "sourceView": "N",
+      "crop": [
+        0.52,
+        0.41,
+        0.62,
+        0.5
+      ],
+      "placement": {
+        "position": [
+          0.1,
+          -0.3,
+          0.84
+        ],
+        "sizeMetres": [
+          0.34,
+          0.34,
+          0.18
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "orange-icing-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for ORANGE-ICING (cake frosted with orange letters) on the tea table",
+      "zilIdentity": "ORANGE-ICING",
+      "sourceView": "N",
+      "crop": [
+        0.59,
+        0.36,
+        0.67,
+        0.43
+      ],
+      "placement": {
+        "position": [
+          0.45,
+          0.15,
+          0.84
+        ],
+        "sizeMetres": [
+          0.32,
+          0.32,
+          0.18
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "red-icing-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for RED-ICING (cake frosted with red letters) on the tea table",
+      "zilIdentity": "RED-ICING",
+      "sourceView": "N",
+      "crop": [
+        0.66,
+        0.38,
+        0.75,
+        0.46
+      ],
+      "placement": {
+        "position": [
+          0.95,
+          0.05,
+          0.84
+        ],
+        "sizeMetres": [
+          0.34,
+          0.34,
+          0.18
+        ],
+        "yawDeg": 0
+      }
+    }
+  ]
+}

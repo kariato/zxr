@@ -1,0 +1,17 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "RIDDLE-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/riddle-room/room-bom.json",
+  "bomSha256": "41b9037c4d76e32f6f1c423094342d9bb3734f7645729da72b968612c20c91b4",
+  "glb": "games/zork2/planning/room-bom-prototype/riddle-room/build/room.glb",
+  "glbBytes": 3580540,
+  "glbSha256": "ef7c081df57528ab26d66b511b4e0e03fa3d072d6a42699e6d973e0fd755e358",
+  "meshCount": 14,
+  "materialCount": 5,
+  "triangles": 11970,
+  "zilAnchors": [
+    "RIDDLE-DOOR"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/riddle-room/build/review-4view.png"
+}

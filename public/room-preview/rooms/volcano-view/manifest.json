@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "VOLCANO-VIEW",
+  "bom": "games/zork2/planning/room-bom-prototype/volcano-view/room-bom.json",
+  "bomSha256": "0d3d5d57d53970bb0b99634ab590bce19ae43e1801e4f77627ca938be56115c1",
+  "glb": "games/zork2/planning/room-bom-prototype/volcano-view/build/room.glb",
+  "glbBytes": 3701836,
+  "glbSha256": "3e90d56ea1dbcadfce7454bc371ab7f6d9ba967e49965f7dd36da0c3ad657207",
+  "meshCount": 10,
+  "materialCount": 4,
+  "triangles": 24470,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/volcano-view/build/review-4view.png"
+}

@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "DIAMOND-4",
+  "bom": "games/zork2/planning/room-bom-prototype/diamond-4/room-bom.json",
+  "bomSha256": "e0483bd70ee2b16e5ad4d0fbbb96e473ca8095098b6a8a52164328c8ef96cbbc",
+  "glb": "games/zork2/planning/room-bom-prototype/diamond-4/build/room.glb",
+  "glbBytes": 4434964,
+  "glbSha256": "d841ae36fba527f997f883baab1b1d938eae7c46194e2966e5d63373596e2da0",
+  "meshCount": 19,
+  "materialCount": 5,
+  "triangles": 11289,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/diamond-4/build/review-4view.png"
+}

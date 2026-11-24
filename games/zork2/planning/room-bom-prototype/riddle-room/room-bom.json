@@ -1,0 +1,275 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "RIDDLE-ROOM",
+  "label": "Riddle Room",
+  "sourceContext": "games/zork2/assets/rooms/riddle-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/riddle-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/riddle-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/riddle-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/riddle-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      9.2,
+      8.2,
+      4
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.34,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.106,
+        0.103,
+        0.104
+      ],
+      "ambientStrength": 0.321,
+      "lights": [
+        {
+          "name": "west-warm-torch",
+          "position": [
+            -2.8,
+            -1.6,
+            2.2
+          ],
+          "color": [
+            1,
+            0.748,
+            0.388
+          ],
+          "energy": 379.6,
+          "radius": 1.1
+        },
+        {
+          "name": "east-door-raking",
+          "position": [
+            2.2,
+            0.2,
+            2.6
+          ],
+          "color": [
+            1,
+            0.788,
+            0.468
+          ],
+          "energy": 291.9,
+          "radius": 1.2
+        },
+        {
+          "name": "center-floor-fill",
+          "position": [
+            0,
+            -0.5,
+            2.8
+          ],
+          "color": [
+            0.952,
+            0.728,
+            0.448
+          ],
+          "energy": 189.8,
+          "radius": 1.4
+        },
+        {
+          "name": "nw-stair-cool",
+          "position": [
+            -2.6,
+            3.6,
+            2.2
+          ],
+          "color": [
+            0.372,
+            0.468,
+            0.588
+          ],
+          "energy": 80.3,
+          "radius": 1
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.34,
+        0.16,
+        0.56,
+        0.52
+      ],
+      "tileMetres": 3.2,
+      "roughness": 0.92,
+      "normalStrength": 1.35,
+      "colorScale": 1.561,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.22,
+        0.68,
+        0.78,
+        0.96
+      ],
+      "tileMetres": 3,
+      "roughness": 0.88,
+      "normalStrength": 1.2,
+      "colorScale": 1.145,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.01,
+        0.6,
+        0.12
+      ],
+      "tileMetres": 3.8,
+      "roughness": 0.95,
+      "normalStrength": 1.25,
+      "colorScale": 0.85,
+      "tileable": true
+    },
+    "door-stone": {
+      "procedural": "grey-stone",
+      "tileMetres": 1.8,
+      "roughness": 0.86,
+      "normalStrength": 1.25
+    }
+  },
+  "objects": [
+    {
+      "id": "nw-descending-passage",
+      "category": "opening",
+      "description": "Rough-hewn rock passage descending from the northwest corner toward the Carousel Room",
+      "zilIdentity": null,
+      "exitDirection": "NW",
+      "sourceView": "N",
+      "crop": [
+        0.04,
+        0.14,
+        0.28,
+        0.62
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": -2.4,
+        "sizeMetres": [
+          2.2,
+          0.55,
+          2.75
+        ],
+        "depthMetres": 8,
+        "tunnelColor": [
+          0.34,
+          0.46,
+          0.62
+        ],
+        "tunnelEnergy": 55
+      }
+    },
+    {
+      "id": "east-riddle-door-frame",
+      "category": "door",
+      "description": "Monumental dressed-stone doorway surround on the east wall leading to the Pearl Room",
+      "zilIdentity": null,
+      "exitDirection": "EAST",
+      "sourceView": "N",
+      "crop": [
+        0.64,
+        0.18,
+        0.98,
+        0.68
+      ],
+      "surface": "door-stone",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 0.2,
+        "sizeMetres": [
+          2.3,
+          0.55,
+          2.75
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.4,
+          0.52,
+          0.64
+        ],
+        "tunnelEnergy": 45
+      }
+    },
+    {
+      "id": "riddle-door-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for RIDDLE-DOOR (great stone door on the east wall)",
+      "zilIdentity": "RIDDLE-DOOR",
+      "sourceView": "N",
+      "crop": [
+        0.72,
+        0.24,
+        0.94,
+        0.67
+      ],
+      "placement": {
+        "position": [
+          4.52,
+          0.2,
+          1.38
+        ],
+        "sizeMetres": [
+          0.35,
+          2.2,
+          2.65
+        ],
+        "yawDeg": 270
+      }
+    },
+    {
+      "id": "north-wall-rubble",
+      "category": "boulder-cluster",
+      "description": "Fallen angular rocks grounding the bare northern cavern wall",
+      "sourceView": "N",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          1.4,
+          3.65,
+          0
+        ],
+        "sizeMetres": [
+          4.8,
+          0.9,
+          0.72
+        ],
+        "count": 12,
+        "seed": 711
+      }
+    },
+    {
+      "id": "south-wall-rubble",
+      "category": "boulder-cluster",
+      "description": "Scattered rock fragments along the south wall base",
+      "sourceView": "S",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0,
+          -3.65,
+          0
+        ],
+        "sizeMetres": [
+          6.4,
+          0.9,
+          0.65
+        ],
+        "count": 10,
+        "seed": 712
+      }
+    }
+  ]
+}

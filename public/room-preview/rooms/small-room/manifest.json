@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "SMALL-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/small-room/room-bom.json",
+  "bomSha256": "cc3d4f56f35621152c26f4921108bd97236f930007bbe6449991338cb6a9fefb",
+  "glb": "games/zork2/planning/room-bom-prototype/small-room/build/room.glb",
+  "glbBytes": 3432116,
+  "glbSha256": "886002d71a491a368adaa5a14a35b9fb6b7dfb2876289c673d96bc70acb744a3",
+  "meshCount": 8,
+  "materialCount": 4,
+  "triangles": 8776,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/small-room/build/review-4view.png"
+}

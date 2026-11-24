@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "GREAT-CAVERN",
+  "bom": "games/zork2/planning/room-bom-prototype/great-cavern/room-bom.json",
+  "bomSha256": "baa9b2832b92d4e1bc03b899d2cbe7bfeb5abce7c2ccde67e5dc3f98f9c457d9",
+  "glb": "games/zork2/planning/room-bom-prototype/great-cavern/build/room.glb",
+  "glbBytes": 5824280,
+  "glbSha256": "edd1b75173cb9eed16f135ced60109d2919c8bd67c586aba66063ab538bd0834",
+  "meshCount": 12,
+  "materialCount": 4,
+  "triangles": 37373,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/great-cavern/build/review-4view.png"
+}

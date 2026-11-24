@@ -1,0 +1,286 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "TINY-ROOM",
+  "label": "Tiny Room",
+  "sourceContext": "games/zork2/assets/rooms/tiny-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/tiny-room/reference-v2.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/tiny-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/tiny-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/tiny-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      4.2,
+      4.4,
+      2.8
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.28,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.108,
+        0.096,
+        0.082
+      ],
+      "ambientStrength": 0.318,
+      "lights": [
+        {
+          "name": "lantern-warm-key",
+          "position": [
+            0.2,
+            -0.3,
+            1.7
+          ],
+          "color": [
+            1,
+            0.754,
+            0.364
+          ],
+          "energy": 222,
+          "radius": 0.7
+        },
+        {
+          "name": "door-warm-fill",
+          "position": [
+            0.4,
+            1.4,
+            1.5
+          ],
+          "color": [
+            1,
+            0.694,
+            0.324
+          ],
+          "energy": 118.9,
+          "radius": 0.8
+        },
+        {
+          "name": "ravine-cool-shadow",
+          "position": [
+            -1.5,
+            0.2,
+            1.3
+          ],
+          "color": [
+            0.336,
+            0.394,
+            0.464
+          ],
+          "energy": 55.5,
+          "radius": 1
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.26,
+        0.14,
+        0.48,
+        0.52
+      ],
+      "tileMetres": 2.2,
+      "roughness": 0.92,
+      "normalStrength": 1.35,
+      "colorScale": 1.296,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.38,
+        0.66,
+        0.78,
+        0.94
+      ],
+      "tileMetres": 2,
+      "roughness": 0.9,
+      "normalStrength": 1.15,
+      "colorScale": 1.494,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.14,
+        0.01,
+        0.5,
+        0.12
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.95,
+      "normalStrength": 1.3,
+      "colorScale": 0.85,
+      "tileable": true
+    },
+    "oak-door": {
+      "procedural": "dark-oak",
+      "tileMetres": 1.2,
+      "roughness": 0.76,
+      "normalStrength": 1.15
+    }
+  },
+  "objects": [
+    {
+      "id": "north-oak-door",
+      "category": "door",
+      "description": "Massive iron-bound oak door on the north wall leading to the Dreary Room (NORTH/IN)",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.51,
+        0.01,
+        0.81,
+        0.71
+      ],
+      "surface": "oak-door",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 0.35,
+        "sizeMetres": [
+          1.5,
+          0.35,
+          2.15
+        ],
+        "depthMetres": 4,
+        "tunnelColor": [
+          0.32,
+          0.42,
+          0.55
+        ],
+        "tunnelEnergy": 40
+      }
+    },
+    {
+      "id": "west-ravine-climb",
+      "category": "opening",
+      "description": "Precarious downward climb carved out of the west ravine wall descending to the Ledge in Ravine",
+      "zilIdentity": null,
+      "exitDirection": "DOWN",
+      "sourceView": "N",
+      "crop": [
+        0.06,
+        0.3,
+        0.27,
+        0.86
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 0.55,
+        "sizeMetres": [
+          1.3,
+          0.5,
+          2.1
+        ],
+        "depthMetres": 4.5,
+        "tunnelColor": [
+          0.25,
+          0.34,
+          0.46
+        ],
+        "tunnelEnergy": 35
+      }
+    },
+    {
+      "id": "keyhole-1-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for KEYHOLE-1 on the tiny-room face of the north oak door",
+      "zilIdentity": "KEYHOLE-1",
+      "sourceView": "N",
+      "crop": [
+        0.71,
+        0.42,
+        0.77,
+        0.5
+      ],
+      "placement": {
+        "position": [
+          0.68,
+          2.02,
+          1.02
+        ],
+        "sizeMetres": [
+          0.14,
+          0.06,
+          0.16
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "lid-1-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for LID-1 thin metal keyhole cover over KEYHOLE-1",
+      "zilIdentity": "LID-1",
+      "sourceView": "N",
+      "crop": [
+        0.71,
+        0.42,
+        0.77,
+        0.5
+      ],
+      "placement": {
+        "position": [
+          0.68,
+          2,
+          1.02
+        ],
+        "sizeMetres": [
+          0.16,
+          0.04,
+          0.18
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "east-wall-rubble",
+      "category": "boulder-cluster",
+      "description": "Rough fallen rock and carved ledge debris along the east wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          1.8,
+          -0.3,
+          0
+        ],
+        "sizeMetres": [
+          0.65,
+          2.8,
+          0.48
+        ],
+        "count": 10,
+        "seed": 811
+      }
+    },
+    {
+      "id": "south-wall-rubble",
+      "category": "boulder-cluster",
+      "description": "Rough rock rubble grounding the south cavern wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0,
+          -1.9,
+          0
+        ],
+        "sizeMetres": [
+          3.2,
+          0.6,
+          0.45
+        ],
+        "count": 8,
+        "seed": 812
+      }
+    }
+  ]
+}

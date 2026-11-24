@@ -1,0 +1,17 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "VAULT",
+  "bom": "games/zork2/planning/room-bom-prototype/vault/room-bom.json",
+  "bomSha256": "c7a8e0ba703dea0458a6eb8d702a65136c1ad704b5fa4d85f8f872cc83fc6c3d",
+  "glb": "games/zork2/planning/room-bom-prototype/vault/build/room.glb",
+  "glbBytes": 3680712,
+  "glbSha256": "7234135de35c93c5a85d8b5e9158fe896e62cd517dbca6a07f85e0ea08221df6",
+  "meshCount": 11,
+  "materialCount": 5,
+  "triangles": 1182,
+  "zilAnchors": [
+    "BILLS"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/vault/build/review-4view.png"
+}

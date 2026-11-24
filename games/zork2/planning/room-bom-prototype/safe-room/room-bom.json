@@ -1,0 +1,249 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "SAFE-ROOM",
+  "label": "Dusty Room",
+  "sourceContext": "games/zork2/assets/rooms/safe-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/safe-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/safe-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/safe-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/safe-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      7.4,
+      6.8,
+      3.3
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.16,
+    "ceilingStyle": "flat",
+    "lighting": {
+      "ambientColor": [
+        0.131,
+        0.112,
+        0.089
+      ],
+      "ambientStrength": 0.461,
+      "lights": [
+        {
+          "name": "dusty-center-warm",
+          "position": [
+            -0.5,
+            -0.6,
+            2.3
+          ],
+          "color": [
+            0.973,
+            0.765,
+            0.439
+          ],
+          "energy": 353.3,
+          "radius": 1.2
+        },
+        {
+          "name": "safe-wall-fill",
+          "position": [
+            -1,
+            1.6,
+            2
+          ],
+          "color": [
+            0.973,
+            0.745,
+            0.459
+          ],
+          "energy": 215.1,
+          "radius": 1.1
+        },
+        {
+          "name": "north-door-cool",
+          "position": [
+            2,
+            3.2,
+            2
+          ],
+          "color": [
+            0.381,
+            0.485,
+            0.599
+          ],
+          "energy": 76.8,
+          "radius": 0.9
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.16,
+        0.14,
+        0.56,
+        0.3
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.92,
+      "normalStrength": 1.3,
+      "colorScale": 1.63,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.22,
+        0.66,
+        0.78,
+        0.94
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.94,
+      "normalStrength": 1.05,
+      "colorScale": 1.185,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.2,
+        0.01,
+        0.76,
+        0.12
+      ],
+      "tileMetres": 3.2,
+      "roughness": 0.95,
+      "normalStrength": 1.15,
+      "colorScale": 0.88,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "north-ledge-passage",
+      "category": "opening",
+      "description": "Lintelled stone doorway on the north side leading out to the Wide Ledge",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.74,
+        0.14,
+        0.9,
+        0.64
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 2,
+        "sizeMetres": [
+          1.65,
+          0.5,
+          2.35
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.36,
+          0.48,
+          0.62
+        ],
+        "tunnelEnergy": 50
+      }
+    },
+    {
+      "id": "safe-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for SAFE (rusty iron box embedded in the wall)",
+      "zilIdentity": "SAFE",
+      "sourceView": "N",
+      "crop": [
+        0.27,
+        0.31,
+        0.47,
+        0.53
+      ],
+      "placement": {
+        "position": [
+          -1.15,
+          3.32,
+          1.35
+        ],
+        "sizeMetres": [
+          1.35,
+          0.18,
+          0.95
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "slot-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for SLOT (oblong hole chipped in the front of the rusty safe)",
+      "zilIdentity": "SLOT",
+      "sourceView": "N",
+      "crop": [
+        0.36,
+        0.39,
+        0.43,
+        0.47
+      ],
+      "placement": {
+        "position": [
+          -0.95,
+          3.22,
+          1.32
+        ],
+        "sizeMetres": [
+          0.36,
+          0.1,
+          0.24
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "west-baseboard-rubble",
+      "category": "boulder-cluster",
+      "description": "Dusty loose stones scattered along the west wall base",
+      "sourceView": "N",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3.2,
+          -0.4,
+          0
+        ],
+        "sizeMetres": [
+          0.8,
+          5.2,
+          0.45
+        ],
+        "count": 12,
+        "seed": 731
+      }
+    },
+    {
+      "id": "east-baseboard-rubble",
+      "category": "boulder-cluster",
+      "description": "Loose stones scattered along the east wall base",
+      "sourceView": "N",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          3.2,
+          -0.6,
+          0
+        ],
+        "sizeMetres": [
+          0.8,
+          4.6,
+          0.42
+        ],
+        "count": 10,
+        "seed": 732
+      }
+    }
+  ]
+}

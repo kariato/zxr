@@ -1,0 +1,221 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "LEDGE-TUNNEL",
+  "label": "End of Ledge",
+  "sourceContext": "games/zork2/assets/rooms/ledge-tunnel/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/ledge-tunnel/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/ledge-tunnel/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/ledge-tunnel/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/ledge-tunnel/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      5.4,
+      7.6,
+      4.2
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.45,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.03,
+        0.079,
+        0.346
+      ],
+      "ambientStrength": 0.292,
+      "lights": [
+        {
+          "name": "north-smoky-glow",
+          "position": [
+            -0.2,
+            3.2,
+            2.2
+          ],
+          "color": [
+            0.59,
+            0.538,
+            0.69
+          ],
+          "energy": 281.1,
+          "radius": 1.1
+        },
+        {
+          "name": "ledge-warm-bounce",
+          "position": [
+            -0.3,
+            -0.4,
+            2.1
+          ],
+          "color": [
+            0.57,
+            0.618,
+            0.81
+          ],
+          "energy": 202.4,
+          "radius": 1.2
+        },
+        {
+          "name": "ravine-cool-edge",
+          "position": [
+            2.2,
+            -0.6,
+            2.6
+          ],
+          "color": [
+            0.12,
+            0.398,
+            1
+          ],
+          "energy": 123.7,
+          "radius": 1.5
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.08,
+        0.14,
+        0.26,
+        0.46
+      ],
+      "tileMetres": 3,
+      "roughness": 0.9,
+      "normalStrength": 1.38,
+      "colorScale": 1.237,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.22,
+        0.54,
+        0.54,
+        0.92
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.9,
+      "normalStrength": 1.15,
+      "colorScale": 1.347,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.32,
+        0,
+        0.68,
+        0.12
+      ],
+      "tileMetres": 3.6,
+      "roughness": 0.94,
+      "normalStrength": 1.3,
+      "colorScale": 0.88,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "north-dragon-tunnel",
+      "category": "opening",
+      "description": "Warm smoky rock-cut tunnel mouth leading north into the Dragon Room",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.06,
+        0.56,
+        0.42
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": -0.2,
+        "sizeMetres": [
+          2.2,
+          0.65,
+          2.75
+        ],
+        "depthMetres": 8,
+        "tunnelColor": [
+          1,
+          0.6,
+          0.24
+        ],
+        "tunnelEnergy": 220
+      }
+    },
+    {
+      "id": "east-ravine-ledge",
+      "category": "opening",
+      "description": "Narrow rock ledge continuing east along the chasm toward Ledge in Ravine",
+      "zilIdentity": null,
+      "exitDirection": "EAST",
+      "surface": "wall",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": -0.8,
+        "sizeMetres": [
+          2.1,
+          0.6,
+          2.8
+        ],
+        "depthMetres": 7,
+        "tunnelColor": [
+          0.38,
+          0.52,
+          0.68
+        ],
+        "tunnelEnergy": 95
+      }
+    },
+    {
+      "id": "west-cliff-boulders",
+      "category": "boulder-cluster",
+      "description": "Craggy fallen rocks grounding the western cliff wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -2.15,
+          -0.2,
+          0
+        ],
+        "sizeMetres": [
+          1,
+          5.4,
+          0.9
+        ],
+        "count": 14,
+        "seed": 561
+      }
+    },
+    {
+      "id": "south-ledge-rubble",
+      "category": "boulder-cluster",
+      "description": "Loose rock debris along the southern rock wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -0.3,
+          -3.2,
+          0
+        ],
+        "sizeMetres": [
+          3.8,
+          0.9,
+          0.65
+        ],
+        "count": 10,
+        "seed": 562
+      }
+    }
+  ]
+}

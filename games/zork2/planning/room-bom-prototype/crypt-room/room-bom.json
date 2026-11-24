@@ -1,0 +1,289 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "CRYPT-ROOM",
+  "label": "Crypt",
+  "sourceContext": "games/zork2/assets/rooms/crypt-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/crypt-room/reference-v2.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/crypt-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/crypt-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/crypt-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      9.6,
+      8.8,
+      4.4
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.05,
+    "ceilingStyle": "vaulted",
+    "lighting": {
+      "ambientColor": [
+        0.149,
+        0.094,
+        0.031
+      ],
+      "ambientStrength": 0.42,
+      "lights": [
+        {
+          "name": "crypt-warm-lantern",
+          "position": [
+            -1.8,
+            1.4,
+            2.2
+          ],
+          "color": [
+            1,
+            0.774,
+            0.284
+          ],
+          "energy": 440.6,
+          "radius": 1.1
+        },
+        {
+          "name": "vault-cool-fill",
+          "position": [
+            1.6,
+            -1.8,
+            3.2
+          ],
+          "color": [
+            0.476,
+            0.454,
+            0.404
+          ],
+          "energy": 136.3,
+          "radius": 1.6
+        },
+        {
+          "name": "north-door-bounce",
+          "position": [
+            0,
+            3.2,
+            2.2
+          ],
+          "color": [
+            0.896,
+            0.674,
+            0.364
+          ],
+          "energy": 146.9,
+          "radius": 1.2
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.14,
+        0.48,
+        0.34
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.9,
+      "normalStrength": 1.3,
+      "colorScale": 1.727,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.4,
+        0.78,
+        0.86,
+        0.98
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.84,
+      "normalStrength": 1.15,
+      "colorScale": 1.729,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.34,
+        0.01,
+        0.64,
+        0.12
+      ],
+      "tileMetres": 3.4,
+      "roughness": 0.94,
+      "normalStrength": 1.25,
+      "colorScale": 0.85,
+      "tileable": true
+    },
+    "crypt-stone": {
+      "procedural": "grey-stone",
+      "tileMetres": 1.8,
+      "roughness": 0.88,
+      "normalStrength": 1.2
+    }
+  },
+  "objects": [
+    {
+      "id": "north-crypt-door",
+      "category": "door",
+      "description": "Heavy arched door on the north wall leading back to the Crypt Anteroom",
+      "zilIdentity": "CRYPT-DOOR",
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.85,
+        0.12,
+        0.99,
+        0.74
+      ],
+      "surface": "crypt-stone",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2.2,
+          0.6,
+          2.9
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.46,
+          0.44,
+          0.4
+        ],
+        "tunnelEnergy": 55
+      }
+    },
+    {
+      "id": "vault-pier-nw",
+      "category": "pillar",
+      "description": "Masonry vaulting pier at the northwest corner of the crypt",
+      "zilIdentity": null,
+      "surface": "crypt-stone",
+      "placement": {
+        "position": [
+          -4.45,
+          4.05,
+          0
+        ],
+        "sizeMetres": [
+          0.68,
+          0.68,
+          4.4
+        ]
+      }
+    },
+    {
+      "id": "vault-pier-ne",
+      "category": "pillar",
+      "description": "Masonry vaulting pier at the northeast corner of the crypt",
+      "zilIdentity": null,
+      "surface": "crypt-stone",
+      "placement": {
+        "position": [
+          4.45,
+          4.05,
+          0
+        ],
+        "sizeMetres": [
+          0.68,
+          0.68,
+          4.4
+        ]
+      }
+    },
+    {
+      "id": "vault-pier-sw",
+      "category": "pillar",
+      "description": "Masonry vaulting pier at the southwest corner of the crypt",
+      "zilIdentity": null,
+      "surface": "crypt-stone",
+      "placement": {
+        "position": [
+          -4.45,
+          -4.05,
+          0
+        ],
+        "sizeMetres": [
+          0.68,
+          0.68,
+          4.4
+        ]
+      }
+    },
+    {
+      "id": "vault-pier-se",
+      "category": "pillar",
+      "description": "Masonry vaulting pier at the southeast corner of the crypt",
+      "zilIdentity": null,
+      "surface": "crypt-stone",
+      "placement": {
+        "position": [
+          4.45,
+          -4.05,
+          0
+        ],
+        "sizeMetres": [
+          0.68,
+          0.68,
+          4.4
+        ]
+      }
+    },
+    {
+      "id": "crypt-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for CRYPT (sealed marble crypt with carved inscription) at the center of the chamber",
+      "zilIdentity": "CRYPT",
+      "sourceView": "N",
+      "crop": [
+        0.14,
+        0.46,
+        0.62,
+        0.8
+      ],
+      "placement": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          3.2,
+          1.8,
+          1.35
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "heads-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for HEADS (twelve poled Flathead heads) lined along the rear wall",
+      "zilIdentity": "HEADS",
+      "sourceView": "N",
+      "crop": [
+        0.02,
+        0.14,
+        0.76,
+        0.72
+      ],
+      "placement": {
+        "position": [
+          0,
+          -3.4,
+          0
+        ],
+        "sizeMetres": [
+          7.6,
+          0.7,
+          2.6
+        ],
+        "yawDeg": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,423 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "MARBLE-HALL",
+  "label": "Marble Hall",
+  "sourceContext": "games/zork2/assets/rooms/marble-hall/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/marble-hall/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/marble-hall/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/marble-hall/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/marble-hall/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      7.6,
+      12,
+      5.4
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.03,
+    "ceilingStyle": "vaulted",
+    "lighting": {
+      "ambientColor": [
+        0.072,
+        0.12,
+        0.208
+      ],
+      "ambientStrength": 0.311,
+      "lights": [
+        {
+          "name": "south-hall-warm",
+          "position": [
+            0.4,
+            -3.4,
+            3.2
+          ],
+          "color": [
+            0.902,
+            0.756,
+            0.578
+          ],
+          "energy": 400,
+          "radius": 1.5
+        },
+        {
+          "name": "center-marble-bounce",
+          "position": [
+            0,
+            0.2,
+            3.4
+          ],
+          "color": [
+            0.862,
+            0.816,
+            0.758
+          ],
+          "energy": 266.6,
+          "radius": 1.6
+        },
+        {
+          "name": "north-ford-cool",
+          "position": [
+            0,
+            4.8,
+            3
+          ],
+          "color": [
+            0.382,
+            0.616,
+            0.918
+          ],
+          "energy": 233.3,
+          "radius": 1.8
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.64,
+        0.2,
+        0.75,
+        0.56
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.42,
+      "normalStrength": 0.75,
+      "colorScale": 1.261,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.34,
+        0.72,
+        0.84,
+        0.96
+      ],
+      "tileMetres": 3,
+      "roughness": 0.34,
+      "normalStrength": 0.85,
+      "colorScale": 1.186,
+      "tileable": true
+    },
+    "ceiling": {
+      "procedural": "light-stone",
+      "tileMetres": 2.4,
+      "roughness": 0.55,
+      "normalStrength": 0.85
+    },
+    "cave-rock": {
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.24,
+        0.42,
+        0.48
+      ],
+      "tileMetres": 3.2,
+      "roughness": 0.92,
+      "normalStrength": 1.35,
+      "colorScale": 0.95,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "north-ford-arch",
+      "category": "opening",
+      "description": "Cracked marble archway at the north end opening abruptly onto Deep Ford",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.18,
+        0.04,
+        0.52,
+        0.58
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          3.6,
+          0.6,
+          4.2
+        ],
+        "depthMetres": 8,
+        "tunnelColor": [
+          0.46,
+          0.62,
+          0.8
+        ],
+        "tunnelEnergy": 140
+      }
+    },
+    {
+      "id": "south-carousel-arch",
+      "category": "opening",
+      "description": "Broad arched southern opening leading toward Carousel Room",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "surface": "wall",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          3.6,
+          0.6,
+          4.2
+        ],
+        "depthMetres": 8,
+        "tunnelColor": [
+          1,
+          0.76,
+          0.44
+        ],
+        "tunnelEnergy": 180
+      }
+    },
+    {
+      "id": "east-secret-door",
+      "category": "door",
+      "description": "Concealed marble seam on the east wall corresponding to the conditional exit to Stream Path",
+      "zilIdentity": null,
+      "exitDirection": "EAST",
+      "surface": "wall",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          1.6,
+          0.25,
+          2.6
+        ],
+        "depthMetres": 0.3
+      }
+    },
+    {
+      "id": "brick-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for BRICK (square clay brick) on the cracked marble floor",
+      "zilIdentity": "BRICK",
+      "sourceView": "N",
+      "crop": [
+        0.09,
+        0.74,
+        0.27,
+        0.88
+      ],
+      "placement": {
+        "position": [
+          -1.5,
+          -2.6,
+          0
+        ],
+        "sizeMetres": [
+          0.3,
+          0.22,
+          0.14
+        ],
+        "yawDeg": 18
+      }
+    },
+    {
+      "id": "marble-pilaster-nw",
+      "category": "pillar",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3.45,
+          3.6,
+          0
+        ],
+        "sizeMetres": [
+          0.62,
+          0.62,
+          5.2
+        ]
+      }
+    },
+    {
+      "id": "marble-pilaster-ne",
+      "category": "pillar",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          3.45,
+          3.6,
+          0
+        ],
+        "sizeMetres": [
+          0.62,
+          0.62,
+          5.2
+        ]
+      }
+    },
+    {
+      "id": "marble-pilaster-mw",
+      "category": "pillar",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3.45,
+          -0.4,
+          0
+        ],
+        "sizeMetres": [
+          0.62,
+          0.62,
+          5.2
+        ]
+      }
+    },
+    {
+      "id": "marble-pilaster-me",
+      "category": "pillar",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          3.45,
+          -0.4,
+          0
+        ],
+        "sizeMetres": [
+          0.62,
+          0.62,
+          5.2
+        ]
+      }
+    },
+    {
+      "id": "marble-pilaster-sw",
+      "category": "pillar",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -3.45,
+          -4.4,
+          0
+        ],
+        "sizeMetres": [
+          0.62,
+          0.62,
+          5.2
+        ]
+      }
+    },
+    {
+      "id": "marble-pilaster-se",
+      "category": "pillar",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          3.45,
+          -4.4,
+          0
+        ],
+        "sizeMetres": [
+          0.62,
+          0.62,
+          5.2
+        ]
+      }
+    },
+    {
+      "id": "north-ford-water",
+      "category": "water-surface",
+      "description": "Shallow stream water lapping against the broken northern marble threshold",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.22,
+        0.51,
+        0.46,
+        0.59
+      ],
+      "placement": {
+        "position": [
+          0,
+          5.55,
+          -0.05
+        ],
+        "sizeMetres": [
+          3.6,
+          1.4,
+          0.05
+        ],
+        "waterColor": [
+          0.16,
+          0.28,
+          0.34
+        ],
+        "alpha": 0.62
+      }
+    },
+    {
+      "id": "north-floor-crack",
+      "category": "floor-crack",
+      "description": "Deep jagged fracture across the broken marble flagstones near the northern collapse",
+      "zilIdentity": null,
+      "placement": {
+        "position": [
+          0,
+          3.8,
+          0
+        ],
+        "sizeMetres": [
+          5.6,
+          0.12,
+          0.08
+        ],
+        "yawDeg": -8
+      }
+    },
+    {
+      "id": "nw-collapse-rubble",
+      "category": "boulder-cluster",
+      "description": "Fallen cave boulders and shattered marble flanking the northwest collapse",
+      "zilIdentity": null,
+      "surface": "cave-rock",
+      "placement": {
+        "position": [
+          -2.7,
+          4.6,
+          0
+        ],
+        "sizeMetres": [
+          1.8,
+          2.2,
+          1.15
+        ],
+        "count": 12,
+        "seed": 611
+      }
+    },
+    {
+      "id": "ne-collapse-rubble",
+      "category": "boulder-cluster",
+      "description": "Fallen cave boulders flanking the northeast side of the broken ford",
+      "zilIdentity": null,
+      "surface": "cave-rock",
+      "placement": {
+        "position": [
+          2.7,
+          4.6,
+          0
+        ],
+        "sizeMetres": [
+          1.8,
+          2.2,
+          1.05
+        ],
+        "count": 10,
+        "seed": 612
+      }
+    }
+  ]
+}

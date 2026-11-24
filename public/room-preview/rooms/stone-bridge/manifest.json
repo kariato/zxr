@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "STONE-BRIDGE",
+  "bom": "games/zork2/planning/room-bom-prototype/stone-bridge/room-bom.json",
+  "bomSha256": "7c4881e524f46fd899f51966713939badbf9f10ded16c885852573f807ad588e",
+  "glb": "games/zork2/planning/room-bom-prototype/stone-bridge/build/room.glb",
+  "glbBytes": 5361928,
+  "glbSha256": "7110e31992f9b7d229f315e196369d365aaaf025ebb8ab540ac52e65874d5dca",
+  "meshCount": 17,
+  "materialCount": 5,
+  "triangles": 41918,
+  "zilAnchors": [],
+  "skybox": "src/prototype/assets/cavern-skybox-v1.png",
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/stone-bridge/build/review-4view.png"
+}

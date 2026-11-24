@@ -1,0 +1,166 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "SMALL-ROOM",
+  "label": "Small Room",
+  "sourceContext": "games/zork2/assets/rooms/small-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/small-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/small-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/small-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/small-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      6,
+      5.8,
+      3.2
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.24,
+    "ceilingStyle": "flat",
+    "lighting": {
+      "ambientColor": [
+        0.117,
+        0.095,
+        0.083
+      ],
+      "ambientStrength": 0.279,
+      "lights": [
+        {
+          "name": "west-torch-warm",
+          "position": [
+            -1.8,
+            -1,
+            1.9
+          ],
+          "color": [
+            1,
+            0.733,
+            0.346
+          ],
+          "energy": 279,
+          "radius": 1
+        },
+        {
+          "name": "center-fill",
+          "position": [
+            0.2,
+            0.2,
+            2.2
+          ],
+          "color": [
+            0.974,
+            0.713,
+            0.406
+          ],
+          "energy": 153.4,
+          "radius": 1.2
+        },
+        {
+          "name": "east-shadow-cool",
+          "position": [
+            2,
+            1.2,
+            2
+          ],
+          "color": [
+            0.414,
+            0.473,
+            0.526
+          ],
+          "energy": 55.8,
+          "radius": 1.2
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.32,
+        0.16,
+        0.76,
+        0.54
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.92,
+      "normalStrength": 1.35,
+      "colorScale": 1.277,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.2,
+        0.64,
+        0.8,
+        0.94
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.9,
+      "normalStrength": 1.15,
+      "colorScale": 1.512,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.22,
+        0.01,
+        0.78,
+        0.13
+      ],
+      "tileMetres": 3,
+      "roughness": 0.95,
+      "normalStrength": 1.2,
+      "colorScale": 0.88,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "north-base-stones",
+      "category": "boulder-cluster",
+      "description": "Small weathered rock fragments along the base of the bare north wall",
+      "sourceView": "N",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0,
+          2.55,
+          0
+        ],
+        "sizeMetres": [
+          4.8,
+          0.6,
+          0.34
+        ],
+        "count": 10,
+        "seed": 741
+      }
+    },
+    {
+      "id": "west-base-stones",
+      "category": "boulder-cluster",
+      "description": "Small rock chips tucked along the west wall base",
+      "sourceView": "N",
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -2.6,
+          -0.2,
+          0
+        ],
+        "sizeMetres": [
+          0.65,
+          4.4,
+          0.36
+        ],
+        "count": 8,
+        "seed": 742
+      }
+    }
+  ]
+}

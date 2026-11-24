@@ -1,0 +1,266 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "LAVA-ROOM",
+  "label": "Lava Room",
+  "sourceContext": "games/zork2/assets/rooms/lava-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/lava-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/lava-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/lava-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/lava-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      6.6,
+      6.4,
+      3.1
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.46,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.144,
+        0.081,
+        0.056
+      ],
+      "ambientStrength": 0.349,
+      "lights": [
+        {
+          "name": "lava-warm-key",
+          "position": [
+            -0.8,
+            -0.6,
+            2
+          ],
+          "color": [
+            0.977,
+            0.642,
+            0.292
+          ],
+          "energy": 261.9,
+          "radius": 1
+        },
+        {
+          "name": "basalt-red-fill",
+          "position": [
+            0.2,
+            1.4,
+            2.2
+          ],
+          "color": [
+            0.958,
+            0.422,
+            0.212
+          ],
+          "energy": 143.4,
+          "radius": 1.3
+        },
+        {
+          "name": "east-glacier-cool",
+          "position": [
+            3,
+            0,
+            1.8
+          ],
+          "color": [
+            0.428,
+            0.562,
+            0.712
+          ],
+          "energy": 118.5,
+          "radius": 1
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.38,
+        0.16,
+        0.66,
+        0.52
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.86,
+      "normalStrength": 1.45,
+      "colorScale": 1.41,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.46,
+        0.68,
+        0.8,
+        0.9
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.88,
+      "normalStrength": 1.25,
+      "colorScale": 1.295,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.2,
+        0.02,
+        0.64,
+        0.16
+      ],
+      "tileMetres": 3.2,
+      "roughness": 0.92,
+      "normalStrength": 1.4,
+      "colorScale": 0.9,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "east-glacier-passage",
+      "category": "opening",
+      "description": "Solidified lava archway on the east wall leading toward the Glacier Room",
+      "zilIdentity": null,
+      "exitDirection": "EAST",
+      "sourceView": "N",
+      "crop": [
+        0.76,
+        0.18,
+        0.96,
+        0.56
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2,
+          0.6,
+          2.45
+        ],
+        "depthMetres": 7,
+        "tunnelColor": [
+          0.44,
+          0.58,
+          0.74
+        ],
+        "tunnelEnergy": 115
+      }
+    },
+    {
+      "id": "south-volcano-passage",
+      "category": "opening",
+      "description": "Rough lava-flow tunnel on the south wall leading to Volcano Bottom",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "surface": "wall",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2,
+          0.6,
+          2.45
+        ],
+        "depthMetres": 7,
+        "tunnelColor": [
+          0.68,
+          0.52,
+          0.42
+        ],
+        "tunnelEnergy": 85
+      }
+    },
+    {
+      "id": "ruby-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for RUBY (moby ruby) lying on the solidified lava floor",
+      "zilIdentity": "RUBY",
+      "sourceView": "N",
+      "crop": [
+        0.34,
+        0.66,
+        0.42,
+        0.75
+      ],
+      "placement": {
+        "position": [
+          -0.45,
+          0.55,
+          0
+        ],
+        "sizeMetres": [
+          0.28,
+          0.22,
+          0.16
+        ],
+        "yawDeg": 15
+      }
+    },
+    {
+      "id": "lava-floor-fissure",
+      "category": "floor-crack",
+      "description": "Cooling fissure across the crusted basalt floor",
+      "zilIdentity": null,
+      "placement": {
+        "position": [
+          0.6,
+          -0.5,
+          0
+        ],
+        "sizeMetres": [
+          0.12,
+          3.2,
+          0.08
+        ],
+        "yawDeg": 24
+      }
+    },
+    {
+      "id": "north-lava-mounds",
+      "category": "boulder-cluster",
+      "description": "Ropy solidified lava mounds along the northern wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0,
+          2.6,
+          0
+        ],
+        "sizeMetres": [
+          4.8,
+          1.1,
+          0.85
+        ],
+        "count": 14,
+        "seed": 521
+      }
+    },
+    {
+      "id": "west-lava-mounds",
+      "category": "boulder-cluster",
+      "description": "Cooled volcanic rock formations along the west wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -2.7,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          1,
+          4.6,
+          0.8
+        ],
+        "count": 12,
+        "seed": 522
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "CERBERUS-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/cerberus-room/room-bom.json",
+  "bomSha256": "d678dea08d29c2b68e63e33ff0648b84067a8ed0ad421f305e280556a0d68730",
+  "glb": "games/zork2/planning/room-bom-prototype/cerberus-room/build/room.glb",
+  "glbBytes": 4327220,
+  "glbSha256": "610f82c184d10665d3013208738c77681970a7b0e45d461e68edb64f5dfe4df9",
+  "meshCount": 14,
+  "materialCount": 5,
+  "triangles": 13536,
+  "zilAnchors": [
+    "CERBERUS"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/cerberus-room/build/review-4view.png"
+}

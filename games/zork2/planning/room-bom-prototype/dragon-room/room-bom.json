@@ -1,0 +1,448 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "DRAGON-ROOM",
+  "label": "Dragon Room",
+  "sourceContext": "games/zork2/assets/rooms/dragon-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/dragon-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/dragon-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/dragon-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/dragon-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "organic-cavern",
+    "dimensionsMetres": [
+      14,
+      12.8,
+      5.6
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.65,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.054,
+        0.071,
+        0.106
+      ],
+      "ambientStrength": 0.317,
+      "lights": [
+        {
+          "name": "cavern-warm-key",
+          "position": [
+            -0.8,
+            -0.6,
+            3.6
+          ],
+          "color": [
+            0.909,
+            0.657,
+            0.431
+          ],
+          "energy": 686.8,
+          "radius": 1.8
+        },
+        {
+          "name": "scorched-north-ember",
+          "position": [
+            -1.2,
+            4.2,
+            3
+          ],
+          "color": [
+            0.909,
+            0.437,
+            0.251
+          ],
+          "energy": 317,
+          "radius": 1.4
+        },
+        {
+          "name": "west-passage-cool",
+          "position": [
+            -5.8,
+            -0.4,
+            2.6
+          ],
+          "color": [
+            0.429,
+            0.617,
+            0.871
+          ],
+          "energy": 185,
+          "radius": 1.4
+        },
+        {
+          "name": "south-bridge-warm",
+          "position": [
+            0.6,
+            -4.8,
+            2.8
+          ],
+          "color": [
+            0.869,
+            0.697,
+            0.511
+          ],
+          "energy": 264.2,
+          "radius": 1.5
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "S",
+      "crop": [
+        0.22,
+        0.14,
+        0.72,
+        0.38
+      ],
+      "tileMetres": 4.2,
+      "roughness": 0.94,
+      "normalStrength": 1.5,
+      "colorScale": 1.647,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "S",
+      "crop": [
+        0.18,
+        0.62,
+        0.56,
+        0.92
+      ],
+      "tileMetres": 3.4,
+      "roughness": 0.9,
+      "normalStrength": 1.25,
+      "colorScale": 1,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "S",
+      "crop": [
+        0.32,
+        0.01,
+        0.66,
+        0.12
+      ],
+      "tileMetres": 4.4,
+      "roughness": 0.96,
+      "normalStrength": 1.35,
+      "colorScale": 0.85,
+      "tileable": true
+    },
+    "paving-stone": {
+      "procedural": "grey-stone",
+      "tileMetres": 2,
+      "roughness": 0.86,
+      "normalStrength": 1.2
+    }
+  },
+  "objects": [
+    {
+      "id": "north-smoky-tunnel",
+      "category": "opening",
+      "description": "Dark and smoky tunnel leading north into the Dragon's Lair (guarded by the dragon)",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.54,
+        0.04,
+        0.78,
+        0.4
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 0.6,
+        "sizeMetres": [
+          3.2,
+          0.7,
+          3.4
+        ],
+        "depthMetres": 8,
+        "tunnelColor": [
+          0.16,
+          0.18,
+          0.22
+        ],
+        "tunnelEnergy": 30
+      }
+    },
+    {
+      "id": "east-narrow-crack",
+      "category": "opening",
+      "description": "Small rocky crack on the east wall leading to the End of Ledge",
+      "zilIdentity": null,
+      "exitDirection": "EAST",
+      "sourceView": "N",
+      "crop": [
+        0.89,
+        0.26,
+        0.96,
+        0.45
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 0.8,
+        "sizeMetres": [
+          1.15,
+          0.55,
+          2.05
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.3,
+          0.38,
+          0.48
+        ],
+        "tunnelEnergy": 45
+      }
+    },
+    {
+      "id": "west-large-passage",
+      "category": "opening",
+      "description": "Large paved passage on the west wall leading to the Fresco Room",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "sourceView": "N",
+      "crop": [
+        0.02,
+        0.18,
+        0.14,
+        0.4
+      ],
+      "surface": "paving-stone",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 0.4,
+        "sizeMetres": [
+          2.45,
+          0.6,
+          2.85
+        ],
+        "depthMetres": 8,
+        "tunnelColor": [
+          0.54,
+          0.66,
+          0.8
+        ],
+        "tunnelEnergy": 110
+      }
+    },
+    {
+      "id": "south-stone-bridge-arch",
+      "category": "opening",
+      "description": "Wide southern passage leading across the huge stone bridge",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "sourceView": "S",
+      "crop": [
+        0.02,
+        0.36,
+        0.36,
+        0.66
+      ],
+      "surface": "paving-stone",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": -0.4,
+        "sizeMetres": [
+          2.85,
+          0.6,
+          3.1
+        ],
+        "depthMetres": 8,
+        "tunnelColor": [
+          0.88,
+          0.68,
+          0.42
+        ],
+        "tunnelEnergy": 120
+      }
+    },
+    {
+      "id": "ceiling-stalactites",
+      "category": "stalactite-ceiling",
+      "description": "Heavy soot-stained stalactites descending from the scorched cavern ceiling",
+      "zilIdentity": null,
+      "surface": "ceiling",
+      "placement": {
+        "position": [
+          0,
+          0,
+          5.45
+        ],
+        "sizeMetres": [
+          12.4,
+          11.2,
+          1.5
+        ],
+        "count": 34,
+        "minHeight": 0.45,
+        "maxHeight": 1.45,
+        "radius": 0.22,
+        "seed": 510
+      }
+    },
+    {
+      "id": "claw-scratches-west",
+      "category": "floor-crack",
+      "description": "Deep parallel claw gouges scored across the cavern floor",
+      "zilIdentity": null,
+      "sourceView": "S",
+      "crop": [
+        0.22,
+        0.72,
+        0.44,
+        0.9
+      ],
+      "placement": {
+        "position": [
+          -1.8,
+          -1.6,
+          0
+        ],
+        "sizeMetres": [
+          0.14,
+          2.8,
+          0.07
+        ],
+        "yawDeg": 32
+      }
+    },
+    {
+      "id": "claw-scratches-east",
+      "category": "floor-crack",
+      "description": "Deep dragon claw scratches near the central floor",
+      "zilIdentity": null,
+      "placement": {
+        "position": [
+          1.6,
+          0.4,
+          0
+        ],
+        "sizeMetres": [
+          0.14,
+          2.4,
+          0.07
+        ],
+        "yawDeg": -24
+      }
+    },
+    {
+      "id": "northwest-broken-stone",
+      "category": "boulder-cluster",
+      "description": "Broken stone and large boulders piled along the northwest wall beside the dragon",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -4.4,
+          3.8,
+          0
+        ],
+        "sizeMetres": [
+          3.8,
+          2.6,
+          1.45
+        ],
+        "count": 18,
+        "seed": 511
+      }
+    },
+    {
+      "id": "northeast-broken-stone",
+      "category": "boulder-cluster",
+      "description": "Scorched rubble and broken stone along the northeast wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          4.6,
+          3.6,
+          0
+        ],
+        "sizeMetres": [
+          3.2,
+          2.8,
+          1.35
+        ],
+        "count": 16,
+        "seed": 512
+      }
+    },
+    {
+      "id": "southwest-rubble",
+      "category": "boulder-cluster",
+      "description": "Broken cavern boulders flanking the southwest edge of the paved path",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -4.8,
+          -3.8,
+          0
+        ],
+        "sizeMetres": [
+          3.4,
+          2.8,
+          1.2
+        ],
+        "count": 16,
+        "seed": 513
+      }
+    },
+    {
+      "id": "southeast-rubble",
+      "category": "boulder-cluster",
+      "description": "Fallen rocks along the southeast cavern perimeter",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          4.8,
+          -3.6,
+          0
+        ],
+        "sizeMetres": [
+          3,
+          3,
+          1.15
+        ],
+        "count": 14,
+        "seed": 514
+      }
+    },
+    {
+      "id": "dragon-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL actor anchor for DRAGON lying on the rocks and blocking the north tunnel",
+      "zilIdentity": "DRAGON",
+      "sourceView": "N",
+      "crop": [
+        0.24,
+        0.12,
+        0.72,
+        0.42
+      ],
+      "placement": {
+        "position": [
+          0.2,
+          3.6,
+          0.35
+        ],
+        "sizeMetres": [
+          5.4,
+          3.2,
+          2.6
+        ],
+        "yawDeg": 180
+      }
+    }
+  ]
+}

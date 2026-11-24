@@ -1,0 +1,170 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "DEAD-PALANTIR-2",
+  "label": "Room of Blue Mist",
+  "sourceContext": "games/zork2/assets/rooms/dead-palantir-2/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/dead-palantir-2/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/dead-palantir-2/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/dead-palantir-2/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/dead-palantir-2/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "rotunda",
+    "dimensionsMetres": [
+      12,
+      12,
+      9.5
+    ],
+    "wallStyle": "plaster",
+    "wallDisplacementMetres": 0.02,
+    "ceilingStyle": "vaulted",
+    "lighting": {
+      "ambientColor": [
+        0.15,
+        0.158,
+        0.29
+      ],
+      "ambientStrength": 0.459,
+      "lights": [
+        {
+          "name": "blue-mist-core",
+          "position": [
+            0.4,
+            0,
+            3.2
+          ],
+          "color": [
+            0.36,
+            0.485,
+            0.82
+          ],
+          "energy": 529.9,
+          "radius": 2.4
+        },
+        {
+          "name": "east-cobalt-gleam",
+          "position": [
+            4,
+            0.2,
+            4.2
+          ],
+          "color": [
+            0.32,
+            0.405,
+            0.77
+          ],
+          "energy": 305.7,
+          "radius": 2
+        },
+        {
+          "name": "west-white-transition",
+          "position": [
+            -4.4,
+            0,
+            2.6
+          ],
+          "color": [
+            1,
+            0.975,
+            0.82
+          ],
+          "energy": 285.4,
+          "radius": 1.9
+        },
+        {
+          "name": "dome-sapphire-wash",
+          "position": [
+            0,
+            0,
+            7.6
+          ],
+          "color": [
+            0.34,
+            0.425,
+            0.74
+          ],
+          "energy": 224.2,
+          "radius": 3
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.6,
+        0.14,
+        0.9,
+        0.58
+      ],
+      "tileMetres": 4.2,
+      "roughness": 0.4,
+      "normalStrength": 0.65,
+      "colorScale": 1.456,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.18,
+        0.66,
+        0.8,
+        0.96
+      ],
+      "tileMetres": 4,
+      "roughness": 0.7,
+      "normalStrength": 0.55,
+      "colorScale": 0.841,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.3,
+        0.04,
+        0.76,
+        0.24
+      ],
+      "tileMetres": 4.8,
+      "roughness": 0.36,
+      "normalStrength": 0.5,
+      "colorScale": 0.95,
+      "tileable": true
+    }
+  },
+  "objects": [
+    {
+      "id": "west-white-mist-passage",
+      "category": "opening",
+      "description": "Luminous passage to the west where the blue mist lightens into pale white mist toward Room of White Mist",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "sourceView": "N",
+      "crop": [
+        0.12,
+        0.14,
+        0.52,
+        0.54
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2.4,
+          0.5,
+          3
+        ],
+        "depthMetres": 6.5,
+        "tunnelColor": [
+          0.92,
+          0.95,
+          1
+        ],
+        "tunnelEnergy": 220
+      }
+    }
+  ]
+}

@@ -1,0 +1,451 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "GAZEBO-ROOM",
+  "label": "Gazebo",
+  "sourceContext": "games/zork2/assets/rooms/gazebo-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/gazebo-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/gazebo-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/gazebo-room/reverse-v2.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/gazebo-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "rotunda",
+    "dimensionsMetres": [
+      6.8,
+      6.8,
+      4.4
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.02,
+    "ceilingStyle": "vaulted",
+    "wainscotHeightMetres": 0.85,
+    "lighting": {
+      "ambientColor": [
+        0.16,
+        0.2,
+        0.16
+      ],
+      "ambientStrength": 0.143,
+      "lights": [
+        {
+          "name": "gazebo-warm-center",
+          "position": [
+            0,
+            0,
+            2.8
+          ],
+          "color": [
+            1,
+            0.84,
+            0.58
+          ],
+          "energy": 101,
+          "radius": 1.4
+        },
+        {
+          "name": "garden-moss-north",
+          "position": [
+            0,
+            3,
+            2.4
+          ],
+          "color": [
+            0.74,
+            0.9,
+            0.72
+          ],
+          "energy": 59.4,
+          "radius": 1.6
+        },
+        {
+          "name": "garden-moss-south",
+          "position": [
+            0,
+            -3,
+            2.4
+          ],
+          "color": [
+            0.78,
+            0.88,
+            0.74
+          ],
+          "energy": 53.5,
+          "radius": 1.6
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "procedural": "light-stone",
+      "tileMetres": 1.8,
+      "roughness": 0.78,
+      "normalStrength": 1.05
+    },
+    "floor": {
+      "procedural": "radial-floor",
+      "tileMetres": 6.8,
+      "roughness": 0.82,
+      "normalStrength": 1.15
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.3,
+        0.01,
+        0.68,
+        0.09
+      ],
+      "tileMetres": 3.2,
+      "roughness": 0.86,
+      "normalStrength": 1.05,
+      "colorScale": 0.95,
+      "tileable": true
+    },
+    "chair-stone": {
+      "procedural": "light-stone",
+      "tileMetres": 0.8,
+      "roughness": 0.68,
+      "normalStrength": 0.95
+    }
+  },
+  "objects": [
+    {
+      "id": "south-garden-exit",
+      "category": "opening",
+      "description": "Open arched entrance of the gazebo leading back out into the North End of Garden",
+      "zilIdentity": null,
+      "exitDirection": "OUT",
+      "sourceView": "S",
+      "crop": [
+        0.32,
+        0.16,
+        0.68,
+        0.74
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2,
+          0.45,
+          2.8
+        ],
+        "depthMetres": 5.5,
+        "tunnelColor": [
+          0.76,
+          0.92,
+          0.74
+        ],
+        "tunnelEnergy": 140
+      }
+    },
+    {
+      "id": "gazebo-column-n",
+      "category": "pillar",
+      "description": "Fluted white stone gazebo column on the north perimeter",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0,
+          3.1,
+          0
+        ],
+        "sizeMetres": [
+          0.32,
+          0.32,
+          4.2
+        ]
+      }
+    },
+    {
+      "id": "gazebo-column-ne",
+      "category": "pillar",
+      "description": "Fluted white stone gazebo column on the northeast perimeter",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          2.68,
+          1.55,
+          0
+        ],
+        "sizeMetres": [
+          0.32,
+          0.32,
+          4.2
+        ]
+      }
+    },
+    {
+      "id": "gazebo-column-se",
+      "category": "pillar",
+      "description": "Fluted white stone gazebo column on the southeast perimeter",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          2.68,
+          -1.55,
+          0
+        ],
+        "sizeMetres": [
+          0.32,
+          0.32,
+          4.2
+        ]
+      }
+    },
+    {
+      "id": "gazebo-column-nw",
+      "category": "pillar",
+      "description": "Fluted white stone gazebo column on the northwest perimeter",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -2.68,
+          1.55,
+          0
+        ],
+        "sizeMetres": [
+          0.32,
+          0.32,
+          4.2
+        ]
+      }
+    },
+    {
+      "id": "gazebo-column-sw",
+      "category": "pillar",
+      "description": "Fluted white stone gazebo column on the southwest perimeter",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -2.68,
+          -1.55,
+          0
+        ],
+        "sizeMetres": [
+          0.32,
+          0.32,
+          4.2
+        ]
+      }
+    },
+    {
+      "id": "west-garden-chair",
+      "category": "chair",
+      "description": "Ornate white garden chair positioned west of the central tea table",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.06,
+        0.48,
+        0.32,
+        0.96
+      ],
+      "surface": "chair-stone",
+      "placement": {
+        "position": [
+          -1.25,
+          -0.15,
+          0
+        ],
+        "sizeMetres": [
+          0.58,
+          0.56,
+          0.96
+        ],
+        "yawDeg": 82
+      }
+    },
+    {
+      "id": "east-garden-chair",
+      "category": "chair",
+      "description": "Ornate white garden chair positioned east of the central tea table",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.6,
+        0.45,
+        0.82,
+        0.94
+      ],
+      "surface": "chair-stone",
+      "placement": {
+        "position": [
+          1.22,
+          -0.05,
+          0
+        ],
+        "sizeMetres": [
+          0.58,
+          0.56,
+          0.96
+        ],
+        "yawDeg": -80
+      }
+    },
+    {
+      "id": "gazebo-table-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for GAZEBO-TABLE in the center of the gazebo",
+      "zilIdentity": "GAZEBO-TABLE",
+      "sourceView": "N",
+      "crop": [
+        0.27,
+        0.54,
+        0.7,
+        0.95
+      ],
+      "placement": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          1.35,
+          1.35,
+          0.78
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "place-mat-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for PLACE-MAT resting on the center of the tea table",
+      "zilIdentity": "PLACE-MAT",
+      "sourceView": "N",
+      "crop": [
+        0.4,
+        0.57,
+        0.61,
+        0.66
+      ],
+      "placement": {
+        "position": [
+          0,
+          0,
+          0.79
+        ],
+        "sizeMetres": [
+          0.46,
+          0.34,
+          0.02
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "teapot-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for TEAPOT (china teapot) on the tea table",
+      "zilIdentity": "TEAPOT",
+      "sourceView": "N",
+      "crop": [
+        0.51,
+        0.48,
+        0.62,
+        0.6
+      ],
+      "placement": {
+        "position": [
+          0.24,
+          0.16,
+          0.8
+        ],
+        "sizeMetres": [
+          0.26,
+          0.2,
+          0.22
+        ],
+        "yawDeg": -25
+      }
+    },
+    {
+      "id": "newspaper-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for NEWSPAPER folded on the west side of the tea table",
+      "zilIdentity": "NEWSPAPER",
+      "sourceView": "N",
+      "crop": [
+        0.3,
+        0.54,
+        0.48,
+        0.63
+      ],
+      "placement": {
+        "position": [
+          -0.32,
+          0.12,
+          0.8
+        ],
+        "sizeMetres": [
+          0.36,
+          0.28,
+          0.04
+        ],
+        "yawDeg": 15
+      }
+    },
+    {
+      "id": "matchbook-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for MATCH (matchbook) near the newspaper on the tea table",
+      "zilIdentity": "MATCH",
+      "sourceView": "N",
+      "crop": [
+        0.36,
+        0.62,
+        0.41,
+        0.66
+      ],
+      "placement": {
+        "position": [
+          -0.36,
+          -0.14,
+          0.8
+        ],
+        "sizeMetres": [
+          0.08,
+          0.06,
+          0.03
+        ],
+        "yawDeg": 20
+      }
+    },
+    {
+      "id": "letter-opener-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for LETTER-OPENER beside the place mat on the tea table",
+      "zilIdentity": "LETTER-OPENER",
+      "sourceView": "N",
+      "crop": [
+        0.54,
+        0.6,
+        0.64,
+        0.66
+      ],
+      "placement": {
+        "position": [
+          0.28,
+          -0.16,
+          0.8
+        ],
+        "sizeMetres": [
+          0.24,
+          0.04,
+          0.02
+        ],
+        "yawDeg": -35
+      }
+    }
+  ]
+}

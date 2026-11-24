@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "LEDGE-TUNNEL",
+  "bom": "games/zork2/planning/room-bom-prototype/ledge-tunnel/room-bom.json",
+  "bomSha256": "7b7a3352e69d0123d55ed88797657e9f01bb516cdf7f0fe477b450185d761325",
+  "glb": "games/zork2/planning/room-bom-prototype/ledge-tunnel/build/room.glb",
+  "glbBytes": 3900512,
+  "glbSha256": "2f8a2c1a6fb6973f351409545bb229045f32219e25eb34c16e4421373e99c534",
+  "meshCount": 14,
+  "materialCount": 4,
+  "triangles": 10980,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/ledge-tunnel/build/review-4view.png"
+}

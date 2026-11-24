@@ -1,0 +1,17 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "ROOM-8",
+  "bom": "games/zork2/planning/room-bom-prototype/room-8/room-bom.json",
+  "bomSha256": "d599c0b9144b7d7af20efebfccfa9a972f80dcd3cf9c58b1e0f963262143b470",
+  "glb": "games/zork2/planning/room-bom-prototype/room-8/build/room.glb",
+  "glbBytes": 3375196,
+  "glbSha256": "2479b5cb8c94b3cd56ea83bdd9fff128276110a206cb2cb0a542ee99566e49bd",
+  "meshCount": 11,
+  "materialCount": 4,
+  "triangles": 9341,
+  "zilAnchors": [
+    "REPELLENT"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/room-8/build/review-4view.png"
+}

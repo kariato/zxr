@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "STAIRWAY-TOP",
+  "bom": "games/zork2/planning/room-bom-prototype/stairway-top/room-bom.json",
+  "bomSha256": "e2887291c4333d7f28175c03f22c4a0a1f1bfa395d0559d4cc335e8eff1adfb8",
+  "glb": "games/zork2/planning/room-bom-prototype/stairway-top/build/room.glb",
+  "glbBytes": 4406048,
+  "glbSha256": "bc9617e9e1a064f5ec2f79dbc2910a8fc0b2978ed6268d5665e192879a1ec640",
+  "meshCount": 16,
+  "materialCount": 5,
+  "triangles": 12442,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/stairway-top/build/review-4view.png"
+}

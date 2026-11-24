@@ -1,0 +1,413 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "DREARY-ROOM",
+  "label": "Dreary Room",
+  "sourceContext": "games/zork2/assets/rooms/dreary-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/dreary-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/dreary-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/dreary-room/reverse-v2.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/dreary-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      5.4,
+      5.2,
+      2.9
+    ],
+    "wallStyle": "dressed-masonry",
+    "wallDisplacementMetres": 0.06,
+    "ceilingStyle": "flat",
+    "lighting": {
+      "ambientColor": [
+        0.045,
+        0.041,
+        0.085
+      ],
+      "ambientStrength": 0.28,
+      "lights": [
+        {
+          "name": "wall-crack-red-glow",
+          "position": [
+            -2.35,
+            0.35,
+            1.55
+          ],
+          "color": [
+            0.911,
+            0.12,
+            0.182
+          ],
+          "energy": 293.8,
+          "radius": 0.35
+        },
+        {
+          "name": "table-red-spill",
+          "position": [
+            -0.6,
+            0.1,
+            1.7
+          ],
+          "color": [
+            0.861,
+            0.317,
+            0.269
+          ],
+          "energy": 132.8,
+          "radius": 0.9
+        },
+        {
+          "name": "barred-window-cool",
+          "position": [
+            2.25,
+            0.2,
+            1.65
+          ],
+          "color": [
+            0.271,
+            0.457,
+            0.749
+          ],
+          "energy": 91,
+          "radius": 0.7
+        },
+        {
+          "name": "south-door-fill",
+          "position": [
+            0.2,
+            -1.8,
+            1.8
+          ],
+          "color": [
+            0.671,
+            0.457,
+            0.409
+          ],
+          "energy": 83.9,
+          "radius": 0.9
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "S",
+      "crop": [
+        0.18,
+        0.16,
+        0.82,
+        0.66
+      ],
+      "tileMetres": 2.6,
+      "roughness": 0.92,
+      "normalStrength": 1.35,
+      "colorScale": 1.264,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "S",
+      "crop": [
+        0.18,
+        0.72,
+        0.78,
+        0.96
+      ],
+      "tileMetres": 2.4,
+      "roughness": 0.88,
+      "normalStrength": 1.15,
+      "colorScale": 1.276,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "S",
+      "crop": [
+        0.18,
+        0.01,
+        0.74,
+        0.1
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.95,
+      "normalStrength": 1.2,
+      "colorScale": 0.88,
+      "tileable": true
+    },
+    "table-wood": {
+      "procedural": "weathered-oak",
+      "tileMetres": 1.2,
+      "roughness": 0.86,
+      "normalStrength": 1.2
+    },
+    "oak-door": {
+      "sourceView": "N",
+      "crop": [
+        0.55,
+        0.24,
+        0.7,
+        0.62
+      ],
+      "tileMetres": 1.6,
+      "roughness": 0.78,
+      "normalStrength": 1.25,
+      "colorScale": 1.05,
+      "tileable": false
+    }
+  },
+  "objects": [
+    {
+      "id": "south-oak-door",
+      "category": "door",
+      "description": "Heavy iron-strapped oak door (PDOOR) set into the south stone wall leading to the Tiny Room",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "sourceView": "N",
+      "crop": [
+        0.53,
+        0.18,
+        0.72,
+        0.64
+      ],
+      "surface": "oak-door",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": -0.25,
+        "sizeMetres": [
+          1.35,
+          0.18,
+          2.25
+        ],
+        "depthMetres": 0.45
+      }
+    },
+    {
+      "id": "east-barred-window-recess",
+      "category": "recess",
+      "description": "Deep stone window embrasure on the east wall (non-exit)",
+      "zilIdentity": null,
+      "exitDirection": null,
+      "sourceView": "N",
+      "crop": [
+        0.88,
+        0.08,
+        0.99,
+        0.48
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 0.2,
+        "sizeMetres": [
+          1.1,
+          0.4,
+          1.25
+        ],
+        "depthMetres": 0.55
+      }
+    },
+    {
+      "id": "central-wooden-table",
+      "category": "table",
+      "description": "Dusty rough-hewn wooden table standing in the center of the dreary room",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.19,
+        0.53,
+        0.68,
+        0.95
+      ],
+      "surface": "table-wood",
+      "placement": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          1.65,
+          1.15,
+          0.78
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "west-wall-debris",
+      "category": "boulder-cluster",
+      "description": "Small loose stones and mortar debris along the base of the cracked west wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -2.35,
+          -0.4,
+          0
+        ],
+        "sizeMetres": [
+          0.55,
+          3.2,
+          0.32
+        ],
+        "count": 10,
+        "seed": 901
+      }
+    },
+    {
+      "id": "ptable-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL surface anchor for PTABLE in the center of the room",
+      "zilIdentity": "PTABLE",
+      "sourceView": "N",
+      "crop": [
+        0.19,
+        0.53,
+        0.68,
+        0.95
+      ],
+      "placement": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          1.65,
+          1.15,
+          0.78
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "palantir-2-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for PALANTIR-2 (blue crystal sphere) in the center of the table",
+      "zilIdentity": "PALANTIR-2",
+      "sourceView": "N",
+      "crop": [
+        0.44,
+        0.49,
+        0.51,
+        0.6
+      ],
+      "placement": {
+        "position": [
+          0,
+          0,
+          0.88
+        ],
+        "sizeMetres": [
+          0.24,
+          0.24,
+          0.24
+        ],
+        "yawDeg": 0
+      }
+    },
+    {
+      "id": "pcrack-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL anchor for PCRACK (narrow glowing red crack) in the west stone wall",
+      "zilIdentity": "PCRACK",
+      "sourceView": "N",
+      "crop": [
+        0.11,
+        0.08,
+        0.18,
+        0.62
+      ],
+      "placement": {
+        "position": [
+          -2.64,
+          0.35,
+          1.45
+        ],
+        "sizeMetres": [
+          0.12,
+          0.35,
+          1.65
+        ],
+        "yawDeg": 90
+      }
+    },
+    {
+      "id": "keyhole-2-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL anchor for KEYHOLE-2 mounted on the south wall beside the oak door",
+      "zilIdentity": "KEYHOLE-2",
+      "sourceView": "N",
+      "crop": [
+        0.76,
+        0.31,
+        0.81,
+        0.41
+      ],
+      "placement": {
+        "position": [
+          0.95,
+          -2.54,
+          1.42
+        ],
+        "sizeMetres": [
+          0.16,
+          0.06,
+          0.26
+        ],
+        "yawDeg": 180
+      }
+    },
+    {
+      "id": "key-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL prop anchor for KEY (rusty iron key) initially inside KEYHOLE-2",
+      "zilIdentity": "KEY",
+      "sourceView": "N",
+      "crop": [
+        0.77,
+        0.32,
+        0.82,
+        0.38
+      ],
+      "placement": {
+        "position": [
+          0.95,
+          -2.48,
+          1.42
+        ],
+        "sizeMetres": [
+          0.14,
+          0.12,
+          0.08
+        ],
+        "yawDeg": 180
+      }
+    },
+    {
+      "id": "lid-2-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL anchor for LID-2 (metal lid) mounted on the south wall below KEYHOLE-2",
+      "zilIdentity": "LID-2",
+      "sourceView": "N",
+      "crop": [
+        0.75,
+        0.45,
+        0.85,
+        0.61
+      ],
+      "placement": {
+        "position": [
+          0.95,
+          -2.54,
+          0.86
+        ],
+        "sizeMetres": [
+          0.42,
+          0.08,
+          0.42
+        ],
+        "yawDeg": 180
+      }
+    }
+  ]
+}

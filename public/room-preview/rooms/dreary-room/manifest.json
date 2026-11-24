@@ -1,0 +1,22 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "DREARY-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/dreary-room/room-bom.json",
+  "bomSha256": "8de71cdadf87dd1aa7c76fd8c627f129ecc54598e89e2ba9e021a5d205ca7372",
+  "glb": "games/zork2/planning/room-bom-prototype/dreary-room/build/room.glb",
+  "glbBytes": 4930852,
+  "glbSha256": "d7e78f0d2dbb5946127958ff7674dd7d053f128ed1f121a9643498f8e932b9c3",
+  "meshCount": 14,
+  "materialCount": 6,
+  "triangles": 9518,
+  "zilAnchors": [
+    "PTABLE",
+    "PALANTIR-2",
+    "PCRACK",
+    "KEYHOLE-2",
+    "KEY",
+    "LID-2"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/dreary-room/build/review-4view.png"
+}

@@ -1,0 +1,18 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "MAGNET-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/magnet-room/room-bom.json",
+  "bomSha256": "aec07bc365202c9a571b7feeec14538172076f741f4a4e3e54f4a60d834265e8",
+  "glb": "games/zork2/planning/room-bom-prototype/magnet-room/build/room.glb",
+  "glbBytes": 5896716,
+  "glbSha256": "e01f431515a60e2f52662ee101bc935bd003d5aa814f3de62ee64ed3b9cc0ed7",
+  "meshCount": 11,
+  "materialCount": 5,
+  "triangles": 2492,
+  "zilAnchors": [
+    "ROBOT",
+    "ROBOT-LABEL"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/magnet-room/build/review-4view.png"
+}

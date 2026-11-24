@@ -1,0 +1,18 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "SAFE-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/safe-room/room-bom.json",
+  "bomSha256": "239a6fdfbe15378a81fa4bc7c9a5765b52b50261d26850b8bd3539918696dd35",
+  "glb": "games/zork2/planning/room-bom-prototype/safe-room/build/room.glb",
+  "glbBytes": 3339236,
+  "glbSha256": "2f02723bb8849ac10a9aa60e9d4e1a3a95fe01d2719f4dee3ff30cadc4b626ad",
+  "meshCount": 11,
+  "materialCount": 4,
+  "triangles": 9851,
+  "zilAnchors": [
+    "SAFE",
+    "SLOT"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/safe-room/build/review-4view.png"
+}

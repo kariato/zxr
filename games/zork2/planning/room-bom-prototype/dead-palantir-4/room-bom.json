@@ -1,0 +1,138 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "DEAD-PALANTIR-4",
+  "label": "Room of Black Mist",
+  "sourceContext": "games/zork2/assets/rooms/dead-palantir-4/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/dead-palantir-4/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/dead-palantir-4/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/dead-palantir-4/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/dead-palantir-4/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "rotunda",
+    "dimensionsMetres": [
+      12,
+      12,
+      9.5
+    ],
+    "wallStyle": "plaster",
+    "wallDisplacementMetres": 0.02,
+    "ceilingStyle": "vaulted",
+    "lighting": {
+      "ambientColor": [
+        0.04,
+        0.04,
+        0.06
+      ],
+      "ambientStrength": 0.638,
+      "lights": [
+        {
+          "name": "black-mist-core",
+          "position": [
+            0,
+            0,
+            3.2
+          ],
+          "color": [
+            0.28,
+            0.32,
+            0.44
+          ],
+          "energy": 406.4,
+          "radius": 2.6
+        },
+        {
+          "name": "crimson-rim-whisper",
+          "position": [
+            -3.8,
+            1.8,
+            4.2
+          ],
+          "color": [
+            0.78,
+            0.24,
+            0.22
+          ],
+          "energy": 348.4,
+          "radius": 2
+        },
+        {
+          "name": "indigo-rim-whisper",
+          "position": [
+            3.6,
+            1.4,
+            4
+          ],
+          "color": [
+            0.22,
+            0.34,
+            0.64
+          ],
+          "energy": 319.4,
+          "radius": 2
+        },
+        {
+          "name": "dome-obsidian-gloom",
+          "position": [
+            0,
+            0,
+            7.8
+          ],
+          "color": [
+            0.16,
+            0.18,
+            0.26
+          ],
+          "energy": 232.2,
+          "radius": 3.2
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.46,
+        0.14,
+        0.88,
+        0.56
+      ],
+      "tileMetres": 4.2,
+      "roughness": 0.35,
+      "normalStrength": 0.6,
+      "colorScale": 1.85,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.16,
+        0.64,
+        0.84,
+        0.96
+      ],
+      "tileMetres": 4,
+      "roughness": 0.72,
+      "normalStrength": 0.55,
+      "colorScale": 1.406,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.38,
+        0.04,
+        0.8,
+        0.3
+      ],
+      "tileMetres": 4.8,
+      "roughness": 0.32,
+      "normalStrength": 0.45,
+      "colorScale": 0.85,
+      "tileable": true
+    }
+  },
+  "objects": []
+}

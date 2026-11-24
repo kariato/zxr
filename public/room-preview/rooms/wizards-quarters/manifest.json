@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "WIZARDS-QUARTERS",
+  "bom": "games/zork2/planning/room-bom-prototype/wizards-quarters/room-bom.json",
+  "bomSha256": "6055b792bb00f6a74a8dd722ba46e84705150d75953b74972ef2970ab8b99d24",
+  "glb": "games/zork2/planning/room-bom-prototype/wizards-quarters/build/room.glb",
+  "glbBytes": 4337672,
+  "glbSha256": "8a0fdbcd5a33382bc4f1ff628f122a9c49b63f454c629b9fbbf6e0d0696872b4",
+  "meshCount": 15,
+  "materialCount": 6,
+  "triangles": 13135,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/wizards-quarters/build/review-4view.png"
+}

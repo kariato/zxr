@@ -1,0 +1,367 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "NARROW-TUNNEL",
+  "label": "Narrow Tunnel",
+  "sourceContext": "games/zork2/assets/rooms/narrow-tunnel/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/narrow-tunnel/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/narrow-tunnel/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/narrow-tunnel/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/narrow-tunnel/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "organic-cavern",
+    "dimensionsMetres": [
+      14,
+      12.6,
+      8.2
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.65,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.03,
+        0.145,
+        0.232
+      ],
+      "ambientStrength": 0.683,
+      "lights": [
+        {
+          "name": "moss-ceiling-glow-w",
+          "position": [
+            -2.2,
+            -1,
+            6.4
+          ],
+          "color": [
+            0.256,
+            0.824,
+            0.764
+          ],
+          "energy": 642.3,
+          "radius": 2.4
+        },
+        {
+          "name": "moss-ceiling-glow-e",
+          "position": [
+            2.8,
+            -1.8,
+            6.6
+          ],
+          "color": [
+            0.276,
+            0.844,
+            0.784
+          ],
+          "energy": 682.4,
+          "radius": 2.4
+        },
+        {
+          "name": "tunnel-mouth-warm",
+          "position": [
+            -1.2,
+            3.2,
+            2.2
+          ],
+          "color": [
+            0.856,
+            0.684,
+            0.564
+          ],
+          "energy": 481.8,
+          "radius": 1.3
+        },
+        {
+          "name": "ravine-stream-cool",
+          "position": [
+            2.4,
+            -3.4,
+            0.6
+          ],
+          "color": [
+            0.196,
+            0.524,
+            0.844
+          ],
+          "energy": 281,
+          "radius": 1.8
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.04,
+        0.14,
+        0.28,
+        0.5
+      ],
+      "tileMetres": 3.6,
+      "roughness": 0.93,
+      "normalStrength": 1.4,
+      "colorScale": 1.795,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.12,
+        0.64,
+        0.42,
+        0.9
+      ],
+      "tileMetres": 3,
+      "roughness": 0.92,
+      "normalStrength": 1.2,
+      "colorScale": 1.099,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.42,
+        0.02,
+        0.84,
+        0.22
+      ],
+      "tileMetres": 4.8,
+      "roughness": 0.94,
+      "normalStrength": 1.35,
+      "colorScale": 1.05,
+      "tileable": true
+    },
+    "bridge-wood": {
+      "procedural": "weathered-oak",
+      "tileMetres": 1.4,
+      "roughness": 0.88,
+      "normalStrength": 1.25
+    }
+  },
+  "objects": [
+    {
+      "id": "north-barrow-tunnel",
+      "category": "opening",
+      "description": "Narrow rough-hewn tunnel mouth to the north leading back to Inside the Barrow",
+      "zilIdentity": null,
+      "exitDirection": "NORTH",
+      "sourceView": "N",
+      "crop": [
+        0.02,
+        0.16,
+        0.2,
+        0.52
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": -1.2,
+        "sizeMetres": [
+          2.4,
+          0.7,
+          2.8
+        ],
+        "depthMetres": 8.5,
+        "tunnelColor": [
+          0.95,
+          0.68,
+          0.38
+        ],
+        "tunnelEnergy": 110
+      }
+    },
+    {
+      "id": "south-bridge-approach",
+      "category": "opening",
+      "description": "Wide cavern opening to the south where the crude wooden foot bridge crosses the ravine",
+      "zilIdentity": null,
+      "exitDirection": "SOUTH",
+      "sourceView": "N",
+      "crop": [
+        0.44,
+        0.34,
+        0.82,
+        0.64
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "S",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          3.6,
+          0.7,
+          4
+        ],
+        "depthMetres": 9,
+        "tunnelColor": [
+          0.36,
+          0.72,
+          0.58
+        ],
+        "tunnelEnergy": 130
+      }
+    },
+    {
+      "id": "ceiling-stalactites",
+      "category": "stalactite-ceiling",
+      "description": "Jagged limestone stalactites draped with phosphorescent moss hanging from the high cavern roof",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.36,
+        0.01,
+        0.88,
+        0.28
+      ],
+      "surface": "ceiling",
+      "placement": {
+        "position": [
+          0,
+          -1,
+          8.2
+        ],
+        "sizeMetres": [
+          12,
+          10,
+          2.6
+        ],
+        "count": 48,
+        "minHeight": 0.6,
+        "maxHeight": 2.4,
+        "seed": 631
+      }
+    },
+    {
+      "id": "ravine-stream-water",
+      "category": "water-surface",
+      "description": "Small fast-moving stream winding along the rocky bottom of the deep ravine",
+      "zilIdentity": null,
+      "sourceView": "N",
+      "crop": [
+        0.64,
+        0.68,
+        0.86,
+        0.92
+      ],
+      "placement": {
+        "position": [
+          2.4,
+          -3.4,
+          -2.2
+        ],
+        "sizeMetres": [
+          4.2,
+          6.2,
+          0.05
+        ],
+        "waterColor": [
+          0.14,
+          0.28,
+          0.34
+        ],
+        "alpha": 0.68
+      }
+    },
+    {
+      "id": "bridge-post-west",
+      "category": "pillar",
+      "description": "Weathered wooden anchor post on the west side of the foot bridge approach",
+      "zilIdentity": null,
+      "surface": "bridge-wood",
+      "placement": {
+        "position": [
+          -1.25,
+          -4.6,
+          0
+        ],
+        "sizeMetres": [
+          0.24,
+          0.24,
+          1.35
+        ]
+      }
+    },
+    {
+      "id": "bridge-post-east",
+      "category": "pillar",
+      "description": "Weathered wooden anchor post on the east side of the foot bridge approach",
+      "zilIdentity": null,
+      "surface": "bridge-wood",
+      "placement": {
+        "position": [
+          1.25,
+          -4.6,
+          0
+        ],
+        "sizeMetres": [
+          0.24,
+          0.24,
+          1.35
+        ]
+      }
+    },
+    {
+      "id": "ravine-edge-crack",
+      "category": "floor-crack",
+      "description": "Crumbly fissure running along the steep edge of the ravine drop-off",
+      "zilIdentity": null,
+      "placement": {
+        "position": [
+          1.8,
+          -1.8,
+          0
+        ],
+        "sizeMetres": [
+          0.18,
+          6.4,
+          0.1
+        ],
+        "yawDeg": 22
+      }
+    },
+    {
+      "id": "west-tunnel-rubble",
+      "category": "boulder-cluster",
+      "description": "Crumbly angular boulders lining the earthen tunnel path",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -4.6,
+          1.2,
+          0
+        ],
+        "sizeMetres": [
+          1.8,
+          6.8,
+          0.95
+        ],
+        "count": 16,
+        "seed": 632
+      }
+    },
+    {
+      "id": "east-ravine-boulders",
+      "category": "boulder-cluster",
+      "description": "Crumbly rock ledges and fallen stones along the eastern ravine wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          4.8,
+          0.6,
+          0
+        ],
+        "sizeMetres": [
+          2,
+          6.4,
+          1.1
+        ],
+        "count": 14,
+        "seed": 633
+      }
+    }
+  ]
+}

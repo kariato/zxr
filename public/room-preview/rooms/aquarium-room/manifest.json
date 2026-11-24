@@ -1,0 +1,18 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "AQUARIUM-ROOM",
+  "bom": "games/zork2/planning/room-bom-prototype/aquarium-room/room-bom.json",
+  "bomSha256": "0bc61b5d9fa630ab3523b45cfab7b41672300edc348994e4b7a48a9c9ebead08",
+  "glb": "games/zork2/planning/room-bom-prototype/aquarium-room/build/room.glb",
+  "glbBytes": 3373616,
+  "glbSha256": "683fc367984aad9ab909f7a38578774f1950d6e3c8b300b53bc1e5021e44363e",
+  "meshCount": 14,
+  "materialCount": 5,
+  "triangles": 10184,
+  "zilAnchors": [
+    "AQUARIUM",
+    "SERPENT"
+  ],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/aquarium-room/build/review-4view.png"
+}

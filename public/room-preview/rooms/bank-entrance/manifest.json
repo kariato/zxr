@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "BANK-ENTRANCE",
+  "bom": "games/zork2/planning/room-bom-prototype/bank-entrance/room-bom.json",
+  "bomSha256": "5ad93e64a90ff78d8d2da9232250e791bd2bbeb46467fae0b904ef31adcf2ef0",
+  "glb": "games/zork2/planning/room-bom-prototype/bank-entrance/build/room.glb",
+  "glbBytes": 4391880,
+  "glbSha256": "3ba505eef6074dc6aef90899449935677738a9fed1440b00abbfbdf81b9842c7",
+  "meshCount": 22,
+  "materialCount": 6,
+  "triangles": 14577,
+  "zilAnchors": [],
+  "skybox": null,
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/bank-entrance/build/review-4view.png"
+}

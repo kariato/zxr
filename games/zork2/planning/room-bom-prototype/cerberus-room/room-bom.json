@@ -1,0 +1,253 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "CERBERUS-ROOM",
+  "label": "Cerberus Room",
+  "sourceContext": "games/zork2/assets/rooms/cerberus-room/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/cerberus-room/reference-v1.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/cerberus-room/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/cerberus-room/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/cerberus-room/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "box",
+    "dimensionsMetres": [
+      10.4,
+      9.6,
+      4.8
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.45,
+    "ceilingStyle": "rough-cavern",
+    "lighting": {
+      "ambientColor": [
+        0.101,
+        0.091,
+        0.089
+      ],
+      "ambientStrength": 0.32,
+      "lights": [
+        {
+          "name": "stairway-warm-key",
+          "position": [
+            1.2,
+            3.6,
+            3.2
+          ],
+          "color": [
+            0.975,
+            0.761,
+            0.439
+          ],
+          "energy": 407.1,
+          "radius": 1.3
+        },
+        {
+          "name": "hall-warm-bounce",
+          "position": [
+            0.2,
+            -0.8,
+            2.4
+          ],
+          "color": [
+            0.951,
+            0.721,
+            0.459
+          ],
+          "energy": 203.5,
+          "radius": 1.4
+        },
+        {
+          "name": "west-cavern-shadow",
+          "position": [
+            -3.4,
+            0.4,
+            2.6
+          ],
+          "color": [
+            0.361,
+            0.421,
+            0.519
+          ],
+          "energy": 79.9,
+          "radius": 1.5
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.85,
+        0.05,
+        0.99,
+        0.42
+      ],
+      "tileMetres": 3.2,
+      "roughness": 0.94,
+      "normalStrength": 1.4,
+      "colorScale": 1.356,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.38,
+        0.8,
+        0.78,
+        0.98
+      ],
+      "tileMetres": 2.8,
+      "roughness": 0.88,
+      "normalStrength": 1.15,
+      "colorScale": 1.374,
+      "tileable": true
+    },
+    "ceiling": {
+      "sourceView": "N",
+      "crop": [
+        0.02,
+        0.01,
+        0.34,
+        0.14
+      ],
+      "tileMetres": 3.8,
+      "roughness": 0.95,
+      "normalStrength": 1.35,
+      "colorScale": 0.85,
+      "tileable": true
+    },
+    "marble-arch": {
+      "procedural": "light-stone",
+      "tileMetres": 2,
+      "roughness": 0.72,
+      "normalStrength": 1.1
+    }
+  },
+  "objects": [
+    {
+      "id": "north-stairway-gateway",
+      "category": "opening",
+      "description": "Carved stone gateway arch on the north wall framing the marble stairway leading up to the Oddly-angled Room",
+      "zilIdentity": null,
+      "exitDirection": "UP",
+      "sourceView": "N",
+      "crop": [
+        0.46,
+        0.04,
+        0.88,
+        0.78
+      ],
+      "surface": "marble-arch",
+      "placement": {
+        "wall": "N",
+        "offsetAlongWall": 1.2,
+        "sizeMetres": [
+          3.2,
+          0.7,
+          3.6
+        ],
+        "depthMetres": 8,
+        "tunnelColor": [
+          1,
+          0.76,
+          0.44
+        ],
+        "tunnelEnergy": 210
+      }
+    },
+    {
+      "id": "east-crypt-entrance",
+      "category": "opening",
+      "description": "Heavy stone crypt entrance arch on the east wall leading into the Crypt Anteroom",
+      "zilIdentity": null,
+      "exitDirection": "EAST",
+      "surface": "marble-arch",
+      "placement": {
+        "wall": "E",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          2.6,
+          0.65,
+          3.2
+        ],
+        "depthMetres": 7.5,
+        "tunnelColor": [
+          0.32,
+          0.38,
+          0.48
+        ],
+        "tunnelEnergy": 50
+      }
+    },
+    {
+      "id": "cerberus-anchor",
+      "category": "zil-prop-anchor",
+      "description": "Interactive ZIL actor anchor for CERBERUS (elephant-sized three-headed dog) guarding the crypt entrance",
+      "zilIdentity": "CERBERUS",
+      "sourceView": "N",
+      "crop": [
+        0.05,
+        0.11,
+        0.61,
+        0.85
+      ],
+      "placement": {
+        "position": [
+          -1.2,
+          0.6,
+          0
+        ],
+        "sizeMetres": [
+          3.2,
+          3.6,
+          2.8
+        ],
+        "yawDeg": 25
+      }
+    },
+    {
+      "id": "west-wall-boulders",
+      "category": "boulder-cluster",
+      "description": "Angular cavern rock boulders grounding the west wall",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -4.4,
+          -0.5,
+          0
+        ],
+        "sizeMetres": [
+          1.2,
+          6.4,
+          1.1
+        ],
+        "count": 14,
+        "seed": 601
+      }
+    },
+    {
+      "id": "se-wall-boulders",
+      "category": "boulder-cluster",
+      "description": "Fallen rock rubble along the southeast corner",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          3.8,
+          -3.4,
+          0
+        ],
+        "sizeMetres": [
+          2.2,
+          1.6,
+          0.95
+        ],
+        "count": 10,
+        "seed": 602
+      }
+    }
+  ]
+}

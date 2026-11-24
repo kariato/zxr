@@ -1,0 +1,15 @@
+{
+  "format": "zxr-room-bom-build-v1",
+  "room": "DEEP-FORD",
+  "bom": "games/zork2/planning/room-bom-prototype/deep-ford/room-bom.json",
+  "bomSha256": "df04ad8fc4960935edbf7a16b8b523d3de37ac9598a24c8e0c0888385b05f004",
+  "glb": "games/zork2/planning/room-bom-prototype/deep-ford/build/room.glb",
+  "glbBytes": 4934320,
+  "glbSha256": "dbfc20d1fb23aa7ab1ca5a44cbe95367123558d2cccdc86ee79e77980c3bdd53",
+  "meshCount": 12,
+  "materialCount": 5,
+  "triangles": 32630,
+  "zilAnchors": [],
+  "skybox": "src/prototype/assets/cavern-skybox-v1.png",
+  "reviewSheet": "games/zork2/planning/room-bom-prototype/deep-ford/build/review-4view.png"
+}

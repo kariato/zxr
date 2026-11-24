@@ -1,0 +1,210 @@
+{
+  "format": "zxr-room-bom-v1",
+  "room": "VAIR-4",
+  "label": "Volcano Near Wide Ledge",
+  "sourceContext": "games/zork2/assets/rooms/vair-4/source-context.json",
+  "views": {
+    "N": "games/zork2/assets/rooms/vair-4/reference-v2.png",
+    "E": "games/zork2/assets/rooms/quarter-turn-views-v1/vair-4/yaw-90-v1.png",
+    "S": "games/zork2/assets/rooms/reverse-views-v1/vair-4/reverse-v1.png",
+    "W": "games/zork2/assets/rooms/quarter-turn-views-v1/vair-4/yaw-270-v1.png"
+  },
+  "envelope": {
+    "shape": "organic-cavern",
+    "dimensionsMetres": [
+      24,
+      24,
+      16
+    ],
+    "wallStyle": "rough-cavern",
+    "wallDisplacementMetres": 0.85,
+    "ceilingStyle": "open-sky",
+    "skybox": "src/prototype/assets/lair-skybox-v1.png",
+    "lighting": {
+      "ambientColor": [
+        0.166,
+        0.373,
+        0.674
+      ],
+      "ambientStrength": 1.8,
+      "lights": [
+        {
+          "name": "open-sky-sun-key",
+          "position": [
+            -4,
+            2,
+            14.5
+          ],
+          "color": [
+            0.734,
+            0.874,
+            1
+          ],
+          "energy": 2200,
+          "radius": 4.5
+        },
+        {
+          "name": "wide-ledge-sunlight",
+          "position": [
+            -8,
+            0,
+            4.2
+          ],
+          "color": [
+            0.734,
+            0.814,
+            0.946
+          ],
+          "energy": 1760.1,
+          "radius": 2.4
+        },
+        {
+          "name": "caldera-sky-fill",
+          "position": [
+            4,
+            -2,
+            9
+          ],
+          "color": [
+            0.374,
+            0.714,
+            1
+          ],
+          "energy": 1421.7,
+          "radius": 4
+        }
+      ]
+    }
+  },
+  "surfaces": {
+    "wall": {
+      "sourceView": "N",
+      "crop": [
+        0.58,
+        0.18,
+        0.88,
+        0.44
+      ],
+      "tileMetres": 6.5,
+      "roughness": 0.92,
+      "normalStrength": 1.4,
+      "colorScale": 1.85,
+      "tileable": true
+    },
+    "floor": {
+      "sourceView": "N",
+      "crop": [
+        0.5,
+        0.72,
+        0.78,
+        0.96
+      ],
+      "tileMetres": 7,
+      "roughness": 0.94,
+      "normalStrength": 1.3,
+      "colorScale": 1.29,
+      "tileable": true
+    },
+    "ceiling": {
+      "procedural": "light-stone",
+      "tileMetres": 8,
+      "roughness": 0.92,
+      "normalStrength": 1.2
+    }
+  },
+  "objects": [
+    {
+      "id": "west-wide-ledge-exit",
+      "category": "opening",
+      "description": "Broad sunlit rocky landing ledge on the west volcano rim leading to Wide Ledge (WEST/LAND)",
+      "zilIdentity": null,
+      "exitDirection": "WEST",
+      "sourceView": "N",
+      "crop": [
+        0.01,
+        0.36,
+        0.42,
+        0.6
+      ],
+      "surface": "wall",
+      "placement": {
+        "wall": "W",
+        "offsetAlongWall": 0,
+        "sizeMetres": [
+          4.2,
+          0.8,
+          3.4
+        ],
+        "depthMetres": 6,
+        "tunnelColor": [
+          1,
+          0.9,
+          0.72
+        ],
+        "tunnelEnergy": 140
+      }
+    },
+    {
+      "id": "west-wide-ledge-crags",
+      "category": "boulder-cluster",
+      "description": "Sunlit fractured rock cliffs supporting the wide western ledge",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          -10,
+          -4,
+          0
+        ],
+        "sizeMetres": [
+          3.4,
+          9,
+          3.8
+        ],
+        "count": 16,
+        "seed": 861
+      }
+    },
+    {
+      "id": "east-rim-buttress",
+      "category": "boulder-cluster",
+      "description": "Weathered volcanic rock buttresses along the eastern crater rim",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          10.2,
+          0,
+          0
+        ],
+        "sizeMetres": [
+          3.4,
+          12,
+          3.8
+        ],
+        "count": 16,
+        "seed": 862
+      }
+    },
+    {
+      "id": "caldera-spires",
+      "category": "stalagmite-field",
+      "description": "Dramatic volcanic rock spires rising from the misty caldera floor below",
+      "zilIdentity": null,
+      "surface": "wall",
+      "placement": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "radius": 9.8,
+        "pathClearance": 3.2,
+        "count": 26,
+        "minHeight": 2,
+        "maxHeight": 5.5,
+        "seed": 863
+      }
+    }
+  ]
+}
